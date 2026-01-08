@@ -67,7 +67,7 @@ export function Navigation() {
                 isActive("/news") ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              新闻中心
+              技术视界
             </Link>
             <Link href="/cooperation">
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -163,7 +163,7 @@ export function Navigation() {
                 className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                新闻中心
+                技术视界
               </Link>
 
               <Link

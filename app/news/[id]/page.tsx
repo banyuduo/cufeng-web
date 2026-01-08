@@ -150,7 +150,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
             </Link>
             <span>/</span>
             <Link href="/news" className="hover:text-primary transition-colors">
-              新闻中心
+              技术视界
             </Link>
             <span>/</span>
             <span className="text-foreground">{news.title}</span>
@@ -205,7 +205,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                     className="border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
-                    返回新闻中心
+                    返回技术视界
                   </Button>
                 </Link>
                 <Link href="/cooperation#contact">
@@ -263,7 +263,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                 </li>
                 <li>
                   <Link href="/news" className="hover:text-primary transition-colors">
-                    新闻中心
+                    技术视界
                   </Link>
                 </li>
               </ul>
