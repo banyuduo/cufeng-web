@@ -67,10 +67,10 @@ export default function HomePage() {
 
             <div className="max-w-4xl mx-auto mb-10">
               <p className="text-slate-300 leading-relaxed text-lg opacity-100">
-                本平台初期面向<span className="text-white font-medium">先进热管理、界面材料及高硬度应用</span>，
-                同时通过应力诱导的电子结构异质性，为更高阶物性探索
-                <span className="text-sky-400">（如高导电、非常规输运或量子介观系统）</span>
-                提供了可验证的材料基础。
+                本平台聚焦于<span className="text-white font-medium">先进的热管理、界面材料及高硬度、高导电应用</span>，
+                同时探索通过应力诱导电子结构的变化，为更高阶物性
+                <span className="text-sky-400">（如高导电性、非常规输运特性或潜在的量子计算应用）</span>
+                提供可靠的材料基础。
               </p>
             </div>
 
@@ -174,7 +174,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">工艺与性能闭环</h3>
-                <p className="text-slate-600">已完成从物理假设 → 制备工艺 → 性能表征的实验室级全链路验证。</p>
+                <p className="text-slate-600">已完成从物理假设 → 制备工艺 → 性能表征的实验室级全链路验证，并已在此基础上进行初步样品制备与性能测试。</p>
               </div>
             </div>
 
@@ -185,7 +185,7 @@ export default function HomePage() {
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">可交付样品</h3>
                 <p className="text-slate-600">
-                  具备稳定复现的金刚石–铜复合材料及超磨熔固工具样品，已实现部分热性能指标的工程级验证。
+                  具备稳定复现的金刚石–铜复合材料及超磨熔固工具样品，部分样品已完成热性能等关键指标的工程级验证，并进入进一步的优化阶段。
                 </p>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">独立知识产权</h3>
-                <p className="text-slate-600">核心技术路线完全自主研发，不依赖外部开源框架或拼凑方案。</p>
+                <p className="text-slate-600">核心技术路线完全自主研发，已完成专利申请，技术不依赖外部开源框架或拼凑方案，确保技术的独立性和创新性。</p>
               </div>
             </div>
           </div>
