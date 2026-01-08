@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -81,7 +81,11 @@ export function Navigation() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Menu 
+              className={`h-6 w-6 transition-transform duration-300 ${
+                mobileMenuOpen ? "rotate-90" : "rotate-0"
+              }`}
+            />
           </button>
         </div>
       </div>
@@ -101,27 +105,16 @@ export function Navigation() {
           {/* 菜单面板 - 右上角 */}
           <div
             id="mobile-menu-overlay"
-            className="fixed top-0 right-0 w-24 sm:w-28 h-full z-[9999] flex flex-col"
+            className="fixed top-16 right-0 w-24 sm:w-28 h-[calc(100vh-4rem)] z-[9999] flex flex-col"
             style={{ 
               backgroundColor: '#000000',
               opacity: 1,
               boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.5)'
             }}
           >
-            {/* 关闭按钮和标题区域 */}
-            <div className="flex items-center justify-end px-4 pt-4 pb-2 border-b border-white/10">
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-1.5 text-white hover:text-gray-300 hover:bg-white/10 rounded-lg transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-
             {/* 菜单项列表 */}
             <div 
-              className="flex flex-col w-full pt-2 pb-4"
+              className="flex flex-col w-full pt-4 pb-4 fade-in-down"
               style={{
                 backgroundColor: '#000000'
               }}
