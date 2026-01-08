@@ -1,6 +1,7 @@
 import { Calendar, ArrowLeft, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText } from "lucide-react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
+import { FooterNav } from "@/components/footer-nav"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
 
@@ -127,8 +128,8 @@ const newsData: Record<
   },
 }
 
-export default async function NewsDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const news = newsData[id]
 
   if (!news) {
@@ -218,69 +219,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm mt-20">
-        <div className="container mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent" />
-                <span className="font-bold text-lg">ToSpike</span>
-              </div>
-              <p className="text-sm text-muted-foreground">突破性热管理材料技术</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">产品中心</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/products/nonstick-cookware" className="hover:text-primary transition-colors">
-                    金刚石涂层不粘锅
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/diamond-copper" className="hover:text-primary transition-colors">
-                    金刚石铜复合材料
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/carbon-composite" className="hover:text-primary transition-colors">
-                    全碳复合材料
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">关于我们</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/about" className="hover:text-primary transition-colors">
-                    公司介绍
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/patents" className="hover:text-primary transition-colors">
-                    专利技术
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/news" className="hover:text-primary transition-colors">
-                    技术视界
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">联系我们</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>电话: 15305191423</li>
-                <li>地址: 南京市江北新区行知路2号</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border/50 pt-8 text-sm text-muted-foreground text-center">
-            <p>© 2025 南京簇锋机电科技有限公司 版权所有</p>
-          </div>
-        </div>
-      </footer>
+      <FooterNav />
     </div>
   )
 }
