@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, Calendar, Building2, Target, Zap, Eye, Rocket, Layers, Sparkles, Shield, TrendingUp, ChefHat, FlaskConical, Battery, Droplet, Award, Handshake } from "lucide-react"
+import { ArrowLeft, ArrowRight, Calendar, Building2, Target, Zap, Eye, Rocket, Layers, Sparkles, Shield, TrendingUp, ChefHat, FlaskConical, Battery, Droplet, Award, Handshake, Users, GraduationCap, Briefcase, Wrench } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-sky-400 font-semibold mb-2">新科技，新巅峰</p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              立足超硬磨料工具领域，转型高性能热管理材料。从金刚石工具制造商，到碳基复合材料技术创新者，我们致力于成为客户理想的方案解决商。
+              源起超硬磨料工具领域，转型高性能热管理材料。从超硬工具设计者，到碳基复合材料技术创新者，我们致力于成为客户理想的方案解决商。
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   基于对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的深刻理解，簇锋科技构建了从底层"活性熔固"工艺到高维度"碳基界面平台"的完整技术链路。我们不单提供超硬磨料工具（Diamond/CBN），更致力于在极端工况下，为全球客户定义精密去除与界面热传导的工程边界。
                 </p>
                 <p className="mb-4">
-                  产品及技术应用于半导体制造、航空航天、新能源汽车、AI算力芯片、消费电子、机械重工等众多领域，为全球客户提供从定制工具到前沿材料的完整解决方案。
+                  产品及技术应用于半导体制造、航空航天、新能源汽车、AI算力芯片、消费电子等众多领域，为全球客户提供从定制工具到前沿材料的完整解决方案。
                 </p>
               </div>
 
@@ -130,8 +130,152 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 核心历程 - 时间轴 */}
+      {/* 核心团队 */}
       <section className="py-20 px-6 lg:px-8 bg-slate-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">核心团队</h2>
+            <p className="text-slate-400">专业、专注、专精的技术团队</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* 王博士 */}
+            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-sky-600/20 flex items-center justify-center">
+                  <GraduationCap className="w-6 h-6 text-sky-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">王博士</h3>
+                  <p className="text-sm text-slate-400">Wang, PhD</p>
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className="inline-block px-3 py-1 bg-sky-600/20 text-sky-300 text-xs font-medium rounded-full mb-2">
+                  技术研发与应用负责人
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-slate-300">
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Briefcase className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">专业背景</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    2016年取得博士学位，长期致力于超硬磨料工具在难加工材料领域的精密加工研究。
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Award className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">技术背书</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    拥有深厚的产业化经验，累计申请并获得授权的发明专利及实用新型专利达 <span className="text-sky-400 font-semibold">29 项</span>。
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Zap className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">核心能力</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    擅长针对钛合金、镍基高温合金、碳化硅及碳纤维复合材料（CFRP）等极端工况，通过 <span className="text-sky-400 font-semibold">sp²–sp³ 界面参数</span>的深度匹配，提供定制化的系统解决方案。
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            {/* 何工 */}
+            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-cyan-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center">
+                  <Wrench className="w-6 h-6 text-cyan-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">何工</h3>
+                  <p className="text-sm text-slate-400">He, M.E.</p>
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className="inline-block px-3 py-1 bg-cyan-600/20 text-cyan-300 text-xs font-medium rounded-full mb-2">
+                  工程设计与结构负责人
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-slate-300">
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Briefcase className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">专业背景</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    机械制造及其自动化专业硕士，拥有逾 <span className="text-cyan-400 font-semibold">15 年</span>的高端装备结构设计与优化经验。
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Award className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">技术背书</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    曾负责多项涉及军工与民用领域的复杂结构工程项目。
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Zap className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">核心能力</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    专注于机器人自动化打磨与精密磨削研究，能够基于现场工况自主设计超硬磨具的物理结构与夹具系统，实现从单点工具到自动化生产线的无缝集成。
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            {/* 张工 */}
+            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">张工</h3>
+                  <p className="text-sm text-slate-400">Zhang</p>
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className="inline-block px-3 py-1 bg-purple-600/20 text-purple-300 text-xs font-medium rounded-full mb-2">
+                  应用工程与现场支持负责人
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-slate-300">
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Briefcase className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">专业背景</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    资深磨料磨具应用专家，拥有多年金刚石工具在铸铁、铸钢及合金钢领域的推广与现场经验。
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-1">
+                    <Zap className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">核心能力</span>
+                  </div>
+                  <p className="ml-6 leading-relaxed">
+                    擅长处理复杂的加工现场难题，通过对材料加工特性的深刻理解，为客户提供精准的工具选型、配套方案及及时的技术响应。
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* 核心历程 - 时间轴 */}
+      <section className="py-20 px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">核心历程</h2>

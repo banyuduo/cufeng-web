@@ -87,60 +87,95 @@ export function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div
-          id="mobile-menu-overlay"
-          className="fixed inset-0 w-full h-full bg-slate-950 z-[9999] flex flex-col items-center justify-center"
-        >
-          <button
+        <>
+          {/* 背景遮罩层 - 半透明黑色 */}
+          <div
+            className="fixed inset-0 w-full h-full z-[9998]"
+            style={{ 
+              backgroundColor: '#000000',
+              opacity: 0.5
+            }}
             onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-6 right-6 p-2 text-white hover:text-gray-300 transition-colors"
-            aria-label="Close menu"
+          />
+          
+          {/* 菜单面板 - 右上角 */}
+          <div
+            id="mobile-menu-overlay"
+            className="fixed top-0 right-0 w-24 sm:w-28 h-full z-[9999] flex flex-col"
+            style={{ 
+              backgroundColor: '#000000',
+              opacity: 1,
+              boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.5)'
+            }}
           >
-            <X className="h-8 w-8" />
-          </button>
+            {/* 关闭按钮和标题区域 */}
+            <div className="flex items-center justify-end px-4 pt-4 pb-2 border-b border-white/10">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-1.5 text-white hover:text-gray-300 hover:bg-white/10 rounded-lg transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
 
-          <div className="flex flex-col w-full">
-            <Link
-              href="/patents"
-              className="text-white text-2xl font-semibold py-6 border-b border-white/10 w-full text-center hover:bg-white/5 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+            {/* 菜单项列表 */}
+            <div 
+              className="flex flex-col w-full pt-2 pb-4"
+              style={{
+                backgroundColor: '#000000'
+              }}
             >
-              技术架构
-            </Link>
+              <Link
+                href="/about"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                关于我们
+              </Link>
 
-            <Link
-              href="/products"
-              className="text-white text-2xl font-semibold py-6 border-b border-white/10 w-full text-center hover:bg-white/5 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              产品中心
-            </Link>
+              <Link
+                href="/patents"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                技术架构
+              </Link>
 
-            <Link
-              href="/applications"
-              className="text-white text-2xl font-semibold py-6 border-b border-white/10 w-full text-center hover:bg-white/5 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              应用领域
-            </Link>
+              <Link
+                href="/products"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                产品中心
+              </Link>
 
-            <Link
-              href="/news"
-              className="text-white text-2xl font-semibold py-6 border-b border-white/10 w-full text-center hover:bg-white/5 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              新闻中心
-            </Link>
+              <Link
+                href="/applications"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                应用领域
+              </Link>
 
-            <Link
-              href="/cooperation"
-              className="text-white text-2xl font-semibold py-6 border-b border-white/10 w-full text-center hover:bg-white/5 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              项目合作
-            </Link>
+              <Link
+                href="/news"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                新闻中心
+              </Link>
+
+              <Link
+                href="/cooperation"
+                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                项目合作
+              </Link>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   )
