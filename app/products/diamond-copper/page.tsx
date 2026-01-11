@@ -461,15 +461,24 @@ export default function DiamondCopperPage() {
           <h2 className="text-3xl font-bold mb-4 text-slate-900">需要金刚石铜散热解决方案？</h2>
           <p className="text-slate-600 mb-8">我们的技术团队将根据您的散热需求，提供最优化的产品选型与定制化设计服务</p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" className="gap-2 bg-sky-600 hover:bg-sky-700 text-white">
-              申请样品测试
+            <Button 
+              size="lg" 
+              className="gap-2 bg-sky-600 hover:bg-sky-700 text-white"
+              asChild
+            >
+              <a href="/docs/sample test result.pdf" target="_blank" rel="noopener noreferrer">
+                查看样品数据
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+              asChild
             >
-              下载技术资料
+              <a href="/docs/2026 cufeng diamond-cu.pdf" target="_blank" rel="noopener noreferrer">
+                下载技术资料
+              </a>
             </Button>
           </div>
         </div>
