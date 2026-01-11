@@ -88,13 +88,23 @@ export default function NonstickCookwarePage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/diamond-coating-non-stick-cookware-kitchen.jpg"
-                alt="金刚石涂层不粘锅"
-                fill
-                className="object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4 h-[400px]">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/diamond pan.jpg"
+                  alt="金刚石涂层不粘锅"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/sem-pan.jpg"
+                  alt="金刚石涂层不粘锅SEM图"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -280,68 +290,6 @@ export default function NonstickCookwarePage() {
               </table>
             </div>
           </Card>
-        </div>
-      </section>
-
-      {/* Product Specifications */}
-      <section className="py-16 px-6 lg:px-8 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">产品规格</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="p-6 bg-white border-slate-200">
-              <h3 className="font-semibold mb-3 text-slate-900">平底煎锅</h3>
-              <div className="space-y-2 text-sm text-slate-600">
-                <div className="flex justify-between">
-                  <span>直径</span>
-                  <span className="font-medium text-slate-900">20/24/28cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>深度</span>
-                  <span className="font-medium text-slate-900">5cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>材质</span>
-                  <span className="font-medium text-slate-900">铝合金/不锈钢</span>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white border-slate-200">
-              <h3 className="font-semibold mb-3 text-slate-900">炒锅</h3>
-              <div className="space-y-2 text-sm text-slate-600">
-                <div className="flex justify-between">
-                  <span>直径</span>
-                  <span className="font-medium text-slate-900">28/30/32cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>深度</span>
-                  <span className="font-medium text-slate-900">8-10cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>材质</span>
-                  <span className="font-medium text-slate-900">碳钢/铸铁</span>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white border-slate-200">
-              <h3 className="font-semibold mb-3 text-slate-900">汤锅</h3>
-              <div className="space-y-2 text-sm text-slate-600">
-                <div className="flex justify-between">
-                  <span>直径</span>
-                  <span className="font-medium text-slate-900">20/24cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>深度</span>
-                  <span className="font-medium text-slate-900">12-15cm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>材质</span>
-                  <span className="font-medium text-slate-900">不锈钢</span>
-                </div>
-              </div>
-            </Card>
-          </div>
         </div>
       </section>
 
