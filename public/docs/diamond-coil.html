@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大功率无线充电线圈散热白皮书 - 南京簇锋科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', 'PingFang SC', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; color: black; }
+            .card { border: 1px solid #e2e8f0; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 leading-relaxed antialiased">
+
+    <!-- 顶部保密标识 -->
+    <div class="max-w-5xl mx-auto px-6 pt-8 flex justify-between items-center opacity-60 text-xs tracking-widest uppercase">
+        <span>南京簇锋机电科技有限公司</span>
+        <span class="text-amber-500 border border-amber-500/50 px-2 py-0.5 rounded">Confidential / 技术机密</span>
+    </div>
+
+    <!-- 主标题区 -->
+    <header class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            大功率无线充电（WPT）线圈：<br>
+            <span class="gradient-text">下一代金刚石-铜复合散热方案</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl font-light italic">
+            —— 攻克 11kW~22kW+ 高频工况下的热物理极限，实现线圈本体径向散热突破。
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-16 pb-24">
+        
+        <!-- 第一部分：行业背景 -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-3xl font-bold text-sky-500/20">01</span>
+                <h2 class="text-2xl font-semibold text-white">行业痛点：高频大功率下的热瓶颈</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+                    <h3 class="text-sky-400 font-medium mb-3 text-lg text-balance">交流电阻（ACR）激增</h3>
+                    <p class="text-sm text-slate-400">在 85kHz - 150kHz 高频下，受集肤效应与邻近效应叠加影响，有效导电截面急剧减小，焦耳热随功率提升呈非线性爆发。</p>
+                </div>
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+                    <h3 class="text-sky-400 font-medium mb-3 text-lg text-balance">传统散热路径受限</h3>
+                    <p class="text-sm text-slate-400">目前主流的“利兹线+导热胶+水冷板”结构，热量需穿过多层绝缘介质，形成严重的热阻叠加，导致堆叠中心产生局部热点（Hotspots）。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二部分：三大关键物理瓶颈 -->
+        <section class="bg-slate-900/30 py-12 px-8 rounded-3xl border border-white/5">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-white">现有液冷方案的物理极限</h2>
+                <p class="text-slate-500 mt-2">为什么传统的导热环氧树脂（1-3 W/m·K）已无法满足需求？</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center space-y-4">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mx-auto text-xl font-bold">P1</div>
+                    <h4 class="font-semibold text-white">绝缘层屏障</h4>
+                    <p class="text-xs text-slate-400 leading-loose">低导热聚合物绝缘漆是路径上最大的单一热阻，阻断了热量从铜芯向外排出的通道。</p>
+                </div>
+                <div class="text-center space-y-4 border-x border-slate-800">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mx-auto text-xl font-bold">P2</div>
+                    <h4 class="font-semibold text-white">线束径向阻碍</h4>
+                    <p class="text-xs text-slate-400 leading-loose">多股绞合产生的微观气隙与漆膜接触面，使整体线束的有效径向导热系数极低。</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mx-auto text-xl font-bold">P3</div>
+                    <h4 class="font-semibold text-white">界面接触失效</h4>
+                    <p class="text-xs text-slate-400 leading-loose">导线与灌封材料间缺乏原子级物理结合，导致微观接触热阻成为能量散失的障碍。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三部分：簇锋 SP²-SP³ 核心方案 -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-3xl font-bold text-sky-500/20">02</span>
+                <h2 class="text-2xl font-semibold text-white">簇锋方案：金刚石-铜复合导体技术</h2>
+            </div>
+            <div class="bg-gradient-to-br from-sky-600/20 to-indigo-600/20 p-8 rounded-3xl border border-sky-500/30 relative overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-6">物理演进逻辑</h3>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4 text-sm">
+                                <div class="w-6 h-6 rounded-full bg-sky-500 flex-shrink-0 flex items-center justify-center text-xs text-black font-bold">1</div>
+                                <div>
+                                    <span class="text-sky-300 font-semibold">原子级界面熔固</span>
+                                    <p class="text-slate-400 mt-1">通过专有热物理工艺实现微米增强体与铜基体的冶金键合，消除界面热阻。</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 text-sm">
+                                <div class="w-6 h-6 rounded-full bg-sky-500 flex-shrink-0 flex items-center justify-center text-xs text-black font-bold">2</div>
+                                <div>
+                                    <span class="text-sky-300 font-semibold">多级热传导网络</span>
+                                    <p class="text-slate-400 mt-1">构建由高效热填料构成的并联通道，将线束径向有效导热率提升至全新量级。</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 text-sm">
+                                <div class="w-6 h-6 rounded-full bg-sky-500 flex-shrink-0 flex items-center justify-center text-xs text-black font-bold">3</div>
+                                <div>
+                                    <span class="text-sky-300 font-semibold">高导电冗余设计</span>
+                                    <p class="text-slate-400 mt-1">维持接近 100% IACS 的导电率，从源头减少高频损耗产生的原始热负荷。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950/50 p-6 rounded-2xl border border-white/10 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <div class="text-xs text-slate-500 uppercase tracking-widest mb-1">性能预期目标</div>
+                            <div class="text-4xl font-bold text-white">R<sub>th</sub> 降低 > 40%</div>
+                            <div class="text-sm text-sky-500 mt-1">线圈本体温升较传统方案显著改善</div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+                                <span class="text-slate-400">热性能指标</span>
+                                <span class="text-white font-mono">大幅降低径向热阻</span>
+                            </div>
+                            <div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+                                <span class="text-slate-400">电学性能</span>
+                                <span class="text-white font-mono">维持极高 Q 值 (Quality Factor)</span>
+                            </div>
+                            <div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+                                <span class="text-slate-400">机械可靠性</span>
+                                <span class="text-white font-mono">满足小曲率绕线需求</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第四部分：方案优势矩阵 -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-3xl font-bold text-sky-500/20">03</span>
+                <h2 class="text-2xl font-semibold text-white">方案综合优势</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-colors">
+                    <h4 class="text-white font-semibold mb-2">极致散热</h4>
+                    <p class="text-xs text-slate-500 italic">构建径向导热捷径，突破绝缘层热瓶颈。</p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-colors">
+                    <h4 class="text-white font-semibold mb-2">效率增益</h4>
+                    <p class="text-xs text-slate-500 italic">降低 ACR，维持高工作频段下的转换效率。</p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-colors">
+                    <h4 class="text-white font-semibold mb-2">集成量产</h4>
+                    <p class="text-xs text-slate-500 italic">适配现有的线圈制备工艺与液冷散热架构。</p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-colors">
+                    <h4 class="text-white font-semibold mb-2">长效安全</h4>
+                    <p class="text-xs text-slate-500 italic">大幅减缓材料热老化，延长充电终端寿命。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部联系区 -->
+        <section class="border-t border-slate-800 pt-16">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 bg-slate-900/40 p-10 rounded-[2rem] border border-white/5">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-2">探讨您的应用场景</h2>
+                    <p class="text-slate-400">目前本方案已进入实物原型阶段，欢迎 Tier 1 供应商进行技术对接。</p>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[240px]">
+                    <div class="text-sm font-semibold text-sky-400 tracking-tighter italic">南京簇锋机电科技有限公司</div>
+                    <div class="text-xs text-slate-500">南京市江北新区行知路2号</div>
+                    <div class="text-xs text-slate-500">官方网址：www.tospike.com</div>
+                    <div class="text-xs text-white mt-2">技术咨询：wangbo@tospike.com</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚保密水印 -->
+    <div class="text-center pb-12 opacity-30 text-[10px] tracking-[0.3em] uppercase no-print">
+        Copyright © 2026 ToSpike Technologies. All rights reserved.
+    </div>
+
+</body>
+</html>
