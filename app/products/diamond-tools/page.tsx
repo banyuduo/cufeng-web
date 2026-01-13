@@ -149,7 +149,7 @@ export default function DiamondToolsPage() {
           <h2 className="text-3xl font-bold mb-4 text-center text-slate-900">产品设计原理：超硬磨料熔固的三要素架构</h2>
           <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
             活性熔固超硬磨料工具的性能由 <strong>基体 (Substrate)</strong>、<strong>磨料 (Superabrasive)</strong>、
-            <strong>焊料 (Brazing Alloy)</strong> 三大核心要素共同决定
+            <strong>活性熔固合金</strong> 三大核心要素共同决定
           </p>
 
           {/* Three Elements */}
@@ -178,7 +178,7 @@ export default function DiamondToolsPage() {
               <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
                 <Wrench className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-slate-900">焊料 (Brazing Alloy)</h3>
+              <h3 className="font-semibold text-lg mb-3 text-slate-900">活性熔固合金</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 作为连接纽带，通过化学冶金反应决定工具的整体服役性能，是性能的关键控制点。
               </p>
@@ -218,19 +218,19 @@ export default function DiamondToolsPage() {
             <p className="text-slate-700 leading-relaxed mb-6">
               工具设计并非要素的简单叠加，而是基于<strong>加工对象</strong>（如高温合金、复材）与
               <strong>工况条件</strong>
-              （干/湿切）的综合优化。我们从基体结构、磨料选配、布料工艺、熔固环境四个维度进行全系统匹配，寻找最优的制备工艺体系。
+              （干/湿切）的综合优化。我们从基体结构、磨料选配、布料工艺、活性熔固气氛四个维度进行全系统匹配，寻找最优的制备工艺体系。
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
-                  <strong>基体与焊料的适应性</strong>：润湿性、热膨胀匹配
+                  <strong>基体与活性熔固合金的适应性</strong>：润湿性、热膨胀匹配
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
-                  <strong>磨料与焊料的结合性能</strong>：界面化学键合强度
+                  <strong>磨料与活性熔固合金的结合性能</strong>：界面化学键合强度
                 </div>
               </div>
               <div className="flex items-start gap-3">
