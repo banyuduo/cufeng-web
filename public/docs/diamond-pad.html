@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柔性高导热界面材料技术白皮书 - 南京簇锋科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', 'PingFang SC', sans-serif; }
+        .gradient-border {
+            border-image: linear-gradient(to right, #38bdf8, #818cf8) 1;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; color: black; }
+            .card { border: 1px solid #e2e8f0; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 leading-relaxed antialiased">
+
+    <!-- 顶部保密及归档信息 -->
+    <div class="max-w-5xl mx-auto px-8 pt-10 flex justify-between items-center opacity-50 text-[10px] tracking-widest uppercase">
+        <span>南京簇锋机电科技有限公司 | 技术部</span>
+        <span class="text-sky-500 border border-sky-500/40 px-2 py-0.5 rounded">Commercial Confidential / 商业机密</span>
+    </div>
+
+    <!-- 封面/标题区 -->
+    <header class="max-w-5xl mx-auto px-8 pt-16 pb-12 border-b border-slate-800">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            下一代柔性高导热<br>
+            <span class="text-gradient">界面材料（TIM）技术方案</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl font-light italic">
+            基于活性钎焊金属骨架增强工艺，打破传统导热垫片的物理性能瓶颈。
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-8 py-16 space-y-20">
+        
+        <!-- 第一部分：行业痛点 -->
+        <section>
+            <div class="flex items-center gap-4 mb-10">
+                <span class="h-px w-12 bg-sky-500"></span>
+                <h2 class="text-2xl font-semibold text-white tracking-wider">01. 行业现状与技术痛点</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-4">
+                    <h3 class="text-sky-400 font-medium text-lg">导热系数的“玻璃天花板”</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-justify">
+                        传统导热垫片依赖于在聚合物中物理填充导热粉末（如氧化铝、氮化硼）。由于填料间仅为点接触，存在巨大的接触热阻，导致整体导热系数长期徘徊在 15 W/m·K 以下，难以满足 5G 及高性能计算的散热需求。
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-sky-400 font-medium text-lg">“柔”与“刚”的物理悖论</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-justify">
+                        具备极高热传导率的金属基或碳基复合材料通常为刚性体，无法贴合粗糙或不平整的电子器件表面；而柔性材料的本征导热率低，高填充下又会丧失机械柔韧性，导致抗振与可靠性下降。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二部分：簇锋核心解决方案 -->
+        <section class="bg-slate-900/40 p-10 rounded-3xl border border-white/5 shadow-2xl">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-white mb-6">核心方案：结构化复合导热骨架</h2>
+                <p class="text-slate-400 mb-8">
+                    我司通过自主研发的专利工艺，将“活性钎焊”与“结构化柔性工程”相结合，构建了一种具备三维连续导热网络的复合系统。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card p-6 bg-slate-950/50 rounded-2xl border border-slate-800">
+                    <div class="text-sky-500 text-xs font-mono mb-2 uppercase tracking-tighter">Mechanism A</div>
+                    <h4 class="text-white font-semibold mb-3">原子级冶金结合</h4>
+                    <p class="text-[12px] text-slate-500">利用活性元素与导热增强相表面发生化学反应，消除界面热阻，构建声子/电子传输的高速通道。</p>
+                </div>
+                <div class="card p-6 bg-slate-950/50 rounded-2xl border border-slate-800">
+                    <div class="text-sky-500 text-xs font-mono mb-2 uppercase tracking-tighter">Mechanism B</div>
+                    <h4 class="text-white font-semibold mb-3">三维连续骨架</h4>
+                    <p class="text-[12px] text-slate-500">采用特殊编织网或纤维毡作为增强底座，变“物理填充”为“结构化布局”，实现面内与垂直方向的协同均温。</p>
+                </div>
+                <div class="card p-6 bg-slate-950/50 rounded-2xl border border-slate-800">
+                    <div class="text-sky-500 text-xs font-mono mb-2 uppercase tracking-tighter">Mechanism C</div>
+                    <h4 class="text-white font-semibold mb-3">应力释放技术</h4>
+                    <p class="text-[12px] text-slate-500">通过精密几何处理形成应力释放阵列，赋予材料类似“织物”的宏观柔韧性与极高压缩回弹性。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三部分：技术优势 -->
+        <section>
+            <div class="flex items-center gap-4 mb-10">
+                <span class="h-px w-12 bg-sky-500"></span>
+                <h2 class="text-2xl font-semibold text-white tracking-wider">02. 核心技术优势</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                <div class="flex gap-5 border-b border-slate-800 pb-6">
+                    <div class="text-2xl text-sky-500 font-black">01</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">超越量级的导热效率</h4>
+                        <p class="text-sm text-slate-500">垂直有效导热率较传统产品提升数倍，能够快速导出能量中心积热。</p>
+                    </div>
+                </div>
+                <div class="flex gap-5 border-b border-slate-800 pb-6">
+                    <div class="text-2xl text-sky-500 font-black">02</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">卓越的二维均温能力</h4>
+                        <p class="text-sm text-slate-500">具备极高的横向热扩散率，有效消除局部热点，实现芯片表面的高度均温。</p>
+                    </div>
+                </div>
+                <div class="flex gap-5 border-b border-slate-800 pb-6">
+                    <div class="text-2xl text-sky-500 font-black">03</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">类布料的形变贴服性</h4>
+                        <p class="text-sm text-slate-500">最大压缩率可达 30% 以上，完美贴合安装公差，将界面接触热阻降至最低。</p>
+                    </div>
+                </div>
+                <div class="flex gap-5 border-b border-slate-800 pb-6">
+                    <div class="text-2xl text-sky-500 font-black">04</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">长效生命周期可靠性</h4>
+                        <p class="text-sm text-slate-500">冶金级物理锁定防止填料脱落、粉化或泵出，耐受极端的温度循环。</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第四部分：应用场景及前景 -->
+        <section class="relative">
+            <div class="flex items-center gap-4 mb-10">
+                <span class="h-px w-12 bg-sky-500"></span>
+                <h2 class="text-2xl font-semibold text-white tracking-wider">03. 应用视窗与商业潜力</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="p-6 bg-slate-900/50 rounded-xl text-center">
+                    <h5 class="text-white font-bold mb-2">5G/6G 通讯</h5>
+                    <p class="text-[11px] text-slate-500">高频功放、射频模组等高热流密度组件。</p>
+                </div>
+                <div class="p-6 bg-slate-900/50 rounded-xl text-center border-t-2 border-sky-500">
+                    <h5 class="text-white font-bold mb-2">AI 计算核心</h5>
+                    <p class="text-[11px] text-slate-500">高性能显存、边缘计算服务器的全局散热。</p>
+                </div>
+                <div class="p-6 bg-slate-900/50 rounded-xl text-center">
+                    <h5 class="text-white font-bold mb-2">新能源汽车</h5>
+                    <p class="text-[11px] text-slate-500">SiC/GaN 功率模块、动力电池热控系统。</p>
+                </div>
+                <div class="p-6 bg-slate-900/50 rounded-xl text-center">
+                    <h5 class="text-white font-bold mb-2">精密光电子</h5>
+                    <p class="text-[11px] text-slate-500">高功率激光器、高亮度 LED 阵列。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部联系区 -->
+        <footer class="border-t border-slate-800 pt-16">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 bg-gradient-to-r from-slate-900 to-transparent p-10 rounded-[2.5rem]">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-2">协同创新 · 解决极限热挑战</h2>
+                    <p class="text-slate-400 text-sm">本方案已通过工艺可行性论证及原型样品测试，诚邀全球战略合作伙伴共同推进产业化落地。</p>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[260px] text-sm">
+                    <div class="text-sky-400 font-semibold italic">南京簇锋机电科技有限公司</div>
+                    <div class="text-slate-500">SP²–SP³ 碳基界面平台研发中心</div>
+                    <div class="text-white pt-2 font-mono">wangbo@tospike.com</div>
+                    <div class="text-slate-500 uppercase tracking-widest text-[10px]">www.tospike.com</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 页脚保密声明 -->
+    <div class="text-center pb-12 opacity-30 text-[9px] tracking-[0.4em] uppercase no-print">
+        &copy; 2026 ToSpike Technologies. Authorized Document Only.
+    </div>
+
+</body>
+</html>
