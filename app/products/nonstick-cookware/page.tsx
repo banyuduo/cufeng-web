@@ -299,15 +299,22 @@ export default function NonstickCookwarePage() {
           <h2 className="text-3xl font-bold mb-4 text-slate-900">了解更多金刚石不粘锅技术</h2>
           <p className="text-slate-600 mb-8">我们的工程团队将为您详细介绍技术原理与应用前景</p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" className="gap-2 bg-sky-600 hover:bg-sky-700 text-white">
-              联系我们
+            <Button 
+              size="lg" 
+              className="gap-2 bg-sky-600 hover:bg-sky-700 text-white"
+              asChild
+            >
+              <Link href="/cooperation#contact">联系我们</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+              asChild
             >
-              下载技术白皮书
+              <a href="/docs/cufeng-diamond-pan.pdf" target="_blank" rel="noopener noreferrer">
+                下载技术白皮书
+              </a>
             </Button>
           </div>
         </div>

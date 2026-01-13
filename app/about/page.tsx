@@ -362,7 +362,7 @@ export default function AboutPage() {
                       <h3 className="text-xl font-bold text-white">簇锋科技启航</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
-                      公司于南京注册成立，确立"<span className="text-slate-400 font-semibold">新科技，新巅峰</span>"理念，专注解决难加工材料的界面连接难题。
+                      公司于镇江注册成立，确立"<span className="text-slate-400 font-semibold">新科技，新巅峰</span>"理念，专注解决难加工材料的界面连接难题。
                     </p>
                   </Card>
                 </div>
