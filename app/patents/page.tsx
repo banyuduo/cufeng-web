@@ -192,83 +192,109 @@ export default function PatentsPage() {
 
           {/* 技术演进架构图 */}
           <div className="mt-12 max-w-7xl mx-auto">
-            <div className="p-8 bg-slate-950/80 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white text-center mb-12">技术深化路径与平台架构全景图</h3>
+            <div className="p-4 md:p-8 bg-slate-950/80 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl">
+              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-8 md:mb-12">技术深化路径与平台架构全景图</h3>
               
-              <div className="grid lg:grid-cols-3 gap-8 relative">
+              <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative">
                 {/* 左侧：演化路径 */}
-                <div className="space-y-6">
-                  <div className="text-center mb-6">
-                    <h4 className="text-lg font-semibold text-sky-400 mb-2">演化路径</h4>
+                <div className="space-y-3 md:space-y-6">
+                  <div className="text-center mb-4 md:mb-6">
+                    <h4 className="text-base md:text-lg font-semibold text-sky-400 mb-2">演化路径</h4>
                     <div className="h-px bg-gradient-to-r from-transparent via-sky-500/50 to-transparent"></div>
                   </div>
                   
                   {/* Stage 01 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-sky-500/30 hover:border-sky-400/60 hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/30 transition-colors">
-                        <Wrench className="w-6 h-6 text-sky-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-sky-500/30 hover:border-sky-400/60 hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/30 transition-colors flex-shrink-0">
+                        <Wrench className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="text-xs font-mono text-sky-400 mb-1">Stage 01</div>
-                        <h5 className="text-white font-bold mb-2">精密钎焊金刚石工具</h5>
+                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">精密钎焊金刚石工具</h5>
                         <p className="text-xs text-slate-400 leading-relaxed">建立极端工况下的界面连接与结构稳定性工程能力</p>
                       </div>
                     </div>
                   </Card>
 
+                  {/* 移动端连接箭头 */}
+                  <div className="flex justify-center py-2 md:hidden">
+                    <div className="flex flex-col items-center">
+                      <ChevronDown className="w-5 h-5 text-sky-400/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-sky-500/40 via-cyan-500/40 to-transparent"></div>
+                    </div>
+                  </div>
+
                   {/* Stage 02 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                        <Thermometer className="w-6 h-6 text-cyan-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors flex-shrink-0">
+                        <Thermometer className="w-5 h-5 md:w-6 md:h-6 text-cyan-400" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="text-xs font-mono text-cyan-400 mb-1">Stage 02</div>
-                        <h5 className="text-white font-bold mb-2">金刚石-铜复合散热基底</h5>
+                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">金刚石-铜复合散热基底</h5>
                         <p className="text-xs text-slate-400 leading-relaxed">实现从工程工具向功能材料的跃迁</p>
                       </div>
                     </div>
                   </Card>
 
+                  {/* 移动端连接箭头 */}
+                  <div className="flex justify-center py-2 md:hidden">
+                    <div className="flex flex-col items-center">
+                      <ChevronDown className="w-5 h-5 text-cyan-400/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-cyan-500/40 via-purple-500/40 to-transparent"></div>
+                    </div>
+                  </div>
+
                   {/* Stage 03 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                        <Layers className="w-6 h-6 text-purple-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors flex-shrink-0">
+                        <Layers className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="text-xs font-mono text-purple-400 mb-1">Stage 03</div>
-                        <h5 className="text-white font-bold mb-2">全碳复合功能材料</h5>
+                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">全碳复合功能材料</h5>
                         <p className="text-xs text-slate-400 leading-relaxed">构建完全由碳体系组成的复合材料平台</p>
                       </div>
                     </div>
                   </Card>
+
+                  {/* 移动端：演化路径到核心内核的连接 */}
+                  <div className="flex justify-center py-3 md:hidden">
+                    <div className="flex flex-col items-center">
+                      <ChevronDown className="w-6 h-6 text-amber-400/80" />
+                      <div className="h-12 w-px bg-gradient-to-b from-purple-500/50 via-amber-400/60 to-amber-500/50"></div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* 中间：核心内核 */}
-                <div className="flex items-center justify-center relative lg:my-0 my-8">
-                  {/* 连接线装饰 */}
+                <div className="flex items-center justify-center relative lg:my-0 my-4 md:my-8">
+                  {/* 桌面端连接线装饰 */}
                   <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-r from-sky-500/40 via-amber-400/60 to-transparent -translate-x-4"></div>
                   <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-l from-purple-500/40 via-amber-400/60 to-transparent translate-x-4"></div>
                   
                   <div className="relative z-10 w-full">
-                    <Card className="p-8 bg-gradient-to-br from-amber-900/40 to-yellow-900/40 backdrop-blur-sm border-2 border-amber-500/50 rounded-2xl shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 group">
+                    <Card className="p-6 md:p-8 bg-gradient-to-br from-amber-900/40 to-yellow-900/40 backdrop-blur-sm border-2 border-amber-500/50 rounded-2xl shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 group">
                       <div className="relative">
-                        {/* 发光效果 */}
+                        {/* 发光效果 - 桌面端 */}
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                        {/* 移动端外部阴影 - 增强发光效果 */}
+                        <div className="md:hidden absolute -inset-2 rounded-2xl bg-gradient-to-br from-amber-500/30 to-yellow-500/30 blur-2xl opacity-60"></div>
                         
                         <div className="relative z-10 text-center">
-                          <div className="w-20 h-20 mx-auto mb-6 rounded-xl bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-amber-400/50 group-hover:scale-110 transition-transform duration-300">
-                            <Sparkles className="w-10 h-10 text-amber-300" />
+                          <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-xl bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-amber-400/50 group-hover:scale-110 transition-transform duration-300">
+                            <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-amber-300" />
                           </div>
-                          <h4 className="text-xl font-bold text-white mb-4">核心内核</h4>
-                          <div className="space-y-3">
-                            <div className="px-4 py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
-                              <div className="text-amber-300 font-mono font-semibold text-sm">sp²–sp³ 化学键合</div>
+                          <h4 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">核心内核</h4>
+                          <div className="space-y-2 md:space-y-3">
+                            <div className="px-3 py-2 md:px-4 md:py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
+                              <div className="text-amber-300 font-mono font-semibold text-xs md:text-sm">sp²–sp³ 化学键合</div>
                             </div>
-                            <div className="px-4 py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
-                              <div className="text-amber-300 font-mono font-semibold text-sm">内生应力调控</div>
+                            <div className="px-3 py-2 md:px-4 md:py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
+                              <div className="text-amber-300 font-mono font-semibold text-xs md:text-sm">内生应力调控</div>
                             </div>
                           </div>
                         </div>
@@ -277,22 +303,30 @@ export default function PatentsPage() {
                   </div>
                 </div>
 
+                {/* 移动端：核心内核到应用视窗的连接 */}
+                <div className="flex justify-center py-3 md:hidden">
+                  <div className="flex flex-col items-center">
+                    <ChevronDown className="w-6 h-6 text-amber-400/80" />
+                    <div className="h-12 w-px bg-gradient-to-b from-amber-500/50 via-sky-500/40 to-transparent"></div>
+                  </div>
+                </div>
+
                 {/* 右侧：应用视窗 */}
-                <div className="space-y-6">
-                  <div className="text-center mb-6">
-                    <h4 className="text-lg font-semibold text-purple-400 mb-2">应用视窗</h4>
+                <div className="space-y-3 md:space-y-6">
+                  <div className="text-center mb-4 md:mb-6">
+                    <h4 className="text-base md:text-lg font-semibold text-purple-400 mb-2">应用视窗</h4>
                     <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
                   </div>
 
                   {/* 极端工况应用 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-sky-500/30 hover:border-sky-400/60 hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/30 transition-colors">
-                        <Plane className="w-6 h-6 text-sky-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-sky-500/30 hover:border-sky-400/60 hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/30 transition-colors flex-shrink-0">
+                        <Plane className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                       </div>
-                      <div className="flex-1">
-                        <h5 className="text-white font-bold mb-2">极端工况应用</h5>
-                        <div className="space-y-1 text-xs text-slate-400">
+                      <div className="flex-1 min-w-0">
+                        <h5 className="text-sm md:text-base text-white font-bold mb-2">极端工况应用</h5>
+                        <div className="space-y-1.5 text-xs text-slate-400 leading-relaxed text-left">
                           <div>• 航天散热</div>
                           <div>• 大功率线圈</div>
                           <div>• 核聚变热件</div>
@@ -301,14 +335,22 @@ export default function PatentsPage() {
                     </div>
                   </Card>
 
+                  {/* 移动端连接箭头 */}
+                  <div className="flex justify-center py-2 md:hidden">
+                    <div className="flex flex-col items-center">
+                      <ChevronDown className="w-5 h-5 text-sky-400/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-sky-500/40 via-purple-500/40 to-transparent"></div>
+                    </div>
+                  </div>
+
                   {/* 超导材料研究平台 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                        <Microscope className="w-6 h-6 text-purple-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors flex-shrink-0">
+                        <Microscope className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                       </div>
-                      <div className="flex-1">
-                        <h5 className="text-white font-bold mb-2">超导材料研究平台</h5>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="text-sm md:text-base text-white font-bold mb-2">超导材料研究平台</h5>
                         <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-[10px] text-purple-300 font-medium mt-1">
                           理论探索阶段
                         </div>
@@ -316,14 +358,22 @@ export default function PatentsPage() {
                     </div>
                   </Card>
 
+                  {/* 移动端连接箭头 */}
+                  <div className="flex justify-center py-2 md:hidden">
+                    <div className="flex flex-col items-center">
+                      <ChevronDown className="w-5 h-5 text-purple-400/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-purple-500/40 via-indigo-500/40 to-transparent"></div>
+                    </div>
+                  </div>
+
                   {/* 量子计算潜力 */}
-                  <Card className="p-6 bg-slate-900/60 backdrop-blur-sm border-indigo-500/30 hover:border-indigo-400/60 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 group">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500/30 transition-colors">
-                        <FlaskConical className="w-6 h-6 text-indigo-400" />
+                  <Card className="p-4 md:p-6 bg-slate-900/60 backdrop-blur-sm border-indigo-500/30 hover:border-indigo-400/60 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 group">
+                    <div className="flex items-start gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500/30 transition-colors flex-shrink-0">
+                        <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
                       </div>
-                      <div className="flex-1">
-                        <h5 className="text-white font-bold mb-2">量子计算潜力</h5>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="text-sm md:text-base text-white font-bold mb-2">量子计算潜力</h5>
                         <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-[10px] text-indigo-300 font-medium mt-1">
                           远景规划阶段
                         </div>
