@@ -185,7 +185,7 @@ export default function ProductsPage() {
                   <span className="text-lg text-slate-600 font-normal">(Superabrasive Fusion-Bonded Solutions)</span>
                 </h2>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  基于界面化学冶金原理，通过活性钎焊实现金刚石或立方氮化硼（CBN）与异质金属基体的原子级可靠连接。我们不局限于提供工具单品，而是通过"基体-磨料-焊料"三要素的精准匹配，为航空航天、半导体及新型复合材料提供定制化的精密加工与材料去除方案。
+                  基于界面化学冶金原理，通过活性熔固实现金刚石或立方氮化硼（CBN）与异质金属基体的原子级可靠连接。我们不局限于提供工具单品，而是通过"基体-磨料-熔固合金"三要素的精准匹配，为航空航天、半导体及新型复合材料提供定制化的精密加工与材料去除方案。
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
                   <div className="flex items-center gap-2 text-sm text-slate-600">
