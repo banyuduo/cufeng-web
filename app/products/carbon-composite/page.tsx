@@ -67,21 +67,6 @@ export default function CarbonCompositePage() {
                 实现金刚石（SP³）与石墨/碳纤维（SP²）的化学键合，构建三维全碳网络结构。
                 可拓展至热管理、固态电池、超导材料等多个前沿领域。
               </p>
-              <div className="flex items-center gap-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white"
-                >
-                  技术合作
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                >
-                  研究报告
-                </Button>
-              </div>
             </div>
 
             <Card className="p-8 bg-gradient-to-br from-white to-cyan-50 border-sky-300 shadow-2xl">
@@ -217,7 +202,7 @@ export default function CarbonCompositePage() {
                 全碳复合材料在高导热散热片、柔性导热垫片与固态电池负极材料中拥有广阔应用空间。SP³-SP²结构既能提供卓越的热传导能力，又能满足储能材料的多孔结构和导电要求。
               </p>
               <Link
-                href="/applications"
+                href="/applications#thermal-management"
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 查看热管理与储能应用
@@ -231,7 +216,7 @@ export default function CarbonCompositePage() {
                 作为环境友好型材料，全碳复合材料可用于水处理粒子电极与电催化应用。更前沿地，高压力下的内应力诱导可能实现高导电甚至超导特性，为前沿科学研究提供全新材料平台。
               </p>
               <Link
-                href="/applications"
+                href="/applications#energy-environment"
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 查看前沿应用领域
@@ -256,19 +241,9 @@ export default function CarbonCompositePage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-3 text-slate-900">纳米金刚石表面石墨化</h3>
                   <p className="text-slate-600 leading-relaxed mb-4">
-                    将纳米金刚石（5-100nm）在惰性气氛或真空中加热至1200-1600°C，
-                    控制时间使表面1-3nm厚度发生石墨化转变，形成石墨化外壳。 核心保持金刚石结构。
+                    将纳米金刚石在惰性气氛或真空中加热至一定温度，
+                    控制时间使表面特定厚度发生石墨化转变，形成石墨化外壳。 核心保持金刚石结构。
                   </p>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    <div className="p-3 bg-white rounded-lg">
-                      <div className="text-xs text-slate-600 mb-1">处理温度</div>
-                      <div className="font-semibold text-slate-900">1200-1600°C</div>
-                    </div>
-                    <div className="p-3 bg-white rounded-lg">
-                      <div className="text-xs text-slate-600 mb-1">气氛</div>
-                      <div className="font-semibold text-slate-900">氩气/真空</div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </Card>
@@ -310,23 +285,9 @@ export default function CarbonCompositePage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-3 text-slate-900">高温压力烧结</h3>
                   <p className="text-slate-600 leading-relaxed mb-4">
-                    在真空或惰性气氛热压炉中，升温至1600-2000°C，施加压力5-50 MPa，
-                    保温30-120分钟。石墨化外壳与SP²碳材料发生碳原子扩散，形成C-C共价键连接。
+                    在真空或惰性气氛热压炉中，升温至特定温度，施加一定压力，
+                    进行保温。石墨化外壳与SP²碳材料发生碳原子扩散，形成C-C共价键连接。
                   </p>
-                  <div className="grid md:grid-cols-3 gap-3">
-                    <div className="p-3 bg-white rounded-lg">
-                      <div className="text-xs text-slate-600 mb-1">温度</div>
-                      <div className="font-semibold text-slate-900">1600-2000°C</div>
-                    </div>
-                    <div className="p-3 bg-white rounded-lg">
-                      <div className="text-xs text-slate-600 mb-1">压力</div>
-                      <div className="font-semibold text-slate-900">5-50 MPa</div>
-                    </div>
-                    <div className="p-3 bg-white rounded-lg">
-                      <div className="text-xs text-slate-600 mb-1">时间</div>
-                      <div className="font-semibold text-slate-900">30-120分钟</div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </Card>
@@ -461,11 +422,11 @@ export default function CarbonCompositePage() {
               可提供技术授权、联合研发、定制开发等灵活合作方式，共同推动全碳复合材料技术的产业化应用。
             </p>
             <div className="flex items-center gap-4">
-              <Button size="lg" className="bg-white text-sky-600 hover:bg-slate-100">
-                商务合作
+              <Button size="lg" className="bg-white text-sky-600 hover:bg-slate-100" asChild>
+                <Link href="/about">项目合作</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent">
-                技术交流
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
+                <Link href="/cooperation#contact">技术交流</Link>
               </Button>
             </div>
           </Card>

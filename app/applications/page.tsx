@@ -124,7 +124,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 核心工业散热版块 */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="thermal-management" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-block px-6 py-2 bg-sky-600 rounded-full text-white font-bold text-sm mb-4">
@@ -447,7 +447,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 能源与环境系统 */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section id="energy-environment" className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-green-100 rounded-full text-green-700 text-sm font-semibold mb-4">
@@ -538,7 +538,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 前沿物理探索 */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section id="frontier-research" className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold mb-4">
