@@ -87,7 +87,14 @@ export default function DiamondToolsPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">{/* Image removed */}</div>
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/diamond.jpg"
+                alt="超硬磨料熔固技术"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -183,25 +190,25 @@ export default function DiamondToolsPage() {
             <Card className="p-6 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/1-1p509161435255.png"
-                  alt="图 2.3 钎焊金刚石工具基本结构"
+                  src="/images/diamond-brazed.png"
+                  alt="钎焊金刚石工具基本结构"
                   fill
                   className="object-contain p-4"
                 />
               </div>
-              <p className="text-sm text-slate-600 text-center">图 2.3 钎焊金刚石工具基本结构</p>
+              <p className="text-sm text-slate-600 text-center">钎焊金刚石工具基本结构</p>
             </Card>
 
             <Card className="p-6 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/1-1p50916152e14.png"
-                  alt="图 2.4 钎焊金刚石工具研制影响要素及之间关系"
+                  src="/images/brazing tech.png"
+                  alt="钎焊金刚石工具研制影响要素及之间关系"
                   fill
                   className="object-contain p-4"
                 />
               </div>
-              <p className="text-sm text-slate-600 text-center">图 2.4 钎焊金刚石工具研制影响要素及之间关系</p>
+              <p className="text-sm text-slate-600 text-center">钎焊金刚石工具研制影响要素及之间关系</p>
             </Card>
           </div>
 
