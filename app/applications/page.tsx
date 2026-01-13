@@ -38,22 +38,13 @@ export default function ApplicationsPage() {
             <div className="max-w-4xl mx-auto relative space-y-4">
               {[
                 {
-                  level: "L4: 前沿探索 (Vision)",
-                  title: "极端物性探测",
-                  items: ["超导基础研究", "量子介观系统愿景"],
-                  description: "探索应力场诱导的特殊能带结构，作为未来10年计算架构的理论储备。",
-                  color: "border-purple-500/50 bg-purple-500/10",
-                  icon: <Microscope className="w-5 h-5 text-purple-400" />,
-                  tag: "理论探索"
-                },
-                {
-                  level: "L3: 产业升级 (Growth)",
-                  title: "能源与环境系统",
-                  items: ["固态电池负极材料", "水处理粒子电极"],
-                  description: "利用高模量碳骨架提升能量密度与电催化活性，具备快速落地潜力。",
-                  color: "border-emerald-500/50 bg-emerald-500/10",
-                  icon: <Battery className="w-5 h-5 text-emerald-400" />,
-                  tag: "中试开发"
+                  level: "L1: 核心业务 (Current)",
+                  title: "高性能工业散热",
+                  items: ["AI芯片散热基底", "功率半导体", "新能源汽车"],
+                  description: "解决极端功率密度下的热瓶颈，提供500-800 W/mK的高效散热保障。",
+                  color: "border-blue-500/50 bg-blue-500/20",
+                  icon: <Cpu className="w-5 h-5 text-blue-400" />,
+                  tag: "成熟应用"
                 },
                 {
                   level: "L2: 规模化落地 (Expanding)",
@@ -65,13 +56,22 @@ export default function ApplicationsPage() {
                   tag: "市场放量"
                 },
                 {
-                  level: "L1: 核心业务 (Current)",
-                  title: "高性能工业散热",
-                  items: ["AI芯片散热基底", "功率半导体", "新能源汽车"],
-                  description: "解决极端功率密度下的热瓶颈，提供500-800 W/mK的高效散热保障。",
-                  color: "border-blue-500/50 bg-blue-500/20",
-                  icon: <Cpu className="w-5 h-5 text-blue-400" />,
-                  tag: "成熟应用"
+                  level: "L3: 产业升级 (Growth)",
+                  title: "能源与环境系统",
+                  items: ["固态电池负极材料", "水处理粒子电极"],
+                  description: "利用高模量碳骨架提升能量密度与电催化活性，具备快速落地潜力。",
+                  color: "border-emerald-500/50 bg-emerald-500/10",
+                  icon: <Battery className="w-5 h-5 text-emerald-400" />,
+                  tag: "中试开发"
+                },
+                {
+                  level: "L4: 前沿探索 (Vision)",
+                  title: "极端物性探测",
+                  items: ["超导基础研究", "量子介观系统愿景"],
+                  description: "探索应力场诱导的特殊能带结构，作为未来10年计算架构的理论储备。",
+                  color: "border-purple-500/50 bg-purple-500/10",
+                  icon: <Microscope className="w-5 h-5 text-purple-400" />,
+                  tag: "理论探索"
                 }
               ].map((layer, index) => (
                 <div 
