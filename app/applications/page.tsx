@@ -213,7 +213,7 @@ export default function ApplicationsPage() {
             </Card>
           </div>
 
-          <div className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Power Semiconductors */}
             <Card className="mx-0 sm:mx-0 p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
               <div className="flex items-center justify-center mb-6">
