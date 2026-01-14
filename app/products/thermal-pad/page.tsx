@@ -285,7 +285,7 @@ export default function ThermalPadPage() {
                 我们提供从底层骨架设计、颗粒配方优化到成品规格定制的全链条研发服务。针对客户特定的热流密度需求，通过调整界面应力与增强相分布，提供独有的性能定制化方案。
               </p>
               <Link
-                href="/about"
+                href="/about#zhang-gong"
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 联系应用工程师

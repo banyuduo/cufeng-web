@@ -59,14 +59,14 @@ export default function NonstickCookwarePage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">真正的金刚石不粘锅</h1>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                告别涂层脱落的烦恼。采用专利钎焊固着技术，将真实金刚石颗粒永久键合于锅体表面。超强耐磨、持久不粘、食品安全，使用寿命是传统涂层的10倍以上。
+                告别涂层脱落的烦恼。采用专利活性熔固技术，将真实金刚石颗粒永久键合于锅体表面。超强耐磨、持久不粘、食品安全，使用寿命是传统涂层的10倍以上。
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-sky-600" />
                   </div>
-                  <span>真金刚石颗粒钎焊 - 永不脱落</span>
+                  <span>真金刚石颗粒活性熔固 - 永不脱落</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
@@ -148,8 +148,8 @@ export default function NonstickCookwarePage() {
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-sky-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">永久耐用</h3>
-              <p className="text-sm text-slate-600">钎焊固着，永不脱落，可使用10年以上</p>
+              <h3 className="font-semibold mb-2 text-slate-900">持久耐用</h3>
+              <p className="text-sm text-slate-600">活性熔固，高强度结合，可达10年以上使用寿命。</p>
             </Card>
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function NonstickCookwarePage() {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-slate-900">超长使用寿命</h3>
               <p className="text-slate-600 leading-relaxed mb-4">
-                金刚石颗粒通过钎焊技术永久固着于基材，形成化学键合。较传统涂层寿命提升10倍以上，可承受100,000+次使用循环。金属铲具随意使用，不会损坏涂层。
+                金刚石颗粒通过活性熔固技术永久固着于基材，形成化学键合。较传统涂层寿命提升10倍以上，可承受100,000+次使用循环。金属铲具随意使用，不会损坏涂层。
               </p>
               <div className="text-2xl font-bold text-sky-600">10倍+</div>
               <div className="text-sm text-slate-500">耐磨性提升</div>
@@ -181,8 +181,8 @@ export default function NonstickCookwarePage() {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-slate-900">食品安全认证</h3>
               <p className="text-slate-600 leading-relaxed mb-4">
-                金刚石材料本身无毒无害，涂层不含PFOA/PTFE等有害物质。已通过GB
-                4806.1-2016食品接触材料安全检测，经FDA认可，可放心使用。
+                金刚石材料本身无毒无害，涂层不含PFOA/PTFE等有害物质。可通过GB
+                4806.1-2016食品接触材料安全检测，具备通过FDA认可的能力，可放心使用。
               </p>
               <div className="text-2xl font-bold text-green-600">0添加</div>
               <div className="text-sm text-slate-500">有害化学物质</div>

@@ -211,7 +211,7 @@ export default function PatentsPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-mono text-sky-400 mb-1">Stage 01</div>
-                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">精密钎焊金刚石工具</h5>
+                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">精密活性熔固钻石工具</h5>
                         <p className="text-xs text-slate-400 leading-relaxed">建立极端工况下的界面连接与结构稳定性工程能力</p>
                       </div>
                     </div>
@@ -422,14 +422,14 @@ export default function PatentsPage() {
                 </div>
                 <div className="flex-1">
                   <div className="text-sky-400 text-xs font-medium">Stage 01</div>
-                  <div className="text-white font-bold">钎焊金刚石工具</div>
+                  <div className="text-white font-bold">活性熔固钻石工具</div>
                 </div>
                 <ChevronDown
                   className={`w-5 h-5 text-sky-400 transition-transform ${expandedStage === 1 ? "rotate-180" : ""}`}
                 />
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">
-                以钎焊金刚石工具为核心，建立了在极端工况下对金刚石界面、高温连接与结构稳定性的工程能力。
+                以活性熔固钻石工具为核心，建立了在极端工况下对金刚石界面、高温连接与结构稳定性的工程能力。
               </p>
 
               {expandedStage === 1 && (
@@ -437,7 +437,7 @@ export default function PatentsPage() {
                   <div>
                     <div className="text-sky-400 text-sm font-medium mb-2">功能延伸</div>
                     <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
-                      基于钎焊金刚石工具阶段积累的界面与耐磨技术，相关能力被延伸至耐磨、稳定与安全要求更高的民用功能场景，
+                      基于活性熔固钻石工具阶段积累的界面与耐磨技术，相关能力被延伸至耐磨、稳定与安全要求更高的民用功能场景，
                       <strong className="text-white">不粘涂层</strong>即属于该阶段的功能延伸应用。
                     </p>
                   </div>
@@ -860,7 +860,7 @@ export default function PatentsPage() {
                 <ul className="space-y-2 text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-sky-400">•</span>
-                    <span>金刚石纤维活化钎焊导热复合材料专利（1 项）</span>
+                    <span>基于钻石固着的新型不粘锅具专利（2项）</span>
                   </li>
                 </ul>
               </div>
@@ -880,7 +880,7 @@ export default function PatentsPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-cyan-400">•</span>
-                    <span>金刚石纤维活化钎焊导热复合材料专利（1 项）</span>
+                    <span>铜纤维活性熔固金刚石导热复合材料专利（1项）</span>
                   </li>
                 </ul>
               </div>

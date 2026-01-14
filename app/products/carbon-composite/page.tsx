@@ -423,10 +423,10 @@ export default function CarbonCompositePage() {
             </p>
             <div className="flex items-center gap-4">
               <Button size="lg" className="bg-white text-sky-600 hover:bg-slate-100" asChild>
-                <Link href="/about">项目合作</Link>
+                <Link href="/cooperation#contact">项目合作</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
-                <Link href="/cooperation#contact">技术交流</Link>
+                <Link href="/about#wang">技术交流</Link>
               </Button>
             </div>
           </Card>
