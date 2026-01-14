@@ -88,7 +88,7 @@ export function FooterNav() {
                 </li>
                 <li>
                   <Link href="/news" className="hover:text-sky-600 transition-colors">
-                    新闻动态
+                    技术视界
                   </Link>
                 </li>
                 <li>
