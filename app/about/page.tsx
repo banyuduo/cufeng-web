@@ -140,7 +140,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* 王博士 */}
-            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
+            <Card id="wang" className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-sky-600/20 flex items-center justify-center">
                   <GraduationCap className="w-6 h-6 text-sky-400" />
@@ -234,7 +234,7 @@ export default function AboutPage() {
             </Card>
 
             {/* 张工 */}
-            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
+            <Card id="zhang-gong" className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center">
                   <Users className="w-6 h-6 text-purple-400" />

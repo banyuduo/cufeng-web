@@ -560,14 +560,17 @@ export default function DiamondToolsPage() {
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white" asChild>
-              <Link href="/cooperation">联系工程师</Link>
+              <Link href="/about#zhang-gong">联系工程师</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+              asChild
             >
-              下载产品目录
+              <a href="/docs/cufeng-diamond-products.pdf" target="_blank" rel="noopener noreferrer">
+                下载产品画册
+              </a>
             </Button>
           </div>
         </div>

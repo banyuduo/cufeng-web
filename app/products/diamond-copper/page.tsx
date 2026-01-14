@@ -289,41 +289,35 @@ export default function DiamondCopperPage() {
             <div>
               <h3 className="text-xl font-semibold mb-6 text-slate-900">核心技术</h3>
               <Card className="p-6 bg-white border-slate-200 mb-6">
-                <h4 className="font-semibold mb-3 text-slate-900">结构化金刚石骨架</h4>
+                <h4 className="font-semibold mb-3 text-slate-900">三维结构化金刚石骨架</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  采用大、中、小三种粒度的镀钛金刚石颗粒构建自支撑金刚石骨架，金刚石体积分数达80-90vol%。
-                  通过精密堆积形成相互接触的三维连续多孔骨架。
+                  采用多级粒径梯度配比技术，利用特殊表面改性的金刚石颗粒构建自支撑三维连续骨架。通过精密堆积算法优化，金刚石相实现极高比例的体积分数，形成互联互通的高速声子传输通道。
                 </p>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
-                    大颗粒金刚石（0.1-2mm）：核心骨架
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
-                    中颗粒金刚石：填充大颗粒间隙
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
-                    小颗粒金刚石：填充细小空隙
-                  </li>
-                </ul>
+                <div className="space-y-3">
+                  <div className="p-3 bg-slate-50 rounded-lg">
+                    <div className="text-xs font-semibold text-slate-700 mb-1">级配逻辑</div>
+                    <div className="text-xs text-slate-600">大尺寸颗粒构建主体框架，中、小颗粒实现微米级空隙的逐级精密填充。</div>
+                  </div>
+                  <div className="p-3 bg-slate-50 rounded-lg">
+                    <div className="text-xs font-semibold text-slate-700 mb-1">界面改性</div>
+                    <div className="text-xs text-slate-600">颗粒表面预处理技术确保了骨架极高的自支撑强度与界面热导。</div>
+                  </div>
+                </div>
               </Card>
 
               <Card className="p-6 bg-white border-slate-200">
-                <h4 className="font-semibold mb-3 text-slate-900">活性熔固技术</h4>
+                <h4 className="font-semibold mb-3 text-slate-900">ToSpike 活性熔固方案</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  使用铜-硅-硼三元合金或银-铜-硅-硼四元合金作为活性熔固合金。较高含量的硅显著降低熔点，
-                  形成优异流动性的液相，渗透填充金刚石骨架微小缝隙。
+                  依托自研的低熔点活性钎料体系，我们突破了传统金刚石复合材料润湿性差的瓶颈。该技术允许合金液相在极佳的流动性下，自发渗透至复杂的骨架深处，构建出近乎完美的传热网络。
                 </p>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-3">
                   <div className="p-3 bg-slate-50 rounded-lg">
-                    <div className="text-xs text-slate-600 mb-1">熔固温度</div>
-                    <div className="font-semibold text-slate-900">800-950°C</div>
+                    <div className="text-xs font-semibold text-slate-700 mb-1">技术优势</div>
+                    <div className="text-xs text-slate-600">温和的工艺条件有效避免了金刚石表面的热损伤。</div>
                   </div>
                   <div className="p-3 bg-slate-50 rounded-lg">
-                    <div className="text-xs text-slate-600 mb-1">压力辅助</div>
-                    <div className="font-semibold text-slate-900">0.5-10 MPa</div>
+                    <div className="text-xs font-semibold text-slate-700 mb-1">界面强度</div>
+                    <div className="text-xs text-slate-600">压力辅助下的化学键合，赋予材料卓越的机械性能与热稳定性。</div>
                   </div>
                 </div>
               </Card>
@@ -440,7 +434,7 @@ export default function DiamondCopperPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 公开了通过多级金刚石颗粒堆积构建骨架，活性熔固液相填充的制备方法。 实现高导热、低成本、可大尺寸制备。
               </p>
-              <div className="text-xs text-slate-500">申请中</div>
+              <div className="text-xs text-slate-500">申请号：202511708386.6</div>
             </Card>
 
             <Card className="p-6 bg-white border-slate-200">
@@ -449,7 +443,7 @@ export default function DiamondCopperPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 详细描述了大、中、小三级金刚石颗粒配比、镀钛处理、包衣工艺、 限位筛网辅助填充等关键技术。
               </p>
-              <div className="text-xs text-slate-500">申请中</div>
+              <div className="text-xs text-slate-500">申请号：202511708387.0</div>
             </Card>
           </div>
         </div>

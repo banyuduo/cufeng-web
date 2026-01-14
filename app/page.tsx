@@ -116,8 +116,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-slate-900">专利护城河</h3>
               <p className="text-slate-600 leading-relaxed">
-                已围绕制备路径、键合结构设计、应力调控方法及功能外延，申请并布局近 10 项核心专利。
-                形成相对完整的技术链条，可支持后续的授权、转让或合作开发。
+                已围绕制备路径、键合结构设计、应力调控方法及功能外延，深度布局近 10 项核心专利。该知识产权矩阵已形成闭环保护，确立了坚实的技术边界，为后续的研发迭代与应用拓展提供了全方位的合规保障与法律护航。
               </p>
             </Card>
 
@@ -125,16 +124,13 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Handshake className="w-6 h-6 text-sky-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">合作与技术转让</h3>
+              <h3 className="text-xl font-semibold mb-3 text-slate-900">合作与产业延伸</h3>
               <div className="text-slate-600 leading-relaxed space-y-3">
-                <p>本项目处于源头平台阶段，已具备工艺闭环与样品交付能力。</p>
-                <p className="font-medium">我们对以下模式保持开放：</p>
-                <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>专利组合的整体或部分买断</li>
-                  <li>按应用领域或区域进行独占/非独占授权</li>
-                  <li>与具备长周期研发能力的机构或企业联合推进验证与放大</li>
-                </ul>
-                <p className="text-sm">我们优先寻找能够承担后续实验验证、规模化制备及产业化资源的合作伙伴。</p>
+                <p>本项目已完成从实验室到工艺闭环的跃迁，具备稳定的样品交付能力。</p>
+                <p className="font-medium">我们的路径与期待：</p>
+                <p className="text-sm">
+                  在持续推进自主产业化进程的同时，我们对全球范围内的深度协作保持开放。无论是专利层面的战略授权，还是针对特定领域的联合开发，我们都旨在通过资源共享加速技术普惠。我们有信心通过持续的源头创新确立行业标杆，同时也期待与具备长周期战略视野的伙伴并肩，共同定义下一代热管理材料的物理边界。
+                </p>
               </div>
             </Card>
           </div>
