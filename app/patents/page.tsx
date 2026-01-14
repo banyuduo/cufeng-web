@@ -37,11 +37,11 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               Technical Architecture & Patent Portfolio
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-[32px] font-bold text-white mb-6 leading-tight">
               技术架构与演化路径
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed mb-4">构建全碳物理系统的确定性</p>
-            <p className="text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
               我们不只是在制造一种材料，而是在定义一套基于应力工程（Stress Engineering）的底层硬件体系。
               我们的技术路线经历了从理论假说到实物验证的完整闭环，并由10余项核心专利构成严密的知识产权保护网。
             </p>
@@ -66,7 +66,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               Cognition & Evolution Path
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">跨领域连续认知链：从材料物性到计算内核</h2>
+            <h2 className="text-[28px] font-bold text-white mb-4">跨领域连续认知链：从材料物性到计算内核</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">我们的研发并非孤立的点，而是一条清晰的演化曲线</p>
           </div>
 
@@ -164,7 +164,7 @@ export default function PatentsPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-3">核心逻辑总结</h3>
-                  <p className="text-slate-300 leading-relaxed text-base">
+                  <p className="text-slate-300 leading-relaxed text-lg">
                     我们的研发并非孤立的点，而是一条清晰的演化曲线。通过对 sp²-sp³
                     键合结构的应力调控，我们将材料从单纯的"散热工具"提升为具备"物理计算潜力"的功能基底。
                     这条演化路径不仅验证了技术的可行性，更揭示了材料科学与计算物理交叉的巨大想象空间。
@@ -188,7 +188,7 @@ export default function PatentsPage() {
           {/* 技术演进架构图 */}
           <div className="mt-12 max-w-7xl mx-auto">
             <div className="p-4 md:p-8 bg-slate-950/80 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl">
-              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-8 md:mb-12">技术深化路径与平台架构全景图</h3>
+              <h3 className="text-[26px] font-bold text-white text-center mb-8 md:mb-12">技术深化路径与平台架构全景图</h3>
               
               <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative">
                 {/* 左侧：演化路径 */}
@@ -205,9 +205,9 @@ export default function PatentsPage() {
                         <Wrench className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-mono text-sky-400 mb-1">Stage 01</div>
-                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">精密活性熔固钻石工具</h5>
-                        <p className="text-xs text-slate-400 leading-relaxed">建立极端工况下的界面连接与结构稳定性工程能力</p>
+                        <div className="text-base font-mono text-sky-400 mb-1">Stage 01</div>
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">精密活性熔固钻石工具</h5>
+                        <p className="text-base text-slate-400 leading-relaxed">建立极端工况下的界面连接与结构稳定性工程能力</p>
                       </div>
                     </div>
                   </Card>
@@ -227,9 +227,9 @@ export default function PatentsPage() {
                         <Thermometer className="w-5 h-5 md:w-6 md:h-6 text-cyan-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-mono text-cyan-400 mb-1">Stage 02</div>
-                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">金刚石-铜复合散热基底</h5>
-                        <p className="text-xs text-slate-400 leading-relaxed">实现从工程工具向功能材料的跃迁</p>
+                        <div className="text-base font-mono text-cyan-400 mb-1">Stage 02</div>
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">金刚石-铜复合散热基底</h5>
+                        <p className="text-base text-slate-400 leading-relaxed">实现从工程工具向功能材料的跃迁</p>
                       </div>
                     </div>
                   </Card>
@@ -249,9 +249,9 @@ export default function PatentsPage() {
                         <Layers className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-mono text-purple-400 mb-1">Stage 03</div>
-                        <h5 className="text-sm md:text-base text-white font-bold mb-1 md:mb-2">全碳复合功能材料</h5>
-                        <p className="text-xs text-slate-400 leading-relaxed">构建完全由碳体系组成的复合材料平台</p>
+                        <div className="text-base font-mono text-purple-400 mb-1">Stage 03</div>
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">全碳复合功能材料</h5>
+                        <p className="text-base text-slate-400 leading-relaxed">构建完全由碳体系组成的复合材料平台</p>
                       </div>
                     </div>
                   </Card>
@@ -286,10 +286,10 @@ export default function PatentsPage() {
                           <h4 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">核心内核</h4>
                           <div className="space-y-2 md:space-y-3">
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
-                              <div className="text-amber-300 font-mono font-semibold text-xs md:text-sm">sp²–sp³ 化学键合</div>
+                              <div className="text-amber-300 font-mono font-semibold text-base">sp²–sp³ 化学键合</div>
                             </div>
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-slate-900/60 rounded-lg border border-amber-500/30">
-                              <div className="text-amber-300 font-mono font-semibold text-xs md:text-sm">内生应力调控</div>
+                              <div className="text-amber-300 font-mono font-semibold text-base">内生应力调控</div>
                             </div>
                           </div>
                         </div>
@@ -320,8 +320,8 @@ export default function PatentsPage() {
                         <Plane className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-sm md:text-base text-white font-bold mb-2">极端工况应用</h5>
-                        <div className="space-y-1.5 text-xs text-slate-400 leading-relaxed text-left">
+                        <h5 className="text-base text-white font-bold mb-2">极端工况应用</h5>
+                        <div className="space-y-1.5 text-base text-slate-400 leading-relaxed text-left">
                           <div>• 航天散热</div>
                           <div>• 大功率线圈</div>
                           <div>• 核聚变热件</div>
@@ -345,8 +345,8 @@ export default function PatentsPage() {
                         <Microscope className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-sm md:text-base text-white font-bold mb-2">超导材料研究平台</h5>
-                        <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-[10px] text-purple-300 font-medium mt-1">
+                        <h5 className="text-base text-white font-bold mb-2">超导材料研究平台</h5>
+                        <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-base text-purple-300 font-medium mt-1">
                           理论探索阶段
                         </div>
                       </div>
@@ -368,8 +368,8 @@ export default function PatentsPage() {
                         <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-sm md:text-base text-white font-bold mb-2">量子计算潜力</h5>
-                        <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-[10px] text-indigo-300 font-medium mt-1">
+                        <h5 className="text-base text-white font-bold mb-2">量子计算潜力</h5>
+                        <div className="inline-block px-2 py-1 bg-slate-800/60 rounded text-base text-indigo-300 font-medium mt-1">
                           远景规划阶段
                         </div>
                       </div>
@@ -400,8 +400,8 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               Engineering Evolution Path
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">技术演化路径</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">从工程工具到全碳材料体系的系统性演化</p>
+            <h2 className="text-[28px] font-bold text-white mb-4">技术演化路径</h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">从工程工具到全碳材料体系的系统性演化</p>
           </div>
 
           {/* Three Stages - Horizontal Cards */}
@@ -423,32 +423,32 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-sky-400 transition-transform ${expandedStage === 1 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-base text-slate-400 leading-relaxed">
                 以活性熔固钻石工具为核心，建立了在极端工况下对金刚石界面、高温连接与结构稳定性的工程能力。
               </p>
 
               {expandedStage === 1 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-slate-700">
                   <div>
-                    <div className="text-sky-400 text-sm font-medium mb-2">功能延伸</div>
-                    <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
+                    <div className="text-sky-400 text-base font-medium mb-2">功能延伸</div>
+                    <p className="text-base text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
                       基于活性熔固钻石工具阶段积累的界面与耐磨技术，相关能力被延伸至耐磨、稳定与安全要求更高的民用功能场景，
                       <strong className="text-white">不粘涂层</strong>即属于该阶段的功能延伸应用。
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-sky-400 text-sm font-medium mb-3">专利支撑</div>
+                    <div className="text-sky-400 text-base font-medium mb-3">专利支撑</div>
                     <div className="space-y-2">
                       <div className="p-3 bg-slate-900/50 rounded-lg">
-                        <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                        <div className="text-xs text-slate-300">一种基于金刚石涂层的高耐磨不粘表面及其制备方法</div>
-                        <div className="font-mono text-xs text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种基于金刚石涂层的高耐磨不粘表面及其制备方法</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
                       </div>
                       <div className="p-3 bg-slate-900/50 rounded-lg">
-                        <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                        <div className="text-xs text-slate-300">一种适用于高温与复杂工况的不粘功能复合涂层结构</div>
-                        <div className="font-mono text-xs text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种适用于高温与复杂工况的不粘功能复合涂层结构</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
                       </div>
                     </div>
                   </div>
@@ -473,55 +473,55 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-cyan-400 transition-transform ${expandedStage === 2 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-base text-slate-400 leading-relaxed">
                 引入金属相形成复合材料，实现从工程工具向功能材料的跃迁，重点在于导热、结构复合与界面传输能力。
               </p>
 
               {expandedStage === 2 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-slate-700">
                   <div>
-                    <div className="text-cyan-400 text-sm font-medium mb-2">技术分支说明</div>
-                    <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
+                    <div className="text-cyan-400 text-base font-medium mb-2">技术分支说明</div>
+                    <p className="text-base text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
                       该阶段的专利布局同时覆盖面向规模化应用的低成本方案，以及面向高端散热与极限性能需求的高性能方案，形成互补的技术组合。
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-cyan-400 text-sm font-medium mb-2">典型功能形态</div>
-                    <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
+                    <div className="text-cyan-400 text-base font-medium mb-2">典型功能形态</div>
+                    <p className="text-base text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
                       <strong className="text-white">导热垫片、散热基板</strong>
                       等应用属于金刚石铜复合材料阶段的典型功能形态，其目标是将材料的高导热与结构稳定性转化为可工程化的热管理解决方案。
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-cyan-400 text-sm font-medium mb-3">专利支撑</div>
+                    <div className="text-cyan-400 text-base font-medium mb-3">专利支撑</div>
 
                     <div className="mb-3">
-                      <div className="text-xs text-cyan-300 font-medium mb-2">金刚石铜复合材料（低成本 / 高性能）</div>
+                      <div className="text-base text-cyan-300 font-medium mb-2">金刚石铜复合材料（低成本 / 高性能）</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                          <div className="text-xs text-slate-300">一种金刚石/铜复合材料及其制备方法</div>
-                          <div className="font-mono text-xs text-slate-500 mt-1">申请号: 2025117083866</div>
+                          <div className="text-base text-slate-500 mb-1">发明专利</div>
+                          <div className="text-base text-slate-300">一种金刚石/铜复合材料及其制备方法</div>
+                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 2025117083866</div>
                         </div>
                         <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                          <div className="text-xs text-slate-300">一种结构化金刚石热管理基板及其制备方法</div>
-                          <div className="font-mono text-xs text-slate-500 mt-1">申请号: 2025117083870</div>
+                          <div className="text-base text-slate-500 mb-1">发明专利</div>
+                          <div className="text-base text-slate-300">一种结构化金刚石热管理基板及其制备方法</div>
+                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 2025117083870</div>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-xs text-cyan-300 font-medium mb-2">柔性导热材料</div>
+                      <div className="text-base text-cyan-300 font-medium mb-2">柔性导热材料</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                          <div className="text-xs text-slate-300">
+                          <div className="text-base text-slate-500 mb-1">发明专利</div>
+                          <div className="text-base text-slate-300">
                             一种基于活性钎焊金属骨架增强的柔性高导热复合材料及其制备方法
                           </div>
-                          <div className="font-mono text-xs text-slate-500 mt-1">申请号: 2025119637289</div>
+                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 2025119637289</div>
                         </div>
                       </div>
                     </div>
@@ -547,56 +547,56 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-purple-400 transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-base text-slate-400 leading-relaxed">
                 通过去金属化，构建完全由碳体系组成的复合材料，为更复杂的结构调控和物理行为探索提供条件。
               </p>
 
               {expandedStage === 3 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-slate-700">
                   <div>
-                    <div className="text-purple-400 text-sm font-medium mb-2">形态说明</div>
-                    <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
+                    <div className="text-purple-400 text-base font-medium mb-2">形态说明</div>
+                    <p className="text-base text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg">
                       全碳复合材料阶段同时覆盖结构型与柔性型两种形态，以适应不同热管理与结构集成需求。
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-purple-400 text-sm font-medium mb-3">专利支撑</div>
+                    <div className="text-purple-400 text-base font-medium mb-3">专利支撑</div>
 
                     <div className="mb-3">
-                      <div className="text-xs text-purple-300 font-medium mb-2">结构型全碳复合材料（散热片）</div>
+                      <div className="text-base text-purple-300 font-medium mb-2">结构型全碳复合材料（散热片）</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                          <div className="text-xs text-slate-300">
+                          <div className="text-base text-slate-500 mb-1">发明专利</div>
+                          <div className="text-base text-slate-300">
                             一种基于金刚石原位低温石墨化键合的高导热复合材料及其制备方法与应用
                           </div>
-                          <div className="font-mono text-xs text-slate-500 mt-1">申请号: 2025115185390</div>
+                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 2025115185390</div>
                         </div>
                       </div>
                     </div>
 
                     <div className="mb-3">
-                      <div className="text-xs text-purple-300 font-medium mb-2">柔性全碳复合材料（垫片）</div>
+                      <div className="text-base text-purple-300 font-medium mb-2">柔性全碳复合材料（垫片）</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                          <div className="text-xs text-slate-300">一种高模量多孔碳宿主材料及其制备方法与应用</div>
-                          <div className="font-mono text-xs text-slate-500 mt-1">申请号: 待公开</div>
+                          <div className="text-base text-slate-500 mb-1">发明专利</div>
+                          <div className="text-base text-slate-300">一种高模量多孔碳宿主材料及其制备方法与应用</div>
+                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
                         </div>
                       </div>
                     </div>
 
                     <div className="pt-3 border-t border-purple-700/30">
-                      <p className="text-xs text-purple-300 mb-2 italic">
+                      <p className="text-base text-purple-300 mb-2 italic">
                         该专利属于全碳材料平台在能源系统方向的结构与功能延伸应用。
                       </p>
                       <div className="p-3 bg-slate-900/50 rounded-lg">
-                        <div className="text-xs text-slate-500 mb-1">发明专利</div>
-                        <div className="text-xs text-slate-300">
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">
                           一种基于分区功能化骨架的一体化全固态电池及其共烧结制备方法
                         </div>
-                        <div className="font-mono text-xs text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
                       </div>
                     </div>
                   </div>
@@ -615,7 +615,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-pink-500/20 rounded-full text-pink-300 text-sm font-medium mb-6 border border-pink-500/30">
               Platform Core
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">平台核心</h2>
+            <h2 className="text-[28px] font-bold text-white mb-4">平台核心</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">底层技术原理与可调控参数空间</p>
           </div>
 
@@ -639,7 +639,7 @@ export default function PatentsPage() {
             <div className="p-8 bg-slate-950/60 rounded-xl border border-pink-500/30">
               <h4 className="text-pink-300 font-semibold text-lg mb-6">平台核心原理说明</h4>
 
-              <div className="space-y-4 text-sm leading-relaxed text-slate-300">
+              <div className="space-y-4 text-base leading-relaxed text-slate-300">
                 <p>在全碳复合材料体系中，碳原子可以以不同的键合方式存在：</p>
 
                 <ul className="list-disc list-inside space-y-2 ml-4">
@@ -668,10 +668,10 @@ export default function PatentsPage() {
                   <div className="space-y-4">
                     {/* sp³ dominant */}
                     <div className="p-5 bg-slate-950/70 rounded-lg border border-blue-500/30">
-                      <div className="text-blue-300 font-mono font-semibold mb-3 text-sm">
+                      <div className="text-blue-300 font-mono font-semibold mb-3 text-base">
                         sp³ 占主导，相对低 sp² 含量
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-sm">
+                      <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-blue-400 mt-0.5">→</span>
                           <span>结构刚性强、热稳定性高</span>
@@ -685,10 +685,10 @@ export default function PatentsPage() {
 
                     {/* sp² dominant */}
                     <div className="p-5 bg-slate-950/70 rounded-lg border border-green-500/30">
-                      <div className="text-green-300 font-mono font-semibold mb-3 text-sm">
+                      <div className="text-green-300 font-mono font-semibold mb-3 text-base">
                         sp² 占主导，相对高 sp² 含量
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-sm">
+                      <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-green-400 mt-0.5">→</span>
                           <span>导热/导电性显著提升</span>
@@ -702,10 +702,10 @@ export default function PatentsPage() {
 
                     {/* Mixed state */}
                     <div className="p-5 bg-slate-950/70 rounded-lg border border-purple-500/30">
-                      <div className="text-purple-300 font-mono font-semibold mb-3 text-sm">
+                      <div className="text-purple-300 font-mono font-semibold mb-3 text-base">
                         中间态 sp²/sp³ 混合比例
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-sm">
+                      <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-purple-400 mt-0.5">→</span>
                           <span>内生应力最大</span>
@@ -719,8 +719,8 @@ export default function PatentsPage() {
 
                     {/* Control parameters */}
                     <div className="mt-5 pt-5 border-t border-pink-500/30">
-                      <p className="text-slate-400 mb-3 text-sm">这些参数通常通过以下方式进行协同调节：</p>
-                      <ul className="space-y-2 ml-4 text-sm text-slate-300">
+                      <p className="text-slate-400 mb-3 text-base">这些参数通常通过以下方式进行协同调节：</p>
+                      <ul className="space-y-2 ml-4 text-base text-slate-300">
                         <li className="flex items-start gap-2">
                           <span className="text-pink-400 font-bold">•</span>
                           <span>
@@ -742,7 +742,7 @@ export default function PatentsPage() {
                           </span>
                         </li>
                       </ul>
-                      <p className="text-slate-400 mt-3 text-sm">以达到目标的多尺度结构状态。</p>
+                      <p className="text-slate-400 mt-3 text-base">以达到目标的多尺度结构状态。</p>
                     </div>
                   </div>
                 </div>
@@ -765,13 +765,13 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-6 border border-indigo-500/30">
               Platform Extension
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">平台延展：sp²–sp³ 结构的物理潜力窗口</h2>
+            <h2 className="text-[28px] font-bold text-white mb-4">平台延展：sp²–sp³ 结构的物理潜力窗口</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">远期物理潜力：全碳 sp²–sp³ 结构的涌现行为</p>
           </div>
 
           <div className="max-w-6xl mx-auto mb-12">
             <Card className="p-8 bg-slate-800/50 backdrop-blur-sm border-indigo-500/30">
-              <p className="text-slate-300 leading-relaxed text-center">
+              <p className="text-lg leading-relaxed text-center text-slate-300">
                 在去金属化的全碳复合材料阶段，我们构建了一类以 sp²–sp³
                 化学键合与内生应力场为核心的连续碳网络结构。该结构在工程层面已表现出优异的导热、力学与长期稳定性，而在更高层次上，也自然打开了一系列尚未被充分探索的物理窗口。
               </p>
@@ -786,10 +786,10 @@ export default function PatentsPage() {
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-indigo-300 font-bold text-lg mb-4">高内应力调控下的电子态重构与非常规超导潜力</h3>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">
+              <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 在强内生应力与非均匀键合环境下，局域电子结构可能发生重整，为非常规超导或相关集体现象提供结构基础。
               </p>
-              <p className="text-sm text-slate-400 leading-relaxed italic">
+              <p className="text-lg text-slate-400 leading-relaxed italic">
                 在现有材料体系中，同时具备强内生应力、连续 sp²–sp³
                 键合以及可工程调控窗口的碳基结构仍属少见，这使该平台在非常规超导材料的基础结构探索中具备独特性。
               </p>
@@ -801,7 +801,7 @@ export default function PatentsPage() {
                 <Layers className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-violet-300 font-bold text-lg mb-4">非线性耦合碳网络的混沌动力学行为</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-lg text-slate-300 leading-relaxed">
                 sp²–sp³
                 互连网络在介观尺度上形成高度耦合、无序但可控的结构单元，为复杂动力学与类储层计算行为提供物理载体。
               </p>
@@ -813,10 +813,10 @@ export default function PatentsPage() {
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-purple-300 font-bold text-lg mb-4">量子储层计算的远期探索</h3>
-              <p className="text-sm text-slate-300 leading-relaxed mb-3">
+              <p className="text-lg text-slate-300 leading-relaxed mb-3">
                 相较于超导等凝聚态物理方向，该方向更偏向远期探索。我们正在探索基于平台的"量子储层计算"模型，但其不作为当前的主要技术目标。
               </p>
-              <p className="text-xs text-slate-500 italic">
+              <p className="text-base text-slate-500 italic">
                 该平台并非以当前量子计算架构为直接目标，而是为探索新型、非冯·诺依曼、物理驱动计算范式提供材料级基础。
               </p>
             </Card>
@@ -824,7 +824,7 @@ export default function PatentsPage() {
 
           {/* Disclaimer */}
           <Card className="max-w-5xl mx-auto p-6 bg-gradient-to-r from-amber-900/20 to-orange-900/20 border-amber-500/30">
-            <p className="text-sm text-slate-300 leading-relaxed text-center italic">
+            <p className="text-lg text-slate-300 leading-relaxed text-center italic">
               需要强调的是，上述方向目前仍处于物理探索阶段，尚未进入工程化或产品化进程。但正是这种尚未被充分开发的物理上限，使该平台在长期战略层面具备区别于传统功能材料的潜在价值。
             </p>
           </Card>
@@ -852,7 +852,7 @@ export default function PatentsPage() {
                   </span>
                   工程起点与功能延伸
                 </h3>
-                <ul className="space-y-2 text-slate-300 ml-11">
+                <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-sky-400">•</span>
                     <span>基于钻石固着的新型不粘锅具专利（2项）</span>
@@ -868,7 +868,7 @@ export default function PatentsPage() {
                   </span>
                   功能材料阶段
                 </h3>
-                <ul className="space-y-2 text-slate-300 ml-11">
+                <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-cyan-400">•</span>
                     <span>金刚石铜复合材料及其制备方法专利（低成本/高性能）（2 项）</span>
@@ -888,7 +888,7 @@ export default function PatentsPage() {
                   </span>
                   全碳体系阶段
                 </h3>
-                <ul className="space-y-2 text-slate-300 ml-11">
+                <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-purple-400">•</span>
                     <span>基于原位石墨化键合的高导热全碳复合材料专利（1 项）</span>
@@ -912,7 +912,7 @@ export default function PatentsPage() {
                   </span>
                   平台核心技术
                 </h3>
-                <ul className="space-y-2 text-slate-300 ml-11">
+                <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-pink-400">•</span>
                     <span>sp²–sp³ 化学键合内生应力复合材料及制备方法专利（1 项）</span>
@@ -923,7 +923,7 @@ export default function PatentsPage() {
 
             {/* 总结说明 */}
             <div className="p-6 bg-slate-900/80 rounded-xl border border-sky-500/20 mb-8">
-              <p className="text-slate-300 leading-relaxed text-center">
+              <p className="text-lg text-slate-300 leading-relaxed text-center">
                 上述专利组合构建了从<strong className="text-sky-400">材料制备</strong>、
                 <strong className="text-cyan-400">结构设计</strong>到
                 <strong className="text-purple-400">功能扩展</strong>的完整知识产权体系。
