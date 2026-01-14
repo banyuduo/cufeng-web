@@ -1,5 +1,6 @@
 import { MapPin, Mail, Phone, Globe } from "lucide-react"
 import { Navigation } from "@/components/navigation"
+import { FooterNav } from "@/components/footer-nav"
 
 export default function CooperationPage() {
   return (
@@ -227,12 +228,8 @@ export default function CooperationPage() {
         </div>
       </section>
 
-      {/* 简化页脚 */}
-      <footer className="border-t border-slate-200 bg-white py-8 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} 南京簇锋机电科技有限公司</p>
-        </div>
-      </footer>
+      {/* Footer */}
+      <FooterNav />
     </div>
   )
 }
