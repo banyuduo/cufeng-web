@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, Zap, Layers, FlaskConical, Sparkles, ChefHat } from "lucide-react"
+import { ArrowRight, Zap, Layers, FlaskConical, Sparkles, ChefHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -14,10 +14,6 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            返回首页
-          </Link>
           <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">产品中心</h1>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
             从消费级不粘锅产品到前沿碳基复合材料，我们的每一项技术都代表着材料科学的突破

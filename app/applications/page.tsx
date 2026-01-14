@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, Cpu, Zap, Car, Radio, Sparkles, Home, Battery, Plane, FlaskConical, Droplets, FileText, Microscope, ShieldCheck, ArrowUpRight } from "lucide-react"
+import { Cpu, Zap, Car, Radio, Sparkles, Home, Battery, Plane, FlaskConical, Droplets, FileText, Microscope, ShieldCheck, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -14,10 +14,6 @@ export default function ApplicationsPage() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            返回首页
-          </Link>
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">应用领域矩阵</h1>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
             基于 sp²–sp³

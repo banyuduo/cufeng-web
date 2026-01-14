@@ -102,9 +102,6 @@ export default function NewsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm text-primary mb-6">
-              2018 - 2025 · 七年磨一剑
-            </div>
             <h1 className="text-5xl font-bold mb-6 text-balance">技术视界</h1>
             <p className="text-xl text-muted-foreground text-pretty">
               聚焦公司技术突破与合作动态，探索行业前沿理论与技术趋势，构建从基础研究到产业应用的完整知识体系

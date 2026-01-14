@@ -36,89 +36,93 @@ export function FooterNav() {
       <footer className="border-t border-slate-200 bg-slate-50 py-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
-            <div>
-              <div className="font-bold text-lg mb-4 text-slate-900">簇锋科技 | ToSpike</div>
-              <p className="text-sm text-slate-600">sp²–sp³ 碳基界面平台技术</p>
+            {/* 产品 - 移动端第一行左 */}
+            <div className="order-1 lg:order-2">
+              <div className="font-semibold mb-4 text-slate-900 text-left">产品</div>
+              <ul className="space-y-2 text-sm text-slate-600 text-left">
+                <li>
+                  <Link href="/products/nonstick-cookware" className="hover:text-sky-600 transition-colors">
+                    金刚石不粘锅
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products/diamond-copper" className="hover:text-sky-600 transition-colors">
+                    金刚石铜材料
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products/thermal-pad" className="hover:text-sky-600 transition-colors">
+                    柔性导热垫片
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products/carbon-composite" className="hover:text-sky-600 transition-colors">
+                    碳基复合材料
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products/diamond-tools" className="hover:text-sky-600 transition-colors">
+                    超磨熔固工具
+                  </Link>
+                </li>
+              </ul>
             </div>
-          <div>
-            <div className="font-semibold mb-4 text-slate-900">产品</div>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li>
-                <Link href="/products/nonstick-cookware" className="hover:text-sky-600 transition-colors">
-                  金刚石不粘锅
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/diamond-copper" className="hover:text-sky-600 transition-colors">
-                  金刚石铜材料
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/thermal-pad" className="hover:text-sky-600 transition-colors">
-                  柔性导热垫片
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/carbon-composite" className="hover:text-sky-600 transition-colors">
-                  碳基复合材料
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/diamond-tools" className="hover:text-sky-600 transition-colors">
-                  超磨熔固工具
-                </Link>
-              </li>
-            </ul>
+            {/* 技术与交流 - 移动端第一行右 */}
+            <div className="order-2 lg:order-3">
+              <div className="font-semibold mb-4 text-slate-900 text-left">技术与交流</div>
+              <ul className="space-y-2 text-sm text-slate-600 text-left">
+                <li>
+                  <Link href="/about" className="hover:text-sky-600 transition-colors">
+                    关于我们
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/patents" className="hover:text-sky-600 transition-colors">
+                    技术架构
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/applications" className="hover:text-sky-600 transition-colors">
+                    应用领域
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/news" className="hover:text-sky-600 transition-colors">
+                    新闻动态
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cooperation" className="hover:text-sky-600 transition-colors">
+                    项目合作
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* 簇锋科技 | ToSpike - 移动端第二行全宽 */}
+            <div className="order-3 col-span-2 lg:col-span-1 lg:order-1">
+              <div className="font-bold text-lg mb-4 text-slate-900 text-left">簇锋科技 | ToSpike</div>
+              <p className="text-xs text-slate-500 text-left">sp²–sp³ 碳基界面平台技术</p>
+            </div>
+            {/* 合作与支持 - 移动端第三行全宽 */}
+            <div className="order-4 col-span-2 lg:col-span-1 lg:order-4">
+              <div className="font-semibold mb-4 text-slate-900 text-left">合作与支持</div>
+              <ul className="space-y-2 text-sm text-slate-600 text-left">
+                <li className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
+                  <span>南京市江北新区行知路2号</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
+                  <span>邮箱: wangbo@tospike.com</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <div className="font-semibold mb-4 text-slate-900">技术与合作</div>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li>
-                <Link href="/about" className="hover:text-sky-600 transition-colors">
-                  关于我们
-                </Link>
-              </li>
-              <li>
-                <Link href="/patents" className="hover:text-sky-600 transition-colors">
-                  技术架构
-                </Link>
-              </li>
-              <li>
-                <Link href="/applications" className="hover:text-sky-600 transition-colors">
-                  应用领域
-                </Link>
-              </li>
-              <li>
-                <Link href="/news" className="hover:text-sky-600 transition-colors">
-                  新闻动态
-                </Link>
-              </li>
-              <li>
-                <Link href="/cooperation" className="hover:text-sky-600 transition-colors">
-                  项目合作
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-semibold mb-4 text-slate-900">合作与支持</div>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
-                <span>南京市江北新区行知路2号</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
-                <span>邮箱: wangbo@tospike.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className="border-t border-slate-200 mt-8 pt-8">
-          <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-8 px-4">
-            <div className="font-semibold text-zinc-600">簇锋科技 | ToSpike</div>
+          <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-8 px-4">
+            <div className="hidden md:block"></div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-2 text-center">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
               <span>Copyright © 2018 - 2026 南京簇锋机电科技有限公司</span>
               <span className="hidden sm:inline text-zinc-400">|</span>
 
