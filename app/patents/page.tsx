@@ -665,7 +665,7 @@ export default function PatentsPage() {
                     原理示意：不同参数组合生成不同宏观功能域
                   </h5>
 
-                  <div className="space-y-4">
+                  <div className="flex flex-col md:grid md:grid-cols-3 gap-4">
                     {/* sp³ dominant */}
                     <div className="p-5 bg-slate-950/70 rounded-lg border border-blue-500/30">
                       <div className="text-blue-300 font-mono font-semibold mb-3 text-base">
@@ -716,6 +716,7 @@ export default function PatentsPage() {
                         </div>
                       </div>
                     </div>
+                  </div>
 
                     {/* Control parameters */}
                     <div className="mt-5 pt-5 border-t border-pink-500/30">
@@ -744,7 +745,6 @@ export default function PatentsPage() {
                       </ul>
                       <p className="text-slate-400 mt-3 text-base">以达到目标的多尺度结构状态。</p>
                     </div>
-                  </div>
                 </div>
 
                 <p className="pt-4 border-t border-pink-500/20 text-slate-200">
