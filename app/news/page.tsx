@@ -36,9 +36,9 @@ export default function NewsPage() {
     {
       id: "2023-brazing-tools",
       date: "2023年",
-      title: "钎焊超硬工具系列开发成功",
+      title: "活性熔固超硬工具系列开发成功",
       summary:
-        "针对高强度牙科磨头、钎焊CBN磨具等产品进行攻关，成功开发高强度金刚石磨头和钎焊CBN砂轮，使用寿命达电镀工具3倍以上。",
+        "针对高强度牙科磨头、活性熔固CBN磨具等产品进行攻关，成功开发高强度金刚石磨头和活性熔固CBN砂轮，使用寿命达电镀工具3倍以上。",
       category: "产品开发",
       icon: Wrench,
     },
@@ -60,18 +60,9 @@ export default function NewsPage() {
       icon: Users,
     },
     {
-      id: "2018-grinding-wheel",
-      date: "2018-11-09",
-      title: "铸件打磨清理用新型金刚石磨轮开发成功",
-      summary:
-        "针对含硅、钼成分铸铁材料加工时的表面粘附问题，经多次试验改进，成功开发新型金刚石磨轮，有效解决行业痛点。",
-      category: "产品开发",
-      icon: Wrench,
-    },
-    {
       id: "2018-research-center",
       date: "2018-06-12",
-      title: "簇锋机电研发中心成立",
+      title: "簇锋科技研发中心成立",
       summary: "公司正式成立研发中心，专注于超硬磨料工具技术创新，为后续产品开发和技术积累奠定组织基础。",
       category: "公司动态",
       icon: Building,
@@ -79,7 +70,7 @@ export default function NewsPage() {
     {
       id: "2018-website",
       date: "2018-06-06",
-      title: "簇锋机电官方网站正式上线",
+      title: "簇锋科技官方网站正式上线",
       summary: "公司官方网站 www.tospike.com 正式上线运营，建立与客户、合作伙伴沟通交流的线上平台。",
       category: "公司动态",
       icon: Building,
@@ -87,7 +78,7 @@ export default function NewsPage() {
     {
       id: "2018-founding",
       date: "2018-03-12",
-      title: "南京簇锋机电科技有限公司成立",
+      title: "南京簇锋科技有限公司成立",
       summary: "公司在江苏正式注册成立，定位为超硬磨料工具行业解决方案提供商，开启创业征程。",
       category: "公司动态",
       icon: Building,
