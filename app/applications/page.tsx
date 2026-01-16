@@ -420,7 +420,7 @@ export default function ApplicationsPage() {
                 className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent mt-6"
                 asChild
               >
-                <Link href="/products/nonstick-cookware">查看全碳不粘锅产品</Link>
+                <Link href="/products">查看可用解决方案</Link>
               </Button>
             </Card>
           </div>
