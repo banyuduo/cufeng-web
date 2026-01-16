@@ -119,9 +119,7 @@ export function FooterNav() {
             </div>
           </div>
         <div className="border-t border-slate-200 mt-8 pt-8">
-          <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-8 px-4">
-            <div className="hidden md:block"></div>
-
+          <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
               <span>Copyright © 2018 - 2026 南京簇锋机电科技有限公司</span>
               <span className="hidden sm:inline text-zinc-400">|</span>

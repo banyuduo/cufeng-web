@@ -2,6 +2,7 @@ import { Calendar, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText, Arro
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { IndustryInfoNav } from "@/components/industry-info-nav"
 
 export default function NewsPage() {
   const companyNews = [
@@ -104,14 +105,69 @@ export default function NewsPage() {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-6 text-balance">技术视界</h1>
             <p className="text-xl text-muted-foreground text-pretty">
-              聚焦公司技术突破与合作动态，探索行业前沿理论与技术趋势，构建从基础研究到产业应用的完整知识体系
+              从实验室假说到产业实证，见证 sp²–sp³ 结构的性能越迁
             </p>
           </div>
         </div>
       </section>
 
+      {/* Navigation Cards */}
+      <section className="py-12 border-t border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 公司动态卡片 */}
+              <a
+                href="#company-news"
+                className="group glass-card rounded-xl p-8 hover:bg-card/60 transition-all hover:shadow-lg"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Building className="h-7 w-7 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                      公司动态
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      聚焦公司未来技术突破、战略合作与产业布局，记录从超硬工具到碳基复合材料的创新历程
+                    </p>
+                    <div className="mt-4 flex items-center text-primary text-sm font-medium">
+                      查看详情 <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* 行业信息卡片 */}
+              <div className="group glass-card rounded-xl p-8 hover:bg-card/60 transition-all hover:shadow-lg">
+                <div className="flex items-start gap-4">
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <TrendingUp className="h-7 w-7 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <a
+                      href="#industry-info"
+                      className="block"
+                    >
+                      <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                        行业信息
+                      </h3>
+                    </a>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      聚焦行业前沿技术、基础理论的科普，用新闻形式发布最新的技术动态与术语解释
+                    </p>
+                    <IndustryInfoNav />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Company News */}
-      <section className="py-16 border-t border-border/50">
+      <section id="company-news" className="py-16 border-t border-border/50 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">公司动态</h2>
@@ -157,7 +213,7 @@ export default function NewsPage() {
       </section>
 
       {/* Industry Information */}
-      <section className="py-16 border-t border-border/50 bg-muted/30">
+      <section id="industry-info" className="py-16 border-t border-border/50 bg-muted/30 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">行业信息</h2>
@@ -165,8 +221,63 @@ export default function NewsPage() {
               聚焦行业前沿技术、基础理论的科普，用新闻形式发布最新的技术动态与术语解释
             </p>
 
+            {/* 行业趋势 */}
+            <div id="industry-trends" className="mb-12 scroll-mt-20">
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="h-6 w-6 text-primary" />
+                <h3 className="text-2xl font-semibold">行业趋势</h3>
+              </div>
+              <div className="space-y-6">
+                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
+                  <div className="flex items-start gap-4">
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-semibold mb-2">碳基材料在热管理领域的产业化加速</h4>
+                      <p className="text-muted-foreground mb-3">
+                        <span className="font-semibold text-foreground">趋势概述：</span>
+                        随着 AI 算力芯片、新能源汽车和 5G 通信设备对散热性能要求的不断提升，碳基复合材料正从实验室走向大规模产业化应用。
+                      </p>
+                      <p className="text-muted-foreground mb-3">
+                        <span className="font-semibold text-foreground">关键驱动因素：</span>
+                        功率密度持续提升、成本下降、制备工艺成熟、产业链完善、政策支持力度加大。
+                      </p>
+                      <p className="text-muted-foreground">
+                        <span className="font-semibold text-foreground">未来发展方向：</span>
+                        从单一热管理功能向多功能集成（导热+电磁屏蔽+结构支撑）、从消费电子向工业级应用扩展、从材料供应商向系统解决方案提供商转型。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
+                  <div className="flex items-start gap-4">
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Atom className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-semibold mb-2">量子计算从实验室走向实用化</h4>
+                      <p className="text-muted-foreground mb-3">
+                        <span className="font-semibold text-foreground">趋势概述：</span>
+                        量子计算正从概念验证阶段进入实用化探索，超导量子比特、离子阱、光量子等多种技术路线并行发展，预计未来 5-10 年将出现突破性应用。
+                      </p>
+                      <p className="text-muted-foreground mb-3">
+                        <span className="font-semibold text-foreground">关键驱动因素：</span>
+                        量子纠错技术突破、相干时间延长、错误率降低、算法优化、产业资本投入。
+                      </p>
+                      <p className="text-muted-foreground">
+                        <span className="font-semibold text-foreground">未来发展方向：</span>
+                        专用量子计算机率先落地、量子-经典混合计算成为主流、量子云服务普及、在密码学、优化、机器学习等领域实现实际应用。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* 基础理论 */}
-            <div className="mb-12">
+            <div id="basic-theory" className="mb-12 scroll-mt-20">
               <div className="flex items-center gap-3 mb-6">
                 <BookOpen className="h-6 w-6 text-primary" />
                 <h3 className="text-2xl font-semibold">基础理论</h3>
@@ -244,7 +355,7 @@ export default function NewsPage() {
             </div>
 
             {/* 前沿技术 */}
-            <div className="mb-12">
+            <div id="frontier-tech" className="mb-12 scroll-mt-20">
               <div className="flex items-center gap-3 mb-6">
                 <Zap className="h-6 w-6 text-primary" />
                 <h3 className="text-2xl font-semibold">前沿技术</h3>
@@ -291,61 +402,6 @@ export default function NewsPage() {
                       <p className="text-muted-foreground">
                         <span className="font-semibold text-foreground">当前研究方向：</span>
                         量子算法设计、噪声抑制、量子纠错、可扩展量子硬件、量子-经典混合计算架构。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 行业趋势 */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <TrendingUp className="h-6 w-6 text-primary" />
-                <h3 className="text-2xl font-semibold">行业趋势</h3>
-              </div>
-              <div className="space-y-6">
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">碳基材料在热管理领域的产业化加速</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">趋势概述：</span>
-                        随着 AI 算力芯片、新能源汽车和 5G 通信设备对散热性能要求的不断提升，碳基复合材料正从实验室走向大规模产业化应用。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">关键驱动因素：</span>
-                        功率密度持续提升、成本下降、制备工艺成熟、产业链完善、政策支持力度加大。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">未来发展方向：</span>
-                        从单一热管理功能向多功能集成（导热+电磁屏蔽+结构支撑）、从消费电子向工业级应用扩展、从材料供应商向系统解决方案提供商转型。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Atom className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">量子计算从实验室走向实用化</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">趋势概述：</span>
-                        量子计算正从概念验证阶段进入实用化探索，超导量子比特、离子阱、光量子等多种技术路线并行发展，预计未来 5-10 年将出现突破性应用。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">关键驱动因素：</span>
-                        量子纠错技术突破、相干时间延长、错误率降低、算法优化、产业资本投入。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">未来发展方向：</span>
-                        专用量子计算机率先落地、量子-经典混合计算成为主流、量子云服务普及、在密码学、优化、机器学习等领域实现实际应用。
                       </p>
                     </div>
                   </div>
