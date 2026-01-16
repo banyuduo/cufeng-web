@@ -69,16 +69,16 @@ export default function DiamondToolsPage() {
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
                 基于 10 余年对金刚石与立方氮化硼（CBN）界面润湿性的深度研究，我们掌握了核心的"超磨熔固"技术。这是
                 sp²–sp³
-                平台技术的工程起点，通过活性钎焊实现超硬磨料与金属基体的原子级化学键合，为全球客户提供极端工况下的精密加工解决方案。
+                平台技术的工程起点，通过活性熔固实现超硬磨料与金属基体的原子级化学键合，为全球客户提供极端工况下的精密加工解决方案。
               </p>
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
                   <div className="text-2xl font-bold text-sky-600 mb-1">10+</div>
-                  <div className="text-xs text-slate-600">年界面力学积累</div>
+                  <div className="text-xs text-slate-600">年熔固技术积累</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
                   <div className="text-2xl font-bold text-sky-600 mb-1">30+</div>
-                  <div className="text-xs text-slate-600">项超硬材料专利</div>
+                  <div className="text-xs text-slate-600">项超硬专利基础</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
                   <div className="text-2xl font-bold text-sky-600 mb-1">100+</div>
@@ -114,8 +114,8 @@ export default function DiamondToolsPage() {
               </div>
               <h3 className="font-semibold text-lg mb-3 text-slate-900">界面改性与连接</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                专注于解决超硬磨料（Diamond/CBN）与异质基材的连接难题，利用活性钎焊（Active
-                Brazing）形成高强度连接界面化合物，实现原子级化学键合。
+                专注于解决超硬磨料（Diamond/CBN）与异质基材的连接难题，利用活性熔固（Active
+                Fusion-Bonding）形成高强度连接界面化合物，实现原子级化学键合。
               </p>
             </Card>
 
