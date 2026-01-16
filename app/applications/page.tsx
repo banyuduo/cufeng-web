@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { ApplicationCard } from "@/components/application-card"
 
 export default function ApplicationsPage() {
   return (
@@ -40,7 +41,8 @@ export default function ApplicationsPage() {
                   description: "解决极端功率密度下的热瓶颈，提供500-800 W/mK的高效散热保障。",
                   color: "border-blue-500/50 bg-blue-500/20",
                   icon: <Cpu className="w-5 h-5 text-blue-400" />,
-                  tag: "成熟应用"
+                  tag: "成熟应用",
+                  href: "#thermal-management"
                 },
                 {
                   level: "L2: 规模化落地 (Expanding)",
@@ -49,7 +51,8 @@ export default function ApplicationsPage() {
                   description: "将工业级工艺降维打击民用市场，解决可靠性、附着力与食品安全痛点。",
                   color: "border-sky-500/50 bg-sky-500/10",
                   icon: <Zap className="w-5 h-5 text-sky-400" />,
-                  tag: "市场放量"
+                  tag: "市场放量",
+                  href: "#consumer-electronics"
                 },
                 {
                   level: "L3: 产业升级 (Growth)",
@@ -58,7 +61,8 @@ export default function ApplicationsPage() {
                   description: "利用高模量碳骨架提升能量密度与电催化活性，具备快速落地潜力。",
                   color: "border-emerald-500/50 bg-emerald-500/10",
                   icon: <Battery className="w-5 h-5 text-emerald-400" />,
-                  tag: "中试开发"
+                  tag: "潜力开发",
+                  href: "#energy-environment"
                 },
                 {
                   level: "L4: 前沿探索 (Vision)",
@@ -67,40 +71,21 @@ export default function ApplicationsPage() {
                   description: "探索应力场诱导的特殊能带结构，作为未来10年计算架构的理论储备。",
                   color: "border-purple-500/50 bg-purple-500/10",
                   icon: <Microscope className="w-5 h-5 text-purple-400" />,
-                  tag: "理论探索"
+                  tag: "理论探索",
+                  href: "#frontier-research"
                 }
               ].map((layer, index) => (
-                <div 
+                <ApplicationCard
                   key={index}
-                  className={`relative group p-6 rounded-2xl border ${layer.color} transition-all duration-300 hover:translate-x-2`}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 p-2 bg-slate-900 rounded-lg border border-slate-700">
-                        {layer.icon}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-3 mb-1">
-                          <span className="text-xs font-mono tracking-tighter text-slate-500">{layer.level}</span>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300 uppercase tracking-wider">{layer.tag}</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-white">{layer.title}</h3>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {layer.items.map((item, i) => (
-                            <span key={i} className="text-sm text-slate-300 flex items-center gap-1 text-balance italic">
-                              <ArrowUpRight className="w-3 h-3 text-slate-500" /> {item}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="md:max-w-[280px]">
-                      <p className="text-xs leading-relaxed text-slate-400 md:text-right italic">
-                        {layer.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  level={layer.level}
+                  title={layer.title}
+                  items={layer.items}
+                  description={layer.description}
+                  color={layer.color}
+                  icon={layer.icon}
+                  tag={layer.tag}
+                  href={layer.href}
+                />
               ))}
 
               {/* 底部基座 */}
@@ -120,7 +105,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 核心工业散热版块 */}
-      <section id="thermal-management" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="thermal-management" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-block px-6 py-2 bg-sky-600 rounded-full text-white font-bold text-sm mb-4">
@@ -327,7 +312,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 消费电子与家居生活 */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section id="consumer-electronics" className="py-20 px-6 lg:px-8 bg-slate-50 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">消费电子与家居生活</h2>
@@ -443,7 +428,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 能源与环境系统 */}
-      <section id="energy-environment" className="py-20 px-6 lg:px-8 bg-white">
+      <section id="energy-environment" className="py-20 px-6 lg:px-8 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-green-100 rounded-full text-green-700 text-sm font-semibold mb-4">
@@ -534,7 +519,7 @@ export default function ApplicationsPage() {
       </section>
 
       {/* 前沿物理探索 */}
-      <section id="frontier-research" className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section id="frontier-research" className="py-20 px-6 lg:px-8 bg-slate-50 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold mb-4">

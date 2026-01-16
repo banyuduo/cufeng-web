@@ -51,7 +51,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   <Building2 className="w-6 h-6 text-sky-400" />
-                  南京簇锋机电科技有限公司
+                  簇锋科技 | ToSpike：定义碳基界面的物理边界
                 </h2>
                 <p className="text-slate-300 mb-2">
                   Nanjing CuFeng Mechanical & Electrical Technology Co., LTD
@@ -60,17 +60,12 @@ export default function AboutPage() {
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
+                <h3 className="text-xl font-semibold text-white mb-4">公司概况</h3>
                 <p className="mb-4">
-                  我们是一家专业从事超硬磨料工具、高性能热管理材料与机电设备研发与销售的创新型企业。
+                  簇锋科技（ToSpike）是全球领先的碳基界面工程技术先驱。我们依托对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的底层深度理解，构建了从原子级"活性熔固"工艺到高维度"碳基复合材料平台"的完整技术链路。
                 </p>
                 <p className="mb-4">
-                  公司在设备开发与集成、超硬磨料工具制备与设计领域有多年的研发与实践经验，为产品创新与开发、生产自动化、难加工材料解决方案等方面奠定了坚实的基础。
-                </p>
-                <p className="mb-4">
-                  基于对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的深刻理解，簇锋科技构建了从底层"活性熔固"工艺到高维度"碳基界面平台"的完整技术链路。我们不单提供超硬磨料工具（Diamond/CBN），更致力于在极端工况下，为全球客户定义精密去除与界面热传导的工程边界。
-                </p>
-                <p className="mb-4">
-                  产品及技术应用于半导体制造、航空航天、新能源汽车、AI算力芯片、消费电子等众多领域，为全球客户提供从定制工具到前沿材料的完整解决方案。
+                  我们不单生产超硬磨料工具（Diamond/CBN），更致力于在极端工况下，为半导体制造、航空航天、AI 算力及新能源系统等高精尖领域，提供解决散热、结构强度、电磁防护等应用解决方案。
                 </p>
               </div>
 
@@ -80,7 +75,7 @@ export default function AboutPage() {
                   研发积淀与工程能力
                 </h3>
                 <p className="mb-4">
-                  公司在真空界面冶金、非破坏性熔固以及精密机电集成领域拥有逾十年的技术积累。凭借对活性熔固（Active Fusion-Bonding）过程的微观调控，我们成功解决了航空航天、半导体制造及新能源重工领域中，针对高温合金、碳纤维复合材料（CFRP）及硬脆材料的加工瓶颈。
+                  公司在真空界面冶金、活性熔固以及工程应用领域拥有逾十年的技术积累。凭借对活性熔固（Active Fusion-Bonding）过程的微观调控，我们成功攻克了铸造金属、碳纤维复合材料（CFRP）及硬脆材料在极端制造中的加工瓶颈，为客户提供从定制化工具到前沿功能材料的垂直整合解决方案。
                 </p>
               </div>
 
@@ -90,10 +85,10 @@ export default function AboutPage() {
                   从工业实践到物理探索
                 </h3>
                 <p className="mb-4">
-                  簇锋科技坚持"新科技，新巅峰"的演进路径。我们的能力涵盖了从单点非标异形产品的快速验证，到系统化自动化加工方案的定义。通过将工业级磨具的设计原则迁移至高性能热管理材料领域，我们正在实现从"材料加工工具"向"功能材料平台"的战略升华。
+                  我们坚持<strong className="text-white">"新科技，新巅峰"的演进路径</strong>。通过将超硬磨料工具的设计原则迁移至高性能热管理领域，簇锋科技正在实现从"精密加工工具"向"高性能功能材料平台"的战略升华。
                 </p>
-                <p className="text-sky-300 font-medium">
-                  我们期待与全球领先的产业方及研究机构，共同探索原子级连接所能触达的无限可能。
+                <p className="mb-4">
+                  基于 <span className="text-sky-400 font-semibold">sp²–sp³ 键合</span> 的内生应力调控，我们已实现体视热导率 ≥ 680 W/m·K 的材料突破，并持续探索碳基结构在超导、非常规输运及量子物理边界的无限可能。
                 </p>
               </div>
 
