@@ -541,14 +541,14 @@ export default function PatentsPage() {
                 </div>
                 <div className="flex-1">
                   <div className="text-purple-400 text-xs font-medium">Stage 03</div>
-                  <div className="text-white font-bold">无铜/全碳复合材料</div>
+                  <div className="text-white font-bold">全碳基复合体系平台</div>
                 </div>
                 <ChevronDown
                   className={`w-5 h-5 text-purple-400 transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
                 />
               </div>
               <p className="text-base text-slate-400 leading-relaxed">
-                通过去金属化，构建完全由碳体系组成的复合材料，为更复杂的结构调控和物理行为探索提供条件。
+                通过去金属化工艺，构建以连续 sp²–sp³ 碳网络为核心的复合体系，为复杂应力调控与高阶物理行为探索提供底层架构。
               </p>
 
               {expandedStage === 3 && (
