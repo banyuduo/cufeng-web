@@ -316,49 +316,69 @@ export default function CarbonCompositePage() {
           <h2 className="text-3xl font-bold mb-4 text-center text-slate-900">相关专利技术</h2>
           <p className="text-center text-slate-600 mb-12">完整的知识产权保护与技术储备</p>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
-              <h3 className="font-semibold mb-2 text-slate-900">
-                一种基于金刚石原位低温石墨化键合的高导热复合材料及其制备方法与应用
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                详细描述了纳米金刚石表面石墨化、与石墨烯/碳纤维混合、高温压力烧结的完整工艺。
-                覆盖热管理材料应用的各种实施例。
-              </p>
-              <div className="text-xs text-slate-500">申请中</div>
-            </Card>
+          <div className="max-w-5xl mx-auto space-y-6">
+            {/* 第一排：两个专利并列 */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="p-6 bg-white border-slate-200">
+                <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
+                <h3 className="font-semibold mb-2 text-slate-900">
+                  一种基于金刚石原位低温石墨化键合的高导热复合材料及其制备方法与应用
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  详细描述了纳米金刚石表面石墨化、与石墨烯/碳纤维混合、高温压力烧结的完整工艺。
+                  覆盖热管理材料应用的各种实施例。
+                </p>
+                <div className="text-xs text-slate-500">申请中</div>
+              </Card>
 
-            <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
-              <h3 className="font-semibold mb-2 text-slate-900">
-                一种通过化学键合内生应力的SP²-SP³互连全碳复合材料及其制备方法与应用
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                重点描述高压力条件下形成的内应力结构，以及可能的超导特性。 覆盖高端功能材料与前沿研究方向。
-              </p>
-              <div className="text-xs text-slate-500">申请中</div>
-            </Card>
+              <Card className="p-6 bg-white border-slate-200">
+                <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
+                <h3 className="font-semibold mb-2 text-slate-900">
+                  金刚石低温催化键合的三维 SP² 碳骨架增强柔性复合材料及其制备方法
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  利用金刚石的低温催化效应，在低于传统石墨化温度下实现SP²碳网络的三维共价键连接，由此制得的柔性复合材料在导电/导热性能和机械增强效率上取得突破性提升。
+                </p>
+                <div className="text-xs text-slate-500">申请中</div>
+              </Card>
+            </div>
 
-            <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
-              <h3 className="font-semibold mb-2 text-slate-900">一种高模量多孔碳宿主材料及其制备方法与应用</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                专门针对固态电池负极应用的多孔SP³-SP²结构设计，包括造孔剂选择、 孔隙率控制、电化学性能优化等关键技术。
-              </p>
-              <div className="text-xs text-slate-500">申请中</div>
-            </Card>
+            {/* 第二排：两个专利并列 */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="p-6 bg-white border-slate-200">
+                <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
+                <h3 className="font-semibold mb-2 text-slate-900">一种高模量多孔碳宿主材料及其制备方法与应用</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  专门针对固态电池负极应用的多孔SP³-SP²结构设计，包括造孔剂选择、 孔隙率控制、电化学性能优化等关键技术。
+                </p>
+                <div className="text-xs text-slate-500">申请中</div>
+              </Card>
 
-            <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
-              <h3 className="font-semibold mb-2 text-slate-900">
-                一种基于分区功能化骨架的一体化全固态电池及其共烧结制备方法
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                基于SP³-SP²骨架的全固态电池一体化设计方案，实现正极、负极、隔膜的 一体化共烧结制备，大幅简化工艺。
-              </p>
-              <div className="text-xs text-slate-500">申请中</div>
-            </Card>
+              <Card className="p-6 bg-white border-slate-200">
+                <div className="text-xs font-medium text-sky-600 mb-2">发明专利</div>
+                <h3 className="font-semibold mb-2 text-slate-900">
+                  一种基于分区功能化骨架的一体化全固态电池及其共烧结制备方法
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  基于SP³-SP²骨架的全固态电池一体化设计方案，实现正极、负极、隔膜的 一体化共烧结制备，大幅简化工艺。
+                </p>
+                <div className="text-xs text-slate-500">申请中</div>
+              </Card>
+            </div>
+
+            {/* 第三排：核心专利单独一行 */}
+            <div className="grid md:grid-cols-1 gap-6">
+              <Card className="p-6 bg-white border-2 border-purple-300 shadow-lg">
+                <div className="text-xs font-medium text-purple-600 mb-2">核心专利 · 发明专利</div>
+                <h3 className="font-semibold mb-2 text-slate-900">
+                  一种通过化学键合内生应力的SP²-SP³互连全碳复合材料及其制备方法与应用
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  重点描述高压力条件下形成的内应力结构，以及可能的超导特性。 覆盖高端功能材料与前沿研究方向。
+                </p>
+                <div className="text-xs text-slate-500">申请中</div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
