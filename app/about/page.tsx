@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div className="pt-4 border-t border-slate-700/50">
                 <h3 className="text-xl font-semibold text-white mb-4">公司概况</h3>
                 <p className="mb-4">
-                  簇锋科技（ToSpike）是全球领先的碳基界面工程技术先驱。我们依托对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的底层深度理解，构建了从原子级"活性熔固"工艺到高维度"碳基复合材料平台"的完整技术链路。
+                  簇锋科技（ToSpike）致力于深耕碳基界面工程技术。我们依托对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的底层深度理解，构建了从原子级"活性熔固"工艺到高维度"碳基复合材料平台"的完整技术链路。
                 </p>
                 <p className="mb-4">
                   我们不单生产超硬磨料工具（Diamond/CBN），更致力于在极端工况下，为半导体制造、航空航天、AI 算力及新能源系统等高精尖领域，提供解决散热、结构强度、电磁防护等应用解决方案。
@@ -152,7 +152,7 @@ export default function AboutPage() {
                     <span className="font-semibold text-slate-200">专业背景</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
-                    2016年取得博士学位，长期致力于超硬磨料工具在难加工材料领域的精密加工研究。
+                    2016年取得工学博士学位，长期致力于超硬磨料工具在难加工材料领域的精密加工研究。
                   </p>
                 </div>
                 <div>
