@@ -665,7 +665,7 @@ export default function PatentsPage() {
                     原理示意：不同参数组合生成不同宏观功能域
                   </h5>
 
-                  <div className="flex flex-col md:grid md:grid-cols-3 gap-4">
+                  <div className="flex flex-col sm:flex-col md:grid md:grid-cols-3 gap-4">
                     {/* sp³ dominant */}
                     <div className="p-5 bg-slate-950/70 rounded-lg border border-blue-500/30">
                       <div className="text-blue-300 font-mono font-semibold mb-3 text-base">
