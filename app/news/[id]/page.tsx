@@ -118,6 +118,14 @@ const newsData: Record<
   },
 }
 
+// 生成静态路径参数，用于静态导出
+export async function generateStaticParams() {
+  // 从 newsData 对象中提取所有新闻 ID
+  return Object.keys(newsData).map((id) => ({
+    id: id,
+  }))
+}
+
 export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const news = newsData[id]
