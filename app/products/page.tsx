@@ -14,7 +14,7 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">产品中心</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">产品矩阵</h1>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
             从消费级不粘锅产品到前沿碳基复合材料，我们的每一项技术都代表着材料科学的突破
           </p>
@@ -203,6 +203,15 @@ export default function ProductsPage() {
               </Card>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-xs text-slate-500 text-center leading-relaxed">
+            注：以上数据均为实验室典型值或方案理论设计值。由于应用工况及规格差异，具体性能参数请以正式合同或随货产品手册为准
+          </p>
         </div>
       </section>
 
