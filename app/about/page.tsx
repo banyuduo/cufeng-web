@@ -192,33 +192,51 @@ export default function AboutPage() {
                   工程设计与结构负责人
                 </div>
               </div>
-              <div className="space-y-3 text-sm text-slate-300">
+              <div className="space-y-4 text-sm text-slate-300">
                 <div>
-                  <div className="flex items-start gap-2 mb-1">
+                  <div className="flex items-start gap-2 mb-2">
                     <Briefcase className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">专业背景</span>
+                    <span className="font-semibold text-slate-200">专业履历</span>
                   </div>
-                  <p className="ml-6 leading-relaxed">
-                    机械制造及其自动化专业硕士，拥有逾 <span className="text-cyan-400 font-semibold">15 年</span>的高端装备结构设计与优化经验。
-                  </p>
+                  <div className="ml-6 space-y-2 leading-relaxed">
+                    <p>
+                      机械工程硕士，高级工程师，拥有 <span className="text-cyan-400 font-semibold">17 年以上</span> 军工电子设备研发经验，专注于结构设计与热管理领域。
+                    </p>
+                    <p>
+                      曾长期任职于大型军工电子科研单位，主持多项高复杂度电子设备的结构研发与制造项目，涵盖军工及民用领域。
+                    </p>
+                  </div>
                 </div>
                 <div>
-                  <div className="flex items-start gap-2 mb-1">
-                    <Award className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">技术背书</span>
-                  </div>
-                  <p className="ml-6 leading-relaxed">
-                    曾负责多项涉及军工与民用领域的复杂结构工程项目。
-                  </p>
-                </div>
-                <div>
-                  <div className="flex items-start gap-2 mb-1">
+                  <div className="flex items-start gap-2 mb-2">
                     <Zap className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">核心能力</span>
+                    <span className="font-semibold text-slate-200">核心专长</span>
                   </div>
-                  <p className="ml-6 leading-relaxed">
-                    专注于机器人自动化打磨与精密磨削研究，能够基于现场工况自主设计超硬磨具的物理结构与夹具系统，实现从单点工具到自动化生产线的无缝集成。
-                  </p>
+                  <div className="ml-6 space-y-2 leading-relaxed">
+                    <p>
+                      擅长复杂电子设备的结构‑热耦合一体化设计，具备从系统方案到工程实现的全链路能力。
+                    </p>
+                    <p>
+                      对高功率密度电子设备的热设计有深刻理解，能提供可靠的技术路径与创新解决方案。
+                    </p>
+                    <p>
+                      积累了丰富的工程实践与问题闭环经验，善于在约束条件下平衡性能、可靠性与工艺可行性。
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-start gap-2 mb-2">
+                    <Award className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <span className="font-semibold text-slate-200">技术价值</span>
+                  </div>
+                  <div className="ml-6 space-y-2 leading-relaxed">
+                    <p>
+                      兼具扎实的理论背景与一线研发视角，能贯穿概念设计、仿真优化、试制验证到批量生产全过程。
+                    </p>
+                    <p>
+                      在军工级高可靠电子设备的结构与热控领域，具备系统级架构设计与关键难点攻关的能力。
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -230,33 +248,46 @@ export default function AboutPage() {
                   <Users className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">张工</h3>
-                  <p className="text-sm text-slate-400">Zhang</p>
+                  <h3 className="text-lg font-bold text-white">张工 (Zhang)</h3>
+                  <p className="text-sm text-slate-400">应用工程与现场支持负责人</p>
                 </div>
               </div>
-              <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-purple-600/20 text-purple-300 text-xs font-medium rounded-full mb-2">
-                  应用工程与现场支持负责人
-                </div>
-              </div>
-              <div className="space-y-3 text-sm text-slate-300">
+              <div className="space-y-4 text-sm text-slate-300">
                 <div>
-                  <div className="flex items-start gap-2 mb-1">
+                  <div className="flex items-start gap-2 mb-2">
                     <Briefcase className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">专业背景</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
-                    资深磨料磨具应用专家，拥有多年金刚石工具在铸铁、铸钢及合金钢领域的推广与现场经验。
+                    资深金刚石工具应用专家，在超硬磨料磨具及材料切削机理领域深耕多年。擅长攻克复杂的工业磨削难题，并致力于高端新能源载具装配工具的创新应用与市场推广。
                   </p>
                 </div>
                 <div>
-                  <div className="flex items-start gap-2 mb-1">
+                  <div className="flex items-start gap-2 mb-2">
                     <Zap className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">核心能力</span>
                   </div>
-                  <p className="ml-6 leading-relaxed">
-                    擅长处理复杂的加工现场难题，通过对材料加工特性的深刻理解，为客户提供精准的工具选型、配套方案及及时的技术响应。
-                  </p>
+                  <div className="ml-6 space-y-3 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-200 mb-1">精准解决方案：</p>
+                      <p>深挖现场痛点，提供从工具选型到工艺参数优化的全链路支持。</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-200 mb-1">敏捷现场响应：</p>
+                      <p>确保技术支持与生产无缝衔接，显著提升产线效率与稳定性。</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-200 mb-1">新能源汽车业务方向：</p>
+                      <div className="space-y-2 mt-2">
+                        <p>
+                          <span className="font-semibold">装配线工具开发：</span> 针对三电系统（电池、电机、电控）及底盘装配，提供高精度、高耐用性的专用工具方案。
+                        </p>
+                        <p>
+                          <span className="font-semibold">行业深度理解：</span> 深刻把握新能源汽车轻量化制造对装配工艺的严苛要求，助力客户实现工艺升级。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
