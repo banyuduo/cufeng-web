@@ -169,9 +169,14 @@ export default function AboutPage() {
                     <Zap className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">核心能力</span>
                   </div>
-                  <p className="ml-6 leading-relaxed">
-                    擅长针对钛合金、镍基高温合金、碳化硅及碳纤维复合材料（CFRP）等极端工况，通过 <span className="text-sky-400 font-semibold">sp²–sp³ 界面参数</span>的深度匹配，提供定制化的系统解决方案。
-                  </p>
+                  <div className="ml-6 space-y-2 leading-relaxed">
+                    <p>
+                      擅长针对钛合金、镍基高温合金、碳化硅及碳纤维复合材料（CFRP）等极端工况，通过 <span className="text-sky-400 font-semibold">sp²–sp³ 界面参数</span>的深度匹配，提供定制化的系统解决方案。
+                    </p>
+                    <p>
+                      擅长基于成本导向、量产导向进行产品开发与战略规划。通过工艺改进或新范式革新，实现产品的普适化应用。
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -221,20 +226,6 @@ export default function AboutPage() {
                     </p>
                     <p>
                       积累了丰富的工程实践与问题闭环经验，善于在约束条件下平衡性能、可靠性与工艺可行性。
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-start gap-2 mb-2">
-                    <Award className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">技术价值</span>
-                  </div>
-                  <div className="ml-6 space-y-2 leading-relaxed">
-                    <p>
-                      兼具扎实的理论背景与一线研发视角，能贯穿概念设计、仿真优化、试制验证到批量生产全过程。
-                    </p>
-                    <p>
-                      在军工级高可靠电子设备的结构与热控领域，具备系统级架构设计与关键难点攻关的能力。
                     </p>
                   </div>
                 </div>
