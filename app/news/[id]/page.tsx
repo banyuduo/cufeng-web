@@ -1,9 +1,26 @@
-import { Calendar, ArrowLeft, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText } from "lucide-react"
+import {
+  Calendar,
+  ArrowLeft,
+  Building,
+  Users,
+  MapPin,
+  Wrench,
+  ChefHat,
+  Cpu,
+  FileText,
+  Tag,
+  User,
+} from "lucide-react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
+import {
+  industryArticlesMap,
+  parseBoldText,
+  type IndustryArticle,
+} from "@/lib/industry-articles"
 
 const newsData: Record<
   string,
@@ -120,26 +137,139 @@ const newsData: Record<
 
 // 生成静态路径参数，用于静态导出
 export async function generateStaticParams() {
-  // 从 newsData 对象中提取所有新闻 ID
-  return Object.keys(newsData).map((id) => ({
-    id: id,
-  }))
+  const companyIds = Object.keys(newsData)
+  const industryIds = Object.keys(industryArticlesMap)
+  return [...companyIds, ...industryIds].map((id) => ({ id }))
 }
 
-export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const news = newsData[id]
-
-  if (!news) {
-    notFound()
-  }
-
-  const IconComponent = news.icon
+function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
+  const IconComponent = article.icon
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <>
+      {/* 面包屑 */}
+      <section className="py-6 border-b border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-primary transition-colors">
+              首页
+            </Link>
+            <span>/</span>
+            <Link href="/news" className="hover:text-primary transition-colors">
+              技术视界
+            </Link>
+            <span>/</span>
+            <Link href="/news#industry-info" className="hover:text-primary transition-colors">
+              行业信息
+            </Link>
+            <span>/</span>
+            <span className="text-foreground">{article.title}</span>
+          </div>
+        </div>
+      </section>
 
+      {/* 行业文章正文 - 高端大气严谨风格 */}
+      <article className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            {/* 返回按钮 */}
+            <Link
+              href="/news#industry-info"
+              className="inline-flex items-center gap-2 text-primary hover:underline mb-12 text-base tracking-wide"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              返回列表
+            </Link>
+
+            {/* 文章头部 */}
+            <header className="mb-16">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <IconComponent className="h-7 w-7 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <span className="text-xs px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground font-medium tracking-wide">
+                    {article.category}
+                  </span>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 text-sm text-slate-400 tracking-wide">
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="h-4 w-4" />
+                      发布日期：{article.date}
+                    </span>
+                    {article.author && (
+                      <span className="flex items-center gap-1.5">
+                        <User className="h-4 w-4" />
+                        {article.author}
+                      </span>
+                    )}
+                  </div>
+                  {article.keywords && article.keywords.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-2 mt-3">
+                      <Tag className="h-4 w-4 text-slate-400" />
+                      <span className="text-sm text-slate-400">关键词：</span>
+                      {article.keywords.map((kw, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-2 py-0.5 bg-slate-700/60 text-slate-200 rounded"
+                        >
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-wide">
+                {article.title}
+              </h1>
+            </header>
+
+            {/* 文章正文 */}
+            <div className="space-y-12">
+              {article.sections.map((section, idx) => (
+                <section key={idx}>
+                  <h2 className="text-xl font-bold text-foreground mb-6 tracking-wide">
+                    {section.title}
+                  </h2>
+                  <div className="space-y-2 text-slate-300 leading-relaxed tracking-wide">
+                    {section.content.split('\n\n').map((paragraph, pIdx) => (
+                      <p key={pIdx} className="text-base leading-[1.8]">
+                        {parseBoldText(paragraph)}
+                      </p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+
+            {/* 底部返回按钮 */}
+            <footer className="mt-20 pt-12 border-t border-slate-600">
+              <Link href="/news#industry-info">
+                <Button
+                  variant="outline"
+                  className="border-slate-500 text-slate-200 hover:bg-slate-800 hover:text-white bg-transparent px-6 py-6 text-base tracking-wide"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  返回列表
+                </Button>
+              </Link>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </>
+  )
+}
+
+function CompanyNewsDetail({
+  news,
+  IconComponent,
+}: {
+  news: (typeof newsData)[string]
+  IconComponent: any
+}) {
+  return (
+    <>
       {/* Breadcrumb */}
       <section className="py-6 border-b border-border/50">
         <div className="container mx-auto px-6">
@@ -215,8 +345,29 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
           </div>
         </div>
       </article>
+    </>
+  )
+}
 
-      {/* Footer */}
+export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const companyNews = newsData[id]
+  const industryArticle = industryArticlesMap[id]
+
+  if (!companyNews && !industryArticle) {
+    notFound()
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation />
+
+      {industryArticle ? (
+        <IndustryArticleDetail article={industryArticle} />
+      ) : companyNews ? (
+        <CompanyNewsDetail news={companyNews} IconComponent={companyNews.icon} />
+      ) : null}
+
       <FooterNav />
     </div>
   )
