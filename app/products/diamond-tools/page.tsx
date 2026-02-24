@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ArrowLeft, ArrowRight, Check, Settings, Wrench, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Image from "next/image"
+import { ResponsivePicture } from "@/components/responsive-picture"
 import { FooterNav } from "@/components/footer-nav"
 
 export default function DiamondToolsPage() {
@@ -88,11 +88,11 @@ export default function DiamondToolsPage() {
             </div>
 
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
+              <ResponsivePicture
                 src="/images/diamond.jpg"
                 alt="超硬磨料熔固技术"
                 fill
-                className="object-cover"
+                objectFit="cover"
               />
             </div>
           </div>
@@ -189,11 +189,13 @@ export default function DiamondToolsPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-6 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
-                <Image
+                <ResponsivePicture
                   src="/images/diamond-brazed.png"
                   alt="钎焊金刚石工具基本结构"
                   fill
-                  className="object-contain p-4"
+                  format="png"
+                  objectFit="contain"
+                  className="p-4"
                 />
               </div>
               <p className="text-sm text-slate-600 text-center">钎焊金刚石工具基本结构</p>
@@ -201,11 +203,13 @@ export default function DiamondToolsPage() {
 
             <Card className="p-6 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
-                <Image
+                <ResponsivePicture
                   src="/images/brazing tech.png"
                   alt="钎焊金刚石工具研制影响要素及之间关系"
                   fill
-                  className="object-contain p-4"
+                  format="png"
+                  objectFit="contain"
+                  className="p-4"
                 />
               </div>
               <p className="text-sm text-slate-600 text-center">钎焊金刚石工具研制影响要素及之间关系</p>

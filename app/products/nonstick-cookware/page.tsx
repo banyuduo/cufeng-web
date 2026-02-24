@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, Shield, Zap, CheckCircle2, Flame, Droplet, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Image from "next/image"
+import { ResponsivePicture } from "@/components/responsive-picture"
 import { FooterNav } from "@/components/footer-nav"
 
 export default function NonstickCookwarePage() {
@@ -90,19 +90,19 @@ export default function NonstickCookwarePage() {
             </div>
             <div className="grid grid-cols-2 gap-4 h-[400px]">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
+                <ResponsivePicture
                   src="/images/diamond pan.jpg"
                   alt="金刚石涂层不粘锅"
                   fill
-                  className="object-cover"
+                  objectFit="cover"
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
+                <ResponsivePicture
                   src="/images/sem-pan.jpg"
                   alt="金刚石涂层不粘锅SEM图"
                   fill
-                  className="object-cover"
+                  objectFit="cover"
                 />
               </div>
             </div>
