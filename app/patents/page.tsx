@@ -74,34 +74,34 @@ export default function PatentsPage() {
           <div className="max-w-6xl mx-auto">
             {/* Desktop horizontal flow */}
             <div className="hidden lg:flex items-stretch justify-between gap-3 mb-12">
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center h-[120px] shrink-0">
                 <div className="text-sky-400 text-sm font-medium mb-2">起点</div>
                 <div className="text-white font-bold text-sm leading-tight">金刚石工具</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-sky-400 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center h-[120px] shrink-0">
                 <div className="text-sky-400 text-sm font-medium mb-2">第一步</div>
                 <div className="text-white font-bold text-sm leading-tight">复合材料体系</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center h-[120px] shrink-0">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第二步</div>
                 <div className="text-white font-bold text-sm leading-tight">全碳复合材料</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center h-[120px] shrink-0">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第三步</div>
                 <div className="text-white font-bold text-sm leading-tight">功能性材料迁移</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center h-[120px] shrink-0">
                 <div className="text-purple-400 text-sm font-medium mb-2">第四步</div>
-                <div className="text-white font-bold text-sm leading-tight">物理系统演化<br />(应力工程)</div>
+                <div className="text-white font-bold text-xs leading-tight">物理系统演化<br />(应力工程)</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 ring-2 ring-purple-500/40 text-center min-h-[100px]">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 ring-2 ring-purple-500/40 text-center h-[120px] shrink-0">
                 <div className="text-purple-400 text-sm font-medium mb-2">终点</div>
-                <div className="text-white font-bold text-sm leading-tight">潜在物理<br />计算资源</div>
+                <div className="text-white font-bold text-xs leading-tight">潜在物理<br />计算资源</div>
               </Card>
             </div>
 
