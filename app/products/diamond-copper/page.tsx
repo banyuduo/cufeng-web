@@ -3,45 +3,15 @@ import { ArrowLeft, ArrowRight, Layers, TrendingUp, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
+import { Navigation } from "@/components/navigation"
 
 export default function DiamondCopperPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b border-border/60 backdrop-blur-sm fixed w-full z-50 bg-background/95">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-xl font-bold text-foreground">
-              南京簇锋机电科技
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/products" className="text-sm text-foreground font-medium">
-                产品中心
-              </Link>
-              <Link
-                href="/applications"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                应用领域
-              </Link>
-              <Link href="/patents" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                专利技术
-              </Link>
-              <Link href="/cooperation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                项目合作
-              </Link>
-              <Link href="/cooperation#contact">
-              <Button size="sm" className="bg-primary text-primary-foreground">
-                联系我们
-              </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/products"
