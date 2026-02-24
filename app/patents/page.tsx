@@ -442,13 +442,13 @@ export default function PatentsPage() {
                     <div className="space-y-2">
                       <div className="p-3 bg-slate-900/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">发明专利</div>
-                        <div className="text-base text-slate-300">一种基于金刚石涂层的高耐磨不粘表面及其制备方法</div>
-                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="text-base text-slate-300">一种新型不粘锅具及其制备方法</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202511518539.0</div>
                       </div>
                       <div className="p-3 bg-slate-900/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">发明专利</div>
-                        <div className="text-base text-slate-300">一种适用于高温与复杂工况的不粘功能复合涂层结构</div>
-                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="text-base text-slate-300">一种基于钻石固着的新型不粘锅具</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202522239154.2</div>
                       </div>
                     </div>
                   </div>
@@ -563,40 +563,33 @@ export default function PatentsPage() {
                   <div>
                     <div className="text-purple-400 text-base font-medium mb-3">专利支撑</div>
 
-                    <div className="mb-3">
-                      <div className="text-base text-purple-300 font-medium mb-2">结构型全碳复合材料（散热片）</div>
-                      <div className="space-y-2">
-                        <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-base text-slate-500 mb-1">发明专利</div>
-                          <div className="text-base text-slate-300">
-                            一种基于金刚石原位低温石墨化键合的高导热复合材料及其制备方法与应用
-                          </div>
-                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 2025115185390</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mb-3">
-                      <div className="text-base text-purple-300 font-medium mb-2">柔性全碳复合材料（垫片）</div>
-                      <div className="space-y-2">
-                        <div className="p-3 bg-slate-900/50 rounded-lg">
-                          <div className="text-base text-slate-500 mb-1">发明专利</div>
-                          <div className="text-base text-slate-300">一种高模量多孔碳宿主材料及其制备方法与应用</div>
-                          <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="pt-3 border-t border-purple-700/30">
-                      <p className="text-base text-purple-300 mb-2 italic">
-                        该专利属于全碳材料平台在能源系统方向的结构与功能延伸应用。
-                      </p>
+                    <div className="space-y-2">
                       <div className="p-3 bg-slate-900/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">发明专利</div>
                         <div className="text-base text-slate-300">
-                          一种基于分区功能化骨架的一体化全固态电池及其共烧结制备方法
+                          一种基于金刚石原位低温石墨化键合的高导热复合材料及其制备方法与应用
                         </div>
-                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 待公开</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202610187731.4</div>
+                      </div>
+                      <div className="p-3 bg-slate-900/50 rounded-lg">
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种金刚石低温催化键合的三维SP2 碳骨架增强柔性复合材料及其制备方法</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202610187714.0</div>
+                      </div>
+                      <div className="p-3 bg-slate-900/50 rounded-lg">
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种高模量多孔碳宿主材料及其制备方法与应用</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202610187716.X</div>
+                      </div>
+                      <div className="p-3 bg-slate-900/50 rounded-lg">
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种一体化分区功能化骨架结构、全固态电池及其制备方法</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202610187730.X</div>
+                      </div>
+                      <div className="p-3 bg-slate-900/50 rounded-lg">
+                        <div className="text-base text-slate-500 mb-1">发明专利</div>
+                        <div className="text-base text-slate-300">一种通过化学键合内生应力的sp²-sp³互连全碳复合材料及其制备方法与应用</div>
+                        <div className="font-mono text-base text-slate-500 mt-1">申请号: 202610187717.4</div>
                       </div>
                     </div>
                   </div>
