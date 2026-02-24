@@ -801,9 +801,12 @@ export default function PatentsPage() {
                 <Layers className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-violet-300 font-bold text-lg mb-4">非线性耦合碳网络的混沌动力学行为</h3>
-              <p className="text-lg text-slate-300 leading-relaxed">
+              <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 sp²–sp³
                 互连网络在介观尺度上形成高度耦合、无序但可控的结构单元，为复杂动力学与类储层计算行为提供物理载体。
+              </p>
+              <p className="text-lg text-slate-400 leading-relaxed italic">
+                基于材料内生动力学的非线性响应，该网络能够实现高效的时序信息编码。通过对混沌状态的精确调控，我们旨在构建一种无需传统晶体管逻辑的物理计算范式，从底层突破算力能效比瓶颈。
               </p>
             </Card>
 
@@ -813,10 +816,10 @@ export default function PatentsPage() {
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-purple-300 font-bold text-lg mb-4">量子储层计算的远期探索</h3>
-              <p className="text-lg text-slate-300 leading-relaxed mb-3">
+              <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 相较于超导等凝聚态物理方向，该方向更偏向远期探索。我们正在探索基于平台的"量子储层计算"模型，但其不作为当前的主要技术目标。
               </p>
-              <p className="text-base text-slate-500 italic">
+              <p className="text-lg text-slate-400 leading-relaxed italic">
                 该平台并非以当前量子计算架构为直接目标，而是为探索新型、非冯·诺依曼、物理驱动计算范式提供材料级基础。
               </p>
             </Card>
