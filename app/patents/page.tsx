@@ -35,7 +35,7 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              Technical Architecture & Patent Portfolio
+              Technological Framework & Evolution Roadmap
             </div>
             <h1 className="text-[32px] font-bold text-white mb-6 leading-tight">
               技术架构与演化路径
@@ -64,7 +64,7 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              Cognition & Evolution Path
+              Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core
             </div>
             <h2 className="text-[28px] font-bold text-white mb-4">跨领域连续认知链：从材料物性到计算内核</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">我们的研发并非孤立的点，而是一条清晰的演化曲线</p>
