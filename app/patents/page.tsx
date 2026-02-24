@@ -73,86 +73,78 @@ export default function PatentsPage() {
           {/* Evolution Path Flow */}
           <div className="max-w-6xl mx-auto">
             {/* Desktop horizontal flow */}
-            <div className="hidden lg:flex items-center justify-between gap-4 mb-12">
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
+            <div className="hidden lg:flex items-stretch justify-between gap-3 mb-12">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center min-h-[100px]">
                 <div className="text-sky-400 text-sm font-medium mb-2">起点</div>
-                <div className="text-white font-bold">金刚石工具</div>
+                <div className="text-white font-bold text-sm leading-tight">金刚石工具</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-sky-400 flex-shrink-0" />
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
+              <ArrowRight className="w-6 h-6 text-sky-400 flex-shrink-0 self-center" />
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center min-h-[100px]">
                 <div className="text-sky-400 text-sm font-medium mb-2">第一步</div>
-                <div className="text-white font-bold">复合材料体系</div>
+                <div className="text-white font-bold text-sm leading-tight">复合材料体系</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0" />
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
+              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center min-h-[100px]">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第二步</div>
-                <div className="text-white font-bold">全碳复合材料</div>
+                <div className="text-white font-bold text-sm leading-tight">全碳复合材料</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0" />
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
+              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center min-h-[100px]">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第三步</div>
-                <div className="text-white font-bold text-sm">功能性材料迁移</div>
+                <div className="text-white font-bold text-sm leading-tight">功能性材料迁移</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0" />
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center">
+              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center min-h-[100px]">
                 <div className="text-purple-400 text-sm font-medium mb-2">第四步</div>
-                <div className="text-white font-bold text-sm">
-                  物理系统演化
-                  <br />
-                  (应力工程)
-                </div>
+                <div className="text-white font-bold text-sm leading-tight">物理系统演化<br />(应力工程)</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0" />
-              <Card className="flex-1 p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 ring-2 ring-purple-500/40">
+              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 ring-2 ring-purple-500/40 text-center min-h-[100px]">
                 <div className="text-purple-400 text-sm font-medium mb-2">终点</div>
-                <div className="text-white font-bold text-sm">
-                  潜在物理
-                  <br />
-                  计算资源
-                </div>
+                <div className="text-white font-bold text-sm leading-tight">潜在物理<br />计算资源</div>
               </Card>
             </div>
 
             {/* Mobile/Tablet vertical flow */}
             <div className="lg:hidden space-y-4 mb-12">
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
                 <div className="text-sky-400 text-sm font-medium mb-2">起点</div>
-                <div className="text-white font-bold">金刚石工具</div>
+                <div className="text-white font-bold text-sm leading-tight">金刚石工具</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-sky-400" />
               </div>
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
                 <div className="text-sky-400 text-sm font-medium mb-2">第一步</div>
-                <div className="text-white font-bold">复合材料体系</div>
+                <div className="text-white font-bold text-sm leading-tight">复合材料体系</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-cyan-400" />
               </div>
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第二步</div>
-                <div className="text-white font-bold">全碳复合材料</div>
+                <div className="text-white font-bold text-sm leading-tight">全碳复合材料</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-cyan-400" />
               </div>
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
                 <div className="text-cyan-400 text-sm font-medium mb-2">第三步</div>
-                <div className="text-white font-bold">功能性材料迁移</div>
+                <div className="text-white font-bold text-sm leading-tight">功能性材料迁移</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-purple-400" />
               </div>
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center">
                 <div className="text-purple-400 text-sm font-medium mb-2">第四步</div>
-                <div className="text-white font-bold">物理系统演化 (应力工程)</div>
+                <div className="text-white font-bold text-sm leading-tight">物理系统演化 (应力工程)</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-purple-400" />
               </div>
-              <Card className="p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center ring-2 ring-purple-500/40">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center ring-2 ring-purple-500/40">
                 <div className="text-purple-400 text-sm font-medium mb-2">终点</div>
-                <div className="text-white font-bold">潜在物理计算资源</div>
+                <div className="text-white font-bold text-sm leading-tight">潜在物理计算资源</div>
               </Card>
             </div>
 
