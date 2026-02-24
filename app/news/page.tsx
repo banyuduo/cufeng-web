@@ -3,6 +3,12 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { IndustryInfoNav } from "@/components/industry-info-nav"
+import { industryArticlesData } from "@/lib/industry-articles"
+
+function getArticlePreview(content: string, maxLen = 120) {
+  const clean = content.replace(/\*\*[^*]+\*\*/g, (m) => m.slice(2, -2))
+  return clean.length > maxLen ? clean.slice(0, maxLen) + "…" : clean
+}
 
 export default function NewsPage() {
   const companyNews = [
@@ -219,51 +225,32 @@ export default function NewsPage() {
                 <h3 className="text-2xl font-semibold">行业趋势</h3>
               </div>
               <div className="space-y-6">
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">碳基材料在热管理领域的产业化加速</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">趋势概述：</span>
-                        随着 AI 算力芯片、新能源汽车和 5G 通信设备对散热性能要求的不断提升，碳基复合材料正从实验室走向大规模产业化应用。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">关键驱动因素：</span>
-                        功率密度持续提升、成本下降、制备工艺成熟、产业链完善、政策支持力度加大。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">未来发展方向：</span>
-                        从单一热管理功能向多功能集成（导热+电磁屏蔽+结构支撑）、从消费电子向工业级应用扩展、从材料供应商向系统解决方案提供商转型。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Atom className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">量子计算从实验室走向实用化</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">趋势概述：</span>
-                        量子计算正从概念验证阶段进入实用化探索，超导量子比特、离子阱、光量子等多种技术路线并行发展，预计未来 5-10 年将出现突破性应用。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">关键驱动因素：</span>
-                        量子纠错技术突破、相干时间延长、错误率降低、算法优化、产业资本投入。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">未来发展方向：</span>
-                        专用量子计算机率先落地、量子-经典混合计算成为主流、量子云服务普及、在密码学、优化、机器学习等领域实现实际应用。
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {industryArticlesData
+                  .filter((a) => a.sectionId === "industry-trends")
+                  .map((article) => (
+                    <Link
+                      key={article.id}
+                      href={`/news/${article.id}`}
+                      className="block glass-card rounded-xl p-6 hover:bg-card/60 transition-colors group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <article.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h4>
+                          <p className="text-muted-foreground line-clamp-2">
+                            {getArticlePreview(article.sections[0]?.content ?? "")}
+                          </p>
+                          <div className="mt-4 flex items-center text-primary text-sm font-medium">
+                            查看详情 <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </div>
             </div>
 
@@ -274,74 +261,32 @@ export default function NewsPage() {
                 <h3 className="text-2xl font-semibold">基础理论</h3>
               </div>
               <div className="space-y-6">
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Atom className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">碳基复合材料</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">定义：</span>
-                        由碳元素构成的复合材料体系，通过 sp²–sp³ 杂化键合机制实现原子级界面连接，形成从金刚石到石墨烯的连续碳相结构。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">应用领域：</span>
-                        高性能热管理材料、超硬工具、电子封装、航空航天热控系统、新能源汽车电池热管理。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">当前研究方向：</span>
-                        界面能级调控、应力分布优化、多尺度结构设计、极端工况下的稳定性研究。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Microscope className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">莫特绝缘体</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">定义：</span>
-                        一种强关联电子系统，由于电子间的库仑排斥作用，即使在能带未填满的情况下也表现为绝缘态，是理解高温超导和量子相变的关键物理模型。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">应用领域：</span>
-                        高温超导材料设计、量子计算、拓扑绝缘体、强关联电子器件、新型电子材料开发。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">当前研究方向：</span>
-                        莫特相变的调控机制、与超导态的竞争关系、在二维材料中的实现、量子多体系统的数值模拟。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Zap className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">约瑟夫森结</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">定义：</span>
-                        由两个超导体通过弱连接（薄绝缘层或正常金属）形成的量子隧道结，允许库珀对隧穿，是超导量子计算和量子信息处理的核心元件。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">应用领域：</span>
-                        超导量子比特、量子计算机、超灵敏磁强计、电压标准、量子传感器。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">当前研究方向：</span>
-                        提高相干时间、降低噪声、可扩展量子电路设计、拓扑量子计算、量子纠错算法实现。
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {industryArticlesData
+                  .filter((a) => a.sectionId === "basic-theory")
+                  .map((article) => (
+                    <Link
+                      key={article.id}
+                      href={`/news/${article.id}`}
+                      className="block glass-card rounded-xl p-6 hover:bg-card/60 transition-colors group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <article.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h4>
+                          <p className="text-muted-foreground line-clamp-2">
+                            {getArticlePreview(article.sections[0]?.content ?? "")}
+                          </p>
+                          <div className="mt-4 flex items-center text-primary text-sm font-medium">
+                            查看详情 <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </div>
             </div>
 
@@ -352,51 +297,32 @@ export default function NewsPage() {
                 <h3 className="text-2xl font-semibold">前沿技术</h3>
               </div>
               <div className="space-y-6">
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Cpu className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">超导材料</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">定义：</span>
-                        在临界温度以下电阻为零的材料，可分为传统超导体和高温超导体，具有完全抗磁性和量子相干性，是未来能源传输和量子计算的关键材料。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">应用领域：</span>
-                        超导磁体、量子计算机、超导电缆、磁悬浮交通、核磁共振成像、粒子加速器。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">当前研究方向：</span>
-                        室温超导材料探索、高温超导机理、拓扑超导体、超导量子比特、超导材料的产业化应用。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass-card rounded-xl p-6 hover:bg-card/60 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <FileText className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold mb-2">量子混沌计算</h4>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">定义：</span>
-                        利用量子系统的混沌动力学特性进行信息处理的计算范式，通过量子纠缠和叠加态实现指数级加速，是突破经典计算极限的前沿方向。
-                      </p>
-                      <p className="text-muted-foreground mb-3">
-                        <span className="font-semibold text-foreground">应用领域：</span>
-                        量子机器学习、优化问题求解、密码学、药物设计、金融建模、复杂系统模拟。
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">当前研究方向：</span>
-                        量子算法设计、噪声抑制、量子纠错、可扩展量子硬件、量子-经典混合计算架构。
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {industryArticlesData
+                  .filter((a) => a.sectionId === "frontier-tech")
+                  .map((article) => (
+                    <Link
+                      key={article.id}
+                      href={`/news/${article.id}`}
+                      className="block glass-card rounded-xl p-6 hover:bg-card/60 transition-colors group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <article.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h4>
+                          <p className="text-muted-foreground line-clamp-2">
+                            {getArticlePreview(article.sections[0]?.content ?? "")}
+                          </p>
+                          <div className="mt-4 flex items-center text-primary text-sm font-medium">
+                            查看详情 <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>
