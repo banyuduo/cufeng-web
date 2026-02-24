@@ -239,8 +239,13 @@ export default function AboutPage() {
                   <Users className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">张工 (Zhang)</h3>
-                  <p className="text-sm text-slate-400">应用工程与现场支持负责人</p>
+                  <h3 className="text-lg font-bold text-white">张工</h3>
+                  <p className="text-sm text-slate-400">Zhang</p>
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className="inline-block px-3 py-1 bg-purple-600/20 text-purple-300 text-xs font-medium rounded-full mb-2">
+                  应用工程与现场支持负责人
                 </div>
               </div>
               <div className="space-y-4 text-sm text-slate-300">
