@@ -135,14 +135,14 @@ const newsData: Record<
   },
 }
 
-// 生成静态路径参数，用于静态导出
+// 生成静态路径参数，用于静态导出（无 locale 的旧路由）
 export async function generateStaticParams() {
   const companyIds = Object.keys(newsData)
   const industryIds = Object.keys(industryArticlesMap)
   return [...companyIds, ...industryIds].map((id) => ({ id }))
 }
 
-function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
+function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; prefix: string }) {
   const IconComponent = article.icon
 
   return (
@@ -151,15 +151,15 @@ function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
       <section className="py-6 border-b border-border/50">
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors">
+            <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               首页
             </Link>
             <span>/</span>
-            <Link href="/news" className="hover:text-primary transition-colors">
+            <Link href={`${prefix}/news`} className="hover:text-primary transition-colors">
               技术视界
             </Link>
             <span>/</span>
-            <Link href="/news#industry-info" className="hover:text-primary transition-colors">
+            <Link href={`${prefix}/news#industry-info`} className="hover:text-primary transition-colors">
               行业信息
             </Link>
             <span>/</span>
@@ -174,7 +174,7 @@ function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
           <div className="max-w-3xl mx-auto">
             {/* 返回按钮 */}
             <Link
-              href="/news#industry-info"
+              href={`${prefix}/news#industry-info`}
               className="inline-flex items-center gap-2 text-primary hover:underline mb-12 text-base tracking-wide"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -244,7 +244,7 @@ function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
 
             {/* 底部返回按钮 */}
             <footer className="mt-20 pt-12 border-t border-slate-600">
-              <Link href="/news#industry-info">
+              <Link href={`${prefix}/news#industry-info`}>
                 <Button
                   variant="outline"
                   className="border-slate-500 text-slate-200 hover:bg-slate-800 hover:text-white bg-transparent px-6 py-6 text-base tracking-wide"
@@ -264,9 +264,11 @@ function IndustryArticleDetail({ article }: { article: IndustryArticle }) {
 function CompanyNewsDetail({
   news,
   IconComponent,
+  prefix,
 }: {
   news: (typeof newsData)[string]
   IconComponent: any
+  prefix: string
 }) {
   return (
     <>
@@ -274,11 +276,11 @@ function CompanyNewsDetail({
       <section className="py-6 border-b border-border/50">
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors">
+            <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               首页
             </Link>
             <span>/</span>
-            <Link href="/news" className="hover:text-primary transition-colors">
+            <Link href={`${prefix}/news`} className="hover:text-primary transition-colors">
               技术视界
             </Link>
             <span>/</span>
@@ -292,7 +294,7 @@ function CompanyNewsDetail({
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             {/* Back Button */}
-            <Link href="/news" className="inline-flex items-center gap-2 text-primary hover:underline mb-8">
+            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-primary hover:underline mb-8">
               <ArrowLeft className="h-4 w-4" />
               返回新闻列表
             </Link>
@@ -328,7 +330,7 @@ function CompanyNewsDetail({
             {/* Share and Navigation */}
             <footer className="mt-16 pt-8 border-t border-border/50">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <Link href="/news">
+                <Link href={`${prefix}/news`}>
                   <Button
                     variant="outline"
                     className="border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
@@ -337,7 +339,7 @@ function CompanyNewsDetail({
                     返回技术视界
                   </Button>
                 </Link>
-                <Link href="/cooperation#contact">
+                <Link href={`${prefix}/cooperation#contact`}>
                   <Button className="bg-sky-600 hover:bg-sky-700 text-white">联系我们</Button>
                 </Link>
               </div>
@@ -349,8 +351,16 @@ function CompanyNewsDetail({
   )
 }
 
-export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
+export default async function NewsDetailPage({
+  params,
+}: {
+  params: Promise<{ locale?: string; id: string }>
+}) {
+  const { locale, id } = await params
+  const { isValidLocale } = await import("@/lib/i18n")
+  const validLocale = locale && isValidLocale(locale) ? locale : "zh"
+  const prefix = locale && isValidLocale(locale) ? `/${validLocale}` : ""
+
   const companyNews = newsData[id]
   const industryArticle = industryArticlesMap[id]
 
@@ -363,9 +373,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
       <Navigation />
 
       {industryArticle ? (
-        <IndustryArticleDetail article={industryArticle} />
+        <IndustryArticleDetail article={industryArticle} prefix={prefix} />
       ) : companyNews ? (
-        <CompanyNewsDetail news={companyNews} IconComponent={companyNews.icon} />
+        <CompanyNewsDetail news={companyNews} IconComponent={companyNews.icon} prefix={prefix} />
       ) : null}
 
       <FooterNav />

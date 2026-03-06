@@ -1,11 +1,24 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ChevronUp, Mail, MapPin } from "lucide-react"
 import { useState, useEffect } from "react"
+import type { Locale } from "@/lib/i18n"
+import { getTranslations } from "@/lib/translations"
+import { isValidLocale } from "@/lib/i18n"
 
-export function FooterNav() {
+export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const pathname = usePathname()
+
+  const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
+  const localeFromPath = pathSegments[0]
+  const locale: Locale =
+    localeProp ?? (isValidLocale(localeFromPath) ? localeFromPath : "zh")
+
+  const t = getTranslations(locale)
+  const prefix = `/${locale}`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +35,11 @@ export function FooterNav() {
 
   return (
     <>
-      {/* 悬浮回到顶部按钮 */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-sky-600 hover:bg-sky-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
-          aria-label="回到顶部"
+          aria-label={t("common.footer.scrollToTop")}
         >
           <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
         </button>
@@ -36,114 +48,117 @@ export function FooterNav() {
       <footer className="border-t border-slate-200 bg-slate-50 py-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
-            {/* 产品 - 移动端第一行左 */}
             <div className="order-1 lg:order-2">
-              <div className="font-semibold mb-4 text-slate-900 text-left">产品</div>
+              <div className="font-semibold mb-4 text-slate-900 text-left">
+                {t("common.footer.products")}
+              </div>
               <ul className="space-y-2 text-sm text-slate-600 text-left">
                 <li>
-                  <Link href="/products/nonstick-cookware" className="hover:text-sky-600 transition-colors">
-                    金刚石不粘锅
+                  <Link href={`${prefix}/products/nonstick-cookware`} className="hover:text-sky-600 transition-colors">
+                    {t("common.footer.nonstickCookware")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/diamond-copper" className="hover:text-sky-600 transition-colors">
-                    金刚石铜材料
+                  <Link href={`${prefix}/products/diamond-copper`} className="hover:text-sky-600 transition-colors">
+                    {t("common.footer.diamondCopper")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/thermal-pad" className="hover:text-sky-600 transition-colors">
-                    柔性导热垫片
+                  <Link href={`${prefix}/products/thermal-pad`} className="hover:text-sky-600 transition-colors">
+                    {t("common.footer.thermalPad")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/carbon-composite" className="hover:text-sky-600 transition-colors">
-                    碳基复合材料
+                  <Link href={`${prefix}/products/carbon-composite`} className="hover:text-sky-600 transition-colors">
+                    {t("common.footer.carbonComposite")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/diamond-tools" className="hover:text-sky-600 transition-colors">
-                    超磨熔固工具
+                  <Link href={`${prefix}/products/diamond-tools`} className="hover:text-sky-600 transition-colors">
+                    {t("common.footer.superabrasiveTools")}
                   </Link>
                 </li>
               </ul>
             </div>
-            {/* 技术与交流 - 移动端第一行右 */}
             <div className="order-2 lg:order-3">
-              <div className="font-semibold mb-4 text-slate-900 text-left">技术与交流</div>
+              <div className="font-semibold mb-4 text-slate-900 text-left">
+                {t("common.footer.techAndExchange")}
+              </div>
               <ul className="space-y-2 text-sm text-slate-600 text-left">
                 <li>
-                  <Link href="/about" className="hover:text-sky-600 transition-colors">
-                    关于我们
+                  <Link href={`${prefix}/about`} className="hover:text-sky-600 transition-colors">
+                    {t("common.nav.about")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/patents" className="hover:text-sky-600 transition-colors">
-                    技术架构
+                  <Link href={`${prefix}/patents`} className="hover:text-sky-600 transition-colors">
+                    {t("common.nav.techArchitecture")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/applications" className="hover:text-sky-600 transition-colors">
-                    应用领域
+                  <Link href={`${prefix}/applications`} className="hover:text-sky-600 transition-colors">
+                    {t("common.nav.applications")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/news" className="hover:text-sky-600 transition-colors">
-                    技术视界
+                  <Link href={`${prefix}/news`} className="hover:text-sky-600 transition-colors">
+                    {t("common.nav.techVision")}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cooperation" className="hover:text-sky-600 transition-colors">
-                    项目合作
+                  <Link href={`${prefix}/cooperation`} className="hover:text-sky-600 transition-colors">
+                    {t("common.nav.projectCooperation")}
                   </Link>
                 </li>
               </ul>
             </div>
-            {/* 簇锋科技 | ToSpike - 移动端第二行全宽 */}
             <div className="order-3 col-span-2 lg:col-span-1 lg:order-1">
-              <div className="font-bold text-lg mb-4 text-slate-900 text-left">簇锋科技 | ToSpike</div>
-              <p className="text-xs text-slate-500 text-left">sp²–sp³ 碳基界面平台技术</p>
+              <div className="font-bold text-lg mb-4 text-slate-900 text-left">
+                {t("common.footer.brand")}
+              </div>
+              <p className="text-xs text-slate-500 text-left">{t("common.footer.platformTech")}</p>
             </div>
-            {/* 合作与支持 - 移动端第三行全宽 */}
             <div className="order-4 col-span-2 lg:col-span-1 lg:order-4">
-              <div className="font-semibold mb-4 text-slate-900 text-left">合作与支持</div>
+              <div className="font-semibold mb-4 text-slate-900 text-left">
+                {t("common.footer.cooperationAndSupport")}
+              </div>
               <ul className="space-y-2 text-sm text-slate-600 text-left">
                 <li className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
-                  <span>南京市江北新区行知路2号</span>
+                  <span>{t("common.footer.address")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-500" />
-                  <span>邮箱: wangbo@tospike.com</span>
+                  <span>{t("common.footer.email")}</span>
                 </li>
               </ul>
             </div>
           </div>
-        <div className="border-t border-slate-200 mt-8 pt-8">
-          <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
-              <span>Copyright © 2018 - 2026 南京簇锋机电科技有限公司</span>
-              <span className="hidden sm:inline text-zinc-400">|</span>
-
-              <div className="flex items-center gap-1.5 group">
-                <img
-                  src="/images/police-filing-badge.png"
-                  alt="公安机关联网备案"
-                  className="w-3.5 h-3.5 object-contain grayscale group-hover:grayscale-0 transition-all"
-                />
-                <Link
-                  href="https://beian.miit.gov.cn/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-zinc-700 transition-colors"
-                >
-                  苏ICP备18019265号-1
-                </Link>
+          <div className="border-t border-slate-200 mt-8 pt-8">
+            <div className="text-xs text-zinc-500 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
+                <span>{t("common.footer.copyright")}</span>
+                <span className="hidden sm:inline text-zinc-400">|</span>
+                <div className="flex items-center gap-1.5 group">
+                  <img
+                    src="/images/police-filing-badge.png"
+                    alt={t("common.footer.policeFiling")}
+                    className="w-3.5 h-3.5 object-contain grayscale group-hover:grayscale-0 transition-all"
+                  />
+                  <Link
+                    href="https://beian.miit.gov.cn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-zinc-700 transition-colors"
+                  >
+                    {t("common.footer.icp")}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </>
   )
 }

@@ -1,0 +1,371 @@
+{
+  "common": {
+    "nav": {
+      "brand": "CuFeng / ToSpike",
+      "techArchitecture": "Technology Architecture",
+      "products": "Products",
+      "applications": "Applications",
+      "techVision": "Tech Vision",
+      "about": "About Us",
+      "projectCooperation": "Project Cooperation",
+      "toggleMenu": "Toggle menu"
+    },
+    "footer": {
+      "scrollToTop": "Back to top",
+      "products": "Products",
+      "techAndExchange": "Technology & Exchange",
+      "cooperationAndSupport": "Cooperation & Support",
+      "brand": "CuFeng / ToSpike",
+      "platformTech": "sp²–sp³ carbon-based interface platform technology",
+      "address": "No. 2 Xingzhi Road, Jiangbei New Area, Nanjing",
+      "email": "Email: wangbo@tospike.com",
+      "copyright": "Copyright © 2018 - 2026 Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
+      "policeFiling": "Public security filing",
+      "icp": "苏ICP备18019265号-1",
+      "nonstickCookware": "Diamond nonstick cookware",
+      "diamondCopper": "Diamond-copper composite",
+      "thermalPad": "Thermal interface material (TIM)",
+      "carbonComposite": "All-carbon composite",
+      "superabrasiveTools": "Superabrasive fusion-bonded tools"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Stress-Engineered sp²–sp³ Carbon-Based Interface Platform",
+      "subtitle": "From high thermal conductivity to quantum physics frontiers",
+      "card1": "We focus on source-level R&D based on sp²–sp³ hybrid bonding logic.",
+      "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, thereby generating tunable endogenous stress fields and heterogeneous energy-level environments.",
+      "achieved": "Currently achieved",
+      "achievement1": "High thermal conductivity diamond-copper composite",
+      "achievement1Value": "Bulk thermal conductivity ≥ 680 W/m·K",
+      "achievement1Note": "With further improvement potential",
+      "achievement2": "Reproducible all-carbon functional structures",
+      "achievement2Note": "Sample preparation capability",
+      "platformFocus": "This platform focuses on advanced thermal management, interface materials, and high-hardness, high-conductivity applications, while exploring stress-induced electronic structure changes to provide a reliable material foundation for higher-order properties (such as high conductivity, unconventional transport, or potential quantum computing applications).",
+      "viewTechArchitecture": "View Technology Architecture",
+      "projectCooperation": "Project Cooperation"
+    },
+    "features": {
+      "innovation": "Source-Level Innovation",
+      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp²–sp³ bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability. These properties provide a tunable experimental platform for subsequent thermal management, electronic transport, and potential nonlinear physics research.",
+      "patents": "Patent Moat",
+      "patentsDesc": "We have strategically deployed nearly 10 core patents covering preparation routes, bonding structure design, stress regulation methods, and functional extensions. This IP matrix forms closed-loop protection, establishing solid technical boundaries and providing comprehensive legal safeguards for R&D iteration and application expansion.",
+      "cooperation": "Cooperation & Industry Extension",
+      "cooperationIntro": "This project has completed the leap from laboratory to process closure, with stable sample delivery capability.",
+      "cooperationPath": "Our path and expectations:",
+      "cooperationDesc": "While advancing our own industrialization, we remain open to deep collaboration worldwide. Whether through strategic licensing or joint development for specific domains, we aim to accelerate technology democratization through resource sharing. We are confident in establishing industry benchmarks through sustained source innovation, and we look forward to partnering with those who share a long-term strategic vision to jointly define the physical boundaries of next-generation thermal management materials."
+    },
+    "platform": {
+      "title": "Platform Positioning & Value",
+      "p1": "In high-power-density electronic devices, AI computing, and new energy systems, traditional materials have approached physical limits in thermal conductivity, thermal expansion matching, and reliability.",
+      "p2": "Rather than pursuing single-parameter optimization, this platform provides an extensible material substrate:",
+      "li1": "Through sp²/sp³ bonding and stress engineering, unify high thermal conductivity with tunable electronic environments",
+      "li2": "Reserve structural and property interfaces for future thermal interface materials, heat spreaders, and exploratory physical devices",
+      "p3": "We regard this as a long-term evolvable underlying platform, not a specific end product."
+    },
+    "results": {
+      "title": "From Theory Validation to Sample Delivery",
+      "subtitle": "Our phased results",
+      "process": "Process & Performance Closure",
+      "processDesc": "Completed full laboratory validation from physical hypothesis → preparation process → performance characterization, with preliminary sample preparation and performance testing underway.",
+      "deliverables": "Deliverable Samples",
+      "deliverablesDesc": "Stable diamond-copper composite and superabrasive fusion-bonded tool samples; some samples have completed engineering-level validation of key thermal performance metrics and entered further optimization.",
+      "ip": "Independent Intellectual Property",
+      "ipDesc": "Core technology routes are fully self-developed and patented; the technology does not depend on external open frameworks or patchwork solutions, ensuring independence and innovation."
+    }
+  },
+  "products": {
+    "title": "Product Matrix",
+    "subtitle": "From consumer nonstick cookware to cutting-edge all-carbon composites, each of our technologies represents a breakthrough in materials science",
+    "badge": {
+      "inStock": "In Stock · Mature Product",
+      "gen2Core": "Gen 2 · Strategic Core",
+      "gen2Expand": "Gen 2 · Business Expansion",
+      "gen3Future": "Gen 3 · Future Platform",
+      "traditional": "Traditional · Custom Service"
+    },
+    "nonstickCookware": {
+      "title": "Diamond coating nonstick cookware",
+      "desc": "Patented diamond particle bonding technology for ultra-wear resistance and lasting nonstick performance. 10x+ lifetime over traditional coatings; mass production ready.",
+      "feature1": "Brazing-bonded diamond particle coating, permanent bonding",
+      "feature2": "10x+ wear resistance improvement, significantly extended service life",
+      "feature3": "Food safety certified, consumer-grade product",
+      "viewDetails": "View Details"
+    },
+    "diamondCopper": {
+      "title": "Diamond-copper composite",
+      "desc": "Achieved 680 W/m·K thermal conductivity; premium version can reach 1200+ W/m·K. Dual product line strategy covering cost-effective civilian and high-end applications.",
+      "feature1": "Cost-effective version: high-volume civilian solutions",
+      "feature2": "Premium performance version: 1200+ W/m·K, CVD alternative",
+      "feature3": "AI chips, power devices, and other high-end thermal applications"
+    },
+    "thermalPad": {
+      "title": "Thermal interface material (TIM)",
+      "desc": "Flexible thermal solution based on copper mesh/copper fiber. Active fusion bonding of diamond particles forms a 3D skeleton conductive phase with high thermal conductivity and flexibility.",
+      "feature1": "Copper mesh/copper fiber skeleton structure",
+      "feature2": "Active fusion bonding of high thermal conductivity particles",
+      "feature3": "Adapts to complex interface flexible thermal conduction"
+    },
+    "carbonComposite": {
+      "title": "All-carbon composite",
+      "desc": "sp³–sp² 3D structure technology platform. Extensible to solid-state battery anodes, superconducting materials, and other frontier fields; 5–10 year core technology reserve.",
+      "feature1": "sp²–sp³ chemical bonding structure",
+      "feature2": "Solid-state battery anode material",
+      "feature3": "High conductivity / superconducting potential applications"
+    },
+    "diamondTools": {
+      "title": "Superabrasive fusion-bonded tools solutions",
+      "subtitle": "(Superabrasive Fusion-Bonded Solutions)",
+      "desc": "Based on interfacial chemical metallurgy principles, active fusion bonding achieves atomic-level reliable connection between diamond or cubic boron nitride (CBN) and heterogeneous metal substrates. We go beyond single tools; through precise matching of substrate–superabrasive–fusion alloy, we provide customized precision machining and material removal solutions for aerospace, semiconductor, and advanced composites.",
+      "feature1": "3D conformal structure design",
+      "feature2": "High-hardness / difficult-to-machine material adaptation",
+      "feature3": "Extreme condition reliability validation"
+    },
+    "disclaimer": "Note: All data above are typical laboratory values or theoretical design values. Due to application conditions and specification differences, actual performance parameters are subject to formal contracts or product manuals.",
+    "cta": {
+      "title": "Need customized thermal management solutions?",
+      "subtitle": "Our technical team will provide optimal product selection and technical support based on your specific requirements",
+      "contactTech": "Contact Technical Team",
+      "browseProducts": "Browse All Products"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "About Us",
+      "title": "About Us",
+      "tagline": "New technology, new peak",
+      "subtitle": "Originating from superabrasive tools, we have pivoted to high-performance thermal management materials. From superhard tool designers to carbon-based composite innovators, we are committed to being our customers' ideal solution provider."
+    },
+    "overview": {
+      "title": "CuFeng / ToSpike: Defining the physical boundaries of carbon-based interfaces",
+      "companyName": "Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
+      "location": "Located in Jiangbei New Area, Nanjing",
+      "companyProfile": "Company Profile",
+      "profile1": "CuFeng (ToSpike) is dedicated to carbon-based interface engineering. We leverage deep understanding of sp²–sp³ hybrid bonding mechanisms to build a complete technology chain from atomic-level active fusion bonding to high-dimensional carbon-based composite platforms.",
+      "profile2": "We do not merely produce superabrasive tools (Diamond/CBN); we are committed to providing solutions for heat dissipation, structural strength, and electromagnetic protection in semiconductor manufacturing, aerospace, AI computing, and new energy systems, among other cutting-edge fields.",
+      "rdCapability": "R&D & Engineering Capability",
+      "rdDesc": "The company has over a decade of technical accumulation in vacuum interface metallurgy, active fusion bonding, and engineering applications. Through microscopic control of the active fusion bonding process, we have overcome processing bottlenecks for cast metals, carbon fiber composites (CFRP), and hard brittle materials in extreme manufacturing, providing vertical integration solutions from custom tools to frontier functional materials.",
+      "evolution": "From Industrial Practice to Physics Exploration",
+      "evolution1": "We adhere to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is achieving strategic elevation from \"precision machining tools\" to \"high-performance functional material platform.\"",
+      "evolution2": "Through endogenous stress regulation based on sp²–sp³ chemical bonding, we have achieved a material breakthrough with bulk thermal conductivity ≥ 680 W/m·K, and continue to explore the infinite possibilities of carbon-based structures in superconductivity, unconventional transport, and quantum physics frontiers.",
+      "vision": "Corporate Vision",
+      "visionDesc": "Committed to being our customers' ideal solution provider, delivering breakthrough material solutions for high-power-density thermal management, new energy, and solid-state batteries through sustained technological innovation.",
+      "coreIdea": "Core Philosophy",
+      "coreIdeaDesc": "New technology, new peak. Driven by technological innovation, we continuously break through materials science boundaries from superabrasive tools to carbon-based composite platforms, partnering with customers to climb new industry peaks."
+    },
+    "team": {
+      "title": "Core Team",
+      "subtitle": "Professional, focused, specialized technical team",
+      "wang": {
+        "name": "Dr. Wang",
+        "title": "Head of Technical R&D & Applications",
+        "background": "Professional Background",
+        "backgroundDesc": "Earned PhD in Engineering in 2016; long-term focus on precision machining research of superabrasive tools for difficult-to-machine materials.",
+        "credentials": "Technical Credentials",
+        "credentialsDesc": "Deep industrialization experience; 29 invention and utility model patents applied for and granted.",
+        "capability": "Core Capabilities",
+        "capabilityDesc1": "Expert in providing customized system solutions for extreme conditions including titanium alloys, nickel-based superalloys, silicon carbide, and carbon fiber composites (CFRP), through deep matching of sp²–sp³ interface parameters.",
+        "capabilityDesc2": "Expert in cost-oriented, volume-oriented product development and strategic planning; achieving universal application through process improvement or paradigm innovation."
+      },
+      "he": {
+        "name": "Mr. He",
+        "title": "Head of Engineering Design & Structure",
+        "background": "Professional Background",
+        "backgroundDesc1": "Master of Mechanical Engineering, Senior Engineer; 17+ years of defense electronics R&D experience, focused on structural design and thermal management.",
+        "backgroundDesc2": "Long-term tenure at major defense electronics research institutions; led multiple high-complexity electronic equipment structural R&D and manufacturing projects in defense and civilian sectors.",
+        "capability": "Core Expertise",
+        "capabilityDesc1": "Expert in integrated structure–thermal coupling design for complex electronic equipment; full-chain capability from system design to engineering implementation.",
+        "capabilityDesc2": "Deep understanding of thermal design for high-power-density electronic equipment; provides reliable technical paths and innovative solutions.",
+        "capabilityDesc3": "Rich engineering practice and problem-closure experience; adept at balancing performance, reliability, and process feasibility under constraints."
+      },
+      "zhang": {
+        "name": "Mr. Zhang",
+        "title": "Head of Application Engineering & Field Support",
+        "background": "Professional Background",
+        "backgroundDesc": "Senior diamond tool application expert; years of experience in superabrasive tools and material cutting mechanisms. Expert in solving complex industrial grinding challenges; dedicated to innovative application and market promotion of high-end new energy vehicle assembly tools.",
+        "capability": "Core Capabilities",
+        "solution": "Precision Solutions:",
+        "solutionDesc": "Deep dive into on-site pain points; full-chain support from tool selection to process parameter optimization.",
+        "response": "Agile On-Site Response:",
+        "responseDesc": "Ensure seamless integration of technical support and production; significantly improve line efficiency and stability.",
+        "ev": "New Energy Vehicle Business Direction:",
+        "evAssembly": "Assembly Line Tool Development:",
+        "evAssemblyDesc": "For three-electric systems (battery, motor, controller) and chassis assembly; provide high-precision, high-durability dedicated tool solutions.",
+        "evIndustry": "Industry Depth Understanding:",
+        "evIndustryDesc": "Deep grasp of stringent assembly process requirements for new energy vehicle lightweight manufacturing; help customers achieve process upgrades."
+      }
+    },
+    "timeline": {
+      "title": "Core Milestones",
+      "subtitle": "Key milestones from launch to technological breakthrough",
+      "2025Patents": "Patent cluster and technology barrier formation",
+      "2025PatentsDesc": "Completed 9 core patent layouts, building a complete IP moat from diamond tools to sp²–sp³ carbon-based interface.",
+      "2025Thermal": "High-performance thermal management material breakthrough",
+      "2025ThermalDesc": "Successfully developed diamond-copper composite with thermal conductivity reaching 680 W/m·K, marking the company's formal entry into high-power electronic thermal management.",
+      "2023Relocate": "Strategic relocation and capability upgrade",
+      "2023RelocateDesc": "R&D center relocated to Jiangbei New Area, Nanjing, leveraging regional R&D advantages to accelerate commercialization of superhard material fundamentals.",
+      "2018Founding": "CuFeng launch",
+      "2018FoundingDesc": "Company registered in Zhenjiang, establishing the \"new technology, new peak\" philosophy and focusing on solving interface connection challenges for difficult-to-machine materials.",
+      "moreNews": "View More News"
+    }
+  },
+  "applications": {
+    "title": "Application Matrix",
+    "subtitle": "Based on sp²–sp³ carbon hybrid bonding platform technology, we apply the same core methodology to different physical scenarios, forming a complete technology matrix from industrial thermal management to frontier physics exploration.",
+    "blueprint": {
+      "title": "Application Blueprint: From underlying physics to full-scenario deployment",
+      "subtitle": "Cross-domain evolution path based on sp²–sp³ hybrid bonding platform",
+      "foundation": "sp²–sp³ carbon-based hybrid bonding platform (stress engineering)",
+      "foundationLabel": "Foundation",
+      "layer1Level": "L1: Core business (Current)",
+      "layer1Title": "High-performance industrial thermal management",
+      "layer1Items": "AI chip heat spreaders|Power semiconductors|New energy vehicles",
+      "layer1Desc": "Addressing thermal bottlenecks under extreme power density, providing 500–800 W/m·K efficient thermal solutions.",
+      "layer1Tag": "Mature applications",
+      "layer2Level": "L2: Scale deployment (Expanding)",
+      "layer2Title": "Consumer electronics & quality of life",
+      "layer2Items": "High-thermal wireless charging coils|All-carbon bonded nonstick cookware",
+      "layer2Desc": "Industrial-grade processes applied to consumer markets, solving reliability, adhesion, and food safety pain points.",
+      "layer2Tag": "Market scaling",
+      "layer3Level": "L3: Industry upgrade (Growth)",
+      "layer3Title": "Energy & environmental systems",
+      "layer3Items": "Solid-state battery anode materials|Water treatment particle electrodes",
+      "layer3Desc": "High-modulus carbon skeleton for energy density and electrocatalytic activity; rapid deployment potential.",
+      "layer3Tag": "Potential development",
+      "layer4Level": "L4: Frontier exploration (Vision)",
+      "layer4Title": "Extreme property exploration",
+      "layer4Items": "Superconducting fundamental research|Quantum mesoscopic system vision",
+      "layer4Desc": "Exploring stress-field-induced band structure for future computing architecture; 10-year theoretical reserve.",
+      "layer4Tag": "Theoretical exploration"
+    },
+    "thermal": {
+      "badge": "Priority 1 · Deployed / Engineering stage",
+      "title": "Core Industrial Thermal Management Solutions",
+      "subtitle": "Addressing thermal management bottlenecks for high-power-density electronic devices, providing thermal interface substrate solutions beyond traditional copper/aluminum limits"
+    },
+    "cta": {
+      "viewMaterials": "View available materials and solutions",
+      "viewFullTech": "View full technology architecture",
+      "techDialogue": "Technical dialogue & alignment",
+      "viewTechPath": "View full technology evolution path"
+    }
+  },
+  "cooperation": {
+    "hero": {
+      "title": "Technical Dialogue & Strategic Alignment",
+      "subtitle": "Technical Dialogue & Strategic Alignment",
+      "p1": "We do not regard this project as a fully defined, mature product ready for replication or scaling.",
+      "p2": "It is closer to a material and physics platform in evolution—",
+      "p3": "originating from engineering practice, but gradually evolving potential space across materials science, functional materials, and fundamental physics exploration.",
+      "p4": "Therefore, the purpose of this page is not to promote specific cooperation models,",
+      "p5": "but to declare a technical state that can be understood and aligned."
+    },
+    "platform": {
+      "title": "An evolving platform, not a single-point technology",
+      "content": "What this project builds is not a single material, single device, or single application, but a complete carbon-based material system centered on sp³–sp² chemical bonding and endogenous stress regulation.",
+      "content2": "This system has formed a clear path for material preparation and functional validation at the engineering level,",
+      "content3": "while at a deeper level, it presents the possibility of continued evolution as a platform.",
+      "content4": "We are well aware of the gap from lab to fab; therefore, while pursuing physical limits, we maintain rigorous respect for process reproducibility and industrial boundaries.",
+      "content5": "This means it can be used to solve real engineering problems,",
+      "content6": "or may in the future be incorporated into higher-level systematic research and application frameworks."
+    },
+    "audience": {
+      "title": "Who we are open to engaging with",
+      "intro": "At this stage, we focus more on cognitive alignment than on formal cooperation arrangements.",
+      "intro2": "Therefore, we are open to dialogue with the following types of institutions or individuals:",
+      "research": "Research institutions with long-term interest in material physics, interface structure, and multi-scale evolution",
+      "researchBold": "Research institutions",
+      "industry": "Industry players seeking next-generation functional materials or foundational material platforms, willing to co-define product boundaries in application scenarios",
+      "industryBold": "Industry partners",
+      "tech": "Technical teams with cross-disciplinary judgment, capable of understanding \"platform value\" rather than single-point product value",
+      "techBold": "Technical teams",
+      "investor": "Strategic investors focused on medium-to-long-term technology inflection points, with patience and independent judgment",
+      "investorBold": "Strategic investors",
+      "footnote": "We do not seek broad coverage; we care more that discussions occur from the same technical perspective."
+    },
+    "nextSteps": {
+      "title": "On further advancement",
+      "p1": "Under the right cognitive premise, there can be multiple possibilities for advancing this technology system.",
+      "p2": "These possibilities do not presuppose specific forms or predetermined paths,",
+      "p3": "but depend on the match between both parties in technical understanding, development pace, and long-term goals.",
+      "p4": "Before that, any formal definition would be premature."
+    },
+    "resonance": {
+      "title": "A resonance, not mere recruitment",
+      "p1": "We do not expect to complete all judgments through a single web browse.",
+      "p2": "If the physical logic described herein resonates with your intuition about the evolution of future materials,",
+      "p3": "if you likewise believe that breakthroughs in underlying materials are the ultimate key to transcending industry cycles and solving thermal and efficiency bottlenecks,",
+      "p4": "then we may already stand on a similar technical perspective.",
+      "p5": "What we look forward to is this kind of cognitive convergence across time and space."
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "For further dialogue, please reach out through the following channels.",
+      "introNote": "We generally prefer to engage around specific questions or well-defined discussion topics.",
+      "entity": "Entity",
+      "entityName": "Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
+      "techContact": "Technical Contact",
+      "phone": "Phone",
+      "address": "Address",
+      "addressValue": "No. 2 Xingzhi Road, Jiangbei New Area, Nanjing, Jiangsu, China"
+    },
+    "quote": "The true value of technology often lies not in the moment it is named, but in the space it preserves before it is understood."
+  },
+  "patents": {
+    "hero": {
+      "badge": "Technological Framework & Evolution Roadmap",
+      "title": "Technology Architecture & Evolution Path",
+      "subtitle": "Building determinism for all-carbon physical systems",
+      "desc": "We are not merely manufacturing a material; we are defining an underlying hardware system based on stress engineering. Our technology route has completed the full loop from theoretical hypothesis to physical validation, protected by a dense IP network of over 10 core patents."
+    },
+    "evolution": {
+      "sectionBadge": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
+      "sectionTitle": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
+      "sectionSubtitle": "Our R&D is not isolated points, but a clear evolution curve",
+      "start": "Start",
+      "step1": "Step 1",
+      "step2": "Step 2",
+      "step3": "Step 3",
+      "step4": "Step 4",
+      "end": "End",
+      "diamondTools": "Diamond tools",
+      "compositeSystem": "Composite material system",
+      "allCarbon": "All-carbon composite",
+      "functionalMigration": "Functional material migration",
+      "physicsEvolution": "Physics system evolution\n(Stress engineering)",
+      "computingResource": "Potential physical\ncomputing resource",
+      "coreLogicTitle": "Core logic summary",
+      "coreLogicDesc": "Our R&D is not isolated points, but a clear evolution curve. Through stress regulation of sp²–sp³ bonding structures, we elevate materials from mere \"heat dissipation tools\" to functional substrates with \"physical computing potential.\" This evolution path not only validates technical feasibility but also reveals the vast imagination space at the intersection of materials science and computational physics.",
+      "overview": "This project's technology system is not composed of a single material or product, but has evolved gradually along a clear engineering and materials evolution path. Its core logic is to progress from engineering tools to functional materials, and ultimately evolve into an all-carbon composite material system with platform attributes."
+    },
+    "cta": {
+      "title": "Explore technology cooperation opportunities",
+      "subtitle": "We welcome technology licensing, joint R&D, patent transfer, and other cooperation forms",
+      "projectCooperation": "Project Cooperation",
+      "learnProducts": "Learn about product applications"
+    }
+  },
+  "news": {
+    "title": "Tech Vision",
+    "subtitle": "From laboratory hypothesis to industrial validation, witnessing the performance leap of sp²–sp³ structures",
+    "companyNews": "Company News",
+    "companyNewsDesc": "Focusing on future technology breakthroughs, strategic partnerships, and industry layout, documenting the innovation journey from superabrasive tools to carbon-based composites",
+    "industryInfo": "Industry Information",
+    "industryInfoDesc": "Focusing on industry frontier technology and fundamental theory popularization, publishing latest technical dynamics and terminology explanations in news format",
+    "industryTrends": "Industry Trends",
+    "basicTheory": "Basic Theory",
+    "frontierTech": "Frontier Technology",
+    "viewDetails": "View Details",
+    "items": {
+      "2025-patents": { "date": "2025", "title": "Year of technology breakthrough: patent cluster formation", "summary": "Systematically transformed years of accumulated technical solutions, completed 9 core patent layouts, building a complete IP moat from diamond tools to all-carbon composites.", "category": "Technology breakthrough" },
+      "2025-diamond-copper": { "date": "2025", "title": "Diamond-copper composite successfully developed", "summary": "Successfully developed diamond-copper composite products with thermal conductivity exceeding 680 W/m·K, marking the company's formal entry into high-performance thermal management materials.", "category": "Product development" },
+      "2024-nonstick": { "date": "2024", "title": "Diamond coating nonstick cookware developed", "summary": "Based on diamond particle wear-resistant coating technology, successfully developed new nonstick cookware with initial samples, achieving the leap from industrial to consumer markets.", "category": "Product development" },
+      "2023-brazing-tools": { "date": "2023", "title": "Active fusion-bonded superabrasive tool series developed", "summary": "Breakthrough on high-strength dental burs and active fusion-bonded CBN tools; successfully developed high-strength diamond tools and CBN wheels with 3x+ lifespan over electroplated tools.", "category": "Product development" },
+      "2023-relocation": { "date": "Early 2023", "title": "Company relocates to Nanjing, new chapter begins", "summary": "Relocated from Zhenjiang to Jiangbei New Area, Nanjing, gaining superior R&D platform and industrial environment for subsequent technology breakthroughs and business expansion.", "category": "Company news" },
+      "2022-team": { "date": "2022", "title": "Core team formation completed", "summary": "Formed three-person core team covering technical R&D, engineering implementation, and business development; began systematic layout in superabrasive tools and diamond functional materials.", "category": "Team building" },
+      "2018-research-center": { "date": "2018-06-12", "title": "CuFeng R&D center established", "summary": "Company formally established R&D center focused on superabrasive tool technology innovation, laying organizational foundation for product development and technical accumulation.", "category": "Company news" },
+      "2018-website": { "date": "2018-06-06", "title": "CuFeng official website launched", "summary": "Company website www.tospike.com officially launched, establishing online platform for customer and partner communication.", "category": "Company news" },
+      "2018-founding": { "date": "2018-03-12", "title": "Nanjing CuFeng Technology Co., Ltd. founded", "summary": "Company registered in Jiangsu, positioned as superabrasive tool industry solution provider, embarking on entrepreneurial journey.", "category": "Company news" }
+    }
+  }
+}

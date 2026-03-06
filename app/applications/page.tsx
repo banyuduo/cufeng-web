@@ -5,20 +5,37 @@ import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { ApplicationCard } from "@/components/application-card"
+import { getTranslations } from "@/lib/translations"
+import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
-export default function ApplicationsPage() {
+export default async function ApplicationsPage({
+  params,
+}: {
+  params?: Promise<{ locale?: string }>
+}) {
+  const resolved = await (params ?? Promise.resolve({}))
+  const validLocale: Locale = resolved.locale && isValidLocale(resolved.locale) ? resolved.locale : defaultLocale
+  const t = getTranslations(validLocale)
+  const prefix = `/${validLocale}`
+
+  const layers = [
+    { levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-blue-500/50 bg-blue-500/20", Icon: Cpu, iconColor: "text-blue-400", href: "#thermal-management" },
+    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-sky-500/50 bg-sky-500/10", Icon: Zap, iconColor: "text-sky-400", href: "#consumer-electronics" },
+    { levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-emerald-500/50 bg-emerald-500/10", Icon: Battery, iconColor: "text-emerald-400", href: "#energy-environment" },
+    { levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-purple-500/50 bg-purple-500/10", Icon: Microscope, iconColor: "text-purple-400", href: "#frontier-research" },
+  ] as const
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <Navigation />
+      <Navigation locale={validLocale} />
 
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">应用领域矩阵</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">{t("applications.title")}</h1>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            基于 sp²–sp³
-            碳杂化键合平台技术，我们将同一核心方法论应用于不同物理场景，形成从工业热管理到前沿物理探索的完整技术矩阵。
+            {t("applications.subtitle")}
           </p>
         </div>
       </section>
@@ -28,62 +45,21 @@ export default function ApplicationsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="w-full py-12 px-4 bg-slate-950 rounded-3xl border border-slate-800">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">应用蓝图：从底层物理到全场景落地</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">基于 SP²–SP³ 杂化键合平台的跨领域演化路径</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("applications.blueprint.title")}</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">{t("applications.blueprint.subtitle")}</p>
             </div>
 
             <div className="max-w-4xl mx-auto relative space-y-4">
-              {[
-                {
-                  level: "L1: 核心业务 (Current)",
-                  title: "高性能工业散热",
-                  items: ["AI芯片散热基底", "功率半导体", "新能源汽车"],
-                  description: "解决极端功率密度下的热瓶颈，提供500-800 W/mK的高效散热保障。",
-                  color: "border-blue-500/50 bg-blue-500/20",
-                  icon: <Cpu className="w-5 h-5 text-blue-400" />,
-                  tag: "成熟应用",
-                  href: "#thermal-management"
-                },
-                {
-                  level: "L2: 规模化落地 (Expanding)",
-                  title: "消费电子与品质生活",
-                  items: ["无线快充高导热线圈", "全碳化学键合不粘锅"],
-                  description: "将工业级工艺降维打击民用市场，解决可靠性、附着力与食品安全痛点。",
-                  color: "border-sky-500/50 bg-sky-500/10",
-                  icon: <Zap className="w-5 h-5 text-sky-400" />,
-                  tag: "市场放量",
-                  href: "#consumer-electronics"
-                },
-                {
-                  level: "L3: 产业升级 (Growth)",
-                  title: "能源与环境系统",
-                  items: ["固态电池负极材料", "水处理粒子电极"],
-                  description: "利用高模量碳骨架提升能量密度与电催化活性，具备快速落地潜力。",
-                  color: "border-emerald-500/50 bg-emerald-500/10",
-                  icon: <Battery className="w-5 h-5 text-emerald-400" />,
-                  tag: "潜力开发",
-                  href: "#energy-environment"
-                },
-                {
-                  level: "L4: 前沿探索 (Vision)",
-                  title: "极端物性探测",
-                  items: ["超导基础研究", "量子介观系统愿景"],
-                  description: "探索应力场诱导的特殊能带结构，作为未来10年计算架构的理论储备。",
-                  color: "border-purple-500/50 bg-purple-500/10",
-                  icon: <Microscope className="w-5 h-5 text-purple-400" />,
-                  tag: "理论探索",
-                  href: "#frontier-research"
-                }
-              ].map((layer, index) => (
+              {layers.map((layer, index) => (
                 <ApplicationCard
                   key={index}
-                  level={layer.level}
-                  title={layer.title}
-                  items={layer.items}
-                  description={layer.description}
+                  level={t(`applications.blueprint.${layer.levelKey}`)}
+                  title={t(`applications.blueprint.${layer.titleKey}`)}
+                  items={t(`applications.blueprint.${layer.itemsKey}`).split("|")}
+                  description={t(`applications.blueprint.${layer.descKey}`)}
                   color={layer.color}
-                  icon={layer.icon}
-                  tag={layer.tag}
+                  icon={<layer.Icon className={`w-5 h-5 ${layer.iconColor}`} />}
+                  tag={t(`applications.blueprint.${layer.tagKey}`)}
                   href={layer.href}
                 />
               ))}
@@ -94,8 +70,8 @@ export default function ApplicationsPage() {
                 <div className="px-8 py-4 bg-slate-800 rounded-xl border border-slate-600 flex items-center gap-3 shadow-2xl">
                   <ShieldCheck className="w-6 h-6 text-sky-500" />
                   <div>
-                    <div className="text-[10px] text-sky-500 font-bold uppercase tracking-[0.2em]">Foundation</div>
-                    <div className="text-white font-black tracking-tight">SP²–SP³ 碳基杂化键合平台 (应力工程)</div>
+                    <div className="text-[10px] text-sky-500 font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
+                    <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
                   </div>
                 </div>
               </div>
@@ -109,11 +85,11 @@ export default function ApplicationsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-block px-6 py-2 bg-sky-600 rounded-full text-white font-bold text-sm mb-4">
-              第一优先级 · 已落地/工程化阶段
+              {t("applications.thermal.badge")}
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">核心工业热管理方案</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">{t("applications.thermal.title")}</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              针对高功率密度电子器件的热管理瓶颈，提供超越传统铜铝材料极限的热界面基底解决方案，突出工业散热的领先地位
+              {t("applications.thermal.subtitle")}
             </p>
           </div>
 
@@ -229,7 +205,7 @@ export default function ApplicationsPage() {
                 className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
                 asChild
               >
-                <Link href="/products">查看可用材料与解决方案</Link>
+                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
               </Button>
             </Card>
 
@@ -266,7 +242,7 @@ export default function ApplicationsPage() {
                 className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
                 asChild
               >
-                <Link href="/products">查看可用材料与解决方案</Link>
+                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
               </Button>
             </Card>
 
@@ -304,7 +280,7 @@ export default function ApplicationsPage() {
                 className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
                 asChild
               >
-                <Link href="/products">查看可用材料与解决方案</Link>
+                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
               </Button>
             </Card>
           </div>
@@ -420,7 +396,7 @@ export default function ApplicationsPage() {
                 className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent mt-6"
                 asChild
               >
-                <Link href="/products">查看可用解决方案</Link>
+                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
               </Button>
             </Card>
           </div>
@@ -604,7 +580,7 @@ export default function ApplicationsPage() {
               asChild
               className="mx-4 sm:mx-0 min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
             >
-              <Link href="/patents">查看完整技术架构</Link>
+              <Link href={`${prefix}/patents`}>{t("applications.cta.viewFullTech")}</Link>
             </Button>
           </div>
         </div>
@@ -630,7 +606,7 @@ export default function ApplicationsPage() {
               asChild
               className="w-full sm:w-auto min-h-[44px] gap-2 bg-sky-600 hover:bg-sky-700 text-white shadow-lg"
             >
-              <Link href="/cooperation">技术交流与对齐</Link>
+              <Link href={`${prefix}/cooperation`}>{t("applications.cta.techDialogue")}</Link>
             </Button>
             <Button
               size="lg"
@@ -638,14 +614,14 @@ export default function ApplicationsPage() {
               asChild
               className="w-full sm:w-auto min-h-[44px] gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
             >
-              <Link href="/patents">查看完整技术演化路径</Link>
+              <Link href={`${prefix}/patents`}>{t("applications.cta.viewTechPath")}</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <FooterNav />
+      <FooterNav locale={validLocale} />
     </div>
   )
 }
