@@ -17,10 +17,11 @@ import { FooterNav } from "@/components/footer-nav"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
 import {
-  industryArticlesMap,
+  getIndustryArticlesMap,
   parseBoldText,
   type IndustryArticle,
 } from "@/lib/industry-articles"
+import { getTranslations } from "@/lib/translations"
 
 const newsData: Record<
   string,
@@ -138,11 +139,12 @@ const newsData: Record<
 // 生成静态路径参数，用于静态导出（无 locale 的旧路由）
 export async function generateStaticParams() {
   const companyIds = Object.keys(newsData)
-  const industryIds = Object.keys(industryArticlesMap)
+  const industryMap = getIndustryArticlesMap("zh")
+  const industryIds = Object.keys(industryMap)
   return [...companyIds, ...industryIds].map((id) => ({ id }))
 }
 
-function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; prefix: string }) {
+function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticle; prefix: string; t: (key: string) => string }) {
   const IconComponent = article.icon
 
   return (
@@ -152,15 +154,15 @@ function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; 
         <div className="container mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href={prefix || "/"} className="hover:text-primary transition-colors">
-              首页
+              {t("common.home")}
             </Link>
             <span>/</span>
             <Link href={`${prefix}/news`} className="hover:text-primary transition-colors">
-              技术视界
+              {t("news.title")}
             </Link>
             <span>/</span>
             <Link href={`${prefix}/news#industry-info`} className="hover:text-primary transition-colors">
-              行业信息
+              {t("news.industryInfo")}
             </Link>
             <span>/</span>
             <span className="text-foreground">{article.title}</span>
@@ -178,7 +180,7 @@ function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; 
               className="inline-flex items-center gap-2 text-primary hover:underline mb-12 text-base tracking-wide"
             >
               <ArrowLeft className="h-4 w-4" />
-              返回列表
+              {t("news.articleDetail.backToList")}
             </Link>
 
             {/* 文章头部 */}
@@ -194,7 +196,7 @@ function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; 
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 text-sm text-slate-400 tracking-wide">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4" />
-                      发布日期：{article.date}
+                      {t("news.articleDetail.publishDate")}：{article.date}
                     </span>
                     {article.author && (
                       <span className="flex items-center gap-1.5">
@@ -206,7 +208,7 @@ function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; 
                   {article.keywords && article.keywords.length > 0 && (
                     <div className="flex flex-wrap items-center gap-2 mt-3">
                       <Tag className="h-4 w-4 text-slate-400" />
-                      <span className="text-sm text-slate-400">关键词：</span>
+                      <span className="text-sm text-slate-400">{t("news.articleDetail.keywords")}：</span>
                       {article.keywords.map((kw, i) => (
                         <span
                           key={i}
@@ -250,7 +252,7 @@ function IndustryArticleDetail({ article, prefix }: { article: IndustryArticle; 
                   className="border-slate-500 text-slate-200 hover:bg-slate-800 hover:text-white bg-transparent px-6 py-6 text-base tracking-wide"
                 >
                   <ArrowLeft className="h-4 w-4 mr-2" />
-                  返回列表
+                  {t("news.articleDetail.backToList")}
                 </Button>
               </Link>
             </footer>
@@ -361,6 +363,7 @@ export default async function NewsDetailPage({
   const validLocale = locale && isValidLocale(locale) ? locale : "zh"
   const prefix = locale && isValidLocale(locale) ? `/${validLocale}` : ""
 
+  const industryArticlesMap = getIndustryArticlesMap(validLocale)
   const companyNews = newsData[id]
   const industryArticle = industryArticlesMap[id]
 
@@ -368,17 +371,19 @@ export default async function NewsDetailPage({
     notFound()
   }
 
+  const t = getTranslations(validLocale)
+
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation locale={validLocale} />
 
       {industryArticle ? (
-        <IndustryArticleDetail article={industryArticle} prefix={prefix} />
+        <IndustryArticleDetail article={industryArticle} prefix={prefix} t={t} />
       ) : companyNews ? (
         <CompanyNewsDetail news={companyNews} IconComponent={companyNews.icon} prefix={prefix} />
       ) : null}
 
-      <FooterNav />
+      <FooterNav locale={validLocale} />
     </div>
   )
 }

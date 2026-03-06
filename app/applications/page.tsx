@@ -102,67 +102,66 @@ export default async function ApplicationsPage({
                   </div>
                   <div>
                     <div className="inline-block px-4 py-1 bg-sky-600 rounded-full text-white text-xs font-bold mb-2">
-                      旗舰解决方案
+                      {t("applications.thermal.aiChipBadge")}
                     </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-slate-900">AI 高密度芯片热管理方案</h3>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-slate-900">{t("applications.thermal.aiChipTitle")}</h3>
                   </div>
                 </div>
 
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                  随着 AI 算力芯片功率密度不断增加，热管理问题成为制约技术突破的瓶颈之一。我们基于 sp²–sp³
-                  化学键合材料平台，提出了一种突破传统微通道液冷的热管理解决方案，能够有效解决超算和激光器领域的高密度热管理挑战。
+                  {t("applications.thermal.aiChipDesc")}
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
                   <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">几何耦合</div>
+                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.geoCoupling")}</div>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      创新的 3D 表面仿形设计，精确贴合芯片封装，最大限度降低界面热阻
+                      {t("applications.thermal.geoCouplingDesc")}
                     </p>
                   </div>
 
                   <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">极速热稀释</div>
+                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.thermalDilution")}</div>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      结合金刚石铜与全碳复合材料的卓越声子导热性能，实现局部高热流的快速均热
+                      {t("applications.thermal.thermalDilutionDesc")}
                     </p>
                   </div>
 
                   <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">系统级协同</div>
+                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.systemSync")}</div>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      与自研高导热 TIM 材料协同工作，提供长寿命、零风险的热管理解决方案
+                      {t("applications.thermal.systemSyncDesc")}
                     </p>
                   </div>
                 </div>
 
                 <div className="bg-sky-50 border border-sky-200 rounded-lg p-5 mb-6">
-                  <div className="text-sky-900 font-semibold mb-2 text-sm">适用材料体系：</div>
+                  <div className="text-sky-900 font-semibold mb-2 text-sm">{t("applications.thermal.materialsLabel")}</div>
                   <div className="grid md:grid-cols-3 gap-2 text-xs text-slate-700">
-                    <div>• 金刚石铜复合材料</div>
-                    <div>• 柔性高导热复合材料</div>
-                    <div>• 全碳 sp²–sp³ 复合材料</div>
+                    <div>• {t("applications.thermal.material1")}</div>
+                    <div>• {t("applications.thermal.material2")}</div>
+                    <div>• {t("applications.thermal.material3")}</div>
                   </div>
                 </div>
 
                 <div className="bg-sky-50 border border-sky-200 rounded-lg p-6">
-                  <div className="text-sky-900 font-semibold mb-3">广泛应用场景：</div>
+                  <div className="text-sky-900 font-semibold mb-3">{t("applications.thermal.scenariosLabel")}</div>
                   <div className="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>AI 芯片（GPU/NPU）超高功率密度热管理</span>
+                      <span>{t("applications.thermal.scenario1")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>工业/医疗激光器高功率热管理</span>
+                      <span>{t("applications.thermal.scenario2")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>超算中心数据中心液冷系统</span>
+                      <span>{t("applications.thermal.scenario3")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>边缘计算单元高密度热管理</span>
+                      <span>{t("applications.thermal.scenario4")}</span>
                     </div>
                   </div>
                 </div>
@@ -178,25 +177,25 @@ export default async function ApplicationsPage({
                   <Zap className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">功率半导体器件热管理</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.powerSemiconductorTitle")}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                降低 SiC/GaN 器件结温，大幅提升系统功率密度与可靠性
+                {t("applications.thermal.powerSemiconductorDesc")}
               </p>
               <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">具体应用场景：</div>
+                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
                 <div className="pl-4 space-y-1">
-                  <div>• IGBT 模块高导热热界面基底</div>
-                  <div>• 高铁动车组逆变器热管理方案</div>
-                  <div>• 工业变频器功率模块热界面</div>
-                  <div>• 光伏/储能逆变器热管理方案</div>
+                  <div>• {t("applications.thermal.psScenario1")}</div>
+                  <div>• {t("applications.thermal.psScenario2")}</div>
+                  <div>• {t("applications.thermal.psScenario3")}</div>
+                  <div>• {t("applications.thermal.psScenario4")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">适用材料体系：</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
                 <div className="text-xs text-slate-600 space-y-1">
-                  <div>• 金刚石铜复合材料</div>
-                  <div>• 柔性高导热复合材料</div>
-                  <div>• 全碳 sp²–sp³ 复合材料</div>
+                  <div>• {t("applications.thermal.material1")}</div>
+                  <div>• {t("applications.thermal.material2")}</div>
+                  <div>• {t("applications.thermal.material3")}</div>
                 </div>
               </div>
               <Button
@@ -216,24 +215,24 @@ export default async function ApplicationsPage({
                   <Car className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">新能源汽车热管理</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.evTitle")}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                解决电池包和电控系统热失控风险，减轻系统重量
+                {t("applications.thermal.evDesc")}
               </p>
               <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">具体应用场景：</div>
+                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
                 <div className="pl-4 space-y-1">
-                  <div>• 动力电池热管理结构件</div>
-                  <div>• 电机控制器热界面基底</div>
-                  <div>• 车载充电机 (OBC) 热管理方案</div>
-                  <div>• DC/DC 转换器热扩散片</div>
+                  <div>• {t("applications.thermal.evScenario1")}</div>
+                  <div>• {t("applications.thermal.evScenario2")}</div>
+                  <div>• {t("applications.thermal.evScenario3")}</div>
+                  <div>• {t("applications.thermal.evScenario4")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">适用材料体系：</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
                 <div className="text-xs text-slate-600 space-y-1">
-                  <div>• 金刚石铜复合材料</div>
-                  <div>• 全碳 sp²–sp³ 复合材料</div>
+                  <div>• {t("applications.thermal.material1")}</div>
+                  <div>• {t("applications.thermal.material3")}</div>
                 </div>
               </div>
               <Button
@@ -253,25 +252,25 @@ export default async function ApplicationsPage({
                   <Radio className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">5G 通信与射频器件</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.fiveGTitle")}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                解决高频大功率器件的局部热流密度管理问题
+                {t("applications.thermal.fiveGDesc")}
               </p>
               <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">具体应用场景：</div>
+                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
                 <div className="pl-4 space-y-1">
-                  <div>• 5G 基站功率放大器 (PA) 热管理</div>
-                  <div>• 毫米波天线阵列热管理</div>
-                  <div>• 卫星通信地面站射频单元</div>
-                  <div>• 相控阵雷达 T/R 组件</div>
+                  <div>• {t("applications.thermal.fiveGScenario1")}</div>
+                  <div>• {t("applications.thermal.fiveGScenario2")}</div>
+                  <div>• {t("applications.thermal.fiveGScenario3")}</div>
+                  <div>• {t("applications.thermal.fiveGScenario4")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">适用材料体系：</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
                 <div className="text-xs text-slate-600 space-y-1">
-                  <div>• 金刚石铜复合材料</div>
-                  <div>• 柔性高导热复合材料</div>
-                  <div>• 全碳 sp²–sp³ 复合材料</div>
+                  <div>• {t("applications.thermal.material1")}</div>
+                  <div>• {t("applications.thermal.material2")}</div>
+                  <div>• {t("applications.thermal.material3")}</div>
                 </div>
               </div>
               <Button
@@ -291,8 +290,8 @@ export default async function ApplicationsPage({
       <section id="consumer-electronics" className="py-20 px-6 lg:px-8 bg-slate-50 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">消费电子与家居生活</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">基于 sp²–sp³ 化学键合界面技术的消费级产品创新</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.consumer.sectionTitle")}</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">{t("applications.consumer.sectionSubtitle")}</p>
           </div>
 
           <div className="space-y-6">
@@ -303,37 +302,37 @@ export default async function ApplicationsPage({
                   <Radio className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">大功率无线充电用高导热线圈</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.consumer.coilTitle")}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                针对 11kW/22kW+ 无线充电线圈，解决高频电流导致的集肤效应与邻近效应引发的 ACR 激增及热瓶颈问题
+                {t("applications.consumer.coilDesc")}
               </p>
               
               <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-800 mb-3">核心方案：</div>
+                <div className="text-sm font-semibold text-slate-800 mb-3">{t("applications.consumer.coreSolution")}</div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  采用金刚石-铜复合导体技术（电镀+中温扩散结合），利用 20μm 金刚石与纯铜构建超高导热、低热阻的径向散热通道。
+                  {t("applications.consumer.coilSolution")}
                 </p>
                 <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-4">
-                  <div className="text-xs font-semibold text-sky-900 mb-2">技术优势：</div>
+                  <div className="text-xs font-semibold text-sky-900 mb-2">{t("applications.consumer.techAdvantage")}</div>
                   <div className="text-xs text-slate-700 space-y-1">
-                    <div>• 电导率达 100% IACS，大幅降低线圈发热量（降幅 20% 以上）</div>
-                    <div>• 柔性结构适合小半径绕线</div>
-                    <div>• 具备工业量产可行性</div>
+                    <div>• {t("applications.consumer.coilAdv1")}</div>
+                    <div>• {t("applications.consumer.coilAdv2")}</div>
+                    <div>• {t("applications.consumer.coilAdv3")}</div>
                   </div>
                 </div>
                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                  <div className="text-xs font-semibold text-slate-800 mb-2">物理机制：</div>
+                  <div className="text-xs font-semibold text-slate-800 mb-2">{t("applications.consumer.physicsMech")}</div>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    采用金刚石+AlN/Al₂O₃ 多级填料网络，极大地稀释低导热树脂占比，实现 Ultra-Low R_th 效果。
+                    {t("applications.consumer.coilMech")}
                   </p>
                 </div>
               </div>
 
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">适用材料体系：</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
                 <div className="text-xs text-slate-600 space-y-1">
-                  <div>• 金刚石铜复合材料</div>
-                  <div>• 柔性高导热复合材料</div>
+                  <div>• {t("applications.thermal.material1")}</div>
+                  <div>• {t("applications.thermal.material2")}</div>
                 </div>
               </div>
               <Button
@@ -343,7 +342,7 @@ export default async function ApplicationsPage({
                 asChild
               >
                 <a href="/docs/diamond-coil.pdf" target="_blank" rel="noopener noreferrer">
-                  查看解决方案
+                  {t("applications.consumer.viewSolution")}
                 </a>
               </Button>
             </Card>
@@ -355,39 +354,38 @@ export default async function ApplicationsPage({
                   <Home className="w-8 h-8 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-3xl font-bold mb-6 text-slate-900 text-center">消费电子与家居生活</h3>
+              <h3 className="text-3xl font-bold mb-6 text-slate-900 text-center">{t("applications.consumer.lifeTitle")}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                基于金刚石颗粒的表面固着技术，实现"硬度 + 导热 + 不粘性"的多功能耦合
+                {t("applications.consumer.lifeDesc")}
               </p>
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <div className="font-semibold text-slate-800 mb-4 text-lg">家居厨具方向：</div>
+                  <div className="font-semibold text-slate-800 mb-4 text-lg">{t("applications.consumer.homeDir")}</div>
                   <div className="space-y-2 text-slate-700 pl-4">
-                    <div>• 金刚石涂层不粘锅（超长使用寿命）</div>
+                    <div>• {t("applications.consumer.homeItem")}</div>
                   </div>
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800 mb-4 text-lg">消费电子方向：</div>
+                  <div className="font-semibold text-slate-800 mb-4 text-lg">{t("applications.consumer.consumerDir")}</div>
                   <div className="space-y-2 text-slate-700 pl-4">
-                    <div>• 折叠屏手机超薄热管理方案</div>
-                    <div>• 高性能笔记本电脑热界面基底</div>
-                    <div>• VR/AR 设备轻量化热管理方案</div>
-                    <div>• 游戏主机热管理系统</div>
+                    <div>• {t("applications.consumer.consumerItem1")}</div>
+                    <div>• {t("applications.consumer.consumerItem2")}</div>
+                    <div>• {t("applications.consumer.consumerItem3")}</div>
+                    <div>• {t("applications.consumer.consumerItem4")}</div>
                   </div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-5 mb-6">
-                <div className="text-sm font-semibold text-sky-900 mb-2">适用材料体系：</div>
+                <div className="text-sm font-semibold text-sky-900 mb-2">{t("applications.thermal.materialsLabel")}</div>
                 <div className="text-xs text-slate-700 space-y-1">
-                  <div>• 金刚石相关复合材料</div>
-                  <div>• 全碳 sp²–sp³ 复合材料</div>
+                  <div>• {t("applications.consumer.materialRelated")}</div>
+                  <div>• {t("applications.thermal.material3")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded-lg p-6">
-                <div className="font-semibold text-sky-900 mb-3">技术价值点：</div>
+                <div className="font-semibold text-sky-900 mb-3">{t("applications.consumer.techValue")}</div>
                 <div className="text-sm text-slate-700 leading-relaxed">
-                  通过 sp²–sp³ 化学键合技术，将金刚石颗粒牢固固着于金属基材表面，形成"导热层 + 耐磨层 +
-                  功能层"三位一体结构，同时解决传统涂层易脱落、导热差、耐久性低等问题。
+                  {t("applications.consumer.techValueDesc")}
                 </div>
               </div>
               <Button
@@ -408,11 +406,11 @@ export default async function ApplicationsPage({
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-green-100 rounded-full text-green-700 text-sm font-semibold mb-4">
-              具备快速落地潜力
+              {t("applications.energy.badge")}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">能源与环境系统</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.energy.sectionTitle")}</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">
-              基于成熟工艺平台，致力于解决当前能源存储与水治理中的电化学效率难题
+              {t("applications.energy.sectionSubtitle")}
             </p>
           </div>
 
@@ -424,22 +422,22 @@ export default async function ApplicationsPage({
                   <Battery className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900">固态电池负极架构</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900">{t("applications.energy.solidStateTitle")}</h3>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-sky-600 mb-2">物理特性：</div>
+                <div className="text-sm font-semibold text-sky-600 mb-2">{t("applications.energy.solidStatePhysics")}</div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  利用 sp³–sp² 碳骨架的内生应力调控，作为高模量碳宿主材料，通过应力场抑制锂枝晶生长，提升高模量负极稳定性。
+                  {t("applications.energy.solidStatePhysicsDesc")}
                 </p>
-                <div className="text-sm font-semibold text-slate-700 mb-2">技术优势：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.energy.solidStateTech")}</div>
                 <div className="text-sm text-slate-600 space-y-1 pl-4 mb-4">
-                  <div>• 通过造孔剂工艺显著提升能量密度</div>
-                  <div>• sp³–sp² 化学键合结构提供优异的结构稳定性</div>
-                  <div>• 应力调控机制有效抑制枝晶生长</div>
+                  <div>• {t("applications.energy.solidStateAdv1")}</div>
+                  <div>• {t("applications.energy.solidStateAdv2")}</div>
+                  <div>• {t("applications.energy.solidStateAdv3")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">技术价值：</div>
-                <div className="text-xs text-slate-600 leading-relaxed">解决固态电池循环寿命与安全性的底层材料瓶颈</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.energy.solidStateValue")}</div>
+                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.energy.solidStateValueDesc")}</div>
               </div>
               <Button
                 size="lg"
@@ -449,7 +447,7 @@ export default async function ApplicationsPage({
               >
                 <a href="/docs/diamond-battery.pdf" target="_blank" rel="noopener noreferrer">
                   <FileText className="w-4 h-4 mr-2 inline" />
-                  查看技术白皮书
+                  {t("applications.energy.viewWhitepaper")}
                 </a>
               </Button>
             </Card>
@@ -461,22 +459,22 @@ export default async function ApplicationsPage({
                   <Droplets className="w-7 h-7 text-sky-600" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900">水处理粒子电极</h3>
+              <h3 className="text-2xl font-bold mb-3 text-slate-900">{t("applications.energy.waterTitle")}</h3>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-sky-600 mb-2">物理特性：</div>
+                <div className="text-sm font-semibold text-sky-600 mb-2">{t("applications.energy.solidStatePhysics")}</div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  高内应力 sp²–sp³ 结构带来高硬度、长寿命以及优异的导电/催化活性，适用于电化学水处理系统。
+                  {t("applications.energy.waterPhysicsDesc")}
                 </p>
-                <div className="text-sm font-semibold text-slate-700 mb-2">技术优势：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.energy.solidStateTech")}</div>
                 <div className="text-sm text-slate-600 space-y-1 pl-4 mb-4">
-                  <div>• 高硬度确保长期稳定运行</div>
-                  <div>• 优异的导电性能提升电化学效率</div>
-                  <div>• 催化活性增强污染物降解能力</div>
+                  <div>• {t("applications.energy.waterAdv1")}</div>
+                  <div>• {t("applications.energy.waterAdv2")}</div>
+                  <div>• {t("applications.energy.waterAdv3")}</div>
                 </div>
               </div>
               <div className="bg-sky-50 border border-sky-200 rounded p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">技术价值：</div>
-                <div className="text-xs text-slate-600 leading-relaxed">为水处理系统提供高效、耐用的电化学电极材料</div>
+                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.energy.solidStateValue")}</div>
+                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.energy.waterValueDesc")}</div>
               </div>
               <Button
                 size="lg"
@@ -486,7 +484,7 @@ export default async function ApplicationsPage({
               >
                 <a href="/docs/diamond-water.pdf" target="_blank" rel="noopener noreferrer">
                   <FileText className="w-4 h-4 mr-2 inline" />
-                  深度技术解析
+                  {t("applications.energy.viewDeep")}
                 </a>
               </Button>
             </Card>
@@ -499,10 +497,10 @@ export default async function ApplicationsPage({
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-6 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold mb-4">
-              中长期探索阶段 (3-10年)
+              {t("applications.frontier.badge")}
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">前沿物理探索</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">平台技术在极端物理与未来计算领域的演化潜力</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.frontier.sectionTitle")}</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">{t("applications.frontier.sectionSubtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
@@ -513,29 +511,29 @@ export default async function ApplicationsPage({
                   <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
                     <Sparkles className="w-7 h-7 text-slate-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">超导材料基础探测</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">{t("applications.frontier.superconductorTitle")}</h3>
                 </div>
                 <div className="px-3 py-1 bg-slate-100/80 rounded-full text-xs font-medium text-slate-600">
-                  初步研究阶段
+                  {t("applications.frontier.superconductorBadge")}
                 </div>
               </div>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">物理设想：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.superconductorPhysics")}</div>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  基于 sp²–sp³ 界面在高内应力场下可能产生的能带结构畸变，探测其在极低温度或特殊能级匹配下是否存在非常规的电子输运特性。
+                  {t("applications.frontier.superconductorPhysicsDesc")}
                 </p>
               </div>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">研究切入点：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.researchPoints")}</div>
                 <div className="text-sm text-slate-600 space-y-1 pl-4">
-                  <div>• 观测应力梯度对界面电子局域化的影响</div>
-                  <div>• 探索非冯诺依曼结构下的界面非线性电导</div>
-                  <div>• 配合外部实验室进行极低温输运特性普查</div>
+                  <div>• {t("applications.frontier.superconductorRes1")}</div>
+                  <div>• {t("applications.frontier.superconductorRes2")}</div>
+                  <div>• {t("applications.frontier.superconductorRes3")}</div>
                 </div>
               </div>
               <div className="bg-slate-50 border border-slate-200 rounded p-4">
-                <div className="text-xs font-semibold text-slate-800 mb-1">愿景：</div>
-                <div className="text-xs text-slate-600 leading-relaxed">作为一种新型碳基材料平台，为非常规超导机制的研究提供一种可能的实验基底。</div>
+                <div className="text-xs font-semibold text-slate-800 mb-1">{t("applications.frontier.vision")}</div>
+                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.frontier.superconductorVision")}</div>
               </div>
             </Card>
 
@@ -546,29 +544,29 @@ export default async function ApplicationsPage({
                   <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
                     <FlaskConical className="w-7 h-7 text-slate-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">量子介观系统愿景</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">{t("applications.frontier.quantumTitle")}</h3>
                 </div>
                 <div className="px-3 py-1 bg-slate-100/80 rounded-full text-xs font-medium text-slate-600">
-                  长期规划阶段
+                  {t("applications.frontier.quantumBadge")}
                 </div>
               </div>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">物理设想：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.superconductorPhysics")}</div>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  通过精确调控全碳网络的晶格畸变，尝试研究相干电子在应力场诱导的异质电势中的演化行为，评估其作为量子计算候选材料的初步可行性。
+                  {t("applications.frontier.quantumPhysicsDesc")}
                 </p>
               </div>
               <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">研究切入点：</div>
+                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.researchPoints")}</div>
                 <div className="text-sm text-slate-600 space-y-1 pl-4">
-                  <div>• 界面相干电子行为的理论建模</div>
-                  <div>• 应力场诱导的能隙调控模拟</div>
-                  <div>• 介观尺度下电子退相干因素的初步分析</div>
+                  <div>• {t("applications.frontier.quantumRes1")}</div>
+                  <div>• {t("applications.frontier.quantumRes2")}</div>
+                  <div>• {t("applications.frontier.quantumRes3")}</div>
                 </div>
               </div>
               <div className="bg-slate-50 border border-slate-200 rounded p-4">
-                <div className="text-xs font-semibold text-slate-800 mb-1">愿景：</div>
-                <div className="text-xs text-slate-600 leading-relaxed">旨在探索应力工程在极微观尺度下的演化潜力，作为未来 10 年计算架构变革的理论技术储备。</div>
+                <div className="text-xs font-semibold text-slate-800 mb-1">{t("applications.frontier.vision")}</div>
+                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.frontier.quantumVision")}</div>
               </div>
             </Card>
           </div>
@@ -589,15 +587,13 @@ export default async function ApplicationsPage({
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 tracking-wide" style={{ letterSpacing: "0.15em" }}>
-            底层逻辑的系统性输出
+            {t("applications.summary.title")}
           </h2>
 
-          <p className="text-xl text-slate-600 mb-8 font-light">同一个起点，多维度的坍缩，无限的工程边界</p>
+          <p className="text-xl text-slate-600 mb-8 font-light">{t("applications.summary.tagline")}</p>
 
           <p className="text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-600">
-            这里的每一个应用领域，都不是孤立的产品开发，而是 sp²–sp³
-            界面能级受控这一核心命题在不同物理尺度下的'坍缩'结果。从应对 1000W+
-            瞬时热冲击的极致热管理，到跨越界面热阻的物理性能突破，我们始终坚持用同一套底层键合逻辑，去消解不同行业的性能瓶颈。
+            {t("applications.summary.desc")}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">

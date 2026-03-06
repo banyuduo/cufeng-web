@@ -1,5 +1,7 @@
 import React from "react"
 import { TrendingUp, Atom, Cpu, BookOpen, Microscope, Zap, FileText, Battery } from "lucide-react"
+import type { Locale } from "./i18n"
+import { industryArticlesDataEn } from "./industry-articles-en"
 
 export interface IndustryArticleSection {
   title: string
@@ -570,3 +572,12 @@ export const industryArticlesData: IndustryArticle[] = [
 export const industryArticlesMap = Object.fromEntries(
   industryArticlesData.map((a) => [a.id, a])
 )
+
+export function getIndustryArticles(locale: Locale): IndustryArticle[] {
+  return locale === "en" ? industryArticlesDataEn : industryArticlesData
+}
+
+export function getIndustryArticlesMap(locale: Locale): Record<string, IndustryArticle> {
+  const data = getIndustryArticles(locale)
+  return Object.fromEntries(data.map((a) => [a.id, a]))
+}
