@@ -2,6 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { isValidLocale, type Locale } from "@/lib/i18n"
+import { getTranslations } from "@/lib/translations"
 import { Cpu, Layers, Sparkles, ChevronDown, ArrowRight, Zap, Wrench, Thermometer, Box, Plane, Radio, Microscope, FlaskConical } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -10,6 +13,12 @@ import { FooterNav } from "@/components/footer-nav"
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
+  const pathname = usePathname()
+  const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
+  const localeFromPath = pathSegments[0]
+  const locale = (isValidLocale(localeFromPath) ? localeFromPath : "zh") as Locale
+  const t = getTranslations(locale)
+  const prefix = `/${locale}`
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -35,15 +44,14 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              Technological Framework & Evolution Roadmap
+              {t("patents.hero.badge")}
             </div>
             <h1 className="text-[32px] font-bold text-white mb-6 leading-tight">
-              技术架构与演化路径
+              {t("patents.hero.title")}
             </h1>
-            <p className="text-lg text-slate-300 leading-relaxed mb-4">构建全碳物理系统的确定性</p>
+            <p className="text-lg text-slate-300 leading-relaxed mb-4">{t("patents.hero.subtitle")}</p>
             <p className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
-              我们不只是在制造一种材料，而是在定义一套基于应力工程（Stress Engineering）的底层硬件体系。
-              我们的技术路线经历了从理论假说到实物验证的完整闭环，并由10余项核心专利构成严密的知识产权保护网。
+              {t("patents.hero.desc")}
             </p>
           </div>
         </div>
@@ -64,10 +72,10 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core
+              {t("patents.evolution.sectionBadge")}
             </div>
-            <h2 className="text-[28px] font-bold text-white mb-4">跨领域连续认知链：从材料物性到计算内核</h2>
-            <p className="text-slate-400 max-w-3xl mx-auto">我们的研发并非孤立的点，而是一条清晰的演化曲线</p>
+            <h2 className="text-[28px] font-bold text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
+            <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
           </div>
 
           {/* Evolution Path Flow */}
@@ -75,76 +83,76 @@ export default function PatentsPage() {
             {/* Desktop horizontal flow */}
             <div className="hidden lg:flex items-stretch justify-between gap-3 mb-12">
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center h-[120px] shrink-0">
-                <div className="text-sky-400 text-sm font-medium mb-2">起点</div>
-                <div className="text-white font-bold text-sm leading-tight">金刚石工具</div>
+                <div className="text-sky-400 text-sm font-medium mb-2">{t("patents.evolution.start")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-sky-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center h-[120px] shrink-0">
-                <div className="text-sky-400 text-sm font-medium mb-2">第一步</div>
-                <div className="text-white font-bold text-sm leading-tight">复合材料体系</div>
+                <div className="text-sky-400 text-sm font-medium mb-2">{t("patents.evolution.step1")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center h-[120px] shrink-0">
-                <div className="text-cyan-400 text-sm font-medium mb-2">第二步</div>
-                <div className="text-white font-bold text-sm leading-tight">全碳复合材料</div>
+                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center h-[120px] shrink-0">
-                <div className="text-cyan-400 text-sm font-medium mb-2">第三步</div>
-                <div className="text-white font-bold text-sm leading-tight">功能性材料迁移</div>
+                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center h-[120px] shrink-0">
-                <div className="text-purple-400 text-sm font-medium mb-2">第四步</div>
-                <div className="text-white font-bold text-xs leading-tight">物理系统演化<br />(应力工程)</div>
+                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
+                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 ring-2 ring-purple-500/40 text-center h-[120px] shrink-0">
-                <div className="text-purple-400 text-sm font-medium mb-2">终点</div>
-                <div className="text-white font-bold text-xs leading-tight">潜在物理<br />计算资源</div>
+                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
+                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
 
             {/* Mobile/Tablet vertical flow */}
             <div className="lg:hidden space-y-4 mb-12">
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
-                <div className="text-sky-400 text-sm font-medium mb-2">起点</div>
-                <div className="text-white font-bold text-sm leading-tight">金刚石工具</div>
+                <div className="text-sky-400 text-sm font-medium mb-2">{t("patents.evolution.start")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-sky-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-sky-500/30 text-center">
-                <div className="text-sky-400 text-sm font-medium mb-2">第一步</div>
-                <div className="text-white font-bold text-sm leading-tight">复合材料体系</div>
+                <div className="text-sky-400 text-sm font-medium mb-2">{t("patents.evolution.step1")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-cyan-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
-                <div className="text-cyan-400 text-sm font-medium mb-2">第二步</div>
-                <div className="text-white font-bold text-sm leading-tight">全碳复合材料</div>
+                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-cyan-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 text-center">
-                <div className="text-cyan-400 text-sm font-medium mb-2">第三步</div>
-                <div className="text-white font-bold text-sm leading-tight">功能性材料迁移</div>
+                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-purple-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center">
-                <div className="text-purple-400 text-sm font-medium mb-2">第四步</div>
-                <div className="text-white font-bold text-sm leading-tight">物理系统演化 (应力工程)</div>
+                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-purple-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-slate-800/80 backdrop-blur-sm border-purple-500/30 text-center ring-2 ring-purple-500/40">
-                <div className="text-purple-400 text-sm font-medium mb-2">终点</div>
-                <div className="text-white font-bold text-sm leading-tight">潜在物理计算资源</div>
+                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
+                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
 
@@ -155,11 +163,9 @@ export default function PatentsPage() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-3">核心逻辑总结</h3>
+                  <h3 className="text-lg font-bold text-white mb-3">{t("patents.evolution.coreLogicTitle")}</h3>
                   <p className="text-slate-300 leading-relaxed text-lg">
-                    我们的研发并非孤立的点，而是一条清晰的演化曲线。通过对 sp²-sp³
-                    键合结构的应力调控，我们将材料从单纯的"散热工具"提升为具备"物理计算潜力"的功能基底。
-                    这条演化路径不仅验证了技术的可行性，更揭示了材料科学与计算物理交叉的巨大想象空间。
+                    {t("patents.evolution.coreLogicDesc")}
                   </p>
                 </div>
               </div>
@@ -173,7 +179,7 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6">
           <Card className="max-w-4xl mx-auto p-8 bg-slate-800/50 backdrop-blur-sm border-sky-500/20">
             <p className="text-slate-300 leading-relaxed text-lg text-center">
-              本项目的技术体系并非由单一材料或单一产品构成，而是沿着清晰的工程与材料演化路径逐步发展形成。其核心逻辑是从工程工具出发，经过功能材料阶段，最终演化为具备平台属性的全碳复合材料体系。
+              {t("patents.evolution.overview")}
             </p>
           </Card>
 
@@ -940,25 +946,25 @@ export default function PatentsPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">探索技术合作机会</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto mb-8">我们欢迎技术授权、联合研发、专利转让等多种合作形式</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("patents.cta.title")}</h2>
+          <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/cooperation">
-              <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 text-lg">项目合作</Button>
+            <Link href={`${prefix}/cooperation`}>
+              <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 text-lg">{t("patents.cta.projectCooperation")}</Button>
             </Link>
-            <Link href="/products">
+            <Link href={`${prefix}/products`}>
               <Button
                 variant="outline"
                 className="border-slate-500 text-slate-300 hover:bg-slate-800 px-8 py-6 text-lg bg-transparent"
               >
-                了解产品应用
+                {t("patents.cta.learnProducts")}
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      <FooterNav />
+      <FooterNav locale={locale} />
     </div>
   )
 }

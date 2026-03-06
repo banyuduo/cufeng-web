@@ -1,11 +1,21 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ArrowLeft, Sparkles, Zap, Activity, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { isValidLocale } from "@/lib/i18n"
 
 export default function CarbonCompositePage() {
+  const pathname = usePathname()
+  const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
+  const localeFromPath = pathSegments[0]
+  const locale = isValidLocale(localeFromPath) ? localeFromPath : "zh"
+  const prefix = `/${locale}`
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -14,7 +24,7 @@ export default function CarbonCompositePage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50 via-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
           <Link
-            href="/products"
+            href={`${prefix}/products`}
             className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -172,7 +182,7 @@ export default function CarbonCompositePage() {
                 全碳复合材料在高导热散热片、柔性导热垫片与固态电池负极材料中拥有广阔应用空间。SP³-SP²结构既能提供卓越的热传导能力，又能满足储能材料的多孔结构和导电要求。
               </p>
               <Link
-                href="/applications#thermal-management"
+                href={`${prefix}/applications#thermal-management`}
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 查看热管理与储能应用
@@ -186,7 +196,7 @@ export default function CarbonCompositePage() {
                 作为环境友好型材料，全碳复合材料可用于水处理粒子电极与电催化应用。更前沿地，高压力下的内应力诱导可能实现高导电甚至超导特性，为前沿科学研究提供全新材料平台。
               </p>
               <Link
-                href="/applications#energy-environment"
+                href={`${prefix}/applications#energy-environment`}
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 查看前沿应用领域
@@ -413,10 +423,10 @@ export default function CarbonCompositePage() {
             </p>
             <div className="flex items-center gap-4">
               <Button size="lg" className="bg-white text-sky-600 hover:bg-slate-100" asChild>
-                <Link href="/cooperation#contact">项目合作</Link>
+                <Link href={`${prefix}/cooperation#contact`}>项目合作</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
-                <Link href="/about#wang">技术交流</Link>
+                <Link href={`${prefix}/about#wang`}>技术交流</Link>
               </Button>
             </div>
           </Card>

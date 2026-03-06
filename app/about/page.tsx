@@ -4,11 +4,22 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { getTranslations } from "@/lib/translations"
+import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params?: Promise<{ locale?: string }>
+}) {
+  const resolved = await (params ?? Promise.resolve({}))
+  const validLocale: Locale = resolved.locale && isValidLocale(resolved.locale) ? resolved.locale : defaultLocale
+  const t = getTranslations(validLocale)
+  const prefix = `/${validLocale}`
+
   return (
     <div className="min-h-screen bg-slate-900">
-      <Navigation />
+      <Navigation locale={validLocale} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
@@ -30,14 +41,14 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              About Us
+              {t("about.hero.badge")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              关于我们
+              {t("about.hero.title")}
             </h1>
-            <p className="text-xl text-sky-400 font-semibold mb-2">新科技，新巅峰</p>
+            <p className="text-xl text-sky-400 font-semibold mb-2">{t("about.hero.tagline")}</p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              源起超硬磨料工具领域，转型高性能热管理材料。从超硬工具设计者，到碳基复合材料技术创新者，我们致力于成为客户理想的方案解决商。
+              {t("about.hero.subtitle")}
             </p>
           </div>
         </div>
@@ -51,44 +62,44 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   <Building2 className="w-6 h-6 text-sky-400" />
-                  簇锋科技 | ToSpike：定义碳基界面的物理边界
+                  {t("about.overview.title")}
                 </h2>
                 <p className="text-slate-300 mb-2">
-                  Nanjing CuFeng Mechanical & Electrical Technology Co., LTD
+                  {t("about.overview.companyName")}
                 </p>
-                <p className="text-slate-400 text-sm">座落于南京江北新区</p>
+                <p className="text-slate-400 text-sm">{t("about.overview.location")}</p>
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
-                <h3 className="text-xl font-semibold text-white mb-4">公司概况</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">{t("about.overview.companyProfile")}</h3>
                 <p className="mb-4">
-                  簇锋科技（ToSpike）致力于深耕碳基界面工程技术。我们依托对 <span className="text-sky-400 font-semibold">sp²–sp³ 杂化键合</span> 机制的底层深度理解，构建了从原子级"活性熔固"工艺到高维度"碳基复合材料平台"的完整技术链路。
+                  {t("about.overview.profile1")}
                 </p>
                 <p className="mb-4">
-                  我们不单生产超硬磨料工具（Diamond/CBN），更致力于在极端工况下，为半导体制造、航空航天、AI 算力及新能源系统等高精尖领域，提供解决散热、结构强度、电磁防护等应用解决方案。
+                  {t("about.overview.profile2")}
                 </p>
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
                 <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-sky-400" />
-                  研发积淀与工程能力
+                  {t("about.overview.rdCapability")}
                 </h3>
                 <p className="mb-4">
-                  公司在真空界面冶金、活性熔固以及工程应用领域拥有逾十年的技术积累。凭借对活性熔固（Active Fusion-Bonding）过程的微观调控，我们成功攻克了铸造金属、碳纤维复合材料（CFRP）及硬脆材料在极端制造中的加工瓶颈，为客户提供从定制化工具到前沿功能材料的垂直整合解决方案。
+                  {t("about.overview.rdDesc")}
                 </p>
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
                 <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-sky-400" />
-                  从工业实践到物理探索
+                  {t("about.overview.evolution")}
                 </h3>
                 <p className="mb-4">
-                  我们坚持<strong className="text-white">"新科技，新巅峰"的演进路径</strong>。通过将超硬磨料工具的设计原则迁移至高性能热管理领域，簇锋科技正在实现从"精密加工工具"向"高性能功能材料平台"的战略升华。
+                  {t("about.overview.evolution1")}
                 </p>
                 <p className="mb-4">
-                  基于 <span className="text-sky-400 font-semibold">sp²–sp³ 键合</span> 的内生应力调控，我们已实现体视热导率 ≥ 680 W/m·K 的材料突破，并持续探索碳基结构在超导、非常规输运及量子物理边界的无限可能。
+                  {t("about.overview.evolution2")}
                 </p>
               </div>
 
@@ -98,19 +109,19 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
                       <Eye className="w-5 h-5 text-sky-400" />
-                      企业愿景
+                      {t("about.overview.vision")}
                     </h3>
                     <p className="text-slate-300 leading-relaxed">
-                      致力于成为客户理想的方案解决商，通过持续技术创新，为高功率密度热管理、新能源、固态电池等前沿领域提供突破性材料解决方案。
+                      {t("about.overview.visionDesc")}
                     </p>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
                       <Rocket className="w-5 h-5 text-sky-400" />
-                      核心理念
+                      {t("about.overview.coreIdea")}
                     </h3>
                     <p className="text-slate-300 leading-relaxed">
-                      <span className="text-sky-400 font-semibold">新科技，新巅峰</span>。以技术创新为驱动，从超硬磨料工具到碳基复合材料平台，不断突破材料科学边界，与客户共同攀登行业新高峰。
+                      {t("about.overview.coreIdeaDesc")}
                     </p>
                   </div>
                 </div>
@@ -124,8 +135,8 @@ export default function AboutPage() {
       <section className="py-20 px-6 lg:px-8 bg-slate-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">核心团队</h2>
-            <p className="text-slate-400">专业、专注、专精的技术团队</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.team.title")}</h2>
+            <p className="text-slate-400">{t("about.team.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -136,46 +147,42 @@ export default function AboutPage() {
                   <GraduationCap className="w-6 h-6 text-sky-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">王博士</h3>
+                  <h3 className="text-lg font-bold text-white">{t("about.team.wang.name")}</h3>
                   <p className="text-sm text-slate-400">Wang, PhD</p>
                 </div>
               </div>
               <div className="mb-3">
                 <div className="inline-block px-3 py-1 bg-sky-600/20 text-sky-300 text-xs font-medium rounded-full mb-2">
-                  技术研发与应用负责人
+                  {t("about.team.wang.title")}
                 </div>
               </div>
               <div className="space-y-3 text-sm text-slate-300">
                 <div>
                   <div className="flex items-start gap-2 mb-1">
                     <Briefcase className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">专业背景</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.wang.background")}</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
-                    2016年取得工学博士学位，长期致力于超硬磨料工具在难加工材料领域的精密加工研究。
+                    {t("about.team.wang.backgroundDesc")}
                   </p>
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-1">
                     <Award className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">技术背书</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.wang.credentials")}</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
-                    拥有深厚的产业化经验，累计申请并获得授权的发明专利及实用新型专利达 <span className="text-sky-400 font-semibold">29 项</span>。
+                    {t("about.team.wang.credentialsDesc")}
                   </p>
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-1">
                     <Zap className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">核心能力</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.wang.capability")}</span>
                   </div>
                   <div className="ml-6 space-y-2 leading-relaxed">
-                    <p>
-                      擅长针对钛合金、镍基高温合金、碳化硅及碳纤维复合材料（CFRP）等极端工况，通过 <span className="text-sky-400 font-semibold">sp²–sp³ 界面参数</span>的深度匹配，提供定制化的系统解决方案。
-                    </p>
-                    <p>
-                      擅长基于成本导向、量产导向进行产品开发与战略规划。通过工艺改进或新范式革新，实现产品的普适化应用。
-                    </p>
+                    <p>{t("about.team.wang.capabilityDesc1")}</p>
+                    <p>{t("about.team.wang.capabilityDesc2")}</p>
                   </div>
                 </div>
               </div>
@@ -188,45 +195,35 @@ export default function AboutPage() {
                   <Wrench className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">何工</h3>
+                  <h3 className="text-lg font-bold text-white">{t("about.team.he.name")}</h3>
                   <p className="text-sm text-slate-400">He, M.E.</p>
                 </div>
               </div>
               <div className="mb-3">
                 <div className="inline-block px-3 py-1 bg-cyan-600/20 text-cyan-300 text-xs font-medium rounded-full mb-2">
-                  工程设计与结构负责人
+                  {t("about.team.he.title")}
                 </div>
               </div>
               <div className="space-y-4 text-sm text-slate-300">
                 <div>
                   <div className="flex items-start gap-2 mb-2">
                     <Briefcase className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">专业履历</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.he.background")}</span>
                   </div>
                   <div className="ml-6 space-y-2 leading-relaxed">
-                    <p>
-                      机械工程硕士，高级工程师，拥有 <span className="text-cyan-400 font-semibold">17 年以上</span> 军工电子设备研发经验，专注于结构设计与热管理领域。
-                    </p>
-                    <p>
-                      曾长期任职于大型军工电子科研单位，主持多项高复杂度电子设备的结构研发与制造项目，涵盖军工及民用领域。
-                    </p>
+                    <p>{t("about.team.he.backgroundDesc1")}</p>
+                    <p>{t("about.team.he.backgroundDesc2")}</p>
                   </div>
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-2">
                     <Zap className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">核心专长</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.he.capability")}</span>
                   </div>
                   <div className="ml-6 space-y-2 leading-relaxed">
-                    <p>
-                      擅长复杂电子设备的结构‑热耦合一体化设计，具备从系统方案到工程实现的全链路能力。
-                    </p>
-                    <p>
-                      对高功率密度电子设备的热设计有深刻理解，能提供可靠的技术路径与创新解决方案。
-                    </p>
-                    <p>
-                      积累了丰富的工程实践与问题闭环经验，善于在约束条件下平衡性能、可靠性与工艺可行性。
-                    </p>
+                    <p>{t("about.team.he.capabilityDesc1")}</p>
+                    <p>{t("about.team.he.capabilityDesc2")}</p>
+                    <p>{t("about.team.he.capabilityDesc3")}</p>
                   </div>
                 </div>
               </div>
@@ -239,47 +236,47 @@ export default function AboutPage() {
                   <Users className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">张工</h3>
+                  <h3 className="text-lg font-bold text-white">{t("about.team.zhang.name")}</h3>
                   <p className="text-sm text-slate-400">Zhang</p>
                 </div>
               </div>
               <div className="mb-3">
                 <div className="inline-block px-3 py-1 bg-purple-600/20 text-purple-300 text-xs font-medium rounded-full mb-2">
-                  应用工程与现场支持负责人
+                  {t("about.team.zhang.title")}
                 </div>
               </div>
               <div className="space-y-4 text-sm text-slate-300">
                 <div>
                   <div className="flex items-start gap-2 mb-2">
                     <Briefcase className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">专业背景</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.zhang.background")}</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
-                    资深金刚石工具应用专家，在超硬磨料磨具及材料切削机理领域深耕多年。擅长攻克复杂的工业磨削难题，并致力于高端新能源载具装配工具的创新应用与市场推广。
+                    {t("about.team.zhang.backgroundDesc")}
                   </p>
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-2">
                     <Zap className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                    <span className="font-semibold text-slate-200">核心能力</span>
+                    <span className="font-semibold text-slate-200">{t("about.team.zhang.capability")}</span>
                   </div>
                   <div className="ml-6 space-y-3 leading-relaxed">
                     <div>
-                      <p className="font-semibold text-slate-200 mb-1">精准解决方案：</p>
-                      <p>深挖现场痛点，提供从工具选型到工艺参数优化的全链路支持。</p>
+                      <p className="font-semibold text-slate-200 mb-1">{t("about.team.zhang.solution")}</p>
+                      <p>{t("about.team.zhang.solutionDesc")}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-200 mb-1">敏捷现场响应：</p>
-                      <p>确保技术支持与生产无缝衔接，显著提升产线效率与稳定性。</p>
+                      <p className="font-semibold text-slate-200 mb-1">{t("about.team.zhang.response")}</p>
+                      <p>{t("about.team.zhang.responseDesc")}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-200 mb-1">新能源汽车业务方向：</p>
+                      <p className="font-semibold text-slate-200 mb-1">{t("about.team.zhang.ev")}</p>
                       <div className="space-y-2 mt-2">
                         <p>
-                          <span className="font-semibold">装配线工具开发：</span> 针对三电系统（电池、电机、电控）及底盘装配，提供高精度、高耐用性的专用工具方案。
+                          <span className="font-semibold">{t("about.team.zhang.evAssembly")}</span> {t("about.team.zhang.evAssemblyDesc")}
                         </p>
                         <p>
-                          <span className="font-semibold">行业深度理解：</span> 深刻把握新能源汽车轻量化制造对装配工艺的严苛要求，助力客户实现工艺升级。
+                          <span className="font-semibold">{t("about.team.zhang.evIndustry")}</span> {t("about.team.zhang.evIndustryDesc")}
                         </p>
                       </div>
                     </div>
@@ -295,8 +292,8 @@ export default function AboutPage() {
       <section className="py-20 px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">核心历程</h2>
-            <p className="text-slate-400">从启航到技术突破的关键节点</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.timeline.title")}</h2>
+            <p className="text-slate-400">{t("about.timeline.subtitle")}</p>
           </div>
 
           <div className="relative">
@@ -316,10 +313,10 @@ export default function AboutPage() {
                   <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Calendar className="w-5 h-5 text-sky-400" />
-                      <h3 className="text-xl font-bold text-white">专利集群与技术壁垒形成</h3>
+                      <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Patents")}</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
-                      完成 9 项核心专利布局，构建起从金刚石工具到 <span className="text-sky-400 font-semibold">sp²–sp³</span> 碳基界面的完整知识产权护城河。
+                      {t("about.timeline.2025PatentsDesc")}
                     </p>
                   </Card>
                 </div>
@@ -336,10 +333,10 @@ export default function AboutPage() {
                   <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-cyan-500/50 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Zap className="w-5 h-5 text-cyan-400" />
-                      <h3 className="text-xl font-bold text-white">高性能热管理材料突破</h3>
+                      <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Thermal")}</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
-                      成功开发金刚石铜复合材料，热导率突破 <span className="text-cyan-400 font-semibold">680 W/m·K</span>，标志着公司正式进入高功率电子散热领域。
+                      {t("about.timeline.2025ThermalDesc")}
                     </p>
                   </Card>
                 </div>
@@ -356,10 +353,10 @@ export default function AboutPage() {
                   <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Building2 className="w-5 h-5 text-purple-400" />
-                      <h3 className="text-xl font-bold text-white">战略迁址与能级提升</h3>
+                      <h3 className="text-xl font-bold text-white">{t("about.timeline.2023Relocate")}</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
-                      研发中心进驻南京江北新区，依托区域科研优势，加速超硬材料底层逻辑的商业化转化。
+                      {t("about.timeline.2023RelocateDesc")}
                     </p>
                   </Card>
                 </div>
@@ -376,10 +373,10 @@ export default function AboutPage() {
                   <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-slate-500/50 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Target className="w-5 h-5 text-slate-400" />
-                      <h3 className="text-xl font-bold text-white">簇锋科技启航</h3>
+                      <h3 className="text-xl font-bold text-white">{t("about.timeline.2018Founding")}</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
-                      公司于镇江注册成立，确立"<span className="text-slate-400 font-semibold">新科技，新巅峰</span>"理念，专注解决难加工材料的界面连接难题。
+                      {t("about.timeline.2018FoundingDesc")}
                     </p>
                   </Card>
                 </div>
@@ -389,13 +386,13 @@ export default function AboutPage() {
 
           {/* 查看更多动态链接 */}
           <div className="text-center mt-16">
-            <Link href="/news">
+            <Link href={`${prefix}/news`}>
               <Button
                 size="lg"
                 variant="outline"
                 className="gap-2 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-slate-900/50"
               >
-                查看更多动态
+                {t("about.timeline.moreNews")}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
@@ -404,7 +401,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <FooterNav />
+      <FooterNav locale={validLocale} />
     </div>
   )
 }

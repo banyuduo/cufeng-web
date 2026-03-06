@@ -1,11 +1,21 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ArrowLeft, Layers, Zap, FlaskConical, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { isValidLocale } from "@/lib/i18n"
 
 export default function ThermalPadPage() {
+  const pathname = usePathname()
+  const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
+  const localeFromPath = pathSegments[0]
+  const locale = isValidLocale(localeFromPath) ? localeFromPath : "zh"
+  const prefix = `/${locale}`
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -14,7 +24,7 @@ export default function ThermalPadPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-7xl mx-auto">
           <Link
-            href="/products"
+            href={`${prefix}/products`}
             className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -242,7 +252,7 @@ export default function ThermalPadPage() {
                 </li>
               </ul>
               <Link
-                href="/applications"
+                href={`${prefix}/applications`}
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 探索热管理应用领域
@@ -255,7 +265,7 @@ export default function ThermalPadPage() {
                 我们提供从底层骨架设计、颗粒配方优化到成品规格定制的全链条研发服务。针对客户特定的热流密度需求，通过调整界面应力与增强相分布，提供独有的性能定制化方案。
               </p>
               <Link
-                href="/about#zhang-gong"
+                href={`${prefix}/about#zhang-gong`}
                 className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
               >
                 联系应用工程师
@@ -299,7 +309,7 @@ export default function ThermalPadPage() {
           <p className="text-slate-600 mb-8">我们提供定制化尺寸与性能参数的柔性导热垫片样品，欢迎联系技术团队</p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="gap-2 bg-sky-600 hover:bg-sky-700 text-white" asChild>
-              <Link href="/cooperation#contact">申请样品</Link>
+              <Link href={`${prefix}/cooperation#contact`}>申请样品</Link>
             </Button>
             <Button
               size="lg"
