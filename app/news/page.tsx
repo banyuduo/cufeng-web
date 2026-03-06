@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { IndustryInfoNav } from "@/components/industry-info-nav"
-import { industryArticlesData } from "@/lib/industry-articles"
+import { getIndustryArticles } from "@/lib/industry-articles"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -46,6 +46,7 @@ export default async function NewsPage({
   const t = getTranslations(validLocale)
   const prefix = `/${validLocale}`
 
+  const industryArticlesData = getIndustryArticles(validLocale)
   const companyNews = COMPANY_NEWS_IDS.map((id) => ({
     id,
     date: t(`news.items.${id}.date`),

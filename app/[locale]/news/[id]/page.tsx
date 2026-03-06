@@ -1,7 +1,8 @@
 import NewsDetailPage from "../../../news/[id]/page"
 import { isValidLocale } from "@/lib/i18n"
-import { industryArticlesMap } from "@/lib/industry-articles"
+import { getIndustryArticlesMap } from "@/lib/industry-articles"
 
+const industryIds = Object.keys(getIndustryArticlesMap("zh"))
 const newsIds = [
   "2025-patents",
   "2025-diamond-copper",
@@ -12,7 +13,7 @@ const newsIds = [
   "2018-research-center",
   "2018-website",
   "2018-founding",
-  ...Object.keys(industryArticlesMap),
+  ...industryIds,
 ]
 
 export async function generateStaticParams() {
