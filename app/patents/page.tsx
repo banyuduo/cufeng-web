@@ -361,7 +361,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+      <section id="evolution-path" className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden scroll-mt-24">
         {/* Background elements */}
         <div className="absolute inset-0 opacity-5">
           <div

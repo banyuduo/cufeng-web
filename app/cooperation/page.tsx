@@ -158,7 +158,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 lg:px-8 bg-white">
+      <section id="contact" className="py-20 px-6 lg:px-8 bg-white scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.contact.title")}
