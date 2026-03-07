@@ -31,16 +31,22 @@ export default async function HomePage({
               {t("home.hero.subtitle")}
             </p>
 
-            <div className="max-w-4xl mx-auto space-y-8 mb-12">
-              <Card className="bg-slate-800/50 border-slate-700/50 p-8">
+            <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12">
+              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
                 <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
                   {t("home.hero.card1")}
                 </p>
               </Card>
 
-              <Card className="bg-slate-800/50 border-slate-700/50 p-8">
-                <p className="text-lg text-slate-200 leading-relaxed opacity-100">
+              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
+                <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
                   {t("home.hero.card2")}
+                </p>
+              </Card>
+
+              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
+                <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
+                  {t("home.hero.card3")}
                 </p>
               </Card>
             </div>
@@ -93,7 +99,7 @@ export default async function HomePage({
                   {t("home.techEvolution.desc")}
                 </p>
                 <Link
-                  href={`/${validLocale}/patents`}
+                  href={`/${validLocale}/patents#evolution-path`}
                   className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors"
                 >
                   {t("home.techEvolution.viewFullPath")}
@@ -108,8 +114,8 @@ export default async function HomePage({
                 asChild
                 className="gap-2 bg-sky-500 hover:bg-sky-600 text-white shadow-lg shadow-sky-500/20 w-full sm:w-auto min-h-[44px]"
               >
-                <Link href={`/${validLocale}/patents`}>
-                  {t("home.hero.viewTechArchitecture")}
+                <Link href={`/${validLocale}/applications`}>
+                  {t("home.hero.viewTechApplications")}
                 </Link>
               </Button>
               <Button
@@ -265,7 +271,7 @@ export default async function HomePage({
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="gap-2 bg-white border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-slate-400">
-              <Link href={`/${validLocale}/cooperation`}>
+              <Link href={`/${validLocale}/cooperation#contact`}>
                 {t("home.hero.contactTeam")}
               </Link>
             </Button>

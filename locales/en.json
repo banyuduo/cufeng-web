@@ -32,18 +32,20 @@
   },
   "home": {
     "hero": {
-      "title": "Stress-Engineered sp²–sp³ Carbon-Based Interface Platform",
+      "title": "sp²–sp³ Carbon-Based Interface Engineering Platform",
       "subtitle": "Solving thermal management limits in the AI and new energy era",
       "card1": "We focus on source-level R&D based on sp²–sp³ hybrid bonding logic.",
-      "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, thereby generating tunable endogenous stress fields and heterogeneous energy-level environments.",
+      "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, building a stable sp²–sp³ covalent bonding network.",
+      "card3": "This unique interface structure generates tunable endogenous stress fields and heterogeneous energy-level environments, endowing the material with thermal, mechanical, and electrical properties that surpass traditional composites.",
       "achieved": "Currently achieved",
       "achievement1": "High thermal conductivity diamond-copper composite",
       "achievement1Value": "Bulk thermal conductivity ≥ 680 W/m·K",
       "achievement1Note": "With further improvement potential",
       "achievement2": "Reproducible all-carbon functional structures",
       "achievement2Note": "Sample preparation capability",
-      "platformFocus": "This platform focuses on AI computing, new energy thermal management, advanced interface materials, and high-hardness, high-conductivity applications, delivering thermal management solutions beyond traditional material limits for high-power-density electronic devices.",
+      "platformFocus": "This platform focuses on AI computing, new energy thermal management, advanced interface materials, and high-hardness, high-conductivity applications, delivering breakthrough thermal management solutions for high-power-density electronic devices.",
       "viewTechArchitecture": "View Technology Architecture",
+      "viewTechApplications": "View Technology Applications",
       "projectCooperation": "Project Cooperation",
       "viewWhitepaper": "View Technical Whitepaper",
       "contactTeam": "Contact Our Team",
@@ -52,7 +54,7 @@
     },
     "techEvolution": {
       "title": "Technology Evolution Path",
-      "desc": "Based on the same underlying platform, we are extending toward solid-state battery skeletons, advanced packaging thermal solutions, and beyond.",
+      "desc": "Based on the same underlying platform, we are extending toward advanced packaging thermal solutions, solid-state battery skeletons, and beyond.",
       "viewFullPath": "View Full Technology Architecture"
     },
     "features": {
