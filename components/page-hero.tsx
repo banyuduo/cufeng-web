@@ -75,7 +75,7 @@ export function PageHero({
           </h1>
           {tagline && (
             <p
-              className={`text-xl mb-2 ${
+              className={`text-base sm:text-xl mb-2 break-words ${
                 isDark ? "text-sky-400 font-semibold" : "text-sky-600"
               }`}
             >
@@ -84,7 +84,7 @@ export function PageHero({
           )}
           {subtitle && (
             <p
-              className={`text-lg leading-relaxed ${
+              className={`text-base sm:text-lg leading-relaxed break-words ${
                 isDark ? "text-slate-300" : "text-slate-600"
               } ${tagline ? "max-w-3xl mx-auto" : ""}`}
             >

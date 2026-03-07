@@ -49,7 +49,7 @@ export default function PatentsPage() {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               {t("patents.evolution.sectionBadge")}
@@ -156,7 +156,7 @@ export default function PatentsPage() {
 
       {/* General Overview Section */}
       <section className="py-16 bg-slate-900">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <Card className="max-w-4xl mx-auto p-8 bg-slate-800/50 backdrop-blur-sm border-sky-500/20">
             <p className="text-slate-300 leading-relaxed text-lg text-center">
               {t("patents.evolution.overview")}
@@ -373,7 +373,7 @@ export default function PatentsPage() {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               {t("patents.evolutionPath.sectionBadge")}
@@ -613,7 +613,7 @@ export default function PatentsPage() {
       <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-900/10 via-transparent to-transparent" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-pink-500/20 rounded-full text-pink-300 text-sm font-medium mb-6 border border-pink-500/30">
               {t("patents.platformCore.sectionBadge")}
@@ -763,7 +763,7 @@ export default function PatentsPage() {
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-transparent to-transparent" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-6 border border-indigo-500/30">
               {t("patents.platformExtension.sectionBadge")}
@@ -836,7 +836,7 @@ export default function PatentsPage() {
 
       {/* Patent Cluster Value */}
       <section id="patent-cluster" className="py-20 bg-slate-800 scroll-mt-24">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-slate-900 to-slate-800 border-sky-500/20">
             <div className="text-center mb-10">
               <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("patents.patentCluster.title")}</h2>
@@ -957,7 +957,7 @@ export default function PatentsPage() {
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("patents.cta.title")}</h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>

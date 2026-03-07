@@ -226,7 +226,7 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}

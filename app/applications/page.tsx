@@ -1,11 +1,13 @@
 import Link from "next/link"
-import { Cpu, Zap, Car, Radio, Sparkles, Home, Battery, Plane, FlaskConical, Droplets, FileText, Microscope, ShieldCheck, ArrowUpRight } from "lucide-react"
+import { Cpu, Zap, Car, Sparkles, Home, Battery, Microscope, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { ApplicationCard } from "@/components/application-card"
+import { HpcExpandableCard } from "@/components/hpc-expandable-card"
+import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -20,10 +22,19 @@ export default async function ApplicationsPage({
   const prefix = `/${validLocale}`
 
   const layers = [
-    { levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-blue-500/50 bg-blue-500/20", Icon: Cpu, iconColor: "text-blue-400", href: "#thermal-management" },
-    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-sky-500/50 bg-sky-500/10", Icon: Zap, iconColor: "text-sky-400", href: "#consumer-electronics" },
-    { levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-emerald-500/50 bg-emerald-500/10", Icon: Battery, iconColor: "text-emerald-400", href: "#energy-environment" },
-    { levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-purple-500/50 bg-purple-500/10", Icon: Microscope, iconColor: "text-purple-400", href: "#frontier-research" },
+    { levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-blue-500/50 bg-blue-500/20", Icon: Cpu, iconColor: "text-blue-400", href: "#hpc" },
+    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-sky-500/50 bg-sky-500/10", Icon: Zap, iconColor: "text-sky-400", href: "#power-semiconductor" },
+    { levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-emerald-500/50 bg-emerald-500/10", Icon: Battery, iconColor: "text-emerald-400", href: "#ev-storage" },
+    { levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-amber-500/50 bg-amber-500/10", Icon: Home, iconColor: "text-amber-400", href: "#consumer" },
+    { levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-purple-500/50 bg-purple-500/10", Icon: Microscope, iconColor: "text-purple-400", href: "#frontier" },
+  ] as const
+
+  const categoryConfig = [
+    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-sky-50", borderClass: "border-sky-200", iconBg: "bg-sky-600", iconColor: "text-sky-600" },
+    { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, color: "blue", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-blue-600", iconColor: "text-blue-600" },
+    { id: "ev-storage", key: "evStorage", Icon: Car, color: "emerald", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-emerald-600", iconColor: "text-emerald-600" },
+    { id: "consumer", key: "consumer", Icon: Home, color: "amber", bgClass: "bg-slate-50", borderClass: "border-slate-200", iconBg: "bg-amber-600", iconColor: "text-amber-600" },
+    { id: "frontier", key: "frontier", Icon: Sparkles, color: "purple", bgClass: "bg-purple-50/50", borderClass: "border-purple-200", iconBg: "bg-purple-600", iconColor: "text-purple-600", isExploration: true },
   ] as const
 
   return (
@@ -39,10 +50,10 @@ export default async function ApplicationsPage({
       {/* 应用蓝图 */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full py-12 px-4 bg-slate-950 rounded-3xl border border-slate-800">
-            <div className="text-center mb-12">
-              <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("applications.blueprint.title")}</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">{t("applications.blueprint.subtitle")}</p>
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden">
+            <div className="text-center mb-12 px-1">
+              <h2 className="page-h2 text-white mb-4 md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
 
             <div className="max-w-4xl mx-auto relative space-y-4">
@@ -76,519 +87,169 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      {/* 核心工业散热版块 */}
-      <section id="thermal-management" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
+      {/* 五大应用分类卡片 */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <div className="inline-block px-6 py-2 bg-sky-600 rounded-full text-white font-bold text-sm mb-4">
-              {t("applications.thermal.badge")}
-            </div>
-            <h2 className="page-h2 text-slate-900 mb-4 text-3xl md:text-4xl lg:text-5xl">{t("applications.thermal.title")}</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              {t("applications.thermal.subtitle")}
-            </p>
-          </div>
+          <div className="space-y-6 sm:space-y-8">
+            {categoryConfig.map((cat) => {
+              const base = `applications.categories.${cat.key}`
+              const itemsStr = t(`${base}.items`)
+              const items = itemsStr ? itemsStr.split("|").filter(Boolean) : []
+              const materials = t(`${base}.materials`) !== `${base}.materials` ? t(`${base}.materials`) : undefined
+              const badge = t(`${base}.badge`) !== `${base}.badge` ? t(`${base}.badge`) : undefined
+              const subtitle = t(`${base}.subtitle`) !== `${base}.subtitle` ? t(`${base}.subtitle`) : undefined
+              const features = t(`${base}.features`) !== `${base}.features` ? t(`${base}.features`) : undefined
+              const title = t(`${base}.title`)
 
-          <div className="mb-12 sm:mb-16">
-            <Card className="p-6 sm:p-10 lg:p-12 bg-gradient-to-br from-sky-50 to-white border-sky-200 hover:shadow-2xl hover:border-sky-400 transition-all">
-              <div className="max-w-5xl mx-auto">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-xl bg-sky-600 flex items-center justify-center">
-                    <Cpu className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <div className="inline-block px-4 py-1 bg-sky-600 rounded-full text-white text-xs font-bold mb-2">
-                      {t("applications.thermal.aiChipBadge")}
+              if (cat.key === "hpc") {
+                return (
+                  <HpcExpandableCard
+                    key={cat.id}
+                    title={title}
+                    subtitle={subtitle ?? ""}
+                    features={features ?? ""}
+                    items={items}
+                    materials={materials ?? ""}
+                    viewMaterialsLabel={t("applications.cta.viewMaterials")}
+                    productsHref={`${prefix}/products`}
+                    expandLabel={t(`${base}.expandLabel`)}
+                    collapseLabel={t(`${base}.collapseLabel`)}
+                    materialsLabel={t("applications.thermal.materialsLabel")}
+                    intro={t("applications.thermal.aiChipDesc")}
+                    geoCoupling={t("applications.thermal.geoCoupling")}
+                    geoCouplingDesc={t("applications.thermal.geoCouplingDesc")}
+                    thermalDilution={t("applications.thermal.thermalDilution")}
+                    thermalDilutionDesc={t("applications.thermal.thermalDilutionDesc")}
+                    systemSync={t("applications.thermal.systemSync")}
+                    systemSyncDesc={t("applications.thermal.systemSyncDesc")}
+                  />
+                )
+              }
+
+              if (cat.key === "consumer") {
+                const itemsDescStr = t(`${base}.itemsDesc`)
+                const itemsDesc = itemsDescStr && itemsDescStr !== `${base}.itemsDesc` ? itemsDescStr.split("|") : []
+                return (
+                  <ConsumerExpandableCard
+                    key={cat.id}
+                    title={title}
+                    items={items}
+                    itemsDesc={itemsDesc}
+                    materials={materials}
+                    materialsLabel={t("applications.thermal.materialsLabel")}
+                    viewMaterialsLabel={t("applications.cta.viewMaterials")}
+                    productsHref={`${prefix}/products`}
+                    expandLabel={t(`${base}.expandLabel`)}
+                    collapseLabel={t(`${base}.collapseLabel`)}
+                    coilIntro={t(`${base}.coilIntro`)}
+                    coilSolution={t(`${base}.coilSolution`)}
+                    coilAdv1={t(`${base}.coilAdv1`)}
+                    coilAdv2={t(`${base}.coilAdv2`)}
+                    coilAdv3={t(`${base}.coilAdv3`)}
+                    coilMech={t(`${base}.coilMech`)}
+                    coilCoreSolution={t(`${base}.coilCoreSolution`)}
+                    coilTechAdvantage={t(`${base}.coilTechAdvantage`)}
+                    coilPhysicsMech={t(`${base}.coilPhysicsMech`)}
+                    viewWhitepaper={t(`${base}.viewWhitepaper`)}
+                    whitepaperHref="/docs/diamond-coil.html"
+                  />
+                )
+              }
+
+              const itemsDescStr = t(`${base}.itemsDesc`)
+              const itemsDesc = itemsDescStr && itemsDescStr !== `${base}.itemsDesc` ? itemsDescStr.split("|") : []
+
+              return (
+                <Card
+                  key={cat.id}
+                  id={cat.id}
+                  className={`p-6 sm:p-8 lg:p-10 ${cat.bgClass} ${cat.borderClass} hover:shadow-xl transition-all scroll-mt-20 ${
+                    cat.isExploration ? "border-purple-200/80 ring-1 ring-purple-100" : ""
+                  }`}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${cat.iconBg} flex items-center justify-center flex-shrink-0`}>
+                      <cat.Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-slate-900">{t("applications.thermal.aiChipTitle")}</h3>
-                  </div>
-                </div>
-
-                <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                  {t("applications.thermal.aiChipDesc")}
-                </p>
-
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.geoCoupling")}</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {t("applications.thermal.geoCouplingDesc")}
-                    </p>
-                  </div>
-
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.thermalDilution")}</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {t("applications.thermal.thermalDilutionDesc")}
-                    </p>
-                  </div>
-
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                    <div className="text-sky-600 font-bold mb-3 text-lg">{t("applications.thermal.systemSync")}</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {t("applications.thermal.systemSyncDesc")}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-sky-50 border border-sky-200 rounded-lg p-5 mb-6">
-                  <div className="text-sky-900 font-semibold mb-2 text-sm">{t("applications.thermal.materialsLabel")}</div>
-                  <div className="grid md:grid-cols-3 gap-2 text-xs text-slate-700">
-                    <div>• {t("applications.thermal.material1")}</div>
-                    <div>• {t("applications.thermal.material2")}</div>
-                    <div>• {t("applications.thermal.material3")}</div>
-                  </div>
-                </div>
-
-                <div className="bg-sky-50 border border-sky-200 rounded-lg p-6">
-                  <div className="text-sky-900 font-semibold mb-3">{t("applications.thermal.scenariosLabel")}</div>
-                  <div className="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>{t("applications.thermal.scenario1")}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                          {title}
+                        </h2>
+                        {badge && (
+                          <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                            {badge}
+                          </span>
+                        )}
+                      </div>
+                      {subtitle && (
+                        <p className="text-slate-600 font-medium mb-2">{subtitle}</p>
+                      )}
+                      {features && (
+                        <p className="text-sm text-slate-600 mb-4">{features}</p>
+                      )}
+                      <div className="space-y-4 mb-4">
+                        {items.map((item, i) => (
+                          <div key={i} className="border-l-2 border-slate-200 pl-4">
+                            <div className="flex items-start gap-2">
+                              <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${cat.isExploration ? "bg-purple-500" : "bg-sky-500"}`} />
+                              <div className="min-w-0">
+                                <div className="font-medium text-slate-800 text-sm sm:text-base break-words">{item}</div>
+                                {itemsDesc[i] && (
+                                  <p className="text-slate-600 text-sm mt-1 leading-relaxed break-words">{itemsDesc[i]}</p>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {materials && (
+                        <div className="mt-4">
+                          <div className="text-sm font-semibold text-slate-800 mb-2">{t("applications.thermal.materialsLabel")}</div>
+                          <div className="flex flex-wrap gap-2">
+                            {materials.split("|").map((m, i) => (
+                              <span
+                                key={i}
+                                className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full ${
+                                  cat.isExploration
+                                    ? "bg-purple-50 text-purple-800 border-purple-200/60"
+                                    : "bg-sky-50 text-sky-800 border-sky-200/60"
+                                }`}
+                              >
+                                {m.trim()}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      <div className="mt-6">
+                        <Button
+                          size="lg"
+                          variant="outline"
+                          className="min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+                          asChild
+                        >
+                          <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
+                        </Button>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>{t("applications.thermal.scenario2")}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>{t("applications.thermal.scenario3")}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-sky-600 rounded-full"></div>
-                      <span>{t("applications.thermal.scenario4")}</span>
-                    </div>
                   </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {/* Power Semiconductors */}
-            <Card className="mx-0 sm:mx-0 p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Zap className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.powerSemiconductorTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                {t("applications.thermal.powerSemiconductorDesc")}
-              </p>
-              <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
-                <div className="pl-4 space-y-1">
-                  <div>• {t("applications.thermal.psScenario1")}</div>
-                  <div>• {t("applications.thermal.psScenario2")}</div>
-                  <div>• {t("applications.thermal.psScenario3")}</div>
-                  <div>• {t("applications.thermal.psScenario4")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
-                <div className="text-xs text-slate-600 space-y-1">
-                  <div>• {t("applications.thermal.material1")}</div>
-                  <div>• {t("applications.thermal.material2")}</div>
-                  <div>• {t("applications.thermal.material3")}</div>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
-              </Button>
-            </Card>
-
-            {/* EV & Transportation */}
-            <Card className="mx-0 sm:mx-0 p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Car className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.evTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                {t("applications.thermal.evDesc")}
-              </p>
-              <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
-                <div className="pl-4 space-y-1">
-                  <div>• {t("applications.thermal.evScenario1")}</div>
-                  <div>• {t("applications.thermal.evScenario2")}</div>
-                  <div>• {t("applications.thermal.evScenario3")}</div>
-                  <div>• {t("applications.thermal.evScenario4")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
-                <div className="text-xs text-slate-600 space-y-1">
-                  <div>• {t("applications.thermal.material1")}</div>
-                  <div>• {t("applications.thermal.material3")}</div>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
-              </Button>
-            </Card>
-
-            {/* 5G Communications */}
-            <Card className="mx-0 sm:mx-0 p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Radio className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.thermal.fiveGTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                {t("applications.thermal.fiveGDesc")}
-              </p>
-              <div className="text-sm text-slate-700 space-y-2 mb-6">
-                <div className="font-semibold">{t("applications.thermal.scenariosSubLabel")}</div>
-                <div className="pl-4 space-y-1">
-                  <div>• {t("applications.thermal.fiveGScenario1")}</div>
-                  <div>• {t("applications.thermal.fiveGScenario2")}</div>
-                  <div>• {t("applications.thermal.fiveGScenario3")}</div>
-                  <div>• {t("applications.thermal.fiveGScenario4")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
-                <div className="text-xs text-slate-600 space-y-1">
-                  <div>• {t("applications.thermal.material1")}</div>
-                  <div>• {t("applications.thermal.material2")}</div>
-                  <div>• {t("applications.thermal.material3")}</div>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
-              </Button>
-            </Card>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* 消费电子与家居生活 */}
-      <section id="consumer-electronics" className="py-20 px-6 lg:px-8 bg-slate-50 scroll-mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.consumer.sectionTitle")}</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">{t("applications.consumer.sectionSubtitle")}</p>
-          </div>
-
-          <div className="space-y-6">
-            {/* 大功率无线充电高导热线圈 */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Radio className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 text-center">{t("applications.consumer.coilTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                {t("applications.consumer.coilDesc")}
-              </p>
-              
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-800 mb-3">{t("applications.consumer.coreSolution")}</div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  {t("applications.consumer.coilSolution")}
-                </p>
-                <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-4">
-                  <div className="text-xs font-semibold text-sky-900 mb-2">{t("applications.consumer.techAdvantage")}</div>
-                  <div className="text-xs text-slate-700 space-y-1">
-                    <div>• {t("applications.consumer.coilAdv1")}</div>
-                    <div>• {t("applications.consumer.coilAdv2")}</div>
-                    <div>• {t("applications.consumer.coilAdv3")}</div>
-                  </div>
-                </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                  <div className="text-xs font-semibold text-slate-800 mb-2">{t("applications.consumer.physicsMech")}</div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {t("applications.consumer.coilMech")}
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.thermal.materialsLabel")}</div>
-                <div className="text-xs text-slate-600 space-y-1">
-                  <div>• {t("applications.thermal.material1")}</div>
-                  <div>• {t("applications.thermal.material2")}</div>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <a href="/docs/diamond-coil.pdf" target="_blank" rel="noopener noreferrer">
-                  {t("applications.consumer.viewSolution")}
-                </a>
-              </Button>
-            </Card>
-
-            {/* 消费电子与家居生活 - 原有内容 */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-8">
-                <div className="w-16 h-16 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Home className="w-8 h-8 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold mb-6 text-slate-900 text-center">{t("applications.consumer.lifeTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6 text-center text-lg">
-                {t("applications.consumer.lifeDesc")}
-              </p>
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <div className="font-semibold text-slate-800 mb-4 text-lg">{t("applications.consumer.homeDir")}</div>
-                  <div className="space-y-2 text-slate-700 pl-4">
-                    <div>• {t("applications.consumer.homeItem")}</div>
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-800 mb-4 text-lg">{t("applications.consumer.consumerDir")}</div>
-                  <div className="space-y-2 text-slate-700 pl-4">
-                    <div>• {t("applications.consumer.consumerItem1")}</div>
-                    <div>• {t("applications.consumer.consumerItem2")}</div>
-                    <div>• {t("applications.consumer.consumerItem3")}</div>
-                    <div>• {t("applications.consumer.consumerItem4")}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-5 mb-6">
-                <div className="text-sm font-semibold text-sky-900 mb-2">{t("applications.thermal.materialsLabel")}</div>
-                <div className="text-xs text-slate-700 space-y-1">
-                  <div>• {t("applications.consumer.materialRelated")}</div>
-                  <div>• {t("applications.thermal.material3")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded-lg p-6">
-                <div className="font-semibold text-sky-900 mb-3">{t("applications.consumer.techValue")}</div>
-                <div className="text-sm text-slate-700 leading-relaxed">
-                  {t("applications.consumer.techValueDesc")}
-                </div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent mt-6"
-                asChild
-              >
-                <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* 能源与环境系统 */}
-      <section id="energy-environment" className="py-20 px-6 lg:px-8 bg-white scroll-mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block px-6 py-2 bg-green-100 rounded-full text-green-700 text-sm font-semibold mb-4">
-              {t("applications.energy.badge")}
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.energy.sectionTitle")}</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">
-              {t("applications.energy.sectionSubtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            {/* Solid-state Battery */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Battery className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900">{t("applications.energy.solidStateTitle")}</h3>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-sky-600 mb-2">{t("applications.energy.solidStatePhysics")}</div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  {t("applications.energy.solidStatePhysicsDesc")}
-                </p>
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.energy.solidStateTech")}</div>
-                <div className="text-sm text-slate-600 space-y-1 pl-4 mb-4">
-                  <div>• {t("applications.energy.solidStateAdv1")}</div>
-                  <div>• {t("applications.energy.solidStateAdv2")}</div>
-                  <div>• {t("applications.energy.solidStateAdv3")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.energy.solidStateValue")}</div>
-                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.energy.solidStateValueDesc")}</div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <a href="/docs/diamond-battery.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText className="w-4 h-4 mr-2 inline" />
-                  {t("applications.energy.viewWhitepaper")}
-                </a>
-              </Button>
-            </Card>
-
-            {/* Water Treatment */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all">
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <Droplets className="w-7 h-7 text-sky-600" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900">{t("applications.energy.waterTitle")}</h3>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-sky-600 mb-2">{t("applications.energy.solidStatePhysics")}</div>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  {t("applications.energy.waterPhysicsDesc")}
-                </p>
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.energy.solidStateTech")}</div>
-                <div className="text-sm text-slate-600 space-y-1 pl-4 mb-4">
-                  <div>• {t("applications.energy.waterAdv1")}</div>
-                  <div>• {t("applications.energy.waterAdv2")}</div>
-                  <div>• {t("applications.energy.waterAdv3")}</div>
-                </div>
-              </div>
-              <div className="bg-sky-50 border border-sky-200 rounded p-4 mb-6">
-                <div className="text-xs font-semibold text-sky-900 mb-1">{t("applications.energy.solidStateValue")}</div>
-                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.energy.waterValueDesc")}</div>
-              </div>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-                asChild
-              >
-                <a href="/docs/diamond-water.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText className="w-4 h-4 mr-2 inline" />
-                  {t("applications.energy.viewDeep")}
-                </a>
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* 前沿物理探索 */}
-      <section id="frontier-research" className="py-20 px-6 lg:px-8 bg-slate-50 scroll-mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block px-6 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold mb-4">
-              {t("applications.frontier.badge")}
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t("applications.frontier.sectionTitle")}</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto px-4">{t("applications.frontier.sectionSubtitle")}</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
-            {/* Superconductor Research */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-slate-300 transition-all">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
-                    <Sparkles className="w-7 h-7 text-slate-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{t("applications.frontier.superconductorTitle")}</h3>
-                </div>
-                <div className="px-3 py-1 bg-slate-100/80 rounded-full text-xs font-medium text-slate-600">
-                  {t("applications.frontier.superconductorBadge")}
-                </div>
-              </div>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.superconductorPhysics")}</div>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t("applications.frontier.superconductorPhysicsDesc")}
-                </p>
-              </div>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.researchPoints")}</div>
-                <div className="text-sm text-slate-600 space-y-1 pl-4">
-                  <div>• {t("applications.frontier.superconductorRes1")}</div>
-                  <div>• {t("applications.frontier.superconductorRes2")}</div>
-                  <div>• {t("applications.frontier.superconductorRes3")}</div>
-                </div>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded p-4">
-                <div className="text-xs font-semibold text-slate-800 mb-1">{t("applications.frontier.vision")}</div>
-                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.frontier.superconductorVision")}</div>
-              </div>
-            </Card>
-
-            {/* Quantum Computing */}
-            <Card className="p-8 bg-white border-slate-200 hover:shadow-2xl hover:border-slate-300 transition-all">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
-                    <FlaskConical className="w-7 h-7 text-slate-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{t("applications.frontier.quantumTitle")}</h3>
-                </div>
-                <div className="px-3 py-1 bg-slate-100/80 rounded-full text-xs font-medium text-slate-600">
-                  {t("applications.frontier.quantumBadge")}
-                </div>
-              </div>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.superconductorPhysics")}</div>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t("applications.frontier.quantumPhysicsDesc")}
-                </p>
-              </div>
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-slate-700 mb-2">{t("applications.frontier.researchPoints")}</div>
-                <div className="text-sm text-slate-600 space-y-1 pl-4">
-                  <div>• {t("applications.frontier.quantumRes1")}</div>
-                  <div>• {t("applications.frontier.quantumRes2")}</div>
-                  <div>• {t("applications.frontier.quantumRes3")}</div>
-                </div>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded p-4">
-                <div className="text-xs font-semibold text-slate-800 mb-1">{t("applications.frontier.vision")}</div>
-                <div className="text-xs text-slate-600 leading-relaxed">{t("applications.frontier.quantumVision")}</div>
-              </div>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="mx-4 sm:mx-0 min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-            >
-              <Link href={`${prefix}/patents`}>{t("applications.cta.viewFullTech")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 tracking-wide" style={{ letterSpacing: "0.15em" }}>
+          <h2 className="text-2xl sm:text-4xl sm:text-5xl font-bold mb-4 text-slate-900 break-words px-1 tracking-[0.05em] sm:tracking-[0.15em]">
             {t("applications.summary.title")}
           </h2>
 
-          <p className="text-xl text-slate-600 mb-8 font-light">{t("applications.summary.tagline")}</p>
+          <p className="text-base sm:text-xl text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
 
-          <p className="text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-600">
+          <p className="text-base sm:text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-600 break-words">
             {t("applications.summary.desc")}
           </p>
 
