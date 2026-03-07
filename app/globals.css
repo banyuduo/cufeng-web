@@ -38,6 +38,12 @@
   --sidebar-accent-foreground: hsl(210 20% 96%);
   --sidebar-border: hsl(222 24% 20%);
   --sidebar-ring: hsl(210 100% 58%);
+
+  /* Page layout tokens - 页面布局规范 */
+  --page-bg-dark: hsl(222 47% 11%); /* slate-900 */
+  --page-bg-light: hsl(210 40% 98%); /* slate-50 */
+  --hero-gradient-dark: linear-gradient(to bottom, hsl(222 47% 11%), hsl(222 47% 14%), hsl(222 47% 11%));
+  --hero-gradient-light: linear-gradient(to bottom, hsl(204 100% 98%), hsl(0 0% 100%));
 }
 
 .dark {
@@ -73,6 +79,22 @@
   --sidebar-accent-foreground: hsl(210 20% 96%);
   --sidebar-border: hsl(222 24% 20%);
   --sidebar-ring: hsl(210 100% 58%);
+}
+
+/* Page layout utility classes - 统一标题层级 */
+@layer components {
+  .page-h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+  .page-h2 {
+    @apply text-2xl font-bold;
+  }
+  .page-h3 {
+    @apply text-xl font-semibold;
+  }
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
 
 @theme inline {
@@ -112,6 +134,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-page-bg-dark: var(--page-bg-dark);
+  --color-page-bg-light: var(--page-bg-light);
 }
 
 @layer base {

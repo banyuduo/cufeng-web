@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
@@ -24,38 +25,17 @@ export default function PatentsPage() {
     <div className="min-h-screen bg-slate-900">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        {/* Background grid pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `linear-gradient(rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px)`,
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div>
-
-        {/* Glowing orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              {t("patents.hero.badge")}
-            </div>
-            <h1 className="text-[32px] font-bold text-white mb-6 leading-tight">
-              {t("patents.hero.title")}
-            </h1>
-            <p className="text-lg text-slate-300 leading-relaxed mb-4">{t("patents.hero.subtitle")}</p>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
-              {t("patents.hero.desc")}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        variant="dark"
+        badge={t("patents.hero.badge")}
+        title={t("patents.hero.title")}
+        subtitle={t("patents.hero.subtitle")}
+        withDecoration
+      >
+        <p className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto mt-4">
+          {t("patents.hero.desc")}
+        </p>
+      </PageHero>
 
       {/* Cognition & Evolution Path Section */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
@@ -74,7 +54,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               {t("patents.evolution.sectionBadge")}
             </div>
-            <h2 className="text-[28px] font-bold text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolution.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
           </div>
 
@@ -186,7 +166,7 @@ export default function PatentsPage() {
           {/* 技术演进架构图 */}
           <div className="mt-12 max-w-7xl mx-auto">
             <div className="p-4 md:p-8 bg-slate-950/80 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl">
-              <h3 className="text-[26px] font-bold text-white text-center mb-8 md:mb-12">{t("patents.architecture.title")}</h3>
+              <h3 className="page-h3 text-white text-center mb-8 md:mb-12 text-xl md:text-2xl">{t("patents.architecture.title")}</h3>
               
               <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative">
                 {/* 左侧：演化路径 */}
@@ -398,7 +378,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
               {t("patents.evolutionPath.sectionBadge")}
             </div>
-            <h2 className="text-[28px] font-bold text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolutionPath.sectionTitle")}</h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
           </div>
 
@@ -638,7 +618,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-pink-500/20 rounded-full text-pink-300 text-sm font-medium mb-6 border border-pink-500/30">
               {t("patents.platformCore.sectionBadge")}
             </div>
-            <h2 className="text-[28px] font-bold text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.platformCore.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
@@ -788,7 +768,7 @@ export default function PatentsPage() {
             <div className="inline-block px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-6 border border-indigo-500/30">
               {t("patents.platformExtension.sectionBadge")}
             </div>
-            <h2 className="text-[28px] font-bold text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.platformExtension.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
           </div>
 
@@ -859,7 +839,7 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6">
           <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-slate-900 to-slate-800 border-sky-500/20">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("patents.patentCluster.title")}</h2>
+              <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("patents.patentCluster.title")}</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full mb-6" />
               <p className="text-slate-300 leading-relaxed text-lg max-w-3xl mx-auto">
                 {t("patents.patentCluster.intro")}
@@ -978,7 +958,7 @@ export default function PatentsPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("patents.cta.title")}</h2>
+          <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("patents.cta.title")}</h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">

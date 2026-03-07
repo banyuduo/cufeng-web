@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -21,38 +22,14 @@ export default async function AboutPage({
     <div className="min-h-screen bg-slate-900">
       <Navigation locale={validLocale} />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        {/* Background grid pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `linear-gradient(rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px)`,
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div>
-
-        {/* Glowing orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-sky-500/20 rounded-full text-sky-300 text-sm font-medium mb-6 border border-sky-500/30">
-              {t("about.hero.badge")}
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              {t("about.hero.title")}
-            </h1>
-            <p className="text-xl text-sky-400 font-semibold mb-2">{t("about.hero.tagline")}</p>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              {t("about.hero.subtitle")}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        variant="dark"
+        badge={t("about.hero.badge")}
+        title={t("about.hero.title")}
+        tagline={t("about.hero.tagline")}
+        subtitle={t("about.hero.subtitle")}
+        withDecoration
+      />
 
       {/* 企业概览 */}
       <section className="py-20 px-6 lg:px-8 bg-slate-900">
@@ -60,7 +37,7 @@ export default async function AboutPage({
           <Card className="p-8 md:p-12 bg-slate-800/50 border-slate-700/50">
             <div className="space-y-6 text-slate-200 leading-relaxed">
               <div>
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                <h2 className="page-h2 text-white mb-4 flex items-center gap-3">
                   <Building2 className="w-6 h-6 text-sky-400" />
                   {t("about.overview.title")}
                 </h2>
@@ -71,7 +48,7 @@ export default async function AboutPage({
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
-                <h3 className="text-xl font-semibold text-white mb-4">{t("about.overview.companyProfile")}</h3>
+                <h3 className="page-h3 text-white mb-4">{t("about.overview.companyProfile")}</h3>
                 <p className="mb-4">
                   {t("about.overview.profile1")}
                 </p>
@@ -81,7 +58,7 @@ export default async function AboutPage({
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
-                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-sky-400" />
                   {t("about.overview.rdCapability")}
                 </h3>
@@ -91,7 +68,7 @@ export default async function AboutPage({
               </div>
 
               <div className="pt-4 border-t border-slate-700/50">
-                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-sky-400" />
                   {t("about.overview.evolution")}
                 </h3>
@@ -107,7 +84,7 @@ export default async function AboutPage({
               <div className="pt-4 border-t border-slate-700/50">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                    <h3 className="page-h3 text-white mb-3 flex items-center gap-2">
                       <Eye className="w-5 h-5 text-sky-400" />
                       {t("about.overview.vision")}
                     </h3>
@@ -116,7 +93,7 @@ export default async function AboutPage({
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                    <h3 className="page-h3 text-white mb-3 flex items-center gap-2">
                       <Rocket className="w-5 h-5 text-sky-400" />
                       {t("about.overview.coreIdea")}
                     </h3>

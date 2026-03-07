@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 import Link from "next/link"
 import { ArrowRight, Zap, Layers, FlaskConical, Sparkles, ChefHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -21,16 +22,11 @@ export default async function ProductsPage({
     <div className="min-h-screen bg-background">
       <Navigation locale={validLocale} />
 
-      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
-            {t("products.title")}
-          </h1>
-          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            {t("products.subtitle")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        variant="light"
+        title={t("products.title")}
+        subtitle={t("products.subtitle")}
+      />
 
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -45,7 +41,7 @@ export default async function ProductsPage({
                     {t("products.badge.inStock")}
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">
+                <h2 className="page-h2 mb-3 text-slate-900">
                   {t("products.nonstickCookware.title")}
                 </h2>
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -81,7 +77,7 @@ export default async function ProductsPage({
                     {t("products.badge.gen2Core")}
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">
+                <h2 className="page-h2 mb-3 text-slate-900">
                   {t("products.diamondCopper.title")}
                 </h2>
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -117,7 +113,7 @@ export default async function ProductsPage({
                     {t("products.badge.gen2Expand")}
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">
+                <h2 className="page-h2 mb-3 text-slate-900">
                   {t("products.thermalPad.title")}
                 </h2>
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -153,7 +149,7 @@ export default async function ProductsPage({
                     {t("products.badge.gen3Future")}
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">
+                <h2 className="page-h2 mb-3 text-slate-900">
                   {t("products.carbonComposite.title")}
                 </h2>
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -189,7 +185,7 @@ export default async function ProductsPage({
                     {t("products.badge.traditional")}
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">
+                <h2 className="page-h2 mb-3 text-slate-900">
                   {t("products.diamondTools.title")}
                   <br />
                   <span className="text-lg text-slate-600 font-normal">
@@ -232,7 +228,7 @@ export default async function ProductsPage({
 
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">
+          <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}
           </h2>
           <p className="text-slate-600 mb-8">{t("products.cta.subtitle")}</p>

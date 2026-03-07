@@ -23,7 +23,7 @@ export default async function HomePage({
       <section className="pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6 sm:mb-8 opacity-100">
+            <h1 className="page-h1 text-white mb-6 sm:mb-8 opacity-100">
               {t("home.hero.title")}
             </h1>
 
@@ -134,7 +134,7 @@ export default async function HomePage({
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Atom className="w-6 h-6 text-sky-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.innovation")}
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -146,7 +146,7 @@ export default async function HomePage({
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Shield className="w-6 h-6 text-sky-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.patents")}
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -158,7 +158,7 @@ export default async function HomePage({
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Handshake className="w-6 h-6 text-sky-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.cooperation")}
               </h3>
               <div className="text-slate-600 leading-relaxed space-y-3">
@@ -173,7 +173,7 @@ export default async function HomePage({
 
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-slate-900 text-center">
+          <h2 className="page-h2 mb-8 text-slate-900 text-center">
             {t("home.platform.title")}
           </h2>
           <div className="prose prose-slate max-w-none">
@@ -196,7 +196,7 @@ export default async function HomePage({
 
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-slate-900 text-center">
+          <h2 className="page-h2 mb-4 text-slate-900 text-center">
             {t("home.results.title")}
           </h2>
           <p className="text-slate-600 text-center mb-12">
@@ -252,7 +252,7 @@ export default async function HomePage({
       {/* 底部行动召唤 */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-xl font-bold mb-4 text-slate-900">
+          <h2 className="page-h3 mb-4 text-slate-900">
             {t("home.hero.ctaTitle")}
           </h2>
           <p className="text-slate-600 mb-8">
@@ -264,7 +264,7 @@ export default async function HomePage({
                 {t("home.hero.viewWhitepaper")}
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 border-slate-400 text-slate-700 hover:bg-slate-200">
+            <Button size="lg" variant="outline" asChild className="gap-2 bg-white border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-slate-400">
               <Link href={`/${validLocale}/cooperation`}>
                 {t("home.hero.contactTeam")}
               </Link>

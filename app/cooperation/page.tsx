@@ -1,6 +1,7 @@
 import { MapPin, Mail, Phone, Globe } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -18,33 +19,32 @@ export default async function CooperationPage({
     <div className="min-h-screen bg-slate-50">
       <Navigation locale={validLocale} />
 
-      <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-light tracking-tight mb-4 text-white">{t("cooperation.hero.title")}</h1>
-          <p className="text-lg text-slate-400 font-light tracking-wide mb-8">
-            {t("cooperation.hero.subtitle")}
+      <PageHero
+        variant="dark"
+        title={t("cooperation.hero.title")}
+        subtitle={t("cooperation.hero.subtitle")}
+        titleWeight="light"
+      >
+        <div className="space-y-6 text-base text-slate-300 leading-relaxed font-light mt-8 text-left max-w-4xl mx-auto">
+          <p>
+            {t("cooperation.hero.p1")}
+            <br />
+            {t("cooperation.hero.p2")}
+            <br />
+            {t("cooperation.hero.p3")}
           </p>
-          <div className="space-y-6 text-base text-slate-300 leading-relaxed font-light">
-            <p>
-              {t("cooperation.hero.p1")}
-              <br />
-              {t("cooperation.hero.p2")}
-              <br />
-              {t("cooperation.hero.p3")}
-            </p>
-            <p className="pt-4">
-              {t("cooperation.hero.p4")}
-              <br />
-              {t("cooperation.hero.p5")}
-            </p>
-          </div>
+          <p className="pt-4">
+            {t("cooperation.hero.p4")}
+            <br />
+            {t("cooperation.hero.p5")}
+          </p>
         </div>
-      </section>
+      </PageHero>
 
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto space-y-12">
           <div>
-            <h2 className="text-2xl font-light tracking-tight mb-12 text-slate-900 border-b border-slate-200 pb-6">
+            <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
               {t("cooperation.platform.title")}
             </h2>
             <div className="space-y-8 text-slate-600 leading-relaxed font-light text-base">
@@ -71,7 +71,7 @@ export default async function CooperationPage({
 
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-light tracking-tight mb-12 text-slate-900 border-b border-slate-200 pb-6">
+          <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.audience.title")}
           </h2>
           <div className="space-y-8 text-slate-600 leading-relaxed font-light mb-12">
@@ -124,7 +124,7 @@ export default async function CooperationPage({
 
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-light tracking-tight mb-12 text-slate-900 border-b border-slate-200 pb-6">
+          <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.nextSteps.title")}
           </h2>
           <div className="space-y-8 text-slate-600 leading-relaxed font-light">
@@ -141,7 +141,7 @@ export default async function CooperationPage({
 
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-light tracking-tight mb-12 text-slate-900 border-b border-slate-200 pb-6">
+          <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.resonance.title")}
           </h2>
           <div className="space-y-8 text-slate-600 leading-relaxed font-light">
@@ -160,7 +160,7 @@ export default async function CooperationPage({
 
       <section id="contact" className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-light tracking-tight mb-12 text-slate-900 border-b border-slate-200 pb-6">
+          <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.contact.title")}
           </h2>
           <div className="space-y-6 text-slate-600 leading-relaxed font-light mb-12">
