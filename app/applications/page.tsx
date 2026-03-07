@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 import { ApplicationCard } from "@/components/application-card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
@@ -27,25 +28,20 @@ export default async function ApplicationsPage({
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
       <Navigation locale={validLocale} />
 
-      {/* Hero */}
-      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">{t("applications.title")}</h1>
-          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            {t("applications.subtitle")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        variant="light"
+        title={t("applications.title")}
+        subtitle={t("applications.subtitle")}
+      />
 
       {/* 应用蓝图 */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="w-full py-12 px-4 bg-slate-950 rounded-3xl border border-slate-800">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("applications.blueprint.title")}</h2>
+              <h2 className="page-h2 text-white mb-4 md:text-3xl">{t("applications.blueprint.title")}</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">{t("applications.blueprint.subtitle")}</p>
             </div>
 
@@ -87,7 +83,7 @@ export default async function ApplicationsPage({
             <div className="inline-block px-6 py-2 bg-sky-600 rounded-full text-white font-bold text-sm mb-4">
               {t("applications.thermal.badge")}
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">{t("applications.thermal.title")}</h2>
+            <h2 className="page-h2 text-slate-900 mb-4 text-3xl md:text-4xl lg:text-5xl">{t("applications.thermal.title")}</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               {t("applications.thermal.subtitle")}
             </p>

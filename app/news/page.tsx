@@ -65,7 +65,7 @@ export default async function NewsPage({
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6 text-balance">{t("news.title")}</h1>
+            <h1 className="page-h1 mb-6 text-balance">{t("news.title")}</h1>
             <p className="text-xl text-muted-foreground text-pretty">
               {t("news.subtitle")}
             </p>
@@ -132,7 +132,7 @@ export default async function NewsPage({
       <section id="company-news" className="py-16 border-t border-border/50 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">{t("news.companyNews")}</h2>
+            <h2 className="page-h2 mb-4 text-3xl">{t("news.companyNews")}</h2>
             <p className="text-muted-foreground mb-12">
               {t("news.companyNewsDesc")}
             </p>
@@ -178,7 +178,7 @@ export default async function NewsPage({
       <section id="industry-info" className="py-16 border-t border-border/50 bg-muted/30 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">{t("news.industryInfo")}</h2>
+            <h2 className="page-h2 mb-4 text-3xl">{t("news.industryInfo")}</h2>
             <p className="text-muted-foreground mb-12">
               {t("news.industryInfoDesc")}
             </p>
