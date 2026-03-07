@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Atom, Shield, Handshake, CheckCircle2 } from "lucide-react"
+import { Atom, Shield, Handshake, CheckCircle2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
@@ -81,6 +81,25 @@ export default async function HomePage({
               <p className="text-slate-300 leading-relaxed text-lg opacity-100">
                 {t("home.hero.platformFocus")}
               </p>
+            </div>
+
+            {/* 技术演化路径 - 简化版 */}
+            <div className="max-w-3xl mx-auto mb-12">
+              <div className="inline-block bg-slate-800/60 border border-sky-500/20 rounded-xl p-6 w-full">
+                <h3 className="text-base font-semibold text-sky-400 mb-3 opacity-100">
+                  {t("home.techEvolution.title")}
+                </h3>
+                <p className="text-slate-300 leading-relaxed text-sm mb-4 opacity-100">
+                  {t("home.techEvolution.desc")}
+                </p>
+                <Link
+                  href={`/${validLocale}/patents`}
+                  className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors"
+                >
+                  {t("home.techEvolution.viewFullPath")}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -226,6 +245,30 @@ export default async function HomePage({
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 底部行动召唤 */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-xl font-bold mb-4 text-slate-900">
+            {t("home.hero.ctaTitle")}
+          </h2>
+          <p className="text-slate-600 mb-8">
+            {t("home.hero.ctaSubtitle")}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button size="lg" asChild className="gap-2 bg-sky-600 hover:bg-sky-700 text-white">
+              <Link href={`/${validLocale}/patents`}>
+                {t("home.hero.viewWhitepaper")}
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="gap-2 border-slate-400 text-slate-700 hover:bg-slate-200">
+              <Link href={`/${validLocale}/cooperation`}>
+                {t("home.hero.contactTeam")}
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

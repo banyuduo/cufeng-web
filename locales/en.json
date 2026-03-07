@@ -33,7 +33,7 @@
   "home": {
     "hero": {
       "title": "Stress-Engineered sp²–sp³ Carbon-Based Interface Platform",
-      "subtitle": "From high thermal conductivity to quantum physics frontiers",
+      "subtitle": "Solving thermal management limits in the AI and new energy era",
       "card1": "We focus on source-level R&D based on sp²–sp³ hybrid bonding logic.",
       "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, thereby generating tunable endogenous stress fields and heterogeneous energy-level environments.",
       "achieved": "Currently achieved",
@@ -42,13 +42,22 @@
       "achievement1Note": "With further improvement potential",
       "achievement2": "Reproducible all-carbon functional structures",
       "achievement2Note": "Sample preparation capability",
-      "platformFocus": "This platform focuses on advanced thermal management, interface materials, and high-hardness, high-conductivity applications, while exploring stress-induced electronic structure changes to provide a reliable material foundation for higher-order properties (such as high conductivity, unconventional transport, or potential quantum computing applications).",
+      "platformFocus": "This platform focuses on AI computing, new energy thermal management, advanced interface materials, and high-hardness, high-conductivity applications, delivering thermal management solutions beyond traditional material limits for high-power-density electronic devices.",
       "viewTechArchitecture": "View Technology Architecture",
-      "projectCooperation": "Project Cooperation"
+      "projectCooperation": "Project Cooperation",
+      "viewWhitepaper": "View Technical Whitepaper",
+      "contactTeam": "Contact Our Team",
+      "ctaTitle": "Explore Technical Cooperation",
+      "ctaSubtitle": "View full technology architecture or get in touch with us"
+    },
+    "techEvolution": {
+      "title": "Technology Evolution Path",
+      "desc": "Based on the same underlying platform, we are extending toward solid-state battery skeletons, advanced packaging thermal solutions, and beyond.",
+      "viewFullPath": "View Full Technology Architecture"
     },
     "features": {
       "innovation": "Source-Level Innovation",
-      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp²–sp³ bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability. These properties provide a tunable experimental platform for subsequent thermal management, electronic transport, and potential nonlinear physics research.",
+      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp²–sp³ bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability, providing a tunable material platform for AI computing, new energy thermal management, and other high-end thermal applications.",
       "patents": "Patent Moat",
       "patentsDesc": "We have strategically deployed nearly 10 core patents covering preparation routes, bonding structure design, stress regulation methods, and functional extensions. This IP matrix forms closed-loop protection, establishing solid technical boundaries and providing comprehensive legal safeguards for R&D iteration and application expansion.",
       "cooperation": "Cooperation & Industry Extension",
@@ -427,10 +436,10 @@
   },
   "patents": {
     "hero": {
-      "badge": "Technological Framework & Evolution Roadmap",
+      "badge": "Technology Architecture & Deepening Path",
       "title": "Technology Architecture & Evolution Path",
       "subtitle": "Building determinism for all-carbon physical systems",
-      "desc": "We are not merely manufacturing a material; we are defining an underlying hardware system based on stress engineering. Our technology route has completed the full loop from theoretical hypothesis to physical validation, protected by a dense IP network of over 10 core patents."
+      "desc": "We are not merely manufacturing a material; we are defining an underlying hardware system based on stress engineering. Our technology route is completing the full loop from theoretical hypothesis to physical validation, protected by a dense IP network of 10 core patents."
     },
     "architecture": {
       "title": "Technology Deepening Path & Platform Architecture Overview",
@@ -519,7 +528,10 @@
       "patent9Title": "An integrated partitioned functionalized skeleton structure, all-solid-state battery and their preparation methods",
       "patent9No": "Application No.: 202610187730.X",
       "patent10Title": "An sp²-sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
-      "patent10No": "Application No.: 202610187717.4"
+      "patent10No": "Application No.: 202610187717.4",
+      "stage04Title": "Physics System Evolution (Stress Engineering)",
+      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, providing an experimental substrate for higher-order property exploration.",
+      "stage04Explanation": "Based on the stress engineering platform, we are collaborating with academia to explore physical potential such as unconventional superconductivity and quantum reservoir computing."
     },
     "platformCore": {
       "sectionBadge": "Platform Core",
@@ -557,8 +569,8 @@
     },
     "platformExtension": {
       "sectionBadge": "Platform Extension",
-      "sectionTitle": "Platform Extension: Physical Potential Window of sp²–sp³ Structure",
-      "sectionSubtitle": "Long-term physical potential: emergent behavior of all-carbon sp²–sp³ structure",
+      "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp²–sp³ Structure",
+      "sectionSubtitle": "Based on the stress engineering platform, exploring evolution potential of all-carbon sp²–sp³ structure in extreme physics and future computing",
       "intro": "In the demetallized all-carbon composite stage, we have built a class of continuous carbon network structures centered on sp²–sp³ chemical bonding and endogenous stress fields. This structure has demonstrated excellent thermal conductivity, mechanical properties, and long-term stability at the engineering level, while at a higher level naturally opening a series of physical windows not yet fully explored.",
       "superconductorTitle": "Electronic State Reconstruction and Unconventional Superconducting Potential Under High Internal Stress Regulation",
       "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing structural basis for unconventional superconductivity or related collective phenomena.",
@@ -595,10 +607,10 @@
       "summaryTo": " to ",
       "summaryExtend": "functional extension",
       "summaryEnd": ".",
-      "stat1Value": "9",
+      "stat1Value": "9 items",
       "stat1Label": "Core invention patents",
-      "stat2Value": "4",
-      "stat2Label": "Technology layers",
+      "stat2Value": "4 layers",
+      "stat2Label": "Technology architecture",
       "stat3Value": "Multi-domain",
       "stat3Label": "Industrial potential"
     },
@@ -606,7 +618,9 @@
       "title": "Explore technology cooperation opportunities",
       "subtitle": "We welcome technology licensing, joint R&D, patent transfer, and other cooperation forms",
       "projectCooperation": "Project Cooperation",
-      "learnProducts": "Learn about product applications"
+      "learnProducts": "Learn about product applications",
+      "viewPatentList": "View patent list",
+      "exploreCooperation": "Interested in exploring cooperation? Contact us"
     }
   },
   "news": {
