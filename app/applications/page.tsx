@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Cpu, Zap, Car, Sparkles, Home, Battery, Microscope, ShieldCheck } from "lucide-react"
+import { Cpu, Zap, Car, Sparkles, Home, Battery, Microscope, ShieldCheck, Droplets, Atom } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero"
 import { ApplicationCard } from "@/components/application-card"
 import { HpcExpandableCard } from "@/components/hpc-expandable-card"
 import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
+import { FrontierExpandableCard } from "@/components/frontier-expandable-card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -152,6 +153,149 @@ export default async function ApplicationsPage({
                     coilPhysicsMech={t(`${base}.coilPhysicsMech`)}
                     viewWhitepaper={t(`${base}.viewWhitepaper`)}
                     whitepaperHref="/docs/diamond-coil.html"
+                  />
+                )
+              }
+
+              if (cat.key === "frontier") {
+                const energy = "applications.energy"
+                const frontier = "applications.frontier"
+                const itemsDesc = t(`${base}.itemsDesc`).split("|")
+                return (
+                  <FrontierExpandableCard
+                    key={cat.id}
+                    sectionTitle={title}
+                    sectionBadge={badge ?? ""}
+                    sectionSubtitle={t(`${base}.sectionSubtitle`)}
+                    mediumTermLabel={t(`${base}.mediumTermLabel`)}
+                    mediumTermSubtitle={t(`${base}.mediumTermSubtitle`)}
+                    longTermLabel={t(`${base}.longTermLabel`)}
+                    longTermSubtitle={t(`${base}.longTermSubtitle`)}
+                    viewWhitepaperLabel={t(`${energy}.viewWhitepaper`)}
+                    viewDeepLabel={t(`${energy}.viewDeep`)}
+                    expandLabel={t(`${base}.expandLabel`)}
+                    collapseLabel={t(`${base}.collapseLabel`)}
+                    mediumTermItems={[
+                      {
+                        key: "solidState",
+                        title: t(`${energy}.solidStateTitle`),
+                        shortDesc: itemsDesc[0] ?? "",
+                        icon: <Battery className="w-5 h-5" />,
+                        hasWhitepaper: true,
+                        hasDeepTech: true,
+                        whitepaperHref: `${prefix}/news/solid-state-battery`,
+                        deepTechHref: `${prefix}/news/solid-state-battery`,
+                        expandContent: (
+                          <div className="space-y-4 text-sm">
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStatePhysics`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStateTech`)}</div>
+                              <ul className="space-y-1 text-slate-600">
+                                <li>• {t(`${energy}.solidStateAdv1`)}</li>
+                                <li>• {t(`${energy}.solidStateAdv2`)}</li>
+                                <li>• {t(`${energy}.solidStateAdv3`)}</li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStateValue`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.solidStateValueDesc`)}</p>
+                            </div>
+                          </div>
+                        ),
+                      },
+                      {
+                        key: "water",
+                        title: t(`${energy}.waterTitle`),
+                        shortDesc: itemsDesc[1] ?? "",
+                        icon: <Droplets className="w-5 h-5" />,
+                        hasWhitepaper: true,
+                        hasDeepTech: true,
+                        whitepaperHref: `${prefix}/news/3d-covalent-composite-electrode`,
+                        deepTechHref: `${prefix}/news/3d-covalent-composite-electrode`,
+                        expandContent: (
+                          <div className="space-y-4 text-sm">
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterPhysics`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterTech`)}</div>
+                              <ul className="space-y-1 text-slate-600">
+                                <li>• {t(`${energy}.waterAdv1`)}</li>
+                                <li>• {t(`${energy}.waterAdv2`)}</li>
+                                <li>• {t(`${energy}.waterAdv3`)}</li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterValue`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.waterValueDesc`)}</p>
+                            </div>
+                          </div>
+                        ),
+                      },
+                    ]}
+                    longTermItems={[
+                      {
+                        key: "superconductor",
+                        title: t(`${frontier}.superconductorTitle`),
+                        shortDesc: itemsDesc[2] ?? "",
+                        icon: <Atom className="w-5 h-5" />,
+                        hasWhitepaper: false,
+                        hasDeepTech: true,
+                        deepTechHref: `${prefix}/news/superconducting-materials`,
+                        expandContent: (
+                          <div className="space-y-4 text-sm">
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.superconductorPhysics`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.researchPoints`)}</div>
+                              <ul className="space-y-1 text-slate-600">
+                                <li>• {t(`${frontier}.superconductorRes1`)}</li>
+                                <li>• {t(`${frontier}.superconductorRes2`)}</li>
+                                <li>• {t(`${frontier}.superconductorRes3`)}</li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.vision`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.superconductorVision`)}</p>
+                            </div>
+                          </div>
+                        ),
+                      },
+                      {
+                        key: "quantum",
+                        title: t(`${frontier}.quantumTitle`),
+                        shortDesc: itemsDesc[3] ?? "",
+                        icon: <Microscope className="w-5 h-5" />,
+                        hasWhitepaper: false,
+                        hasDeepTech: true,
+                        deepTechHref: `${prefix}/news/quantum-chaos-computing`,
+                        expandContent: (
+                          <div className="space-y-4 text-sm">
+                            <div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.quantumResearch`)}</div>
+                              <ul className="space-y-1 text-slate-600">
+                                <li>• {t(`${frontier}.quantumRes1`)}</li>
+                                <li>• {t(`${frontier}.quantumRes2`)}</li>
+                                <li>• {t(`${frontier}.quantumRes3`)}</li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.vision`)}</div>
+                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.quantumVision`)}</p>
+                            </div>
+                          </div>
+                        ),
+                      },
+                    ]}
                   />
                 )
               }
