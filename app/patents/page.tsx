@@ -402,11 +402,11 @@ export default function PatentsPage() {
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
           </div>
 
-          {/* Three Stages - Horizontal Cards */}
-          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+          {/* Four Stages - Horizontal Cards */}
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Stage 01 */}
             <Card
-              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 cursor-pointer transition-all hover:border-sky-500/60 ${expandedStage === 1 ? "md:col-span-3 border-sky-500/60" : ""}`}
+              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-sky-500/30 cursor-pointer transition-all hover:border-sky-500/60 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-sky-500/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -457,7 +457,7 @@ export default function PatentsPage() {
 
             {/* Stage 02 */}
             <Card
-              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 cursor-pointer transition-all hover:border-cyan-500/60 ${expandedStage === 2 ? "md:col-span-3 border-cyan-500/60" : ""}`}
+              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-cyan-500/30 cursor-pointer transition-all hover:border-cyan-500/60 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-cyan-500/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -532,7 +532,7 @@ export default function PatentsPage() {
 
             {/* Stage 03 */}
             <Card
-              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 cursor-pointer transition-all hover:border-purple-500/60 ${expandedStage === 3 ? "md:col-span-3 border-purple-500/60" : ""}`}
+              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-purple-500/30 cursor-pointer transition-all hover:border-purple-500/60 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-purple-500/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -593,6 +593,36 @@ export default function PatentsPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              )}
+            </Card>
+
+            {/* Stage 04 */}
+            <Card
+              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-indigo-500/30 cursor-pointer transition-all hover:border-indigo-500/60 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-indigo-500/60" : ""}`}
+              onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="text-indigo-400 text-xs font-medium">Stage 04</div>
+                  <div className="text-white font-bold">{t("patents.evolutionPath.stage04Title")}</div>
+                </div>
+                <ChevronDown
+                  className={`w-5 h-5 text-indigo-400 transition-transform ${expandedStage === 4 ? "rotate-180" : ""}`}
+                />
+              </div>
+              <p className="text-base text-slate-400 leading-relaxed">
+                {t("patents.evolutionPath.stage04Desc")}
+              </p>
+
+              {expandedStage === 4 && (
+                <div className="mt-6 pt-6 border-t border-slate-700">
+                  <p className="text-base text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-lg italic">
+                    {t("patents.evolutionPath.stage04Explanation")}
+                  </p>
                 </div>
               )}
             </Card>
@@ -825,7 +855,7 @@ export default function PatentsPage() {
       </section>
 
       {/* Patent Cluster Value */}
-      <section className="py-20 bg-slate-800">
+      <section id="patent-cluster" className="py-20 bg-slate-800 scroll-mt-24">
         <div className="container mx-auto px-6">
           <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-slate-900 to-slate-800 border-sky-500/20">
             <div className="text-center mb-10">
@@ -950,10 +980,19 @@ export default function PatentsPage() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Link href={`${prefix}/cooperation`}>
               <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 text-lg">{t("patents.cta.projectCooperation")}</Button>
             </Link>
+            <a href="#patent-cluster">
+              <Button
+                variant="outline"
+                className="border-slate-500 text-slate-300 hover:bg-slate-800 px-8 py-6 text-lg bg-transparent"
+              >
+                {t("patents.cta.viewPatentList")}
+              </Button>
+            </a>
             <Link href={`${prefix}/products`}>
               <Button
                 variant="outline"
