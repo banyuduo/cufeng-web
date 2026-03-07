@@ -84,10 +84,10 @@
 /* Page layout utility classes - 统一标题层级 */
 @layer components {
   .page-h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight break-words;
   }
   .page-h2 {
-    @apply text-2xl font-bold;
+    @apply text-xl sm:text-2xl font-bold break-words;
   }
   .page-h3 {
     @apply text-xl font-semibold;

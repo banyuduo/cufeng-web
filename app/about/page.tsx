@@ -32,7 +32,7 @@ export default async function AboutPage({
       />
 
       {/* 企业概览 */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 md:p-12 bg-slate-800/50 border-slate-700/50">
             <div className="space-y-6 text-slate-200 leading-relaxed">
@@ -109,7 +109,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心团队 */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.team.title")}</h2>
@@ -125,7 +125,7 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">{t("about.team.wang.name")}</h3>
-                  <p className="text-sm text-slate-400">Wang, PhD</p>
+                  <p className="text-sm text-slate-400">{t("about.team.wang.name")}</p>
                 </div>
               </div>
               <div className="mb-3">
@@ -173,7 +173,7 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">{t("about.team.he.name")}</h3>
-                  <p className="text-sm text-slate-400">He, M.E.</p>
+                  <p className="text-sm text-slate-400">{t("about.team.he.name")}</p>
                 </div>
               </div>
               <div className="mb-3">
@@ -266,7 +266,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心历程 - 时间轴 */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.timeline.title")}</h2>

@@ -169,7 +169,7 @@
       "title": "Core Team",
       "subtitle": "Professional, focused, specialized technical team",
       "wang": {
-        "name": "Dr. Wang",
+        "name": "Wang Bo",
         "title": "Head of Technical R&D & Applications",
         "background": "Professional Background",
         "backgroundDesc": "Earned PhD in Engineering in 2016; long-term focus on precision machining research of superabrasive tools for difficult-to-machine materials.",
@@ -180,7 +180,7 @@
         "capabilityDesc2": "Expert in cost-oriented, volume-oriented product development and strategic planning; achieving universal application through process improvement or paradigm innovation."
       },
       "he": {
-        "name": "Mr. He",
+        "name": "He Jun",
         "title": "Head of Engineering Design & Structure",
         "background": "Professional Background",
         "backgroundDesc1": "Master of Mechanical Engineering, Senior Engineer; 17+ years of defense electronics R&D experience, focused on structural design and thermal management.",
@@ -230,25 +230,78 @@
       "foundation": "sp²–sp³ carbon-based hybrid bonding platform (stress engineering)",
       "foundationLabel": "Foundation",
       "layer1Level": "L1: Core business (Current)",
-      "layer1Title": "High-performance industrial thermal management",
-      "layer1Items": "AI chip heat spreaders|Power semiconductors|New energy vehicles",
+      "layer1Title": "High-Performance Computing & Data Centers",
+      "layer1Items": "AI chip thermal|Geometric coupling|Rapid thermal dilution|System synergy",
       "layer1Desc": "Addressing thermal bottlenecks under extreme power density, providing 500–800 W/m·K efficient thermal solutions.",
       "layer1Tag": "Mature applications",
-      "layer2Level": "L2: Scale deployment (Expanding)",
-      "layer2Title": "Consumer electronics & quality of life",
-      "layer2Items": "High-thermal wireless charging coils|All-carbon bonded nonstick cookware",
+      "layer2Level": "L2: Industrial electronics (Expanding)",
+      "layer2Title": "Power Semiconductors & Industrial Electronics",
+      "layer2Items": "IGBT modules|Laser thermal mgmt|5G base stations|Phased array radar",
       "layer2Desc": "Industrial-grade processes applied to consumer markets, solving reliability, adhesion, and food safety pain points.",
       "layer2Tag": "Market scaling",
       "layer3Level": "L3: Industry upgrade (Growth)",
-      "layer3Title": "Energy & environmental systems",
-      "layer3Items": "Solid-state battery anode materials|Water treatment particle electrodes",
+      "layer3Title": "New Energy Vehicles & Energy Storage",
+      "layer3Items": "Power battery|Motor controller|OBC|DC/DC converter",
       "layer3Desc": "High-modulus carbon skeleton for energy density and electrocatalytic activity; rapid deployment potential.",
       "layer3Tag": "Potential development",
-      "layer4Level": "L4: Frontier exploration (Vision)",
-      "layer4Title": "Extreme property exploration",
-      "layer4Items": "Superconducting fundamental research|Quantum mesoscopic system vision",
+      "layer4Level": "L4: Consumer market (Scale)",
+      "layer4Title": "Consumer Electronics & Smart Home",
+      "layer4Items": "Wireless charging coil|Diamond cookware|Foldable|VR/AR",
       "layer4Desc": "Exploring stress-field-induced band structure for future computing architecture; 10-year theoretical reserve.",
-      "layer4Tag": "Theoretical exploration"
+      "layer4Tag": "Theoretical exploration",
+      "layer5Level": "L5: New energy & frontier (Exploration)",
+      "layer5Title": "New Energy & Frontier Exploration",
+      "layer5Items": "Solid-state battery anode|Water treatment electrode|Superconducting probe|Quantum vision",
+      "layer5Desc": "High-modulus carbon host materials, electrochemical electrodes, and extreme physics exploration.",
+      "layer5Tag": "Exploration stage"
+    },
+    "categories": {
+      "hpc": {
+        "title": "High-Performance Computing & Data Centers",
+        "subtitle": "AI Chip Thermal Management Solution",
+        "features": "Geometric coupling + Rapid thermal dilution + System-level synergy",
+        "items": "AI chip thermal management (geometric coupling + rapid thermal dilution + system-level synergy)",
+        "materials": "Diamond-copper composite|Flexible high-thermal-conductivity composite|All-carbon sp²–sp³ composite",
+        "expandLabel": "View full solution details",
+        "collapseLabel": "Collapse"
+      },
+      "powerSemiconductor": {
+        "title": "Power Semiconductors & Industrial Electronics",
+        "items": "IGBT module high-thermal-conductivity interface substrate|Industrial/medical laser high-power thermal management|5G base station power amplifier thermal management|Phased array radar T/R modules",
+        "itemsDesc": "Diamond-copper composite as DBC/AMB substrate or heat spreader rapidly extracts IGBT chip heat, reducing junction temperature and improving power density and reliability.|High-thermal-conductivity substrates with TIM address heat dissipation in pump sources and gain media, extending device lifetime.|Diamond-copper or flexible TIM for PA module thermal interface manages local heat flux at mmWave frequencies for stable base station operation.|T/R module multi-channel integration demands lightweight, reliable thermal management; diamond-copper heat spreaders enable high heat flux distribution.",
+        "materials": "Diamond-copper composite|Flexible high-thermal-conductivity composite|All-carbon sp²–sp³ composite"
+      },
+      "evStorage": {
+        "title": "New Energy Vehicles & Energy Storage",
+        "items": "Power battery thermal management structural components|Motor controller thermal interface substrate|On-board charger thermal management solution|DC/DC converter heat spreader",
+        "itemsDesc": "High-thermal-conductivity carbon composite as inter-module TIM or cold plate contact layer improves pack thermal uniformity and reduces thermal runaway risk.|Diamond-copper or flexible TIM between IGBT/SiC modules and heat sink significantly reduces contact resistance and improves power density.|OBC power devices have high heat flux; diamond-copper heat spreaders enable rapid heat spreading and reduce system weight and volume.|DC/DC converter multi-chip layout requires high-thermal-conductivity TIM and heat spreaders for coordinated multi-source heat dissipation.",
+        "materials": "Diamond-copper composite|Flexible thermal pad|All-carbon sp²–sp³ composite"
+      },
+      "consumer": {
+        "title": "Consumer Electronics & Smart Home",
+        "items": "High-power wireless charging high-thermal-conductivity coils (11kW+)|Diamond coating nonstick cookware|Foldable phone ultra-thin thermal management|VR/AR device lightweight thermal management",
+        "itemsDesc": "Diamond-copper composite conductor builds radial heat channels on copper wire surface, addressing ACR surge and thermal bottlenecks from skin effect for 11kW+ wireless charging.|sp²–sp³ chemical bonding firmly anchors diamond particles on cookware surface for thermal + wear + nonstick integration, far exceeding traditional coating lifetime.|Ultra-thin flexible TIM conforms to foldable hinge and hot chip areas for efficient heat spreading in limited space, ensuring fold reliability.|Lightweight thermal solutions replace metal heat sinks, enabling reliable cooling for key chips under VR/AR headset weight constraints.",
+        "materials": "Diamond-copper composite|Diamond coating/bonding material|Flexible high-thermal-conductivity composite",
+        "expandLabel": "View wireless charging coil solution details",
+        "collapseLabel": "Collapse",
+        "coilIntro": "For 11kW/22kW+ wireless charging coils, addressing ACR surge and thermal bottlenecks caused by skin effect and proximity effect from high-frequency currents.",
+        "coilSolution": "Diamond-copper composite conductor technology (electroplating + medium-temperature diffusion) using 20μm diamond and pure copper to build ultra-high thermal conductivity, low thermal resistance radial heat dissipation channels.",
+        "coilAdv1": "Conductivity up to 100% IACS, significantly reducing coil heating (20%+ reduction)",
+        "coilAdv2": "Flexible structure suitable for small-radius winding",
+        "coilAdv3": "Industrial mass production feasibility",
+        "coilMech": "Multi-level filler network of diamond + AlN/Al₂O₃ greatly dilutes low-thermal-conductivity resin content, achieving Ultra-Low R_th effect.",
+        "coilCoreSolution": "Core solution",
+        "coilTechAdvantage": "Technical advantages",
+        "coilPhysicsMech": "Physical mechanism",
+        "viewWhitepaper": "Download wireless charging coil thermal whitepaper"
+      },
+      "frontier": {
+        "title": "New Energy & Frontier Exploration",
+        "badge": "Exploration stage",
+        "items": "Solid-state battery anode architecture (high-modulus carbon host)|Water treatment particle electrodes|Superconducting material fundamental research (exploration)|Quantum mesoscopic system vision (long-term planning)",
+        "itemsDesc": "sp³–sp² carbon skeleton as high-modulus host suppresses lithium dendrite growth via stress field, improving solid-state battery cycle life and safety.|High internal stress sp²–sp³ structure delivers high hardness, long life, and excellent electrical/catalytic activity for electrochemical water treatment electrodes.|Based on sp²–sp³ interface band distortion under high stress, probing unconventional electronic transport for superconducting research.|All-carbon network lattice distortion regulates coherent electron behavior, exploring stress engineering evolution in quantum computing candidate materials.",
+        "materials": "High-modulus carbon host|sp²–sp³ electrochemical electrode|All-carbon composite platform"
+      }
     },
     "thermal": {
       "badge": "Priority 1 · Deployed / Engineering stage",

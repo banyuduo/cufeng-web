@@ -144,52 +144,52 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
           />
           <div
             id="mobile-menu-overlay"
-            className="fixed top-16 right-0 w-24 sm:w-28 h-[calc(100vh-4rem)] z-[9999] flex flex-col"
+            className="fixed top-16 right-0 w-full max-w-[280px] sm:max-w-[300px] min-w-[200px] h-[calc(100vh-4rem)] z-[9999] flex flex-col"
             style={{
               backgroundColor: "#000000",
               opacity: 1,
               boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.5)",
             }}
           >
-            <div className="flex flex-col w-full pt-4 pb-4 fade-in-down" style={{ backgroundColor: "#000000" }}>
+            <div className="flex flex-col w-full pt-4 pb-4 fade-in-down px-4" style={{ backgroundColor: "#000000" }}>
               <Link
                 href={`${prefix}/about`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.about")}
               </Link>
               <Link
                 href={`${prefix}/patents`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.techArchitecture")}
               </Link>
               <Link
                 href={`${prefix}/products`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.products")}
               </Link>
               <Link
                 href={`${prefix}/applications`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.applications")}
               </Link>
               <Link
                 href={`${prefix}/news`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.techVision")}
               </Link>
               <Link
                 href={`${prefix}/cooperation`}
-                className="text-white text-sm font-medium py-2 px-2 border-b border-white/10 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 border-b border-white/10 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("common.nav.projectCooperation")}
@@ -200,7 +200,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                     ? pathname.replace(`/${locale}`, `/${otherLocale}`)
                     : `/${otherLocale}${pathname === "/" ? "" : pathname}`
                 }
-                className="text-white text-sm font-medium py-2 px-2 w-full text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                className="text-white text-sm font-medium py-3 px-3 w-full text-left hover:bg-white/10 active:bg-white/15 transition-colors break-words"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {otherLocaleName}

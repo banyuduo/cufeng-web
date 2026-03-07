@@ -45,7 +45,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
         </button>
       )}
 
-      <footer className="border-t border-slate-200 bg-slate-50 py-12 px-6 lg:px-8">
+      <footer className="border-t border-slate-200 bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
             <div className="order-1 lg:order-2">
@@ -112,11 +112,11 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
                 </li>
               </ul>
             </div>
-            <div className="order-3 col-span-2 lg:col-span-1 lg:order-1">
+            <div className="order-3 col-span-2 lg:col-span-1 lg:order-1 min-w-0">
               <div className="font-bold text-lg mb-4 text-slate-900 text-left">
                 {t("common.footer.brand")}
               </div>
-              <p className="text-xs text-slate-500 text-left">{t("common.footer.platformTech")}</p>
+              <p className="text-xs text-slate-500 text-left break-words">{t("common.footer.platformTech")}</p>
             </div>
             <div className="order-4 col-span-2 lg:col-span-1 lg:order-4">
               <div className="font-semibold mb-4 text-slate-900 text-left">
