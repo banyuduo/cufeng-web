@@ -40,3 +40,9 @@ ehthumbs.db
 
 # test coverage
 coverage/
+
+# 排除所有 PPT 文件，防止误提交
+*.pptx
+
+# 路演/融资相关文档（不上传）
+/PPT files/

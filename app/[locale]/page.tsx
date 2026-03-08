@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -20,60 +21,61 @@ export default async function HomePage({
     <div className="min-h-screen bg-background">
       <Navigation locale={validLocale} />
 
-      <section className="pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <HeroWaveBg />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="page-h1 text-white mb-6 sm:mb-8 opacity-100">
               {t("home.hero.title")}
             </h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl text-sky-400 font-light mb-10 sm:mb-12 tracking-wide">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/95 font-light mb-10 sm:mb-12 tracking-wide">
               {t("home.hero.subtitle")}
             </p>
 
             <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12">
-              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
+              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
+                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card1")}
                 </p>
               </Card>
 
-              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
+              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
+                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card2")}
                 </p>
               </Card>
 
-              <Card className="bg-slate-800/50 border-slate-700/50 p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-slate-200 leading-relaxed opacity-100">
+              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
+                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card3")}
                 </p>
               </Card>
             </div>
 
             <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-block bg-gradient-to-r from-sky-500/10 to-blue-500/10 border border-sky-500/30 rounded-2xl p-8 w-full">
-                <h3 className="text-lg font-semibold text-sky-400 mb-6 opacity-100">
+              <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/40 rounded-2xl p-8 w-full">
+                <h3 className="text-lg font-semibold text-[#7dd3fc] mb-6">
                   {t("home.hero.achieved")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-sky-400 mt-2 flex-shrink-0" />
-                    <p className="text-slate-300 leading-relaxed opacity-100">
+                    <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
+                    <p className="text-white/85 leading-relaxed">
                       {t("home.hero.achievement1")}
                       <br />
-                      <span className="text-sky-400 font-mono text-sm">
+                      <span className="text-[#7dd3fc] font-mono text-sm">
                         {t("home.hero.achievement1Value")}
                       </span>
                       <br />
-                      <span className="text-slate-400 text-sm">
+                      <span className="text-white/70 text-sm">
                         {t("home.hero.achievement1Note")}
                       </span>
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-sky-400 mt-2 flex-shrink-0" />
-                    <p className="text-slate-300 leading-relaxed opacity-100">
+                    <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
+                    <p className="text-white/85 leading-relaxed">
                       {t("home.hero.achievement2")}
                       <br />
                       {t("home.hero.achievement2Note")}
@@ -84,23 +86,23 @@ export default async function HomePage({
             </div>
 
             <div className="max-w-4xl mx-auto mb-10">
-              <p className="text-slate-300 leading-relaxed text-lg opacity-100">
+              <p className="text-white/85 leading-relaxed text-lg">
                 {t("home.hero.platformFocus")}
               </p>
             </div>
 
             {/* 技术演化路径 - 简化版 */}
             <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-block bg-slate-800/60 border border-sky-500/20 rounded-xl p-6 w-full">
-                <h3 className="text-base font-semibold text-sky-400 mb-3 opacity-100">
+              <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/30 rounded-xl p-6 w-full">
+                <h3 className="text-base font-semibold text-[#7dd3fc] mb-3">
                   {t("home.techEvolution.title")}
                 </h3>
-                <p className="text-slate-300 leading-relaxed text-sm mb-4 opacity-100">
+                <p className="text-white/85 leading-relaxed text-sm mb-4">
                   {t("home.techEvolution.desc")}
                 </p>
                 <Link
                   href={`/${validLocale}/patents#evolution-path`}
-                  className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-[#7dd3fc] hover:text-[#bae6fd] text-sm font-medium transition-colors"
                 >
                   {t("home.techEvolution.viewFullPath")}
                   <ArrowRight className="w-4 h-4" />
@@ -112,7 +114,7 @@ export default async function HomePage({
               <Button
                 size="lg"
                 asChild
-                className="gap-2 bg-sky-500 hover:bg-sky-600 text-white shadow-lg shadow-sky-500/20 w-full sm:w-auto min-h-[44px]"
+                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 w-full sm:w-auto min-h-[44px] border-0"
               >
                 <Link href={`/${validLocale}/applications`}>
                   {t("home.hero.viewTechApplications")}
@@ -122,7 +124,7 @@ export default async function HomePage({
                 size="lg"
                 variant="outline"
                 asChild
-                className="gap-2 text-white border-slate-600 hover:bg-slate-800 bg-slate-800/50 w-full sm:w-auto min-h-[44px]"
+                className="gap-2 text-white border-[#7dd3fc]/80 bg-transparent hover:bg-white/10 w-full sm:w-auto min-h-[44px]"
               >
                 <Link href={`/${validLocale}/cooperation`}>
                   {t("home.hero.projectCooperation")}
@@ -136,9 +138,13 @@ export default async function HomePage({
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Atom className="w-6 h-6 text-sky-600" />
+            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-light text-slate-300 tabular-nums">01</span>
+                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+              </div>
+              <div className="w-12 h-12 rounded-lg bg-[#e0f2fe] flex items-center justify-center mb-6">
+                <Atom className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.innovation")}
@@ -148,9 +154,13 @@ export default async function HomePage({
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-sky-600" />
+            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-light text-slate-300 tabular-nums">02</span>
+                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+              </div>
+              <div className="w-12 h-12 rounded-lg bg-[#e0f2fe] flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.patents")}
@@ -160,9 +170,13 @@ export default async function HomePage({
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Handshake className="w-6 h-6 text-sky-600" />
+            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-light text-slate-300 tabular-nums">03</span>
+                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+              </div>
+              <div className="w-12 h-12 rounded-lg bg-[#e0f2fe] flex items-center justify-center mb-6">
+                <Handshake className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("home.features.cooperation")}
@@ -256,7 +270,7 @@ export default async function HomePage({
       </section>
 
       {/* 底部行动召唤 */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h3 mb-4 text-slate-900">
             {t("home.hero.ctaTitle")}
@@ -265,12 +279,12 @@ export default async function HomePage({
             {t("home.hero.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" asChild className="gap-2 bg-sky-600 hover:bg-sky-700 text-white">
+            <Button size="lg" asChild className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white border-0">
               <Link href={`/${validLocale}/patents`}>
                 {t("home.hero.viewWhitepaper")}
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 bg-white border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-slate-400">
+            <Button size="lg" variant="outline" asChild className="gap-2 bg-white border-[#0077b6]/60 text-slate-900 hover:bg-slate-50 hover:border-[#0077b6]">
               <Link href={`/${validLocale}/cooperation#contact`}>
                 {t("home.hero.contactTeam")}
               </Link>
