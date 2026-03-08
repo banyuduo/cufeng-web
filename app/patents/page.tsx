@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
+import { MaterialComparisonRadarChart } from "@/components/material-comparison-radar-chart"
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
@@ -755,6 +756,26 @@ export default function PatentsPage() {
                   {t("patents.platformCore.platformConclusionEnd")}
                 </p>
               </div>
+            </div>
+
+            {/* 材料体系综合对比雷达图 */}
+            <div className="mt-10 pt-8 border-t border-pink-500/30">
+              <h4 className="text-pink-300 font-semibold text-base mb-6 flex items-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                {t("patents.platformCore.radarChartTitle")}
+              </h4>
+              <MaterialComparisonRadarChart
+                labels={{
+                  dim1: t("patents.platformCore.radarDim1"),
+                  dim2: t("patents.platformCore.radarDim2"),
+                  dim3: t("patents.platformCore.radarDim3"),
+                  dim4: t("patents.platformCore.radarDim4"),
+                  dim5: t("patents.platformCore.radarDim5"),
+                  diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
+                  diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
+                  toSpike: t("patents.platformCore.radarLabelToSpike"),
+                }}
+              />
             </div>
           </Card>
         </div>
