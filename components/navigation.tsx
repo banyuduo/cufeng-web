@@ -41,11 +41,16 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const otherLocale: Locale = locale === "zh" ? "en" : "zh"
   const otherLocaleName = locale === "zh" ? "English" : "中文"
 
+  const isHome = pathname === prefix || pathname === `${prefix}/`
+  const navBg = isHome ? "bg-[#001a33]/95 border-[#003366]/50" : "bg-background/95 border-border/60"
+  const navText = isHome ? "text-white" : "text-foreground"
+  const navMuted = isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
+
   return (
-    <nav className="border-b border-border/60 backdrop-blur-sm fixed w-full z-50 bg-background/95">
+    <nav className={`border-b backdrop-blur-sm fixed w-full z-50 ${navBg}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href={prefix} className="text-xl font-bold text-foreground">
+          <Link href={prefix} className={`text-xl font-bold ${navText}`}>
             {t("common.nav.brand")}
           </Link>
 
@@ -53,7 +58,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <Link
               href={`${prefix}/patents`}
               className={`text-sm transition-colors ${
-                isActive("/patents") ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
+                isActive("/patents") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.techArchitecture")}
@@ -61,7 +66,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <Link
               href={`${prefix}/products`}
               className={`text-sm transition-colors ${
-                isActive("/products") ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
+                isActive("/products") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.products")}
@@ -69,9 +74,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <Link
               href={`${prefix}/applications`}
               className={`text-sm transition-colors ${
-                isActive("/applications")
-                  ? "text-foreground font-semibold"
-                  : "text-muted-foreground hover:text-foreground"
+                isActive("/applications") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.applications")}
@@ -79,7 +82,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <Link
               href={`${prefix}/news`}
               className={`text-sm transition-colors ${
-                isActive("/news") ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
+                isActive("/news") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.techVision")}
@@ -87,13 +90,13 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <Link
               href={`${prefix}/about`}
               className={`text-sm transition-colors ${
-                isActive("/about") ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
+                isActive("/about") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.about")}
             </Link>
             <Link href={`${prefix}/cooperation`}>
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button size="sm" className={isHome ? "bg-[#0077b6] hover:bg-[#0096c7] text-white border-0" : "bg-primary text-primary-foreground hover:bg-primary/90"}>
                 {t("common.nav.projectCooperation")}
               </Button>
             </Link>
@@ -103,7 +106,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   ? pathname.replace(`/${locale}`, `/${otherLocale}`)
                   : `/${otherLocale}${pathname === "/" ? "" : pathname}`
               }
-              className="text-xs text-muted-foreground hover:text-foreground border border-border rounded px-2 py-1"
+              className={`text-xs border rounded px-2 py-1 transition-colors ${isHome ? "text-white/80 hover:text-white border-white/40" : "text-muted-foreground hover:text-foreground border-border"}`}
             >
               {otherLocaleName}
             </Link>
@@ -116,12 +119,12 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   ? pathname.replace(`/${locale}`, `/${otherLocale}`)
                   : `/${otherLocale}${pathname === "/" ? "" : pathname}`
               }
-              className="text-xs text-muted-foreground hover:text-foreground px-2"
+              className={`text-xs px-2 transition-colors ${isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
             >
               {otherLocaleName}
             </Link>
             <button
-              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              className={`p-2 transition-colors ${isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={t("common.nav.toggleMenu")}
             >
