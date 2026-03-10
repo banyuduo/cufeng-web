@@ -43,7 +43,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
 
   const isHome = pathname === prefix || pathname === `${prefix}/`
   const isDarkPage = isHome || isActive("/patents") || isActive("/about") || isActive("/news")
-  const navBg = isDarkPage ? "bg-[#023B99]/95 border-[#0344b3]/50" : "bg-background/95 border-border/60"
+  const navBg = isDarkPage ? "bg-[#001a33]/95 border-[#003366]/50" : "bg-background/95 border-border/60"
   const navText = isDarkPage ? "text-white" : "text-foreground"
   const navMuted = isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
 
@@ -97,7 +97,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
               {t("common.nav.about")}
             </Link>
             <Link href={`${prefix}/cooperation`}>
-              <Button size="sm" className={isDarkPage ? "bg-[#4169E1] hover:bg-[#5b7ef0] text-white border-0" : "bg-primary text-primary-foreground hover:bg-primary/90"}>
+              <Button size="sm" className={isDarkPage ? "bg-[#0077b6] hover:bg-[#0096c7] text-white border-0" : "bg-primary text-primary-foreground hover:bg-primary/90"}>
                 {t("common.nav.projectCooperation")}
               </Button>
             </Link>

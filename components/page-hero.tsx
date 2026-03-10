@@ -50,13 +50,14 @@ export function PageHero({
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: `linear-gradient(rgba(65, 105, 225, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(65, 105, 225, 0.25) 1px, transparent 1px)`,
+                backgroundImage:
+                  "linear-gradient(rgba(0, 119, 182, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 119, 182, 0.25) 1px, transparent 1px)",
                 backgroundSize: "60px 60px",
               }}
             />
           </div>
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#4169E1]/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-[#0047AB]/15 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#0077b6]/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-[#0096c7]/15 rounded-full blur-3xl" />
         </>
       )}
 
@@ -66,7 +67,7 @@ export function PageHero({
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
-                  ? "bg-[#0344b3]/50 text-[#73DBFF] border-[#4169E1]/40"
+                  ? "bg-[#002244]/50 text-[#7dd3fc] border-[#0077b6]/40"
                   : "bg-[#E8EEFF] text-[#023B99] border-[#4169E1]/30"
               }`}
             >
@@ -83,7 +84,7 @@ export function PageHero({
           {tagline && (
             <p
               className={`text-base sm:text-xl mb-2 break-words ${
-                isDark ? "text-[#73DBFF] font-semibold" : "text-[#73DBFF]"
+                isDark ? "text-[#7dd3fc] font-semibold" : "text-[#0077b6]"
               }`}
             >
               {tagline}
