@@ -163,14 +163,8 @@ export default function PatentsPage() {
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <Card className="max-w-4xl mx-auto p-8 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30">
-            <p className="text-slate-300 leading-relaxed text-lg text-center">
-              {t("patents.evolution.overview")}
-            </p>
-          </Card>
-
           {/* 技术演进架构图 */}
-          <div className="mt-12 max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="p-4 md:p-8 bg-[#002244]/50 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10">
               <h3 className="page-h3 text-white text-center mb-8 md:mb-12 text-xl md:text-2xl">{t("patents.architecture.title")}</h3>
               
