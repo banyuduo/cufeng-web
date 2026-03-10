@@ -50,7 +50,7 @@ export function HpcExpandableCard({
   return (
     <Card
       id="hpc"
-      className="p-6 sm:p-8 lg:p-10 bg-sky-50 border-sky-200 hover:shadow-xl transition-all scroll-mt-20"
+      className="p-6 sm:p-8 lg:p-10 bg-[#F9FAFC] border-[#4169E1]/30 hover:shadow-xl transition-all scroll-mt-20"
     >
       <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#0F2A5C] flex items-center justify-center flex-shrink-0">
@@ -63,7 +63,7 @@ export function HpcExpandableCard({
           <ul className="space-y-2 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-slate-700 min-w-0">
-                <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 bg-sky-500" />
+                <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 bg-[#73DBFF]" />
                 <span className="text-sm sm:text-base break-words">{item}</span>
               </li>
             ))}
@@ -71,7 +71,7 @@ export function HpcExpandableCard({
 
           {/* 可展开的完整方案介绍 */}
           {expanded && (
-            <div className="mt-6 pt-6 border-t border-sky-200/80 space-y-6">
+            <div className="mt-6 pt-6 border-t border-[#4169E1]/30/80 space-y-6">
               <p className="text-slate-600 leading-relaxed break-words">{intro}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-white border border-slate-200 rounded-lg p-4 min-w-0">
@@ -106,7 +106,7 @@ export function HpcExpandableCard({
                 {materials.split("|").map((m, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-sky-100 text-sky-800 text-xs sm:text-sm font-medium border border-sky-200/60 break-words max-w-full"
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-[#E8EEFF] text-[#023B99] text-xs sm:text-sm font-medium border border-[#4169E1]/40 break-words max-w-full"
                   >
                     {m.trim()}
                   </span>

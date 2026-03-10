@@ -38,14 +38,14 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-[#0F2A5C] hover:bg-[#1E3A8A] text-[#73DBFF] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-slate-600/50"
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-[#0344b3] hover:bg-[#0452cc] text-[#73DBFF] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-[#4169E1]/40"
           aria-label={t("common.footer.scrollToTop")}
         >
           <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
         </button>
       )}
 
-      <footer className="border-t border-slate-700/50 bg-[#0A1F44] py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="border-t border-[#0344b3]/50 bg-[#023B99] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
             <div className="order-1 lg:order-2">
@@ -134,7 +134,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </ul>
             </div>
           </div>
-          <div className="border-t border-slate-600/50 mt-8 pt-8">
+          <div className="border-t border-[#0344b3]/50 mt-8 pt-8">
             <div className="text-xs text-slate-400 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
                 <span>{t("common.footer.copyright")}</span>

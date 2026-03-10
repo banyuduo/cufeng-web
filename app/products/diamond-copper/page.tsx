@@ -7,11 +7,11 @@ import { Navigation } from "@/components/navigation"
 
 export default function DiamondCopperPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/products"
@@ -39,7 +39,7 @@ export default function DiamondCopperPage() {
               </p>
             </div>
 
-            <Card className="p-8 bg-gradient-to-br from-sky-50 to-white border-sky-200 shadow-xl">
+            <Card className="p-8 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 shadow-xl">
               <div className="space-y-6">
                 <div className="text-center pb-6 border-b border-slate-200">
                   <div className="text-5xl font-bold text-[#73DBFF] mb-2">680</div>
@@ -175,7 +175,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             {/* Product Line B */}
-            <Card className="p-10 bg-gradient-to-br from-sky-50 to-white border-sky-300 shadow-xl">
+            <Card className="p-10 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 shadow-xl">
               <div className="w-12 h-12 rounded-lg bg-[#0F2A5C] flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-white" />
               </div>
@@ -370,7 +370,7 @@ export default function DiamondCopperPage() {
               <div className="text-xs text-slate-500">W/m·K</div>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-sky-50 to-white border-sky-300 text-center shadow-lg">
+            <Card className="p-6 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 text-center shadow-lg">
               <div className="text-3xl font-bold text-[#73DBFF] mb-2">1200+</div>
               <div className="text-sm text-slate-700 font-medium mb-1">极致性能版本</div>
               <div className="text-xs text-slate-500">W/m·K</div>

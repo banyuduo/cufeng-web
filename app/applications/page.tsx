@@ -24,14 +24,14 @@ export default async function ApplicationsPage({
 
   const layers = [
     { levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-blue-500/50 bg-blue-500/20", Icon: Cpu, iconColor: "text-blue-400", href: "#hpc" },
-    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-sky-500/50 bg-sky-500/10", Icon: Zap, iconColor: "text-sky-400", href: "#power-semiconductor" },
+    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-[#4169E1]/50 bg-[#73DBFF]/10", Icon: Zap, iconColor: "text-[#73DBFF]", href: "#power-semiconductor" },
     { levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-emerald-500/50 bg-emerald-500/10", Icon: Battery, iconColor: "text-emerald-400", href: "#ev-storage" },
     { levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-amber-500/50 bg-amber-500/10", Icon: Home, iconColor: "text-amber-400", href: "#consumer" },
     { levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-purple-500/50 bg-purple-500/10", Icon: Microscope, iconColor: "text-purple-400", href: "#frontier" },
   ] as const
 
   const categoryConfig = [
-    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-sky-50", borderClass: "border-sky-200", iconBg: "bg-[#0F2A5C]", iconColor: "text-[#73DBFF]" },
+    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-[#F9FAFC]", borderClass: "border-[#4169E1]/30", iconBg: "bg-[#0F2A5C]", iconColor: "text-[#73DBFF]" },
     { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, color: "blue", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-blue-600", iconColor: "text-blue-600" },
     { id: "ev-storage", key: "evStorage", Icon: Car, color: "emerald", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-emerald-600", iconColor: "text-emerald-600" },
     { id: "consumer", key: "consumer", Icon: Home, color: "amber", bgClass: "bg-slate-50", borderClass: "border-slate-200", iconBg: "bg-amber-600", iconColor: "text-amber-600" },
@@ -39,7 +39,7 @@ export default async function ApplicationsPage({
   ] as const
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation locale={validLocale} />
 
       <PageHero
@@ -49,9 +49,9 @@ export default async function ApplicationsPage({
       />
 
       {/* 应用蓝图 */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#002244] rounded-3xl border border-[#4169E1]/40 overflow-hidden">
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#0344b3] rounded-3xl border border-[#4169E1]/40 overflow-hidden">
             <div className="text-center mb-12 px-1">
               <h2 className="page-h2 text-white mb-4 md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
@@ -75,10 +75,10 @@ export default async function ApplicationsPage({
               {/* 底部基座 */}
               <div className="pt-8 flex flex-col items-center">
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[#4169E1]/50 to-transparent mb-8"></div>
-                <div className="px-8 py-4 bg-[#001a33] rounded-xl border border-[#4169E1]/40 flex items-center gap-3 shadow-2xl">
-                  <ShieldCheck className="w-6 h-6 text-sky-500" />
+                <div className="px-8 py-4 bg-[#023B99] rounded-xl border border-[#4169E1]/40 flex items-center gap-3 shadow-2xl">
+                  <ShieldCheck className="w-6 h-6 text-[#73DBFF]" />
                   <div>
-                    <div className="text-[10px] text-sky-500 font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
+                    <div className="text-[10px] text-[#73DBFF] font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
                     <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -336,7 +336,7 @@ export default async function ApplicationsPage({
                         {items.map((item, i) => (
                           <div key={i} className="border-l-2 border-slate-200 pl-4">
                             <div className="flex items-start gap-2">
-                              <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${cat.isExploration ? "bg-purple-500" : "bg-sky-500"}`} />
+                              <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${cat.isExploration ? "bg-purple-500" : "bg-[#F9FAFC]0"}`} />
                               <div className="min-w-0">
                                 <div className="font-medium text-slate-800 text-sm sm:text-base break-words">{item}</div>
                                 {itemsDesc[i] && (
@@ -357,7 +357,7 @@ export default async function ApplicationsPage({
                                 className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full ${
                                   cat.isExploration
                                     ? "bg-purple-50 text-purple-800 border-purple-200/60"
-                                    : "bg-sky-50 text-sky-800 border-sky-200/60"
+                                    : "bg-[#F9FAFC] text-[#023B99] border-[#4169E1]/40"
                                 }`}
                               >
                                 {m.trim()}
@@ -385,7 +385,7 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-4xl sm:text-5xl font-bold mb-4 text-slate-900 break-words px-1 tracking-[0.05em] sm:tracking-[0.15em]">
             {t("applications.summary.title")}

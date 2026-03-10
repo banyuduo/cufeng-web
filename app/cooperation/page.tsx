@@ -16,7 +16,7 @@ export default async function CooperationPage({
   const prefix = `/${validLocale}`
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation locale={validLocale} />
 
       <PageHero
@@ -41,7 +41,7 @@ export default async function CooperationPage({
         </div>
       </PageHero>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto space-y-12">
           <div>
             <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
@@ -69,7 +69,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.audience.title")}
@@ -83,7 +83,7 @@ export default async function CooperationPage({
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
+            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-[#4169E1]/60 transition-colors">
               <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.research")}
@@ -91,7 +91,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
+            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-[#4169E1]/60 transition-colors">
               <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.industry")}
@@ -99,7 +99,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
+            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-[#4169E1]/60 transition-colors">
               <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.tech")}
@@ -107,7 +107,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
+            <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-[#4169E1]/60 transition-colors">
               <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.investor")}
@@ -122,7 +122,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.nextSteps.title")}
@@ -139,7 +139,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.resonance.title")}
@@ -158,7 +158,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-24">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC] scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.contact.title")}
@@ -168,7 +168,7 @@ export default async function CooperationPage({
             <p className="text-slate-500 italic text-sm">{t("cooperation.contact.introNote")}</p>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-10 space-y-8">
+          <div className="bg-[#F9FAFC] rounded-lg p-10 space-y-8">
             <div className="flex items-start gap-6">
               <div className="h-12 w-12 rounded bg-slate-200 flex items-center justify-center flex-shrink-0">
                 <MapPin className="h-5 w-5 text-slate-600" />
@@ -225,7 +225,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#023B99]">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-lg lg:text-xl text-slate-300 font-light italic leading-relaxed">
             &quot;{t("cooperation.quote")}&quot;

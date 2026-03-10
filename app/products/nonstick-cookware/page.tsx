@@ -10,11 +10,11 @@ import { getTranslations } from "@/lib/translations"
 export default function NonstickCookwarePage() {
   const t = getTranslations("zh")
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/products"
@@ -188,7 +188,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">使用寿命</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><span className="font-semibold text-[#0F2A5C]">10年+</span></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">10年+</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">6-12个月</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">1-2年</div>
                 </div>
@@ -196,7 +196,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">耐高温</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><span className="font-semibold text-[#0F2A5C]">500°C</span></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">500°C</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">260°C</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">350°C</div>
                 </div>
@@ -204,7 +204,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">可用金属铲</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                 </div>
@@ -212,7 +212,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">无PFOA/PTFE</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                 </div>
@@ -220,7 +220,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">抗刮擦性</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><span className="font-semibold text-[#0F2A5C] text-xs break-words">极强（莫氏10级）</span></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">极强（莫氏10级）</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">弱</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">中等</div>
                 </div>
@@ -228,7 +228,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">导热性能</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><span className="font-semibold text-[#0F2A5C] text-xs break-words">优异（快速均匀）</span></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">优异（快速均匀）</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">一般</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">一般</div>
                 </div>
@@ -236,12 +236,12 @@ export default function NonstickCookwarePage() {
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">洗碗机安全</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
-                  <div className="text-center p-2 rounded bg-sky-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
+                  <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400 text-xs">✗（会加速老化）</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                 </div>
               </div>
-              <div className="p-4 bg-sky-50">
+              <div className="p-4 bg-[#E8EEFF]">
                 <div className="font-semibold text-slate-900 mb-2">综合评分</div>
                 <div className="grid grid-cols-3 gap-2 text-sm">
                   <div className="text-center"><div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div></div>
@@ -313,7 +313,7 @@ export default function NonstickCookwarePage() {
                       <CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" />
                     </td>
                   </tr>
-                  <tr className="hover:bg-slate-50 bg-sky-50">
+                  <tr className="hover:bg-slate-50 bg-[#E8EEFF]">
                     <td className="p-4 text-slate-900 font-semibold">综合评分</td>
                     <td className="p-4 text-center">
                       <div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div>

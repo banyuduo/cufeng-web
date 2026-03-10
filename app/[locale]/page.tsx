@@ -34,19 +34,19 @@ export default async function HomePage({
             </p>
 
             <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12">
-              <Card className="bg-[#002244]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
+              <Card className="bg-[#0344b3]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
                 <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card1")}
                 </p>
               </Card>
 
-              <Card className="bg-[#002244]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
+              <Card className="bg-[#0344b3]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
                 <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card2")}
                 </p>
               </Card>
 
-              <Card className="bg-[#002244]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
+              <Card className="bg-[#0344b3]/60 border-[#4169E1]/35 backdrop-blur-sm p-6 sm:p-7">
                 <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   {t("home.hero.card3")}
                 </p>
@@ -54,7 +54,7 @@ export default async function HomePage({
             </div>
 
             <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-block bg-[#002244]/50 border border-[#4169E1]/40 rounded-2xl p-8 w-full">
+              <div className="inline-block bg-[#0344b3]/50 border border-[#4169E1]/40 rounded-2xl p-8 w-full">
                 <h3 className="text-lg font-semibold text-[#73DBFF] mb-6">
                   {t("home.hero.achieved")}
                 </h3>
@@ -93,7 +93,7 @@ export default async function HomePage({
 
             {/* 技术演化路径 - 简化版 */}
             <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-block bg-[#002244]/50 border border-[#4169E1]/30 rounded-xl p-6 w-full">
+              <div className="inline-block bg-[#0344b3]/50 border border-[#4169E1]/30 rounded-xl p-6 w-full">
                 <h3 className="text-base font-semibold text-[#73DBFF] mb-3">
                   {t("home.techEvolution.title")}
                 </h3>
@@ -102,7 +102,7 @@ export default async function HomePage({
                 </p>
                 <Link
                   href={`/${validLocale}/patents#evolution-path`}
-                  className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#93DBFF] text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#8EE8FF] text-sm font-medium transition-colors"
                 >
                   {t("home.techEvolution.viewFullPath")}
                   <ArrowRight className="w-4 h-4" />
@@ -135,10 +135,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl font-light text-slate-300 tabular-nums">01</span>
                 <span className="h-px flex-1 max-w-12 bg-slate-200" />
@@ -154,7 +154,7 @@ export default async function HomePage({
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl font-light text-slate-300 tabular-nums">02</span>
                 <span className="h-px flex-1 max-w-12 bg-slate-200" />
@@ -170,7 +170,7 @@ export default async function HomePage({
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-white border-slate-200 hover:shadow-lg transition-shadow relative">
+            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl font-light text-slate-300 tabular-nums">03</span>
                 <span className="h-px flex-1 max-w-12 bg-slate-200" />
@@ -214,7 +214,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 mb-4 text-slate-900 text-center">
             {t("home.results.title")}
