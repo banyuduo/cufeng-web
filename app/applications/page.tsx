@@ -53,7 +53,7 @@ export default async function ApplicationsPage({
         <div className="max-w-7xl mx-auto">
           <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#0344b3] rounded-3xl border border-[#4169E1]/40 overflow-hidden">
             <div className="text-center mb-12 px-1">
-              <h2 className="page-h2 text-white mb-4 md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
+              <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
 

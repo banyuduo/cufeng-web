@@ -134,7 +134,7 @@ export default async function NewsPage({
       <section id="company-news" className="py-16 border-t border-[#0344b3]/50 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="page-h2 mb-4 text-3xl text-white">{t("news.companyNews")}</h2>
+            <h2 className="page-h2 mb-4 text-2xl md:text-3xl text-white">{t("news.companyNews")}</h2>
             <p className="text-white/75 mb-12">
               {t("news.companyNewsDesc")}
             </p>
@@ -180,7 +180,7 @@ export default async function NewsPage({
       <section id="industry-info" className="py-16 border-t border-[#0344b3]/50 bg-[#0344b3]/30 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="page-h2 mb-4 text-3xl text-white">{t("news.industryInfo")}</h2>
+            <h2 className="page-h2 mb-4 text-2xl md:text-3xl text-white">{t("news.industryInfo")}</h2>
             <p className="text-white/75 mb-12">
               {t("news.industryInfoDesc")}
             </p>

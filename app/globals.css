@@ -45,14 +45,14 @@
   --hero-gradient-dark: linear-gradient(to bottom, hsl(222 47% 11%), hsl(222 47% 14%), hsl(222 47% 11%));
   --hero-gradient-light: linear-gradient(to bottom, hsl(204 100% 98%), hsl(0 0% 100%));
 
-  /* 首页深蓝配色 - 与 PPT 主色 #023B99 对齐 */
-  --page-dark-base: #023B99;
-  --page-dark-card: #0344b3;
-  --page-dark-card-hover: #0452cc;
-  --page-dark-accent: #4169E1;
-  --page-dark-accent-light: #73DBFF;
-  --page-dark-gradient: linear-gradient(135deg, #023B99 0%, #0344b3 30%, #0452cc 60%, #1E3A8A 100%);
-  --page-dark-hero-gradient: linear-gradient(to bottom, #012a6b 0%, #023B99 40%, #1E3A8A 100%);
+  /* 首页深蓝配色 - PPT 之前的海军蓝版本 */
+  --page-dark-base: #003366;
+  --page-dark-card: #002244;
+  --page-dark-card-hover: #004080;
+  --page-dark-accent: #0077b6;
+  --page-dark-accent-light: #7dd3fc;
+  --page-dark-gradient: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%);
+  --page-dark-hero-gradient: linear-gradient(180deg, #001a33 0%, #002244 15%, #003366 50%, #004080 85%, #005090 100%);
 }
 
 .dark {

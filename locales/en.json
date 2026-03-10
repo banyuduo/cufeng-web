@@ -89,7 +89,7 @@
   "products": {
     "backToProducts": "Back to Products",
     "title": "Product Matrix",
-    "subtitle": "From consumer nonstick cookware to cutting-edge all-carbon composites, each of our technologies represents a breakthrough in materials science",
+    "subtitle": "From consumer-grade diamond nonstick coating to cutting-edge all-carbon composites, each technology represents a breakthrough in CuFeng Technology",
     "badge": {
       "inStock": "In Stock · Mature Product",
       "gen2Core": "Gen 2 · Strategic Core",
@@ -1023,7 +1023,6 @@
   },
   "patents": {
     "hero": {
-      "badge": "Technology Architecture & Deepening Path",
       "title": "Technology Architecture & Evolution Path",
       "subtitle": "Underlying materials science platform based on sp²–sp³ interface engineering",
       "desc": "We are building a complete carbon-based atomic-level interface engineering platform. Our technology route is completing the full loop from theoretical hypothesis to physical validation, protected by an IP network of 10 core patents. Through precise control of the sp²–sp³ hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
@@ -1052,9 +1051,8 @@
       "visionPlanning": "Long-term planning stage"
     },
     "evolution": {
-      "sectionBadge": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
       "sectionTitle": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
-      "sectionSubtitle": "Our R&D is not isolated points, but a clear evolution curve",
+      "sectionSubtitle": "A clear evolution path from engineering tools to physical computing potential",
       "start": "Start",
       "step1": "Step 1",
       "step2": "Step 2",
@@ -1065,14 +1063,13 @@
       "compositeSystem": "Composite material system",
       "allCarbon": "All-carbon composite",
       "functionalMigration": "Functional material migration",
-      "physicsEvolution": "Physics system evolution\n(Stress engineering)",
+      "physicsEvolution": "Stress engineering\n(based on all-carbon platform)",
       "computingResource": "Potential physical\ncomputing resource",
       "coreLogicTitle": "Core logic summary",
-      "coreLogicDesc": "Our R&D is not isolated points, but a clear evolution curve. Through stress regulation of sp²–sp³ bonding structures, we elevate materials from mere \"heat dissipation tools\" to functional substrates with \"physical computing potential.\" This evolution path not only validates technical feasibility but also reveals the vast imagination space at the intersection of materials science and computational physics.",
+      "coreLogicDesc": "Through stress regulation of sp²–sp³ bonding structures, we elevate materials from mere \"heat dissipation tools\" to functional substrates with \"physical computing potential.\" This evolution path not only validates technical feasibility but also reveals the vast imagination space at the intersection of materials science and computational physics.",
       "overview": "This project's technology system is not composed of a single material or product, but has evolved gradually along a clear engineering and materials evolution path. Its core logic is to progress from engineering tools to functional materials, and ultimately evolve into an all-carbon composite material system with platform attributes."
     },
     "evolutionPath": {
-      "sectionBadge": "Engineering Evolution Path",
       "sectionTitle": "Technology Evolution Path",
       "sectionSubtitle": "Systematic evolution from engineering tools to all-carbon material systems",
       "stage01Title": "Active Fusion-Bonded Diamond Tools",
@@ -1117,12 +1114,11 @@
       "patent9No": "Application No.: 202610187730.X",
       "patent10Title": "An sp²-sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
       "patent10No": "Application No.: 202610187717.4",
-      "stage04Title": "Physics System Evolution (Stress Engineering)",
-      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, providing an experimental substrate for higher-order property exploration.",
-      "stage04Explanation": "Based on the stress engineering platform, we are collaborating with academia to explore physical potential such as unconventional superconductivity and quantum reservoir computing."
+      "stage04Title": "Stress Engineering Based on All-Carbon Platform",
+      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the logical endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
+      "stage04Explanation": "The \"Platform Extension\" section below expands on specific exploration directions derived from this (superconductivity, chaotic dynamics, quantum reservoir computing, etc.). We are collaborating with academia to advance related research."
     },
     "platformCore": {
-      "sectionBadge": "Platform Core",
       "sectionTitle": "Platform Core",
       "sectionSubtitle": "Underlying technical principles and tunable parameter space",
       "mainTitle": "sp³–sp² Chemical Bonding and Endogenous Stress Structure",
@@ -1131,9 +1127,9 @@
       "principleP1": "In the all-carbon composite system, carbon atoms can exist in different bonding modes:",
       "sp3Role": "bonding primarily provides 3D rigid structure (similar to diamond)",
       "sp2Role": "bonding primarily provides 2D conductive/thermal plane (similar to graphite/graphene)",
-      "principleP2": "Chemically coupling these two bonding modes at nanoscale through high-temperature and high-pressure processes produces an",
-      "stressAnchor": "internal stress anchoring effect",
-      "principleP2b": ". This effect stems from both lattice structure mismatch and sustained interface stress.",
+      "principleP2": "Through high-temperature and high-pressure processes, atomic-level chemical bonding is achieved at the interface, generating a stable endogenous stress field and forming a unique",
+      "stressAnchor": "stress anchoring",
+      "principleP2b": " structure.",
       "diagramTitle": "Principle illustration: different parameter combinations generate different macroscopic functional domains",
       "domain1Title": "sp³ dominant, relatively low sp² content",
       "domain1a": "Strong structural rigidity, high thermal stability",
