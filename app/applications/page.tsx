@@ -31,7 +31,7 @@ export default async function ApplicationsPage({
   ] as const
 
   const categoryConfig = [
-    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-sky-50", borderClass: "border-sky-200", iconBg: "bg-sky-600", iconColor: "text-sky-600" },
+    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-sky-50", borderClass: "border-sky-200", iconBg: "bg-[#0F2A5C]", iconColor: "text-[#73DBFF]" },
     { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, color: "blue", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-blue-600", iconColor: "text-blue-600" },
     { id: "ev-storage", key: "evStorage", Icon: Car, color: "emerald", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-emerald-600", iconColor: "text-emerald-600" },
     { id: "consumer", key: "consumer", Icon: Home, color: "amber", bgClass: "bg-slate-50", borderClass: "border-slate-200", iconBg: "bg-amber-600", iconColor: "text-amber-600" },
@@ -401,7 +401,7 @@ export default async function ApplicationsPage({
             <Button
               size="lg"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 bg-sky-600 hover:bg-sky-700 text-white shadow-lg"
+              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white shadow-lg"
             >
               <Link href={`${prefix}/cooperation`}>{t("applications.cta.techDialogue")}</Link>
             </Button>

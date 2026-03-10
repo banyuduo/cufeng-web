@@ -27,7 +27,7 @@ export default function DiamondCopperPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -36,10 +36,10 @@ export default function DiamondCopperPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-600 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center">
                   <Layers className="w-7 h-7 text-white" />
                 </div>
-                <div className="px-3 py-1 bg-sky-600 rounded-full text-xs font-medium text-white">
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">
                   {t("products.diamondCopper.hero.badge")}
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function DiamondCopperPage() {
             <Card className="p-8 bg-gradient-to-br from-sky-50 to-white border-sky-200 shadow-xl">
               <div className="space-y-6">
                 <div className="text-center pb-6 border-b border-slate-200">
-                  <div className="text-5xl font-bold text-sky-600 mb-2">680</div>
+                  <div className="text-5xl font-bold text-[#73DBFF] mb-2">680</div>
                   <div className="text-sm text-slate-600">{t("products.diamondCopper.hero.achievedLabel")}</div>
                 </div>
                 <div className="space-y-3">
@@ -60,9 +60,9 @@ export default function DiamondCopperPage() {
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.hero.cvdDiamond")}</span>
                     <span className="font-semibold text-slate-900">1000-2000</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-sky-600">
+                  <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="text-sm font-medium text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
-                    <span className="font-bold text-sky-600 text-lg">1200+</span>
+                    <span className="font-bold text-[#73DBFF] text-lg">1200+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.hero.traditionalDiamondCu")}</span>
@@ -91,7 +91,7 @@ export default function DiamondCopperPage() {
               </p>
               <Link
                 href={`${prefix}/applications`}
-                className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
+                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 {t("products.diamondCopper.applicationProspects.viewApplications")}
                 <ArrowRight className="w-4 h-4" />
@@ -104,7 +104,7 @@ export default function DiamondCopperPage() {
               </p>
               <Link
                 href={`${prefix}/cooperation`}
-                className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
+                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 {t("products.diamondCopper.applicationProspects.cooperateWithUs")}
                 <ArrowRight className="w-4 h-4" />
@@ -123,7 +123,7 @@ export default function DiamondCopperPage() {
             {/* Product Line A */}
             <Card className="p-10 bg-slate-50 border-slate-200 hover:shadow-lg transition-all">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <TrendingUp className="w-6 h-6 text-sky-600" />
+                <TrendingUp className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-2xl font-bold text-slate-900">{t("products.diamondCopper.productLines.lineA.title")}</h3>
@@ -137,30 +137,30 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineA.thermalConductivity")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineA.thermalConductivityValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineA.thermalConductivityValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "70%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "70%" }} />
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineA.costAdvantage")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineA.costAdvantageValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineA.costAdvantageValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "95%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "95%" }} />
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineA.batchProduction")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineA.batchProductionValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineA.batchProductionValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "90%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "90%" }} />
                   </div>
                 </div>
               </div>
@@ -169,15 +169,15 @@ export default function DiamondCopperPage() {
                 <h4 className="font-semibold mb-3 text-slate-900">{t("products.diamondCopper.productLines.lineA.applicationScenarios")}</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineA.scenario1")}
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineA.scenario2")}
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineA.scenario3")}
                   </li>
                 </ul>
@@ -186,12 +186,12 @@ export default function DiamondCopperPage() {
 
             {/* Product Line B */}
             <Card className="p-10 bg-gradient-to-br from-sky-50 to-white border-sky-300 shadow-xl">
-              <div className="w-12 h-12 rounded-lg bg-sky-600 flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-lg bg-[#0F2A5C] flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-2xl font-bold text-slate-900">{t("products.diamondCopper.productLines.lineB.title")}</h3>
-                <div className="px-3 py-1 bg-sky-600 rounded-full text-xs font-medium text-white">{t("products.diamondCopper.productLines.lineB.badge")}</div>
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">{t("products.diamondCopper.productLines.lineB.badge")}</div>
               </div>
               <p className="text-slate-600 mb-6 leading-relaxed">
                 {t("products.diamondCopper.productLines.lineB.desc")}
@@ -201,39 +201,39 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineB.thermalConductivity")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineB.thermalConductivityValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineB.thermalConductivityValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "100%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "100%" }} />
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineB.performanceAdvantage")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineB.performanceAdvantageValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineB.performanceAdvantageValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "98%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "98%" }} />
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineB.diamondContent")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineB.diamondContentValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineB.diamondContentValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "85%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "85%" }} />
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-slate-700">{t("products.diamondCopper.productLines.lineB.costAdvantage")}</span>
-                    <span className="font-semibold text-sky-600">{t("products.diamondCopper.productLines.lineB.costAdvantageValue")}</span>
+                    <span className="font-semibold text-[#73DBFF]">{t("products.diamondCopper.productLines.lineB.costAdvantageValue")}</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-sky-600 rounded-full" style={{ width: "90%" }} />
+                    <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "90%" }} />
                   </div>
                 </div>
               </div>
@@ -242,15 +242,15 @@ export default function DiamondCopperPage() {
                 <h4 className="font-semibold mb-3 text-slate-900">{t("products.diamondCopper.productLines.lineB.applicationScenarios")}</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineB.scenario1")}
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineB.scenario2")}
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2" />
                     {t("products.diamondCopper.productLines.lineB.scenario3")}
                   </li>
                 </ul>
@@ -308,7 +308,7 @@ export default function DiamondCopperPage() {
               <div className="space-y-4">
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       1
                     </div>
                     <div>
@@ -322,7 +322,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       2
                     </div>
                     <div>
@@ -336,7 +336,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       3
                     </div>
                     <div>
@@ -350,7 +350,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       4
                     </div>
                     <div>
@@ -374,25 +374,25 @@ export default function DiamondCopperPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-sky-600 mb-2">680</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">680</div>
               <div className="text-sm text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.achievedTC")}</div>
               <div className="text-xs text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-sky-50 to-white border-sky-300 text-center shadow-lg">
-              <div className="text-3xl font-bold text-sky-600 mb-2">1200+</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1200+</div>
               <div className="text-sm text-slate-700 font-medium mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
               <div className="text-xs text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-sky-600 mb-2">80-90</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">80-90</div>
               <div className="text-sm text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.diamondVolFraction")}</div>
               <div className="text-xs text-slate-500">vol%</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-sky-600 mb-2">{t("products.diamondCopper.performanceParams.flatnessValue")}</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("products.diamondCopper.performanceParams.flatnessValue")}</div>
               <div className="text-sm text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.flatness")}</div>
               <div className="text-xs text-slate-500">{t("products.diamondCopper.performanceParams.flatnessNote")}</div>
             </Card>
@@ -408,7 +408,7 @@ export default function DiamondCopperPage() {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
+              <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="font-semibold mb-2 text-slate-900">{t("products.diamondCopper.patents.patent1Title")}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 {t("products.diamondCopper.patents.patent1Desc")}
@@ -417,7 +417,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-sky-600 mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
+              <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="font-semibold mb-2 text-slate-900">{t("products.diamondCopper.patents.patent2Title")}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 {t("products.diamondCopper.patents.patent2Desc")}
@@ -436,7 +436,7 @@ export default function DiamondCopperPage() {
           <div className="flex items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="gap-2 bg-sky-600 hover:bg-sky-700 text-white"
+              className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white"
               asChild
             >
               <a href="/docs/sample test result.pdf" target="_blank" rel="noopener noreferrer">

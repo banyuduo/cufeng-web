@@ -53,7 +53,7 @@ export function HpcExpandableCard({
       className="p-6 sm:p-8 lg:p-10 bg-sky-50 border-sky-200 hover:shadow-xl transition-all scroll-mt-20"
     >
       <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-sky-600 flex items-center justify-center flex-shrink-0">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#0F2A5C] flex items-center justify-center flex-shrink-0">
           <Cpu className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
         </div>
         <div className="flex-1 min-w-0">
@@ -75,15 +75,15 @@ export function HpcExpandableCard({
               <p className="text-slate-600 leading-relaxed break-words">{intro}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-white border border-slate-200 rounded-lg p-4 min-w-0">
-                  <div className="text-sky-600 font-bold mb-2 text-sm sm:text-base break-words">{geoCoupling}</div>
+                  <div className="text-[#73DBFF] font-bold mb-2 text-sm sm:text-base break-words">{geoCoupling}</div>
                   <p className="text-sm text-slate-600 leading-relaxed break-words">{geoCouplingDesc}</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-lg p-4 min-w-0">
-                  <div className="text-sky-600 font-bold mb-2 text-sm sm:text-base break-words">{thermalDilution}</div>
+                  <div className="text-[#73DBFF] font-bold mb-2 text-sm sm:text-base break-words">{thermalDilution}</div>
                   <p className="text-sm text-slate-600 leading-relaxed break-words">{thermalDilutionDesc}</p>
                 </div>
                 <div className="bg-white border border-slate-200 rounded-lg p-4 min-w-0">
-                  <div className="text-sky-600 font-bold mb-2 text-sm sm:text-base break-words">{systemSync}</div>
+                  <div className="text-[#73DBFF] font-bold mb-2 text-sm sm:text-base break-words">{systemSync}</div>
                   <p className="text-sm text-slate-600 leading-relaxed break-words">{systemSyncDesc}</p>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export function HpcExpandableCard({
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-1.5 text-sky-600 hover:text-sky-700 font-medium text-sm mt-2 transition-colors"
+            className="flex items-center gap-1.5 text-[#73DBFF] hover:text-[#73DBFF] font-medium text-sm mt-2 transition-colors"
           >
             {expanded ? collapseLabel : expandLabel}
             <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />

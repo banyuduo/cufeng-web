@@ -9,7 +9,7 @@
       "techVision": "技术视界",
       "about": "关于我们",
       "projectCooperation": "项目合作",
-      "toggleMenu": "Toggle menu"
+      "toggleMenu": "打开/关闭菜单"
     },
     "footer": {
       "scrollToTop": "回到顶部",
@@ -1233,6 +1233,8 @@
     "viewDetails": "查看详情",
     "articleDetail": {
       "backToList": "返回列表",
+      "backToNews": "返回技术视界",
+      "backToNewsList": "返回新闻列表",
       "publishDate": "发布日期",
       "keywords": "关键词"
     },

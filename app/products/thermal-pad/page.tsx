@@ -27,7 +27,7 @@ export default function ThermalPadPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -37,7 +37,7 @@ export default function ThermalPadPage() {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
-                  <FlaskConical className="w-7 h-7 text-sky-600" />
+                  <FlaskConical className="w-7 h-7 text-[#73DBFF]" />
                 </div>
                 <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
                   {t("products.thermalPad.hero.badge")}
@@ -54,23 +54,23 @@ export default function ThermalPadPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="text-sm text-slate-700">{t("products.thermalPad.hero.inPlaneTC")}</span>
-                  <span className="font-semibold text-sky-600">{t("products.thermalPad.hero.inPlaneTCValue")}</span>
+                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.inPlaneTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="text-sm text-slate-700">{t("products.thermalPad.hero.throughTC")}</span>
-                  <span className="font-semibold text-sky-600">{t("products.thermalPad.hero.throughTCValue")}</span>
+                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.throughTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="text-sm text-slate-700">{t("products.thermalPad.hero.flexibility")}</span>
-                  <span className="font-semibold text-sky-600">{t("products.thermalPad.hero.flexibilityValue")}</span>
+                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.flexibilityValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="text-sm text-slate-700">{t("products.thermalPad.hero.cte")}</span>
-                  <span className="font-semibold text-sky-600">{t("products.thermalPad.hero.cteValue")}</span>
+                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.cteValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="text-sm text-slate-700">{t("products.thermalPad.hero.thicknessRange")}</span>
-                  <span className="font-semibold text-sky-600">{t("products.thermalPad.hero.thicknessValue")}</span>
+                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.thicknessValue")}</span>
                 </div>
               </div>
             </Card>
@@ -86,7 +86,7 @@ export default function ThermalPadPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Layers className="w-6 h-6 text-sky-600" />
+                <Layers className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card1Title")}</h3>
               <p className="text-slate-600 leading-relaxed">
@@ -96,7 +96,7 @@ export default function ThermalPadPage() {
 
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-sky-600" />
+                <Zap className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card2Title")}</h3>
               <p className="text-slate-600 leading-relaxed">
@@ -106,7 +106,7 @@ export default function ThermalPadPage() {
 
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <FlaskConical className="w-6 h-6 text-sky-600" />
+                <FlaskConical className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card3Title")}</h3>
               <p className="text-slate-600 leading-relaxed">
@@ -132,11 +132,11 @@ export default function ThermalPadPage() {
                 </p>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                     {t("products.thermalPad.technicalDetails.skeletonItem1")}
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                     {t("products.thermalPad.technicalDetails.skeletonItem2")}
                   </li>
                 </ul>
@@ -165,7 +165,7 @@ export default function ThermalPadPage() {
               <div className="space-y-4">
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       1
                     </div>
                     <div>
@@ -179,7 +179,7 @@ export default function ThermalPadPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       2
                     </div>
                     <div>
@@ -193,7 +193,7 @@ export default function ThermalPadPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       3
                     </div>
                     <div>
@@ -207,7 +207,7 @@ export default function ThermalPadPage() {
 
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                       4
                     </div>
                     <div>
@@ -237,21 +237,21 @@ export default function ThermalPadPage() {
               </p>
               <ul className="text-slate-600 mb-6 space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                   <span>{t("products.thermalPad.applicationProspects.card1Item1")}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                   <span>{t("products.thermalPad.applicationProspects.card1Item2")}</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-600 mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                   <span>{t("products.thermalPad.applicationProspects.card1Item3")}</span>
                 </li>
               </ul>
               <Link
                 href={`${prefix}/applications`}
-                className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
+                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 {t("products.thermalPad.applicationProspects.exploreApplications")}
                 <ArrowRight className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function ThermalPadPage() {
               </p>
               <Link
                 href={`${prefix}/about#zhang-gong`}
-                className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold"
+                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 {t("products.thermalPad.applicationProspects.contactEngineer")}
                 <ArrowRight className="w-4 h-4" />
@@ -285,7 +285,7 @@ export default function ThermalPadPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 {t("products.thermalPad.patents.intro")}
               </p>
-              <div className="text-xs font-medium text-sky-600 mb-2">{t("products.thermalPad.patents.corePatent")}</div>
+              <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
               <h3 className="text-lg font-semibold mb-3 text-slate-900">
                 {t("products.thermalPad.patents.patentTitle")}
               </h3>
@@ -306,7 +306,7 @@ export default function ThermalPadPage() {
           <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.thermalPad.cta.title")}</h2>
           <p className="text-slate-600 mb-8">{t("products.thermalPad.cta.subtitle")}</p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" className="gap-2 bg-sky-600 hover:bg-sky-700 text-white" asChild>
+            <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>{t("products.thermalPad.cta.applySample")}</Link>
             </Button>
             <Button

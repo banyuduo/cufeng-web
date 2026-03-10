@@ -120,7 +120,7 @@ export default async function AboutPage({
             {/* 王博士 */}
             <Card id="wang" className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-sky-600/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#0F2A5C]/20 flex items-center justify-center">
                   <GraduationCap className="w-6 h-6 text-sky-400" />
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default async function AboutPage({
                 </div>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-sky-600/20 text-sky-300 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/20 text-sky-300 text-xs font-medium rounded-full mb-2">
                   {t("about.team.wang.title")}
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default async function AboutPage({
               {/* 2025 - 专利集群 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sky-600 text-white font-bold text-lg shadow-lg shadow-sky-600/30 relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0F2A5C] text-white font-bold text-lg shadow-lg shadow-[#73DBFF]/30 relative z-10">
                     2025
                   </div>
                 </div>

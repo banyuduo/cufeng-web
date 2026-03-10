@@ -55,7 +55,7 @@ export default async function HomePage({
 
             <div className="max-w-3xl mx-auto mb-12">
               <div className="inline-block bg-[#002244]/50 border border-[#4169E1]/40 rounded-2xl p-8 w-full">
-                <h3 className="text-lg font-semibold text-[#93b5ff] mb-6">
+                <h3 className="text-lg font-semibold text-[#73DBFF] mb-6">
                   {t("home.hero.achieved")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -64,7 +64,7 @@ export default async function HomePage({
                     <p className="text-white/85 leading-relaxed">
                       {t("home.hero.achievement1")}
                       <br />
-                      <span className="text-[#93b5ff] font-mono text-sm">
+                      <span className="text-[#73DBFF] font-mono text-sm">
                         {t("home.hero.achievement1Value")}
                       </span>
                       <br />
@@ -94,7 +94,7 @@ export default async function HomePage({
             {/* 技术演化路径 - 简化版 */}
             <div className="max-w-3xl mx-auto mb-12">
               <div className="inline-block bg-[#002244]/50 border border-[#4169E1]/30 rounded-xl p-6 w-full">
-                <h3 className="text-base font-semibold text-[#93b5ff] mb-3">
+                <h3 className="text-base font-semibold text-[#73DBFF] mb-3">
                   {t("home.techEvolution.title")}
                 </h3>
                 <p className="text-white/85 leading-relaxed text-sm mb-4">
@@ -102,7 +102,7 @@ export default async function HomePage({
                 </p>
                 <Link
                   href={`/${validLocale}/patents#evolution-path`}
-                  className="inline-flex items-center gap-2 text-[#93b5ff] hover:text-[#b8d4ff] text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#93DBFF] text-sm font-medium transition-colors"
                 >
                   {t("home.techEvolution.viewFullPath")}
                   <ArrowRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default async function HomePage({
                 size="lg"
                 variant="outline"
                 asChild
-                className="gap-2 text-white border-[#93b5ff]/80 bg-transparent hover:bg-white/10 w-full sm:w-auto min-h-[44px]"
+                className="gap-2 text-white border-[#73DBFF]/80 bg-transparent hover:bg-white/10 w-full sm:w-auto min-h-[44px]"
               >
                 <Link href={`/${validLocale}/cooperation`}>
                   {t("home.hero.projectCooperation")}
@@ -226,7 +226,7 @@ export default async function HomePage({
           <div className="space-y-6">
             <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
               <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-sky-600" />
+                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">
@@ -240,7 +240,7 @@ export default async function HomePage({
 
             <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
               <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-sky-600" />
+                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">
@@ -254,7 +254,7 @@ export default async function HomePage({
 
             <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
               <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-sky-600" />
+                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
                 <h3 className="font-semibold text-slate-900 mb-2">

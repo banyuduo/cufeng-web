@@ -60,8 +60,8 @@ export function PageHero({
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
-                  ? "bg-[#002244]/50 text-[#93b5ff] border-[#4169E1]/40"
-                  : "bg-sky-100 text-sky-700 border-sky-200"
+                  ? "bg-[#002244]/50 text-[#73DBFF] border-[#4169E1]/40"
+                  : "bg-sky-100 text-[#0F2A5C] border-sky-200"
               }`}
             >
               {badge}
@@ -77,7 +77,7 @@ export function PageHero({
           {tagline && (
             <p
               className={`text-base sm:text-xl mb-2 break-words ${
-                isDark ? "text-[#93b5ff] font-semibold" : "text-sky-600"
+                isDark ? "text-[#73DBFF] font-semibold" : "text-[#73DBFF]"
               }`}
             >
               {tagline}

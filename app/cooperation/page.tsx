@@ -56,7 +56,7 @@ export default async function CooperationPage({
                 <br />
                 {t("cooperation.platform.content3")}
               </p>
-              <p className="text-slate-700 italic border-l-4 border-sky-600 pl-6 py-2">
+              <p className="text-slate-700 italic border-l-4 border-[#0F2A5C] pl-6 py-2">
                 {t("cooperation.platform.content4")}
               </p>
               <p>
@@ -84,7 +84,7 @@ export default async function CooperationPage({
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
-              <div className="h-1 w-12 bg-sky-600 mb-6"></div>
+              <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.research")}
                 <strong className="text-slate-900 font-medium"> {t("cooperation.audience.researchBold")}</strong>
@@ -92,7 +92,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
-              <div className="h-1 w-12 bg-sky-600 mb-6"></div>
+              <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.industry")}
                 <strong className="text-slate-900 font-medium"> {t("cooperation.audience.industryBold")}</strong>
@@ -100,7 +100,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
-              <div className="h-1 w-12 bg-sky-600 mb-6"></div>
+              <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.tech")}
                 <strong className="text-slate-900 font-medium"> {t("cooperation.audience.techBold")}</strong>
@@ -108,7 +108,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="bg-white p-8 rounded-lg border border-slate-200 hover:border-sky-300 transition-colors">
-              <div className="h-1 w-12 bg-sky-600 mb-6"></div>
+              <div className="h-1 w-12 bg-[#0F2A5C] mb-6"></div>
               <p className="text-slate-700 leading-relaxed font-light text-sm">
                 {t("cooperation.audience.investor")}
                 <strong className="text-slate-900 font-medium"> {t("cooperation.audience.investorBold")}</strong>
@@ -190,7 +190,7 @@ export default async function CooperationPage({
                 <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.techContact")}</div>
                 <a
                   href="mailto:wangbo@tospike.com"
-                  className="text-slate-900 font-light text-lg hover:text-sky-600 transition-colors font-mono"
+                  className="text-slate-900 font-light text-lg hover:text-[#73DBFF] transition-colors font-mono"
                 >
                   wangbo@tospike.com
                 </a>
@@ -205,7 +205,7 @@ export default async function CooperationPage({
                 <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.phone")}</div>
                 <a
                   href="tel:15305191423"
-                  className="text-slate-900 font-light text-lg hover:text-sky-600 transition-colors"
+                  className="text-slate-900 font-light text-lg hover:text-[#73DBFF] transition-colors"
                 >
                   153 0519 1423
                 </a>
