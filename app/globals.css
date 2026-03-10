@@ -44,6 +44,15 @@
   --page-bg-light: hsl(210 40% 98%); /* slate-50 */
   --hero-gradient-dark: linear-gradient(to bottom, hsl(222 47% 11%), hsl(222 47% 14%), hsl(222 47% 11%));
   --hero-gradient-light: linear-gradient(to bottom, hsl(204 100% 98%), hsl(0 0% 100%));
+
+  /* 首页深蓝配色 - 统一深色页面背景与底色 */
+  --page-dark-base: #001a33;
+  --page-dark-card: #002244;
+  --page-dark-card-hover: #003366;
+  --page-dark-accent: #4169E1;
+  --page-dark-accent-light: #93b5ff;
+  --page-dark-gradient: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%);
+  --page-dark-hero-gradient: linear-gradient(to bottom, #001a33 0%, #002244 25%, #003366 50%, #002244 75%, #001a33 100%);
 }
 
 .dark {
@@ -136,6 +145,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-page-bg-dark: var(--page-bg-dark);
   --color-page-bg-light: var(--page-bg-light);
+  --color-page-dark-base: var(--page-dark-base);
+  --color-page-dark-card: var(--page-dark-card);
+  --color-page-dark-accent: var(--page-dark-accent);
+  --color-page-dark-accent-light: var(--page-dark-accent-light);
 }
 
 @layer base {

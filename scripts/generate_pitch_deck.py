@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
 簇锋科技 (ToSpike) 融资路演 PPT 生成脚本
-借鉴 簇锋科技 融资路演内容纲要.docx 大纲
+文字大纲：完全取自 PPT files/簇锋科技融资路演PPT.pptx
+设计风格：完全对齐 PPT files/20260305 公司宣传ppt 2纯净版.svg
 运行: python scripts/generate_pitch_deck.py
-输出: PPT files/簇锋科技融资路演PPT.pptx
+输出: PPT files/簇锋科技融资路演PPT - 测试.pptx
 """
+from ppt_content import FOOTER, SLIDES
 
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -23,22 +25,38 @@ try:
 except ImportError:
     HAS_MATPLOTLIB = False
 
-# 配色（参考 20260305 公司宣传ppt pdf版：深灰核心页 + 白详情页 + 亮蓝强调）
-BG_DARK = RGBColor(0x2b, 0x2b, 0x2b)     # 核心页深灰背景 #2B2B2B
-BG_LIGHT = RGBColor(0xff, 0xff, 0xff)    # 详情页白色背景
-TEXT_DARK = RGBColor(0x1e, 0x29, 0x3b)   # 深色文字
-TEXT_BODY = RGBColor(0x47, 0x56, 0x6b)   # 正文灰
-TEXT_MUTED = RGBColor(0x94, 0xa3, 0xb8)  # 次要文字
-TEXT_ON_DARK = RGBColor(0xff, 0xff, 0xff)  # 深色背景上的白字
-ACCENT_BLUE = RGBColor(0x00, 0x7a, 0xff)  # 强调色亮蓝 #007AFF
-ACCENT_HIGHLIGHT = RGBColor(0x00, 0x7a, 0xff)  # 与 ACCENT_BLUE 统一
-LINE_COLOR = RGBColor(0xe2, 0xe8, 0xf0)  # 分隔线
-WATERMARK = RGBColor(0x3d, 0x3d, 0x3d)   # 深色页水印
-ACCENT_RED = RGBColor(0xdc, 0x26, 0x26)  # 红框：融资第一优先级
-FONT_TITLE = "Source Han Sans CN"         # 思源黑体（标题 Bold 32pt）
-FONT_BODY = "Source Han Sans CN"          # 思源黑体（正文 Regular 16pt）
-FONT_NUM = "Arial"                        # 数字用 Arial
-FONT_MONO = "Consolas"                    # 技术参数等宽
+# 配色（完全对齐 20260305 公司宣传ppt 2纯净版.svg）
+SVG_BLUE = RGBColor(0x02, 0x3b, 0x99)    # #023B99 主色深蓝
+SVG_WHITE = RGBColor(0xff, 0xff, 0xff)    # #FFFFFF 白色
+SVG_BG = RGBColor(0xf9, 0xfa, 0xfc)      # #F9FAFC 详情页浅灰背景
+SVG_GRAY = RGBColor(0x66, 0x66, 0x66)    # #666666 正文灰 st20
+SVG_GRAY_LIGHT = RGBColor(0x80, 0x80, 0x80)  # #808080 次要文字 st6
+SVG_ACCENT = RGBColor(0x73, 0xdb, 0xff)  # #73DBFF 强调色 st10
+BG_DARK = RGBColor(0x02, 0x3b, 0x99)
+BG_DARK_CARD = RGBColor(0x02, 0x3b, 0x99)
+BG_LIGHT = RGBColor(0xf9, 0xfa, 0xfc)
+TEXT_DARK = RGBColor(0x02, 0x3b, 0x99)
+TEXT_BODY = RGBColor(0x66, 0x66, 0x66)
+TEXT_MUTED = RGBColor(0x80, 0x80, 0x80)
+TEXT_ON_DARK = RGBColor(0xff, 0xff, 0xff)
+ACCENT_BLUE = RGBColor(0x73, 0xdb, 0xff)
+ACCENT_HIGHLIGHT = RGBColor(0x73, 0xdb, 0xff)
+LINE_COLOR = RGBColor(0xe2, 0xe8, 0xf0)
+LINE_DARK = RGBColor(0x33, 0x33, 0x33)
+WATERMARK = RGBColor(0x02, 0x3b, 0x99)
+ACCENT_RED = RGBColor(0xdc, 0x26, 0x26)
+FRAME_ACCENT = RGBColor(0x73, 0xdb, 0xff)
+# 字体（SVG: FZLTH6K/FZLTH4K 方正兰亭黑, Gotham-Bold/GothamBook, ArialMT）
+FONT_TITLE = "FZLanTingHei-R-GBK"         # 方正兰亭黑 Bold 对应 FZLTH6K
+FONT_BODY = "FZLanTingHei-R-GBK"         # 方正兰亭黑 Regular 对应 FZLTH4K
+FONT_NUM = "Arial"                        # ArialMT
+FONT_MONO = "Consolas"
+# SVG 资源路径（从 20260305 公司宣传ppt 2纯净版.svg 提取）
+PPT_FILES_DIR = os.path.join(os.path.dirname(__file__), "..", "PPT files")
+SVG_ASSETS_DIR = os.path.join(PPT_FILES_DIR, "svg_assets")
+SVG_LOGO_PATH = os.path.join(SVG_ASSETS_DIR, "logo_banner.jpg")
+SVG_PRODUCT_PATH = os.path.join(SVG_ASSETS_DIR, "product_image.jpg")
+SVG_TECH_BG_PATH = os.path.join(SVG_ASSETS_DIR, "tech_background.jpg")
 
 SLIDE_WIDTH = Inches(13.333)
 SLIDE_HEIGHT = Inches(7.5)
@@ -47,27 +65,49 @@ LINE_SPACING = 1.2   # 1.2 倍行高
 
 
 def apply_title_font(p, size=32):
-    """标题：思源黑体 Bold"""
-    try:
-        p.font.name = FONT_TITLE
-    except Exception:
-        p.font.name = "Microsoft YaHei"
+    """标题：方正兰亭黑 Bold（SVG FZLTH6K st18 约60px）"""
+    for fn in (FONT_TITLE, "FZLanTingHeiS-R-GB", "Microsoft YaHei"):
+        try:
+            p.font.name = fn
+            break
+        except Exception:
+            pass
     p.font.size = Pt(size)
     p.font.bold = True
 
 
 def apply_body_font(p, size=16):
-    """正文：思源黑体 Regular，1.2 倍行高"""
-    try:
-        p.font.name = FONT_BODY
-    except Exception:
-        p.font.name = "Microsoft YaHei"
+    """正文：方正兰亭黑 Regular（SVG FZLTH4K st22 约40px）"""
+    for fn in (FONT_BODY, "FZLanTingHeiS-R-GB", "Microsoft YaHei"):
+        try:
+            p.font.name = fn
+            break
+        except Exception:
+            pass
     p.font.size = Pt(size)
     p.font.bold = False
     try:
-        p.paragraph_format.line_spacing = LINE_SPACING  # 1.2 倍行高
+        p.paragraph_format.line_spacing = LINE_SPACING
     except Exception:
         pass
+
+
+def add_svg_top_bar(slide, height_inch=0.5):
+    """参考 SVG：顶部 #023B99 深蓝条（先添加以置于底层）"""
+    bar = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0), Inches(0),
+        Inches(13.333), Inches(height_inch))
+    bar.fill.solid()
+    bar.fill.fore_color.rgb = SVG_BLUE
+    bar.line.fill.background()
+
+
+def add_svg_logo(slide, left=0.5, top=0.1, width=2.5, height=None):
+    """在幻灯片上添加参考版 LOGO"""
+    if os.path.exists(SVG_LOGO_PATH):
+        h = height or width * (414 / 736)  # logo 原始比例
+        pic = slide.shapes.add_picture(SVG_LOGO_PATH, Inches(left), Inches(top), Inches(width), Inches(h))
+        return pic
+    return None
 
 
 def apply_num_font(p):
@@ -85,19 +125,37 @@ def set_slide_background(slide, color):
     fill.fore_color.rgb = color
 
 
-def add_line(slide, x1, y1, x2, y2, color=LINE_COLOR):
+def add_line(slide, x1, y1, x2, y2, color=LINE_COLOR, width=0.5):
     line = slide.shapes.add_connector(MSO_CONNECTOR_TYPE.STRAIGHT,
         Inches(x1), Inches(y1), Inches(x2), Inches(y2))
     line.line.color.rgb = color
-    line.line.width = Pt(0.5)
+    line.line.width = Pt(width)
+
+
+def add_tech_corner_frame(slide, color=FRAME_ACCENT, corner_len=0.4):
+    """Deep-Tech 科技感四角边框：L 形角标"""
+    w, h = 13.333, 7.5
+    margin = 0.3
+    # 左上
+    add_line(slide, margin, margin + corner_len, margin, margin, color=color, width=1)
+    add_line(slide, margin, margin, margin + corner_len, margin, color=color, width=1)
+    # 右上
+    add_line(slide, w - margin - corner_len, margin, w - margin, margin, color=color, width=1)
+    add_line(slide, w - margin, margin, w - margin, margin + corner_len, color=color, width=1)
+    # 左下
+    add_line(slide, margin, h - margin - corner_len, margin, h - margin, color=color, width=1)
+    add_line(slide, margin, h - margin, margin + corner_len, h - margin, color=color, width=1)
+    # 右下
+    add_line(slide, w - margin - corner_len, h - margin, w - margin, h - margin, color=color, width=1)
+    add_line(slide, w - margin, h - margin - corner_len, w - margin, h - margin, color=color, width=1)
 
 
 def add_footer(slide, is_dark=False):
-    """底部导航：NanJing Cu Feng Mechanical & Electrical Technology | Four-Stage Path"""
+    """底部导航（取自原 PPT 文字）"""
     foot = slide.shapes.add_textbox(Inches(MARGIN), Inches(7.15), Inches(12), Inches(0.25))
     tf = foot.text_frame
     p = tf.paragraphs[0]
-    p.text = "NanJing Cu Feng Mechanical & Electrical Technology | Four-Stage Path"
+    p.text = FOOTER
     p.font.size = Pt(8)
     p.font.color.rgb = TEXT_MUTED if not is_dark else RGBColor(0x99, 0x99, 0x99)
     p.alignment = PP_ALIGN.CENTER
@@ -117,7 +175,7 @@ def add_pdf_header_footer(slide, page_label=None, is_dark=False):
 
 
 def add_title_box(slide, title, y=1.0, font_size=32, is_dark=False):
-    box = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(13.333 - 2 * MARGIN), Inches(0.9))
+    box = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(13.333 - 2 * MARGIN), Inches(0.85))
     tf = box.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
@@ -127,12 +185,13 @@ def add_title_box(slide, title, y=1.0, font_size=32, is_dark=False):
 
 
 def add_content_slide(prs, title, blocks, page_label=None, title_font=32, body_font=16):
-    """通用内容页：思源黑体标题32pt + 正文16pt，1.2倍行高，100px边距"""
+    """通用内容页：对齐 SVG 纯净版 — #F9FAFC 背景 + 顶部蓝条 + 方正兰亭黑"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide, page_label)
-    add_title_box(slide, title, font_size=title_font)
-    add_line(slide, MARGIN, 1.7, 13.333 - MARGIN, 1.7)
+    add_title_box(slide, title, y=0.55, font_size=title_font)
+    add_line(slide, MARGIN, 1.25, 13.333 - MARGIN, 1.25)
     y = 1.9
     for b in blocks:
         if "title" in b:
@@ -156,6 +215,129 @@ def add_content_slide(prs, title, blocks, page_label=None, title_font=32, body_f
     return slide
 
 
+def gen_sp2_sp3_atomic_bonding_img():
+    """生成 sp²-sp³ 原子级键合结构图（基于用户 SVG：六边形 sp2 + 圆形 sp3 + 共价键桥接）
+    配色符合宣传册深蓝色调 #003366 / #00AEEF"""
+    if not HAS_MATPLOTLIB:
+        return None
+    # 深蓝配色
+    STROKE = '#00AEEF'   # 亮蓝描边（与宣传册 #00b4d8 接近）
+    FILL_SP3 = '#003366'  # sp3 金刚石深蓝填充
+    fig, ax = plt.subplots(figsize=(5, 2.5))
+    fig.patch.set_facecolor('#0a1628')
+    ax.set_facecolor('#0a1628')
+    ax.set_xlim(0, 400)
+    ax.set_ylim(0, 200)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    ax.invert_yaxis()
+    # sp² 结构（石墨烯六边形）path: M50 100 L70 70 L110 70 L130 100 L110 130 L70 130 Z
+    hex_x = [50, 70, 110, 130, 110, 70, 50]
+    hex_y = [100, 70, 70, 100, 130, 130, 100]
+    ax.plot(hex_x, hex_y, color=STROKE, linewidth=2.5, zorder=2)
+    ax.fill(hex_x, hex_y, fill=False)
+    # sp³ 结构（金刚石圆形）
+    circle = plt.Circle((200, 100), 30, fill=True, facecolor=FILL_SP3, edgecolor=STROKE, linewidth=2)
+    ax.add_patch(circle)
+    # 化学键合桥梁（虚线）
+    ax.plot([130, 170], [100, 100], color=STROKE, linewidth=4, linestyle=(0, (4, 4)), zorder=1)
+    # 标签（深蓝背景用浅色文字）
+    ax.text(70, 160, 'sp² 导电/导热网', fontsize=11, color='#f5f5f5', ha='center')
+    ax.text(200, 160, 'sp³ 刚性骨架', fontsize=11, color='#f5f5f5', ha='center')
+    ax.text(150, 85, '共价键桥接', fontsize=10, color=STROKE, ha='center', fontweight='bold')
+    plt.tight_layout()
+    path = os.path.join(tempfile.gettempdir(), 'tospike_sp2_sp3_atomic.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='#0a1628')
+    plt.close()
+    return path
+
+
+def gen_three_stage_rocket_img():
+    """三级火箭商业模型图：P0→P1→P2 层级递进，配色体现估值路径"""
+    if not HAS_MATPLOTLIB:
+        return None
+    fig, ax = plt.subplots(figsize=(6, 3.5))
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 6)
+    ax.axis('off')
+    # P0 生存 (#003366) -> P1 估值 (#004488) -> P2 护城河 (#0055aa)
+    boxes = [
+        (2, 4, 2, 1.2, "P0 生存\n线圈/金刚石铜", "#003366"),
+        (5, 4, 2, 1.2, "P1 估值\n柔性垫片/不粘锅授权", "#004488"),
+        (8, 4, 2, 1.2, "P2 护城河\n固态电池/量子平台", "#0055aa"),
+    ]
+    for x, y, w, h, text, color in boxes:
+        from matplotlib.patches import FancyBboxPatch
+        box = FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02", 
+                             facecolor=color, edgecolor='#00AEEF', linewidth=2)
+        ax.add_patch(box)
+        ax.text(x + w/2, y + h/2, text, ha='center', va='center', fontsize=10, 
+                color='white', fontweight='bold')
+    # 箭头与标签（P0→P1→P2）
+    ax.annotate('', xy=(5, 4.6), xytext=(4, 4.6), arrowprops=dict(arrowstyle='->', color='#00AEEF', lw=2))
+    ax.text(4.5, 4.9, '产生现金流', fontsize=9, ha='center', color='#1e293b')
+    ax.annotate('', xy=(8, 4.6), xytext=(7, 4.6), arrowprops=dict(arrowstyle='->', color='#00AEEF', lw=2))
+    ax.text(7.5, 4.9, '技术平移', fontsize=9, ha='center', color='#1e293b')
+    plt.tight_layout()
+    path = os.path.join(tempfile.gettempdir(), 'tospike_three_stage_rocket.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='white')
+    plt.close()
+    return path
+
+
+def gen_blackbox_flowchart_img():
+    """黑盒工序流程图：Fabless 模式下 IP 保护，内部核心 vs 外部协作（LR 布局）"""
+    if not HAS_MATPLOTLIB:
+        return None
+    from matplotlib.patches import FancyBboxPatch
+    fig, ax = plt.subplots(figsize=(9, 3.2))
+    ax.set_xlim(0, 11)
+    ax.set_ylim(0, 3.5)
+    ax.axis('off')
+    # 簇锋内部实验室（黑盒区域）
+    inner_box = FancyBboxPatch((0.1, 0.8), 3.8, 1.8, boxstyle="round,pad=0.05",
+                               facecolor='#fff8f5', edgecolor='#00AEEF', linewidth=2)
+    ax.add_patch(inner_box)
+    ax.text(2.0, 0.4, '簇锋内部实验室（黑盒区域）', fontsize=10, ha='center', fontweight='bold', color='#003366')
+    # 内部流程：原料采购 -> 核心粉末改性 -> 专利包衣处理
+    steps_inner = [(0.4, 1.5, "原料\n采购"), (1.4, 1.5, "核心粉末\n改性"), (2.4, 1.5, "专利包衣\n处理")]
+    for i, (x, y, t) in enumerate(steps_inner):
+        fc = '#ff9966' if i >= 1 else '#e8f4fd'
+        ec = '#333333' if i >= 1 else '#94a3b8'
+        box = FancyBboxPatch((x, y-0.35), 0.85, 0.7, boxstyle="round,pad=0.02", facecolor=fc, edgecolor=ec, linewidth=1)
+        ax.add_patch(box)
+        ax.text(x+0.425, y, t, ha='center', va='center', fontsize=8)
+        if i < 2:
+            ax.annotate('', xy=(x+0.95, y), xytext=(x+0.9, y), arrowprops=dict(arrowstyle='->', color='#333', lw=1))
+    # 输出改性母料 ->
+    ax.annotate('', xy=(4.1, 1.5), xytext=(3.35, 1.5), arrowprops=dict(arrowstyle='->', color='#00AEEF', lw=2))
+    ax.text(3.7, 1.15, '输出改性母料', fontsize=8, ha='center', color='#003366')
+    # 外部协作
+    outer_box = FancyBboxPatch((4.3, 0.8), 4.0, 1.8, boxstyle="round,pad=0.05",
+                               facecolor='#f8fafc', edgecolor='#94a3b8', linewidth=1.5)
+    ax.add_patch(outer_box)
+    ax.text(6.3, 0.4, '外部协作', fontsize=10, ha='center', color='#64748b')
+    steps_outer = [(4.7, 1.5, "外协\n代工厂"), (5.7, 1.5, "真空钎焊\n/成型"), (6.7, 1.5, "精密机\n加工")]
+    for i, (x, y, t) in enumerate(steps_outer):
+        box = FancyBboxPatch((x, y-0.35), 0.85, 0.7, boxstyle="round,pad=0.02", facecolor='#e2e8f0', edgecolor='#94a3b8', linewidth=1)
+        ax.add_patch(box)
+        ax.text(x+0.425, y, t, ha='center', va='center', fontsize=8)
+        if i < 2:
+            ax.annotate('', xy=(x+0.95, y), xytext=(x+0.9, y), arrowprops=dict(arrowstyle='->', color='#333', lw=1))
+    # 送回成品 ->
+    ax.annotate('', xy=(8.5, 1.5), xytext=(7.6, 1.5), arrowprops=dict(arrowstyle='->', color='#00AEEF', lw=2))
+    ax.text(8.05, 1.15, '送回成品', fontsize=8, ha='center', color='#003366')
+    # 簇锋内部质检
+    box_end = FancyBboxPatch((8.7, 1.15), 1.8, 0.7, boxstyle="round,pad=0.02", facecolor='#e8f4fd', edgecolor='#00AEEF', linewidth=1)
+    ax.add_patch(box_end)
+    ax.text(9.6, 1.5, '簇锋内部质检', ha='center', va='center', fontsize=9)
+    plt.tight_layout()
+    path = os.path.join(tempfile.gettempdir(), 'tospike_blackbox_flow.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='white')
+    plt.close()
+    return path
+
+
 def gen_phonon_comparison_img():
     """生成声子传输对比图：左灰色混乱散射，右蓝色平滑有序"""
     if not HAS_MATPLOTLIB:
@@ -175,7 +357,7 @@ def gen_phonon_comparison_img():
     # 右：ToSpike，平滑有序
     for i in range(8):
         y = 0.2 + i * 0.1
-        ax2.arrow(0.15, y, 0.7, 0, head_width=0.02, head_length=0.05, fc='#00b4d8', ec='#0e74c6', lw=1.2)
+        ax2.arrow(0.15, y, 0.7, 0, head_width=0.02, head_length=0.05, fc='#00b4d8', ec='#0e7490', lw=1.2)
     ax2.set_xlim(0, 1)
     ax2.set_ylim(0, 1)
     ax2.set_aspect('equal')
@@ -184,6 +366,86 @@ def gen_phonon_comparison_img():
     plt.tight_layout()
     path = os.path.join(tempfile.gettempdir(), 'tospike_phonon.png')
     fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='white')
+    plt.close()
+    return path
+
+
+def gen_trend_chart_img():
+    """行业趋势/痛点图：AI芯片热流密度 vs 传统材料极限（深色背景 #00AEEF 风格）"""
+    if not HAS_MATPLOTLIB:
+        return None
+    fig, ax = plt.subplots(figsize=(6, 3))
+    fig.patch.set_facecolor('#0a1628')
+    ax.set_facecolor('#0a1628')
+    ax.set_xlim(0, 600)
+    ax.set_ylim(0, 300)
+    ax.invert_yaxis()
+    ax.axis('off')
+    # 坐标轴
+    ax.plot([50, 550], [250, 250], color='#FFFFFF', linewidth=2)
+    ax.plot([50, 50], [250, 50], color='#FFFFFF', linewidth=2)
+    # 传统材料天花板 (铜/铝)
+    ax.plot([50, 550], [180, 180], color='#FF0000', linewidth=2, linestyle='--')
+    ax.text(420, 170, '传统金属散热极限 (300-400W/cm²)', fontsize=10, color='#FF0000')
+    # AI芯片热流密度增长曲线 (指数型攀升)
+    curve_x = np.linspace(50, 550, 100)
+    curve_y = 230 - 190 * ((curve_x - 50) / 500) ** 1.5
+    ax.plot(curve_x, curve_y, color='#FFFFFF', linewidth=3)
+    ax.text(450, 110, 'AI 芯片功耗需求', fontsize=12, color='#FFFFFF')
+    # 簇锋方案覆盖区
+    rect = plt.Rectangle((250, 50), 300, 130, facecolor='rgba(0,174,239,0.2)', edgecolor='#00AEEF', linewidth=1)
+    ax.add_patch(rect)
+    ax.text(400, 70, '簇锋 sp²-sp³ 覆盖区 (>1000W/mK)', fontsize=12, color='#00AEEF', fontweight='bold', ha='center')
+    # 时间轴刻度
+    ax.text(50, 270, '2020 (A100)', fontsize=10, color='#AAAAAA')
+    ax.text(250, 270, '2024 (B200)', fontsize=10, color='#AAAAAA')
+    ax.text(450, 270, '2026+ (Next Gen)', fontsize=10, color='#AAAAAA')
+    plt.tight_layout()
+    path = os.path.join(tempfile.gettempdir(), 'tospike_trend_chart.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='#0a1628')
+    plt.close()
+    return path
+
+
+def gen_tech_advantage_radar_img():
+    """技术优势对比雷达图：热导率/加工难度/轻量化/成本效率/界面热阻（深色背景 #00AEEF）"""
+    if not HAS_MATPLOTLIB:
+        return None
+    fig, ax = plt.subplots(figsize=(5, 4))
+    fig.patch.set_facecolor('#0a1628')
+    ax.set_facecolor('#0a1628')
+    ax.set_xlim(0, 500)
+    ax.set_ylim(0, 400)
+    ax.invert_yaxis()
+    ax.axis('off')
+    # 五边形顶点 (热导率, 加工难度, 轻量化, 成本效率, 界面热阻)
+    center = (250, 220)
+    vertices = [(250, 50), (430, 180), (360, 360), (140, 360), (70, 180)]
+    # 背景网格
+    for i, v in enumerate(vertices):
+        ax.plot([center[0], v[0]], [center[1], v[1]], color='#444444', linewidth=1)
+    inner = [(250, 100), (385, 197), (332, 315), (167, 315), (115, 197)]
+    ax.plot([p[0] for p in inner] + [inner[0][0]], [p[1] for p in inner] + [inner[0][1]], color='#333333', linewidth=1)
+    ax.plot([p[0] for p in vertices] + [vertices[0][0]], [p[1] for p in vertices] + [vertices[0][1]], color='#444444', linewidth=1)
+    # CVD金刚石 (红虚线)
+    cvd = [(250, 60), (300, 210), (280, 250), (160, 250), (100, 200), (250, 60)]
+    ax.fill([p[0] for p in cvd], [p[1] for p in cvd], facecolor='rgba(255,0,0,0.1)', edgecolor='none')
+    ax.plot([p[0] for p in cvd], [p[1] for p in cvd], color='#FF0000', linewidth=2, linestyle='--')
+    # 传统金刚石铜 (灰)
+    trad = [(250, 150), (340, 190), (310, 290), (190, 290), (160, 200), (250, 150)]
+    ax.fill([p[0] for p in trad], [p[1] for p in trad], facecolor='rgba(150,150,150,0.2)', edgecolor='#999999', linewidth=1)
+    # 簇锋方案 (亮蓝)
+    cufeng = [(250, 70), (410, 185), (350, 350), (150, 350), (85, 185), (250, 70)]
+    ax.fill([p[0] for p in cufeng], [p[1] for p in cufeng], facecolor='rgba(0,174,239,0.3)', edgecolor='#00AEEF', linewidth=3)
+    # 标签
+    ax.text(230, 40, '热导率 (TC)', fontsize=11, color='#FFFFFF')
+    ax.text(435, 185, '加工难度\n(近净成形)', fontsize=10, color='#FFFFFF', ha='left')
+    ax.text(365, 375, '轻量化', fontsize=11, color='#FFFFFF')
+    ax.text(80, 375, '成本效率', fontsize=11, color='#FFFFFF')
+    ax.text(10, 185, '界面热阻(低)', fontsize=11, color='#FFFFFF')
+    plt.tight_layout()
+    path = os.path.join(tempfile.gettempdir(), 'tospike_tech_radar.png')
+    fig.savefig(path, dpi=150, bbox_inches='tight', facecolor='#0a1628')
     plt.close()
     return path
 
@@ -206,8 +468,8 @@ def gen_radar_chart_img():
     diamond_sic = [65, 55, 50, 55, 50]
     diamond_sic += diamond_sic[:1]
     fig, ax = plt.subplots(figsize=(3.5, 3.5), subplot_kw=dict(projection='polar'))
-    ax.plot(angles, tospike, 'o-', linewidth=2, color='#007AFF', label='ToSpike全碳')
-    ax.fill(angles, tospike, alpha=0.25, color='#007AFF')
+    ax.plot(angles, tospike, 'o-', linewidth=2, color='#00b4d8', label='ToSpike全碳')
+    ax.fill(angles, tospike, alpha=0.25, color='#00b4d8')
     ax.plot(angles, diamond_cu, 'o-', linewidth=1.5, color='#64748b', label='金刚石铜')
     ax.fill(angles, diamond_cu, alpha=0.15, color='#94a3b8')
     ax.plot(angles, diamond_sic, 'o-', linewidth=1.5, color='#94a3b8', label='金刚石碳化硅')
@@ -237,518 +499,597 @@ def set_mono_font(p_or_run, size=10):
         p_or_run.font.size = Pt(size)
 
 
-def add_rect_card(slide, left, top, width, height, fill_color=WATERMARK, no_line=False):
-    """添加圆角矩形卡片背景"""
+def add_rect_card(slide, left, top, width, height, fill_color=None, no_line=False):
+    """添加圆角矩形卡片背景（SVG 纯净版：内容页用白底浅边）"""
+    if fill_color is None:
+        fill_color = SVG_WHITE  # 内容页默认白底，与 #F9FAFC 背景区分
     shape = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,
         Inches(left), Inches(top), Inches(width), Inches(height))
     shape.fill.solid()
     shape.fill.fore_color.rgb = fill_color
     if no_line:
-        shape.line.width = Pt(0)
+        shape.line.fill.background()
     else:
         shape.line.color.rgb = LINE_COLOR
-        shape.line.width = Pt(0.5)
+        shape.line.width = Pt(0.25 if fill_color == SVG_WHITE else 0.5)
     shape.adjustments[0] = 0.03
     return shape
 
 
 def add_cover_slide(prs):
-    """封面：深灰背景核心页"""
+    """Slide 1 封面 — 文字取自原 PPT，设计参考 SVG"""
+    c = SLIDES[0]
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_DARK)
-    add_pdf_header_footer(slide, is_dark=True)
-    # 主标题（思源黑体 Bold 32pt）
-    title = slide.shapes.add_textbox(Inches(MARGIN), Inches(2.2), Inches(13.333 - 2 * MARGIN), Inches(1.2))
+    add_footer(slide, is_dark=True)
+    if os.path.exists(SVG_LOGO_PATH):
+        slide.shapes.add_picture(SVG_LOGO_PATH, Inches(1.5), Inches(0.8), Inches(4.5), Inches(2.53))
+    title = slide.shapes.add_textbox(Inches(MARGIN), Inches(3.2), Inches(13.333 - 2 * MARGIN), Inches(1.0))
     tf = title.text_frame
     p = tf.paragraphs[0]
-    p.text = "簇锋科技 | ToSpike：sp²–sp³碳基界面工程平台"
-    apply_title_font(p, 32)
+    p.text = c["title"]
+    apply_title_font(p, 40)
     p.font.color.rgb = TEXT_ON_DARK
     p.alignment = PP_ALIGN.CENTER
-    # 副标题（亮蓝高亮）
-    sub = slide.shapes.add_textbox(Inches(MARGIN), Inches(3.5), Inches(13.333 - 2 * MARGIN), Inches(0.7))
+    sub = slide.shapes.add_textbox(Inches(MARGIN), Inches(4.2), Inches(13.333 - 2 * MARGIN), Inches(0.5))
     tf = sub.text_frame
     p = tf.paragraphs[0]
-    p.text = "Pre-A轮融资 | 800-1000万 | 10项发明专利"
-    apply_body_font(p, 22)
+    p.text = c["subtitle"]
+    apply_body_font(p, 16)
     p.font.bold = True
     p.font.color.rgb = ACCENT_HIGHLIGHT
     p.alignment = PP_ALIGN.CENTER
-    # 底部
+    loc = slide.shapes.add_textbox(Inches(MARGIN), Inches(4.7), Inches(13.333 - 2 * MARGIN), Inches(0.4))
+    tf = loc.text_frame
+    p = tf.paragraphs[0]
+    p.text = c["location"]
+    apply_body_font(p, 12)
+    p.font.color.rgb = SVG_GRAY_LIGHT
+    p.alignment = PP_ALIGN.CENTER
     foot = slide.shapes.add_textbox(Inches(MARGIN), Inches(5.2), Inches(13.333 - 2 * MARGIN), Inches(0.5))
     tf = foot.text_frame
     p = tf.paragraphs[0]
-    p.text = "座落于南京江北新区"
-    apply_body_font(p, 12)
-    p.font.color.rgb = RGBColor(0x99, 0x99, 0x99)
+    p.text = c["slogan"]
+    apply_body_font(p, 14)
+    p.font.color.rgb = SVG_GRAY_LIGHT
     p.alignment = PP_ALIGN.CENTER
     return slide
 
 
-def add_slide_opening(prs):
-    """开场页：算力革命的隐形瓶颈——散热（核心页深灰背景）"""
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
-    set_slide_background(slide, BG_DARK)
-    add_pdf_header_footer(slide, is_dark=True)
-    add_title_box(slide, "算力革命的隐形瓶颈——散热", font_size=32, is_dark=True)
-    add_line(slide, MARGIN, 1.65, 13.333 - MARGIN, 1.65)
-    add_line(slide, 6.5, 1.8, 6.5, 6.2)
-    # 左侧：芯片功耗密度趋势图占位（深色页用深色卡片）
-    add_rect_card(slide, MARGIN, 1.9, 5.5, 2.2, fill_color=RGBColor(0x3d, 0x3d, 0x3d))
-    left_ph = slide.shapes.add_textbox(Inches(MARGIN + 0.15), Inches(2.0), Inches(5.2), Inches(2.0))
-    tf = left_ph.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "芯片功耗密度趋势"
-    p.font.size = Pt(14)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "100 W/cm² → 1000+ W/cm²（持续攀升）"
-    p2.font.size = Pt(12)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(6)
-    p3 = tf.add_paragraph()
-    p3.text = "【插入：功耗密度随代际增长曲线图】"
-    p3.font.size = Pt(10)
-    p3.font.italic = True
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(8)
-    # 右侧：传统散热材料性能停滞图占位
-    add_rect_card(slide, 6.7, 1.9, 5.5, 2.2, fill_color=RGBColor(0x3d, 0x3d, 0x3d))
-    right_ph = slide.shapes.add_textbox(Inches(6.85), Inches(2.0), Inches(5.2), Inches(2.0))
-    tf = right_ph.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "传统散热材料性能停滞"
-    p.font.size = Pt(14)
-    p.font.bold = True
-    p.font.color.rgb = TEXT_MUTED
-    p2 = tf.add_paragraph()
-    p2.text = "铜、铝、金刚石铜——热导率长期徘徊"
-    p2.font.size = Pt(12)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(6)
-    p3 = tf.add_paragraph()
-    p3.text = "【插入：铜/铝/金刚石铜热导率对比图】"
-    p3.font.size = Pt(10)
-    p3.font.italic = True
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(8)
-    # 中间核心文案
-    add_rect_card(slide, MARGIN, 4.3, 13.333 - 2 * MARGIN, 1.4, fill_color=RGBColor(0x1a, 0x4d, 0x7a))
-    center = slide.shapes.add_textbox(Inches(MARGIN + 0.15), Inches(4.45), Inches(13.333 - 2 * MARGIN - 0.3), Inches(1.1))
-    tf = center.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "传统材料已到物理极限，簇锋用原子级界面工程打破这堵墙"
-    p.font.size = Pt(18)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p.alignment = PP_ALIGN.CENTER
-    return slide
-
-
-def add_slide_1_company(prs):
-    """第一部分：公司概况——三视觉卡片（面向投资人）"""
+def add_slide_2_opening(prs):
+    """Slide 2 算力革命的隐形瓶颈 — 文字取自原 PPT"""
+    c = SLIDES[1]
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "簇锋科技 | ToSpike：公司概况")
-    add_line(slide, 0.8, 1.65, 12.5, 1.65)
-    # 卡片1：技术定位
-    add_rect_card(slide, 0.8, 1.85, 3.8, 2.6)
-    c1 = slide.shapes.add_textbox(Inches(0.95), Inches(1.95), Inches(3.5), Inches(2.4))
-    tf = c1.text_frame
-    tf.word_wrap = True
+    add_title_box(slide, c["title"], y=0.55, font_size=26)
+    add_line(slide, MARGIN, 1.25, 13.333 - MARGIN, 1.25)
+    y = 1.5
+    for b in c["blocks"]:
+        if "heading" in b:
+            hbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.5))
+            tf = hbox.text_frame
+            p = tf.paragraphs[0]
+            p.text = b["heading"]
+            apply_title_font(p, 16)
+            p.font.color.rgb = ACCENT_BLUE
+            y += 0.55
+        for item in b.get("items", []):
+            tbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.6))
+            tf = tbox.text_frame
+            tf.word_wrap = True
+            p = tf.paragraphs[0]
+            p.text = item
+            apply_body_font(p, 12)
+            p.font.color.rgb = TEXT_BODY
+            y += 0.55
+        if "footer" in b:
+            fbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y + 0.2), Inches(12), Inches(0.6))
+            tf = fbox.text_frame
+            p = tf.paragraphs[0]
+            p.text = b["footer"]
+            apply_body_font(p, 12)
+            p.font.bold = True
+            p.font.color.rgb = TEXT_DARK
+            y += 0.8
+        y += 0.15
+    if os.path.exists(SVG_PRODUCT_PATH):
+        slide.shapes.add_picture(SVG_PRODUCT_PATH, Inches(7.5), Inches(2.0), Inches(5.2), Inches(2.9))
+    return slide
+
+
+def add_slide_3_company(prs):
+    """Slide 3 公司概况 — 文字取自原 PPT"""
+    c = SLIDES[2]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.5
+    for b in c["blocks"]:
+        hbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.45))
+        tf = hbox.text_frame
+        p = tf.paragraphs[0]
+        p.text = b["heading"]
+        apply_title_font(p, 14)
+        p.font.color.rgb = ACCENT_BLUE
+        y += 0.5
+        for item in b["items"]:
+            tbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.5))
+            tf = tbox.text_frame
+            tf.word_wrap = True
+            p = tf.paragraphs[0]
+            p.text = item
+            apply_body_font(p, 10)
+            p.font.color.rgb = TEXT_BODY
+            y += 0.45
+        y += 0.15
+    if os.path.exists(SVG_LOGO_PATH):
+        slide.shapes.add_picture(SVG_LOGO_PATH, Inches(10.5), Inches(1.6), Inches(2.2), Inches(1.24))
+    return slide
+
+
+def add_slide_4_stages(prs):
+    """Slide 4 从工程工具到物理平台 — 文字取自原 PPT"""
+    c = SLIDES[3]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55, font_size=24)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.6
+    stages = c["stages"]
+    for i, (stitle, sdesc) in enumerate(stages):
+        desc_box = slide.shapes.add_textbox(Inches(0.8), Inches(y), Inches(7.5), Inches(0.9))
+        tf = desc_box.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = sdesc
+        p.font.size = Pt(11)
+        p.font.color.rgb = TEXT_BODY
+        tag_w, tag_h = 2.8, 0.7
+        tag_x = 9.5
+        add_rect_card(slide, tag_x, y - 0.05, tag_w, tag_h, fill_color=RGBColor(0xe8, 0xf7, 0xfc), no_line=False)
+        tag_box = slide.shapes.add_textbox(Inches(tag_x + 0.1), Inches(y), Inches(tag_w - 0.2), Inches(0.6))
+        tf = tag_box.text_frame
+        p = tf.paragraphs[0]
+        p.text = stitle
+        p.font.size = Pt(10)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+        if i < len(stages) - 1:
+            add_line(slide, 0.8, y + 0.55, 12.5, y + 0.55, color=LINE_COLOR)
+        y += 1.2
+    path_label = slide.shapes.add_textbox(Inches(0.8), Inches(6.5), Inches(11.7), Inches(0.4))
+    tf = path_label.text_frame
     p = tf.paragraphs[0]
-    p.text = "技术定位"
-    p.font.size = Pt(14)
+    p.text = FOOTER
+    p.font.size = Pt(9)
+    p.font.color.rgb = TEXT_MUTED
+    return slide
+
+
+def add_slide_5_principle(prs):
+    """Slide 5 sp²–sp³原子级共价键合 — 文字取自原 PPT"""
+    c = SLIDES[4]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55, font_size=22)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    add_line(slide, 5.5, 1.5, 5.5, 6.2)
+    # 左侧：对比图
+    add_rect_card(slide, 0.8, 1.5, 4.5, 2.0)
+    left = slide.shapes.add_textbox(Inches(0.95), Inches(1.6), Inches(4.1), Inches(0.5))
+    tf = left.text_frame
+    p = tf.paragraphs[0]
+    p.text = c["left"]["title"]
+    p.font.size = Pt(11)
     p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "sp²–sp³ 原子级共价键合平台，从物理混合到化学焊接。依托活性熔固工艺，构建从金刚石工具到全碳复合材料的完整技术链路。"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(6)
-    # 卡片2：核心资产
-    add_rect_card(slide, 4.8, 1.85, 3.8, 2.6)
-    c2 = slide.shapes.add_textbox(Inches(4.95), Inches(1.95), Inches(3.5), Inches(2.4))
-    tf = c2.text_frame
-    tf.word_wrap = True
+    p.font.color.rgb = TEXT_MUTED
+    right = slide.shapes.add_textbox(Inches(0.95), Inches(2.0), Inches(4.1), Inches(0.5))
+    tf = right.text_frame
     p = tf.paragraphs[0]
-    p.text = "核心资产"
-    p.font.size = Pt(14)
+    p.text = c["left"]["right_title"]
+    p.font.size = Pt(11)
     p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "10 项发明专利"
-    p2.font.size = Pt(12)
-    p2.font.bold = True
-    p2.font.color.rgb = ACCENT_HIGHLIGHT
-    p2.space_before = Pt(6)
-    p3 = tf.add_paragraph()
-    p3.text = "体视热导率 ≥680 W/m·K  ·  可交付样品"
-    p3.font.size = Pt(11)
-    p3.font.bold = True
-    p3.font.color.rgb = ACCENT_HIGHLIGHT
-    set_mono_font(p3, 11)
-    p3.space_before = Pt(4)
-    p4 = tf.add_paragraph()
-    p4.text = "金刚石铜复合材料、柔性垫片、全碳平台均有样品"
-    p4.font.size = Pt(9)
-    p4.font.color.rgb = TEXT_BODY
-    p4.space_before = Pt(2)
-    # 卡片3：目标市场
-    add_rect_card(slide, 8.8, 1.85, 3.8, 2.6)
-    c3 = slide.shapes.add_textbox(Inches(8.95), Inches(1.95), Inches(3.5), Inches(2.4))
-    tf = c3.text_frame
-    tf.word_wrap = True
+    p.font.color.rgb = ACCENT_BLUE
+    sp2_sp3_path = gen_sp2_sp3_atomic_bonding_img()
+    if sp2_sp3_path and os.path.exists(sp2_sp3_path):
+        slide.shapes.add_picture(sp2_sp3_path, Inches(0.9), Inches(2.5), Inches(4.2), Inches(0.9))
+    # 右侧：要点
+    hl = slide.shapes.add_textbox(Inches(5.7), Inches(1.5), Inches(6.5), Inches(0.5))
+    tf = hl.text_frame
     p = tf.paragraphs[0]
-    p.text = "目标市场"
-    p.font.size = Pt(14)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "AI 芯片、功率半导体、固态电池、消费电子"
-    p2.font.size = Pt(11)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(6)
-    # 底部补充
-    foot = slide.shapes.add_textbox(Inches(0.8), Inches(4.7), Inches(11.7), Inches(1.8))
-    tf = foot.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "企业愿景"
+    p.text = c["highlight"]
     p.font.size = Pt(12)
     p.font.bold = True
     p.font.color.rgb = ACCENT_BLUE
-    p2 = tf.add_paragraph()
-    p2.text = "致力于成为客户理想的方案解决商，通过持续技术创新，为高功率密度热管理、新能源、固态电池等前沿领域提供突破性材料解决方案。"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(4)
+    y = 2.1
+    for pt in c["points"]:
+        pbox = slide.shapes.add_textbox(Inches(5.7), Inches(y), Inches(6.5), Inches(0.5))
+        tf = pbox.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = pt
+        p.font.size = Pt(10)
+        p.font.color.rgb = TEXT_BODY
+        y += 0.55
     return slide
 
 
-def add_slide_2_stages(prs):
-    """第二部分第1页：技术深化路径（四阶段演化）"""
+def add_slide_6_tech_compare(prs):
+    """Slide 6 全碳复合材料 vs 现有方案 — 含性能对比表，文字取自原 PPT"""
+    c = SLIDES[5]
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "从工程工具到物理平台——一条清晰的演化曲线")
-    add_line(slide, 0.8, 1.65, 12.5, 1.65)
-    stages = [
-        ("Stage 01 - 起点（工程工具）", "精密活性熔固钻石工具，建立极端工况下的界面连接与结构稳定性能力。"),
-        ("Stage 02 - 跃迁（功能材料）", "金刚石-铜复合散热基底，实现从工程工具向功能材料的跃迁。"),
-        ("Stage 03 - 平台（全碳体系）", "全碳复合功能材料，构建完全由碳体系组成的复合材料平台，引入内生应力调控。"),
-        ("Stage 04 - 平台延展", "固态电池骨架、先进封装散热、前沿探索（合作研究阶段）。"),
-    ]
-    y = 1.9
-    for stitle, sdesc in stages:
-        box = slide.shapes.add_textbox(Inches(0.8), Inches(y), Inches(11.7), Inches(0.9))
-        tf = box.text_frame
+    add_title_box(slide, c["title"], y=0.55, font_size=18)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    sub = slide.shapes.add_textbox(Inches(MARGIN), Inches(1.32), Inches(12), Inches(0.35))
+    tf = sub.text_frame
+    p = tf.paragraphs[0]
+    p.text = c["subtitle"]
+    p.font.size = Pt(9)
+    p.font.color.rgb = TEXT_MUTED
+    # 性能对比表
+    tbl = c["table"]
+    nrows = len(tbl["rows"]) + 1
+    ncols = len(tbl["headers"])
+    tshape = slide.shapes.add_table(nrows, ncols, Inches(0.8), Inches(1.7), Inches(11.7), Inches(2.8))
+    table = tshape.table
+    for col, h in enumerate(tbl["headers"]):
+        cell = table.cell(0, col)
+        cell.text = h
+        p = cell.text_frame.paragraphs[0]
+        p.font.size = Pt(9)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+    for row_idx, row in enumerate(tbl["rows"]):
+        for col_idx, val in enumerate(row):
+            cell = table.cell(row_idx + 1, col_idx)
+            cell.text = val
+            p = cell.text_frame.paragraphs[0]
+            p.font.size = Pt(8)
+            p.font.color.rgb = TEXT_BODY
+    # 底部说明
+    y = 4.6
+    for blk in c["blocks"]:
+        tbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+        tf = tbox.text_frame
         tf.word_wrap = True
         p = tf.paragraphs[0]
-        p.text = stitle
-        p.font.size = Pt(13)
+        p.text = blk
+        apply_body_font(p, 10)
+        p.font.color.rgb = TEXT_BODY
+        y += 0.45
+    fn = slide.shapes.add_textbox(Inches(MARGIN), Inches(5.5), Inches(12), Inches(0.9))
+    tf = fn.text_frame
+    tf.word_wrap = True
+    p = tf.paragraphs[0]
+    p.text = c["footnote"]
+    p.font.size = Pt(7)
+    p.font.color.rgb = TEXT_MUTED
+    return slide
+
+
+def add_slide_7_diamond_copper(prs):
+    """Slide 7 金刚石铜技术纵深 — 文字取自原 PPT"""
+    c = SLIDES[6]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.6
+    for item in c["items"]:
+        tbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.6))
+        tf = tbox.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = item
+        apply_body_font(p, 12)
+        p.font.color.rgb = TEXT_BODY
+        y += 0.75
+    return slide
+
+
+def add_slide_8_patent(prs):
+    """Slide 8 四层护城河矩阵 — 文字取自原 PPT"""
+    c = SLIDES[7]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55, font_size=20)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    cx, cy = 6.5, 4.0
+    add_line(slide, cx, 1.5, cx, 6.2)
+    add_line(slide, 0.8, cy, 12.5, cy)
+    positions = [(0.9, 1.6), (6.7, 1.6), (0.9, 4.1), (6.7, 4.1)]
+    for i, (pos, q) in enumerate(zip(positions, c["quadrants"])):
+        qbox = slide.shapes.add_textbox(Inches(pos[0]), Inches(pos[1]), Inches(5.4), Inches(2.0))
+        tf = qbox.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = q[0]
+        p.font.size = Pt(12)
         p.font.bold = True
         p.font.color.rgb = ACCENT_BLUE
         p2 = tf.add_paragraph()
-        p2.text = sdesc
-        p2.font.size = Pt(11)
+        p2.text = q[1]
+        p2.font.size = Pt(10)
         p2.font.color.rgb = TEXT_BODY
         p2.space_before = Pt(2)
-        if y > 1.9:
-            add_line(slide, 0.8, y - 0.05, 12.5, y - 0.05)
-        y += 1.1
+        p3 = tf.add_paragraph()
+        p3.text = q[2]
+        p3.font.size = Pt(9)
+        p3.font.color.rgb = TEXT_MUTED
+        p3.space_before = Pt(2)
+    foot = slide.shapes.add_textbox(Inches(MARGIN), Inches(6.4), Inches(12), Inches(0.4))
+    tf = foot.text_frame
+    p = tf.paragraphs[0]
+    p.text = c["footer"]
+    p.font.size = Pt(10)
+    p.font.bold = True
+    p.font.color.rgb = ACCENT_BLUE
     return slide
 
 
-def add_slide_3_principle(prs):
-    """核心技术原理页（最关键一页）：三点呈现 + 原子级共价桥接示意图"""
+def add_slide_9_placeholder(prs):
+    """Slide 9 空页/图表占位 — 原 PPT 此页无文字"""
+    c = SLIDES[8]
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
-    add_pdf_header_footer(slide, "CORE\nPRINCIPLE")
-    add_title_box(slide, "sp²–sp³原子级共价键合：从物理混合到化学焊接", font_size=20)
-    add_line(slide, 0.8, 1.65, 12.5, 1.65)
-    add_line(slide, 5.2, 1.8, 5.2, 6.2)
-    # 左侧：声子传输对比图（传统界面 vs ToSpike）
-    add_rect_card(slide, 0.8, 1.9, 4.2, 2.5)
-    phonon_path = gen_phonon_comparison_img()
-    if phonon_path and os.path.exists(phonon_path):
-        slide.shapes.add_picture(phonon_path, Inches(0.9), Inches(1.95), Inches(4.0), Inches(2.2))
-    else:
-        left_ph = slide.shapes.add_textbox(Inches(0.95), Inches(2.1), Inches(1.9), Inches(0.5))
-        tf = left_ph.text_frame
-        p = tf.paragraphs[0]
-        p.text = "传统界面，声子散射严重"
-        p.font.size = Pt(9)
-        p.font.color.rgb = TEXT_MUTED
-        right_ph = slide.shapes.add_textbox(Inches(2.95), Inches(2.1), Inches(1.9), Inches(0.5))
-        tf = right_ph.text_frame
-        p = tf.paragraphs[0]
-        p.text = "ToSpike共价键合，声子高速公路"
-        p.font.size = Pt(9)
-        p.font.color.rgb = ACCENT_HIGHLIGHT
-    cap = slide.shapes.add_textbox(Inches(0.95), Inches(4.25), Inches(3.9), Inches(0.35))
-    tf = cap.text_frame
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    ph = slide.shapes.add_textbox(Inches(4.0), Inches(3.0), Inches(5.3), Inches(1.0))
+    tf = ph.text_frame
     p = tf.paragraphs[0]
-    p.text = "声子传输效率从 40-60% 提升至 >90%"
-    p.font.size = Pt(10)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
+    p.text = c.get("placeholder", "【插入：图表或图片】")
+    p.font.size = Pt(14)
+    p.font.italic = True
+    p.font.color.rgb = TEXT_MUTED
     p.alignment = PP_ALIGN.CENTER
-    # 右侧：三点核心
-    points = [
-        ("① 区别于传统物理混合", "声子传输效率 > 90%，极低界面热阻。传统金刚石-铜仅 40%-60%。"),
-        ("② 可调控参数空间", "sp²/sp³ 比例、温度、压力三者实现材料性能精准定制。"),
-        ("③ 平台化能力", "同一套界面技术衍生多款产品：AI芯片散热垫片、固态电池骨架、金刚石厨具等。"),
-    ]
-    y = 1.9
-    for h, c in points:
-        hbox = slide.shapes.add_textbox(Inches(5.4), Inches(y), Inches(6.9), Inches(0.45))
-        tf = hbox.text_frame
+    return slide
+
+
+def add_slide_10_rocket(prs):
+    """Slide 10 三级火箭模式 — 含主表+金刚石铜产品矩阵，文字取自原 PPT"""
+    c = SLIDES[9]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55, font_size=18)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    tbl = c["table"]
+    nrows = len(tbl["rows"]) + 1
+    ncols = len(tbl["headers"])
+    tshape = slide.shapes.add_table(nrows, ncols, Inches(0.8), Inches(1.5), Inches(11.7), Inches(2.2))
+    table = tshape.table
+    for col, h in enumerate(tbl["headers"]):
+        cell = table.cell(0, col)
+        cell.text = h
+        p = cell.text_frame.paragraphs[0]
+        p.font.size = Pt(8)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+    for row_idx, row in enumerate(tbl["rows"]):
+        for col_idx, val in enumerate(row):
+            cell = table.cell(row_idx + 1, col_idx)
+            cell.text = val
+            p = cell.text_frame.paragraphs[0]
+            p.font.size = Pt(7)
+            p.font.color.rgb = TEXT_BODY
+    # 金刚石铜产品矩阵子表
+    if "subtable" in c:
+        st = c["subtable"]
+        st_title = slide.shapes.add_textbox(Inches(0.8), Inches(3.7), Inches(11.7), Inches(0.35))
+        tf = st_title.text_frame
         p = tf.paragraphs[0]
-        p.text = h
+        p.text = st.get("title", "金刚石铜产品矩阵")
+        p.font.size = Pt(9)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+        st_nrows = len(st["rows"]) + 1
+        st_ncols = len(st["headers"])
+        st_shape = slide.shapes.add_table(st_nrows, st_ncols, Inches(0.8), Inches(4.05), Inches(11.7), Inches(1.65))
+        st_table = st_shape.table
+        for col, h in enumerate(st["headers"]):
+            cell = st_table.cell(0, col)
+            cell.text = h
+            p = cell.text_frame.paragraphs[0]
+            p.font.size = Pt(8)
+            p.font.bold = True
+            p.font.color.rgb = ACCENT_BLUE
+        for row_idx, row in enumerate(st["rows"]):
+            for col_idx, val in enumerate(row):
+                cell = st_table.cell(row_idx + 1, col_idx)
+                cell.text = val
+                p = cell.text_frame.paragraphs[0]
+                p.font.size = Pt(7)
+                p.font.color.rgb = TEXT_BODY
+    foot = slide.shapes.add_textbox(Inches(MARGIN), Inches(5.9), Inches(12), Inches(0.4))
+    tf = foot.text_frame
+    p = tf.paragraphs[0]
+    p.text = c["footer"]
+    p.font.size = Pt(9)
+    p.font.bold = True
+    p.font.color.rgb = ACCENT_BLUE
+    return slide
+
+
+def add_slide_11_team(prs):
+    """Slide 11 团队 — 文字取自原 PPT"""
+    c = SLIDES[10]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55, font_size=20)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.6
+    for name, desc in c["members"]:
+        nbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+        tf = nbox.text_frame
+        p = tf.paragraphs[0]
+        p.text = name
         p.font.size = Pt(12)
         p.font.bold = True
-        p.font.color.rgb = ACCENT_HIGHLIGHT
-        y += 0.5
-        cbox = slide.shapes.add_textbox(Inches(5.4), Inches(y), Inches(6.9), Inches(0.9))
-        tf = cbox.text_frame
+        p.font.color.rgb = ACCENT_BLUE
+        y += 0.45
+        dbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.5))
+        tf = dbox.text_frame
         tf.word_wrap = True
         p = tf.paragraphs[0]
-        p.text = c
+        p.text = desc
         p.font.size = Pt(10)
         p.font.color.rgb = TEXT_BODY
+        y += 0.55
+    y += 0.2
+    gbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+    tf = gbox.text_frame
+    p = tf.paragraphs[0]
+    p.text = "治理机制"
+    p.font.size = Pt(12)
+    p.font.bold = True
+    p.font.color.rgb = ACCENT_BLUE
+    y += 0.45
+    for g in c["governance"]:
+        gb = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+        tf = gb.text_frame
+        p = tf.paragraphs[0]
+        p.text = g
+        p.font.size = Pt(10)
+        p.font.color.rgb = TEXT_BODY
+        y += 0.45
+    return slide
+
+
+def add_slide_12_funding(prs):
+    """Slide 12 融资需求 — 文字取自原 PPT"""
+    c = SLIDES[11]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.7
+    cards = [
+        ("融资金额", c["amount"]),
+        ("出让股份", c["equity"]),
+        ("估值逻辑", c["valuation"]),
+        ("核心逻辑", c["logic"]),
+    ]
+    for label, val in cards:
+        add_rect_card(slide, 0.8, y, 5.8, 0.9)
+        lbl = slide.shapes.add_textbox(Inches(0.95), Inches(y + 0.1), Inches(5.5), Inches(0.35))
+        tf = lbl.text_frame
+        p = tf.paragraphs[0]
+        p.text = label
+        p.font.size = Pt(11)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+        vbox = slide.shapes.add_textbox(Inches(0.95), Inches(y + 0.45), Inches(5.5), Inches(0.4))
+        tf = vbox.text_frame
+        p = tf.paragraphs[0]
+        p.text = val
+        p.font.size = Pt(12)
+        p.font.color.rgb = TEXT_BODY
         y += 1.05
-        if h != points[-1][0]:
-            add_line(slide, 5.4, y - 0.05, 12.5, y - 0.05)
+    return slide
+
+
+def add_slide_13_funding_details(prs):
+    """Slide 13 资金用途 — 文字取自原 PPT"""
+    c = SLIDES[12]
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, c["title"], y=0.55)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.6
+    for cat, items in c["items"]:
+        cbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+        tf = cbox.text_frame
+        p = tf.paragraphs[0]
+        p.text = cat
+        p.font.size = Pt(12)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+        y += 0.45
+        for it in items:
+            ibox = slide.shapes.add_textbox(Inches(MARGIN + 0.2), Inches(y), Inches(11.7), Inches(0.4))
+            tf = ibox.text_frame
+            tf.word_wrap = True
+            p = tf.paragraphs[0]
+            p.text = it
+            p.font.size = Pt(10)
+            p.font.color.rgb = TEXT_BODY
+            y += 0.4
         y += 0.15
     return slide
 
 
-def add_slide_4_tech_compare(prs):
-    """技术对比：无框表格 + 簇锋方案列蓝色高亮 + 雷达图"""
+def add_slide_14_vision(prs):
+    """Slide 14 合作愿景 — 文字取自原 PPT"""
+    c = SLIDES[13]
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "全碳复合材料 vs. 现有方案：性能代差与成本优势", font_size=32)
-    add_line(slide, MARGIN, 1.7, 13.333 - MARGIN, 1.7)
-    # 无框表格（移除表格线，簇锋方案列蓝色高亮）
-    rows = [
-        ["维度", "金刚石-铜", "金刚石-碳化硅", "簇锋方案"],
-        ["界面结合力", "物理浸润/微机械嵌合", "反应烧结(脆性)", "同质化共价键合界面(强韧)"],
-        ["声子输运效率", "40%-60%", "60%-75%", ">90%"],
-        ["热导率 (TC)", "450-600 W/m·K", "500-700 W/m·K", "800-1200+ W/m·K"],
-        ["密度", "~7.8(极重)", "~3.2(中等)", "~2.0(超轻)"],
-        ["比导热系数 (TC/ρ)", "~60-77", "~156-219", "~400-600"],
-        ["可靠性", "易永久变形", "易脆性断裂", "高模量+韧性骨架"],
-    ]
-    col_w = [1.8, 2.6, 2.6, 3.5]
-    rh = 0.4
-    sy, sx = 1.9, MARGIN
-    for ri, row in enumerate(rows):
-        for ci, cell in enumerate(row):
-            if ci >= len(col_w):
-                break
-            x = sx + sum(col_w[:ci])
-            # 簇锋方案列（ci==3）加浅蓝背景
-            if ci == 3:
-                add_rect_card(slide, x, sy + ri * rh, col_w[ci], rh, fill_color=RGBColor(0xe8, 0xf4, 0xfd), no_line=True)
-            box = slide.shapes.add_textbox(Inches(x + 0.05), Inches(sy + ri * rh + 0.05), Inches(col_w[ci] - 0.1), Inches(rh - 0.08))
-            tf = box.text_frame
+    add_title_box(slide, c["title"], y=0.55)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
+    y = 1.6
+    for title, items in c["sections"]:
+        tbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.4))
+        tf = tbox.text_frame
+        p = tf.paragraphs[0]
+        p.text = title
+        p.font.size = Pt(12)
+        p.font.bold = True
+        p.font.color.rgb = ACCENT_BLUE
+        y += 0.5
+        for it in items:
+            ibox = slide.shapes.add_textbox(Inches(MARGIN), Inches(y), Inches(12), Inches(0.5))
+            tf = ibox.text_frame
             tf.word_wrap = True
             p = tf.paragraphs[0]
-            p.text = cell
-            apply_body_font(p, 12)
-            if ri == 0:
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_BLUE if ci == 3 else TEXT_DARK
-            elif (ri == 2 or ri == 3 or ri == 5) and ci == 3:
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_HIGHLIGHT
-                set_mono_font(p, 12)
-            elif ri == 3 or ri == 5 or (ri == 2 and ci >= 1):
-                set_mono_font(p, 12)
-            elif ci == 3:
-                p.font.color.rgb = ACCENT_HIGHLIGHT
-            else:
-                p.font.color.rgb = TEXT_BODY if ci > 0 else TEXT_MUTED
-    # CTE 对比模块（无框）
-    cte_rows = [
-        ["材料", "CTE (×10⁻⁶/K)", "与芯片匹配度"],
-        ["硅芯片", "2.6", "—"],
-        ["传统金刚石铜", "6.5-8.0", "不匹配，易开裂"],
-        ["ToSpike全碳", "3.0-4.5（可调控）", "完美匹配，消除热应力"],
-    ]
-    cw = [2.0, 2.8, 1.8]
-    ch = 0.32
-    cy, cx = 4.5, 0.8
-    for ri, row in enumerate(cte_rows):
-        for ci, cell in enumerate(row):
-            if ci >= len(cw):
-                break
-            x = cx + sum(cw[:ci])
-            box = slide.shapes.add_textbox(Inches(x), Inches(cy + ri * ch), Inches(cw[ci] - 0.04), Inches(ch - 0.03))
-            tf = box.text_frame
-            tf.word_wrap = True
-            p = tf.paragraphs[0]
-            p.text = cell
-            p.font.size = Pt(10)
-            if ri == 0:
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_BLUE
-            elif ri == 3 and ci > 0:
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_HIGHLIGHT
-            else:
-                p.font.color.rgb = TEXT_BODY if ci > 0 else TEXT_MUTED
-    cte_note = slide.shapes.add_textbox(Inches(0.8), Inches(5.8), Inches(5.6), Inches(0.45))
-    tf = cte_note.text_frame
+            p.text = it
+            p.font.size = Pt(11)
+            p.font.color.rgb = TEXT_BODY
+            y += 0.5
+        y += 0.2
+    qbox = slide.shapes.add_textbox(Inches(MARGIN), Inches(5.0), Inches(12), Inches(1.2))
+    tf = qbox.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
-    p.text = "通过内生应力调控，实现CTE与芯片的原子级匹配，从根本上解决热疲劳失效问题。"
-    p.font.size = Pt(9)
+    p.text = c["quote"]
+    p.font.size = Pt(18)
     p.font.italic = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    # 壁垒与成本总结
-    sum_box = slide.shapes.add_textbox(Inches(0.8), Inches(6.35), Inches(5.6), Inches(0.5))
-    tf = sum_box.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "壁垒：原子级共价键合工艺 + 10 项专利全链条覆盖，竞争对手难以绕过。"
-    p.font.size = Pt(11)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "成本：全碳体系原料成本可控，中试线建成后具备规模化降本空间。"
-    p2.font.size = Pt(10)
-    p2.font.bold = True
-    p2.font.color.rgb = ACCENT_HIGHLIGHT
-    p2.space_before = Pt(2)
-    # 五维雷达图：导热性、减重、可靠性、工艺成本、CTE匹配度
-    add_rect_card(slide, 6.6, 4.5, 5.5, 2.7)
-    radar_path = gen_radar_chart_img()
-    if radar_path and os.path.exists(radar_path):
-        slide.shapes.add_picture(radar_path, Inches(6.75), Inches(4.55), Inches(5.2), Inches(2.5))
-    rad_cap = slide.shapes.add_textbox(Inches(6.75), Inches(7.08), Inches(5.2), Inches(0.3))
-    tf = rad_cap.text_frame
-    p = tf.paragraphs[0]
-    p.text = "ToSpike全碳方案五维全面领先（工艺成本：中试阶段可控）"
-    p.font.size = Pt(9)
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p.alignment = PP_ALIGN.CENTER
-    return slide
-
-
-def add_slide_5_patent(prs):
-    """第三部分：四层护城河矩阵（从清单到矩阵图示）"""
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
-    set_slide_background(slide, BG_LIGHT)
-    add_pdf_header_footer(slide, "CORE\nPATENT")
-    add_title_box(slide, "四层护城河矩阵：全链条 IP 覆盖，确保技术不可逾越")
-    add_line(slide, 0.8, 1.65, 12.5, 1.65)
-    # 四象限网格线
-    cx, cy = 6.5, 4.0  # 中心
-    add_line(slide, cx, 1.8, cx, 6.2)
-    add_line(slide, 0.8, cy, 12.5, cy)
-    # 象限1：底层物理（左上）— 标注专利数量
-    q1 = slide.shapes.add_textbox(Inches(0.9), Inches(1.9), Inches(5.4), Inches(2.0))
-    tf = q1.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "① 底层物理（2项）"
-    p.font.size = Pt(13)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "sp²–sp³ 键合原理专利"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(4)
-    p3 = tf.add_paragraph()
-    p3.text = "化学键合内生应力复合材料及制备方法——底层专利定义物理边界"
-    p3.font.size = Pt(9)
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(2)
-    # 象限2：核心制备（右上）
-    q2 = slide.shapes.add_textbox(Inches(6.7), Inches(1.9), Inches(5.4), Inches(2.0))
-    tf = q2.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "② 核心制备（3项）"
-    p.font.size = Pt(13)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "活性熔固、原位石墨化"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(4)
-    p3 = tf.add_paragraph()
-    p3.text = "金刚石铜复合材料、原位低温石墨化键合、低温催化键合三维碳骨架——核心制备工艺护城河"
-    p3.font.size = Pt(9)
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(2)
-    # 象限3：战略产品（左下）
-    q3 = slide.shapes.add_textbox(Inches(0.9), Inches(4.2), Inches(5.4), Inches(1.9))
-    tf = q3.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "③ 战略产品（3项）"
-    p.font.size = Pt(13)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "AI 散热垫片、固态电池骨架"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(4)
-    p3 = tf.add_paragraph()
-    p3.text = "柔性高导热复合材料、高模量多孔碳宿主、一体化全固态电池——战略产品卡位"
-    p3.font.size = Pt(9)
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(2)
-    # 象限4：民用验证（右下）
-    q4 = slide.shapes.add_textbox(Inches(6.7), Inches(4.2), Inches(5.4), Inches(1.9))
-    tf = q4.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "④ 民用验证（2项）"
-    p.font.size = Pt(13)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
-    p2 = tf.add_paragraph()
-    p2.text = "金刚石固着厨具"
-    p2.font.size = Pt(10)
-    p2.font.color.rgb = TEXT_BODY
-    p2.space_before = Pt(4)
-    p3 = tf.add_paragraph()
-    p3.text = "基于钻石固着的新型不粘锅具——民用专利验证固着强度，打开消费市场"
-    p3.font.size = Pt(9)
-    p3.font.color.rgb = TEXT_MUTED
-    p3.space_before = Pt(2)
-    # 底部强调
-    foot = slide.shapes.add_textbox(Inches(0.8), Inches(6.25), Inches(11.7), Inches(0.5))
-    tf = foot.text_frame
-    p = tf.paragraphs[0]
-    p.text = "全链条 IP 保护，竞争对手难以绕过 · 10 项核心发明专利"
-    p.font.size = Pt(12)
-    p.font.bold = True
-    p.font.color.rgb = ACCENT_HIGHLIGHT
+    p.font.color.rgb = TEXT_DARK
     p.alignment = PP_ALIGN.CENTER
     return slide
 
 
 def add_slide_5_market_a(prs):
-    """AI芯片热管理方案：市场数据 + 客户验证 + 系统级协同示意图"""
+    """AI芯片热管理方案：市场数据 + 客户验证 + 系统级协同示意图（对齐 SVG 纯净版）"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "高性能计算与数据中心：AI 芯片热管理方案", font_size=20)
-    add_line(slide, 0.8, 1.65, 12.5, 1.65)
+    add_title_box(slide, "高性能计算与数据中心：AI 芯片热管理方案", y=0.55, font_size=20)
+    add_line(slide, 0.8, 1.25, 12.5, 1.25)
     add_line(slide, 5.5, 1.8, 5.5, 6.2)
     # 左侧：芯片→基板→散热器全链路热管理示意图（标注各环节材料）
     add_rect_card(slide, 0.8, 1.9, 4.5, 2.5)
@@ -849,48 +1190,38 @@ def add_slide_5_market_a(prs):
 
 
 def add_slide_7_roadmap(prs):
-    """第五部分：三级火箭模式——产品与项目进展"""
+    """第五部分：三级火箭商业模型图（Mermaid 关系图风格，P0→P1→P2 层级递进）"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide, "CURRENT\nPROGRESS")
-    add_title_box(slide, "三级火箭模式——从落地产品到未来布局")
+    add_title_box(slide, "路线图与当前进展 — 「三级火箭」业务优先级与估值路径", y=0.55, font_size=20)
     add_line(slide, 0.8, 1.65, 12.5, 1.65)
-    rows = [
-        ["层次", "产品/项目", "定位", "当前进展与2026年目标", "投资看点"],
-        ["P0（商业化起步）", "大功率无线充电线圈", "现金流，练团队", "已有合同，Q2交付回款，建立SOP。", "保生存"],
-        ["", "金刚石铜复合材料", "核心主业，立品牌", "样件已完成，TC≥680，计划Q2获取TC>1000第三方认证，送样头部客户。", ""],
-        ["P1（战略卡位）", "柔性高导热垫片", "AI散热主战场", "已申请专利，Q3工程样件，送测AI芯片厂商。", "定估值"],
-        ["", "全碳复合材料", "下一代平台", "已申请核心专利，计划提交PCT申请。", ""],
-        ["", "金刚石涂层不粘锅", "跨界变现样板间", "已申请2项专利，Q4签署品牌联名协议。", ""],
-        ["P2（未来储备）", "固态电池骨架材料", "新能源门票", "已申请2项专利，计划完成模量>30 GPa数据验证。", "筑护城河"],
-        ["", "水处理电极粒子", "远期探索", "维持专利，暂不投入。", ""],
-    ]
-    col_w = [1.1, 2.2, 1.5, 4.2, 1.2]
-    rh = 0.45
-    sy, sx = 1.75, 0.8
-    for ri, row in enumerate(rows):
-        if ri > 0:
-            add_line(slide, sx, sy + ri * rh - 0.02, sx + sum(col_w), sy + ri * rh - 0.02)
-        for ci, cell in enumerate(row):
-            if ci >= len(col_w):
-                break
-            x = sx + sum(col_w[:ci])
-            box = slide.shapes.add_textbox(Inches(x), Inches(sy + ri * rh), Inches(col_w[ci] - 0.06), Inches(rh - 0.04))
-            tf = box.text_frame
-            tf.word_wrap = True
-            p = tf.paragraphs[0]
-            p.text = cell
-            p.font.size = Pt(10)
-            if ri == 0:
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_BLUE
-            elif ci == 4 and cell and cell in ("保生存", "定估值", "筑护城河"):
-                p.font.bold = True
-                p.font.color.rgb = ACCENT_HIGHLIGHT
-            else:
-                p.font.color.rgb = TEXT_BODY if ci > 0 else TEXT_MUTED
+    # 三级火箭关系图（P0→P1→P2 层级递进）
+    rocket_path = gen_three_stage_rocket_img()
+    if rocket_path and os.path.exists(rocket_path):
+        slide.shapes.add_picture(rocket_path, Inches(1.5), Inches(1.9), Inches(10.3), Inches(2.2))
+    # 底部产品堆栈摘要
+    add_line(slide, 0.8, 4.3, 12.5, 4.3)
+    detail = slide.shapes.add_textbox(Inches(0.8), Inches(4.45), Inches(11.7), Inches(1.8))
+    tf = detail.text_frame
+    tf.word_wrap = True
+    p = tf.paragraphs[0]
+    p.text = "P0 生存：大功率无线线圈（合同已到位）、金刚石铜（TC≥680，Q2 目标 TC>1000 认证）"
+    p.font.size = Pt(10)
+    p.font.color.rgb = TEXT_BODY
+    p2 = tf.add_paragraph()
+    p2.text = "P1 估值：柔性垫片（Q3 工程样件）、全碳平台（PCT 准备中）、金刚石不粘锅（Q4 品牌联名）"
+    p2.font.size = Pt(10)
+    p2.font.color.rgb = TEXT_BODY
+    p2.space_before = Pt(4)
+    p3 = tf.add_paragraph()
+    p3.text = "P2 护城河：固态电池骨架（模量>30 GPa 验证）、水处理电极（维持专利）"
+    p3.font.size = Pt(10)
+    p3.font.color.rgb = TEXT_BODY
+    p3.space_before = Pt(4)
     # 底部总结
-    foot = slide.shapes.add_textbox(Inches(0.8), Inches(5.5), Inches(11.7), Inches(0.5))
+    foot = slide.shapes.add_textbox(Inches(0.8), Inches(6.4), Inches(11.7), Inches(0.5))
     tf = foot.text_frame
     p = tf.paragraphs[0]
     p.text = "三级火箭模式：P0 保生存，P1 定估值，P2 筑护城河"
@@ -901,12 +1232,42 @@ def add_slide_7_roadmap(prs):
     return slide
 
 
+def add_slide_fabless_blackbox(prs):
+    """生产模式页：Fabless 黑盒策略，突出核心技术留在公司内部"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
+    add_pdf_header_footer(slide)
+    add_title_box(slide, "生产模式 — Fabless 黑盒策略：IP 安全防护", y=0.55, font_size=22)
+    add_line(slide, 0.8, 1.65, 12.5, 1.65)
+    # 黑盒工序流程图
+    flow_path = gen_blackbox_flowchart_img()
+    if flow_path and os.path.exists(flow_path):
+        slide.shapes.add_picture(flow_path, Inches(0.8), Inches(1.9), Inches(11.7), Inches(2.5))
+    # 说明文字
+    desc = slide.shapes.add_textbox(Inches(0.8), Inches(4.6), Inches(11.7), Inches(1.5))
+    tf = desc.text_frame
+    tf.word_wrap = True
+    p = tf.paragraphs[0]
+    p.text = "黑盒策略核心"
+    p.font.size = Pt(12)
+    p.font.bold = True
+    p.font.color.rgb = ACCENT_BLUE
+    p2 = tf.add_paragraph()
+    p2.text = "核心粉末改性、专利包衣处理等关键工序严格保留在簇锋内部实验室，仅输出改性母料至外协代工厂。真空钎焊、成型、机加工等通用工序外协，成品送回内部质检。核心技术不可逆向，IP 全链条可控。"
+    p2.font.size = Pt(10)
+    p2.font.color.rgb = TEXT_BODY
+    p2.space_before = Pt(4)
+    return slide
+
+
 def add_slide_8_team(prs):
     """团队与治理：29项专利/17年军工经验加粗 + 治理机制卡片 + 团队合影占位"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "专业互补的铁三角，清晰稳固的治理结构")
+    add_title_box(slide, "专业互补的铁三角，清晰稳固的治理结构", y=0.55)
     add_line(slide, 0.8, 1.65, 12.5, 1.65)
     add_line(slide, 6.8, 1.8, 6.8, 6.2)
     # 左侧：核心团队（关键数据加粗）
@@ -991,8 +1352,9 @@ def add_slide_9a_funding_overview(prs):
     """融资需求概览：估值逻辑 + 核心条款"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "融资需求——加速产品验证与平台布局")
+    add_title_box(slide, "融资需求——加速产品验证与平台布局", y=0.55)
     add_line(slide, 0.8, 1.65, 12.5, 1.65)
     # 三列卡片
     add_rect_card(slide, 0.8, 1.9, 3.8, 1.6)
@@ -1072,8 +1434,9 @@ def add_slide_9b_funding_details(prs):
     """资金用途与下一轮里程碑：400万拆细 + 红框标出第三方认证"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_LIGHT)
+    add_svg_top_bar(slide, height_inch=0.35)
     add_pdf_header_footer(slide)
-    add_title_box(slide, "资金用途与下一轮里程碑")
+    add_title_box(slide, "资金用途与下一轮里程碑", y=0.55)
     add_line(slide, 0.8, 1.65, 12.5, 1.65)
     # 产品研发与验证（400万）拆细
     add_line(slide, 0.8, 1.9, 12.5, 1.9)
@@ -1162,16 +1525,17 @@ def add_slide_9b_funding_details(prs):
 
 
 # 合作愿景页专用色（深色背景 + 主色#00B4D8）
-BG_VISION = RGBColor(0x0a, 0x0a, 0x0a)      # #0A0A0A
+BG_VISION = RGBColor(0x02, 0x3b, 0x99)      # #023B99 与 SVG 主色一致
 TEXT_VISION = RGBColor(0xf5, 0xf5, 0xf5)     # 浅灰白
-ACCENT_VISION = RGBColor(0x00, 0xb4, 0xd8)   # #00B4D8
+ACCENT_VISION = RGBColor(0x73, 0xdb, 0xff)   # #73DBFF 与 SVG 强调色一致
 LINE_VISION = RGBColor(0x33, 0x33, 0x33)     # 浅色分隔线
 
 
 def add_slide_vision_merged(prs):
-    """合作愿景与核心理念（合并页）：深色背景，上2/3伙伴类型，下1/3核心理念"""
+    """合作愿景与核心理念（合并页）：深色背景 + 科技感四角边框"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     set_slide_background(slide, BG_VISION)
+    add_tech_corner_frame(slide, color=ACCENT_VISION)
     add_footer(slide, is_dark=True)
     # 标题：合作愿景与核心理念（32pt，#00B4D8）
     title_box = slide.shapes.add_textbox(Inches(MARGIN), Inches(0.6), Inches(13.333 - 2 * MARGIN), Inches(0.9))
@@ -1258,27 +1622,38 @@ def add_slide_vision_merged(prs):
 
 
 def main():
+    # 确保 SVG 资源已提取（LOGO、产品图等，来自 20260305 公司宣传ppt 2纯净版.svg）
+    if not os.path.exists(SVG_LOGO_PATH):
+        try:
+            import sys
+            _script_dir = os.path.dirname(os.path.abspath(__file__))
+            sys.path.insert(0, _script_dir)
+            import extract_svg_images
+            extract_svg_images.extract_images()
+        except Exception:
+            pass
     prs = Presentation()
     prs.slide_width = SLIDE_WIDTH
     prs.slide_height = SLIDE_HEIGHT
 
     add_cover_slide(prs)
-    add_slide_opening(prs)
-    add_slide_1_company(prs)
-    add_slide_2_stages(prs)
-    add_slide_3_principle(prs)
-    add_slide_4_tech_compare(prs)
-    add_slide_5_patent(prs)
-    add_slide_5_market_a(prs)
-    add_slide_7_roadmap(prs)
-    add_slide_8_team(prs)
-    add_slide_9a_funding_overview(prs)
-    add_slide_9b_funding_details(prs)
-    add_slide_vision_merged(prs)
+    add_slide_2_opening(prs)
+    add_slide_3_company(prs)
+    add_slide_4_stages(prs)
+    add_slide_5_principle(prs)
+    add_slide_6_tech_compare(prs)
+    add_slide_7_diamond_copper(prs)
+    add_slide_8_patent(prs)
+    add_slide_9_placeholder(prs)
+    add_slide_10_rocket(prs)
+    add_slide_11_team(prs)
+    add_slide_12_funding(prs)
+    add_slide_13_funding_details(prs)
+    add_slide_14_vision(prs)
 
     out_dir = os.path.join(os.path.dirname(__file__), "..", "PPT files")
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "簇锋科技融资路演PPT.pptx")
+    out_path = os.path.join(out_dir, "簇锋科技融资路演PPT - 测试.pptx")
     prs.save(out_path)
     print(f"PPT 已生成: {os.path.abspath(out_path)}")
 

@@ -225,7 +225,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-lg lg:text-xl text-slate-300 font-light italic leading-relaxed">
             &quot;{t("cooperation.quote")}&quot;

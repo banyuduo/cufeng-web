@@ -33,9 +33,10 @@ export function PageHero({
     <section
       className={`relative pt-32 pb-16 sm:pb-20 overflow-hidden ${
         isDark
-          ? "bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900"
+          ? ""
           : "bg-gradient-to-b from-sky-50 to-white"
       }`}
+      style={isDark ? { background: "var(--page-dark-hero-gradient)" } : undefined}
     >
       {isDark && withDecoration && (
         <>
@@ -43,13 +44,13 @@ export function PageHero({
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: `linear-gradient(rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px)`,
+                backgroundImage: `linear-gradient(rgba(65, 105, 225, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(65, 105, 225, 0.25) 1px, transparent 1px)`,
                 backgroundSize: "60px 60px",
               }}
             />
           </div>
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#4169E1]/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-[#0047AB]/15 rounded-full blur-3xl" />
         </>
       )}
 
@@ -59,7 +60,7 @@ export function PageHero({
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
-                  ? "bg-sky-500/20 text-sky-300 border-sky-500/30"
+                  ? "bg-[#002244]/50 text-[#93b5ff] border-[#4169E1]/40"
                   : "bg-sky-100 text-sky-700 border-sky-200"
               }`}
             >
@@ -76,7 +77,7 @@ export function PageHero({
           {tagline && (
             <p
               className={`text-base sm:text-xl mb-2 break-words ${
-                isDark ? "text-sky-400 font-semibold" : "text-sky-600"
+                isDark ? "text-[#93b5ff] font-semibold" : "text-sky-600"
               }`}
             >
               {tagline}
@@ -85,7 +86,7 @@ export function PageHero({
           {subtitle && (
             <p
               className={`text-base sm:text-lg leading-relaxed break-words ${
-                isDark ? "text-slate-300" : "text-slate-600"
+                isDark ? "text-white/85" : "text-slate-600"
               } ${tagline ? "max-w-3xl mx-auto" : ""}`}
             >
               {subtitle}
