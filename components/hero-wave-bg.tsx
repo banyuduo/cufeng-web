@@ -8,12 +8,12 @@
 export function HeroWaveBg() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* 深蓝渐变基底 - 左上到右下，与图片一致 */}
+      {/* 深蓝渐变基底 - 自上而下，与 PPT 风格一致 (#0A1F44 → #1E3A8A) */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%)",
+            "linear-gradient(to bottom, #0A1F44 0%, #0F2A5C 40%, #1E3A8A 100%)",
         }}
       />
       {/* 半透明圆/椭圆 - 从图片提取的钴蓝 #0047AB、皇家蓝 #4169E1、紫靛 #2E3A8C */}

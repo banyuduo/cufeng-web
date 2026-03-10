@@ -1233,6 +1233,8 @@
     "viewDetails": "View Details",
     "articleDetail": {
       "backToList": "Back to list",
+      "backToNews": "Back to Tech Vision",
+      "backToNewsList": "Back to news list",
       "publishDate": "Publish date",
       "keywords": "Keywords"
     },

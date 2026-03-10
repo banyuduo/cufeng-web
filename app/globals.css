@@ -50,7 +50,7 @@
   --page-dark-card: #002244;
   --page-dark-card-hover: #003366;
   --page-dark-accent: #4169E1;
-  --page-dark-accent-light: #93b5ff;
+  --page-dark-accent-light: #73DBFF;
   --page-dark-gradient: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%);
   --page-dark-hero-gradient: linear-gradient(to bottom, #001a33 0%, #002244 25%, #003366 50%, #002244 75%, #001a33 100%);
 }

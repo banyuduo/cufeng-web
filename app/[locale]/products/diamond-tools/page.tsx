@@ -28,7 +28,7 @@ export default function DiamondToolsPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-sky-600 mb-8"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -51,15 +51,15 @@ export default function DiamondToolsPage() {
               </p>
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-sky-600 mb-1">10+</div>
+                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">10+</div>
                   <div className="text-xs text-slate-600">{t("products.diamondTools.hero.stat1")}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-sky-600 mb-1">30+</div>
+                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">30+</div>
                   <div className="text-xs text-slate-600">{t("products.diamondTools.hero.stat2")}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-sky-600 mb-1">100+</div>
+                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">100+</div>
                   <div className="text-xs text-slate-600">{t("products.diamondTools.hero.stat3")}</div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function DiamondToolsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 bg-slate-50 border-slate-200 hover:shadow-lg transition-all">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                <Wrench className="w-6 h-6 text-sky-600" />
+                <Wrench className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-slate-900">{t("products.diamondTools.coreCapabilities.card1Title")}</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -141,7 +141,7 @@ export default function DiamondToolsPage() {
 
             <Card className="p-6 bg-white border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-sky-600" />
+                <Sparkles className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-slate-900">{t("products.diamondTools.designPrinciples.superabrasiveTitle")}</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -199,25 +199,25 @@ export default function DiamondToolsPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
                   {t("products.diamondTools.designPrinciples.logic1")}
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
                   {t("products.diamondTools.designPrinciples.logic2")}
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
                   {t("products.diamondTools.designPrinciples.logic3")}
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-sky-600 mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-slate-700">
                   {t("products.diamondTools.designPrinciples.logic4")}
                 </div>
@@ -241,7 +241,7 @@ export default function DiamondToolsPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 {t("products.diamondTools.extremeConditions.cmcDesc")}
               </p>
-              <div className="flex items-center gap-2 text-xs text-sky-600">
+              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
                 <Check className="w-4 h-4" />
                 <span>{t("products.diamondTools.extremeConditions.cmcSpec")}</span>
               </div>
@@ -252,7 +252,7 @@ export default function DiamondToolsPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 {t("products.diamondTools.extremeConditions.cfrpDesc")}
               </p>
-              <div className="flex items-center gap-2 text-xs text-sky-600">
+              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
                 <Check className="w-4 h-4" />
                 <span>{t("products.diamondTools.extremeConditions.cfrpSpec")}</span>
               </div>
@@ -263,7 +263,7 @@ export default function DiamondToolsPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-4">
                 {t("products.diamondTools.extremeConditions.tiDesc")}
               </p>
-              <div className="flex items-center gap-2 text-xs text-sky-600">
+              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
                 <Check className="w-4 h-4" />
                 <span>{t("products.diamondTools.extremeConditions.tiSpec")}</span>
               </div>
@@ -280,11 +280,11 @@ export default function DiamondToolsPage() {
                 <h4 className="font-semibold text-sm mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.processOutputTitle")}</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-sky-600 mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span>{t("products.diamondTools.extremeConditions.processItem1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-sky-600 mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span>{t("products.diamondTools.extremeConditions.processItem2")}</span>
                   </li>
                 </ul>
@@ -293,11 +293,11 @@ export default function DiamondToolsPage() {
                 <h4 className="font-semibold text-sm mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.lifecycleTitle")}</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-sky-600 mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span>{t("products.diamondTools.extremeConditions.lifecycleItem1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-sky-600 mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span>{t("products.diamondTools.extremeConditions.lifecycleItem2")}</span>
                   </li>
                 </ul>
@@ -326,12 +326,12 @@ export default function DiamondToolsPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
               <Card className="p-6 bg-white border-slate-200">
                 <div className="text-sm text-slate-500 mb-2">{t("products.diamondTools.fusionBonding.tempLabel")}</div>
-                <div className="text-2xl font-bold text-sky-600 mb-1">{t("products.diamondTools.fusionBonding.tempValue")}</div>
+                <div className="text-2xl font-bold text-[#73DBFF] mb-1">{t("products.diamondTools.fusionBonding.tempValue")}</div>
                 <p className="text-xs text-slate-600">{t("products.diamondTools.fusionBonding.tempNote")}</p>
               </Card>
               <Card className="p-6 bg-white border-slate-200">
                 <div className="text-sm text-slate-500 mb-2">{t("products.diamondTools.fusionBonding.envLabel")}</div>
-                <div className="text-lg font-semibold text-sky-600 mb-1">{t("products.diamondTools.fusionBonding.envValue")}</div>
+                <div className="text-lg font-semibold text-[#73DBFF] mb-1">{t("products.diamondTools.fusionBonding.envValue")}</div>
                 <p className="text-xs text-slate-600">{t("products.diamondTools.fusionBonding.envNote")}</p>
               </Card>
             </div>
@@ -343,7 +343,7 @@ export default function DiamondToolsPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="p-6 bg-white border-slate-200 hover:border-sky-400 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-6 h-6 text-[#73DBFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -532,7 +532,7 @@ export default function DiamondToolsPage() {
             {t("products.diamondTools.cta.subtitle")}
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white" asChild>
+            <Button size="lg" className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/about#zhang-gong`}>{t("products.diamondTools.cta.contactEngineer")}</Link>
             </Button>
             <Button

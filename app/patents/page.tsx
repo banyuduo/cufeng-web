@@ -35,7 +35,7 @@ export default function PatentsPage() {
       >
         <div className="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto mt-4 space-y-3">
           <p>{t("patents.hero.desc")}</p>
-          <p className="text-[#93b5ff]/90 font-medium">{t("patents.hero.dimensions")}</p>
+          <p className="text-[#73DBFF]/90 font-medium">{t("patents.hero.dimensions")}</p>
         </div>
       </PageHero>
 
@@ -53,7 +53,7 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-[#002244]/50 rounded-full text-[#93b5ff] text-sm font-medium mb-6 border border-[#4169E1]/40">
+            <div className="inline-block px-4 py-2 bg-[#002244]/50 rounded-full text-[#73DBFF] text-sm font-medium mb-6 border border-[#4169E1]/40">
               {t("patents.evolution.sectionBadge")}
             </div>
             <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolution.sectionTitle")}</h2>
@@ -86,12 +86,12 @@ export default function PatentsPage() {
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
                 <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
-                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line">{t("patents.evolution.physicsEvolution")}</div>
+                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#4169E1]/35 ring-2 ring-[#4169E1]/50 text-center h-[120px] shrink-0">
                 <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
-                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line">{t("patents.evolution.computingResource")}</div>
+                <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
 
@@ -127,21 +127,21 @@ export default function PatentsPage() {
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
                 <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.physicsEvolution")}</div>
+                <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-purple-400" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#4169E1]/35 text-center ring-2 ring-purple-500/40">
                 <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.computingResource")}</div>
+                <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
 
             {/* Core Logic Summary */}
             <Card className="p-8 bg-gradient-to-br from-[#002244]/90 to-[#001a33]/90 backdrop-blur-sm border-sky-500/30">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-sky-500/30">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -248,8 +248,8 @@ export default function PatentsPage() {
                 {/* 中间：核心内核 */}
                 <div className="flex items-center justify-center relative lg:my-0 my-4 md:my-8">
                   {/* 桌面端连接线装饰 */}
-                  <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-r from-[#4169E1]/40 via-[#93b5ff]/60 to-transparent -translate-x-4"></div>
-                  <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-l from-[#4169E1]/40 via-[#93b5ff]/60 to-transparent translate-x-4"></div>
+                  <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-r from-[#4169E1]/40 via-[#73DBFF]/60 to-transparent -translate-x-4"></div>
+                  <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-l from-[#4169E1]/40 via-[#73DBFF]/60 to-transparent translate-x-4"></div>
                   
                   <div className="relative z-10 w-full">
                     <Card className="p-6 md:p-8 bg-gradient-to-br from-[#002244]/80 to-[#003366]/60 backdrop-blur-sm border-2 border-[#4169E1]/50 rounded-2xl shadow-2xl shadow-[#4169E1]/30 hover:shadow-[#4169E1]/50 transition-all duration-300 group">
@@ -261,15 +261,15 @@ export default function PatentsPage() {
                         
                         <div className="relative z-10 text-center">
                           <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-xl bg-gradient-to-br from-[#4169E1]/30 to-[#0047AB]/30 flex items-center justify-center border-2 border-[#4169E1]/50 group-hover:scale-110 transition-transform duration-300">
-                            <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-[#93b5ff]" />
+                            <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-[#73DBFF]" />
                           </div>
                           <h4 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
                           <div className="space-y-2 md:space-y-3">
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-[#002244]/60 rounded-lg border border-[#4169E1]/40">
-                              <div className="text-[#93b5ff] font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
+                              <div className="text-[#73DBFF] font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
                             </div>
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-[#002244]/60 rounded-lg border border-[#4169E1]/40">
-                              <div className="text-[#93b5ff] font-mono font-semibold text-base">{t("patents.architecture.stressRegulation")}</div>
+                              <div className="text-[#73DBFF] font-mono font-semibold text-base">{t("patents.architecture.stressRegulation")}</div>
                             </div>
                           </div>
                         </div>
@@ -282,7 +282,7 @@ export default function PatentsPage() {
                 <div className="flex justify-center py-3 md:hidden">
                   <div className="flex flex-col items-center">
                     <ChevronDown className="w-6 h-6 text-amber-400/80" />
-                    <div className="h-12 w-px bg-gradient-to-b from-[#4169E1]/50 via-[#93b5ff]/40 to-transparent"></div>
+                    <div className="h-12 w-px bg-gradient-to-b from-[#4169E1]/50 via-[#73DBFF]/40 to-transparent"></div>
                   </div>
                 </div>
 
@@ -377,7 +377,7 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-[#002244]/50 rounded-full text-[#93b5ff] text-sm font-medium mb-6 border border-[#4169E1]/40">
+            <div className="inline-block px-4 py-2 bg-[#002244]/50 rounded-full text-[#73DBFF] text-sm font-medium mb-6 border border-[#4169E1]/40">
               {t("patents.evolutionPath.sectionBadge")}
             </div>
             <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolutionPath.sectionTitle")}</h2>
@@ -392,7 +392,7 @@ export default function PatentsPage() {
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-lg shadow-sky-500/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0F2A5C] to-[#1E3A8A] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Cpu className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -985,7 +985,7 @@ export default function PatentsPage() {
           <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Link href={`${prefix}/cooperation`}>
-              <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 text-lg">{t("patents.cta.projectCooperation")}</Button>
+              <Button className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white px-8 py-6 text-lg">{t("patents.cta.projectCooperation")}</Button>
             </Link>
             <a href="#patent-cluster">
               <Button
