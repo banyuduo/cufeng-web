@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
+import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -19,7 +20,9 @@ export default async function AboutPage({
   const prefix = `/${validLocale}`
 
   return (
-    <div className="min-h-screen bg-[#001a33]">
+    <div className="min-h-screen relative">
+      <DarkPagePatternBg />
+      <div className="relative z-10">
       <Navigation locale={validLocale} />
 
       <PageHero
@@ -32,13 +35,13 @@ export default async function AboutPage({
       />
 
       {/* 企业概览 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-[#002244]/50 border-[#4169E1]/40">
+          <Card className="p-8 md:p-12 bg-[#0344b3]/50 border-[#4169E1]/40">
             <div className="space-y-6 text-slate-200 leading-relaxed">
               <div>
                 <h2 className="page-h2 text-white mb-4 flex items-center gap-3">
-                  <Building2 className="w-6 h-6 text-sky-400" />
+                  <Building2 className="w-6 h-6 text-[#73DBFF]" />
                   {t("about.overview.title")}
                 </h2>
                 <p className="text-slate-300 mb-2">
@@ -59,7 +62,7 @@ export default async function AboutPage({
 
               <div className="pt-4 border-t border-[#4169E1]/30">
                 <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-sky-400" />
+                  <Target className="w-5 h-5 text-[#73DBFF]" />
                   {t("about.overview.rdCapability")}
                 </h3>
                 <p className="mb-4">
@@ -69,7 +72,7 @@ export default async function AboutPage({
 
               <div className="pt-4 border-t border-[#4169E1]/30">
                 <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-sky-400" />
+                  <Zap className="w-5 h-5 text-[#73DBFF]" />
                   {t("about.overview.evolution")}
                 </h3>
                 <p className="mb-4">
@@ -85,7 +88,7 @@ export default async function AboutPage({
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="page-h3 text-white mb-3 flex items-center gap-2">
-                      <Eye className="w-5 h-5 text-sky-400" />
+                      <Eye className="w-5 h-5 text-[#73DBFF]" />
                       {t("about.overview.vision")}
                     </h3>
                     <p className="text-slate-300 leading-relaxed">
@@ -94,7 +97,7 @@ export default async function AboutPage({
                   </div>
                   <div>
                     <h3 className="page-h3 text-white mb-3 flex items-center gap-2">
-                      <Rocket className="w-5 h-5 text-sky-400" />
+                      <Rocket className="w-5 h-5 text-[#73DBFF]" />
                       {t("about.overview.coreIdea")}
                     </h3>
                     <p className="text-slate-300 leading-relaxed">
@@ -109,7 +112,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心团队 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#002244]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.team.title")}</h2>
@@ -118,10 +121,10 @@ export default async function AboutPage({
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* 王博士 */}
-            <Card id="wang" className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+            <Card id="wang" className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-[#0F2A5C]/20 flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-sky-400" />
+                  <GraduationCap className="w-6 h-6 text-[#73DBFF]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">{t("about.team.wang.name")}</h3>
@@ -129,14 +132,14 @@ export default async function AboutPage({
                 </div>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/20 text-sky-300 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/20 text-[#73DBFF]/90 text-xs font-medium rounded-full mb-2">
                   {t("about.team.wang.title")}
                 </div>
               </div>
               <div className="space-y-3 text-sm text-slate-300">
                 <div>
                   <div className="flex items-start gap-2 mb-1">
-                    <Briefcase className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <Briefcase className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">{t("about.team.wang.background")}</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
@@ -145,7 +148,7 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-1">
-                    <Award className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <Award className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">{t("about.team.wang.credentials")}</span>
                   </div>
                   <p className="ml-6 leading-relaxed">
@@ -154,7 +157,7 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <div className="flex items-start gap-2 mb-1">
-                    <Zap className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
+                    <Zap className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
                     <span className="font-semibold text-slate-200">{t("about.team.wang.capability")}</span>
                   </div>
                   <div className="ml-6 space-y-2 leading-relaxed">
@@ -166,7 +169,7 @@ export default async function AboutPage({
             </Card>
 
             {/* 何工 */}
-            <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+            <Card className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center">
                   <Wrench className="w-6 h-6 text-cyan-400" />
@@ -207,7 +210,7 @@ export default async function AboutPage({
             </Card>
 
             {/* 张工 */}
-            <Card id="zhang-gong" className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+            <Card id="zhang-gong" className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center">
                   <Users className="w-6 h-6 text-purple-400" />
@@ -266,7 +269,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心历程 - 时间轴 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.timeline.title")}</h2>
@@ -287,9 +290,9 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+                  <Card className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
-                      <Calendar className="w-5 h-5 text-sky-400" />
+                      <Calendar className="w-5 h-5 text-[#73DBFF]" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Patents")}</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed">
@@ -307,7 +310,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+                  <Card className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Zap className="w-5 h-5 text-cyan-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Thermal")}</h3>
@@ -327,7 +330,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+                  <Card className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Building2 className="w-5 h-5 text-purple-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2023Relocate")}</h3>
@@ -347,7 +350,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
+                  <Card className="p-6 bg-[#0344b3]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Target className="w-5 h-5 text-slate-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2018Founding")}</h3>
@@ -367,7 +370,7 @@ export default async function AboutPage({
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-[#002244]/50"
+                className="gap-2 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-[#0344b3]/50"
               >
                 {t("about.timeline.moreNews")}
                 <ArrowRight className="w-4 h-4" />
@@ -379,6 +382,7 @@ export default async function AboutPage({
 
       {/* Footer */}
       <FooterNav locale={validLocale} />
+      </div>
     </div>
   )
 }

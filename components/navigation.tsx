@@ -42,8 +42,8 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const otherLocaleName = locale === "zh" ? "English" : "中文"
 
   const isHome = pathname === prefix || pathname === `${prefix}/`
-  const isDarkPage = isHome || isActive("/patents") || isActive("/about")
-  const navBg = isDarkPage ? "bg-[#001a33]/95 border-[#003366]/50" : "bg-background/95 border-border/60"
+  const isDarkPage = isHome || isActive("/patents") || isActive("/about") || isActive("/news")
+  const navBg = isDarkPage ? "bg-[#023B99]/95 border-[#0344b3]/50" : "bg-background/95 border-border/60"
   const navText = isDarkPage ? "text-white" : "text-foreground"
   const navMuted = isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
 

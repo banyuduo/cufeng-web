@@ -1,6 +1,7 @@
 "use client"
 
 import { type ReactNode } from "react"
+import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 
 type PageHeroVariant = "dark" | "light"
 
@@ -34,10 +35,15 @@ export function PageHero({
       className={`relative pt-32 pb-16 sm:pb-20 overflow-hidden ${
         isDark
           ? ""
-          : "bg-gradient-to-b from-sky-50 to-white"
+          : "bg-[#F9FAFC]"
       }`}
-      style={isDark ? { background: "var(--page-dark-hero-gradient)" } : undefined}
+      style={isDark ? undefined : undefined}
     >
+      {isDark && (
+        <>
+          <DarkPagePatternBg />
+        </>
+      )}
       {isDark && withDecoration && (
         <>
           <div className="absolute inset-0 opacity-10">
@@ -60,8 +66,8 @@ export function PageHero({
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
-                  ? "bg-[#002244]/50 text-[#73DBFF] border-[#4169E1]/40"
-                  : "bg-sky-100 text-[#0F2A5C] border-sky-200"
+                  ? "bg-[#0344b3]/50 text-[#73DBFF] border-[#4169E1]/40"
+                  : "bg-[#E8EEFF] text-[#023B99] border-[#4169E1]/30"
               }`}
             >
               {badge}

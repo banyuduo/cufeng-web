@@ -20,11 +20,11 @@ export default function DiamondToolsPage() {
   const prefix = `/${locale}`
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
@@ -192,7 +192,7 @@ export default function DiamondToolsPage() {
           </div>
 
           {/* Design Logic */}
-          <Card className="p-8 bg-gradient-to-br from-slate-50 to-sky-50 border-sky-200">
+          <Card className="p-8 bg-gradient-to-br from-slate-50 to-[#F9FAFC] border-[#4169E1]/30">
             <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.diamondTools.designPrinciples.designLogicTitle")}</h3>
             <p className="text-slate-700 leading-relaxed mb-6">
               {t("products.diamondTools.designPrinciples.designLogicDesc")}
@@ -270,7 +270,7 @@ export default function DiamondToolsPage() {
             </Card>
           </div>
 
-          <Card className="p-8 bg-gradient-to-br from-sky-50 to-slate-50 border-sky-200">
+          <Card className="p-8 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#4169E1]/30">
             <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.diamondTools.extremeConditions.valueTitle")}</h3>
             <p className="text-slate-700 leading-relaxed mb-6">
               {t("products.diamondTools.extremeConditions.valueDesc")}
@@ -341,7 +341,7 @@ export default function DiamondToolsPage() {
           <div className="mb-16">
             <h3 className="text-xl font-semibold mb-8 text-center text-slate-900">{t("products.diamondTools.fusionBonding.advantagesTitle")}</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-6 bg-white border-slate-200 hover:border-sky-400 transition-colors">
+              <Card className="p-6 bg-white border-slate-200 hover:border-[#4169E1]/60 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-[#73DBFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -353,7 +353,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-6 bg-white border-slate-200 hover:border-sky-400 transition-colors">
+              <Card className="p-6 bg-white border-slate-200 hover:border-[#4169E1]/60 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
@@ -370,7 +370,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-6 bg-white border-slate-200 hover:border-sky-400 transition-colors">
+              <Card className="p-6 bg-white border-slate-200 hover:border-[#4169E1]/60 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
@@ -387,7 +387,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-6 bg-white border-slate-200 hover:border-sky-400 transition-colors">
+              <Card className="p-6 bg-white border-slate-200 hover:border-[#4169E1]/60 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
@@ -446,7 +446,7 @@ export default function DiamondToolsPage() {
               <p className="text-slate-300 mb-6 text-center">{t("products.diamondTools.fusionBonding.applicationsIntro")}</p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-sky-400">{t("products.diamondTools.fusionBonding.hardBrittleTitle")}</h4>
+                  <h4 className="font-semibold mb-3 text-[#73DBFF]">{t("products.diamondTools.fusionBonding.hardBrittleTitle")}</h4>
                   <ul className="text-sm text-slate-300 space-y-2">
                     <li>• {t("products.diamondTools.fusionBonding.hardBrittle1")}</li>
                     <li>• {t("products.diamondTools.fusionBonding.hardBrittle2")}</li>
@@ -497,10 +497,10 @@ export default function DiamondToolsPage() {
             </Card>
 
             <Card className="p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <div className="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center mb-4">
-                <div className="w-6 h-6 rounded-full bg-sky-500" />
+              <div className="w-10 h-10 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center mb-4">
+                <div className="w-6 h-6 rounded-full bg-[#73DBFF]" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-sky-400">{t("products.diamondTools.techMigration.extension")}</h3>
+              <h3 className="font-semibold text-lg mb-3 text-[#73DBFF]">{t("products.diamondTools.techMigration.extension")}</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {t("products.diamondTools.techMigration.extensionDesc")}
               </p>

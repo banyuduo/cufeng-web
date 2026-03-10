@@ -23,6 +23,7 @@ import {
 } from "@/lib/industry-articles"
 import { getTranslations } from "@/lib/translations"
 import { getCompanyNews, getCompanyNewsIds } from "@/lib/company-news"
+import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 
 const NEWS_ICONS: Record<string, typeof FileText> = {
   "2025-patents": FileText,
@@ -277,7 +278,9 @@ export default async function NewsDetailPage({
   const NewsIcon = companyNews ? NEWS_ICONS[id] ?? Building : Building
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen relative ${industryArticle ? "" : "bg-[#F9FAFC]"}`}>
+      {industryArticle && <DarkPagePatternBg />}
+      <div className="relative z-10">
       <Navigation locale={validLocale} />
 
       {industryArticle ? (
@@ -287,6 +290,7 @@ export default async function NewsDetailPage({
       ) : null}
 
       <FooterNav locale={validLocale} />
+      </div>
     </div>
   )
 }

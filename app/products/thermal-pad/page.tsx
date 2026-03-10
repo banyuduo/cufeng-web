@@ -19,11 +19,11 @@ export default function ThermalPadPage() {
   const prefix = `/${locale}`
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50 to-white">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
@@ -36,7 +36,7 @@ export default function ThermalPadPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center">
                   <FlaskConical className="w-7 h-7 text-[#73DBFF]" />
                 </div>
                 <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">

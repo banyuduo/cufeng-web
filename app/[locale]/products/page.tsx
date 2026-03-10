@@ -19,7 +19,7 @@ export default async function ProductsPage({
   const prefix = `/${validLocale}`
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation locale={validLocale} />
 
       <PageHero
@@ -28,13 +28,13 @@ export default async function ProductsPage({
         subtitle={t("products.subtitle")}
       />
 
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
             <Link href={`${prefix}/products/nonstick-cookware`}>
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all group cursor-pointer h-full">
+              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center group-hover:bg-sky-100 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
                     <ChefHat className="w-7 h-7 text-[#73DBFF]" />
                   </div>
                   <div className="px-3 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
@@ -68,7 +68,7 @@ export default async function ProductsPage({
             </Link>
 
             <Link href={`${prefix}/products/diamond-copper`}>
-              <Card className="p-6 sm:p-10 bg-gradient-to-br from-sky-50 to-white border-sky-200 hover:shadow-2xl hover:border-sky-400 transition-all group cursor-pointer h-full">
+              <Card className="p-6 sm:p-10 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center group-hover:bg-[#1E3A8A] transition-colors">
                     <Layers className="w-7 h-7 text-white" />
@@ -104,9 +104,9 @@ export default async function ProductsPage({
             </Link>
 
             <Link href={`${prefix}/products/thermal-pad`}>
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all group cursor-pointer h-full">
+              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center group-hover:bg-sky-100 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
                     <FlaskConical className="w-7 h-7 text-[#73DBFF]" />
                   </div>
                   <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
@@ -140,12 +140,12 @@ export default async function ProductsPage({
             </Link>
 
             <Link href={`${prefix}/products/carbon-composite`}>
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all group cursor-pointer h-full">
+              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0F2A5C] to-[#1E3A8A] flex items-center justify-center group-hover:from-[#1E3A8A] group-hover:to-[#73DBFF]/80 transition-colors">
                     <Sparkles className="w-7 h-7 text-white" />
                   </div>
-                  <div className="px-3 py-1 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full text-xs font-medium text-white">
+                  <div className="px-3 py-1 bg-gradient-to-r from-[#023B99] to-[#73DBFF] rounded-full text-xs font-medium text-white">
                     {t("products.badge.gen3Future")}
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default async function ProductsPage({
             </Link>
 
             <Link href={`${prefix}/products/diamond-tools`} className="md:col-span-2">
-              <Card className="p-6 sm:p-10 bg-slate-50 border-slate-200 hover:shadow-2xl hover:border-sky-300 transition-all group cursor-pointer h-full">
+              <Card className="p-6 sm:p-10 bg-slate-50 border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
                     <Zap className="w-7 h-7 text-slate-600" />
@@ -218,7 +218,7 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs text-slate-500 text-center leading-relaxed">
             {t("products.disclaimer")}
