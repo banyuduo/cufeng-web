@@ -156,9 +156,14 @@ export default function PatentsPage() {
       </section>
 
       {/* General Overview Section */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4 sm:px-6">
-          <Card className="max-w-4xl mx-auto p-8 bg-[#0344b3]/50 backdrop-blur-sm border-[#4169E1]/35">
+      <section className="py-16 relative overflow-hidden">
+        {/* 借鉴首页的波浪光晕装饰 */}
+        <div className="absolute inset-0 pointer-events-none opacity-60">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <Card className="max-w-4xl mx-auto p-8 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30">
             <p className="text-slate-300 leading-relaxed text-lg text-center">
               {t("patents.evolution.overview")}
             </p>
@@ -166,7 +171,7 @@ export default function PatentsPage() {
 
           {/* 技术演进架构图 */}
           <div className="mt-12 max-w-7xl mx-auto">
-            <div className="p-4 md:p-8 bg-[#0344b3]/50 backdrop-blur-xl rounded-3xl border border-[#4169E1]/40 shadow-2xl">
+            <div className="p-4 md:p-8 bg-[#002244]/50 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10">
               <h3 className="page-h3 text-white text-center mb-8 md:mb-12 text-xl md:text-2xl">{t("patents.architecture.title")}</h3>
               
               <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative">
@@ -178,7 +183,7 @@ export default function PatentsPage() {
                   </div>
                   
                   {/* Stage 01 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Wrench className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
@@ -200,7 +205,7 @@ export default function PatentsPage() {
                   </div>
 
                   {/* Stage 02 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Thermometer className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
@@ -222,7 +227,7 @@ export default function PatentsPage() {
                   </div>
 
                   {/* Stage 03 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Layers className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
@@ -247,27 +252,27 @@ export default function PatentsPage() {
                 {/* 中间：核心内核 */}
                 <div className="flex items-center justify-center relative lg:my-0 my-4 md:my-8">
                   {/* 桌面端连接线装饰 */}
-                  <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-r from-[#4169E1]/40 via-[#73DBFF]/60 to-transparent -translate-x-4"></div>
-                  <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-l from-[#4169E1]/40 via-[#73DBFF]/60 to-transparent translate-x-4"></div>
+                  <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-r from-[#0077b6]/40 via-[#73DBFF]/60 to-transparent -translate-x-4"></div>
+                  <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-gradient-to-l from-[#0077b6]/40 via-[#73DBFF]/60 to-transparent translate-x-4"></div>
                   
                   <div className="relative z-10 w-full">
-                    <Card className="p-6 md:p-8 bg-gradient-to-br from-[#0344b3]/80 to-[#0452cc]/60 backdrop-blur-sm border-2 border-[#4169E1]/50 rounded-2xl shadow-2xl shadow-[#4169E1]/30 hover:shadow-[#4169E1]/50 transition-all duration-300 group">
+                    <Card className="p-6 md:p-8 bg-gradient-to-br from-[#002244]/90 to-[#003366]/70 backdrop-blur-sm border-2 border-[#00b4d8]/40 rounded-2xl shadow-2xl shadow-[#0077b6]/20 hover:shadow-[#00b4d8]/25 transition-all duration-300 group">
                       <div className="relative">
                         {/* 发光效果 - 桌面端 */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#4169E1]/20 to-[#0047AB]/20 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0077b6]/15 to-[#00b4d8]/10 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                         {/* 移动端外部阴影 - 增强发光效果 */}
-                        <div className="md:hidden absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#4169E1]/30 to-[#0047AB]/30 blur-2xl opacity-60"></div>
+                        <div className="md:hidden absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#0077b6]/20 to-[#00b4d8]/15 blur-2xl opacity-60"></div>
                         
                         <div className="relative z-10 text-center">
-                          <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-xl bg-gradient-to-br from-[#4169E1]/30 to-[#0047AB]/30 flex items-center justify-center border-2 border-[#4169E1]/50 group-hover:scale-110 transition-transform duration-300">
+                          <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center border-2 border-[#00b4d8]/40 group-hover:scale-110 transition-transform duration-300">
                             <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-[#73DBFF]" />
                           </div>
                           <h4 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
                           <div className="space-y-2 md:space-y-3">
-                            <div className="px-3 py-2 md:px-4 md:py-2 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
+                            <div className="px-3 py-2 md:px-4 md:py-2 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                               <div className="text-[#73DBFF] font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
                             </div>
-                            <div className="px-3 py-2 md:px-4 md:py-2 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
+                            <div className="px-3 py-2 md:px-4 md:py-2 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                               <div className="text-[#73DBFF] font-mono font-semibold text-base">{t("patents.architecture.stressRegulation")}</div>
                             </div>
                           </div>
@@ -281,7 +286,7 @@ export default function PatentsPage() {
                 <div className="flex justify-center py-3 md:hidden">
                   <div className="flex flex-col items-center">
                     <ChevronDown className="w-6 h-6 text-[#73DBFF]/80" />
-                    <div className="h-12 w-px bg-gradient-to-b from-[#4169E1]/50 via-[#73DBFF]/40 to-transparent"></div>
+                    <div className="h-12 w-px bg-gradient-to-b from-[#0077b6]/50 via-[#73DBFF]/40 to-transparent"></div>
                   </div>
                 </div>
 
@@ -293,7 +298,7 @@ export default function PatentsPage() {
                   </div>
 
                   {/* 极端工况应用 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Plane className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
@@ -318,14 +323,14 @@ export default function PatentsPage() {
                   </div>
 
                   {/* 超导材料研究平台 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Microscope className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.superconductorPlatform")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
+                        <div className="inline-block px-2 py-1 bg-[#002244]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
                           {t("patents.architecture.theoryExploration")}
                         </div>
                       </div>
@@ -341,14 +346,14 @@ export default function PatentsPage() {
                   </div>
 
                   {/* 量子计算潜力 */}
-                  <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.quantumPotential")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
+                        <div className="inline-block px-2 py-1 bg-[#002244]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
                           {t("patents.architecture.visionPlanning")}
                         </div>
                       </div>
@@ -609,7 +614,11 @@ export default function PatentsPage() {
       </section>
 
       <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0344b3]/20 via-transparent to-transparent" />
+        {/* 借鉴首页的波浪光晕装饰 */}
+        <div className="absolute inset-0 pointer-events-none opacity-60">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
+        </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
@@ -617,9 +626,9 @@ export default function PatentsPage() {
             <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#0344b3]/80 to-[#023B99]/80 backdrop-blur-sm border-[#4169E1]/40 ring-4 ring-[#73DBFF]/20">
+          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 ring-4 ring-[#0077b6]/15 shadow-xl shadow-[#0077b6]/10">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#0077b6]/20 border border-[#00b4d8]/30">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -633,7 +642,7 @@ export default function PatentsPage() {
             </p>
 
             {/* Platform Core Principle Explanation */}
-            <div className="p-8 bg-[#0344b3]/60 rounded-xl border border-[#4169E1]/40">
+            <div className="p-8 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
               <h4 className="text-[#73DBFF] font-semibold text-lg mb-6">{t("patents.platformCore.principleTitle")}</h4>
 
               <div className="space-y-4 text-base leading-relaxed text-slate-300">
@@ -656,7 +665,7 @@ export default function PatentsPage() {
                   {t("patents.platformCore.principleP2b")}
                 </p>
 
-                <div className="my-6 p-6 bg-gradient-to-br from-slate-900/80 to-[#023B99]/30 rounded-xl border border-[#4169E1]/40">
+                <div className="my-6 p-6 bg-gradient-to-br from-[#002244]/80 to-[#003366]/40 rounded-xl border border-[#0077b6]/30">
                   <h5 className="text-[#73DBFF] font-semibold text-base mb-5 flex items-center gap-2">
                     <Sparkles className="w-5 h-5" />
                     {t("patents.platformCore.diagramTitle")}
@@ -664,7 +673,7 @@ export default function PatentsPage() {
 
                   <div className="flex flex-col sm:flex-col md:grid md:grid-cols-3 gap-4">
                     {/* sp³ dominant */}
-                    <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
+                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                       <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain1Title")}
                       </div>
@@ -681,7 +690,7 @@ export default function PatentsPage() {
                     </div>
 
                     {/* sp² dominant */}
-                    <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
+                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                       <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain2Title")}
                       </div>
@@ -698,7 +707,7 @@ export default function PatentsPage() {
                     </div>
 
                     {/* Mixed state */}
-                    <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
+                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                       <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain3Title")}
                       </div>
@@ -716,7 +725,7 @@ export default function PatentsPage() {
                   </div>
 
                     {/* Control parameters */}
-                    <div className="mt-5 pt-5 border-t border-[#4169E1]/30">
+                    <div className="mt-5 pt-5 border-t border-[#0077b6]/30">
                       <p className="text-slate-400 mb-3 text-base">{t("patents.platformCore.tuningIntro")}</p>
                       <ul className="space-y-2 ml-4 text-base text-slate-300">
                         <li className="flex items-start gap-2">
@@ -744,7 +753,7 @@ export default function PatentsPage() {
                     </div>
                 </div>
 
-                <p className="pt-4 border-t border-[#4169E1]/20 text-slate-200">
+                <p className="pt-4 border-t border-[#0077b6]/20 text-slate-200">
                   {t("patents.platformCore.platformConclusion")}
                   <strong className="text-[#73DBFF]">{t("patents.platformCore.platformName")}</strong>
                   {t("patents.platformCore.platformConclusionEnd")}
@@ -753,7 +762,7 @@ export default function PatentsPage() {
             </div>
 
             {/* 材料体系综合对比雷达图 */}
-            <div className="mt-10 pt-8 border-t border-[#4169E1]/30">
+            <div className="mt-10 pt-8 border-t border-[#0077b6]/30">
               <h4 className="text-[#73DBFF] font-semibold text-base mb-6 flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 {t("patents.platformCore.radarChartTitle")}
@@ -844,12 +853,17 @@ export default function PatentsPage() {
       </section>
 
       {/* Patent Cluster Value */}
-      <section id="patent-cluster" className="py-20 relative scroll-mt-24">
-        <div className="container mx-auto px-4 sm:px-6">
-          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#0344b3] to-[#023B99] border-[#4169E1]/35">
+      <section id="patent-cluster" className="py-20 relative overflow-hidden scroll-mt-24">
+        {/* 借鉴首页的波浪光晕装饰 */}
+        <div className="absolute inset-0 pointer-events-none opacity-60">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#002244]/90 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 shadow-xl shadow-[#0077b6]/10">
             <div className="text-center mb-10">
               <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.patentCluster.title")}</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#023B99] to-[#73DBFF] mx-auto rounded-full mb-6" />
+              <div className="w-24 h-1 bg-gradient-to-r from-[#0077b6] to-[#73DBFF] mx-auto rounded-full mb-6" />
               <p className="text-slate-300 leading-relaxed text-lg max-w-3xl mx-auto">
                 {t("patents.patentCluster.intro")}
               </p>
@@ -857,7 +871,7 @@ export default function PatentsPage() {
 
             <div className="space-y-8 mb-10">
               {/* 一、工程起点与功能延伸 */}
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block1Num")}
@@ -873,7 +887,7 @@ export default function PatentsPage() {
               </div>
 
               {/* 二、功能材料阶段 */}
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block2Num")}
@@ -893,7 +907,7 @@ export default function PatentsPage() {
               </div>
 
               {/* 三、全碳体系阶段 */}
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block3Num")}
@@ -917,7 +931,7 @@ export default function PatentsPage() {
               </div>
 
               {/* 四、平台核心技术 */}
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block4Num")}
@@ -934,7 +948,7 @@ export default function PatentsPage() {
             </div>
 
             {/* 总结说明 */}
-            <div className="p-6 bg-[#0344b3]/80 rounded-xl border border-[#4169E1]/35 mb-8">
+            <div className="p-6 bg-[#002244]/70 rounded-xl border border-[#0077b6]/30 mb-8">
               <p className="text-lg text-slate-300 leading-relaxed text-center">
                 {t("patents.patentCluster.summary")}
                 <strong className="text-[#73DBFF]">{t("patents.patentCluster.summaryMaterial")}</strong>、
@@ -947,15 +961,15 @@ export default function PatentsPage() {
 
             {/* 统计数据 */}
             <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-slate-700">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("patents.patentCluster.stat1Value")}</div>
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat1Label")}</div>
               </div>
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-slate-700">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("patents.patentCluster.stat2Value")}</div>
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat2Label")}</div>
               </div>
-              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-slate-700">
+              <div className="p-6 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
                 <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("patents.patentCluster.stat3Value")}</div>
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat3Label")}</div>
               </div>
