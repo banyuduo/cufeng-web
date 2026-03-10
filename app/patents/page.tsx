@@ -63,32 +63,32 @@ export default function PatentsPage() {
           <div className="max-w-6xl mx-auto">
             {/* Desktop horizontal flow */}
             <div className="hidden lg:flex items-stretch justify-between gap-3 mb-12">
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.start")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step1")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
                 <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 ring-2 ring-[#4169E1]/50 text-center h-[120px] shrink-0">
+              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 ring-2 ring-[#0077b6]/40 text-center h-[120px] shrink-0">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
                 <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
@@ -96,51 +96,51 @@ export default function PatentsPage() {
 
             {/* Mobile/Tablet vertical flow */}
             <div className="lg:hidden space-y-4 mb-12">
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.start")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step1")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
                 <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <div className="flex justify-center">
                 <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center ring-2 ring-[#73DBFF]/40">
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 text-center ring-2 ring-[#73DBFF]/40">
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
                 <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
 
             {/* Core Logic Summary */}
-            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/90 to-[#023B99]/90 backdrop-blur-sm border-[#73DBFF]/30">
+            <Card className="p-8 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border border-[#0077b6]/30">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#023B99] to-[#0344b3] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0077b6]/20 border border-[#0077b6]/30">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -168,9 +168,9 @@ export default function PatentsPage() {
             <div className="p-4 md:p-8 bg-[#002244]/50 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10">
               <h3 className="page-h3 text-white text-center mb-8 md:mb-12 text-xl md:text-2xl">{t("patents.architecture.title")}</h3>
               
-              <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative">
+              <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative lg:items-stretch">
                 {/* 左侧：演化路径 */}
-                <div className="space-y-3 md:space-y-6">
+                <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col">
                   <div className="text-center mb-4 md:mb-6">
                     <h4 className="text-base md:text-lg font-semibold text-[#73DBFF] mb-2">{t("patents.architecture.evolutionPath")}</h4>
                     <div className="h-px bg-gradient-to-r from-transparent via-[#73DBFF]/50 to-transparent"></div>
@@ -284,21 +284,21 @@ export default function PatentsPage() {
                   </div>
                 </div>
 
-                {/* 右侧：应用视窗 */}
-                <div className="space-y-3 md:space-y-6">
+                {/* 右侧：应用视窗 - 与左侧对称布局 */}
+                <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col lg:gap-6 lg:flex-1 lg:min-h-0">
                   <div className="text-center mb-4 md:mb-6">
                     <h4 className="text-base md:text-lg font-semibold text-[#73DBFF] mb-2">{t("patents.architecture.applicationWindow")}</h4>
                     <div className="h-px bg-gradient-to-r from-transparent via-[#73DBFF]/50 to-transparent"></div>
                   </div>
 
                   {/* 极端工况应用 */}
-                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
-                    <div className="flex items-start gap-3 md:gap-4">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
+                    <div className="flex items-start gap-3 md:gap-4 flex-1 min-h-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Plane className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.extremeConditions")}</h5>
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">{t("patents.architecture.extremeConditions")}</h5>
                         <div className="space-y-1.5 text-base text-slate-400 leading-relaxed text-left">
                           <div>• {t("patents.architecture.extremeItem1")}</div>
                           <div>• {t("patents.architecture.extremeItem2")}</div>
@@ -317,16 +317,16 @@ export default function PatentsPage() {
                   </div>
 
                   {/* 超导材料研究平台 */}
-                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
-                    <div className="flex items-start gap-3 md:gap-4">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
+                    <div className="flex items-start gap-3 md:gap-4 flex-1 min-h-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <Microscope className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.superconductorPlatform")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#002244]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">{t("patents.architecture.superconductorPlatform")}</h5>
+                        <p className="text-base text-slate-400 leading-relaxed">
                           {t("patents.architecture.theoryExploration")}
-                        </div>
+                        </p>
                       </div>
                     </div>
                   </Card>
@@ -340,16 +340,16 @@ export default function PatentsPage() {
                   </div>
 
                   {/* 量子计算潜力 */}
-                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group">
-                    <div className="flex items-start gap-3 md:gap-4">
+                  <Card className="p-4 md:p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#00b4d8]/50 hover:shadow-lg hover:shadow-[#0077b6]/15 transition-all duration-300 group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
+                    <div className="flex items-start gap-3 md:gap-4 flex-1 min-h-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
                         <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.quantumPotential")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#002244]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
+                        <h5 className="text-base text-white font-bold mb-1 md:mb-2">{t("patents.architecture.quantumPotential")}</h5>
+                        <p className="text-base text-slate-400 leading-relaxed">
                           {t("patents.architecture.visionPlanning")}
-                        </div>
+                        </p>
                       </div>
                     </div>
                   </Card>
@@ -383,11 +383,11 @@ export default function PatentsPage() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Stage 01 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
+              className={`p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0F2A5C] to-[#1E3A8A] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Cpu className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -403,10 +403,10 @@ export default function PatentsPage() {
               </p>
 
               {expandedStage === 1 && (
-                <div className="mt-6 space-y-4 pt-6 border-t border-[#4169E1]/30">
+                <div className="mt-6 space-y-4 pt-6 border-t border-[#0077b6]/30">
                   <div>
                     <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.funcExtension")}</div>
-                    <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
+                    <p className="text-base text-slate-300 leading-relaxed bg-[#002244]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.funcExtensionDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.nonstickCoating")}</strong>
                       {t("patents.evolutionPath.funcExtensionDescAfter")}
@@ -416,12 +416,12 @@ export default function PatentsPage() {
                   <div>
                     <div className="text-[#73DBFF] text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
                     <div className="space-y-2">
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent1Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent1No")}</div>
                       </div>
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent2Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent2No")}</div>
@@ -434,11 +434,11 @@ export default function PatentsPage() {
 
             {/* Stage 02 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
+              className={`p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Layers className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -454,17 +454,17 @@ export default function PatentsPage() {
               </p>
 
               {expandedStage === 2 && (
-                <div className="mt-6 space-y-4 pt-6 border-t border-[#4169E1]/30">
+                <div className="mt-6 space-y-4 pt-6 border-t border-[#0077b6]/30">
                   <div>
                     <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
-                    <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
+                    <p className="text-base text-slate-300 leading-relaxed bg-[#002244]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.techBranchDesc")}
                     </p>
                   </div>
 
                   <div>
                     <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
-                    <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
+                    <p className="text-base text-slate-300 leading-relaxed bg-[#002244]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.typicalFormsDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.thermalPadSubstrate")}</strong>
                       {t("patents.evolutionPath.typicalFormsDescAfter")}
@@ -477,12 +477,12 @@ export default function PatentsPage() {
                     <div className="mb-3">
                       <div className="text-base text-[#73DBFF]/90 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
                       <div className="space-y-2">
-                        <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                        <div className="p-3 bg-[#002244]/50 rounded-lg">
                           <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="text-base text-slate-300">{t("patents.evolutionPath.patent3Title")}</div>
                           <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent3No")}</div>
                         </div>
-                        <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                        <div className="p-3 bg-[#002244]/50 rounded-lg">
                           <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="text-base text-slate-300">{t("patents.evolutionPath.patent4Title")}</div>
                           <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent4No")}</div>
@@ -493,7 +493,7 @@ export default function PatentsPage() {
                     <div>
                       <div className="text-base text-[#73DBFF]/90 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
                       <div className="space-y-2">
-                        <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                        <div className="p-3 bg-[#002244]/50 rounded-lg">
                           <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="text-base text-slate-300">
                             {t("patents.evolutionPath.patent5Title")}
@@ -509,11 +509,11 @@ export default function PatentsPage() {
 
             {/* Stage 03 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
+              className={`p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -529,10 +529,10 @@ export default function PatentsPage() {
               </p>
 
               {expandedStage === 3 && (
-                <div className="mt-6 space-y-4 pt-6 border-t border-[#4169E1]/30">
+                <div className="mt-6 space-y-4 pt-6 border-t border-[#0077b6]/30">
                   <div>
                     <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
-                    <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
+                    <p className="text-base text-slate-300 leading-relaxed bg-[#002244]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.formDescText")}
                     </p>
                   </div>
@@ -541,29 +541,29 @@ export default function PatentsPage() {
                     <div className="text-[#73DBFF] text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
 
                     <div className="space-y-2">
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">
                           {t("patents.evolutionPath.patent6Title")}
                         </div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent6No")}</div>
                       </div>
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent7Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent7No")}</div>
                       </div>
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent8Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent8No")}</div>
                       </div>
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent9Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent9No")}</div>
                       </div>
-                      <div className="p-3 bg-[#0344b3]/50 rounded-lg">
+                      <div className="p-3 bg-[#002244]/50 rounded-lg">
                         <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="text-base text-slate-300">{t("patents.evolutionPath.patent10Title")}</div>
                         <div className="font-mono text-base text-slate-500 mt-1">{t("patents.evolutionPath.patent10No")}</div>
@@ -576,11 +576,11 @@ export default function PatentsPage() {
 
             {/* Stage 04 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
+              className={`p-6 bg-[#002244]/60 backdrop-blur-sm border-[#0077b6]/30 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
@@ -596,8 +596,8 @@ export default function PatentsPage() {
               </p>
 
               {expandedStage === 4 && (
-                <div className="mt-6 pt-6 border-t border-[#4169E1]/30">
-                  <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg italic">
+                <div className="mt-6 pt-6 border-t border-[#0077b6]/30">
+                  <p className="text-base text-slate-300 leading-relaxed bg-[#002244]/50 p-4 rounded-lg italic">
                     {t("patents.evolutionPath.stage04Explanation")}
                   </p>
                 </div>
@@ -779,7 +779,7 @@ export default function PatentsPage() {
       </section>
 
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0344b3]/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0077b6]/15 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
@@ -788,7 +788,7 @@ export default function PatentsPage() {
           </div>
 
           <div className="max-w-6xl mx-auto mb-12">
-            <Card className="p-8 bg-[#0344b3]/50 backdrop-blur-sm border-[#4169E1]/35">
+            <Card className="p-8 bg-[#002244]/50 backdrop-blur-sm border-[#0077b6]/30">
               <p className="text-lg leading-relaxed text-center text-slate-300">
                 {t("patents.platformExtension.intro")}
               </p>
@@ -798,8 +798,8 @@ export default function PatentsPage() {
           {/* Three exploration direction cards */}
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 mb-12">
             {/* Direction 1: Electronic state reconstruction */}
-            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
+            <Card className="p-8 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
@@ -811,8 +811,8 @@ export default function PatentsPage() {
             </Card>
 
             {/* Direction 2: Chaotic dynamics */}
-            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
+            <Card className="p-8 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
                 <Layers className="w-7 h-7 text-white" />
               </div>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
@@ -824,8 +824,8 @@ export default function PatentsPage() {
             </Card>
 
             {/* Direction 3: Physical computing */}
-            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
+            <Card className="p-8 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border-[#0077b6]/30 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-4">
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
@@ -838,7 +838,7 @@ export default function PatentsPage() {
           </div>
 
           {/* Disclaimer */}
-          <Card className="max-w-5xl mx-auto p-6 bg-[#0344b3]/50 backdrop-blur-sm border-[#4169E1]/35">
+          <Card className="max-w-5xl mx-auto p-6 bg-[#002244]/50 backdrop-blur-sm border-[#0077b6]/30">
             <p className="text-lg text-slate-300 leading-relaxed text-center italic">
               {t("patents.platformExtension.disclaimer")}
             </p>
