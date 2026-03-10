@@ -72,24 +72,24 @@ export default function PatentsPage() {
                 <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step1")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
+              <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
-                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-cyan-400 flex-shrink-0 self-center" />
+              <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
-                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
+              <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center h-[120px] shrink-0">
-                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
                 <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
-              <ArrowRight className="w-6 h-6 text-purple-400 flex-shrink-0 self-center" />
+              <ArrowRight className="w-6 h-6 text-[#73DBFF] flex-shrink-0 self-center" />
               <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 ring-2 ring-[#4169E1]/50 text-center h-[120px] shrink-0">
-                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
                 <div className="text-white font-bold text-xs leading-tight whitespace-pre-line break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
@@ -108,31 +108,31 @@ export default function PatentsPage() {
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
               </Card>
               <div className="flex justify-center">
-                <ChevronDown className="w-6 h-6 text-cyan-400" />
+                <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
-                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step2")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
               </Card>
               <div className="flex justify-center">
-                <ChevronDown className="w-6 h-6 text-cyan-400" />
+                <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
-                <div className="text-cyan-400 text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step3")}</div>
                 <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
               </Card>
               <div className="flex justify-center">
-                <ChevronDown className="w-6 h-6 text-purple-400" />
+                <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
               <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center">
-                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.step4")}</div>
                 <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.physicsEvolution")}</div>
               </Card>
               <div className="flex justify-center">
-                <ChevronDown className="w-6 h-6 text-purple-400" />
+                <ChevronDown className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center ring-2 ring-purple-500/40">
-                <div className="text-purple-400 text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
+              <Card className="flex flex-col items-center justify-center p-6 min-h-[88px] bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 text-center ring-2 ring-[#73DBFF]/40">
+                <div className="text-[#73DBFF] text-sm font-medium mb-2">{t("patents.evolution.end")}</div>
                 <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.computingResource")}</div>
               </Card>
             </div>
@@ -140,7 +140,7 @@ export default function PatentsPage() {
             {/* Core Logic Summary */}
             <Card className="p-8 bg-gradient-to-br from-[#0344b3]/90 to-[#023B99]/90 backdrop-blur-sm border-[#73DBFF]/30">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#023B99] to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#73DBFF]/30">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#023B99] to-[#0344b3] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -195,18 +195,18 @@ export default function PatentsPage() {
                   <div className="flex justify-center py-2 md:hidden">
                     <div className="flex flex-col items-center">
                       <ChevronDown className="w-5 h-5 text-[#73DBFF]/60" />
-                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-cyan-500/40 to-transparent"></div>
+                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-[#73DBFF]/40 to-transparent"></div>
                     </div>
                   </div>
 
                   {/* Stage 02 */}
                   <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors flex-shrink-0">
-                        <Thermometer className="w-5 h-5 md:w-6 md:h-6 text-cyan-400" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
+                        <Thermometer className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-base font-mono text-cyan-400 mb-1">Stage 02</div>
+                        <div className="text-base font-mono text-[#73DBFF] mb-1">Stage 02</div>
                         <h5 className="text-base text-white font-bold mb-1 md:mb-2">{t("patents.architecture.stage02Title")}</h5>
                         <p className="text-base text-slate-400 leading-relaxed">{t("patents.architecture.stage02Desc")}</p>
                       </div>
@@ -216,19 +216,19 @@ export default function PatentsPage() {
                   {/* 移动端连接箭头 */}
                   <div className="flex justify-center py-2 md:hidden">
                     <div className="flex flex-col items-center">
-                      <ChevronDown className="w-5 h-5 text-cyan-400/60" />
-                      <div className="h-8 w-px bg-gradient-to-b from-cyan-500/40 via-purple-500/40 to-transparent"></div>
+                      <ChevronDown className="w-5 h-5 text-[#73DBFF]/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-[#73DBFF]/40 to-transparent"></div>
                     </div>
                   </div>
 
                   {/* Stage 03 */}
                   <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors flex-shrink-0">
-                        <Layers className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
+                        <Layers className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-base font-mono text-purple-400 mb-1">Stage 03</div>
+                        <div className="text-base font-mono text-[#73DBFF] mb-1">Stage 03</div>
                         <h5 className="text-base text-white font-bold mb-1 md:mb-2">{t("patents.architecture.stage03Title")}</h5>
                         <p className="text-base text-slate-400 leading-relaxed">{t("patents.architecture.stage03Desc")}</p>
                       </div>
@@ -238,8 +238,8 @@ export default function PatentsPage() {
                   {/* 移动端：演化路径到核心内核的连接 */}
                   <div className="flex justify-center py-3 md:hidden">
                     <div className="flex flex-col items-center">
-                      <ChevronDown className="w-6 h-6 text-amber-400/80" />
-                      <div className="h-12 w-px bg-gradient-to-b from-purple-500/50 via-amber-400/60 to-amber-500/50"></div>
+                      <ChevronDown className="w-6 h-6 text-[#73DBFF]/80" />
+                      <div className="h-12 w-px bg-gradient-to-b from-[#73DBFF]/50 via-[#73DBFF]/60 to-[#73DBFF]/50"></div>
                     </div>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export default function PatentsPage() {
                 {/* 移动端：核心内核到应用视窗的连接 */}
                 <div className="flex justify-center py-3 md:hidden">
                   <div className="flex flex-col items-center">
-                    <ChevronDown className="w-6 h-6 text-amber-400/80" />
+                    <ChevronDown className="w-6 h-6 text-[#73DBFF]/80" />
                     <div className="h-12 w-px bg-gradient-to-b from-[#4169E1]/50 via-[#73DBFF]/40 to-transparent"></div>
                   </div>
                 </div>
@@ -288,8 +288,8 @@ export default function PatentsPage() {
                 {/* 右侧：应用视窗 */}
                 <div className="space-y-3 md:space-y-6">
                   <div className="text-center mb-4 md:mb-6">
-                    <h4 className="text-base md:text-lg font-semibold text-purple-400 mb-2">{t("patents.architecture.applicationWindow")}</h4>
-                    <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+                    <h4 className="text-base md:text-lg font-semibold text-[#73DBFF] mb-2">{t("patents.architecture.applicationWindow")}</h4>
+                    <div className="h-px bg-gradient-to-r from-transparent via-[#73DBFF]/50 to-transparent"></div>
                   </div>
 
                   {/* 极端工况应用 */}
@@ -313,19 +313,19 @@ export default function PatentsPage() {
                   <div className="flex justify-center py-2 md:hidden">
                     <div className="flex flex-col items-center">
                       <ChevronDown className="w-5 h-5 text-[#73DBFF]/60" />
-                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-purple-500/40 to-transparent"></div>
+                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-[#73DBFF]/40 to-transparent"></div>
                     </div>
                   </div>
 
                   {/* 超导材料研究平台 */}
                   <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors flex-shrink-0">
-                        <Microscope className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
+                        <Microscope className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.superconductorPlatform")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-purple-300 font-medium mt-1">
+                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
                           {t("patents.architecture.theoryExploration")}
                         </div>
                       </div>
@@ -335,20 +335,20 @@ export default function PatentsPage() {
                   {/* 移动端连接箭头 */}
                   <div className="flex justify-center py-2 md:hidden">
                     <div className="flex flex-col items-center">
-                      <ChevronDown className="w-5 h-5 text-purple-400/60" />
-                      <div className="h-8 w-px bg-gradient-to-b from-purple-500/40 via-indigo-500/40 to-transparent"></div>
+                      <ChevronDown className="w-5 h-5 text-[#73DBFF]/60" />
+                      <div className="h-8 w-px bg-gradient-to-b from-[#73DBFF]/40 via-[#73DBFF]/40 to-transparent"></div>
                     </div>
                   </div>
 
                   {/* 量子计算潜力 */}
                   <Card className="p-4 md:p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#4169E1]/60 hover:shadow-lg hover:shadow-[#4169E1]/20 transition-all duration-300 group">
                     <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500/30 transition-colors flex-shrink-0">
-                        <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center group-hover:bg-[#73DBFF]/30 transition-colors flex-shrink-0">
+                        <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-[#73DBFF]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h5 className="text-base text-white font-bold mb-2">{t("patents.architecture.quantumPotential")}</h5>
-                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-indigo-300 font-medium mt-1">
+                        <div className="inline-block px-2 py-1 bg-[#0344b3]/60 rounded text-base text-[#73DBFF] font-medium mt-1">
                           {t("patents.architecture.visionPlanning")}
                         </div>
                       </div>
@@ -435,19 +435,19 @@ export default function PatentsPage() {
 
             {/* Stage 02 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-cyan-500/60 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-cyan-500/60" : ""}`}
+              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Layers className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-cyan-400 text-xs font-medium">Stage 02</div>
+                  <div className="text-[#73DBFF] text-xs font-medium">Stage 02</div>
                   <div className="text-white font-bold">{t("patents.evolutionPath.stage02Title")}</div>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-cyan-400 transition-transform ${expandedStage === 2 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-[#73DBFF] transition-transform ${expandedStage === 2 ? "rotate-180" : ""}`}
                 />
               </div>
               <p className="text-base text-slate-400 leading-relaxed">
@@ -457,14 +457,14 @@ export default function PatentsPage() {
               {expandedStage === 2 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-[#4169E1]/30">
                   <div>
-                    <div className="text-cyan-400 text-base font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
+                    <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
                     <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.techBranchDesc")}
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-cyan-400 text-base font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
+                    <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
                     <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.typicalFormsDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.thermalPadSubstrate")}</strong>
@@ -473,10 +473,10 @@ export default function PatentsPage() {
                   </div>
 
                   <div>
-                    <div className="text-cyan-400 text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
+                    <div className="text-[#73DBFF] text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
 
                     <div className="mb-3">
-                      <div className="text-base text-cyan-300 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
+                      <div className="text-base text-[#73DBFF]/90 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-[#0344b3]/50 rounded-lg">
                           <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
@@ -492,7 +492,7 @@ export default function PatentsPage() {
                     </div>
 
                     <div>
-                      <div className="text-base text-cyan-300 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
+                      <div className="text-base text-[#73DBFF]/90 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-[#0344b3]/50 rounded-lg">
                           <div className="text-base text-slate-500 mb-1">{t("patents.evolutionPath.patentType")}</div>
@@ -510,19 +510,19 @@ export default function PatentsPage() {
 
             {/* Stage 03 */}
             <Card
-              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-purple-500/60 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-purple-500/60" : ""}`}
+              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-purple-400 text-xs font-medium">Stage 03</div>
+                  <div className="text-[#73DBFF] text-xs font-medium">Stage 03</div>
                   <div className="text-white font-bold">{t("patents.evolutionPath.stage03Title")}</div>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-purple-400 transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-[#73DBFF] transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
                 />
               </div>
               <p className="text-base text-slate-400 leading-relaxed">
@@ -532,14 +532,14 @@ export default function PatentsPage() {
               {expandedStage === 3 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-[#4169E1]/30">
                   <div>
-                    <div className="text-purple-400 text-base font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
+                    <div className="text-[#73DBFF] text-base font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
                     <p className="text-base text-slate-300 leading-relaxed bg-[#0344b3]/50 p-4 rounded-lg">
                       {t("patents.evolutionPath.formDescText")}
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-purple-400 text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
+                    <div className="text-[#73DBFF] text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
 
                     <div className="space-y-2">
                       <div className="p-3 bg-[#0344b3]/50 rounded-lg">
@@ -577,19 +577,19 @@ export default function PatentsPage() {
 
             {/* Stage 04 */}
             <Card
-              className={`p-6 bg-slate-800/80 backdrop-blur-sm border-indigo-500/30 cursor-pointer transition-all hover:border-indigo-500/60 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-indigo-500/60" : ""}`}
+              className={`p-6 bg-[#0344b3]/60 backdrop-blur-sm border-[#4169E1]/35 cursor-pointer transition-all hover:border-[#73DBFF]/60 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-[#73DBFF]/60" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-indigo-400 text-xs font-medium">Stage 04</div>
+                  <div className="text-[#73DBFF] text-xs font-medium">Stage 04</div>
                   <div className="text-white font-bold">{t("patents.evolutionPath.stage04Title")}</div>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-indigo-400 transition-transform ${expandedStage === 4 ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-[#73DBFF] transition-transform ${expandedStage === 4 ? "rotate-180" : ""}`}
                 />
               </div>
               <p className="text-base text-slate-400 leading-relaxed">
@@ -609,7 +609,7 @@ export default function PatentsPage() {
       </section>
 
       <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-900/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0344b3]/20 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
@@ -617,13 +617,13 @@ export default function PatentsPage() {
             <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-pink-900/30 to-purple-950/30 backdrop-blur-sm border-pink-500/40 ring-4 ring-pink-500/20">
+          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#0344b3]/80 to-[#023B99]/80 backdrop-blur-sm border-[#4169E1]/40 ring-4 ring-[#73DBFF]/20">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-lg shadow-pink-500/30">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <div>
-                <div className="text-pink-300 text-sm font-medium mb-1">Platform Core Technology</div>
+                <div className="text-[#73DBFF] text-sm font-medium mb-1">Platform Core Technology</div>
                 <h3 className="text-white font-bold text-2xl">{t("patents.platformCore.mainTitle")}</h3>
               </div>
             </div>
@@ -634,18 +634,18 @@ export default function PatentsPage() {
 
             {/* Platform Core Principle Explanation */}
             <div className="p-8 bg-[#0344b3]/60 rounded-xl border border-[#4169E1]/40">
-              <h4 className="text-pink-300 font-semibold text-lg mb-6">{t("patents.platformCore.principleTitle")}</h4>
+              <h4 className="text-[#73DBFF] font-semibold text-lg mb-6">{t("patents.platformCore.principleTitle")}</h4>
 
               <div className="space-y-4 text-base leading-relaxed text-slate-300">
                 <p>{t("patents.platformCore.principleP1")}</p>
 
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>
-                    <span className="text-pink-400 font-mono font-semibold">sp³</span>{" "}
+                    <span className="text-[#73DBFF] font-mono font-semibold">sp³</span>{" "}
                     {t("patents.platformCore.sp3Role")}
                   </li>
                   <li>
-                    <span className="text-pink-400 font-mono font-semibold">sp²</span>{" "}
+                    <span className="text-[#73DBFF] font-mono font-semibold">sp²</span>{" "}
                     {t("patents.platformCore.sp2Role")}
                   </li>
                 </ul>
@@ -656,8 +656,8 @@ export default function PatentsPage() {
                   {t("patents.platformCore.principleP2b")}
                 </p>
 
-                <div className="my-6 p-6 bg-gradient-to-br from-slate-900/80 to-purple-950/30 rounded-xl border border-pink-500/30">
-                  <h5 className="text-pink-300 font-semibold text-base mb-5 flex items-center gap-2">
+                <div className="my-6 p-6 bg-gradient-to-br from-slate-900/80 to-[#023B99]/30 rounded-xl border border-[#4169E1]/40">
+                  <h5 className="text-[#73DBFF] font-semibold text-base mb-5 flex items-center gap-2">
                     <Sparkles className="w-5 h-5" />
                     {t("patents.platformCore.diagramTitle")}
                   </h5>
@@ -665,16 +665,16 @@ export default function PatentsPage() {
                   <div className="flex flex-col sm:flex-col md:grid md:grid-cols-3 gap-4">
                     {/* sp³ dominant */}
                     <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
-                      <div className="text-blue-300 font-mono font-semibold mb-3 text-base">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain1Title")}
                       </div>
                       <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
-                          <span className="text-blue-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain1a")}</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-blue-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain1b")}</span>
                         </div>
                       </div>
@@ -682,16 +682,16 @@ export default function PatentsPage() {
 
                     {/* sp² dominant */}
                     <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
-                      <div className="text-green-300 font-mono font-semibold mb-3 text-base">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain2Title")}
                       </div>
                       <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
-                          <span className="text-green-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain2a")}</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-green-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain2b")}</span>
                         </div>
                       </div>
@@ -699,16 +699,16 @@ export default function PatentsPage() {
 
                     {/* Mixed state */}
                     <div className="p-5 bg-[#0344b3]/60 rounded-lg border border-[#4169E1]/40">
-                      <div className="text-purple-300 font-mono font-semibold mb-3 text-base">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
                         {t("patents.platformCore.domain3Title")}
                       </div>
                       <div className="text-slate-300 space-y-2 ml-4 text-base">
                         <div className="flex items-start gap-2">
-                          <span className="text-purple-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain3a")}</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-purple-400 mt-0.5">→</span>
+                          <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain3b")}</span>
                         </div>
                       </div>
@@ -716,25 +716,25 @@ export default function PatentsPage() {
                   </div>
 
                     {/* Control parameters */}
-                    <div className="mt-5 pt-5 border-t border-pink-500/30">
+                    <div className="mt-5 pt-5 border-t border-[#4169E1]/30">
                       <p className="text-slate-400 mb-3 text-base">{t("patents.platformCore.tuningIntro")}</p>
                       <ul className="space-y-2 ml-4 text-base text-slate-300">
                         <li className="flex items-start gap-2">
-                          <span className="text-pink-400 font-bold">•</span>
+                          <span className="text-[#73DBFF] font-bold">•</span>
                           <span>
                             <strong className="text-white">{t("patents.platformCore.tuning1")}</strong>
                             {t("patents.platformCore.tuning1Note")}
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-pink-400 font-bold">•</span>
+                          <span className="text-[#73DBFF] font-bold">•</span>
                           <span>
                             <strong className="text-white">{t("patents.platformCore.tuning2")}</strong>
                             {t("patents.platformCore.tuning2Note")}
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-pink-400 font-bold">•</span>
+                          <span className="text-[#73DBFF] font-bold">•</span>
                           <span>
                             <strong className="text-white">{t("patents.platformCore.tuning3")}</strong>
                           </span>
@@ -744,17 +744,17 @@ export default function PatentsPage() {
                     </div>
                 </div>
 
-                <p className="pt-4 border-t border-pink-500/20 text-slate-200">
+                <p className="pt-4 border-t border-[#4169E1]/20 text-slate-200">
                   {t("patents.platformCore.platformConclusion")}
-                  <strong className="text-pink-400">{t("patents.platformCore.platformName")}</strong>
+                  <strong className="text-[#73DBFF]">{t("patents.platformCore.platformName")}</strong>
                   {t("patents.platformCore.platformConclusionEnd")}
                 </p>
               </div>
             </div>
 
             {/* 材料体系综合对比雷达图 */}
-            <div className="mt-10 pt-8 border-t border-pink-500/30">
-              <h4 className="text-pink-300 font-semibold text-base mb-6 flex items-center gap-2">
+            <div className="mt-10 pt-8 border-t border-[#4169E1]/30">
+              <h4 className="text-[#73DBFF] font-semibold text-base mb-6 flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 {t("patents.platformCore.radarChartTitle")}
               </h4>
@@ -776,11 +776,11 @@ export default function PatentsPage() {
       </section>
 
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0344b3]/20 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 text-sm font-medium mb-6 border border-indigo-500/30">
+            <div className="inline-block px-4 py-2 bg-[#73DBFF]/20 rounded-full text-[#73DBFF] text-sm font-medium mb-6 border border-[#4169E1]/35">
               {t("patents.platformExtension.sectionBadge")}
             </div>
             <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.platformExtension.sectionTitle")}</h2>
@@ -798,11 +798,11 @@ export default function PatentsPage() {
           {/* Three exploration direction cards */}
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 mb-12">
             {/* Direction 1: Electronic state reconstruction */}
-            <Card className="p-8 bg-gradient-to-br from-indigo-950/70 to-slate-900/70 backdrop-blur-sm border-indigo-500/30 hover:border-indigo-400/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 mb-6">
+            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-6">
                 <Zap className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-indigo-300 font-bold text-lg mb-4">{t("patents.platformExtension.superconductorTitle")}</h3>
+              <h3 className="text-[#73DBFF] font-bold text-lg mb-4">{t("patents.platformExtension.superconductorTitle")}</h3>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 {t("patents.platformExtension.superconductorP1")}
               </p>
@@ -812,11 +812,11 @@ export default function PatentsPage() {
             </Card>
 
             {/* Direction 2: Chaotic dynamics */}
-            <Card className="p-8 bg-gradient-to-br from-violet-950/70 to-slate-900/70 backdrop-blur-sm border-violet-500/30 hover:border-violet-400/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-lg shadow-violet-500/30 mb-6">
+            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-6">
                 <Layers className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-violet-300 font-bold text-lg mb-4">{t("patents.platformExtension.chaosTitle")}</h3>
+              <h3 className="text-[#73DBFF] font-bold text-lg mb-4">{t("patents.platformExtension.chaosTitle")}</h3>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 {t("patents.platformExtension.chaosP1")}
               </p>
@@ -826,11 +826,11 @@ export default function PatentsPage() {
             </Card>
 
             {/* Direction 3: Physical computing */}
-            <Card className="p-8 bg-gradient-to-br from-purple-950/70 to-slate-900/70 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/60 transition-all">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 mb-6">
+            <Card className="p-8 bg-gradient-to-br from-[#0344b3]/70 to-slate-900/70 backdrop-blur-sm border-[#4169E1]/35 hover:border-[#73DBFF]/60 transition-all">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0344b3] to-[#0452cc] flex items-center justify-center shadow-lg shadow-[#73DBFF]/30 mb-6">
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-purple-300 font-bold text-lg mb-4">{t("patents.platformExtension.quantumTitle")}</h3>
+              <h3 className="text-[#73DBFF] font-bold text-lg mb-4">{t("patents.platformExtension.quantumTitle")}</h3>
               <p className="text-lg text-slate-300 leading-relaxed mb-4">
                 {t("patents.platformExtension.quantumP1")}
               </p>
@@ -841,7 +841,7 @@ export default function PatentsPage() {
           </div>
 
           {/* Disclaimer */}
-          <Card className="max-w-5xl mx-auto p-6 bg-gradient-to-r from-amber-900/20 to-orange-900/20 border-amber-500/30">
+          <Card className="max-w-5xl mx-auto p-6 bg-[#0344b3]/50 backdrop-blur-sm border-[#4169E1]/35">
             <p className="text-lg text-slate-300 leading-relaxed text-center italic">
               {t("patents.platformExtension.disclaimer")}
             </p>
@@ -880,19 +880,19 @@ export default function PatentsPage() {
 
               {/* 二、功能材料阶段 */}
               <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
-                <h3 className="text-cyan-400 font-bold text-lg mb-4 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-sm font-mono">
+                <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block2Num")}
                   </span>
                   {t("patents.patentCluster.block2Title")}
                 </h3>
                 <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block2Item1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block2Item2")}</span>
                   </li>
                 </ul>
@@ -900,39 +900,39 @@ export default function PatentsPage() {
 
               {/* 三、全碳体系阶段 */}
               <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
-                <h3 className="text-purple-400 font-bold text-lg mb-4 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-sm font-mono">
+                <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block3Num")}
                   </span>
                   {t("patents.patentCluster.block3Title")}
                 </h3>
                 <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block3Item1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block3Item2")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block3Item3")}</span>
                   </li>
                 </ul>
               </div>
 
               {/* 四、平台核心技术 */}
-              <div className="p-6 bg-gradient-to-br from-pink-950/50 to-purple-950/50 rounded-xl border border-pink-500/30">
-                <h3 className="text-pink-400 font-bold text-lg mb-4 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400 text-sm font-mono">
+              <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-[#4169E1]/40">
+                <h3 className="text-[#73DBFF] font-bold text-lg mb-4 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-[#73DBFF]/20 flex items-center justify-center text-[#73DBFF] text-sm font-mono">
                     {t("patents.patentCluster.block4Num")}
                   </span>
                   {t("patents.patentCluster.block4Title")}
                 </h3>
                 <ul className="space-y-2 text-base text-slate-300 ml-11">
                   <li className="flex items-start gap-2">
-                    <span className="text-pink-400">•</span>
+                    <span className="text-[#73DBFF]">•</span>
                     <span>{t("patents.patentCluster.block4Item")}</span>
                   </li>
                 </ul>
@@ -944,9 +944,9 @@ export default function PatentsPage() {
               <p className="text-lg text-slate-300 leading-relaxed text-center">
                 {t("patents.patentCluster.summary")}
                 <strong className="text-[#73DBFF]">{t("patents.patentCluster.summaryMaterial")}</strong>、
-                <strong className="text-cyan-400">{t("patents.patentCluster.summaryDesign")}</strong>
+                <strong className="text-[#73DBFF]">{t("patents.patentCluster.summaryDesign")}</strong>
                 {t("patents.patentCluster.summaryTo")}
-                <strong className="text-purple-400">{t("patents.patentCluster.summaryExtend")}</strong>
+                <strong className="text-[#73DBFF]">{t("patents.patentCluster.summaryExtend")}</strong>
                 {t("patents.patentCluster.summaryEnd")}
               </p>
             </div>
@@ -958,11 +958,11 @@ export default function PatentsPage() {
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat1Label")}</div>
               </div>
               <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-slate-700">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">{t("patents.patentCluster.stat2Value")}</div>
+                <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("patents.patentCluster.stat2Value")}</div>
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat2Label")}</div>
               </div>
               <div className="p-6 bg-[#0344b3]/50 rounded-xl border border-slate-700">
-                <div className="text-3xl font-bold text-purple-400 mb-2">{t("patents.patentCluster.stat3Value")}</div>
+                <div className="text-3xl font-bold text-[#73DBFF] mb-2">{t("patents.patentCluster.stat3Value")}</div>
                 <div className="text-slate-400 text-sm">{t("patents.patentCluster.stat3Label")}</div>
               </div>
             </div>
