@@ -1025,8 +1025,9 @@
     "hero": {
       "badge": "Technology Architecture & Deepening Path",
       "title": "Technology Architecture & Evolution Path",
-      "subtitle": "Building determinism for all-carbon physical systems",
-      "desc": "We are not merely manufacturing a material; we are defining an underlying hardware system based on stress engineering. Our technology route is completing the full loop from theoretical hypothesis to physical validation, protected by a dense IP network of 10 core patents."
+      "subtitle": "Underlying materials science platform based on sp²–sp³ interface engineering",
+      "desc": "We are building a complete carbon-based atomic-level interface engineering platform. Our technology route is completing the full loop from theoretical hypothesis to physical validation, protected by an IP network of 10 core patents. Through precise control of the sp²–sp³ hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
+      "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
     },
     "architecture": {
       "title": "Technology Deepening Path & Platform Architecture Overview",

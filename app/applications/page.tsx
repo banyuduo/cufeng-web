@@ -51,7 +51,7 @@ export default async function ApplicationsPage({
       {/* 应用蓝图 */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden">
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#002244] rounded-3xl border border-[#4169E1]/40 overflow-hidden">
             <div className="text-center mb-12 px-1">
               <h2 className="page-h2 text-white mb-4 md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
@@ -74,8 +74,8 @@ export default async function ApplicationsPage({
 
               {/* 底部基座 */}
               <div className="pt-8 flex flex-col items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent mb-8"></div>
-                <div className="px-8 py-4 bg-slate-800 rounded-xl border border-slate-600 flex items-center gap-3 shadow-2xl">
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#4169E1]/50 to-transparent mb-8"></div>
+                <div className="px-8 py-4 bg-[#001a33] rounded-xl border border-[#4169E1]/40 flex items-center gap-3 shadow-2xl">
                   <ShieldCheck className="w-6 h-6 text-sky-500" />
                   <div>
                     <div className="text-[10px] text-sky-500 font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>

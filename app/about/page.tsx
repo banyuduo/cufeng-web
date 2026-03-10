@@ -19,7 +19,7 @@ export default async function AboutPage({
   const prefix = `/${validLocale}`
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-[#001a33]">
       <Navigation locale={validLocale} />
 
       <PageHero
@@ -32,9 +32,9 @@ export default async function AboutPage({
       />
 
       {/* 企业概览 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-slate-800/50 border-slate-700/50">
+          <Card className="p-8 md:p-12 bg-[#002244]/50 border-[#4169E1]/40">
             <div className="space-y-6 text-slate-200 leading-relaxed">
               <div>
                 <h2 className="page-h2 text-white mb-4 flex items-center gap-3">
@@ -47,7 +47,7 @@ export default async function AboutPage({
                 <p className="text-slate-400 text-sm">{t("about.overview.location")}</p>
               </div>
 
-              <div className="pt-4 border-t border-slate-700/50">
+              <div className="pt-4 border-t border-[#4169E1]/30">
                 <h3 className="page-h3 text-white mb-4">{t("about.overview.companyProfile")}</h3>
                 <p className="mb-4">
                   {t("about.overview.profile1")}
@@ -57,7 +57,7 @@ export default async function AboutPage({
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-700/50">
+              <div className="pt-4 border-t border-[#4169E1]/30">
                 <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-sky-400" />
                   {t("about.overview.rdCapability")}
@@ -67,7 +67,7 @@ export default async function AboutPage({
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-700/50">
+              <div className="pt-4 border-t border-[#4169E1]/30">
                 <h3 className="page-h3 text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-sky-400" />
                   {t("about.overview.evolution")}
@@ -81,7 +81,7 @@ export default async function AboutPage({
               </div>
 
               {/* 企业愿景与核心理念 */}
-              <div className="pt-4 border-t border-slate-700/50">
+              <div className="pt-4 border-t border-[#4169E1]/30">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="page-h3 text-white mb-3 flex items-center gap-2">
@@ -109,7 +109,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心团队 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#002244]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.team.title")}</h2>
@@ -118,7 +118,7 @@ export default async function AboutPage({
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* 王博士 */}
-            <Card id="wang" className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
+            <Card id="wang" className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-sky-600/20 flex items-center justify-center">
                   <GraduationCap className="w-6 h-6 text-sky-400" />
@@ -166,7 +166,7 @@ export default async function AboutPage({
             </Card>
 
             {/* 何工 */}
-            <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-cyan-500/50 transition-colors">
+            <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center">
                   <Wrench className="w-6 h-6 text-cyan-400" />
@@ -207,7 +207,7 @@ export default async function AboutPage({
             </Card>
 
             {/* 张工 */}
-            <Card id="zhang-gong" className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
+            <Card id="zhang-gong" className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center">
                   <Users className="w-6 h-6 text-purple-400" />
@@ -266,7 +266,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心历程 - 时间轴 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001a33]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("about.timeline.title")}</h2>
@@ -287,7 +287,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-sky-500/50 transition-colors">
+                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Calendar className="w-5 h-5 text-sky-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Patents")}</h3>
@@ -307,7 +307,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-cyan-500/50 transition-colors">
+                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Zap className="w-5 h-5 text-cyan-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2025Thermal")}</h3>
@@ -327,7 +327,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-purple-500/50 transition-colors">
+                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Building2 className="w-5 h-5 text-purple-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2023Relocate")}</h3>
@@ -347,7 +347,7 @@ export default async function AboutPage({
                   </div>
                 </div>
                 <div className="flex-1 md:ml-8">
-                  <Card className="p-6 bg-slate-900/80 border-slate-700/50 hover:border-slate-500/50 transition-colors">
+                  <Card className="p-6 bg-[#002244]/60 border-[#4169E1]/40 hover:border-[#4169E1]/60 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <Target className="w-5 h-5 text-slate-400" />
                       <h3 className="text-xl font-bold text-white">{t("about.timeline.2018Founding")}</h3>
@@ -367,7 +367,7 @@ export default async function AboutPage({
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-slate-900/50"
+                className="gap-2 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-[#002244]/50"
               >
                 {t("about.timeline.moreNews")}
                 <ArrowRight className="w-4 h-4" />
