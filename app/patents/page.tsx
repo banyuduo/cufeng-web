@@ -757,12 +757,13 @@ export default function PatentsPage() {
 
             {/* 材料体系综合对比雷达图（浅底信息承载） */}
             <div className="mt-10 pt-8 border-t border-[#0077b6]/30">
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+              <div className="bg-[#F9FAFC] rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
                 <h4 className="text-slate-900 font-semibold text-base mb-6 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-[#0077b6]" />
                   {t("patents.platformCore.radarChartTitle")}
                 </h4>
                 <MaterialComparisonRadarChart
+                  variant="light"
                   labels={{
                     dim1: t("patents.platformCore.radarDim1"),
                     dim2: t("patents.platformCore.radarDim2"),
@@ -790,7 +791,7 @@ export default function PatentsPage() {
           </div>
 
           <div className="max-w-6xl mx-auto mb-12">
-            <Card className="p-8 bg-white border border-slate-200 shadow-sm">
+            <Card className="p-8 bg-[#F9FAFC] border border-slate-200/80 shadow-sm">
               <p className="page-lead text-center text-slate-700">
                 {t("patents.platformExtension.intro")}
               </p>
