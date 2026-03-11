@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo, useState, useEffect } from "react"
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -34,6 +35,20 @@ const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 export function MaterialComparisonRadarChart({ labels, variant = "dark" }: MaterialComparisonRadarChartProps) {
   const dimensionLabels = DIMENSIONS.map((k) => labels[k])
   const isLight = variant === "light"
+
+  const [isMobile, setIsMobile] = useState(false)
+  const [devicePixelRatio, setDevicePixelRatio] = useState(2)
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 767px)")
+    const update = () => {
+      setIsMobile(window.innerWidth < 768)
+      const dpr = window.devicePixelRatio ?? 1
+      setDevicePixelRatio(Math.min(Math.round(dpr), 2))
+    }
+    update()
+    mql.addEventListener("change", update)
+    return () => mql.removeEventListener("change", update)
+  }, [])
 
   const data = {
     labels: dimensionLabels,
@@ -74,10 +89,12 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
     ],
   }
 
-  const options: ChartOptions<"radar"> = {
+  const options: ChartOptions<"radar"> = useMemo(
+    () => ({
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: !isMobile,
     aspectRatio: 1.25,
+    devicePixelRatio,
     plugins: {
       legend: {
         position: "bottom",
@@ -123,10 +140,12 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
         },
       },
     },
-  }
+  }),
+  [isLight, isMobile, devicePixelRatio]
+  )
 
   return (
-    <div className="w-full max-w-md lg:max-w-lg mx-auto min-h-[360px] sm:min-h-[380px] md:min-h-[280px]">
+    <div className="w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto min-h-[min(90vw,420px)] sm:min-h-[380px] md:min-h-[280px] -mx-4 sm:mx-auto">
       <Radar data={data} options={options} />
     </div>
   )

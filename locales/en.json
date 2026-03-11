@@ -1,6 +1,7 @@
 {
   "common": {
     "home": "Home",
+    "loading": "Loading...",
     "nav": {
       "brand": "CuFeng / ToSpike",
       "techArchitecture": "Technology Architecture",

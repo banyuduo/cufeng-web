@@ -13,10 +13,11 @@ import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
+import { RadarChartLoading } from "@/components/radar-chart-loading"
 
 const MaterialComparisonRadarChart = dynamic(
   () => import("@/components/material-comparison-radar-chart").then((m) => ({ default: m.MaterialComparisonRadarChart })),
-  { ssr: false, loading: () => <div className="w-full max-w-md lg:max-w-lg mx-auto min-h-[280px] flex items-center justify-center text-slate-400">加载中...</div> }
+  { ssr: false, loading: () => <RadarChartLoading /> }
 )
 
 export default function PatentsPage() {
