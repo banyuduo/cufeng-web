@@ -1,6 +1,7 @@
 {
   "common": {
     "home": "首页",
+    "loading": "加载中...",
     "nav": {
       "brand": "簇锋科技 | ToSpike",
       "techArchitecture": "技术架构",
