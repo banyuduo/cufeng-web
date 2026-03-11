@@ -32,7 +32,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-32 pb-16 sm:pb-20 overflow-hidden ${
+      className={`relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden ${
         isDark
           ? ""
           : "bg-[#F9FAFC]"
@@ -83,8 +83,8 @@ export function PageHero({
           </h1>
           {tagline && (
             <p
-              className={`text-base sm:text-xl mb-2 break-words ${
-                isDark ? "text-[#7dd3fc] font-semibold" : "text-[#0077b6]"
+              className={`page-kicker mb-3 break-words ${
+                isDark ? "text-[#7dd3fc]" : "text-[#0077b6]"
               }`}
             >
               {tagline}
@@ -92,7 +92,7 @@ export function PageHero({
           )}
           {subtitle && (
             <p
-              className={`text-base sm:text-lg leading-relaxed break-words ${
+              className={`page-lead break-words ${
                 isDark ? "text-white/85" : "text-slate-600"
               } ${tagline ? "max-w-3xl mx-auto" : ""}`}
             >

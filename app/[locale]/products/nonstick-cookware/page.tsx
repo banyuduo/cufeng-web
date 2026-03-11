@@ -24,11 +24,11 @@ export default function NonstickCookwarePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
+      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -39,30 +39,30 @@ export default function NonstickCookwarePage() {
                 <CheckCircle2 className="w-4 h-4" />
                 {t("products.nonstickCookware.hero.badge")}
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">{t("products.nonstickCookware.hero.title")}</h1>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <h1 className="page-h1 mb-6 text-slate-900">{t("products.nonstickCookware.hero.title")}</h1>
+              <p className="page-lead text-slate-600 mb-6">
                 {t("products.nonstickCookware.hero.intro")}
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature1")}</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature2")}</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature3")}</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
@@ -70,7 +70,7 @@ export default function NonstickCookwarePage() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 h-[400px]">
+            <div className="grid grid-cols-2 gap-4 h-[300px] sm:h-[400px]">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ResponsivePicture
                   src="/images/diamond pan.jpg"
@@ -93,11 +93,11 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* Why Diamond */}
-      <section className="py-16 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.nonstickCookware.whyDiamond.title")}</h2>
-            <p className="text-slate-600">
+            <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.whyDiamond.title")}</h2>
+            <p className="page-lead text-slate-600">
               {t("products.nonstickCookware.whyDiamond.intro")}
             </p>
           </div>
@@ -106,96 +106,96 @@ export default function NonstickCookwarePage() {
               <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.hardnessTitle")}</h3>
-              <p className="text-sm text-slate-600">{t("products.nonstickCookware.whyDiamond.hardnessDesc")}</p>
+              <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.hardnessTitle")}</h3>
+              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.hardnessDesc")}</p>
             </Card>
 
             <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mx-auto mb-4">
                 <Flame className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.thermalTitle")}</h3>
-              <p className="text-sm text-slate-600">{t("products.nonstickCookware.whyDiamond.thermalDesc")}</p>
+              <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.thermalTitle")}</h3>
+              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.thermalDesc")}</p>
             </Card>
 
             <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <Droplet className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.inertTitle")}</h3>
-              <p className="text-sm text-slate-600">{t("products.nonstickCookware.whyDiamond.inertDesc")}</p>
+              <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.inertTitle")}</h3>
+              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.inertDesc")}</p>
             </Card>
 
             <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-[#73DBFF]" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.durableTitle")}</h3>
-              <p className="text-sm text-slate-600">{t("products.nonstickCookware.whyDiamond.durableDesc")}</p>
+              <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.durableTitle")}</h3>
+              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.durableDesc")}</p>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-6 lg:px-8 bg-slate-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.nonstickCookware.keyFeatures.title")}</h2>
-            <p className="text-slate-600">{t("products.nonstickCookware.keyFeatures.subtitle")}</p>
+            <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.keyFeatures.title")}</h2>
+            <p className="page-lead text-slate-600">{t("products.nonstickCookware.keyFeatures.subtitle")}</p>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
             <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center mb-6">
                 <Shield className="w-7 h-7 text-[#73DBFF]" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.lifespanTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.lifespanTitle")}</h3>
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.lifespanDesc")}
               </p>
               <div className="text-2xl font-bold text-[#73DBFF]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
-              <div className="text-sm text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
+              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
             </Card>
 
             <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.safetyTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.safetyTitle")}</h3>
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.safetyDesc")}
               </p>
               <div className="text-2xl font-bold text-green-600">{t("products.nonstickCookware.keyFeatures.safetyValue")}</div>
-              <div className="text-sm text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
+              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
             </Card>
 
             <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-amber-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.thermalTitle")}</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.thermalTitle")}</h3>
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.thermalDesc")}
               </p>
               <div className="text-2xl font-bold text-amber-600">{t("products.nonstickCookware.keyFeatures.thermalValue")}</div>
-              <div className="text-sm text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
+              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.nonstickCookware.comparison.title")}</h2>
-            <p className="text-slate-600">{t("products.nonstickCookware.comparison.subtitle")}</p>
+            <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.comparison.title")}</h2>
+            <p className="page-lead text-slate-600">{t("products.nonstickCookware.comparison.subtitle")}</p>
           </div>
           <Card className="overflow-hidden border-slate-200 bg-[#F9FAFC]">
             {/* 小屏卡片式布局 */}
             <div className="sm:hidden divide-y divide-slate-200">
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.lifespan")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">{t("products.nonstickCookware.comparison.lifespanDiamond")}</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.lifespanTeflon")}</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.lifespanCeramic")}</div>
@@ -203,7 +203,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.heatResistant")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">500°C</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">260°C</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">350°C</div>
@@ -211,7 +211,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.metalSpatula")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
@@ -219,7 +219,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.noPfoa")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
@@ -227,7 +227,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.scratchResist")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">{t("products.nonstickCookware.comparison.scratchDiamond")}</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.scratchTeflon")}</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.scratchCeramic")}</div>
@@ -235,7 +235,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.thermalPerf")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">{t("products.nonstickCookware.comparison.thermalDiamond")}</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.thermalTeflon")}</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">{t("products.nonstickCookware.comparison.thermalCeramic")}</div>
@@ -243,7 +243,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.dishwasherSafe")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400 text-xs">{t("products.nonstickCookware.comparison.dishwasherTeflon")}</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
@@ -251,7 +251,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4 bg-[#E8EEFF]">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.overallScore")}</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center"><div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">6.0/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">7.0/10</div></div>
@@ -341,10 +341,10 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.nonstickCookware.cta.title")}</h2>
-          <p className="text-slate-600 mb-8">{t("products.nonstickCookware.cta.subtitle")}</p>
+          <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.cta.title")}</h2>
+          <p className="page-lead text-slate-600 mb-8">{t("products.nonstickCookware.cta.subtitle")}</p>
           <div className="flex items-center justify-center gap-4">
             <Button 
               size="lg" 

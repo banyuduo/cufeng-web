@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
+import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { ApplicationCard } from "@/components/application-card"
 import { HpcExpandableCard } from "@/components/hpc-expandable-card"
 import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
@@ -22,42 +23,56 @@ export default async function ApplicationsPage({
   const t = getTranslations(validLocale)
   const prefix = `/${validLocale}`
 
+  const ACCENTS = {
+    hpc: { hex: "#73DBFF", text: "text-[#73DBFF]", hoverText: "hover:text-[#8EE8FF]", tag: "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]" },
+    power: { hex: "#60a5fa", text: "text-blue-300", hoverText: "hover:text-blue-200", tag: "bg-blue-400/15 border border-blue-400/25 text-blue-200" },
+    ev: { hex: "#34d399", text: "text-emerald-300", hoverText: "hover:text-emerald-200", tag: "bg-emerald-400/15 border border-emerald-400/25 text-emerald-200" },
+    consumer: { hex: "#fbbf24", text: "text-amber-300", hoverText: "hover:text-amber-200", tag: "bg-amber-400/15 border border-amber-400/25 text-amber-200" },
+    frontier: { hex: "#c084fc", text: "text-purple-300", hoverText: "hover:text-purple-200", tag: "bg-purple-400/15 border border-purple-400/25 text-purple-200" },
+  } as const
+
   const layers = [
-    { levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-blue-500/50 bg-blue-500/20", Icon: Cpu, iconColor: "text-blue-400", href: "#hpc" },
-    { levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-[#4169E1]/50 bg-[#73DBFF]/10", Icon: Zap, iconColor: "text-[#73DBFF]", href: "#power-semiconductor" },
-    { levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-emerald-500/50 bg-emerald-500/10", Icon: Battery, iconColor: "text-emerald-400", href: "#ev-storage" },
-    { levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-amber-500/50 bg-amber-500/10", Icon: Home, iconColor: "text-amber-400", href: "#consumer" },
-    { levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-purple-500/50 bg-purple-500/10", Icon: Microscope, iconColor: "text-purple-400", href: "#frontier" },
+    { accent: ACCENTS.hpc, levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Cpu, href: "#hpc" },
+    { accent: ACCENTS.power, levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Zap, href: "#power-semiconductor" },
+    { accent: ACCENTS.ev, levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Battery, href: "#ev-storage" },
+    { accent: ACCENTS.consumer, levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Home, href: "#consumer" },
+    { accent: ACCENTS.frontier, levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Microscope, href: "#frontier" },
   ] as const
 
   const categoryConfig = [
-    { id: "hpc", key: "hpc", Icon: Cpu, color: "sky", bgClass: "bg-[#F9FAFC]", borderClass: "border-[#4169E1]/30", iconBg: "bg-[#0F2A5C]", iconColor: "text-[#73DBFF]" },
-    { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, color: "blue", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-blue-600", iconColor: "text-blue-600" },
-    { id: "ev-storage", key: "evStorage", Icon: Car, color: "emerald", bgClass: "bg-white", borderClass: "border-slate-200", iconBg: "bg-emerald-600", iconColor: "text-emerald-600" },
-    { id: "consumer", key: "consumer", Icon: Home, color: "amber", bgClass: "bg-slate-50", borderClass: "border-slate-200", iconBg: "bg-amber-600", iconColor: "text-amber-600" },
-    { id: "frontier", key: "frontier", Icon: Sparkles, color: "purple", bgClass: "bg-purple-50/50", borderClass: "border-purple-200", iconBg: "bg-purple-600", iconColor: "text-purple-600", isExploration: true },
+    { id: "hpc", key: "hpc", Icon: Cpu, accent: ACCENTS.hpc },
+    { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, accent: ACCENTS.power },
+    { id: "ev-storage", key: "evStorage", Icon: Car, accent: ACCENTS.ev },
+    { id: "consumer", key: "consumer", Icon: Home, accent: ACCENTS.consumer },
+    { id: "frontier", key: "frontier", Icon: Sparkles, accent: ACCENTS.frontier, isExploration: true },
   ] as const
 
   return (
-    <div className="min-h-screen bg-[#F9FAFC]">
+    <div className="min-h-screen relative">
+      <DarkPagePatternBg />
+      <div className="relative z-10">
       <Navigation locale={validLocale} />
 
       <PageHero
-        variant="light"
+        variant="dark"
         title={t("applications.title")}
         subtitle={t("applications.subtitle")}
       />
 
       {/* 应用蓝图 */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#0344b3] rounded-3xl border border-[#4169E1]/40 overflow-hidden">
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#002244]/55 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10 overflow-hidden relative">
+            <div className="absolute inset-0 pointer-events-none opacity-60">
+              <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#0077b6]/12 rounded-full blur-3xl" />
+              <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-[#00b4d8]/10 rounded-full blur-3xl" />
+            </div>
             <div className="text-center mb-12 px-1">
-              <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl break-words">{t("applications.blueprint.title")}</h2>
+              <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
 
-            <div className="max-w-4xl mx-auto relative space-y-4">
+            <div className="max-w-4xl mx-auto relative z-10 space-y-4">
               {layers.map((layer, index) => (
                 <ApplicationCard
                   key={index}
@@ -66,19 +81,20 @@ export default async function ApplicationsPage({
                   items={t(`applications.blueprint.${layer.itemsKey}`).split("|")}
                   description={t(`applications.blueprint.${layer.descKey}`)}
                   color={layer.color}
-                  icon={<layer.Icon className={`w-5 h-5 ${layer.iconColor}`} />}
+                  icon={<layer.Icon className={`w-5 h-5 ${layer.accent.text}`} />}
                   tag={t(`applications.blueprint.${layer.tagKey}`)}
                   href={layer.href}
+                  tagClassName={layer.accent.tag}
                 />
               ))}
 
               {/* 底部基座 */}
               <div className="pt-8 flex flex-col items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#4169E1]/50 to-transparent mb-8"></div>
-                <div className="px-8 py-4 bg-[#023B99] rounded-xl border border-[#4169E1]/40 flex items-center gap-3 shadow-2xl">
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#73DBFF]/30 to-transparent mb-8"></div>
+                <div className="px-8 py-4 bg-[#002244]/70 rounded-xl border border-[#0077b6]/30 flex items-center gap-3 shadow-2xl shadow-[#0077b6]/10">
                   <ShieldCheck className="w-6 h-6 text-[#73DBFF]" />
                   <div>
-                    <div className="text-[10px] text-[#73DBFF] font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
+                    <div className="text-xs text-[#73DBFF] font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
                     <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
                   </div>
                 </div>
@@ -89,7 +105,7 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -123,6 +139,9 @@ export default async function ApplicationsPage({
                     thermalDilutionDesc={t("applications.thermal.thermalDilutionDesc")}
                     systemSync={t("applications.thermal.systemSync")}
                     systemSyncDesc={t("applications.thermal.systemSyncDesc")}
+                    accentHex={cat.accent.hex}
+                    accentClassName={cat.accent.text}
+                    accentHoverClassName={cat.accent.hoverText}
                   />
                 )
               }
@@ -153,6 +172,9 @@ export default async function ApplicationsPage({
                     coilPhysicsMech={t(`${base}.coilPhysicsMech`)}
                     viewWhitepaper={t(`${base}.viewWhitepaper`)}
                     whitepaperHref="/docs/diamond-coil.html"
+                    accentHex={cat.accent.hex}
+                    accentClassName={cat.accent.text}
+                    accentHoverClassName={cat.accent.hoverText}
                   />
                 )
               }
@@ -188,20 +210,20 @@ export default async function ApplicationsPage({
                         expandContent: (
                           <div className="space-y-4 text-sm">
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStatePhysics`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStatePhysics`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStateTech`)}</div>
-                              <ul className="space-y-1 text-slate-600">
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateTech`)}</div>
+                              <ul className="space-y-1 text-slate-300">
                                 <li>• {t(`${energy}.solidStateAdv1`)}</li>
                                 <li>• {t(`${energy}.solidStateAdv2`)}</li>
                                 <li>• {t(`${energy}.solidStateAdv3`)}</li>
                               </ul>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.solidStateValue`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.solidStateValueDesc`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateValue`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.solidStateValueDesc`)}</p>
                             </div>
                           </div>
                         ),
@@ -218,20 +240,20 @@ export default async function ApplicationsPage({
                         expandContent: (
                           <div className="space-y-4 text-sm">
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterPhysics`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterPhysics`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterTech`)}</div>
-                              <ul className="space-y-1 text-slate-600">
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterTech`)}</div>
+                              <ul className="space-y-1 text-slate-300">
                                 <li>• {t(`${energy}.waterAdv1`)}</li>
                                 <li>• {t(`${energy}.waterAdv2`)}</li>
                                 <li>• {t(`${energy}.waterAdv3`)}</li>
                               </ul>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${energy}.waterValue`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${energy}.waterValueDesc`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterValue`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.waterValueDesc`)}</p>
                             </div>
                           </div>
                         ),
@@ -249,20 +271,20 @@ export default async function ApplicationsPage({
                         expandContent: (
                           <div className="space-y-4 text-sm">
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.superconductorPhysics`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${frontier}.superconductorPhysics`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.researchPoints`)}</div>
-                              <ul className="space-y-1 text-slate-600">
+                              <div className="font-semibold text-white mb-1">{t(`${frontier}.researchPoints`)}</div>
+                              <ul className="space-y-1 text-slate-300">
                                 <li>• {t(`${frontier}.superconductorRes1`)}</li>
                                 <li>• {t(`${frontier}.superconductorRes2`)}</li>
                                 <li>• {t(`${frontier}.superconductorRes3`)}</li>
                               </ul>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.superconductorVision`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.superconductorVision`)}</p>
                             </div>
                           </div>
                         ),
@@ -278,19 +300,19 @@ export default async function ApplicationsPage({
                         expandContent: (
                           <div className="space-y-4 text-sm">
                             <div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.quantumResearch`)}</div>
-                              <ul className="space-y-1 text-slate-600">
+                              <div className="font-semibold text-white mb-1">{t(`${frontier}.quantumResearch`)}</div>
+                              <ul className="space-y-1 text-slate-300">
                                 <li>• {t(`${frontier}.quantumRes1`)}</li>
                                 <li>• {t(`${frontier}.quantumRes2`)}</li>
                                 <li>• {t(`${frontier}.quantumRes3`)}</li>
                               </ul>
                             </div>
                             <div>
-                              <div className="font-semibold text-slate-800 mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="text-slate-600 leading-relaxed break-words">{t(`${frontier}.quantumVision`)}</p>
+                              <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
+                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.quantumVision`)}</p>
                             </div>
                           </div>
                         ),
@@ -307,40 +329,40 @@ export default async function ApplicationsPage({
                 <Card
                   key={cat.id}
                   id={cat.id}
-                  className={`p-6 sm:p-8 lg:p-10 ${cat.bgClass} ${cat.borderClass} hover:shadow-xl transition-all scroll-mt-20 ${
-                    cat.isExploration ? "border-purple-200/80 ring-1 ring-purple-100" : ""
+                  className={`p-6 sm:p-8 lg:p-10 bg-[#002244]/55 backdrop-blur-sm border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
+                    cat.isExploration ? "ring-1 ring-[#73DBFF]/15" : ""
                   }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-                    <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${cat.iconBg} flex items-center justify-center flex-shrink-0`}>
-                      <cat.Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-[#0077b6]/30 flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0077b6]/10">
+                      <cat.Icon className={`w-7 h-7 sm:w-8 sm:h-8 ${cat.accent.text}`} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white">
                           {title}
                         </h2>
                         {badge && (
-                          <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${cat.accent.tag}`}>
                             {badge}
                           </span>
                         )}
                       </div>
                       {subtitle && (
-                        <p className="text-slate-600 font-medium mb-2">{subtitle}</p>
+                        <p className="text-slate-300 font-medium mb-2">{subtitle}</p>
                       )}
                       {features && (
-                        <p className="text-sm text-slate-600 mb-4">{features}</p>
+                        <p className="text-sm text-slate-400 mb-4">{features}</p>
                       )}
                       <div className="space-y-4 mb-4">
                         {items.map((item, i) => (
-                          <div key={i} className="border-l-2 border-slate-200 pl-4">
+                          <div key={i} className="border-l-2 pl-4" style={{ borderColor: `${cat.accent.hex}55` }}>
                             <div className="flex items-start gap-2">
-                              <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${cat.isExploration ? "bg-purple-500" : "bg-[#F9FAFC]0"}`} />
+                              <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: cat.accent.hex }} />
                               <div className="min-w-0">
-                                <div className="font-medium text-slate-800 text-sm sm:text-base break-words">{item}</div>
+                                <div className="font-medium text-slate-200 text-sm sm:text-base break-words">{item}</div>
                                 {itemsDesc[i] && (
-                                  <p className="text-slate-600 text-sm mt-1 leading-relaxed break-words">{itemsDesc[i]}</p>
+                                  <p className="text-slate-400 text-sm mt-1 leading-relaxed break-words">{itemsDesc[i]}</p>
                                 )}
                               </div>
                             </div>
@@ -349,16 +371,13 @@ export default async function ApplicationsPage({
                       </div>
                       {materials && (
                         <div className="mt-4">
-                          <div className="text-sm font-semibold text-slate-800 mb-2">{t("applications.thermal.materialsLabel")}</div>
+                          <div className="text-sm font-semibold text-white mb-2">{t("applications.thermal.materialsLabel")}</div>
                           <div className="flex flex-wrap gap-2">
                             {materials.split("|").map((m, i) => (
                               <span
                                 key={i}
-                                className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full ${
-                                  cat.isExploration
-                                    ? "bg-purple-50 text-purple-800 border-purple-200/60"
-                                    : "bg-[#F9FAFC] text-[#023B99] border-[#4169E1]/40"
-                                }`}
+                                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full bg-[#002244]/60 text-slate-200"
+                                style={{ borderColor: `${cat.accent.hex}55` }}
                               >
                                 {m.trim()}
                               </span>
@@ -370,7 +389,7 @@ export default async function ApplicationsPage({
                         <Button
                           size="lg"
                           variant="outline"
-                          className="min-h-[44px] border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+                          className="min-h-[44px] border-[#00b4d8]/80 text-white hover:bg-white/10 bg-transparent"
                           asChild
                         >
                           <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
@@ -387,13 +406,13 @@ export default async function ApplicationsPage({
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl sm:text-5xl font-bold mb-4 text-slate-900 break-words px-1 tracking-[0.05em] sm:tracking-[0.15em]">
+          <h2 className="page-h2 text-slate-900 mb-4 break-words px-1 tracking-[0.05em] sm:tracking-[0.12em]">
             {t("applications.summary.title")}
           </h2>
 
           <p className="text-base sm:text-xl text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
 
-          <p className="text-base sm:text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-600 break-words">
+          <p className="text-base sm:text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-700 break-words">
             {t("applications.summary.desc")}
           </p>
 
@@ -401,7 +420,7 @@ export default async function ApplicationsPage({
             <Button
               size="lg"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white shadow-lg"
+              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 border-0"
             >
               <Link href={`${prefix}/cooperation`}>{t("applications.cta.techDialogue")}</Link>
             </Button>
@@ -409,7 +428,7 @@ export default async function ApplicationsPage({
               size="lg"
               variant="outline"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+              className="w-full sm:w-auto min-h-[44px] gap-2 border-[#0077b6]/35 text-[#0F2A5C] hover:bg-slate-50 bg-transparent"
             >
               <Link href={`${prefix}/patents`}>{t("applications.cta.viewTechPath")}</Link>
             </Button>
@@ -419,6 +438,7 @@ export default async function ApplicationsPage({
 
       {/* Footer */}
       <FooterNav locale={validLocale} />
+      </div>
     </div>
   )
 }

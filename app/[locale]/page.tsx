@@ -21,7 +21,7 @@ export default async function HomePage({
     <div className="min-h-screen bg-background">
       <Navigation locale={validLocale} />
 
-      <section className="relative pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <HeroWaveBg />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center max-w-5xl mx-auto">
@@ -135,132 +135,136 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-60">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
+        </div>
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 relative z-10">
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-300 tabular-nums">01</span>
-                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+                <span className="text-2xl font-light text-slate-500 tabular-nums">01</span>
+                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
               </div>
-              <div className="w-12 h-12 rounded-lg bg-[#e8eeff] flex items-center justify-center mb-6">
-                <Atom className="w-6 h-6 text-[#4169E1]" />
+              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
+                <Atom className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="page-h3 mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-white">
                 {t("home.features.innovation")}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed">
                 {t("home.features.innovationDesc")}
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-300 tabular-nums">02</span>
-                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+                <span className="text-2xl font-light text-slate-500 tabular-nums">02</span>
+                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
               </div>
-              <div className="w-12 h-12 rounded-lg bg-[#e8eeff] flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-[#4169E1]" />
+              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="page-h3 mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-white">
                 {t("home.features.patents")}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed">
                 {t("home.features.patentsDesc")}
               </p>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-shadow relative">
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-300 tabular-nums">03</span>
-                <span className="h-px flex-1 max-w-12 bg-slate-200" />
+                <span className="text-2xl font-light text-slate-500 tabular-nums">03</span>
+                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
               </div>
-              <div className="w-12 h-12 rounded-lg bg-[#e8eeff] flex items-center justify-center mb-6">
-                <Handshake className="w-6 h-6 text-[#4169E1]" />
+              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
+                <Handshake className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="page-h3 mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-white">
                 {t("home.features.cooperation")}
               </h3>
-              <div className="text-slate-600 leading-relaxed space-y-3">
+              <div className="text-slate-300 leading-relaxed space-y-3">
                 <p>{t("home.features.cooperationIntro")}</p>
-                <p className="font-medium">{t("home.features.cooperationPath")}</p>
-                <p className="text-sm">{t("home.features.cooperationDesc")}</p>
+                <p className="font-medium text-white">{t("home.features.cooperationPath")}</p>
+                <p className="text-sm text-slate-400">{t("home.features.cooperationDesc")}</p>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-8 text-slate-900 text-center">
+          <h2 className="page-h2 mb-8 text-white text-center">
             {t("home.platform.title")}
           </h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-lg text-slate-700 leading-relaxed">
+          <div className="prose prose-invert max-w-none">
+            <p className="text-lg text-slate-300 leading-relaxed">
               {t("home.platform.p1")}
             </p>
-            <p className="text-lg text-slate-700 leading-relaxed mt-6">
+            <p className="text-lg text-slate-300 leading-relaxed mt-6">
               {t("home.platform.p2")}
             </p>
-            <ul className="list-disc list-inside text-lg text-slate-700 leading-relaxed mt-4 space-y-2">
+            <ul className="list-disc list-inside text-lg text-slate-300 leading-relaxed mt-4 space-y-2">
               <li>{t("home.platform.li1")}</li>
               <li>{t("home.platform.li2")}</li>
             </ul>
-            <p className="text-lg text-slate-700 leading-relaxed mt-6">
+            <p className="text-lg text-slate-300 leading-relaxed mt-6">
               {t("home.platform.p3")}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-4 text-slate-900 text-center">
+          <h2 className="page-h2 mb-4 text-white text-center">
             {t("home.results.title")}
           </h2>
-          <p className="text-slate-600 text-center mb-12">
+          <p className="text-slate-400 text-center mb-12">
             {t("home.results.subtitle")}
           </p>
 
           <div className="space-y-6">
-            <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   {t("home.results.process")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-300">
                   {t("home.results.processDesc")}
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   {t("home.results.deliverables")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-300">
                   {t("home.results.deliverablesDesc")}
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
+            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   {t("home.results.ip")}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-300">
                   {t("home.results.ipDesc")}
                 </p>
               </div>
@@ -270,12 +274,12 @@ export default async function HomePage({
       </section>
 
       {/* 底部行动召唤 */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="page-h3 mb-4 text-slate-900">
+          <h2 className="page-h3 mb-4 text-white">
             {t("home.hero.ctaTitle")}
           </h2>
-          <p className="text-slate-600 mb-8">
+          <p className="text-slate-400 mb-8">
             {t("home.hero.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -284,7 +288,7 @@ export default async function HomePage({
                 {t("home.hero.viewWhitepaper")}
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 bg-white border-[#0077b6]/60 text-slate-900 hover:bg-slate-50 hover:border-[#0077b6]">
+            <Button size="lg" variant="outline" asChild className="gap-2 bg-transparent border-[#00b4d8]/80 text-white hover:bg-white/10 hover:border-[#00b4d8]">
               <Link href={`/${validLocale}/cooperation#contact`}>
                 {t("home.hero.contactTeam")}
               </Link>
