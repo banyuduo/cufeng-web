@@ -126,7 +126,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   }
 
   return (
-    <div className="w-full max-w-md lg:max-w-lg mx-auto min-h-[280px]">
+    <div className="w-full max-w-md lg:max-w-lg mx-auto min-h-[360px] sm:min-h-[380px] md:min-h-[280px]">
       <Radar data={data} options={options} />
     </div>
   )

@@ -620,31 +620,31 @@ export default function PatentsPage() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="page-h2 text-white mb-3 sm:mb-4">{t("patents.platformCore.sectionTitle")}</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 ring-4 ring-[#0077b6]/15 shadow-xl shadow-[#0077b6]/10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#0077b6]/20 border border-[#00b4d8]/30">
-                <Sparkles className="w-8 h-8 text-white" />
+          <Card className="max-w-5xl mx-auto p-4 sm:p-6 md:p-10 bg-gradient-to-br from-[#002244]/80 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 ring-4 ring-[#0077b6]/15 shadow-xl shadow-[#0077b6]/10">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-8">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center shadow-lg shadow-[#0077b6]/20 border border-[#00b4d8]/30 flex-shrink-0">
+                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <div>
-                <div className="text-[#73DBFF] text-sm font-medium mb-1">Platform Core Technology</div>
+              <div className="min-w-0">
+                <div className="text-[#73DBFF] text-xs sm:text-sm font-medium mb-0.5">Platform Core Technology</div>
                 <h3 className="page-h3 text-white">{t("patents.platformCore.mainTitle")}</h3>
               </div>
             </div>
 
-            <p className="text-slate-300 leading-relaxed mb-8">
+            <p className="text-slate-300 leading-relaxed mb-4 sm:mb-8 text-sm sm:text-base">
               {t("patents.platformCore.mainDesc")}
             </p>
 
             {/* Platform Core Principle Explanation */}
-            <div className="p-8 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
-              <h4 className="text-[#73DBFF] font-semibold text-lg mb-6">{t("patents.platformCore.principleTitle")}</h4>
+            <div className="p-4 sm:p-6 md:p-8 bg-[#002244]/60 rounded-xl border border-[#0077b6]/30">
+              <h4 className="text-[#73DBFF] font-semibold text-base sm:text-lg mb-4 sm:mb-6">{t("patents.platformCore.principleTitle")}</h4>
 
-              <div className="space-y-4 text-base leading-relaxed text-slate-300">
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base leading-relaxed text-slate-300">
                 <p>{t("patents.platformCore.principleP1")}</p>
 
                 <ul className="list-disc list-inside space-y-2 ml-4">
@@ -664,19 +664,28 @@ export default function PatentsPage() {
                   {t("patents.platformCore.principleP2b")}
                 </p>
 
-                <div className="my-6 p-6 bg-gradient-to-br from-[#002244]/80 to-[#003366]/40 rounded-xl border border-[#0077b6]/30">
-                  <h5 className="text-[#73DBFF] font-semibold text-base mb-5 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5" />
+                <div className="my-4 sm:my-6 p-4 sm:p-6 bg-gradient-to-br from-[#002244]/80 to-[#003366]/40 rounded-xl border border-[#0077b6]/30">
+                  <h5 className="text-[#73DBFF] font-semibold text-sm sm:text-base mb-3 sm:mb-5 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                     {t("patents.platformCore.diagramTitle")}
                   </h5>
 
-                  <div className="flex flex-col sm:flex-col md:grid md:grid-cols-3 gap-4">
+                  {/* 移动端：三域关系简要示意 */}
+                  <div className="flex md:hidden items-center justify-center gap-1 mb-4 py-2 px-3 bg-[#002244]/40 rounded-lg border border-[#0077b6]/20">
+                    <span className="text-[#73DBFF] font-mono text-xs font-semibold">sp³</span>
+                    <span className="text-slate-500">→</span>
+                    <span className="text-[#73DBFF] font-mono text-xs font-semibold">sp²</span>
+                    <span className="text-slate-500">→</span>
+                    <span className="text-slate-300 text-xs">{t("patents.platformCore.domain3Title")}</span>
+                  </div>
+
+                  <div className="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4">
                     {/* sp³ dominant */}
-                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
-                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
+                    <div className="p-4 sm:p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                         {t("patents.platformCore.domain1Title")}
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-base">
+                      <div className="text-slate-300 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm sm:text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain1a")}</span>
@@ -689,11 +698,11 @@ export default function PatentsPage() {
                     </div>
 
                     {/* sp² dominant */}
-                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
-                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
+                    <div className="p-4 sm:p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                         {t("patents.platformCore.domain2Title")}
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-base">
+                      <div className="text-slate-300 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm sm:text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain2a")}</span>
@@ -706,11 +715,11 @@ export default function PatentsPage() {
                     </div>
 
                     {/* Mixed state */}
-                    <div className="p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
-                      <div className="text-[#73DBFF] font-mono font-semibold mb-3 text-base">
+                    <div className="p-4 sm:p-5 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
+                      <div className="text-[#73DBFF] font-mono font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                         {t("patents.platformCore.domain3Title")}
                       </div>
-                      <div className="text-slate-300 space-y-2 ml-4 text-base">
+                      <div className="text-slate-300 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm sm:text-base">
                         <div className="flex items-start gap-2">
                           <span className="text-[#73DBFF] mt-0.5">→</span>
                           <span>{t("patents.platformCore.domain3a")}</span>
@@ -724,9 +733,9 @@ export default function PatentsPage() {
                   </div>
 
                     {/* Control parameters */}
-                    <div className="mt-5 pt-5 border-t border-[#0077b6]/30">
-                      <p className="text-slate-400 mb-3 text-base">{t("patents.platformCore.tuningIntro")}</p>
-                      <ul className="space-y-2 ml-4 text-base text-slate-300">
+                    <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-[#0077b6]/30">
+                      <p className="text-slate-400 mb-2 sm:mb-3 text-sm sm:text-base">{t("patents.platformCore.tuningIntro")}</p>
+                      <ul className="space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm sm:text-base text-slate-300">
                         <li className="flex items-start gap-2">
                           <span className="text-[#73DBFF] font-bold">•</span>
                           <span>
@@ -748,7 +757,7 @@ export default function PatentsPage() {
                           </span>
                         </li>
                       </ul>
-                      <p className="text-slate-400 mt-3 text-base">{t("patents.platformCore.tuningOutro")}</p>
+                      <p className="text-slate-400 mt-2 sm:mt-3 text-sm sm:text-base">{t("patents.platformCore.tuningOutro")}</p>
                     </div>
                 </div>
 
@@ -762,7 +771,7 @@ export default function PatentsPage() {
 
             {/* 材料体系综合对比雷达图（浅底信息承载） */}
             <div className="mt-10 pt-8 border-t border-[#0077b6]/30">
-              <div className="bg-[#F9FAFC] rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+              <div className="bg-[#F9FAFC] rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-200/80 shadow-sm">
                 <h4 className="text-slate-900 font-semibold text-base mb-6 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-[#0077b6]" />
                   {t("patents.platformCore.radarChartTitle")}
