@@ -52,7 +52,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
     <>
       {/* 面包屑 */}
       <section className="py-6 border-b border-border/50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               {t("common.home")}
@@ -71,14 +71,14 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
         </div>
       </section>
 
-      {/* 行业文章正文 - 高端大气严谨风格 */}
-      <article className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
+      {/* 行业文章正文 - 浅底阅读区 */}
+      <section className="py-20 bg-[#F9FAFC]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* 返回按钮 */}
             <Link
               href={`${prefix}/news#industry-info`}
-              className="inline-flex items-center gap-2 text-primary hover:underline mb-12 text-base tracking-wide"
+              className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-10 page-caption font-medium"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToList")}
@@ -91,10 +91,10 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
                   <IconComponent className="h-7 w-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground font-medium tracking-wide">
+                  <span className="page-caption px-3 py-1.5 bg-slate-100 rounded-full text-slate-700 font-medium tracking-wide">
                     {article.category}
                   </span>
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 text-sm text-slate-400 tracking-wide">
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 page-caption text-slate-500 tracking-wide">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4" />
                       {t("news.articleDetail.publishDate")}：{article.date}
@@ -108,12 +108,12 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
                   </div>
                   {article.keywords && article.keywords.length > 0 && (
                     <div className="flex flex-wrap items-center gap-2 mt-3">
-                      <Tag className="h-4 w-4 text-slate-400" />
-                      <span className="text-sm text-slate-400">{t("news.articleDetail.keywords")}：</span>
+                      <Tag className="h-4 w-4 text-slate-500" />
+                      <span className="page-caption text-slate-500">{t("news.articleDetail.keywords")}：</span>
                       {article.keywords.map((kw, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-0.5 bg-slate-700/60 text-slate-200 rounded"
+                          className="page-caption px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200"
                         >
                           {kw}
                         </span>
@@ -122,7 +122,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
                   )}
                 </div>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-wide">
+              <h1 className="page-h2 text-slate-900 tracking-tight leading-[1.15]">
                 {article.title}
               </h1>
             </header>
@@ -131,12 +131,12 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
             <div className="space-y-12">
               {article.sections.map((section, idx) => (
                 <section key={idx}>
-                  <h2 className="text-xl font-bold text-foreground mb-6 tracking-wide">
+                  <h2 className="page-h3 text-slate-900 mb-6 tracking-tight">
                     {section.title}
                   </h2>
-                  <div className="space-y-2 text-slate-300 leading-relaxed tracking-wide">
+                  <div className="space-y-3 text-slate-700">
                     {section.content.split('\n\n').map((paragraph, pIdx) => (
-                      <p key={pIdx} className="text-base leading-[1.8]">
+                      <p key={pIdx} className="page-body">
                         {parseBoldText(paragraph)}
                       </p>
                     ))}
@@ -146,11 +146,11 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
             </div>
 
             {/* 底部返回按钮 */}
-            <footer className="mt-20 pt-12 border-t border-slate-600">
+            <footer className="mt-16 pt-10 border-t border-slate-200">
               <Link href={`${prefix}/news#industry-info`}>
                 <Button
                   variant="outline"
-                  className="border-slate-500 text-slate-200 hover:bg-slate-800 hover:text-white bg-transparent px-6 py-6 text-base tracking-wide"
+                  className="border-slate-300 text-slate-700 hover:bg-slate-50 bg-transparent px-6 py-6 text-base tracking-wide"
                 >
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   {t("news.articleDetail.backToList")}
@@ -159,7 +159,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
             </footer>
           </div>
         </div>
-      </article>
+      </section>
     </>
   )
 }
@@ -179,7 +179,7 @@ function CompanyNewsDetail({
     <>
       {/* Breadcrumb */}
       <section className="py-6 border-b border-border/50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               {t("common.home")}
@@ -194,12 +194,12 @@ function CompanyNewsDetail({
         </div>
       </section>
 
-      {/* Article Content */}
-      <article className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
+      {/* Article Content - 浅底阅读区 */}
+      <section className="py-16 bg-[#F9FAFC]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* Back Button */}
-            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-primary hover:underline mb-8">
+            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-8 page-caption font-medium">
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToNewsList")}
             </Link>
@@ -214,44 +214,44 @@ function CompanyNewsDetail({
                   <span className="text-xs px-2 py-1 bg-secondary rounded-full text-secondary-foreground">
                     {news.category}
                   </span>
-                  <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 mt-1 page-caption text-slate-500">
                     <Calendar className="h-4 w-4" />
                     {news.date}
                   </div>
                 </div>
               </div>
-              <h1 className="text-4xl font-bold text-balance">{news.title}</h1>
+              <h1 className="page-h2 text-slate-900 text-balance">{news.title}</h1>
             </header>
 
             {/* Article Body */}
-            <div className="prose prose-slate dark:prose-invert max-w-none">
+            <div className="prose prose-slate max-w-none">
               {news.content.map((paragraph, index) => (
-                <p key={index} className="text-lg leading-relaxed text-muted-foreground mb-6">
+                <p key={index} className="page-body text-slate-700 mb-6">
                   {paragraph}
                 </p>
               ))}
             </div>
 
             {/* Share and Navigation */}
-            <footer className="mt-16 pt-8 border-t border-border/50">
+            <footer className="mt-16 pt-8 border-t border-slate-200">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <Link href={`${prefix}/news`}>
                   <Button
                     variant="outline"
-                    className="border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
+                    className="border-slate-300 text-slate-700 hover:bg-slate-50 bg-transparent"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     {t("news.articleDetail.backToNews")}
                   </Button>
                 </Link>
                 <Link href={`${prefix}/cooperation#contact`}>
-                  <Button className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white">{t("cooperation.contact.contactUs")}</Button>
+                  <Button className="bg-[#002244] hover:bg-[#003366] border border-[#0077b6]/30 text-white">{t("cooperation.contact.contactUs")}</Button>
                 </Link>
               </div>
             </footer>
           </div>
         </div>
-      </article>
+      </section>
     </>
   )
 }
@@ -278,8 +278,8 @@ export default async function NewsDetailPage({
   const NewsIcon = companyNews ? NEWS_ICONS[id] ?? Building : Building
 
   return (
-    <div className={`min-h-screen relative ${industryArticle ? "" : "bg-[#F9FAFC]"}`}>
-      {industryArticle && <DarkPagePatternBg />}
+    <div className="min-h-screen relative">
+      <DarkPagePatternBg />
       <div className="relative z-10">
       <Navigation locale={validLocale} />
 

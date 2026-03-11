@@ -14,11 +14,11 @@ export default function NonstickCookwarePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             返回产品中心
@@ -29,30 +29,30 @@ export default function NonstickCookwarePage() {
                 <CheckCircle2 className="w-4 h-4" />
                 即时供货 · 成熟产品
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">真正的金刚石不粘锅</h1>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <h1 className="page-h1 mb-6 text-slate-900">真正的金刚石不粘锅</h1>
+              <p className="page-lead text-slate-600 mb-6">
                 告别涂层脱落的烦恼。采用专利活性熔固技术，将真实金刚石颗粒永久键合于锅体表面。超强耐磨、持久不粘、食品安全，使用寿命是传统涂层的10倍以上。
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>真金刚石颗粒活性熔固 - 永不脱落</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>无PFOA/PTFE - 通过食品安全认证</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
                   <span>耐高温500°C - 适用各类烹饪方式</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
+                <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
                   </div>
@@ -60,7 +60,7 @@ export default function NonstickCookwarePage() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 h-[400px]">
+            <div className="grid grid-cols-2 gap-4 h-[300px] sm:h-[400px]">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ResponsivePicture
                   src="/images/diamond pan.jpg"
@@ -83,11 +83,11 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* Why Diamond */}
-      <section className="py-16 px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">为什么选择金刚石？</h2>
-            <p className="text-slate-600">
+            <h2 className="page-h2 mb-4 text-slate-900">为什么选择金刚石？</h2>
+            <p className="page-lead text-slate-600">
               金刚石是自然界最硬的材料，同时具有卓越的导热性和化学稳定性。我们将这些天然优势应用于厨具，重新定义不粘锅的性能标准。
             </p>
           </div>
@@ -96,98 +96,98 @@ export default function NonstickCookwarePage() {
               <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">硬度之王</h3>
-              <p className="text-sm text-slate-600">莫氏硬度10级，抗刮擦能力是不锈钢的1000倍</p>
+              <h3 className="page-h3 mb-2 text-slate-900">硬度之王</h3>
+              <p className="page-caption text-slate-600">莫氏硬度10级，抗刮擦能力是不锈钢的1000倍</p>
             </Card>
 
             <Card className="p-6 bg-white border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mx-auto mb-4">
                 <Flame className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">超强导热</h3>
-              <p className="text-sm text-slate-600">热导率2000+ W/m·K，受热快速且均匀</p>
+              <h3 className="page-h3 mb-2 text-slate-900">超强导热</h3>
+              <p className="page-caption text-slate-600">热导率2000+ W/m·K，受热快速且均匀</p>
             </Card>
 
             <Card className="p-6 bg-white border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <Droplet className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">化学惰性</h3>
-              <p className="text-sm text-slate-600">不与食物反应，无有害物质释放</p>
+              <h3 className="page-h3 mb-2 text-slate-900">化学惰性</h3>
+              <p className="page-caption text-slate-600">不与食物反应，无有害物质释放</p>
             </Card>
 
             <Card className="p-6 bg-white border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-[#73DBFF]" />
               </div>
-              <h3 className="font-semibold mb-2 text-slate-900">持久耐用</h3>
-              <p className="text-sm text-slate-600">活性熔固，高强度结合，可达10年以上使用寿命。</p>
+              <h3 className="page-h3 mb-2 text-slate-900">持久耐用</h3>
+              <p className="page-caption text-slate-600">活性熔固，高强度结合，可达10年以上使用寿命。</p>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-6 lg:px-8 bg-slate-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">核心优势</h2>
-            <p className="text-slate-600">专利技术赋能，重新定义不粘锅性能标准</p>
+            <h2 className="page-h2 mb-4 text-slate-900">核心优势</h2>
+            <p className="page-lead text-slate-600">专利技术赋能，重新定义不粘锅性能标准</p>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
             <Card className="p-8 bg-white border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center mb-6">
                 <Shield className="w-7 h-7 text-[#73DBFF]" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">超长使用寿命</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">超长使用寿命</h3>
+              <p className="page-body text-slate-600 mb-4">
                 金刚石颗粒通过活性熔固技术永久固着于基材，形成化学键合。较传统涂层寿命提升10倍以上，可承受100,000+次使用循环。金属铲具随意使用，不会损坏涂层。
               </p>
               <div className="text-2xl font-bold text-[#73DBFF]">10倍+</div>
-              <div className="text-sm text-slate-500">耐磨性提升</div>
+              <div className="page-caption text-slate-500">耐磨性提升</div>
             </Card>
 
             <Card className="p-8 bg-white border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-7 h-7 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">食品安全认证</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">食品安全认证</h3>
+              <p className="page-body text-slate-600 mb-4">
                 金刚石材料本身无毒无害，涂层不含PFOA/PTFE等有害物质。可通过GB
                 4806.1-2016食品接触材料安全检测，具备通过FDA认可的能力，可放心使用。
               </p>
               <div className="text-2xl font-bold text-green-600">0添加</div>
-              <div className="text-sm text-slate-500">有害化学物质</div>
+              <div className="page-caption text-slate-500">有害化学物质</div>
             </Card>
 
             <Card className="p-8 bg-white border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-amber-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-900">卓越导热性能</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">
+              <h3 className="page-h3 mb-3 text-slate-900">卓越导热性能</h3>
+              <p className="page-body text-slate-600 mb-4">
                 金刚石的超高导热性能（2000+
                 W/m·K）确保热量均匀快速分布，避免局部过热。烹饪效率提升30%以上，食物受热更均匀，锁住营养与口感。
               </p>
               <div className="text-2xl font-bold text-amber-600">2000+</div>
-              <div className="text-sm text-slate-500">W/m·K 热导率</div>
+              <div className="page-caption text-slate-500">W/m·K 热导率</div>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">性能对比：一目了然的优势</h2>
-            <p className="text-slate-600">金刚石不粘锅 vs 传统涂层锅具</p>
+            <h2 className="page-h2 mb-4 text-slate-900">性能对比：一目了然的优势</h2>
+            <p className="page-lead text-slate-600">金刚石不粘锅 vs 传统涂层锅具</p>
           </div>
           <Card className="overflow-hidden border-slate-200 bg-white">
             {/* 小屏卡片式布局 */}
             <div className="sm:hidden divide-y divide-slate-200">
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">使用寿命</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">10年+</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">6-12个月</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">1-2年</div>
@@ -195,7 +195,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">耐高温</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C]">500°C</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">260°C</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">350°C</div>
@@ -203,7 +203,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">可用金属铲</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
@@ -211,7 +211,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">无PFOA/PTFE</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400">✗</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
@@ -219,7 +219,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">抗刮擦性</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">极强（莫氏10级）</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">弱</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">中等</div>
@@ -227,7 +227,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">导热性能</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><span className="font-semibold text-[#0F2A5C] text-xs break-words">优异（快速均匀）</span></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">一般</div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-600">一般</div>
@@ -235,7 +235,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4">
                 <div className="font-semibold text-slate-900 mb-2">洗碗机安全</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center p-2 rounded bg-[#E8EEFF]"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
                   <div className="text-center p-2 rounded bg-slate-50 text-slate-400 text-xs">✗（会加速老化）</div>
                   <div className="text-center p-2 rounded bg-slate-50"><CheckCircle2 className="w-5 h-5 text-green-600 mx-auto" /></div>
@@ -243,7 +243,7 @@ export default function NonstickCookwarePage() {
               </div>
               <div className="p-4 bg-[#E8EEFF]">
                 <div className="font-semibold text-slate-900 mb-2">综合评分</div>
-                <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
                   <div className="text-center"><div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">6.0/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">7.0/10</div></div>
@@ -333,10 +333,10 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">了解更多金刚石不粘锅技术</h2>
-          <p className="text-slate-600 mb-8">我们的工程团队将为您详细介绍技术原理与应用前景</p>
+          <h2 className="page-h2 mb-4 text-slate-900">了解更多金刚石不粘锅技术</h2>
+          <p className="page-lead text-slate-600 mb-8">我们的工程团队将为您详细介绍技术原理与应用前景</p>
           <div className="flex items-center justify-center gap-4">
             <Button 
               size="lg" 

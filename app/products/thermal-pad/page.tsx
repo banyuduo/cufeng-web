@@ -23,11 +23,11 @@ export default function ThermalPadPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
+      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -43,33 +43,33 @@ export default function ThermalPadPage() {
                   {t("products.thermalPad.hero.badge")}
                 </div>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">{t("products.thermalPad.hero.title")}</h1>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              <h1 className="page-h1 mb-6 text-slate-900">{t("products.thermalPad.hero.title")}</h1>
+              <p className="page-lead text-slate-600 mb-8">
                 {t("products.thermalPad.hero.intro")}
               </p>
             </div>
 
             <Card className="p-8 bg-white border-slate-200 shadow-xl">
-              <h3 className="text-lg font-semibold mb-6 text-slate-900">{t("products.thermalPad.hero.corePerfTitle")}</h3>
+              <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.hero.corePerfTitle")}</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
-                  <span className="text-sm text-slate-700">{t("products.thermalPad.hero.inPlaneTC")}</span>
+                  <span className="page-caption text-slate-700">{t("products.thermalPad.hero.inPlaneTC")}</span>
                   <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.inPlaneTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
-                  <span className="text-sm text-slate-700">{t("products.thermalPad.hero.throughTC")}</span>
+                  <span className="page-caption text-slate-700">{t("products.thermalPad.hero.throughTC")}</span>
                   <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.throughTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
-                  <span className="text-sm text-slate-700">{t("products.thermalPad.hero.flexibility")}</span>
+                  <span className="page-caption text-slate-700">{t("products.thermalPad.hero.flexibility")}</span>
                   <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.flexibilityValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
-                  <span className="text-sm text-slate-700">{t("products.thermalPad.hero.cte")}</span>
+                  <span className="page-caption text-slate-700">{t("products.thermalPad.hero.cte")}</span>
                   <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.cteValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
-                  <span className="text-sm text-slate-700">{t("products.thermalPad.hero.thicknessRange")}</span>
+                  <span className="page-caption text-slate-700">{t("products.thermalPad.hero.thicknessRange")}</span>
                   <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.thicknessValue")}</span>
                 </div>
               </div>
@@ -79,17 +79,17 @@ export default function ThermalPadPage() {
       </section>
 
       {/* Technical Advantages */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">{t("products.thermalPad.techAdvantages.title")}</h2>
+          <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.thermalPad.techAdvantages.title")}</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card1Title")}</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card1Title")}</h3>
+              <p className="page-body text-slate-600">
                 {t("products.thermalPad.techAdvantages.card1Desc")}
               </p>
             </Card>
@@ -98,8 +98,8 @@ export default function ThermalPadPage() {
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card2Title")}</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card2Title")}</h3>
+              <p className="page-body text-slate-600">
                 {t("products.thermalPad.techAdvantages.card2Desc")}
               </p>
             </Card>
@@ -108,8 +108,8 @@ export default function ThermalPadPage() {
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
                 <FlaskConical className="w-6 h-6 text-[#73DBFF]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card3Title")}</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card3Title")}</h3>
+              <p className="page-body text-slate-600">
                 {t("products.thermalPad.techAdvantages.card3Desc")}
               </p>
             </Card>
@@ -118,19 +118,19 @@ export default function ThermalPadPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">{t("products.thermalPad.technicalDetails.title")}</h2>
+          <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.thermalPad.technicalDetails.title")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-slate-900">{t("products.thermalPad.technicalDetails.designTitle")}</h3>
+              <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.technicalDetails.designTitle")}</h3>
               <Card className="p-6 bg-white border-slate-200 mb-6">
-                <h4 className="font-semibold mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.skeletonTitle")}</h4>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                <h4 className="page-h3 mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.skeletonTitle")}</h4>
+                <p className="page-caption text-slate-600 mb-4">
                   {t("products.thermalPad.technicalDetails.skeletonDesc")}
                 </p>
-                <ul className="space-y-2 text-sm text-slate-600">
+                <ul className="space-y-2 page-caption text-slate-600">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                     {t("products.thermalPad.technicalDetails.skeletonItem1")}
@@ -143,25 +143,25 @@ export default function ThermalPadPage() {
               </Card>
 
               <Card className="p-6 bg-white border-slate-200">
-                <h4 className="font-semibold mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.enhancementTitle")}</h4>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                <h4 className="page-h3 mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.enhancementTitle")}</h4>
+                <p className="page-caption text-slate-600 mb-4">
                   {t("products.thermalPad.technicalDetails.enhancementDesc")}
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 bg-slate-50 rounded-lg">
-                    <div className="text-xs text-slate-600 mb-1">{t("products.thermalPad.technicalDetails.diamondEnhancement")}</div>
-                    <div className="font-semibold text-slate-900 text-sm">{t("products.thermalPad.technicalDetails.diamondEnhancementDesc")}</div>
+                    <div className="page-caption text-slate-600 mb-1">{t("products.thermalPad.technicalDetails.diamondEnhancement")}</div>
+                    <div className="page-caption font-semibold text-slate-900">{t("products.thermalPad.technicalDetails.diamondEnhancementDesc")}</div>
                   </div>
                   <div className="p-3 bg-slate-50 rounded-lg">
-                    <div className="text-xs text-slate-600 mb-1">{t("products.thermalPad.technicalDetails.ceramicEnhancement")}</div>
-                    <div className="font-semibold text-slate-900 text-sm">{t("products.thermalPad.technicalDetails.ceramicEnhancementDesc")}</div>
+                    <div className="page-caption text-slate-600 mb-1">{t("products.thermalPad.technicalDetails.ceramicEnhancement")}</div>
+                    <div className="page-caption font-semibold text-slate-900">{t("products.thermalPad.technicalDetails.ceramicEnhancementDesc")}</div>
                   </div>
                 </div>
               </Card>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-slate-900">{t("products.thermalPad.technicalDetails.processTitle")}</h3>
+              <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.technicalDetails.processTitle")}</h3>
               <div className="space-y-4">
                 <Card className="p-6 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
@@ -170,7 +170,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step1Title")}</h4>
-                      <p className="text-sm text-slate-600">
+                      <p className="page-caption text-slate-600">
                         {t("products.thermalPad.technicalDetails.step1Desc")}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step2Title")}</h4>
-                      <p className="text-sm text-slate-600">
+                      <p className="page-caption text-slate-600">
                         {t("products.thermalPad.technicalDetails.step2Desc")}
                       </p>
                     </div>
@@ -198,7 +198,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step3Title")}</h4>
-                      <p className="text-sm text-slate-600">
+                      <p className="page-caption text-slate-600">
                         {t("products.thermalPad.technicalDetails.step3Desc")}
                       </p>
                     </div>
@@ -212,7 +212,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step4Title")}</h4>
-                      <p className="text-sm text-slate-600">
+                      <p className="page-caption text-slate-600">
                         {t("products.thermalPad.technicalDetails.step4Desc")}
                       </p>
                     </div>
@@ -225,17 +225,17 @@ export default function ThermalPadPage() {
       </section>
 
       {/* Application Prospects */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">{t("products.thermalPad.applicationProspects.title")}</h2>
+          <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.thermalPad.applicationProspects.title")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-8 rounded-lg border border-slate-200">
-              <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.applicationProspects.card1Title")}</h3>
-              <p className="text-slate-600 mb-4">
+              <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.applicationProspects.card1Title")}</h3>
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.thermalPad.applicationProspects.card1Desc")}
               </p>
-              <ul className="text-slate-600 mb-6 space-y-2">
+              <ul className="page-body text-slate-600 mb-6 space-y-2">
                 <li className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
                   <span>{t("products.thermalPad.applicationProspects.card1Item1")}</span>
@@ -258,8 +258,8 @@ export default function ThermalPadPage() {
               </Link>
             </div>
             <div className="bg-white p-8 rounded-lg border border-slate-200">
-              <h3 className="text-xl font-semibold mb-4 text-slate-900">{t("products.thermalPad.applicationProspects.card2Title")}</h3>
-              <p className="text-slate-600 mb-6">
+              <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.applicationProspects.card2Title")}</h3>
+              <p className="page-body text-slate-600 mb-6">
                 {t("products.thermalPad.applicationProspects.card2Desc")}
               </p>
               <Link
@@ -275,21 +275,21 @@ export default function ThermalPadPage() {
       </section>
 
       {/* Patents */}
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center text-slate-900">{t("products.thermalPad.patents.title")}</h2>
-          <p className="text-center text-slate-600 mb-12">{t("products.thermalPad.patents.subtitle")}</p>
+          <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.thermalPad.patents.title")}</h2>
+          <p className="page-lead text-center text-slate-600 mb-12">{t("products.thermalPad.patents.subtitle")}</p>
 
           <div className="max-w-3xl mx-auto">
             <Card className="p-8 bg-white border-slate-200">
-              <p className="text-sm text-slate-600 leading-relaxed mb-6">
+              <p className="page-body text-slate-600 mb-6">
                 {t("products.thermalPad.patents.intro")}
               </p>
               <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
-              <h3 className="text-lg font-semibold mb-3 text-slate-900">
+              <h3 className="page-h3 mb-3 text-slate-900">
                 {t("products.thermalPad.patents.patentTitle")}
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
+              <p className="page-caption text-slate-600 mb-4">
                 {t("products.thermalPad.patents.patentDesc")}
               </p>
               <div className="pt-4 border-t border-slate-200">
@@ -301,10 +301,10 @@ export default function ThermalPadPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">{t("products.thermalPad.cta.title")}</h2>
-          <p className="text-slate-600 mb-8">{t("products.thermalPad.cta.subtitle")}</p>
+          <h2 className="page-h2 mb-4 text-slate-900">{t("products.thermalPad.cta.title")}</h2>
+          <p className="page-lead text-slate-600 mb-8">{t("products.thermalPad.cta.subtitle")}</p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>{t("products.thermalPad.cta.applySample")}</Link>

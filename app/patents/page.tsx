@@ -55,7 +55,7 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolution.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
           </div>
 
@@ -166,7 +166,7 @@ export default function PatentsPage() {
           {/* 技术演进架构图 */}
           <div className="max-w-7xl mx-auto">
             <div className="p-4 md:p-8 bg-[#002244]/50 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10">
-              <h3 className="page-h3 text-white text-center mb-8 md:mb-12 text-xl md:text-2xl">{t("patents.architecture.title")}</h3>
+              <h3 className="page-h3 text-white text-center mb-8 md:mb-12">{t("patents.architecture.title")}</h3>
               
               <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative lg:items-stretch">
                 {/* 左侧：演化路径 */}
@@ -261,7 +261,7 @@ export default function PatentsPage() {
                           <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] flex items-center justify-center border-2 border-[#00b4d8]/40 group-hover:scale-110 transition-transform duration-300">
                             <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-[#73DBFF]" />
                           </div>
-                          <h4 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
+                          <h4 className="page-h3 text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
                           <div className="space-y-2 md:space-y-3">
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-[#002244]/60 rounded-lg border border-[#0077b6]/30">
                               <div className="text-[#73DBFF] font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
@@ -375,7 +375,7 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.evolutionPath.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
           </div>
 
@@ -616,7 +616,7 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.platformCore.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
@@ -627,7 +627,7 @@ export default function PatentsPage() {
               </div>
               <div>
                 <div className="text-[#73DBFF] text-sm font-medium mb-1">Platform Core Technology</div>
-                <h3 className="text-white font-bold text-2xl">{t("patents.platformCore.mainTitle")}</h3>
+                <h3 className="page-h3 text-white">{t("patents.platformCore.mainTitle")}</h3>
               </div>
             </div>
 
@@ -755,24 +755,26 @@ export default function PatentsPage() {
               </div>
             </div>
 
-            {/* 材料体系综合对比雷达图 */}
+            {/* 材料体系综合对比雷达图（浅底信息承载） */}
             <div className="mt-10 pt-8 border-t border-[#0077b6]/30">
-              <h4 className="text-[#73DBFF] font-semibold text-base mb-6 flex items-center gap-2">
-                <Sparkles className="w-5 h-5" />
-                {t("patents.platformCore.radarChartTitle")}
-              </h4>
-              <MaterialComparisonRadarChart
-                labels={{
-                  dim1: t("patents.platformCore.radarDim1"),
-                  dim2: t("patents.platformCore.radarDim2"),
-                  dim3: t("patents.platformCore.radarDim3"),
-                  dim4: t("patents.platformCore.radarDim4"),
-                  dim5: t("patents.platformCore.radarDim5"),
-                  diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
-                  diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
-                  toSpike: t("patents.platformCore.radarLabelToSpike"),
-                }}
-              />
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <h4 className="text-slate-900 font-semibold text-base mb-6 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-[#0077b6]" />
+                  {t("patents.platformCore.radarChartTitle")}
+                </h4>
+                <MaterialComparisonRadarChart
+                  labels={{
+                    dim1: t("patents.platformCore.radarDim1"),
+                    dim2: t("patents.platformCore.radarDim2"),
+                    dim3: t("patents.platformCore.radarDim3"),
+                    dim4: t("patents.platformCore.radarDim4"),
+                    dim5: t("patents.platformCore.radarDim5"),
+                    diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
+                    diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
+                    toSpike: t("patents.platformCore.radarLabelToSpike"),
+                  }}
+                />
+              </div>
             </div>
           </Card>
         </div>
@@ -783,13 +785,13 @@ export default function PatentsPage() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.platformExtension.sectionTitle")}</h2>
+            <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
           </div>
 
           <div className="max-w-6xl mx-auto mb-12">
-            <Card className="p-8 bg-[#002244]/50 backdrop-blur-sm border-[#0077b6]/30">
-              <p className="text-lg leading-relaxed text-center text-slate-300">
+            <Card className="p-8 bg-white border border-slate-200 shadow-sm">
+              <p className="page-lead text-center text-slate-700">
                 {t("patents.platformExtension.intro")}
               </p>
             </Card>
@@ -856,7 +858,7 @@ export default function PatentsPage() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#002244]/90 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 shadow-xl shadow-[#0077b6]/10">
             <div className="text-center mb-10">
-              <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.patentCluster.title")}</h2>
+              <h2 className="page-h2 text-white mb-4">{t("patents.patentCluster.title")}</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#0077b6] to-[#73DBFF] mx-auto rounded-full mb-6" />
               <p className="text-slate-300 leading-relaxed text-lg max-w-3xl mx-auto">
                 {t("patents.patentCluster.intro")}
@@ -975,7 +977,7 @@ export default function PatentsPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="page-h2 text-white mb-4 text-2xl md:text-3xl">{t("patents.cta.title")}</h2>
+          <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">

@@ -12,6 +12,9 @@ interface ApplicationCardProps {
   icon: ReactNode
   tag: string
   href?: string
+  iconWrapperClassName?: string
+  tagClassName?: string
+  levelClassName?: string
 }
 
 export function ApplicationCard({
@@ -22,7 +25,10 @@ export function ApplicationCard({
   color,
   icon,
   tag,
-  href
+  href,
+  iconWrapperClassName,
+  tagClassName,
+  levelClassName
 }: ApplicationCardProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href) {
@@ -42,13 +48,13 @@ export function ApplicationCard({
     >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-4 min-w-0">
-          <div className="mt-1 p-2 bg-[#023B99] rounded-lg border border-[#4169E1]/40 flex-shrink-0">
+          <div className={`mt-1 p-2 rounded-lg border flex-shrink-0 ${iconWrapperClassName ?? "bg-[#002244]/60 border-[#0077b6]/30"}`}>
             {icon}
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-3 mb-1 flex-wrap">
-              <span className="text-xs font-mono tracking-tighter text-slate-500">{level}</span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0344b3] text-[#73DBFF] uppercase tracking-wider">{tag}</span>
+              <span className={`text-xs font-mono tracking-tighter ${levelClassName ?? "text-slate-500"}`}>{level}</span>
+              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${tagClassName ?? "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]"}`}>{tag}</span>
             </div>
             <h3 className="text-lg font-bold text-white break-words">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">

@@ -38,7 +38,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-[#003366] hover:bg-[#004080] text-[#7dd3fc] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-[#0077b6]/40"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50 w-12 h-12 rounded-full bg-[#003366] hover:bg-[#004080] text-[#7dd3fc] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-[#0077b6]/40"
           aria-label={t("common.footer.scrollToTop")}
         >
           <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />

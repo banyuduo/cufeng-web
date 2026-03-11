@@ -41,22 +41,22 @@ export default async function ProductsPage({
                     {t("products.badge.inStock")}
                   </div>
                 </div>
-                <h2 className="page-h2 mb-3 text-slate-900">
+                <h2 className="page-h3 mb-3 text-slate-900">
                   {t("products.nonstickCookware.title")}
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="page-caption text-slate-600 mb-6">
                   {t("products.nonstickCookware.desc")}
                 </p>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.nonstickCookware.feature1")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.nonstickCookware.feature2")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.nonstickCookware.feature3")}
                   </div>
@@ -77,22 +77,22 @@ export default async function ProductsPage({
                     {t("products.badge.gen2Core")}
                   </div>
                 </div>
-                <h2 className="page-h2 mb-3 text-slate-900">
+                <h2 className="page-h3 mb-3 text-slate-900">
                   {t("products.diamondCopper.title")}
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="page-caption text-slate-600 mb-6">
                   {t("products.diamondCopper.desc")}
                 </p>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-700">
+                  <div className="flex items-center gap-2 page-caption text-slate-700">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.diamondCopper.feature1")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-700">
+                  <div className="flex items-center gap-2 page-caption text-slate-700">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.diamondCopper.feature2")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-700">
+                  <div className="flex items-center gap-2 page-caption text-slate-700">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.diamondCopper.feature3")}
                   </div>
@@ -113,22 +113,22 @@ export default async function ProductsPage({
                     {t("products.badge.gen2Expand")}
                   </div>
                 </div>
-                <h2 className="page-h2 mb-3 text-slate-900">
+                <h2 className="page-h3 mb-3 text-slate-900">
                   {t("products.thermalPad.title")}
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="page-caption text-slate-600 mb-6">
                   {t("products.thermalPad.desc")}
                 </p>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.thermalPad.feature1")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.thermalPad.feature2")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.thermalPad.feature3")}
                   </div>
@@ -149,22 +149,22 @@ export default async function ProductsPage({
                     {t("products.badge.gen3Future")}
                   </div>
                 </div>
-                <h2 className="page-h2 mb-3 text-slate-900">
+                <h2 className="page-h3 mb-3 text-slate-900">
                   {t("products.carbonComposite.title")}
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="page-caption text-slate-600 mb-6">
                   {t("products.carbonComposite.desc")}
                 </p>
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.carbonComposite.feature1")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.carbonComposite.feature2")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.carbonComposite.feature3")}
                   </div>
@@ -185,26 +185,26 @@ export default async function ProductsPage({
                     {t("products.badge.traditional")}
                   </div>
                 </div>
-                <h2 className="page-h2 mb-3 text-slate-900">
+                <h2 className="page-h3 mb-3 text-slate-900">
                   {t("products.diamondTools.title")}
                   <br />
-                  <span className="text-lg text-slate-600 font-normal">
+                  <span className="page-caption text-slate-600 font-normal">
                     {t("products.diamondTools.subtitle")}
                   </span>
                 </h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="page-caption text-slate-600 mb-6">
                   {t("products.diamondTools.desc")}
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
                     {t("products.diamondTools.feature1")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
                     {t("products.diamondTools.feature2")}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
                     {t("products.diamondTools.feature3")}
                   </div>
@@ -220,7 +220,7 @@ export default async function ProductsPage({
 
       <section className="py-6 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs text-slate-500 text-center leading-relaxed">
+          <p className="page-caption text-slate-500 text-center">
             {t("products.disclaimer")}
           </p>
         </div>
@@ -231,7 +231,7 @@ export default async function ProductsPage({
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}
           </h2>
-          <p className="text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
+          <p className="page-lead text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>
