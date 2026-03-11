@@ -47,7 +47,7 @@ export default async function AboutPage({
                 <p className="text-slate-300 mb-2">
                   {t("about.overview.companyName")}
                 </p>
-                <p className="text-slate-400 text-sm">{t("about.overview.location")}</p>
+                <p className="page-caption text-slate-400">{t("about.overview.location")}</p>
               </div>
 
               <div className="pt-4 border-t border-[#0077b6]/30">
@@ -127,7 +127,7 @@ export default async function AboutPage({
                   <GraduationCap className="w-6 h-6 text-[#73DBFF]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">{t("about.team.wang.name")}</h3>
+                  <h3 className="page-h3 text-slate-900">{t("about.team.wang.name")}</h3>
                   <p className="page-caption text-slate-500">{t("about.team.wang.name")}</p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default async function AboutPage({
                   <Wrench className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">{t("about.team.he.name")}</h3>
+                  <h3 className="page-h3 text-slate-900">{t("about.team.he.name")}</h3>
                   <p className="page-caption text-slate-500">{t("about.team.he.name")}</p>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default async function AboutPage({
                   <Users className="w-6 h-6 text-purple-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">{t("about.team.zhang.name")}</h3>
+                  <h3 className="page-h3 text-slate-900">{t("about.team.zhang.name")}</h3>
                   <p className="page-caption text-slate-500">Zhang</p>
                 </div>
               </div>

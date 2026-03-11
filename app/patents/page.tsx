@@ -53,10 +53,10 @@ export default function PatentsPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
-            <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
+            <p className="page-lead text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
           </div>
 
           {/* Evolution Path Flow */}
@@ -144,8 +144,8 @@ export default function PatentsPage() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-3">{t("patents.evolution.coreLogicTitle")}</h3>
-                  <p className="text-slate-300 leading-relaxed text-lg">
+                  <h3 className="page-h3 text-white mb-3">{t("patents.evolution.coreLogicTitle")}</h3>
+                  <p className="page-lead text-slate-300">
                     {t("patents.evolution.coreLogicDesc")}
                   </p>
                 </div>
@@ -162,7 +162,7 @@ export default function PatentsPage() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* 技术演进架构图 */}
           <div className="max-w-7xl mx-auto">
             <div className="p-4 md:p-8 bg-[#002244]/50 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10">
@@ -373,7 +373,7 @@ export default function PatentsPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
@@ -614,7 +614,7 @@ export default function PatentsPage() {
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
@@ -783,7 +783,7 @@ export default function PatentsPage() {
       <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0077b6]/15 via-transparent to-transparent" />
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
@@ -855,7 +855,7 @@ export default function PatentsPage() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Card className="max-w-5xl mx-auto p-10 bg-gradient-to-br from-[#002244]/90 to-[#003366]/70 backdrop-blur-sm border border-[#00b4d8]/30 shadow-xl shadow-[#0077b6]/10">
             <div className="text-center mb-10">
               <h2 className="page-h2 text-white mb-4">{t("patents.patentCluster.title")}</h2>
@@ -976,7 +976,7 @@ export default function PatentsPage() {
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-slate-500 mb-6">{t("patents.cta.exploreCooperation")}</p>

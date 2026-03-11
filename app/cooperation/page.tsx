@@ -88,7 +88,7 @@ export default async function CooperationPage({
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
-              <p className="text-slate-300 leading-relaxed font-light text-sm">
+              <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.research")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.researchBold")}</strong>
               </p>
@@ -96,7 +96,7 @@ export default async function CooperationPage({
 
             <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
-              <p className="text-slate-300 leading-relaxed font-light text-sm">
+              <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.industry")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.industryBold")}</strong>
               </p>
@@ -104,7 +104,7 @@ export default async function CooperationPage({
 
             <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
-              <p className="text-slate-300 leading-relaxed font-light text-sm">
+              <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.tech")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.techBold")}</strong>
               </p>
@@ -112,14 +112,14 @@ export default async function CooperationPage({
 
             <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
-              <p className="text-slate-300 leading-relaxed font-light text-sm">
+              <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.investor")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.investorBold")}</strong>
               </p>
             </div>
           </div>
 
-          <p className="mt-12 text-slate-400 text-sm italic text-center">
+          <p className="mt-12 page-caption text-slate-400 italic text-center">
             {t("cooperation.audience.footnote")}
           </p>
         </div>
@@ -130,7 +130,7 @@ export default async function CooperationPage({
           <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
             {t("cooperation.nextSteps.title")}
           </h2>
-          <div className="space-y-8 text-slate-300 leading-relaxed font-light">
+          <div className="space-y-8 page-body text-slate-300 font-light">
             <p>{t("cooperation.nextSteps.p1")}</p>
             <p>
               {t("cooperation.nextSteps.p2")}
@@ -147,7 +147,7 @@ export default async function CooperationPage({
           <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
             {t("cooperation.resonance.title")}
           </h2>
-          <div className="space-y-8 text-slate-300 leading-relaxed font-light">
+          <div className="space-y-8 page-body text-slate-300 font-light">
             <p>{t("cooperation.resonance.p1")}</p>
             <p>
               {t("cooperation.resonance.p2")}
@@ -168,7 +168,7 @@ export default async function CooperationPage({
           </h2>
           <div className="space-y-6 text-slate-700 leading-relaxed font-light mb-12">
             <p>{t("cooperation.contact.intro")}</p>
-            <p className="text-slate-500 italic text-sm">{t("cooperation.contact.introNote")}</p>
+            <p className="page-caption text-slate-500 italic">{t("cooperation.contact.introNote")}</p>
           </div>
 
           <div className="bg-white rounded-2xl p-10 space-y-8 border border-slate-200 shadow-sm">
@@ -178,7 +178,7 @@ export default async function CooperationPage({
               </div>
               <div>
                 <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.entity")}</div>
-                <div className="text-slate-900 font-light text-lg">{t("cooperation.contact.entityName")}</div>
+                <div className="page-lead text-slate-900 font-light">{t("cooperation.contact.entityName")}</div>
                 <div className="text-slate-500 text-xs mt-2 font-light">
                   Nanjing CuFeng Mechanical & Electrical Technology Co., LTD
                 </div>

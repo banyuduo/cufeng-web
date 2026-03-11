@@ -29,25 +29,25 @@ export default async function HomePage({
               {t("home.hero.title")}
             </h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/95 font-light mb-10 sm:mb-12 tracking-wide">
+            <p className="page-lead text-white/95 font-light mb-10 sm:mb-12 tracking-wide text-lg sm:text-xl lg:text-2xl">
               {t("home.hero.subtitle")}
             </p>
 
             <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12">
               <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                <p className="page-lead text-white/90">
                   {t("home.hero.card1")}
                 </p>
               </Card>
 
               <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                <p className="page-lead text-white/90">
                   {t("home.hero.card2")}
                 </p>
               </Card>
 
               <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                <p className="page-lead text-white/90">
                   {t("home.hero.card3")}
                 </p>
               </Card>
@@ -55,7 +55,7 @@ export default async function HomePage({
 
             <div className="max-w-3xl mx-auto mb-12">
               <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/40 rounded-2xl p-8 w-full">
-                <h3 className="text-lg font-semibold text-[#7dd3fc] mb-6">
+                <h3 className="page-h3 text-[#7dd3fc] mb-6">
                   {t("home.hero.achieved")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -86,7 +86,7 @@ export default async function HomePage({
             </div>
 
             <div className="max-w-4xl mx-auto mb-10">
-              <p className="text-white/85 leading-relaxed text-lg">
+              <p className="page-lead text-white/85">
                 {t("home.hero.platformFocus")}
               </p>
             </div>
@@ -94,7 +94,7 @@ export default async function HomePage({
             {/* 技术演化路径 - 简化版 */}
             <div className="max-w-3xl mx-auto mb-12">
               <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/30 rounded-xl p-6 w-full">
-                <h3 className="text-base font-semibold text-[#7dd3fc] mb-3">
+                <h3 className="page-h3 text-[#7dd3fc] mb-3 text-base sm:text-lg">
                   {t("home.techEvolution.title")}
                 </h3>
                 <p className="text-white/85 leading-relaxed text-sm mb-4">
@@ -201,13 +201,13 @@ export default async function HomePage({
             {t("home.platform.title")}
           </h2>
           <div className="prose prose-invert max-w-none">
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="page-lead text-slate-300">
               {t("home.platform.p1")}
             </p>
             <p className="text-lg text-slate-300 leading-relaxed mt-6">
               {t("home.platform.p2")}
             </p>
-            <ul className="list-disc list-inside text-lg text-slate-300 leading-relaxed mt-4 space-y-2">
+            <ul className="list-disc list-inside page-lead text-slate-300 mt-4 space-y-2">
               <li>{t("home.platform.li1")}</li>
               <li>{t("home.platform.li2")}</li>
             </ul>
@@ -223,7 +223,7 @@ export default async function HomePage({
           <h2 className="page-h2 mb-4 text-white text-center">
             {t("home.results.title")}
           </h2>
-          <p className="text-slate-400 text-center mb-12">
+          <p className="page-caption text-slate-400 text-center mb-12">
             {t("home.results.subtitle")}
           </p>
 
@@ -233,10 +233,10 @@ export default async function HomePage({
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">
+                <h3 className="page-h3 text-white mb-2">
                   {t("home.results.process")}
                 </h3>
-                <p className="text-slate-300">
+                <p className="page-body text-slate-300">
                   {t("home.results.processDesc")}
                 </p>
               </div>
@@ -247,10 +247,10 @@ export default async function HomePage({
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">
+                <h3 className="page-h3 text-white mb-2">
                   {t("home.results.deliverables")}
                 </h3>
-                <p className="text-slate-300">
+                <p className="page-body text-slate-300">
                   {t("home.results.deliverablesDesc")}
                 </p>
               </div>
@@ -261,10 +261,10 @@ export default async function HomePage({
                 <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-2">
+                <h3 className="page-h3 text-white mb-2">
                   {t("home.results.ip")}
                 </h3>
-                <p className="text-slate-300">
+                <p className="page-body text-slate-300">
                   {t("home.results.ipDesc")}
                 </p>
               </div>
@@ -279,7 +279,7 @@ export default async function HomePage({
           <h2 className="page-h3 mb-4 text-white">
             {t("home.hero.ctaTitle")}
           </h2>
-          <p className="text-slate-400 mb-8">
+          <p className="page-caption text-slate-400 mb-8">
             {t("home.hero.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
