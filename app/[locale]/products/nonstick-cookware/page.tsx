@@ -77,6 +77,7 @@ export default function NonstickCookwarePage() {
                   alt={t("products.nonstickCookware.hero.imgAlt")}
                   fill
                   objectFit="cover"
+                  priority
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -85,6 +86,7 @@ export default function NonstickCookwarePage() {
                   alt={t("products.nonstickCookware.hero.imgAltSem")}
                   fill
                   objectFit="cover"
+                  priority
                 />
               </div>
             </div>

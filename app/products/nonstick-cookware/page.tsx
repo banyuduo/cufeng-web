@@ -67,6 +67,7 @@ export default function NonstickCookwarePage() {
                   alt="金刚石涂层不粘锅"
                   fill
                   objectFit="cover"
+                  priority
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -75,6 +76,7 @@ export default function NonstickCookwarePage() {
                   alt="金刚石涂层不粘锅SEM图"
                   fill
                   objectFit="cover"
+                  priority
                 />
               </div>
             </div>
