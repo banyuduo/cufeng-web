@@ -15,6 +15,8 @@ interface ResponsivePictureProps {
   fill?: boolean
   /** object-fit 样式 */
   objectFit?: "cover" | "contain"
+  /** 首屏优先加载（用于 Hero 等 above-the-fold 图片，提升 LCP） */
+  priority?: boolean
 }
 
 export function ResponsivePicture({
@@ -24,6 +26,7 @@ export function ResponsivePicture({
   className = "",
   fill = false,
   objectFit = "cover",
+  priority = false,
 }: ResponsivePictureProps) {
   // 规范化路径：WebP 文件名去除空格（生成的文件名）
   const rawPath = src.replace(/^\/images\//, "")
@@ -54,8 +57,9 @@ export function ResponsivePicture({
         src={fallbackSrc}
         alt={alt}
         className={imgClass}
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
         decoding="async"
+        fetchPriority={priority ? "high" : undefined}
       />
     </picture>
   )

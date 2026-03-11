@@ -63,6 +63,7 @@ export default function DiamondToolsPage() {
                 alt="超硬磨料熔固技术"
                 fill
                 objectFit="cover"
+                priority
               />
             </div>
           </div>

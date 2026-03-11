@@ -71,6 +71,7 @@ export default function DiamondToolsPage() {
                 alt={t("products.diamondTools.hero.imgAlt")}
                 fill
                 objectFit="cover"
+                priority
               />
             </div>
           </div>

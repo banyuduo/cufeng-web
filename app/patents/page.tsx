@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { isValidLocale, type Locale } from "@/lib/i18n"
@@ -12,7 +13,11 @@ import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
-import { MaterialComparisonRadarChart } from "@/components/material-comparison-radar-chart"
+
+const MaterialComparisonRadarChart = dynamic(
+  () => import("@/components/material-comparison-radar-chart").then((m) => ({ default: m.MaterialComparisonRadarChart })),
+  { ssr: false, loading: () => <div className="w-full max-w-md lg:max-w-lg mx-auto min-h-[280px] flex items-center justify-center text-slate-400">加载中...</div> }
+)
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
