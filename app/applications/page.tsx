@@ -69,7 +69,7 @@ export default async function ApplicationsPage({
             </div>
             <div className="text-center mb-12 px-1">
               <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base break-words">{t("applications.blueprint.subtitle")}</p>
+              <p className="page-caption sm:text-base text-slate-400 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
 
             <div className="max-w-4xl mx-auto relative z-10 space-y-4">
@@ -339,7 +339,7 @@ export default async function ApplicationsPage({
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <h2 className="text-xl sm:text-2xl font-bold text-white">
+                        <h2 className="page-h2 text-white">
                           {title}
                         </h2>
                         {badge && (
@@ -410,9 +410,9 @@ export default async function ApplicationsPage({
             {t("applications.summary.title")}
           </h2>
 
-          <p className="text-base sm:text-xl text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
+          <p className="page-lead text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
 
-          <p className="text-base sm:text-lg mb-12 leading-relaxed max-w-3xl mx-auto text-slate-700 break-words">
+          <p className="page-body mb-12 max-w-3xl mx-auto text-slate-700 break-words">
             {t("applications.summary.desc")}
           </p>
 

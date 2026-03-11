@@ -52,8 +52,8 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
     <>
       {/* 面包屑 */}
       <section className="py-6 border-b border-border/50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 page-caption text-muted-foreground">
             <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               {t("common.home")}
             </Link>
@@ -73,7 +73,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
 
       {/* 行业文章正文 - 浅底阅读区 */}
       <section className="py-20 bg-[#F9FAFC]">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* 返回按钮 */}
             <Link
@@ -179,8 +179,8 @@ function CompanyNewsDetail({
     <>
       {/* Breadcrumb */}
       <section className="py-6 border-b border-border/50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 page-caption text-muted-foreground">
             <Link href={prefix || "/"} className="hover:text-primary transition-colors">
               {t("common.home")}
             </Link>
@@ -196,7 +196,7 @@ function CompanyNewsDetail({
 
       {/* Article Content - 浅底阅读区 */}
       <section className="py-16 bg-[#F9FAFC]">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* Back Button */}
             <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-8 page-caption font-medium">
@@ -220,7 +220,7 @@ function CompanyNewsDetail({
                   </div>
                 </div>
               </div>
-              <h1 className="page-h2 text-slate-900 text-balance">{news.title}</h1>
+              <h1 className="page-h1 text-slate-900 text-balance">{news.title}</h1>
             </header>
 
             {/* Article Body */}
