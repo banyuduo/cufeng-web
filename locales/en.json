@@ -92,11 +92,11 @@
     "title": "Product Matrix",
     "subtitle": "From consumer-grade diamond nonstick coating to cutting-edge all-carbon composites, each technology represents a breakthrough in CuFeng Technology",
     "badge": {
-      "inStock": "In Stock · Mature Product",
-      "gen2Core": "Gen 2 · Strategic Core",
-      "gen2Expand": "Gen 2 · Business Expansion",
-      "gen3Future": "Gen 3 · Future Platform",
-      "traditional": "Traditional · Custom Service"
+      "inStock": "Samples Ready · Mature Solution",
+      "gen2Core": "Strategic Core",
+      "gen2Expand": "Business Expansion",
+      "gen3Future": "Next Gen · Future Platform",
+      "traditional": "Professional Segment · Custom Service"
     },
     "nonstickCookware": {
       "title": "Diamond coating nonstick cookware",
@@ -106,9 +106,9 @@
       "feature3": "Food safety certified, consumer-grade product",
       "viewDetails": "View Details",
       "hero": {
-        "badge": "In Stock · Mature Product",
+        "badge": "Samples Ready · Mature Solution",
         "title": "True diamond nonstick cookware",
-        "intro": "Say goodbye to coating peeling. Using patented active fusion-bonding technology, real diamond particles are permanently bonded to the cookware surface. Ultra-wear-resistant, lasting nonstick, food-safe—service life is 10x+ that of traditional coatings.",
+        "intro": "Based on patented active fusion-bonding technology, diamond particles achieve atomic-level bonding with the metal substrate. Applying this process to nonstick cookware validates the reliability of interface fixation strength under extreme operating conditions.",
         "feature1": "Real diamond particle active fusion bonding—never peels",
         "feature2": "PFOA/PTFE-free—food safety certified",
         "feature3": "Heat resistant to 500°C—suitable for all cooking methods",
@@ -132,7 +132,7 @@
         "title": "Core advantages",
         "subtitle": "Patent technology empowering; redefining nonstick performance standards",
         "lifespanTitle": "Ultra-long service life",
-        "lifespanDesc": "Diamond particles are permanently bonded to the substrate via active fusion bonding, forming chemical bonds. 10x+ lifetime over traditional coatings; withstands 100,000+ use cycles. Metal spatulas can be used freely without damaging the coating.",
+        "lifespanDesc": "Diamond particles are permanently bonded to the substrate via active fusion bonding, forming chemical bonds. 10x+ lifetime over traditional coatings; withstands 100,000+ use cycles, and the coating will not peel off.",
         "lifespanValue": "10x+",
         "lifespanNote": "Wear resistance improvement",
         "safetyTitle": "Food safety certified",
@@ -171,8 +171,8 @@
         "overallScore": "Overall score"
       },
       "cta": {
-        "title": "Learn more about diamond nonstick technology",
-        "subtitle": "Our engineering team will detail technical principles and application prospects for you",
+        "title": "Learn more about diamond nonstick coating technology",
+        "subtitle": "Our team of engineers will detail technical principles and application prospects for you",
         "contactUs": "Contact us",
         "downloadWhitepaper": "Download technical whitepaper"
       }
@@ -184,7 +184,7 @@
       "feature2": "Premium performance version: 1200+ W/m·K, CVD alternative",
       "feature3": "AI chips, power devices, and other high-end thermal applications",
       "hero": {
-        "badge": "Gen 2 · Strategic Core",
+        "badge": "Strategic Core",
         "title": "Diamond-Copper Composite",
         "intro": "Core product of our thermal management technology pivot. We have successfully developed samples with thermal conductivity of 680 W/m·K and planned two product lines: a cost-effective high-volume civilian solution and a premium version exceeding 1200 W/m·K thermal conductivity, which can replace expensive CVD diamond.",
         "achievedLabel": "Achieved thermal conductivity (W/m·K)",
@@ -296,7 +296,7 @@
       "feature2": "Active fusion bonding of high thermal conductivity particles",
       "feature3": "Adapts to complex interface flexible thermal conduction",
       "hero": {
-        "badge": "Gen 2 · Business Expansion",
+        "badge": "Business Expansion",
         "title": "Flexible thermal pad",
         "intro": "Innovative flexible thermal solution based on copper mesh/copper fiber 3D skeleton. Through active fusion-bonding technology, high thermal conductivity particles such as diamond are fixed to a flexible metal skeleton, forming a 3D thermal conductive phase network with both high thermal conductivity and excellent interface adaptability.",
         "corePerfTitle": "Core performance metrics",
@@ -426,7 +426,7 @@
         "footnote": "Data based on ToSpike lab testing and industry patent comparison; parameters may be customized per application."
       },
       "hero": {
-        "badge": "Gen 3 · Future Platform",
+        "badge": "Next Gen · Future Platform",
         "title": "All-carbon composite",
         "intro": "Revolutionary all-carbon composite technology platform based on sp³–sp² chemical bonding. Using nanodiamond surface graphitization as \"brazing material,\" achieves chemical bonding between diamond (sp³) and graphite/carbon fiber (sp²), building a 3D all-carbon network structure. Extensible to thermal management, solid-state batteries, superconducting materials, and other frontier fields.",
         "coreFeaturesTitle": "Core technical features",
