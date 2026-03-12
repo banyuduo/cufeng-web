@@ -696,7 +696,7 @@
         "background": "Professional Background",
         "backgroundDesc": "Earned PhD in Engineering in 2016; long-term focus on precision machining research of superabrasive tools for difficult-to-machine materials.",
         "credentials": "Technical Credentials",
-        "credentialsDesc": "Deep industrialization experience; 29 invention and utility model patents applied for and granted.",
+        "credentialsDesc": "Deep industrialization experience; over 30 invention and utility model patents applied for and granted.",
         "capability": "Core Capabilities",
         "capabilityDesc1": "Expert in providing customized system solutions for extreme conditions including titanium alloys, nickel-based superalloys, silicon carbide, and carbon fiber composites (CFRP), through deep matching of sp²–sp³ interface parameters.",
         "capabilityDesc2": "Expert in cost-oriented, volume-oriented product development and strategic planning; achieving universal application through process improvement or paradigm innovation."
@@ -713,7 +713,7 @@
         "capabilityDesc3": "Rich engineering practice and problem-closure experience; adept at balancing performance, reliability, and process feasibility under constraints."
       },
       "zhang": {
-        "name": "Mr. Zhang",
+        "name": "Zhang Gong",
         "title": "Head of Application Engineering & Field Support",
         "background": "Professional Background",
         "backgroundDesc": "Senior diamond tool application expert; years of experience in superabrasive tools and material cutting mechanisms. Expert in solving complex industrial grinding challenges; dedicated to innovative application and market promotion of high-end new energy vehicle assembly tools.",
@@ -722,11 +722,11 @@
         "solutionDesc": "Deep dive into on-site pain points; full-chain support from tool selection to process parameter optimization.",
         "response": "Agile On-Site Response:",
         "responseDesc": "Ensure seamless integration of technical support and production; significantly improve line efficiency and stability.",
-        "ev": "New Energy Vehicle Business Direction:",
+        "ev": "Areas of Expertise:",
         "evAssembly": "Assembly Line Tool Development:",
         "evAssemblyDesc": "For three-electric systems (battery, motor, controller) and chassis assembly; provide high-precision, high-durability dedicated tool solutions.",
-        "evIndustry": "Industry Depth Understanding:",
-        "evIndustryDesc": "Deep grasp of stringent assembly process requirements for new energy vehicle lightweight manufacturing; help customers achieve process upgrades."
+        "evIndustry": "",
+        "evIndustryDesc": ""
       }
     },
     "timeline": {
