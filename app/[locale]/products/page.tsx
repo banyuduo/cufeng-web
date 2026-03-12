@@ -31,42 +31,6 @@ export default async function ProductsPage({
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
-            <Link href={`${prefix}/products/nonstick-cookware`}>
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
-                    <ChefHat className="w-7 h-7 text-[#73DBFF]" />
-                  </div>
-                  <div className="px-3 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
-                    {t("products.badge.inStock")}
-                  </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.nonstickCookware.title")}
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.nonstickCookware.desc")}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
-
             <Link href={`${prefix}/products/diamond-copper`}>
               <Card className="p-6 sm:p-10 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
@@ -167,6 +131,42 @@ export default async function ProductsPage({
                   <div className="flex items-center gap-2 page-caption text-slate-600">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
                     {t("products.carbonComposite.feature3")}
+                  </div>
+                </div>
+                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
+                </div>
+              </Card>
+            </Link>
+
+            <Link href={`${prefix}/products/nonstick-cookware`}>
+              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
+                    <ChefHat className="w-7 h-7 text-[#73DBFF]" />
+                  </div>
+                  <div className="px-3 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
+                    {t("products.badge.inStock")}
+                  </div>
+                </div>
+                <h2 className="page-h3 mb-3 text-slate-900">
+                  {t("products.nonstickCookware.title")}
+                </h2>
+                <p className="page-caption text-slate-600 mb-6">
+                  {t("products.nonstickCookware.desc")}
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
+                    {t("products.nonstickCookware.feature1")}
+                  </div>
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
+                    {t("products.nonstickCookware.feature2")}
+                  </div>
+                  <div className="flex items-center gap-2 page-caption text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
+                    {t("products.nonstickCookware.feature3")}
                   </div>
                 </div>
                 <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">

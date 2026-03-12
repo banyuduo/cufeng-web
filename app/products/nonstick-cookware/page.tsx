@@ -27,11 +27,11 @@ export default function NonstickCookwarePage() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full text-sm font-medium text-green-700 mb-4">
                 <CheckCircle2 className="w-4 h-4" />
-                即时供货 · 成熟产品
+                即时出样 成熟方案
               </div>
               <h1 className="page-h1 mb-6 text-slate-900">真正的金刚石不粘锅</h1>
               <p className="page-lead text-slate-600 mb-6">
-                告别涂层脱落的烦恼。采用专利活性熔固技术，将真实金刚石颗粒永久键合于锅体表面。超强耐磨、持久不粘、食品安全，使用寿命是传统涂层的10倍以上。
+                基于专利的活性熔固技术，实现了金刚石颗粒与金属基材的原子级键合。这一工艺在不粘锅上的应用，验证民界面固着强度在极端工况下的可靠性。
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 page-caption text-slate-700">
