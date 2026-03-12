@@ -17,6 +17,7 @@ export default async function AboutPage({
   const resolved = await (params ?? Promise.resolve({}))
   const validLocale: Locale = resolved.locale && isValidLocale(resolved.locale) ? resolved.locale : defaultLocale
   const t = getTranslations(validLocale)
+  const tEn = getTranslations("en")
   const prefix = `/${validLocale}`
 
   return (
@@ -128,11 +129,13 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <h3 className="page-h3 text-slate-900">{t("about.team.wang.name")}</h3>
-                  <p className="page-caption text-slate-500">{t("about.team.wang.name")}</p>
+                  <p className="page-caption text-slate-500">
+                    {validLocale === "zh" ? tEn("about.team.wang.name") : t("about.team.wang.name")}
+                  </p>
                 </div>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/20 text-[#73DBFF]/90 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/10 text-[#0F2A5C] text-xs font-medium rounded-full mb-2">
                   {t("about.team.wang.title")}
                 </div>
               </div>
@@ -176,11 +179,13 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <h3 className="page-h3 text-slate-900">{t("about.team.he.name")}</h3>
-                  <p className="page-caption text-slate-500">{t("about.team.he.name")}</p>
+                  <p className="page-caption text-slate-500">
+                    {validLocale === "zh" ? tEn("about.team.he.name") : t("about.team.he.name")}
+                  </p>
                 </div>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-cyan-600/20 text-cyan-300 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-medium rounded-full mb-2">
                   {t("about.team.he.title")}
                 </div>
               </div>
@@ -217,11 +222,13 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <h3 className="page-h3 text-slate-900">{t("about.team.zhang.name")}</h3>
-                  <p className="page-caption text-slate-500">Zhang</p>
+                  <p className="page-caption text-slate-500">
+                    {validLocale === "zh" ? tEn("about.team.zhang.name") : t("about.team.zhang.name")}
+                  </p>
                 </div>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-purple-600/20 text-purple-300 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full mb-2">
                   {t("about.team.zhang.title")}
                 </div>
               </div>
@@ -254,9 +261,6 @@ export default async function AboutPage({
                       <div className="space-y-2 mt-2">
                         <p>
                           <span className="font-semibold">{t("about.team.zhang.evAssembly")}</span> {t("about.team.zhang.evAssemblyDesc")}
-                        </p>
-                        <p>
-                          <span className="font-semibold">{t("about.team.zhang.evIndustry")}</span> {t("about.team.zhang.evIndustryDesc")}
                         </p>
                       </div>
                     </div>
