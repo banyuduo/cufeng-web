@@ -62,7 +62,9 @@ export default function PatentsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
-            <p className="page-lead text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
+            {t("patents.evolution.sectionSubtitle") ? (
+              <p className="page-lead text-slate-400 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
+            ) : null}
           </div>
 
           {/* Evolution Path Flow */}
@@ -771,9 +773,9 @@ export default function PatentsPage() {
             </div>
 
             {/* 材料体系综合对比雷达图（浅底信息承载） */}
-            <div className="mt-6 pt-4 sm:mt-10 sm:pt-8 border-t border-[#0077b6]/30">
-              <div className="bg-[#F9FAFC] rounded-2xl p-3 sm:p-6 md:p-8 border border-slate-200/80 shadow-sm">
-                <h4 className="text-slate-900 font-semibold text-base mb-3 sm:mb-6 flex items-center gap-2">
+            <div className="mt-4 pt-3 sm:mt-10 sm:pt-8 border-t border-[#0077b6]/30">
+              <div className="bg-[#F9FAFC] rounded-2xl p-2 sm:p-6 md:p-8 border border-slate-200/80 shadow-sm">
+                <h4 className="text-slate-900 font-semibold text-base mb-2 sm:mb-6 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-[#0077b6]" />
                   {t("patents.platformCore.radarChartTitle")}
                 </h4>
@@ -785,6 +787,11 @@ export default function PatentsPage() {
                     dim3: t("patents.platformCore.radarDim3"),
                     dim4: t("patents.platformCore.radarDim4"),
                     dim5: t("patents.platformCore.radarDim5"),
+                    dim1Mobile: t("patents.platformCore.radarDim1Mobile"),
+                    dim2Mobile: t("patents.platformCore.radarDim2Mobile"),
+                    dim3Mobile: t("patents.platformCore.radarDim3Mobile"),
+                    dim4Mobile: t("patents.platformCore.radarDim4Mobile"),
+                    dim5Mobile: t("patents.platformCore.radarDim5Mobile"),
                     diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
                     diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
                     toSpike: t("patents.platformCore.radarLabelToSpike"),
