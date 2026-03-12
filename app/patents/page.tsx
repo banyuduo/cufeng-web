@@ -771,9 +771,9 @@ export default function PatentsPage() {
             </div>
 
             {/* 材料体系综合对比雷达图（浅底信息承载） */}
-            <div className="mt-10 pt-8 border-t border-[#0077b6]/30">
-              <div className="bg-[#F9FAFC] rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-200/80 shadow-sm">
-                <h4 className="text-slate-900 font-semibold text-base mb-6 flex items-center gap-2">
+            <div className="mt-6 pt-4 sm:mt-10 sm:pt-8 border-t border-[#0077b6]/30">
+              <div className="bg-[#F9FAFC] rounded-2xl p-3 sm:p-6 md:p-8 border border-slate-200/80 shadow-sm">
+                <h4 className="text-slate-900 font-semibold text-base mb-3 sm:mb-6 flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-[#0077b6]" />
                   {t("patents.platformCore.radarChartTitle")}
                 </h4>

@@ -95,13 +95,16 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
     maintainAspectRatio: !isMobile,
     aspectRatio: 1.25,
     devicePixelRatio,
+    layout: {
+      padding: isMobile ? 4 : 16,
+    },
     plugins: {
       legend: {
         position: "bottom",
         labels: {
           color: isLight ? "rgba(30, 41, 59, 0.9)" : "rgba(203, 213, 225, 0.95)",
-          font: { size: 13, family: "inherit" },
-          padding: 20,
+          font: { size: isMobile ? 11 : 13, family: "inherit" },
+          padding: isMobile ? 10 : 20,
           usePointStyle: true,
         },
       },
@@ -136,7 +139,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
         },
         pointLabels: {
           color: isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(203, 213, 225, 0.9)",
-          font: { size: 13, family: "inherit", weight: "500" },
+          font: { size: isMobile ? 10 : 13, family: "inherit", weight: "500" },
         },
       },
     },
@@ -145,7 +148,13 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   )
 
   return (
-    <div className="w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto min-h-[min(90vw,420px)] sm:min-h-[380px] md:min-h-[280px] -mx-4 sm:mx-auto">
+    <div
+      className={
+        isMobile
+          ? "w-full -mx-2 sm:mx-auto h-[min(78vh,92vw)] min-h-[280px] max-h-[420px]"
+          : "w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto min-h-[380px] md:min-h-[280px]"
+      }
+    >
       <Radar data={data} options={options} />
     </div>
   )
