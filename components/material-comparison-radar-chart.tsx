@@ -22,6 +22,12 @@ export interface MaterialComparisonRadarChartProps {
     dim3: string
     dim4: string
     dim5: string
+    /** 移动端两行显示，可选；无则回退到 dim1…dim5 */
+    dim1Mobile?: string
+    dim2Mobile?: string
+    dim3Mobile?: string
+    dim4Mobile?: string
+    dim5Mobile?: string
     diamondCu: string
     diamondSiC: string
     toSpike: string
@@ -33,9 +39,7 @@ export interface MaterialComparisonRadarChartProps {
 const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 
 export function MaterialComparisonRadarChart({ labels, variant = "dark" }: MaterialComparisonRadarChartProps) {
-  const dimensionLabels = DIMENSIONS.map((k) => labels[k])
   const isLight = variant === "light"
-
   const [isMobile, setIsMobile] = useState(false)
   const [devicePixelRatio, setDevicePixelRatio] = useState(2)
   useEffect(() => {
@@ -49,6 +53,17 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
     mql.addEventListener("change", update)
     return () => mql.removeEventListener("change", update)
   }, [])
+
+  const dimensionLabels = useMemo(
+    () =>
+      DIMENSIONS.map((k) => {
+        if (!isMobile) return labels[k]
+        const mobileKey = `${k}Mobile` as keyof typeof labels
+        const mobileVal = labels[mobileKey]
+        return typeof mobileVal === "string" ? mobileVal : labels[k]
+      }),
+    [labels, isMobile]
+  )
 
   const data = {
     labels: dimensionLabels,
@@ -96,7 +111,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
     aspectRatio: 1.25,
     devicePixelRatio,
     layout: {
-      padding: isMobile ? 4 : 16,
+      padding: isMobile ? 2 : 16,
     },
     plugins: {
       legend: {
@@ -139,7 +154,13 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
         },
         pointLabels: {
           color: isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(203, 213, 225, 0.9)",
-          font: { size: isMobile ? 10 : 13, family: "inherit", weight: "500" },
+          font: { size: isMobile ? 9 : 13, family: "inherit", weight: "500" },
+          callback(label: string) {
+            if (typeof label === "string" && label.includes("\n")) {
+              return label.split("\n")
+            }
+            return label
+          },
         },
       },
     },
@@ -147,11 +168,12 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   [isLight, isMobile, devicePixelRatio]
   )
 
+  // 移动端布局与两行标签对中英文均生效（labels 由当前 locale 的 t() 注入）
   return (
     <div
       className={
         isMobile
-          ? "w-full -mx-2 sm:mx-auto h-[min(78vh,92vw)] min-h-[280px] max-h-[420px]"
+          ? "w-full -mx-1 sm:mx-auto h-[min(88vh,98vw)] min-h-[340px] max-h-[none]"
           : "w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto min-h-[380px] md:min-h-[280px]"
       }
     >

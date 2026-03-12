@@ -1026,7 +1026,7 @@
     "hero": {
       "title": "Technology Architecture & Evolution Path",
       "subtitle": "Underlying materials science platform based on sp²–sp³ interface engineering",
-      "desc": "We are building a complete carbon-based atomic-level interface engineering platform. Our technology route is completing the full loop from theoretical hypothesis to physical validation, protected by an IP network of 10 core patents. Through precise control of the sp²–sp³ hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
+      "desc": "We have built a complete carbon-based, atomic-level interface engineering platform, closing the loop from theoretical hypothesis to physical validation, and an airtight intellectual property protection network of 10 core patents. Through precise control of the sp²–sp³ hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
       "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
     },
     "architecture": {
@@ -1053,7 +1053,7 @@
     },
     "evolution": {
       "sectionTitle": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
-      "sectionSubtitle": "A clear evolution path from engineering tools to physical computing potential",
+      "sectionSubtitle": "An evolution path from engineering tools to physical computing potential",
       "start": "Start",
       "step1": "Step 1",
       "step2": "Step 2",
@@ -1067,7 +1067,7 @@
       "physicsEvolution": "Stress engineering\n(based on all-carbon platform)",
       "computingResource": "Potential physical\ncomputing resource",
       "coreLogicTitle": "Core logic summary",
-      "coreLogicDesc": "Through stress regulation of sp²–sp³ bonding structures, we elevate materials from mere \"heat dissipation tools\" to functional substrates with \"physical computing potential.\" This evolution path not only validates technical feasibility but also reveals the vast imagination space at the intersection of materials science and computational physics."
+      "coreLogicDesc": "Through stress regulation of sp²–sp³ bonding structures, we evolved from “heat dissipation tools” into functional substrates with “physical computing potential.” This path not only validates technical feasibility, but also reveals the vast imagination space at the intersection of materials science and computational physics"
     },
     "evolutionPath": {
       "sectionTitle": "Technology Evolution Path",
@@ -1085,7 +1085,7 @@
       "patent2Title": "A novel nonstick cookware based on diamond bonding",
       "patent2No": "Application No.: 202522239154.2",
       "stage02Title": "Diamond-Copper Composite Materials",
-      "stage02Desc": "Introducing metallic phase to form composite materials, achieving the leap from engineering tools to functional materials, with focus on thermal conductivity, structural composite, and interface transport capability.",
+      "stage02Desc": "Introducing metallic phase to form composite materials, achieving the leap from engineering tools to functional materials, focusing on thermal conductivity, structural composite, and interface transport capability.",
       "techBranch": "Technical Branch Description",
       "techBranchDesc": "Patent layout at this stage covers both low-cost solutions for scaled applications and high-performance solutions for high-end thermal management and extreme performance needs, forming a complementary technical portfolio.",
       "typicalForms": "Typical Functional Forms",
@@ -1115,7 +1115,7 @@
       "patent10Title": "An sp²-sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
       "patent10No": "Application No.: 202610187717.4",
       "stage04Title": "Stress Engineering Based on All-Carbon Platform",
-      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the logical endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
+      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
       "stage04Explanation": "The \"Platform Extension\" section below expands on specific exploration directions derived from this (superconductivity, chaotic dynamics, quantum reservoir computing, etc.). We are collaborating with academia to advance related research."
     },
     "platformCore": {
@@ -1152,10 +1152,15 @@
       "platformConclusionEnd": ".",
       "radarChartTitle": "Material System Comparison",
       "radarDim1": "Phonon Transmission",
+      "radarDim1Mobile": "Phonon\nTransmission",
       "radarDim2": "TC Potential",
+      "radarDim2Mobile": "TC\nPotential",
       "radarDim3": "Lightweight",
+      "radarDim3Mobile": "Light\nweight",
       "radarDim4": "Tunability",
+      "radarDim4Mobile": "Tunability",
       "radarDim5": "Stability",
+      "radarDim5Mobile": "Stability",
       "radarLabelDiamondCu": "Diamond-Cu",
       "radarLabelDiamondSiC": "Diamond-SiC",
       "radarLabelToSpike": "ToSpike sp²-sp³ All-Carbon"
@@ -1178,7 +1183,7 @@
     },
     "patentCluster": {
       "title": "Patent Cluster Value",
-      "intro": "This platform's technology patents cover key technical nodes from engineering foundation, functional materials to platform core:",
+      "intro": "Our patent portfolio covers all key technical nodes from engineering foundations and functional materials to the platform core:",
       "block1Num": "I",
       "block1Title": "Engineering foundation and functional extension",
       "block1Item": "Novel nonstick cookware patents based on diamond bonding (2 items)",
