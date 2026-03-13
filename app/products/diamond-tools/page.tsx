@@ -38,7 +38,7 @@ export default function DiamondToolsPage() {
               <p className="page-caption text-slate-500 mb-4">Superabrasive Brazing Technology</p>
               <p className="page-lead text-slate-600 mb-8">
                 基于 10 余年对金刚石与立方氮化硼（CBN）界面润湿性的深度研究，我们掌握了核心的"超磨熔固"技术。这是
-                sp²–sp³
+                sp³–sp²
                 平台技术的工程起点，通过活性熔固实现超硬磨料与金属基体的原子级化学键合，为全球客户提供极端工况下的精密加工解决方案。
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -75,7 +75,7 @@ export default function DiamondToolsPage() {
         <div className="max-w-7xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">核心能力</h2>
           <p className="page-lead text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-            从界面改性到系统工程，构建 sp²–sp³ 平台的底层技术基础
+            从界面改性到系统工程，构建 sp³–sp² 平台的底层技术基础
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -106,7 +106,7 @@ export default function DiamondToolsPage() {
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">技术向下兼容</h3>
               <p className="page-caption text-slate-600">
-                将工业级精密控制能力，转化为支撑 sp²–sp³
+                将工业级精密控制能力，转化为支撑 sp³–sp²
                 消费级产品（如金刚石涂层锅具）和工业级散热（金刚石铜）的底层工艺规范，实现技术体系的连续演化。
               </p>
             </Card>
@@ -480,7 +480,7 @@ export default function DiamondToolsPage() {
           <div className="text-center mb-12">
             <h2 className="page-h2 mb-4">技术迁移：从"界面连接"到"全碳平台"</h2>
             <p className="page-lead text-slate-300 max-w-2xl mx-auto">
-              超硬磨料熔固技术的核心原理，如何演化为 sp²–sp³ 全碳复合材料平台
+              超硬磨料熔固技术的核心原理，如何演化为 sp³–sp² 全碳复合材料平台
             </p>
           </div>
 
@@ -521,7 +521,7 @@ export default function DiamondToolsPage() {
 
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white gap-2" asChild>
-              <Link href="/patents">查看 sp²–sp³ 技术架构全景</Link>
+              <Link href="/patents">查看 sp³–sp² 技术架构全景</Link>
             </Button>
           </div>
         </div>
