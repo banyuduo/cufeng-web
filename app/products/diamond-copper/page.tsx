@@ -127,7 +127,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">热导率</span>
-                    <span className="font-semibold text-[#73DBFF]">450~700 W/m·K</span>
+                    <span className="font-semibold text-[#73DBFF]">450–700 W/m·K</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "70%" }} />

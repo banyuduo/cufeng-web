@@ -31,7 +31,7 @@ export default function NonstickCookwarePage() {
               </div>
               <h1 className="page-h1 mb-6 text-slate-900">真正的金刚石不粘锅</h1>
               <p className="page-lead text-slate-600 mb-6">
-                基于专利的活性熔固技术，实现了金刚石颗粒与金属基材的原子级键合。这一工艺在不粘锅上的应用，验证民界面固着强度在极端工况下的可靠性。
+                基于专利的活性熔固技术，实现了金刚石颗粒与金属基材的原子级键合。这一工艺在不粘锅上的应用，验证了界面固着强度在极端工况下的可靠性。
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 page-caption text-slate-700">

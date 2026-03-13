@@ -18,7 +18,7 @@
       "techAndExchange": "Technology & Exchange",
       "cooperationAndSupport": "Cooperation & Support",
       "brand": "CuFeng / ToSpike",
-      "platformTech": "sp²–sp³ carbon-based interface platform technology",
+      "platformTech": "sp³–sp² carbon-based interface platform technology",
       "address": "No. 2 Xingzhi Road, Jiangbei New Area, Nanjing",
       "email": "Email: wangbo@tospike.com",
       "copyright": "Copyright © 2018 - 2026 Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
@@ -33,14 +33,14 @@
   },
   "home": {
     "hero": {
-      "title": "sp²–sp³ Carbon-Based Interface Engineering Platform",
+      "title": "sp³–sp² Carbon-Based Interface Engineering Platform",
       "subtitle": "Solving thermal management limits in the AI and new energy era",
-      "card1": "We focus on source-level R&D based on sp²–sp³ hybrid bonding logic.",
-      "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, building a stable sp²–sp³ covalent bonding network.",
+      "card1": "We focus on source-level R&D based on sp³–sp² hybrid bonding logic.",
+      "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, building a stable sp³–sp² covalent bonding network.",
       "card3": "This unique interface structure generates tunable endogenous stress fields and heterogeneous energy-level environments, endowing the material with thermal, mechanical, and electrical properties that surpass traditional composites.",
       "achieved": "Currently achieved",
       "achievement1": "High thermal conductivity diamond-copper composite",
-      "achievement1Value": "Bulk thermal conductivity ≥ 680 W/m·K",
+      "achievement1Value": "Thermal conductivity ≥ 680 W/m·K",
       "achievement1Note": "With further improvement potential",
       "achievement2": "Reproducible all-carbon functional structures",
       "achievement2Note": "Sample preparation capability",
@@ -60,7 +60,7 @@
     },
     "features": {
       "innovation": "Source-Level Innovation",
-      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp²–sp³ bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability, providing a tunable material platform for AI computing, new energy thermal management, and other high-end thermal applications.",
+      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp³–sp² bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability, providing a tunable material platform for AI computing, new energy thermal management, and other high-end thermal applications.",
       "patents": "Patent Moat",
       "patentsDesc": "We have strategically deployed nearly 10 core patents covering preparation routes, bonding structure design, stress regulation methods, and functional extensions. This IP matrix forms closed-loop protection, establishing solid technical boundaries and providing comprehensive legal safeguards for R&D iteration and application expansion.",
       "cooperation": "Cooperation & Industry Extension",
@@ -107,7 +107,7 @@
       "viewDetails": "View Details",
       "hero": {
         "badge": "Samples Ready · Mature Solution",
-        "title": "True diamond nonstick cookware",
+        "title": "True diamond coating nonstick cookware",
         "intro": "Based on patented active fusion-bonding technology, diamond particles achieve atomic-level bonding with the metal substrate. Applying this process to nonstick cookware validates the reliability of interface fixation strength under extreme operating conditions.",
         "feature1": "Real diamond particle active fusion bonding—never peels",
         "feature2": "PFOA/PTFE-free—food safety certified",
@@ -146,9 +146,9 @@
       },
       "comparison": {
         "title": "Performance comparison: Clear advantages",
-        "subtitle": "Diamond nonstick vs traditional coated cookware",
+        "subtitle": "Diamond coating nonstick vs traditional coated cookware",
         "metric": "Performance metric",
-        "diamondPan": "Diamond nonstick",
+        "diamondPan": "Diamond coating nonstick",
         "teflon": "Teflon coating",
         "ceramic": "Ceramic coating",
         "lifespan": "Service life",
@@ -247,7 +247,7 @@
         "interfaceModification": "Interface modification",
         "interfaceModificationDesc": "Particle surface pretreatment ensures extremely high self-support strength and interface thermal conductivity of the skeleton.",
         "tospikeTitle": "ToSpike active fusion-bonding solution",
-        "tospikeDesc": "Relying on our self-developed low-melting-point active brazing alloy system, we have broken through the wettability bottleneck of traditional diamond composites. This technology allows the alloy liquid phase to spontaneously penetrate deep into the complex skeleton with excellent fluidity, building a near-perfect heat transfer network.",
+        "tospikeDesc": "Relying on our self-developed low-melting-point active fusion-bonding alloy system, we have broken through the wettability bottleneck of traditional diamond composites. This technology allows the alloy liquid phase to spontaneously penetrate deep into the complex skeleton with excellent fluidity, building a near-perfect heat transfer network.",
         "techAdvantage": "Technical advantage",
         "techAdvantageDesc": "Mild process conditions effectively avoid thermal damage to the diamond surface.",
         "interfaceStrength": "Interface strength",
@@ -360,7 +360,7 @@
         "subtitle": "Core intellectual property layout",
         "intro": "We have built a solid patent moat covering material composition, interface engineering, and core preparation processes.",
         "corePatent": "Core invention patent",
-        "patentTitle": "A flexible high-thermal-conductivity composite reinforced by active brazing metal skeleton and its preparation method",
+        "patentTitle": "A flexible high-thermal-conductivity composite reinforced by active fusion-bonding metal skeleton and its preparation method",
         "patentDesc": "This patent defines in detail a systematic method using metal mesh/fiber as structural base and in-situ metallurgical welding to fix high thermal conductivity particles. Its core value is replacing traditional physical doping with interface chemical bonding, fundamentally improving interface heat transfer efficiency and anti-aging reliability.",
         "patentNo": "Application No.: 202511963728.9"
       },
@@ -374,14 +374,14 @@
     "carbonComposite": {
       "title": "All-carbon composite",
       "desc": "sp³–sp² 3D structure technology platform. Extensible to solid-state battery anodes, superconducting materials, and other frontier fields; 5–10 year core technology reserve.",
-      "feature1": "sp²–sp³ chemical bonding structure",
+      "feature1": "sp³–sp² chemical bonding structure",
       "feature2": "Solid-state battery anode material",
       "feature3": "High conductivity / superconducting potential applications",
       "comparisonTable": {
         "colDimension": "Dimension",
         "colDiamondCu": "Diamond-Cu (Cu-based)",
         "colDiamondSiC": "Diamond-SiC (SiC-based)",
-        "colToSpike": "ToSpike All-Carbon (sp²-sp³)",
+        "colToSpike": "ToSpike All-Carbon (sp²–sp³)",
         "colValue": "Technical Value",
         "row1Dim": "Interface bonding",
         "row1Cu": "Physical wetting / mechanical interlock",
@@ -394,9 +394,9 @@
         "row2ToSpike": "> 90% (homogeneous phonon coupling)",
         "row2Value": "Breaks through heterogeneous interface thermal resistance",
         "row3Dim": "Thermal conductivity (TC)",
-        "row3Cu": "450-600 W/m·K",
-        "row3SiC": "500-700 W/m·K",
-        "row3ToSpike": "800-1200+ W/m·K",
+        "row3Cu": "450–600 W/m·K",
+        "row3SiC": "500–700 W/m·K",
+        "row3ToSpike": "800–1200+ W/m·K",
         "row3Value": "Meets next-gen AI chip thermal limits",
         "row4Dim": "Density (g/cm³)",
         "row4Cu": "~7.8 (very heavy)",
@@ -428,10 +428,10 @@
       "hero": {
         "badge": "Next Gen · Future Platform",
         "title": "All-carbon composite",
-        "intro": "Revolutionary all-carbon composite technology platform based on sp³–sp² chemical bonding. Using nanodiamond surface graphitization as \"brazing material,\" achieves chemical bonding between diamond (sp³) and graphite/carbon fiber (sp²), building a 3D all-carbon network structure. Extensible to thermal management, solid-state batteries, superconducting materials, and other frontier fields.",
+        "intro": "Revolutionary all-carbon composite technology platform based on sp²–sp³ chemical bonding. Using nanodiamond surface graphitization as \"brazing material,\" achieves chemical bonding between diamond (sp³) and graphite/carbon fiber (sp²), building a 3D all-carbon network structure. Extensible to thermal management, solid-state batteries, superconducting materials, and other frontier fields.",
         "coreFeaturesTitle": "Core technical features",
         "coreTech": "Core technology",
-        "coreTechValue": "sp³–sp² chemical bonding",
+        "coreTechValue": "sp²–sp³ chemical bonding",
         "thermalPerf": "Thermal performance",
         "thermalPerfValue": "500–1000+ W/m·K",
         "flexibility": "Flexibility potential",
@@ -440,7 +440,7 @@
         "applicationProspectValue": "5–10 year strategic reserve"
       },
       "coreTech": {
-        "title": "sp³–sp² core technology principle",
+        "title": "sp²–sp³ core technology principle",
         "subtitle": "Breaking through physical contact limits of traditional material interfaces; achieving atomic-level connection between carbon materials through chemical bonding",
         "breakthroughTitle": "Technical breakthroughs",
         "graphitizationTitle": "Nanodiamond surface graphitization",
@@ -448,7 +448,7 @@
         "bondingTitle": "Chemical bonding mechanism",
         "bondingDesc": "sp² carbon atoms in the graphitized shell undergo carbon atom diffusion and rearrangement with graphene, carbon fiber, carbon nanotubes and other sp² carbon materials at high temperature, forming C–C covalent bonds for atomic-level chemical bonding between diamond and carbon materials.",
         "networkTitle": "3D network construction",
-        "networkDesc": "Through rational design of diamond particle and sp² carbon material ratio and spatial distribution, builds interconnected sp³–sp² 3D carbon network structure, combining diamond's high hardness and thermal conductivity with graphite/carbon fiber's electrical conductivity and flexibility.",
+        "networkDesc": "Through rational design of diamond particle and sp² carbon material ratio and spatial distribution, builds interconnected sp²–sp³ 3D carbon network structure, combining diamond's high hardness and thermal conductivity with graphite/carbon fiber's electrical conductivity and flexibility.",
         "advantagesTitle": "Key advantages",
         "allCarbonTitle": "All-carbon system",
         "allCarbonDesc": "No metallic phase; avoids metal thermal expansion mismatch, electrochemical corrosion. Lightweight, high strength, excellent chemical stability.",
@@ -461,9 +461,9 @@
       },
       "applicationProspects": {
         "title": "Application prospects",
-        "subtitle": "Multi-domain application potential based on sp³–sp² platform technology",
+        "subtitle": "Multi-domain application potential based on sp²–sp³ platform technology",
         "card1Title": "Thermal management & energy storage",
-        "card1Desc": "All-carbon composites have broad application space in high thermal conductivity heat sinks, flexible thermal pads, and solid-state battery anode materials. sp³–sp² structure provides excellent thermal conduction while meeting porous structure and conductivity requirements for energy storage materials.",
+        "card1Desc": "All-carbon composites have broad application space in high thermal conductivity heat sinks, flexible thermal pads, and solid-state battery anode materials. sp²–sp³ structure provides excellent thermal conduction while meeting porous structure and conductivity requirements for energy storage materials.",
         "viewThermal": "View thermal management & energy storage applications",
         "card2Title": "Environment & frontier research",
         "card2Desc": "As an environmentally friendly material, all-carbon composites can be used for water treatment particle electrodes and electrocatalytic applications. More frontier: high-pressure-induced internal stress may achieve high conductivity or even superconductivity, providing a new material platform for frontier research.",
@@ -481,7 +481,7 @@
         "step3Title": "High-temperature pressure sintering",
         "step3Desc": "In vacuum or inert atmosphere hot-press furnace, heat to specific temperature, apply pressure, hold. Graphitized shell and sp² carbon materials undergo carbon atom diffusion, forming C–C covalent bonds.",
         "step4Title": "Cooling and post-processing",
-        "step4Desc": "Control cool to room temperature to obtain sp³–sp² interconnected all-carbon composite. Can perform cutting, polishing, pore formation, functionalization per application. For solid-state battery, further etch pore-forming agent to form porous structure."
+        "step4Desc": "Control cool to room temperature to obtain sp²–sp³ interconnected all-carbon composite. Can perform cutting, polishing, pore formation, functionalization per application. For solid-state battery, further etch pore-forming agent to form porous structure."
       },
       "patents": {
         "title": "Related patent technology",
@@ -494,13 +494,13 @@
         "patent2Desc": "Uses diamond's low-temperature catalytic effect to achieve 3D covalent bonding of sp² carbon network below traditional graphitization temperature; resulting flexible composite achieves breakthrough in electrical/thermal conductivity and mechanical reinforcement efficiency.",
         "patent2No": "Application No.: 202610187714.0",
         "patent3Title": "A high-modulus porous carbon host material and its preparation method and application",
-        "patent3Desc": "Specifically for solid-state battery anode applications; porous sp³–sp² structure design including pore-forming agent selection, porosity control, electrochemical performance optimization.",
+        "patent3Desc": "Specifically for solid-state battery anode applications; porous sp²–sp³ structure design including pore-forming agent selection, porosity control, electrochemical performance optimization.",
         "patent3No": "Application No.: 202610187716.X",
         "patent4Title": "An integrated partitioned functionalized skeleton structure, all-solid-state battery and their preparation methods",
-        "patent4Desc": "Integrated all-solid-state battery design based on sp³–sp² skeleton; achieves integrated co-sintering of cathode, anode, separator; significantly simplifies process.",
+        "patent4Desc": "Integrated all-solid-state battery design based on sp²–sp³ skeleton; achieves integrated co-sintering of cathode, anode, separator; significantly simplifies process.",
         "patent4No": "Application No.: 202610187730.X",
         "corePatent": "Core patent · Invention patent",
-        "patent5Title": "An sp²-sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
+        "patent5Title": "An sp²–sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
         "patent5Desc": "Focuses on internal stress structure formed under high pressure and possible superconducting properties. Covers high-end functional materials and frontier research.",
         "patent5No": "Application No.: 202610187717.4"
       },
@@ -509,7 +509,7 @@
         "subtitle": "5–10 year technology reserve; multi-domain application prospects",
         "techBarrierTitle": "Technology barriers",
         "barrier1": "Controlled nanodiamond surface graphitization; precise graphitization layer thickness control",
-        "barrier2": "sp³–sp² chemical bonding mechanism; atomic-level interface connection",
+        "barrier2": "sp²–sp³ chemical bonding mechanism; atomic-level interface connection",
         "barrier3": "High-temperature high-pressure sintering process optimization; structural stability",
         "barrier4": "Complete patent protection system; covers process and applications",
         "marketTitle": "Market prospects",
@@ -534,7 +534,7 @@
         "badge": "Platform tech foundation · Engineering cornerstone",
         "title": "Engineering foundation: Superabrasive fusion-bonding technology",
         "subtitle": "Superabrasive Brazing Technology",
-        "intro": "Based on over 10 years of deep research on diamond and cubic boron nitride (CBN) interface wettability, we have mastered the core \"superabrasive fusion-bonding\" technology. This is the engineering foundation of the sp²–sp³ platform technology, achieving atomic-level chemical bonding between superabrasives and metal substrates through active fusion bonding, providing precision machining solutions for extreme working conditions worldwide.",
+        "intro": "Based on over 10 years of deep research on diamond and cubic boron nitride (CBN) interface wettability, we have mastered the core \"superabrasive fusion-bonding\" technology. This is the engineering foundation of the sp³–sp² platform technology, achieving atomic-level chemical bonding between superabrasives and metal substrates through active fusion bonding, providing precision machining solutions for extreme working conditions worldwide.",
         "stat1": "years of fusion-bonding technology",
         "stat2": "superabrasive patent foundations",
         "stat3": "customized solutions",
@@ -542,13 +542,13 @@
       },
       "coreCapabilities": {
         "title": "Core capabilities",
-        "subtitle": "From interface modification to systems engineering, building the underlying technical foundation of the sp²–sp³ platform",
+        "subtitle": "From interface modification to systems engineering, building the underlying technical foundation of the sp³–sp² platform",
         "card1Title": "Interface modification & bonding",
         "card1Desc": "Focused on solving the bonding challenge between superabrasives (Diamond/CBN) and heterogeneous substrates, using active fusion bonding (Active Fusion-Bonding) to form high-strength interface compounds for atomic-level chemical bonding.",
         "card2Title": "Extreme condition adaptation",
         "card2Desc": "Providing customized cutting/grinding solutions for \"difficult-to-machine materials\" such as aerospace superalloys, carbon fiber composites (CFRP), and ceramic matrix composites (CMC), ensuring process stability and efficient machining.",
         "card3Title": "Technology downward compatibility",
-        "card3Desc": "Translating industrial-grade precision control into underlying process specifications supporting sp²–sp³ consumer products (e.g., diamond coating cookware) and industrial thermal management (diamond-copper), enabling continuous technology evolution."
+        "card3Desc": "Translating industrial-grade precision control into underlying process specifications supporting sp³–sp² consumer products (e.g., diamond coating cookware) and industrial thermal management (diamond-copper), enabling continuous technology evolution."
       },
       "designPrinciples": {
         "title": "Product design principles: Three-element architecture of superabrasive fusion bonding",
@@ -639,14 +639,14 @@
       },
       "techMigration": {
         "title": "Technology migration: From \"interface bonding\" to \"all-carbon platform\"",
-        "subtitle": "How the core principle of superabrasive fusion-bonding evolves into the sp²–sp³ all-carbon composite platform",
+        "subtitle": "How the core principle of superabrasive fusion-bonding evolves into the sp³–sp² all-carbon composite platform",
         "origin": "Origin",
         "originDesc": "Superabrasive active fusion mechanism—achieving chemical bonding between Diamond and metal, breaking through performance limits of traditional physical setting.",
         "extension": "Extension",
         "extensionDesc": "Diamond-copper combination—through high-strength, low-thermal-resistance interface, building diamond-copper heat spreader substrates, entering thermal management.",
         "evolution": "Evolution",
         "evolutionDesc": "sp³ diamond and sp² carbon material homogeneous-heterogeneous bonding—breaking metal limits, building all-carbon composite platform, exploring physical computing potential.",
-        "viewArchitecture": "View sp²–sp³ technology architecture overview"
+        "viewArchitecture": "View sp³–sp² technology architecture overview"
       },
       "cta": {
         "title": "Need professional machining solutions?",
@@ -675,13 +675,13 @@
       "companyName": "Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
       "location": "Located in Jiangbei New Area, Nanjing",
       "companyProfile": "Company Profile",
-      "profile1": "CuFeng (ToSpike) is dedicated to carbon-based interface engineering. We leverage deep understanding of sp²–sp³ hybrid bonding mechanisms to build a complete technology chain from atomic-level active fusion bonding to high-dimensional carbon-based composite platforms.",
+      "profile1": "CuFeng (ToSpike) is dedicated to carbon-based interface engineering. We leverage deep understanding of sp³–sp² hybrid bonding mechanisms to build a complete technology chain from atomic-level active fusion bonding to high-dimensional carbon-based composite platforms.",
       "profile2": "We do not merely produce superabrasive tools (Diamond/CBN); we are committed to providing solutions for heat dissipation, structural strength, and electromagnetic protection in semiconductor manufacturing, aerospace, AI computing, and new energy systems, among other cutting-edge fields.",
       "rdCapability": "R&D & Engineering Capability",
       "rdDesc": "The company has over a decade of technical accumulation in vacuum interface metallurgy, active fusion bonding, and engineering applications. Through microscopic control of the active fusion bonding process, we have overcome processing bottlenecks for cast metals, carbon fiber composites (CFRP), and hard brittle materials in extreme manufacturing, providing vertical integration solutions from custom tools to frontier functional materials.",
       "evolution": "From Industrial Practice to Physics Exploration",
       "evolution1": "We adhere to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is achieving strategic elevation from \"precision machining tools\" to \"high-performance functional material platform.\"",
-      "evolution2": "Through endogenous stress regulation based on sp²–sp³ chemical bonding, we have achieved a material breakthrough with bulk thermal conductivity ≥ 680 W/m·K, and continue to explore the infinite possibilities of carbon-based structures in superconductivity, unconventional transport, and quantum physics frontiers.",
+      "evolution2": "Through endogenous stress regulation based on sp³–sp² chemical bonding, we have achieved a material breakthrough with thermal conductivity ≥ 680 W/m·K, and continue to explore the infinite possibilities of carbon-based structures in superconductivity, unconventional transport, and quantum physics frontiers.",
       "vision": "Corporate Vision",
       "visionDesc": "Committed to being our customers' ideal solution provider, delivering breakthrough material solutions for high-power-density thermal management, new energy, and solid-state batteries through sustained technological innovation.",
       "coreIdea": "Core Philosophy",
@@ -698,7 +698,7 @@
         "credentials": "Technical Credentials",
         "credentialsDesc": "Deep industrialization experience; over 30 invention and utility model patents applied for and granted.",
         "capability": "Core Capabilities",
-        "capabilityDesc1": "Expert in providing customized system solutions for extreme conditions including titanium alloys, nickel-based superalloys, silicon carbide, and carbon fiber composites (CFRP), through deep matching of sp²–sp³ interface parameters.",
+        "capabilityDesc1": "Expert in providing customized system solutions for extreme conditions including titanium alloys, nickel-based superalloys, silicon carbide, and carbon fiber composites (CFRP), through deep matching of sp³–sp² interface parameters.",
         "capabilityDesc2": "Expert in cost-oriented, volume-oriented product development and strategic planning; achieving universal application through process improvement or paradigm innovation."
       },
       "he": {
@@ -733,7 +733,7 @@
       "title": "Core Milestones",
       "subtitle": "Key milestones from launch to technological breakthrough",
       "2025Patents": "Patent cluster and technology barrier formation",
-      "2025PatentsDesc": "Completed 9 core patent layouts, building a complete IP moat from diamond tools to sp²–sp³ carbon-based interface.",
+      "2025PatentsDesc": "Completed 9 core patent layouts, building a complete IP moat from diamond tools to sp³–sp² carbon-based interface.",
       "2025Thermal": "High-performance thermal management material breakthrough",
       "2025ThermalDesc": "Successfully developed diamond-copper composite with thermal conductivity reaching 680 W/m·K, marking the company's formal entry into high-power electronic thermal management.",
       "2023Relocate": "Strategic relocation and capability upgrade",
@@ -745,11 +745,11 @@
   },
   "applications": {
     "title": "Application Domain Matrix",
-    "subtitle": "Based on sp²–sp³ carbon hybrid bonding platform technology, we apply the same core methodology to different physical scenarios, forming a complete technology matrix from industrial thermal management to frontier physics exploration.",
+    "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, we apply the same core methodology to different physical scenarios, forming a complete technology matrix from industrial thermal management to frontier physics exploration.",
     "blueprint": {
       "title": "Application Blueprint: From Underlying Physics to Full-Scenario Deployment",
-      "subtitle": "Cross-domain evolution path based on SP²–SP³ hybrid bonding platform",
-      "foundation": "SP²–SP³ carbon-based hybrid bonding platform",
+      "subtitle": "Cross-domain evolution path based on sp³–sp² hybrid bonding platform",
+      "foundation": "sp³–sp² carbon-based hybrid bonding platform",
       "foundationLabel": "Foundation",
       "layer1Level": "L1: Core business (Current)",
       "layer1Title": "High-Performance Computing & Data Centers",
@@ -768,7 +768,7 @@
       "layer3Tag": "Potential applications",
       "layer4Level": "L4: Consumer market (Scale)",
       "layer4Title": "Consumer Electronics & Smart Home",
-      "layer4Items": "Wireless charging coil|Diamond cookware|Foldable|VR/AR",
+      "layer4Items": "Wireless charging coil|Diamond coating nonstick cookware|Foldable|VR/AR",
       "layer4Desc": "Interface engineering combined with cost-optimized process downscaling to open new blue oceans in mature markets.",
       "layer4Tag": "Platform expansion",
       "layer5Level": "L5: New Energy & Frontier (Exploration)",
@@ -802,7 +802,7 @@
       "consumer": {
         "title": "Consumer Electronics & Smart Home",
         "items": "High-power wireless charging high-thermal-conductivity coils (11kW+)|Diamond coating nonstick cookware|Foldable phone ultra-thin thermal management|VR/AR device lightweight thermal management",
-        "itemsDesc": "Diamond-copper composite conductor builds radial heat channels on copper wire surface, addressing ACR surge and thermal bottlenecks from skin effect for 11kW+ wireless charging.|sp²–sp³ chemical bonding firmly anchors diamond particles on cookware surface for thermal + wear + nonstick integration, far exceeding traditional coating lifetime.|Ultra-thin flexible TIM conforms to foldable hinge and hot chip areas for efficient heat spreading in limited space, ensuring fold reliability.|Lightweight thermal solutions replace metal heat sinks, enabling reliable cooling for key chips under VR/AR headset weight constraints.",
+        "itemsDesc": "Diamond-copper composite conductor builds radial heat channels on copper wire surface, addressing ACR surge and thermal bottlenecks from skin effect for 11kW+ wireless charging.|sp³–sp² chemical bonding firmly anchors diamond particles on cookware surface for thermal + wear + nonstick integration, far exceeding traditional coating lifetime.|Ultra-thin flexible TIM conforms to foldable hinge and hot chip areas for efficient heat spreading in limited space, ensuring fold reliability.|Lightweight thermal solutions replace metal heat sinks, enabling reliable cooling for key chips under VR/AR headset weight constraints.",
         "materials": "Diamond-copper composite|Diamond coating/bonding material|Flexible high-thermal-conductivity composite",
         "expandLabel": "View wireless charging coil solution details",
         "collapseLabel": "Collapse",
@@ -820,15 +820,15 @@
       "frontier": {
         "title": "New Energy Storage & Frontier Exploration",
         "badge": "Exploration stage",
-        "sectionSubtitle": "Based on the same sp²–sp³ carbon bonding platform, this module spans the full technology spectrum from foreseeable engineering extension to frontier physics exploration. Solid-state battery anodes and water treatment particle electrodes build on mature process paths with clear medium-term engineering potential; superconducting material research and quantum mesoscopic systems rely on the stress engineering platform and are in collaborative frontier exploration with academia. Together they demonstrate the platform's extensibility.",
+        "sectionSubtitle": "Based on the same sp³–sp² carbon bonding platform, this module spans the full technology spectrum from foreseeable engineering extension to frontier physics exploration. Solid-state battery anodes and water treatment particle electrodes build on mature process paths with clear medium-term engineering potential; superconducting material research and quantum mesoscopic systems rely on the stress engineering platform and are in collaborative frontier exploration with academia. Together they demonstrate the platform's extensibility.",
         "mediumTermLabel": "Medium-term potential direction",
-        "mediumTermSubtitle": "Foreseeable engineering extension based on sp²–sp³ platform",
+        "mediumTermSubtitle": "Foreseeable engineering extension based on sp³–sp² platform",
         "longTermLabel": "Long-term physics window",
         "longTermSubtitle": "Frontier exploration based on stress engineering, collaborative research stage",
         "expandLabel": "Expand details",
         "collapseLabel": "Collapse",
         "items": "Solid-state battery anode architecture (high-modulus carbon host)|Water treatment particle electrodes|Superconducting material fundamental research (exploration)|Quantum mesoscopic system vision (long-term planning)",
-        "itemsDesc": "sp³–sp² carbon skeleton as high-modulus host suppresses lithium dendrite growth via stress field, improving solid-state battery cycle life and safety.|High internal stress sp²–sp³ structure delivers high hardness, long life, and excellent electrical/catalytic activity for electrochemical water treatment electrodes.|Based on sp²–sp³ interface band distortion under high stress, probing unconventional electronic transport for superconducting research.|All-carbon network lattice distortion regulates coherent electron behavior, exploring stress engineering evolution in quantum computing candidate materials.",
+        "itemsDesc": "sp³–sp² carbon skeleton as high-modulus host suppresses lithium dendrite growth via stress field, improving solid-state battery cycle life and safety.|High internal stress sp²–sp³ structure delivers high hardness, long life, and excellent electrical/catalytic activity for electrochemical water treatment electrodes.|Based on sp³–sp² interface band distortion under high stress, probing unconventional electronic transport for superconducting research.|All-carbon network lattice distortion regulates coherent electron behavior, exploring stress engineering evolution in quantum computing candidate materials.",
         "materials": "High-modulus carbon host|sp²–sp³ electrochemical electrode|All-carbon composite platform"
       }
     },
@@ -838,7 +838,7 @@
       "subtitle": "Addressing thermal management bottlenecks for high-power-density electronic devices, providing thermal interface substrate solutions beyond traditional copper/aluminum limits",
       "aiChipBadge": "Flagship Solution",
       "aiChipTitle": "AI High-Density Chip Thermal Management Solution",
-      "aiChipDesc": "As AI compute chip power density continues to increase, thermal management has become one of the bottlenecks limiting technological breakthroughs. Based on our sp²–sp³ chemical bonding material platform, we propose a thermal management solution that breaks through traditional microchannel liquid cooling, effectively addressing high-density thermal management challenges in supercomputing and laser systems.",
+      "aiChipDesc": "As AI compute chip power density continues to increase, thermal management has become one of the bottlenecks limiting technological breakthroughs. Based on our sp³–sp² chemical bonding material platform, we propose a thermal management solution that breaks through traditional microchannel liquid cooling, effectively addressing high-density thermal management challenges in supercomputing and laser systems.",
       "geoCoupling": "Geometric Coupling",
       "geoCouplingDesc": "Innovative 3D conformal surface design that precisely fits chip packaging to minimize interface thermal resistance",
       "thermalDilution": "Rapid Thermal Dilution",
@@ -876,7 +876,7 @@
     },
     "consumer": {
       "sectionTitle": "Consumer Electronics & Home Life",
-      "sectionSubtitle": "Consumer-grade product innovation based on sp²–sp³ chemical bonding interface technology",
+      "sectionSubtitle": "Consumer-grade product innovation based on sp³–sp² chemical bonding interface technology",
       "coilTitle": "High-Thermal-Conductivity Coils for High-Power Wireless Charging",
       "coilDesc": "For 11kW/22kW+ wireless charging coils, addressing ACR surge and thermal bottlenecks caused by skin effect and proximity effect from high-frequency currents",
       "coreSolution": "Core solution:",
@@ -899,7 +899,7 @@
       "consumerItem4": "Gaming console thermal management system",
       "materialRelated": "Diamond-related composite materials",
       "techValue": "Technical value:",
-      "techValueDesc": "Through sp²–sp³ chemical bonding technology, diamond particles are firmly bonded to metal substrates, forming a \"thermal layer + wear-resistant layer + functional layer\" integrated structure, while addressing traditional coating issues of easy delamination, poor thermal conductivity, and low durability."
+      "techValueDesc": "Through sp³–sp² chemical bonding technology, diamond particles are firmly bonded to metal substrates, forming a \"thermal layer + wear-resistant layer + functional layer\" integrated structure, while addressing traditional coating issues of easy delamination, poor thermal conductivity, and low durability."
     },
     "energy": {
       "badge": "Rapid deployment potential",
@@ -933,7 +933,7 @@
       "superconductorTitle": "Superconducting Material Fundamental Research",
       "superconductorBadge": "Preliminary research stage",
       "superconductorPhysics": "Physical hypothesis:",
-      "superconductorPhysicsDesc": "Based on possible band structure distortion of sp²–sp³ interfaces under high internal stress fields, probing whether unconventional electronic transport properties exist at extremely low temperatures or special energy level matching.",
+      "superconductorPhysicsDesc": "Based on possible band structure distortion of sp³–sp² interfaces under high internal stress fields, probing whether unconventional electronic transport properties exist at extremely low temperatures or special energy level matching.",
       "researchPoints": "Research entry points:",
       "superconductorRes1": "Observe stress gradient effects on interface electron localization",
       "superconductorRes2": "Explore interface nonlinear conductance under non-von Neumann structures",
@@ -952,7 +952,7 @@
     "summary": {
       "title": "Systematic Output of Underlying Logic",
       "tagline": "One starting point, multi-dimensional collapse, infinite engineering boundaries",
-      "desc": "Every application domain here is not isolated product development, but a \"collapse\" result of the core proposition of controlled sp²–sp³ interface energy levels at different physical scales. From extreme thermal management for 1000W+ instantaneous thermal shock to physical performance breakthroughs across interface thermal resistance, we consistently use the same underlying bonding logic to resolve performance bottlenecks across industries."
+      "desc": "Every application domain here is not isolated product development, but a \"collapse\" result of the core proposition of controlled sp³–sp² interface energy levels at different physical scales. From extreme thermal management for 1000W+ instantaneous thermal shock to physical performance breakthroughs across interface thermal resistance, we consistently use the same underlying bonding logic to resolve performance bottlenecks across industries."
     },
     "cta": {
       "viewMaterials": "View available materials and solutions",
@@ -1025,8 +1025,8 @@
   "patents": {
     "hero": {
       "title": "Technology Architecture & Evolution Path",
-      "subtitle": "Underlying materials science platform based on sp²–sp³ interface engineering",
-      "desc": "We have built a complete carbon-based, atomic-level interface engineering platform, closing the loop from theoretical hypothesis to physical validation, and an airtight intellectual property protection network of 10 core patents. Through precise control of the sp²–sp³ hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
+      "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering",
+      "desc": "We have built a complete carbon-based, atomic-level interface engineering platform, closing the loop from theoretical hypothesis to physical validation, and an airtight intellectual property protection network of 10 core patents. Through precise control of the sp³–sp² hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
       "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
     },
     "architecture": {
@@ -1039,7 +1039,7 @@
       "stage03Title": "All-Carbon Composite Functional Materials",
       "stage03Desc": "Building a composite material platform entirely composed of carbon systems",
       "coreKernel": "Core Kernel",
-      "chemicalBonding": "sp²–sp³ Chemical Bonding",
+      "chemicalBonding": "sp³–sp² Chemical Bonding",
       "stressRegulation": "Endogenous Stress Regulation",
       "applicationWindow": "Application Window",
       "extremeConditions": "Extreme Condition Applications",
@@ -1067,7 +1067,7 @@
       "physicsEvolution": "Stress engineering\n(based on all-carbon platform)",
       "computingResource": "Potential physical\ncomputing resource",
       "coreLogicTitle": "Core logic summary",
-      "coreLogicDesc": "Through stress regulation of sp²–sp³ bonding structures, we evolved from “heat dissipation tools” into functional substrates with “physical computing potential.” This path not only validates technical feasibility, but also reveals the vast imagination space at the intersection of materials science and computational physics"
+      "coreLogicDesc": "Through stress regulation of sp³–sp² bonding structures, we evolved from “heat dissipation tools” into functional substrates with “physical computing potential.” This path not only validates technical feasibility, but also reveals the vast imagination space at the intersection of materials science and computational physics"
     },
     "evolutionPath": {
       "sectionTitle": "Technology Evolution Path",
@@ -1098,10 +1098,10 @@
       "patent4Title": "A structured diamond thermal management substrate and its preparation method",
       "patent4No": "Application No.: 2025117083870",
       "flexibleThermal": "Flexible thermal conductive material",
-      "patent5Title": "A flexible high-thermal-conductivity composite reinforced by active brazing metal skeleton and its preparation method",
+      "patent5Title": "A flexible high-thermal-conductivity composite reinforced by active fusion-bonding metal skeleton and its preparation method",
       "patent5No": "Application No.: 2025119637289",
       "stage03Title": "All-Carbon Composite System Platform",
-      "stage03Desc": "Through demetallization process, building a composite system centered on continuous sp²–sp³ carbon network, providing underlying architecture for complex stress regulation and higher-order physical behavior exploration.",
+      "stage03Desc": "Through demetallization process, building a composite system centered on continuous sp³–sp² carbon network, providing underlying architecture for complex stress regulation and higher-order physical behavior exploration.",
       "formDesc": "Form Description",
       "formDescText": "The all-carbon composite stage covers both structural and flexible forms to meet different thermal management and structural integration needs.",
       "patent6Title": "A high-thermal-conductivity composite based on diamond in-situ low-temperature graphitization bonding and its preparation method and application",
@@ -1112,7 +1112,7 @@
       "patent8No": "Application No.: 202610187716.X",
       "patent9Title": "An integrated partitioned functionalized skeleton structure, all-solid-state battery and their preparation methods",
       "patent9No": "Application No.: 202610187730.X",
-      "patent10Title": "An sp²-sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
+      "patent10Title": "An sp²–sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
       "patent10No": "Application No.: 202610187717.4",
       "stage04Title": "Stress Engineering Based on All-Carbon Platform",
       "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
@@ -1163,16 +1163,16 @@
       "radarDim5Mobile": "Stability",
       "radarLabelDiamondCu": "Diamond-Cu",
       "radarLabelDiamondSiC": "Diamond-SiC",
-      "radarLabelToSpike": "ToSpike sp²-sp³ All-Carbon"
+      "radarLabelToSpike": "ToSpike sp²–sp³ All-Carbon"
     },
     "platformExtension": {
       "sectionBadge": "Platform Extension",
-      "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp²–sp³ Structure",
-      "sectionSubtitle": "Based on the stress engineering platform, exploring evolution potential of all-carbon sp²–sp³ structure in extreme physics and future computing",
-      "intro": "In the demetallized all-carbon composite stage, we have built a class of continuous carbon network structures centered on sp²–sp³ chemical bonding and endogenous stress fields. This structure has demonstrated excellent thermal conductivity, mechanical properties, and long-term stability at the engineering level, while at a higher level naturally opening a series of physical windows not yet fully explored.",
+      "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp³–sp² Structure",
+      "sectionSubtitle": "Based on the stress engineering platform, exploring evolution potential of all-carbon sp³–sp² structure in extreme physics and future computing",
+      "intro": "In the demetallized all-carbon composite stage, we have built a class of continuous carbon network structures centered on sp³–sp² chemical bonding and endogenous stress fields. This structure has demonstrated excellent thermal conductivity, mechanical properties, and long-term stability at the engineering level, while at a higher level naturally opening a series of physical windows not yet fully explored.",
       "superconductorTitle": "Electronic State Reconstruction and Unconventional Superconducting Potential Under High Internal Stress Regulation",
       "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing structural basis for unconventional superconductivity or related collective phenomena.",
-      "superconductorP2": "In existing material systems, carbon-based structures simultaneously possessing strong endogenous stress, continuous sp²–sp³ bonding, and engineerable tuning windows remain rare, making this platform unique in fundamental structure exploration for unconventional superconducting materials.",
+      "superconductorP2": "In existing material systems, carbon-based structures simultaneously possessing strong endogenous stress, continuous sp³–sp² bonding, and engineerable tuning windows remain rare, making this platform unique in fundamental structure exploration for unconventional superconducting materials.",
       "chaosTitle": "Chaotic Dynamics Behavior of Nonlinearly Coupled Carbon Networks",
       "chaosP1": "Interconnected networks form highly coupled, disordered but controllable structural units at mesoscopic scale, providing physical carrier for complex dynamics and reservoir computing-like behavior.",
       "chaosP2": "Based on nonlinear response of material endogenous dynamics, this network can achieve efficient temporal information encoding. Through precise regulation of chaotic states, we aim to build a physical computing paradigm without traditional transistor logic, breaking through the compute-energy-efficiency bottleneck from the ground up.",
@@ -1223,7 +1223,7 @@
   },
   "news": {
     "title": "Tech Vision",
-    "subtitle": "From laboratory hypothesis to industrial validation, witnessing the performance leap of sp²–sp³ structures",
+    "subtitle": "From laboratory hypothesis to industrial validation, witnessing the performance leap of sp³–sp² structures",
     "companyNews": "Company News",
     "companyNewsDesc": "Focusing on future technology breakthroughs, strategic partnerships, and industry layout, documenting the innovation journey from superabrasive tools to carbon-based composites",
     "industryInfo": "Industry Information",

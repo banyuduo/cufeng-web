@@ -54,11 +54,6 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </div>
               <ul className="space-y-2 text-sm text-slate-300 text-left">
                 <li>
-                  <Link href={`${prefix}/products/nonstick-cookware`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
-                    {t("common.footer.nonstickCookware")}
-                  </Link>
-                </li>
-                <li>
                   <Link href={`${prefix}/products/diamond-copper`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
                     {t("common.footer.diamondCopper")}
                   </Link>
@@ -71,6 +66,11 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
                 <li>
                   <Link href={`${prefix}/products/carbon-composite`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
                     {t("common.footer.carbonComposite")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`${prefix}/products/nonstick-cookware`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                    {t("common.footer.nonstickCookware")}
                   </Link>
                 </li>
                 <li>
