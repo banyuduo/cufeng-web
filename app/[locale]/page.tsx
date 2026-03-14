@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 import { HeroWaveBg } from "@/components/hero-wave-bg"
+import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -33,24 +34,26 @@ export default async function HomePage({
               {t("home.hero.subtitle")}
             </p>
 
-            <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 mb-12">
-              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="page-lead text-white/90">
-                  {t("home.hero.card1")}
-                </p>
-              </Card>
-
-              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="page-lead text-white/90">
-                  {t("home.hero.card2")}
-                </p>
-              </Card>
-
-              <Card className="bg-[#002244]/60 border-[#0077b6]/30 backdrop-blur-sm p-6 sm:p-7">
-                <p className="page-lead text-white/90">
-                  {t("home.hero.card3")}
-                </p>
-              </Card>
+            <div className="mb-12">
+              <HeroPlatformDiagram
+                strings={{
+                  layer1Title: t("home.hero.diagram.layer1Title"),
+                  layer1Text: t("home.hero.diagram.layer1Text"),
+                  layer2Title: t("home.hero.diagram.layer2Title"),
+                  layer2Text: t("home.hero.diagram.layer2Text"),
+                  layer2Thermal: t("home.hero.diagram.layer2Thermal"),
+                  layer2Mechanical: t("home.hero.diagram.layer2Mechanical"),
+                  layer2Electrical: t("home.hero.diagram.layer2Electrical"),
+                  layer3Title: t("home.hero.diagram.layer3Title"),
+                  layer3Line1: t("home.hero.diagram.layer3Line1"),
+                  layer3Line2: t("home.hero.diagram.layer3Line2"),
+                  layer4Title: t("home.hero.diagram.layer4Title"),
+                  layer4Line1: t("home.hero.diagram.layer4Line1"),
+                  layer4Line2: t("home.hero.diagram.layer4Line2"),
+                  layer4Line3: t("home.hero.diagram.layer4Line3"),
+                  layer4MeltLabel: t("home.hero.diagram.layer4MeltLabel"),
+                }}
+              />
             </div>
 
             <div className="max-w-3xl mx-auto mb-12">
