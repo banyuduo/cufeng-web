@@ -71,24 +71,52 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* 第三层：原子级界面工程（阐释核心技术） */}
-            <div>
-              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
-                {t("home.hero.atomicTitle")}
-              </h2>
-              <HomeAtomicLayer
-                strings={{
-                  meltLabel: t("home.hero.diagram.layer4MeltLabel"),
-                  mechanism1: t("home.hero.atomicMechanism1"),
-                  mechanism2: t("home.hero.atomicMechanism2"),
-                }}
-              />
+            {/* 第三层：原子级界面工程 + 技术演化路径（合并为一模块） */}
+            <div className="rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 overflow-hidden">
+              <div className="p-6 sm:p-8">
+                <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
+                  {t("home.hero.atomicTitle")}
+                </h2>
+                <HomeAtomicLayer
+                  strings={{
+                    meltLabel: t("home.hero.diagram.layer4MeltLabel"),
+                    mechanism1: t("home.hero.atomicMechanism1"),
+                    mechanism2: t("home.hero.atomicMechanism2"),
+                  }}
+                />
+                <div className="mt-8 pt-8 border-t border-[#0077b6]/30">
+                  <h3 className="page-h3 text-[#7dd3fc] mb-3 text-center sm:text-left">
+                    {t("home.techEvolution.title")}
+                  </h3>
+                  <p className="text-white/85 leading-relaxed text-sm mb-4">
+                    {t("home.techEvolution.desc")}
+                  </p>
+                  <Link
+                    href={`/${validLocale}/patents#evolution-path`}
+                    className="inline-flex items-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors"
+                  >
+                    {t("home.techEvolution.viewFullPath")}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* 应用方向（置于阶段性成果之前） */}
-            <p className="page-lead text-white/85 text-center max-w-4xl mx-auto">
-              {t("home.hero.platformFocus")}
-            </p>
+            {/* 应用方向 + 查看技术应用领域按钮 */}
+            <div className="text-center">
+              <p className="page-lead text-white/85 max-w-4xl mx-auto mb-6">
+                {t("home.hero.platformFocus")}
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0"
+              >
+                <Link href={`/${validLocale}/applications`}>
+                  {t("home.hero.viewTechApplications")}
+                </Link>
+              </Button>
+            </div>
 
             {/* 阶段性成果（当前已实现 + 工艺/样品/IP 整合为一块） */}
             <div>
@@ -100,26 +128,23 @@ export default async function HomePage({
                   <h3 className="page-h3 text-[#7dd3fc] mb-5">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                      <p className="text-white/85 leading-relaxed text-sm">
-                        {t("home.hero.achievement1")}
-                        <br />
-                        <span className="text-[#7dd3fc] font-mono text-sm">{t("home.hero.achievement1Value")}</span>
-                        <br />
-                        <span className="text-white/70 text-sm">{t("home.hero.achievement1Note")}</span>
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                      <p className="text-white/85 leading-relaxed text-sm">
-                        {t("home.hero.achievement2")}
-                        <br />
-                        {t("home.hero.achievement2Note")}
-                      </p>
-                    </div>
-                  </div>
+                  <ul className="space-y-4 text-left">
+                    <li className="flex gap-4">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00b4d8]/20 border border-[#00b4d8]/40 text-[#7dd3fc] text-xs font-semibold">1</span>
+                      <div>
+                        <p className="text-white/90 text-sm leading-relaxed">{t("home.hero.achievement1")}</p>
+                        <p className="text-[#7dd3fc] font-mono text-sm mt-1">{t("home.hero.achievement1Value")}</p>
+                        <p className="text-white/70 text-sm mt-0.5">{t("home.hero.achievement1Note")}</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-4">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00b4d8]/20 border border-[#00b4d8]/40 text-[#7dd3fc] text-xs font-semibold">2</span>
+                      <div>
+                        <p className="text-white/90 text-sm leading-relaxed">{t("home.hero.achievement2")}</p>
+                        <p className="text-white/80 text-sm mt-0.5">{t("home.hero.achievement2Note")}</p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
                 <div className="divide-y divide-[#0077b6]/25">
                   <div className="flex items-start gap-4 p-5 sm:p-6">
@@ -153,46 +178,6 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* 技术演化路径 */}
-            <div className="max-w-3xl mx-auto">
-              <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/30 rounded-xl p-6 w-full">
-                <h3 className="page-h3 text-[#7dd3fc] mb-3 text-base sm:text-lg">
-                  {t("home.techEvolution.title")}
-                </h3>
-                <p className="text-white/85 leading-relaxed text-sm mb-4">
-                  {t("home.techEvolution.desc")}
-                </p>
-                <Link
-                  href={`/${validLocale}/patents#evolution-path`}
-                  className="inline-flex items-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors"
-                >
-                  {t("home.techEvolution.viewFullPath")}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button
-                size="lg"
-                asChild
-                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 w-full sm:w-auto min-h-[44px] border-0"
-              >
-                <Link href={`/${validLocale}/applications`}>
-                  {t("home.hero.viewTechApplications")}
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="gap-2 text-white border-[#00b4d8]/80 bg-transparent hover:bg-white/10 w-full sm:w-auto min-h-[44px]"
-              >
-                <Link href={`/${validLocale}/cooperation`}>
-                  {t("home.hero.projectCooperation")}
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
