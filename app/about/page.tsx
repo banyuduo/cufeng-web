@@ -28,7 +28,6 @@ export default async function AboutPage({
 
       <PageHero
         variant="dark"
-        badge={t("about.hero.badge")}
         title={t("about.hero.title")}
         tagline={t("about.hero.tagline")}
         subtitle={t("about.hero.subtitle")}
