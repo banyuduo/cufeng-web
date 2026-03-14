@@ -51,7 +51,24 @@
       "viewWhitepaper": "View Technical Whitepaper",
       "contactTeam": "Contact Our Team",
       "ctaTitle": "Explore Technical Cooperation",
-      "ctaSubtitle": "View full technology architecture or get in touch with us"
+      "ctaSubtitle": "View full technology architecture or get in touch with us",
+      "diagram": {
+        "layer1Title": "Market Vision & Solution (The Mission)",
+        "layer1Text": "Solving thermal management limits in the AI and new energy era",
+        "layer2Title": "Performance Value",
+        "layer2Text": "Performance that surpasses traditional composites",
+        "layer2Thermal": "Thermal",
+        "layer2Mechanical": "Mechanical",
+        "layer2Electrical": "Electrical",
+        "layer3Title": "Physical Mechanism Bridge",
+        "layer3Line1": "Building a stable all-carbon covalent bonding network",
+        "layer3Line2": "Generating tunable endogenous stress fields and heterogeneous energy-level environments",
+        "layer4Title": "Atomic Logic (Core Moat)",
+        "layer4Line1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
+        "layer4Line2": "Atomic-level interface fusion bonding",
+        "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
+        "layer4MeltLabel": "Fusion interface"
+      }
     },
     "techEvolution": {
       "title": "Technology Evolution Path",
