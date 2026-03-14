@@ -83,19 +83,21 @@ export default async function HomePage({
                   }}
                 />
                 <div className="mt-8 pt-8 border-t border-[#0077b6]/30">
-                  <h3 className="page-h3 text-[#7dd3fc] mb-3 text-center sm:text-left">
-                    {t("home.techEvolution.title")}
-                  </h3>
-                  <p className="text-white/85 leading-relaxed text-sm mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                    <h3 className="page-h3 text-[#7dd3fc] text-center sm:text-left">
+                      {t("home.techEvolution.title")}
+                    </h3>
+                    <Link
+                      href={`/${validLocale}/patents#evolution-path`}
+                      className="inline-flex items-center justify-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors shrink-0"
+                    >
+                      {t("home.techEvolution.viewFullPath")}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                  <p className="text-white/85 leading-relaxed text-sm">
                     {t("home.techEvolution.desc")}
                   </p>
-                  <Link
-                    href={`/${validLocale}/patents#evolution-path`}
-                    className="inline-flex items-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors"
-                  >
-                    {t("home.techEvolution.viewFullPath")}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
                 </div>
               </div>
             </div>
@@ -126,8 +128,8 @@ export default async function HomePage({
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-white/90">
-                    <span className="flex items-baseline gap-2 shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-base text-white/92">
+                    <span className="flex flex-wrap items-baseline gap-2 shrink-0">
                       <span className="text-[#7dd3fc] font-semibold">1</span>
                       <span>{t("home.hero.achievement1")}</span>
                       <span className="text-white/50">·</span>
@@ -136,7 +138,7 @@ export default async function HomePage({
                       <span className="text-white/80">{t("home.hero.achievement1Note")}</span>
                     </span>
                     <span className="hidden sm:inline text-white/40">·</span>
-                    <span className="flex items-baseline gap-2 shrink-0">
+                    <span className="flex flex-wrap items-baseline gap-2 shrink-0">
                       <span className="text-[#7dd3fc] font-semibold">2</span>
                       <span>{t("home.hero.achievement2")}</span>
                       <span className="text-white/50">·</span>
