@@ -6,6 +6,7 @@ import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
+import { PlatformValueDiagram } from "@/components/platform-value-diagram"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -196,9 +197,34 @@ export default async function HomePage({
 
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-8 text-white text-center">
+          <h2 className="page-h2 mb-6 sm:mb-8 text-white text-center">
             {t("home.platform.title")}
           </h2>
+
+          {/* 纵向生态基底图：应用接口 → 平台机制 → 传统材料极限 */}
+          <div className="mb-8 sm:mb-10">
+            <PlatformValueDiagram
+              strings={{
+                layer1Title: t("home.platform.diagram.layer1Title"),
+                layer1Tim: t("home.platform.diagram.layer1Tim"),
+                layer1Substrate: t("home.platform.diagram.layer1Substrate"),
+                layer1Devices: t("home.platform.diagram.layer1Devices"),
+                layer1Hint: t("home.platform.diagram.layer1Hint"),
+                layer2Title: t("home.platform.diagram.layer2Title"),
+                layer2Bonding: t("home.platform.diagram.layer2Bonding"),
+                layer2Stress: t("home.platform.diagram.layer2Stress"),
+                layer2Coexist: t("home.platform.diagram.layer2Coexist"),
+                layer2Thermal: t("home.platform.diagram.layer2Thermal"),
+                layer2Electronic: t("home.platform.diagram.layer2Electronic"),
+                layer3Title: t("home.platform.diagram.layer3Title"),
+                layer3Label: t("home.platform.diagram.layer3Label"),
+                platformAttr: t("home.platform.diagram.platformAttr"),
+                rdConcept: t("home.platform.diagram.rdConcept"),
+              }}
+            />
+          </div>
+
+          {/* 图下文：完整表述 + 平台属性与研发理念 */}
           <div className="prose prose-invert max-w-none">
             <p className="page-lead text-slate-300">
               {t("home.platform.p1")}
@@ -213,6 +239,14 @@ export default async function HomePage({
             <p className="text-lg text-slate-300 leading-relaxed mt-6">
               {t("home.platform.p3")}
             </p>
+            <div className="mt-6 pt-6 border-t border-slate-600/50 space-y-2">
+              <p className="text-sm text-slate-400 font-medium">
+                {t("home.platform.diagram.platformAttr")}
+              </p>
+              <p className="text-sm text-slate-500">
+                {t("home.platform.diagram.rdConcept")}
+              </p>
+            </div>
           </div>
         </div>
       </section>

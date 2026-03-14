@@ -67,7 +67,7 @@
         "layer4Line1": "基于 sp³–sp² 杂化键合逻辑的源头研发",
         "layer4Line2": "实现原子级界面熔固",
         "layer4Line3": "碳原子多价态的可控共存",
-        "layer4MeltLabel": "熔固界面"
+        "layer4MeltLabel": "原子级共价桥接"
       }
     },
     "techEvolution": {
@@ -91,7 +91,24 @@
       "p2": "本平台不追求单一参数的极致优化，而是提供一种具有扩展性的材料基底：",
       "li1": "通过 sp²/sp³ 键合与应力工程，实现高导热与可调控电子环境的统一",
       "li2": "为未来新型热界面、散热基板、乃至探索性物理器件预留了结构与物性接口",
-      "p3": "我们将此视为长期可演进的底层平台，而非特定终端产品。"
+      "p3": "我们将此视为长期可演进的底层平台，而非特定终端产品。",
+      "diagram": {
+        "layer1Title": "应用场景与未来接口",
+        "layer1Tim": "新型热界面",
+        "layer1Substrate": "高性能散热基板",
+        "layer1Devices": "探索性物理器件",
+        "layer1Hint": "预留结构与物性接口",
+        "layer2Title": "平台核心机制",
+        "layer2Bonding": "sp²/sp³ 杂化键合",
+        "layer2Stress": "应力工程",
+        "layer2Coexist": "多价态原子级共存",
+        "layer2Thermal": "高导热",
+        "layer2Electronic": "可调控电子环境",
+        "layer3Title": "传统材料物理极限",
+        "layer3Label": "高功率密度、热膨胀失配、可靠性瓶颈",
+        "platformAttr": "长期可演进的底层平台，而非特定终端产品",
+        "rdConcept": "原子级界面熔固带来物性确定性"
+      }
     },
     "results": {
       "title": "从理论验证到样品交付",
