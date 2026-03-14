@@ -14,6 +14,12 @@ export type PlatformDiagramStrings = {
   layer1Devices: string
   layer1Hint: string
   layer2Title: string
+  layer2Item1: string
+  layer2Item2: string
+  layer2Item3: string
+  layer2Item4: string
+  layer2Item5: string
+  layer2Item6: string
   layer2InterfaceLabel: string
   layer2Bonding: string
   layer2Stress: string
@@ -76,20 +82,17 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
           {s.layer2Title}
         </h4>
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 relative z-10">
-          {/* 碳基界面工程 + sp²/sp³ 杂化键合（一行内并列） */}
-          <div className="rounded-lg border border-[#00b4d8]/35 bg-[#002244]/80 px-3 py-2 sm:px-4 sm:py-2.5 text-center shrink-0">
-            <span className="text-[10px] sm:text-xs text-[#73DBFF]/90 font-medium">{s.layer2InterfaceLabel}</span>
-            <span className="text-white/50 mx-1.5">·</span>
-            <span className="text-sm font-semibold text-white/95">{s.layer2Bonding}</span>
-          </div>
-          {/* 可调控电子环境 + 应力工程（一行内并列） */}
           <div className="rounded-lg border border-[#0077b6]/35 bg-[#002244]/80 px-3 py-2 sm:px-4 sm:py-2.5 text-center shrink-0">
-            <span className="text-[#73DBFF] font-medium text-sm">{s.layer2Electronic}</span>
-            <span className="text-white/50 mx-1.5">·</span>
-            <span className="page-caption text-white/90 text-xs sm:text-sm">{s.layer2Stress}</span>
+            <span className="text-sm font-medium text-[#7dd3fc] block mb-0.5">{s.layer2Item1}</span>
+            <span className="text-sm text-white/95">{s.layer2Item2}</span>
           </div>
           <div className="rounded-lg border border-[#0077b6]/35 bg-[#002244]/80 px-3 py-2 sm:px-4 sm:py-2.5 text-center shrink-0">
-            <span className="page-caption text-white/90 font-medium text-xs sm:text-sm">{s.layer2Coexist}</span>
+            <span className="text-sm font-medium text-[#7dd3fc] block mb-0.5">{s.layer2Item3}</span>
+            <span className="text-sm text-white/95">{s.layer2Item4}</span>
+          </div>
+          <div className="rounded-lg border border-[#0077b6]/35 bg-[#002244]/80 px-3 py-2 sm:px-4 sm:py-2.5 text-center shrink-0">
+            <span className="text-sm font-medium text-[#7dd3fc] block mb-0.5">{s.layer2Item5}</span>
+            <span className="text-sm text-white/95">{s.layer2Item6}</span>
           </div>
         </div>
       </div>

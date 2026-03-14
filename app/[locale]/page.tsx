@@ -77,6 +77,8 @@ export default async function HomePage({
                 </h2>
                 <HomeAtomicLayer
                   strings={{
+                    sp2LayerLabel: t("home.hero.sp2LayerLabel"),
+                    sp3LayerLabel: t("home.hero.sp3LayerLabel"),
                     meltLabel: t("home.hero.diagram.layer4MeltLabel"),
                     mechanism1: t("home.hero.atomicMechanism1"),
                     mechanism2: t("home.hero.atomicMechanism2"),
@@ -197,6 +199,12 @@ export default async function HomePage({
               layer1Devices: t("home.platform.diagram.layer1Devices"),
               layer1Hint: t("home.platform.diagram.layer1Hint"),
               layer2Title: t("home.platform.diagram.layer2Title"),
+              layer2Item1: t("home.platform.diagram.layer2Item1"),
+              layer2Item2: t("home.platform.diagram.layer2Item2"),
+              layer2Item3: t("home.platform.diagram.layer2Item3"),
+              layer2Item4: t("home.platform.diagram.layer2Item4"),
+              layer2Item5: t("home.platform.diagram.layer2Item5"),
+              layer2Item6: t("home.platform.diagram.layer2Item6"),
               layer2InterfaceLabel: t("home.platform.diagram.layer2InterfaceLabel"),
               layer2Bonding: t("home.platform.diagram.layer2Bonding"),
               layer2Stress: t("home.platform.diagram.layer2Stress"),

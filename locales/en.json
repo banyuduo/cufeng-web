@@ -40,6 +40,8 @@
       "platformDesc1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
       "platformDesc2": "A material platform built on atomic-level interface structure",
       "atomicTitle": "Atomic-level interface engineering",
+      "sp2LayerLabel": "sp² structure layer",
+      "sp3LayerLabel": "sp³ structure layer",
       "atomicMechanism1": "Controllable coexistence of carbon atom multi-valency",
       "atomicMechanism2": "Stable all-carbon covalent bonding network",
       "valueTitle": "Performance that surpasses traditional composites",
@@ -82,7 +84,7 @@
     },
     "techEvolution": {
       "title": "Technology Evolution Path",
-      "desc": "Based on the same underlying platform, we are extending toward advanced packaging thermal solutions, solid-state battery skeletons, and beyond.",
+      "desc": "Based on the same underlying platform, technology is evolving toward: advanced packaging thermal materials  solid-state battery structural skeleton  high-power device thermal management.",
       "viewFullPath": "View Full Technology Architecture"
     },
     "features": {
@@ -92,7 +94,7 @@
       "innovationEffect": "Enable precise control of internal stress fields and energy-level environments, delivering a material platform that pushes beyond limits for AI and new energy thermal management",
       "patents": "Patent Moat",
       "patentsLogic": "Preparation process, bonding structure, stress control, and functional extension",
-      "patentsStatus": "Nearly 10 core patents deployed; full IP closed-loop in place",
+      "patentsStatus": "Multiple core patents deployed; full IP closed-loop in place",
       "patentsValue": "Solid technical boundaries and legal safeguards for product iteration and application expansion",
       "industrial": "Industrialization Leap",
       "industrialStatus": "From lab hypothesis to process closure; samples have completed engineering-level thermal validation",
@@ -113,6 +115,12 @@
         "layer1Devices": "Exploratory physical devices",
         "layer1Hint": "Reserved structural & property interfaces",
         "layer2Title": "Core Platform Logic",
+        "layer2Item1": "Carbon-based interface engineering",
+        "layer2Item2": "sp² / sp³ hybrid bonding",
+        "layer2Item3": "Stress engineering",
+        "layer2Item4": "Tunable electronic environment",
+        "layer2Item5": "Multi-valency carbon atoms",
+        "layer2Item6": "Atomic coexistence structure",
         "layer2InterfaceLabel": "Carbon-based interface engineering",
         "layer2Bonding": "sp²/sp³ hybrid bonding",
         "layer2Stress": "Stress engineering",
@@ -129,11 +137,11 @@
       "title": "From Theory Validation to Sample Delivery",
       "subtitle": "Our phased results",
       "process": "Process & Performance Closure",
-      "processDesc": "Completed lab-level chain from physical hypothesis → scheme design → sample trial; preliminary sample preparation and performance testing are underway.",
+      "processDesc": "Completed lab-level closed-loop validation from physical hypothesis → process scheme design → sample trial; preliminary sample preparation and performance testing are underway.",
       "deliverables": "Deliverable Samples",
       "deliverablesDesc": "Stable diamond-copper composite samples; some have completed engineering-level validation of key thermal metrics and entered further optimization.",
       "ip": "Independent Intellectual Property",
-      "ipDesc": "Core technology routes are fully self-developed and patented; the technology does not depend on external open frameworks or patchwork solutions, ensuring independence and innovation."
+      "ipDesc": "Core technology routes are fully self-developed; key technologies have been patented, ensuring independence and sustainable evolution of the technology system."
     }
   },
   "products": {

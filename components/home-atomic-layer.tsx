@@ -1,6 +1,8 @@
 "use client"
 
 export type HomeAtomicLayerStrings = {
+  sp2LayerLabel: string
+  sp3LayerLabel: string
   meltLabel: string
   mechanism1: string
   mechanism2: string
@@ -16,7 +18,7 @@ export function HomeAtomicLayer({ strings }: { strings: HomeAtomicLayerStrings }
           style={{ boxShadow: "0 0 20px rgba(0, 180, 216, 0.12), inset 0 0 0 1px rgba(0, 180, 216, 0.08)" }}
         >
           <div className="flex flex-col items-center justify-center flex-[0_0_28%] sm:flex-[0_0_30%] py-3 px-2">
-            <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">sp²</span>
+            <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">{s.sp2LayerLabel}</span>
             <svg viewBox="0 0 52 28" className="w-full max-w-[72px] sm:max-w-[88px] h-auto text-[#00b4d8]/80" aria-hidden>
               <path d="M8 14 L14 10 L20 14 L20 20 L14 24 L8 20 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.95" />
               <path d="M20 14 L26 10 L32 14 L32 20 L26 24 L20 20 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.95" />
@@ -38,7 +40,7 @@ export function HomeAtomicLayer({ strings }: { strings: HomeAtomicLayerStrings }
             </svg>
           </div>
           <div className="flex flex-col items-center justify-center flex-[0_0_28%] sm:flex-[0_0_30%] py-3 px-2">
-            <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">sp³</span>
+            <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">{s.sp3LayerLabel}</span>
             {/* 金刚石轮廓线条画：上尖 → 肩 → 腰 → 亭部 → 底尖 */}
             <svg viewBox="0 0 48 48" className="w-full max-w-[56px] sm:max-w-[72px] h-auto text-[#00b4d8]/90" aria-hidden role="img" aria-label="金刚石刻面">
               <path d="M24 0 L6 14 L10 24 L24 46 L38 24 L42 14 Z" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.95" />
