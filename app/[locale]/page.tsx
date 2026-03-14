@@ -44,7 +44,6 @@ export default async function HomePage({
                 <h2 className="page-h2 text-white mb-3 sm:mb-4">
                   {t("home.hero.title")}
                 </h2>
-                <p className="page-caption text-white/85">{t("home.hero.platformDesc1")}</p>
                 <p className="page-caption text-white/85">{t("home.hero.platformDesc2")}</p>
               </div>
               <div className="px-3 pb-4 sm:px-5 sm:pb-6">
@@ -125,26 +124,26 @@ export default async function HomePage({
               </h2>
               <div className="max-w-4xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
                 <div className="p-6 sm:p-8 border-b border-[#0077b6]/30">
-                  <h3 className="page-h3 text-[#7dd3fc] mb-5">
+                  <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
-                  <ul className="space-y-4 text-left">
-                    <li className="flex gap-4">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00b4d8]/20 border border-[#00b4d8]/40 text-[#7dd3fc] text-xs font-semibold">1</span>
-                      <div>
-                        <p className="text-white/90 text-sm leading-relaxed">{t("home.hero.achievement1")}</p>
-                        <p className="text-[#7dd3fc] font-mono text-sm mt-1">{t("home.hero.achievement1Value")}</p>
-                        <p className="text-white/70 text-sm mt-0.5">{t("home.hero.achievement1Note")}</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#00b4d8]/20 border border-[#00b4d8]/40 text-[#7dd3fc] text-xs font-semibold">2</span>
-                      <div>
-                        <p className="text-white/90 text-sm leading-relaxed">{t("home.hero.achievement2")}</p>
-                        <p className="text-white/80 text-sm mt-0.5">{t("home.hero.achievement2Note")}</p>
-                      </div>
-                    </li>
-                  </ul>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-white/90">
+                    <span className="flex items-baseline gap-2 shrink-0">
+                      <span className="text-[#7dd3fc] font-semibold">1</span>
+                      <span>{t("home.hero.achievement1")}</span>
+                      <span className="text-white/50">·</span>
+                      <span className="text-[#7dd3fc] font-mono">{t("home.hero.achievement1Value")}</span>
+                      <span className="text-white/50">·</span>
+                      <span className="text-white/80">{t("home.hero.achievement1Note")}</span>
+                    </span>
+                    <span className="hidden sm:inline text-white/40">·</span>
+                    <span className="flex items-baseline gap-2 shrink-0">
+                      <span className="text-[#7dd3fc] font-semibold">2</span>
+                      <span>{t("home.hero.achievement2")}</span>
+                      <span className="text-white/50">·</span>
+                      <span className="text-white/80">{t("home.hero.achievement2Note")}</span>
+                    </span>
+                  </div>
                 </div>
                 <div className="divide-y divide-[#0077b6]/25">
                   <div className="flex items-start gap-4 p-5 sm:p-6">
@@ -197,6 +196,7 @@ export default async function HomePage({
               layer1Devices: t("home.platform.diagram.layer1Devices"),
               layer1Hint: t("home.platform.diagram.layer1Hint"),
               layer2Title: t("home.platform.diagram.layer2Title"),
+              layer2InterfaceLabel: t("home.platform.diagram.layer2InterfaceLabel"),
               layer2Bonding: t("home.platform.diagram.layer2Bonding"),
               layer2Stress: t("home.platform.diagram.layer2Stress"),
               layer2Coexist: t("home.platform.diagram.layer2Coexist"),

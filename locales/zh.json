@@ -75,7 +75,7 @@
         "layer3Line2": "产生可调控的内生应力场与异质能级环境",
         "layer4Title": "底层技术核心",
         "layer4Line1": "基于 sp³–sp² 杂化键合逻辑的源头研发",
-        "layer4Line2": "实现原子级界面熔固",
+        "layer4Line2": "实现原子级界面键合",
         "layer4Line3": "碳原子多价态的可控共存",
         "layer4MeltLabel": "原子级共价桥接"
       }
@@ -113,6 +113,7 @@
         "layer1Devices": "探索性物理器件",
         "layer1Hint": "预留结构与物性接口",
         "layer2Title": "平台核心机制",
+        "layer2InterfaceLabel": "碳基界面工程",
         "layer2Bonding": "sp²/sp³ 杂化键合",
         "layer2Stress": "应力工程",
         "layer2Coexist": "多价态原子级共存",

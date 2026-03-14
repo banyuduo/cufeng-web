@@ -75,7 +75,7 @@
         "layer3Line2": "Generating tunable endogenous stress fields and heterogeneous energy-level environments",
         "layer4Title": "Atomic Logic (Core Moat)",
         "layer4Line1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
-        "layer4Line2": "Atomic-level interface fusion bonding",
+        "layer4Line2": "Atomic-level interface bonding",
         "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
         "layer4MeltLabel": "Atomic covalent bridging"
       }
@@ -113,6 +113,7 @@
         "layer1Devices": "Exploratory physical devices",
         "layer1Hint": "Reserved structural & property interfaces",
         "layer2Title": "Core Platform Logic",
+        "layer2InterfaceLabel": "Carbon-based interface engineering",
         "layer2Bonding": "sp²/sp³ hybrid bonding",
         "layer2Stress": "Stress engineering",
         "layer2Coexist": "Multi-valency at atomic scale",
