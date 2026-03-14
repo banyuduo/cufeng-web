@@ -30,111 +30,94 @@ export type HeroDiagramStrings = {
   layer4MeltLabel: string
 }
 
+const cardBase =
+  "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#002244]/70 backdrop-blur-sm p-3 sm:p-4 text-center"
+
 export function HeroPlatformDiagram({ strings }: { strings: HeroDiagramStrings }) {
   const s = strings
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-5">
-      {/* Layer 1: Banner - 市场愿景与解决方案 */}
-      <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-[#001a33] via-[#002244] to-[#001a33] border border-[#0077b6]/40 p-6 sm:p-8">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-2 right-8 w-24 h-16 rounded border border-[#00b4d8]/30 bg-[#00b4d8]/5" />
-          <div className="absolute top-4 right-20 w-20 h-12 rounded border border-[#00b4d8]/25 bg-[#00b4d8]/5" />
-          <div className="absolute bottom-4 left-12 w-16 h-20 rounded-lg border border-[#00b4d8]/25 bg-[#00b4d8]/5" />
-        </div>
-        <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          <div className="flex items-center gap-2 text-[#7dd3fc]/90">
-            <Cpu className="w-5 h-5 sm:w-6 sm:h-6" />
-            <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
+    <div className="w-full max-w-5xl mx-auto rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/60 px-3 py-4 sm:px-5 sm:py-5 shadow-xl shadow-[#0077b6]/10">
+      {/* 水平流向：愿景 → 价值产出 → 物理效应桥梁 → 底层技术核心 */}
+      <div className="flex flex-col lg:flex-row items-stretch gap-2 sm:gap-3">
+        {/* 1. 市场愿景与解决方案 */}
+        <div className={cardBase}>
+          <div className="flex justify-center gap-1.5 text-[#7dd3fc]/90 mb-2">
+            <Cpu className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+            <Zap className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
           </div>
-          <p className="page-lead text-white/95 text-center text-lg sm:text-xl">
-            {s.layer1Text}
-          </p>
+          <h4 className="text-[#7dd3fc] font-semibold text-xs sm:text-sm mb-1.5">{s.layer1Title}</h4>
+          <p className="text-white/90 text-xs leading-snug">{s.layer1Text}</p>
         </div>
-        <p className="relative z-10 text-center text-xs sm:text-sm text-white/60 mt-2">
-          {s.layer1Title}
-        </p>
-      </div>
 
-      {/* Layer 2: 价值产出 - 三柱 */}
-      <div className="rounded-xl border border-[#0077b6]/30 bg-[#002244]/50 backdrop-blur-sm p-5 sm:p-6">
-        <p className="text-center text-[#7dd3fc] font-medium text-sm sm:text-base mb-4">
-          {s.layer2Title}
-        </p>
-        <p className="text-center text-white/90 text-sm sm:text-base mb-5">
-          {s.layer2Text}
-        </p>
-        <div className="grid grid-cols-3 gap-3 sm:gap-4">
-          <div className="flex flex-col items-center rounded-lg bg-[#001a33]/80 border border-[#00b4d8]/25 p-4 sm:p-5">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
-              <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff9f43]" />
-            </div>
-            <span className="text-white/90 text-xs sm:text-sm font-medium text-center">
-              {s.layer2Thermal}
-            </span>
-          </div>
-          <div className="flex flex-col items-center rounded-lg bg-[#001a33]/80 border border-[#00b4d8]/25 p-4 sm:p-5">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
-              <Box className="w-5 h-5 sm:w-6 sm:h-6 text-[#54a0ff]" />
-            </div>
-            <span className="text-white/90 text-xs sm:text-sm font-medium text-center">
-              {s.layer2Mechanical}
-            </span>
-          </div>
-          <div className="flex flex-col items-center rounded-lg bg-[#001a33]/80 border border-[#00b4d8]/25 p-4 sm:p-5">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
-              <CircuitBoard className="w-5 h-5 sm:w-6 sm:h-6 text-[#5f27cd]" />
-            </div>
-            <span className="text-white/90 text-xs sm:text-sm font-medium text-center">
-              {s.layer2Electrical}
-            </span>
-          </div>
+        <div className="flex items-center justify-center shrink-0 lg:py-0 py-1">
+          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#00b4d8]/70" aria-hidden />
         </div>
-      </div>
 
-      {/* Layer 3: 物理效应桥梁 - 齿轮/机制 */}
-      <div className="rounded-xl border border-[#0077b6]/30 bg-[#002244]/50 backdrop-blur-sm p-5 sm:p-6">
-        <p className="text-center text-[#7dd3fc] font-medium text-sm sm:text-base mb-4">
-          {s.layer3Title}
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-4">
-          <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#001a33] border-2 border-[#00b4d8]/40">
-            <Cog className="w-6 h-6 sm:w-7 sm:h-7 text-[#00b4d8] animate-[spin_20s_linear_infinite]" />
+        {/* 2. 价值产出 */}
+        <div className={cardBase}>
+          <div className="flex justify-center gap-1.5 mb-2">
+            <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff9f43]" />
+            <Box className="w-4 h-4 sm:w-5 sm:h-5 text-[#54a0ff]" />
+            <CircuitBoard className="w-4 h-4 sm:w-5 sm:h-5 text-[#5f27cd]" />
           </div>
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#001a33] border-2 border-[#0077b6]/50 flex items-center justify-center">
-            <Atom className="w-5 h-5 sm:w-6 sm:h-6 text-[#7dd3fc]" />
-          </div>
-          <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#001a33] border-2 border-[#00b4d8]/40">
-            <Cog className="w-6 h-6 sm:w-7 sm:h-7 text-[#00b4d8] animate-[spin_15s_linear_infinite]" style={{ animationDirection: "reverse" }} />
+          <h4 className="text-[#7dd3fc] font-semibold text-xs sm:text-sm mb-1.5">{s.layer2Title}</h4>
+          <p className="text-white/85 text-xs leading-snug mb-2">{s.layer2Text}</p>
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-0.5 text-[10px] sm:text-xs text-white/80">
+            <span>{s.layer2Thermal}</span>
+            <span>·</span>
+            <span>{s.layer2Mechanical}</span>
+            <span>·</span>
+            <span>{s.layer2Electrical}</span>
           </div>
         </div>
-        <p className="text-center text-white/90 text-sm sm:text-base">
-          {s.layer3Line1}
-        </p>
-        <p className="text-center text-white/85 text-sm sm:text-base mt-1">
-          {s.layer3Line2}
-        </p>
-      </div>
 
-      {/* Layer 4: 底层技术核心 - 基座 + sp² ↔ 熔固 ↔ sp³ */}
-      <div className="rounded-xl overflow-hidden bg-[#0a1628] border border-[#0077b6]/40 p-6 sm:p-8">
-        <p className="text-center text-[#7dd3fc] font-medium text-sm sm:text-base mb-4">
-          {s.layer4Title}
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-5">
-          <span className="font-mono text-[#7dd3fc] text-sm sm:text-base">sp²</span>
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#00b4d8]" />
-          <span className="px-2 py-1 rounded bg-[#002244] border border-[#00b4d8]/40 text-[#73DBFF] text-xs sm:text-sm">
-            {s.layer4MeltLabel}
-          </span>
-          <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#00b4d8]" />
-          <span className="font-mono text-[#7dd3fc] text-sm sm:text-base">sp³</span>
+        <div className="flex items-center justify-center shrink-0 lg:py-0 py-1">
+          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#00b4d8]/70" aria-hidden />
         </div>
-        <div className="space-y-2 text-center text-white/90 text-sm sm:text-base">
-          <p>{s.layer4Line1}</p>
-          <p>{s.layer4Line2}</p>
-          <p>{s.layer4Line3}</p>
+
+        {/* 3. 物理效应桥梁 */}
+        <div className={cardBase}>
+          <div className="flex justify-center gap-2 mb-2">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#001a33] border-2 border-[#00b4d8]/40 flex items-center justify-center">
+              <Cog className="w-4 h-4 sm:w-5 sm:h-5 text-[#00b4d8] animate-[spin_20s_linear_infinite]" />
+            </div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#001a33] border-2 border-[#0077b6]/50 flex items-center justify-center">
+              <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#7dd3fc]" />
+            </div>
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#001a33] border-2 border-[#00b4d8]/40 flex items-center justify-center">
+              <Cog className="w-4 h-4 sm:w-5 sm:h-5 text-[#00b4d8] animate-[spin_15s_linear_infinite]" style={{ animationDirection: "reverse" }} />
+            </div>
+          </div>
+          <h4 className="text-[#7dd3fc] font-semibold text-xs sm:text-sm mb-1.5">{s.layer3Title}</h4>
+          <p className="text-white/85 text-xs leading-snug">{s.layer3Line1}</p>
+          <p className="text-white/75 text-xs leading-snug mt-0.5">{s.layer3Line2}</p>
+        </div>
+
+        <div className="flex items-center justify-center shrink-0 lg:py-0 py-1">
+          <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#00b4d8]/70" aria-hidden />
+        </div>
+
+        {/* 4. 底层技术核心 */}
+        <div className={`${cardBase} bg-[#0a1628]/90 border-[#0077b6]/45`}>
+          <div className="flex flex-wrap items-center justify-center gap-1.5 mb-2">
+            <span className="font-mono text-[#7dd3fc] text-xs">sp²</span>
+            <ArrowRight className="w-3 h-3 text-[#00b4d8]" />
+            <span className="px-1.5 py-0.5 rounded bg-[#002244] border border-[#00b4d8]/40 text-[#73DBFF] text-[10px] sm:text-xs">
+              {s.layer4MeltLabel}
+            </span>
+            <ArrowLeft className="w-3 h-3 text-[#00b4d8]" />
+            <span className="font-mono text-[#7dd3fc] text-xs">sp³</span>
+          </div>
+          <h4 className="text-[#7dd3fc] font-semibold text-xs sm:text-sm mb-1.5">{s.layer4Title}</h4>
+          <p className="text-white/85 text-xs leading-snug">{s.layer4Line1}</p>
+          <p className="text-white/80 text-xs leading-snug mt-0.5">{s.layer4Line2}</p>
+          <p className="text-white/80 text-xs leading-snug mt-0.5">{s.layer4Line3}</p>
         </div>
       </div>
+      {/* 流向说明：仅在小屏竖排时显示 */}
+      <p className="text-center text-[10px] text-white/50 mt-3 lg:sr-only">
+        ← 从愿景到技术核心的层次关系 →
+      </p>
     </div>
   )
 }
