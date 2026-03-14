@@ -38,36 +38,40 @@ export default async function HomePage({
               </p>
             </div>
 
-            {/* 第二层：技术平台（WHAT）+ 平台结构图 */}
-            <div className="text-center">
-              <h2 className="page-h2 text-white mb-3 sm:mb-4">
-                {t("home.hero.title")}
-              </h2>
-              <p className="page-caption text-white/85 mb-1">{t("home.hero.platformDesc1")}</p>
-              <p className="page-caption text-white/85 mb-8">{t("home.hero.platformDesc2")}</p>
-              <HeroPlatformDiagram
-                showLattice={false}
-                strings={{
-                  layer1Title: t("home.hero.diagram.layer1Title"),
-                  layer1Text: t("home.hero.diagram.layer1Text"),
-                  layer2Title: t("home.hero.diagram.layer2Title"),
-                  layer2Text: t("home.hero.diagram.layer2Text"),
-                  layer2Thermal: t("home.hero.diagram.layer2Thermal"),
-                  layer2Mechanical: t("home.hero.diagram.layer2Mechanical"),
-                  layer2Electrical: t("home.hero.diagram.layer2Electrical"),
-                  layer3Title: t("home.hero.diagram.layer3Title"),
-                  layer3Line1: t("home.hero.diagram.layer3Line1"),
-                  layer3Line2: t("home.hero.diagram.layer3Line2"),
-                  layer4Title: t("home.hero.diagram.layer4Title"),
-                  layer4Line1: t("home.hero.diagram.layer4Line1"),
-                  layer4Line2: t("home.hero.diagram.layer4Line2"),
-                  layer4Line3: t("home.hero.diagram.layer4Line3"),
-                  layer4MeltLabel: t("home.hero.diagram.layer4MeltLabel"),
-                }}
-              />
+            {/* 第二层：技术平台大模块（标题 + 简短说明 + 三卡片图），为主标题愿景服务 */}
+            <div className="rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 overflow-hidden shadow-xl shadow-[#0077b6]/10">
+              <div className="px-4 pt-6 sm:px-6 sm:pt-8 pb-2 text-center">
+                <h2 className="page-h2 text-white mb-3 sm:mb-4">
+                  {t("home.hero.title")}
+                </h2>
+                <p className="page-caption text-white/85">{t("home.hero.platformDesc1")}</p>
+                <p className="page-caption text-white/85">{t("home.hero.platformDesc2")}</p>
+              </div>
+              <div className="px-3 pb-4 sm:px-5 sm:pb-6">
+                <HeroPlatformDiagram
+                  showLattice={false}
+                  strings={{
+                    layer1Title: t("home.hero.diagram.layer1Title"),
+                    layer1Text: t("home.hero.diagram.layer1Text"),
+                    layer2Title: t("home.hero.diagram.layer2Title"),
+                    layer2Text: t("home.hero.diagram.layer2Text"),
+                    layer2Thermal: t("home.hero.diagram.layer2Thermal"),
+                    layer2Mechanical: t("home.hero.diagram.layer2Mechanical"),
+                    layer2Electrical: t("home.hero.diagram.layer2Electrical"),
+                    layer3Title: t("home.hero.diagram.layer3Title"),
+                    layer3Line1: t("home.hero.diagram.layer3Line1"),
+                    layer3Line2: t("home.hero.diagram.layer3Line2"),
+                    layer4Title: t("home.hero.diagram.layer4Title"),
+                    layer4Line1: t("home.hero.diagram.layer4Line1"),
+                    layer4Line2: t("home.hero.diagram.layer4Line2"),
+                    layer4Line3: t("home.hero.diagram.layer4Line3"),
+                    layer4MeltLabel: t("home.hero.diagram.layer4MeltLabel"),
+                  }}
+                />
+              </div>
             </div>
 
-            {/* 第三层：底层原理 — 原子级界面工程 */}
+            {/* 第三层：原子级界面工程（阐释核心技术） */}
             <div>
               <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
                 {t("home.hero.atomicTitle")}
@@ -81,30 +85,25 @@ export default async function HomePage({
               />
             </div>
 
-            {/* 第四层：价值产出（仅标题与三指标） */}
-            <div>
-              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
-                {t("home.hero.valueTitle")}
-              </h2>
-              <p className="page-caption text-white/85 text-center">
-                {t("home.hero.diagram.layer2Thermal")} · {t("home.hero.diagram.layer2Mechanical")} · {t("home.hero.diagram.layer2Electrical")}
-              </p>
-            </div>
+            {/* 应用方向（置于阶段性成果之前） */}
+            <p className="page-lead text-white/85 text-center max-w-4xl mx-auto">
+              {t("home.hero.platformFocus")}
+            </p>
 
-            {/* 第五层：阶段性成果（当前已实现 + 应用方向 + 工艺/样品/IP 三块） */}
+            {/* 阶段性成果（当前已实现 + 工艺/样品/IP 整合为一块） */}
             <div>
               <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
                 {t("home.hero.phasedResultsTitle")}
               </h2>
-              <div className="max-w-3xl mx-auto mb-8">
-                <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/40 rounded-2xl p-8 w-full">
-                  <h3 className="page-h3 text-[#7dd3fc] mb-6">
+              <div className="max-w-4xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
+                <div className="p-6 sm:p-8 border-b border-[#0077b6]/30">
+                  <h3 className="page-h3 text-[#7dd3fc] mb-5">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                      <p className="text-white/85 leading-relaxed">
+                      <p className="text-white/85 leading-relaxed text-sm">
                         {t("home.hero.achievement1")}
                         <br />
                         <span className="text-[#7dd3fc] font-mono text-sm">{t("home.hero.achievement1Value")}</span>
@@ -114,7 +113,7 @@ export default async function HomePage({
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                      <p className="text-white/85 leading-relaxed">
+                      <p className="text-white/85 leading-relaxed text-sm">
                         {t("home.hero.achievement2")}
                         <br />
                         {t("home.hero.achievement2Note")}
@@ -122,36 +121,33 @@ export default async function HomePage({
                     </div>
                   </div>
                 </div>
-              </div>
-              <p className="page-lead text-white/85 text-center max-w-4xl mx-auto mb-8">
-                {t("home.hero.platformFocus")}
-              </p>
-              <div className="space-y-6 max-w-4xl mx-auto">
-                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                <div className="divide-y divide-[#0077b6]/25">
+                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                    <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                    </div>
+                    <div>
+                      <h3 className="page-h3 text-white mb-1.5">{t("home.results.process")}</h3>
+                      <p className="text-slate-300 text-sm leading-relaxed">{t("home.results.processDesc")}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
-                    <p className="page-body text-slate-300 text-sm">{t("home.results.processDesc")}</p>
+                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                    <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                    </div>
+                    <div>
+                      <h3 className="page-h3 text-white mb-1.5">{t("home.results.deliverables")}</h3>
+                      <p className="text-slate-300 text-sm leading-relaxed">{t("home.results.deliverablesDesc")}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
-                  </div>
-                  <div>
-                    <h3 className="page-h3 text-white mb-2">{t("home.results.deliverables")}</h3>
-                    <p className="page-body text-slate-300 text-sm">{t("home.results.deliverablesDesc")}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
-                  </div>
-                  <div>
-                    <h3 className="page-h3 text-white mb-2">{t("home.results.ip")}</h3>
-                    <p className="page-body text-slate-300 text-sm">{t("home.results.ipDesc")}</p>
+                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                    <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                    </div>
+                    <div>
+                      <h3 className="page-h3 text-white mb-1.5">{t("home.results.ip")}</h3>
+                      <p className="text-slate-300 text-sm leading-relaxed">{t("home.results.ipDesc")}</p>
+                    </div>
                   </div>
                 </div>
               </div>
