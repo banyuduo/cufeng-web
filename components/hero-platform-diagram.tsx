@@ -43,45 +43,60 @@ export function HeroPlatformDiagram({ strings }: { strings: HeroDiagramStrings }
           className="relative flex items-stretch justify-between gap-0 rounded-xl overflow-hidden border border-[#00b4d8]/40 bg-[#001a33]/90 min-h-[72px] sm:min-h-[84px]"
           style={{ boxShadow: "0 0 20px rgba(0, 180, 216, 0.12), inset 0 0 0 1px rgba(0, 180, 216, 0.08)" }}
         >
-          {/* 左侧：sp² 六边形蜂窝（石墨烯意象） */}
+          {/* 左侧：sp² 二维石墨烯结构 */}
           <div className="flex flex-col items-center justify-center flex-[0_0_28%] sm:flex-[0_0_30%] py-3 px-2">
             <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">sp²</span>
-            <svg viewBox="0 0 56 24" className="w-full max-w-[72px] sm:max-w-[88px] h-auto text-[#00b4d8]/75" aria-hidden>
-              <path d="M14 2 L22 6 L22 14 L14 18 L6 14 L6 6 Z" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.95" />
-              <path d="M28 2 L36 6 L36 14 L28 18 L20 14 L20 6 Z" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.95" />
-              <path d="M42 2 L50 6 L50 14 L42 18 L34 14 L34 6 Z" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.95" />
-              <path d="M21 10 L28 14 L28 22 L21 26 L14 22 L14 14 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.7" />
-              <path d="M35 10 L42 14 L42 22 L35 26 L28 22 L28 14 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+            <svg viewBox="0 0 52 28" className="w-full max-w-[72px] sm:max-w-[88px] h-auto text-[#00b4d8]/80" aria-hidden role="img" aria-label="二维石墨烯结构">
+              {/* 石墨烯蜂窝：两行六边形错位排列 */}
+              <path d="M8 14 L14 10 L20 14 L20 20 L14 24 L8 20 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.95" />
+              <path d="M20 14 L26 10 L32 14 L32 20 L26 24 L20 20 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.95" />
+              <path d="M32 14 L38 10 L44 14 L44 20 L38 24 L32 20 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.95" />
+              <path d="M14 20 L20 14 L26 20 L26 26 L20 30 L14 26 Z" fill="none" stroke="currentColor" strokeWidth="0.95" opacity="0.85" />
+              <path d="M26 20 L32 14 L38 20 L38 26 L32 30 L26 26 Z" fill="none" stroke="currentColor" strokeWidth="0.95" opacity="0.85" />
             </svg>
           </div>
 
-          {/* 中间：过渡区 + 醒目标注 */}
+          {/* 中间：原子级共价桥接 — 化学键合表达（共价键） */}
           <div className="flex flex-1 flex-col items-center justify-center px-2 sm:px-4 py-3 bg-gradient-to-r from-[#002244]/90 via-[#002a50]/95 to-[#002244]/90 border-x border-[#00b4d8]/25">
             <span className="page-caption text-[#73DBFF] font-semibold text-center leading-tight drop-shadow-sm">
               {s.layer4MeltLabel}
             </span>
-            <svg viewBox="0 0 60 20" className="mt-2 w-full max-w-[100px] sm:max-w-[120px] h-auto opacity-60" aria-hidden>
-              <defs>
-                <linearGradient id="trans-grad" x1="0" x2="1" y1="0" y2="0">
-                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="currentColor" stopOpacity="0.7" />
-                  <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
-                </linearGradient>
-              </defs>
-              <path d="M0 10 Q15 4 30 10 T60 10" fill="none" stroke="url(#trans-grad)" strokeWidth="1.5" className="text-[#00b4d8]" />
-              <circle cx="30" cy="10" r="2" fill="currentColor" className="text-[#73DBFF]" />
+            <svg viewBox="0 0 80 28" className="mt-2 w-full max-w-[110px] sm:max-w-[130px] h-auto text-[#00b4d8]/90" aria-hidden role="img" aria-label="共价键合示意">
+              {/* 化学式风格：原子(圆) + 单键(线)，C—C—C 共价桥接 */}
+              <circle cx="16" cy="14" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.95" />
+              <circle cx="40" cy="14" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.95" />
+              <circle cx="64" cy="14" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.95" />
+              <line x1="20" y1="14" x2="36" y2="14" stroke="currentColor" strokeWidth="2" opacity="0.9" className="text-[#73DBFF]" />
+              <line x1="44" y1="14" x2="60" y2="14" stroke="currentColor" strokeWidth="2" opacity="0.9" className="text-[#73DBFF]" />
             </svg>
           </div>
 
-          {/* 右侧：sp³ 四面体/金刚石晶格意象 */}
+          {/* 右侧：sp³ 金刚石 Logo（刻面钻石造型） */}
           <div className="flex flex-col items-center justify-center flex-[0_0_28%] sm:flex-[0_0_30%] py-3 px-2">
             <span className="font-mono font-semibold text-[#7dd3fc] text-sm mb-2">sp³</span>
-            <svg viewBox="0 0 44 36" className="w-full max-w-[68px] sm:max-w-[84px] h-auto text-[#00b4d8]/75" aria-hidden>
-              <path d="M22 2 L38 12 L32 28 L12 28 L6 12 Z" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.9" />
-              <path d="M22 2 L6 12 L12 28" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.65" />
-              <path d="M22 2 L38 12 L32 28" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.65" />
-              <path d="M22 2 L12 28 L32 28" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.65" />
-              <path d="M6 12 L38 12 L32 28 L12 28 Z" fill="none" stroke="currentColor" strokeWidth="0.9" opacity="0.5" />
+            <svg viewBox="0 0 44 46" className="w-full max-w-[56px] sm:max-w-[72px] h-auto text-[#00b4d8]/90" aria-hidden role="img" aria-label="金刚石刻面图标">
+              {/* 刻面钻石外轮廓 */}
+              <path d="M22 2 L8 14 L14 28 L22 44 L30 28 L36 14 Z" fill="none" stroke="currentColor" strokeWidth="1.15" opacity="0.95" />
+              {/* 冠部刻面线 */}
+              <path d="M22 2 L14 28" fill="none" stroke="currentColor" strokeWidth="0.9" opacity="0.85" />
+              <path d="M22 2 L30 28" fill="none" stroke="currentColor" strokeWidth="0.9" opacity="0.85" />
+              {/* 台面/腰线 */}
+              <path d="M14 28 L30 28" fill="none" stroke="currentColor" strokeWidth="0.85" opacity="0.8" />
+              {/* 亭部刻面线 */}
+              <path d="M22 44 L14 28 M22 44 L30 28" fill="none" stroke="currentColor" strokeWidth="0.9" opacity="0.85" />
+              {/* 闪亮星点（四芒星） */}
+              <g stroke="currentColor" strokeWidth="0.8" opacity="0.9">
+                <line x1="10" y1="20" x2="10" y2="24" />
+                <line x1="8" y1="22" x2="12" y2="22" />
+                <line x1="9" y1="21" x2="11" y2="23" />
+                <line x1="9" y1="23" x2="11" y2="21" />
+              </g>
+              <g stroke="currentColor" strokeWidth="0.8" opacity="0.9">
+                <line x1="34" y1="20" x2="34" y2="24" />
+                <line x1="32" y1="22" x2="36" y2="22" />
+                <line x1="33" y1="21" x2="35" y2="23" />
+                <line x1="33" y1="23" x2="35" y2="21" />
+              </g>
             </svg>
           </div>
         </div>
