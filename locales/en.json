@@ -67,7 +67,7 @@
         "layer4Line1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
         "layer4Line2": "Atomic-level interface fusion bonding",
         "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
-        "layer4MeltLabel": "Fusion interface"
+        "layer4MeltLabel": "Atomic covalent bridging"
       }
     },
     "techEvolution": {
@@ -91,7 +91,24 @@
       "p2": "Rather than pursuing single-parameter optimization, this platform provides an extensible material substrate:",
       "li1": "Through sp²/sp³ bonding and stress engineering, unify high thermal conductivity with tunable electronic environments",
       "li2": "Reserve structural and property interfaces for future thermal interface materials, heat spreaders, and exploratory physical devices",
-      "p3": "We regard this as a long-term evolvable underlying platform, not a specific end product."
+      "p3": "We regard this as a long-term evolvable underlying platform, not a specific end product.",
+      "diagram": {
+        "layer1Title": "Application Scenarios & Future Interfaces",
+        "layer1Tim": "Thermal interface (TIM)",
+        "layer1Substrate": "Heat spreader substrate",
+        "layer1Devices": "Exploratory physical devices",
+        "layer1Hint": "Reserved structural & property interfaces",
+        "layer2Title": "Core Platform Logic",
+        "layer2Bonding": "sp²/sp³ hybrid bonding",
+        "layer2Stress": "Stress engineering",
+        "layer2Coexist": "Multi-valency at atomic scale",
+        "layer2Thermal": "High thermal conductivity",
+        "layer2Electronic": "Tunable electronic environment",
+        "layer3Title": "Traditional material limits",
+        "layer3Label": "High power density, CTE mismatch, reliability bottleneck",
+        "platformAttr": "Long-term evolvable underlying platform, not a specific end product",
+        "rdConcept": "Atomic-level interface fusion ensures property determinism"
+      }
     },
     "results": {
       "title": "From Theory Validation to Sample Delivery",
