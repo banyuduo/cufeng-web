@@ -65,7 +65,7 @@
       "diagram": {
         "layer1Title": "Market Vision & Solution (The Mission)",
         "layer1Text": "Solving thermal management limits in the AI and new energy era",
-        "layer2Title": "Performance Value",
+        "layer2Title": "Performance Beyond Traditional Composites",
         "layer2Text": "Performance that surpasses traditional composites",
         "layer2Thermal": "Thermal",
         "layer2Mechanical": "Mechanical",
@@ -128,9 +128,9 @@
       "title": "From Theory Validation to Sample Delivery",
       "subtitle": "Our phased results",
       "process": "Process & Performance Closure",
-      "processDesc": "Completed full laboratory validation from physical hypothesis → preparation process → performance characterization, with preliminary sample preparation and performance testing underway.",
+      "processDesc": "Completed lab-level chain from physical hypothesis → scheme design → sample trial; preliminary sample preparation and performance testing are underway.",
       "deliverables": "Deliverable Samples",
-      "deliverablesDesc": "Stable diamond-copper composite and superabrasive fusion-bonded tool samples; some samples have completed engineering-level validation of key thermal performance metrics and entered further optimization.",
+      "deliverablesDesc": "Stable diamond-copper composite samples; some have completed engineering-level validation of key thermal metrics and entered further optimization.",
       "ip": "Independent Intellectual Property",
       "ipDesc": "Core technology routes are fully self-developed and patented; the technology does not depend on external open frameworks or patchwork solutions, ensuring independence and innovation."
     }
