@@ -48,10 +48,11 @@ export function HomeAtomicLayer({ strings }: { strings: HomeAtomicLayerStrings }
             </svg>
           </div>
         </div>
-        <ul className="mt-4 space-y-2 text-center">
-          <li className="page-caption text-white/90">· {s.mechanism1}</li>
-          <li className="page-caption text-white/90">· {s.mechanism2}</li>
-        </ul>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
+          <span className="page-caption text-white/90">· {s.mechanism1}</span>
+          <span className="text-white/40">·</span>
+          <span className="page-caption text-white/90">· {s.mechanism2}</span>
+        </div>
       </div>
     </div>
   )
