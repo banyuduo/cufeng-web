@@ -1,8 +1,6 @@
 "use client"
 
 import {
-  Cpu,
-  Zap,
   Flame,
   Box,
   CircuitBoard,
@@ -33,10 +31,18 @@ export type HeroDiagramStrings = {
 const cardBase =
   "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#002244]/70 backdrop-blur-sm p-3 sm:p-4 text-center"
 
-export function HeroPlatformDiagram({ strings }: { strings: HeroDiagramStrings }) {
+export function HeroPlatformDiagram({
+  strings,
+  showLattice = true,
+}: {
+  strings: HeroDiagramStrings
+  showLattice?: boolean
+}) {
   const s = strings
   return (
     <div className="w-full max-w-5xl mx-auto rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/60 overflow-hidden shadow-xl shadow-[#0077b6]/10">
+      {showLattice && (
+      <>
       {/* 地基：微观晶格演变 sp² 蜂窝 → 过渡区(原子级共价桥接) → sp³ 四面体 */}
       <div className="relative border-b border-[#0077b6]/40 bg-[#0a1628] px-3 py-4 sm:px-5 sm:py-5">
         <div
@@ -101,10 +107,12 @@ export function HeroPlatformDiagram({ strings }: { strings: HeroDiagramStrings }
           </div>
         </div>
       </div>
+      </>
+      )}
 
-      {/* 水平流向：从底层技术核心到市场愿景 */}
+      {/* 水平流向：底层技术核心 → 物理效应 → 价值产出（愿景已由页面大标题表达，此处不重复） */}
       <div className="px-3 py-4 sm:px-5 sm:py-5">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] items-stretch gap-3 sm:gap-4 lg:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-3 sm:gap-4 lg:gap-4">
           {/* 1. 底层技术核心（源头） */}
           <div className={`${cardBase} bg-[#0a1628]/95 border-[#0077b6]/50 flex flex-col text-left`}>
             <h4 className="text-[#7dd3fc] font-semibold text-sm mb-2 uppercase tracking-wide opacity-90">
@@ -155,21 +163,6 @@ export function HeroPlatformDiagram({ strings }: { strings: HeroDiagramStrings }
             <p className="page-caption text-white/85">
               {s.layer2Thermal} · {s.layer2Mechanical} · {s.layer2Electrical}
             </p>
-          </div>
-
-          <div className="flex items-center justify-center w-6 shrink-0 self-center">
-            <ArrowDown className="w-4 h-4 text-[#00b4d8]/60 lg:hidden" aria-hidden />
-            <ArrowRight className="w-5 h-5 text-[#00b4d8]/80 hidden lg:block" aria-hidden />
-          </div>
-
-          {/* 4. 市场愿景与解决方案（结果） */}
-          <div className={`${cardBase} flex flex-col text-left`}>
-            <div className="flex justify-center lg:justify-start gap-1.5 text-[#7dd3fc]/90 mb-2">
-              <Cpu className="w-4 h-4 shrink-0" />
-              <Zap className="w-4 h-4 shrink-0" />
-            </div>
-            <h4 className="text-[#7dd3fc] font-semibold text-sm mb-1.5">{s.layer1Title}</h4>
-            <p className="page-caption text-white/90 leading-relaxed">{s.layer1Text}</p>
           </div>
         </div>
       </div>
