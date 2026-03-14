@@ -44,7 +44,6 @@ export default async function HomePage({
                 <h2 className="page-h2 text-white mb-3 sm:mb-4">
                   {t("home.hero.title")}
                 </h2>
-                <p className="page-caption text-white/85">{t("home.hero.platformDesc2")}</p>
               </div>
               <div className="px-3 pb-4 sm:px-5 sm:pb-6">
                 <HeroPlatformDiagram
