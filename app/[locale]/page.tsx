@@ -26,13 +26,9 @@ export default async function HomePage({
         <HeroWaveBg />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center max-w-5xl mx-auto">
-            <h1 className="page-h1 text-white mb-6 sm:mb-8 opacity-100">
+            <h1 className="page-h1 text-white mb-10 sm:mb-12 opacity-100">
               {t("home.hero.title")}
             </h1>
-
-            <p className="page-lead text-white/95 font-light mb-10 sm:mb-12 tracking-wide text-lg sm:text-xl lg:text-2xl">
-              {t("home.hero.subtitle")}
-            </p>
 
             <div className="mb-12">
               <HeroPlatformDiagram
