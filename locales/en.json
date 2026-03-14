@@ -33,8 +33,18 @@
   },
   "home": {
     "hero": {
+      "visionTitle": "Solving thermal management limits in the AI and new energy era",
+      "visionSubtitle": "A material platform based on sp³–sp² carbon-based interface engineering",
       "title": "sp³–sp² Carbon-Based Interface Engineering Platform",
       "subtitle": "Solving thermal management limits in the AI and new energy era",
+      "platformDesc1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
+      "platformDesc2": "A material platform built on atomic-level interface structure",
+      "atomicTitle": "Atomic-level interface engineering",
+      "atomicMechanism1": "Controllable coexistence of carbon atom multi-valency",
+      "atomicMechanism2": "Stable all-carbon covalent bonding network",
+      "valueTitle": "Performance that surpasses traditional composites",
+      "phasedResultsTitle": "Phased Results",
+      "platformAdvantageTitle": "Platform Advantages",
       "card1": "We focus on source-level R&D based on sp³–sp² hybrid bonding logic.",
       "card2": "The core design philosophy is to achieve controllable coexistence of carbon atom multi-valency through atomic-level interface fusion bonding, building a stable all-carbon covalent bonding network.",
       "card3": "This unique interface structure generates tunable endogenous stress fields and heterogeneous energy-level environments, endowing the material with thermal, mechanical, and electrical properties that surpass traditional composites.",
@@ -77,13 +87,17 @@
     },
     "features": {
       "innovation": "Source-Level Innovation",
-      "innovationDesc": "This system is not a physical blend of traditional composites, but a molecular-level chemical bonding network built through sp³–sp² bridging. This structure endows the material with: persistent internal stress fields, spatially heterogeneous electronic environments, and high mechanical and thermal stability, providing a tunable material platform for AI computing, new energy thermal management, and other high-end thermal applications.",
+      "innovationAction": "Reject traditional physical blending; adopt atomic-level covalent bonding",
+      "innovationValue": "Build sp³–sp² bridging network",
+      "innovationEffect": "Enable precise control of internal stress fields and energy-level environments, delivering a material platform that pushes beyond limits for AI and new energy thermal management",
       "patents": "Patent Moat",
-      "patentsDesc": "We have strategically deployed nearly 10 core patents covering preparation routes, bonding structure design, stress regulation methods, and functional extensions. This IP matrix forms closed-loop protection, establishing solid technical boundaries and providing comprehensive legal safeguards for R&D iteration and application expansion.",
-      "cooperation": "Cooperation & Industry Extension",
-      "cooperationIntro": "This project has completed the leap from laboratory to process closure, with stable sample delivery capability.",
-      "cooperationPath": "Our path and expectations:",
-      "cooperationDesc": "While advancing our own industrialization, we remain open to deep collaboration worldwide. Whether through strategic licensing or joint development for specific domains, we aim to accelerate technology democratization through resource sharing. We are confident in establishing industry benchmarks through sustained source innovation, and we look forward to partnering with those who share a long-term strategic vision to jointly define the physical boundaries of next-generation thermal management materials."
+      "patentsLogic": "Preparation process, bonding structure, stress control, and functional extension",
+      "patentsStatus": "Nearly 10 core patents deployed; full IP closed-loop in place",
+      "patentsValue": "Solid technical boundaries and legal safeguards for product iteration and application expansion",
+      "industrial": "Industrialization Leap",
+      "industrialStatus": "From lab hypothesis to process closure; samples have completed engineering-level thermal validation",
+      "industrialMode": "Strategic licensing and joint development open",
+      "industrialVision": "Partner with long-cycle strategic allies to define the physical boundaries of next-gen thermal management materials"
     },
     "platform": {
       "title": "Platform Positioning & Value",

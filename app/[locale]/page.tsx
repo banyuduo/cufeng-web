@@ -6,6 +6,7 @@ import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
+import { HomeAtomicLayer } from "@/components/home-atomic-layer"
 import { PlatformValueDiagram } from "@/components/platform-value-diagram"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
@@ -26,13 +27,26 @@ export default async function HomePage({
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <HeroWaveBg />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="page-h1 text-white mb-10 sm:mb-12 opacity-100">
-              {t("home.hero.title")}
-            </h1>
+          <div className="max-w-5xl mx-auto space-y-14 sm:space-y-16">
+            {/* 第一层：愿景（最顶部） */}
+            <div className="text-center">
+              <h1 className="page-h1 text-white mb-4 sm:mb-5 opacity-100">
+                {t("home.hero.visionTitle")}
+              </h1>
+              <p className="page-lead text-white/90 font-light">
+                {t("home.hero.visionSubtitle")}
+              </p>
+            </div>
 
-            <div className="mb-12">
+            {/* 第二层：技术平台（WHAT）+ 平台结构图 */}
+            <div className="text-center">
+              <h2 className="page-h2 text-white mb-3 sm:mb-4">
+                {t("home.hero.title")}
+              </h2>
+              <p className="page-caption text-white/85 mb-1">{t("home.hero.platformDesc1")}</p>
+              <p className="page-caption text-white/85 mb-8">{t("home.hero.platformDesc2")}</p>
               <HeroPlatformDiagram
+                showLattice={false}
                 strings={{
                   layer1Title: t("home.hero.diagram.layer1Title"),
                   layer1Text: t("home.hero.diagram.layer1Text"),
@@ -53,46 +67,98 @@ export default async function HomePage({
               />
             </div>
 
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/40 rounded-2xl p-8 w-full">
-                <h3 className="page-h3 text-[#7dd3fc] mb-6">
-                  {t("home.hero.achieved")}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                    <p className="text-white/85 leading-relaxed">
-                      {t("home.hero.achievement1")}
-                      <br />
-                      <span className="text-[#7dd3fc] font-mono text-sm">
-                        {t("home.hero.achievement1Value")}
-                      </span>
-                      <br />
-                      <span className="text-white/70 text-sm">
-                        {t("home.hero.achievement1Note")}
-                      </span>
-                    </p>
+            {/* 第三层：底层原理 — 原子级界面工程 */}
+            <div>
+              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
+                {t("home.hero.atomicTitle")}
+              </h2>
+              <HomeAtomicLayer
+                strings={{
+                  meltLabel: t("home.hero.diagram.layer4MeltLabel"),
+                  mechanism1: t("home.hero.atomicMechanism1"),
+                  mechanism2: t("home.hero.atomicMechanism2"),
+                }}
+              />
+            </div>
+
+            {/* 第四层：价值产出（仅标题与三指标） */}
+            <div>
+              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
+                {t("home.hero.valueTitle")}
+              </h2>
+              <p className="page-caption text-white/85 text-center">
+                {t("home.hero.diagram.layer2Thermal")} · {t("home.hero.diagram.layer2Mechanical")} · {t("home.hero.diagram.layer2Electrical")}
+              </p>
+            </div>
+
+            {/* 第五层：阶段性成果（当前已实现 + 应用方向 + 工艺/样品/IP 三块） */}
+            <div>
+              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
+                {t("home.hero.phasedResultsTitle")}
+              </h2>
+              <div className="max-w-3xl mx-auto mb-8">
+                <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/40 rounded-2xl p-8 w-full">
+                  <h3 className="page-h3 text-[#7dd3fc] mb-6">
+                    {t("home.hero.achieved")}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
+                      <p className="text-white/85 leading-relaxed">
+                        {t("home.hero.achievement1")}
+                        <br />
+                        <span className="text-[#7dd3fc] font-mono text-sm">{t("home.hero.achievement1Value")}</span>
+                        <br />
+                        <span className="text-white/70 text-sm">{t("home.hero.achievement1Note")}</span>
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
+                      <p className="text-white/85 leading-relaxed">
+                        {t("home.hero.achievement2")}
+                        <br />
+                        {t("home.hero.achievement2Note")}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-[#00b4d8] mt-2 flex-shrink-0" />
-                    <p className="text-white/85 leading-relaxed">
-                      {t("home.hero.achievement2")}
-                      <br />
-                      {t("home.hero.achievement2Note")}
-                    </p>
+                </div>
+              </div>
+              <p className="page-lead text-white/85 text-center max-w-4xl mx-auto mb-8">
+                {t("home.hero.platformFocus")}
+              </p>
+              <div className="space-y-6 max-w-4xl mx-auto">
+                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                  </div>
+                  <div>
+                    <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
+                    <p className="page-body text-slate-300 text-sm">{t("home.results.processDesc")}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                  </div>
+                  <div>
+                    <h3 className="page-h3 text-white mb-2">{t("home.results.deliverables")}</h3>
+                    <p className="page-body text-slate-300 text-sm">{t("home.results.deliverablesDesc")}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
+                  <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+                  </div>
+                  <div>
+                    <h3 className="page-h3 text-white mb-2">{t("home.results.ip")}</h3>
+                    <p className="page-body text-slate-300 text-sm">{t("home.results.ipDesc")}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto mb-10">
-              <p className="page-lead text-white/85">
-                {t("home.hero.platformFocus")}
-              </p>
-            </div>
-
-            {/* 技术演化路径 - 简化版 */}
-            <div className="max-w-3xl mx-auto mb-12">
+            {/* 技术演化路径 */}
+            <div className="max-w-3xl mx-auto">
               <div className="inline-block bg-[#002244]/50 border border-[#00b4d8]/30 rounded-xl p-6 w-full">
                 <h3 className="page-h3 text-[#7dd3fc] mb-3 text-base sm:text-lg">
                   {t("home.techEvolution.title")}
@@ -110,7 +176,7 @@ export default async function HomePage({
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Button
                 size="lg"
                 asChild
@@ -131,66 +197,6 @@ export default async function HomePage({
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-60">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/8 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 relative z-10">
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-500 tabular-nums">01</span>
-                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
-              </div>
-              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
-                <Atom className="w-6 h-6 text-[#73DBFF]" />
-              </div>
-              <h3 className="page-h3 mb-3 text-white">
-                {t("home.features.innovation")}
-              </h3>
-              <p className="text-slate-300 leading-relaxed">
-                {t("home.features.innovationDesc")}
-              </p>
-            </Card>
-
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-500 tabular-nums">02</span>
-                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
-              </div>
-              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-[#73DBFF]" />
-              </div>
-              <h3 className="page-h3 mb-3 text-white">
-                {t("home.features.patents")}
-              </h3>
-              <p className="text-slate-300 leading-relaxed">
-                {t("home.features.patentsDesc")}
-              </p>
-            </Card>
-
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm hover:shadow-lg hover:shadow-[#0077b6]/10 transition-all relative">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-light text-slate-500 tabular-nums">03</span>
-                <span className="h-px flex-1 max-w-12 bg-[#0077b6]/30" />
-              </div>
-              <div className="w-12 h-12 rounded-lg bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-6">
-                <Handshake className="w-6 h-6 text-[#73DBFF]" />
-              </div>
-              <h3 className="page-h3 mb-3 text-white">
-                {t("home.features.cooperation")}
-              </h3>
-              <div className="text-slate-300 leading-relaxed space-y-3">
-                <p>{t("home.features.cooperationIntro")}</p>
-                <p className="font-medium text-white">{t("home.features.cooperationPath")}</p>
-                <p className="text-sm text-slate-400">{t("home.features.cooperationDesc")}</p>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -224,57 +230,79 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* 第七层：平台优势 — 三张卡片（图标置顶、标题加粗、短句项目符号） */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-4 text-white text-center">
-            {t("home.results.title")}
+        <div className="max-w-6xl mx-auto">
+          <h2 className="page-h2 text-white text-center mb-8 sm:mb-10">
+            {t("home.hero.platformAdvantageTitle")}
           </h2>
-          <p className="page-caption text-slate-400 text-center mb-12">
-            {t("home.results.subtitle")}
-          </p>
-
-          <div className="space-y-6">
-            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
+                <Atom className="w-7 h-7 text-[#73DBFF]" />
               </div>
-              <div>
-                <h3 className="page-h3 text-white mb-2">
-                  {t("home.results.process")}
-                </h3>
-                <p className="page-body text-slate-300">
-                  {t("home.results.processDesc")}
-                </p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
+                01 {t("home.features.innovation")}
+              </h3>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">核心动作：</strong>{t("home.features.innovationAction")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">核心价值：</strong>{t("home.features.innovationValue")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">物理效应：</strong>{t("home.features.innovationEffect")}</span>
+                </li>
+              </ul>
+            </Card>
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
+                <Shield className="w-7 h-7 text-[#73DBFF]" />
               </div>
-            </div>
-
-            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
+                02 {t("home.features.patents")}
+              </h3>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">布局逻辑：</strong>{t("home.features.patentsLogic")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">现状：</strong>{t("home.features.patentsStatus")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">价值：</strong>{t("home.features.patentsValue")}</span>
+                </li>
+              </ul>
+            </Card>
+            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
+                <Handshake className="w-7 h-7 text-[#73DBFF]" />
               </div>
-              <div>
-                <h3 className="page-h3 text-white mb-2">
-                  {t("home.results.deliverables")}
-                </h3>
-                <p className="page-body text-slate-300">
-                  {t("home.results.deliverablesDesc")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 p-6 bg-[#002244]/50 border border-[#0077b6]/25 backdrop-blur-sm rounded-xl">
-              <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
-              </div>
-              <div>
-                <h3 className="page-h3 text-white mb-2">
-                  {t("home.results.ip")}
-                </h3>
-                <p className="page-body text-slate-300">
-                  {t("home.results.ipDesc")}
-                </p>
-              </div>
-            </div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
+                03 {t("home.features.industrial")}
+              </h3>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">技术状态：</strong>{t("home.features.industrialStatus")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">合作模式：</strong>{t("home.features.industrialMode")}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#00b4d8] mt-1.5">·</span>
+                  <span><strong className="text-white/90">愿景：</strong>{t("home.features.industrialVision")}</span>
+                </li>
+              </ul>
+            </Card>
           </div>
         </div>
       </section>
