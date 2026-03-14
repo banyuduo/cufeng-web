@@ -141,7 +141,6 @@ export function HeroPlatformDiagram({
               <CircuitBoard className="w-4 h-4 text-[#5f27cd] shrink-0" />
             </div>
             <h4 className="text-[#7dd3fc] font-semibold text-sm mb-1.5">{s.layer2Title}</h4>
-            <p className="page-caption text-white/90 leading-relaxed mb-2">{s.layer2Text}</p>
             <p className="page-caption text-white/85">
               {s.layer2Thermal} · {s.layer2Mechanical} · {s.layer2Electrical}
             </p>

@@ -40,6 +40,8 @@
       "platformDesc1": "基于 sp³–sp² 杂化键合逻辑的源头研发",
       "platformDesc2": "构建原子级界面结构的材料平台",
       "atomicTitle": "原子级界面工程",
+      "sp2LayerLabel": "sp² 结构层",
+      "sp3LayerLabel": "sp³ 结构层",
       "atomicMechanism1": "碳原子多价态的可控共存",
       "atomicMechanism2": "稳定的全碳共价键合网络",
       "valueTitle": "超越传统复合材料的卓越表现",
@@ -82,7 +84,7 @@
     },
     "techEvolution": {
       "title": "技术演化路径",
-      "desc": "基于同一底层平台，正在向先进封装散热、固态电池骨架等方向延伸。",
+      "desc": "基于同一底层平台，技术正在向以下方向演化：先进封装散热材料  固态电池结构骨架  高功率电子器件热管理",
       "viewFullPath": "查看完整技术架构"
     },
     "features": {
@@ -92,7 +94,7 @@
       "innovationEffect": "实现内应力场与能级环境的精准调控，为 AI 与新能源热管理提供超越极限的底层材料平台",
       "patents": "专利护城河",
       "patentsLogic": "围绕制备工艺、键合结构、应力控制及功能外延",
-      "patentsStatus": "已构建近 10 项核心专利矩阵，形成完整知识产权闭环",
+      "patentsStatus": "已构建多项核心专利矩阵，形成完整知识产权闭环",
       "patentsValue": "确立坚实技术边界，为后续产品迭代与应用拓展提供法律护航",
       "industrial": "产业化跃迁",
       "industrialStatus": "从实验室假设到工艺闭环的跨越，样品已完成工程级热性能验证",
@@ -113,6 +115,12 @@
         "layer1Devices": "探索性物理器件",
         "layer1Hint": "预留结构与物性接口",
         "layer2Title": "平台核心机制",
+        "layer2Item1": "碳基界面工程",
+        "layer2Item2": "sp² / sp³ 杂化键合",
+        "layer2Item3": "应力工程",
+        "layer2Item4": "可调控电子环境",
+        "layer2Item5": "多价态碳原子",
+        "layer2Item6": "原子级共存结构",
         "layer2InterfaceLabel": "碳基界面工程",
         "layer2Bonding": "sp²/sp³ 杂化键合",
         "layer2Stress": "应力工程",
@@ -129,11 +137,11 @@
       "title": "从理论验证到样品交付",
       "subtitle": "我们的阶段性成果",
       "process": "工艺与性能闭环",
-      "processDesc": "已完成从物理假设 → 方案设计 → 样品试制的实验室级链路推导，并已在此基础上进行初步样品制备与性能测试。",
+      "processDesc": "已完成从物理假设 → 工艺方案设计 → 样品试制的实验室级闭环验证，并已在此基础上进行初步样品制备与性能测试。",
       "deliverables": "可交付样品",
       "deliverablesDesc": "具备稳定复现的金刚石–铜复合材料样品，部分样品已完成热性能等关键指标的工程级验证，并进入进一步的优化阶段。",
       "ip": "独立知识产权",
-      "ipDesc": "核心技术路线完全自主研发，已完成专利申请，技术不依赖外部开源框架或拼凑方案，确保技术的独立性和创新性。"
+      "ipDesc": "核心技术路线完全自主研发，相关关键技术已完成专利申请，确保技术体系的独立性与可持续演进能力。"
     }
   },
   "products": {
