@@ -9,6 +9,7 @@ import {
   ArrowRight,
   ArrowDown,
   ArrowLeft,
+  Layers,
 } from "lucide-react"
 
 export type HeroDiagramStrings = {
@@ -33,7 +34,7 @@ export type HeroDiagramStrings = {
 }
 
 const cardBase =
-  "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#002244]/70 backdrop-blur-sm p-3 sm:p-4 text-center"
+  "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#002244]/70 backdrop-blur-sm p-3 sm:p-4 text-left min-h-[140px] sm:min-h-[160px]"
 
 export function HeroPlatformDiagram({
   strings,
@@ -144,7 +145,10 @@ export function HeroPlatformDiagram({
         {/* 水平流向：底层技术核心 → 物理效应 → 价值产出 */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-3 sm:gap-4 lg:gap-4">
           {/* 1. 底层技术核心（源头） */}
-          <div className={`${cardBase} bg-[#0a1628]/95 border-[#0077b6]/50 flex flex-col text-left`}>
+          <div className={`${cardBase} bg-[#0a1628]/95 border-[#0077b6]/50`}>
+            <div className="w-8 h-8 rounded-full bg-[#001a33] border-2 border-[#0077b6]/50 flex items-center justify-center shrink-0 mb-2">
+              <Layers className="w-4 h-4 text-[#7dd3fc]" />
+            </div>
             <h4 className="text-[#7dd3fc] font-semibold text-sm mb-2 uppercase tracking-wide opacity-90">
               {s.layer4Title}
             </h4>
@@ -159,8 +163,8 @@ export function HeroPlatformDiagram({
           </div>
 
           {/* 2. 物理效应桥梁 */}
-          <div className={`${cardBase} flex flex-col text-left`}>
-            <div className="flex justify-center lg:justify-start gap-2 mb-2">
+          <div className={`${cardBase}`}>
+            <div className="flex justify-start gap-2 mb-2">
               <div className="w-8 h-8 rounded-full bg-[#001a33] border-2 border-[#00b4d8]/40 flex items-center justify-center shrink-0">
                 <Cog className="w-4 h-4 text-[#00b4d8] animate-[spin_20s_linear_infinite]" />
               </div>
@@ -181,22 +185,23 @@ export function HeroPlatformDiagram({
             <ArrowRight className="w-5 h-5 text-[#00b4d8]/80 hidden lg:block" aria-hidden />
           </div>
 
-          {/* 3. 价值产出 */}
-          <div className={`${cardBase} flex flex-col text-left`}>
-            <div className="flex justify-center lg:justify-start gap-1.5 mb-2">
-              <Flame className="w-4 h-4 text-[#ff9f43] shrink-0" />
-              <Box className="w-4 h-4 text-[#54a0ff] shrink-0" />
-              <CircuitBoard className="w-4 h-4 text-[#5f27cd] shrink-0" />
+          {/* 3. 价值产出：图标与文字同行，一一对应 */}
+          <div className={`${cardBase}`}>
+            <h4 className="text-[#7dd3fc] font-semibold text-sm mb-2">{s.layer2Title}</h4>
+            <div className="page-caption text-white/85 space-y-1.5 flex-1">
+              <div className="flex items-center gap-2">
+                <Flame className="w-4 h-4 text-[#ff9f43] shrink-0" aria-hidden />
+                <span>{s.layer2Thermal}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Box className="w-4 h-4 text-[#54a0ff] shrink-0" aria-hidden />
+                <span>{s.layer2Mechanical}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CircuitBoard className="w-4 h-4 text-[#5f27cd] shrink-0" aria-hidden />
+                <span>{s.layer2Electrical}</span>
+              </div>
             </div>
-            <h4 className="text-[#7dd3fc] font-semibold text-sm mb-1.5">{s.layer2Title}</h4>
-            <div className="page-caption text-white/85 hidden lg:block space-y-0.5">
-              <span className="block">{s.layer2Thermal}</span>
-              <span className="block">{s.layer2Mechanical}</span>
-              <span className="block">{s.layer2Electrical}</span>
-            </div>
-            <p className="page-caption text-white/85 lg:hidden">
-              {s.layer2Thermal} · {s.layer2Mechanical} · {s.layer2Electrical}
-            </p>
           </div>
         </div>
       </div>
