@@ -365,7 +365,7 @@ export default function DiamondToolsPage() {
                 </div>
                 <h4 className="page-h3 mb-3 text-slate-900">物理性能保障</h4>
                 <p className="page-caption text-slate-600">
-                  真空环境不仅防止氧化，更通过负压精确控制技术，保证了熔固合金成分的稳定性，使工具表面清洁度与一致性达到极致。
+                  真空环境不仅防止氧化，更通过负压精确控制技术，保证了熔固合金成分的稳定性，使工具表面清洁度与一致性优异。
                 </p>
               </Card>
 
@@ -380,7 +380,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">极致出刃高度</h4>
+                <h4 className="page-h3 mb-3 text-slate-900">磨粒高出露</h4>
                 <p className="page-caption text-slate-600">
                   相比电镀和传统钎焊，活性熔固技术使磨粒露出感更强，切削刃口更多，显著提升材料去除率。
                 </p>

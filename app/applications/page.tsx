@@ -171,7 +171,7 @@ export default async function ApplicationsPage({
                     coilTechAdvantage={t(`${base}.coilTechAdvantage`)}
                     coilPhysicsMech={t(`${base}.coilPhysicsMech`)}
                     viewWhitepaper={t(`${base}.viewWhitepaper`)}
-                    whitepaperHref="/docs/diamond-coil.html"
+                    whitepaperHref={validLocale === "en" ? "/docs/diamond-coil-en.pdf" : "/docs/diamond-coil.pdf"}
                     accentHex={cat.accent.hex}
                     accentClassName={cat.accent.text}
                     accentHoverClassName={cat.accent.hoverText}
@@ -205,7 +205,7 @@ export default async function ApplicationsPage({
                         icon: <Battery className="w-5 h-5" />,
                         hasWhitepaper: true,
                         hasDeepTech: true,
-                        whitepaperHref: `${prefix}/news/solid-state-battery`,
+                        whitepaperHref: validLocale === "en" ? "/docs/diamond-battery-en.pdf" : "/docs/diamond-battery.pdf",
                         deepTechHref: `${prefix}/news/solid-state-battery`,
                         expandContent: (
                           <div className="space-y-4 text-sm">
@@ -235,7 +235,7 @@ export default async function ApplicationsPage({
                         icon: <Droplets className="w-5 h-5" />,
                         hasWhitepaper: true,
                         hasDeepTech: true,
-                        whitepaperHref: `${prefix}/news/3d-covalent-composite-electrode`,
+                        whitepaperHref: validLocale === "en" ? "/docs/diamond-water-en.pdf" : "/docs/diamond-water.pdf",
                         deepTechHref: `${prefix}/news/3d-covalent-composite-electrode`,
                         expandContent: (
                           <div className="space-y-4 text-sm">

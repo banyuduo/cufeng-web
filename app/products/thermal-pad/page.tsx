@@ -315,7 +315,7 @@ export default function ThermalPadPage() {
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
               asChild
             >
-              <a href="/docs/diamond-pad.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={locale === "en" ? "/docs/diamond-pad-en.pdf" : "/docs/diamond-pad.pdf"} target="_blank" rel="noopener noreferrer">
                 {t("products.thermalPad.cta.downloadWhitepaper")}
               </a>
             </Button>

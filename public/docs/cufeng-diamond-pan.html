@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        background-color: #ffffff;
+    }
+    .header, .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    .footer {
+        border-top: 1px solid #eee;
+        border-bottom: none;
+        margin-top: 50px;
+        padding-top: 15px;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+    .logo {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #d9534f;
+    }
+    .company-info {
+        text-align: right;
+        font-size: 0.9em;
+    }
+    h1 {
+        text-align: center;
+        font-size: 2.2em;
+        border-bottom: none;
+        margin-bottom: 1.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+        color: #111;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 8px;
+        margin-top: 2em;
+        margin-bottom: 1.2em;
+    }
+    h3 { /* This style is now used for the sub-sections like '第一层' */
+        font-size: 1.3em;
+        color: #111;
+        font-weight: bold;
+        margin-top: 1.8em;
+        margin-bottom: 0.5em;
+    }
+    p, li {
+        font-size: 1.05em;
+        text-align: justify;
+    }
+    strong {
+        color: #000;
+    }
+    .highlight-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #d9534f;
+        padding: 1px 20px;
+        margin: 25px 0;
+    }
+    /* Styles for the new bullet points within the text */
+    ul {
+        list-style-type: '• ';
+        padding-left: 20px;
+    }
+    ul li {
+        margin-bottom: 0.8em;
+    }
+    /* Styles for the main numbered list */
+    ol {
+        list-style-type: none;
+        counter-reset: advantage-counter;
+        padding-left: 0;
+    }
+    ol li {
+        counter-increment: advantage-counter;
+        margin-bottom: 1.5em;
+    }
+    ol li::before {
+        content: counter(advantage-counter) ". ";
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #333;
+        margin-right: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    /* --- Optimized Image Styles --- */
+    figure {
+        margin: 50px auto; /* Adds vertical spacing */
+        text-align: center;
+    }
+    figure img {
+        max-width: 65%; /* Controls image size, preventing it from being too large */
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border: 1px solid #eee; /* Adds a subtle frame */
+    }
+    figcaption {
+        margin-top: 12px;
+        font-size: 0.9em;
+        color: #666;
+        font-style: italic;
+    }
+    .contact-section {
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">簇锋机电</div>
+        <div class="company-info">
+            <strong>南京簇锋机电科技有限公司</strong><br>
+            <a href="http://www.tospike.com" target="_blank">www.tospike.com</a>
+        </div>
+    </div>
+
+    <h1>一个时代的终结，一个时代的开启</h1>
+
+    <p>在过去的几十年里，我们的厨房一直被一种“消耗品”所定义——传统不粘锅。我们习惯了它的脆弱，接受了它“半年一换”的命运；我们担忧它在高温下可能释放的有害物质，小心翼翼地避免使用金属锅铲。</p>
+    <p><strong>今天，我们宣告这个时代已经终结。</strong></p>
+    <p>我们带来的，不是对传统涂层的又一次修补，而是一场根本性的变革。我们为您呈现的，是厨房中的理想工具，一款真正意义上可以长期使用，甚至传承下去的烹饪器皿。</p>
+    <p>欢迎来到厨房烹饪的“钻石时代”。</p>
+
+    <h2>核心技术：真空活性熔固钻石表面</h2>
+    <p>我们技术的基石，源于超硬材料加工和航空航天领域的尖端工艺——<strong>真空活性熔固</strong>。</p>
+    <p>传统的涂层，无论是特氟龙(PTFE)还是陶瓷，都仅仅是“附着”在锅的基体上，像一层油漆。它们与锅体之间是脆弱的物理结合，这注定了它们会磨损、会脱落。</p>
+    <p>而我们的技术，是在超过 1000℃ 的高温和真空环境下，通过我们研制的<strong>低流动性铜基熔固合金</strong>，将数以百万计的微米级钻石晶体，与不锈钢锅体实现分子级别的冶金结合。</p>
+    <div class="highlight-box">
+        <p><strong>• 这不是“粘合”，而是“熔合”：</strong>钻石不再是一个独立的涂层，而是真正地“长”在了锅的金属基体上，成为了锅体本身不可分割的一部分。</p>
+        <p><strong>• “低流动性”熔固工艺：</strong>我们攻克了在锅具曲面和垂直壁上均匀熔固的难题。我们特殊配比的焊料在熔融状态下能有效抵抗重力，确保锅内从底部到侧壁的每一寸钻石涂层都均匀。</p>
+    </div>
+
+    <h2>优异性能的双层复合体系</h2>
+    <p>纯粹的钻石表面提供了出色的硬度，但要实现理想的日常烹饪体验，我们设计了一个巧妙的双层复合结构。</p>
+
+    <h3>第一层：钻石耐磨骨架 (The Diamond Skeleton)</h3>
+    <p>这是锅具的“不朽之躯”。凸起的钻石晶体尖端形成了坚不可摧的保护骨架，它承担了几乎所有的物理摩擦。您可以放心使用任何金属锅铲，甚至钢丝球进行清洗，而无需担心任何划伤。同时，钻石的超高导热性（数倍于铜），确保了热量瞬间、均匀地传遍整个锅体，有效减少油烟，提升烹饪效率。</p>
+
+    <h3>第二层：食品级有机硅填充层 (The Performance Infill)</h3>
+    <p>我们使用高性能食品级有机硅树脂，填充在钻石骨架的微观缝隙中。它带来了：</p>
+    <ul>
+        <li><strong>优异的初始不粘性：</strong>在新品阶段，它提供了顺滑的易洁不粘体验。</li>
+        <li><strong>优异的健康安全：</strong>完全不含 PTFE, PFOA, PFAS 等任何含氟物质，即使在高温下也绝不释放任何有害烟雾。</li>
+        <li><strong>被动式保护：</strong>由于它“躲藏”在钻石骨架的“山谷”中，被较好地保护了起来，其不粘性能的衰减速度比传统陶瓷锅慢数十倍，实现了长效不粘。</li>
+    </ul>
+
+    <h2>新型钻石熔固不粘锅的五大核心优势</h2>
+    <ol>
+        <li><strong>全面的健康与安全</strong><br>零PTFE, PFOA, PFAS。我们的产品在全生命周期内，在任何烹饪温度下，都不会释放任何有害物质。</li>
+        <li><strong>长期使用的高耐用</strong><br>忘记“涂层脱落”的焦虑。钻石表面与锅体同寿，无惧刮擦，不剥离。这是一笔一次性的投资，换来的是长久的放心使用。</li>
+        <li><strong>为中式爆炒而生的高耐温</strong><br>传统 PTFE 涂层在 260°C 以上便开始分解。新型锅具可承受超过 400°C 的高温，适配中式烹饪中对“锅气”和“爆炒”的追求，让您尽情挥洒厨艺。</li>
+        <li><strong>高效均匀的热力传导</strong><br>体验专业级的烹饪效果。钻石的优异导热性意味着更快的预热速度和更均匀的温度分布，食材受热一致，出品效果更佳。</li>
+        <li><strong>“优雅”的长效不粘</strong><br>我们的锅具提供了一种全新的不粘体验。它拥有优异的初始不粘性。即便经过数年使用，当表面的有机硅层自然磨损后，坚固的钻石基底依然存在。此时，它又能像一口优质的铸铁锅一样，通过简单的“开锅(Seasoning)”，让油脂渗入微观孔隙，形成天然的油膜不粘层，继续为您服务。</li>
+    </ol>
+    
+    <!-- 替换为您产品的图片 -->
+    <figure>
+    <img src="钻石熔固不粘锅产品图.jpg" alt="钻石熔固不粘锅产品图">
+    <figcaption>“钻石时代”不粘锅产品图</figcaption>
+    </figure>
+    <h2>技术规格一览</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>项目</th>
+                <th>规格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>锅体基材</td>
+                <td>食品级 304/316 不锈钢复合基材</td>
+            </tr>
+            <tr>
+                <td>核心技术</td>
+                <td>真空活性熔固技术</td>
+            </tr>
+            <tr>
+                <td>表面材质</td>
+                <td>微米级人造钻石晶体</td>
+            </tr>
+            <tr>
+                <td>熔固合金</td>
+                <td>定制化低流动性铜基活性熔固合金</td>
+            </tr>
+            <tr>
+                <td>填充材料</td>
+                <td>食品级高温固化有机硅树脂</td>
+            </tr>
+            <tr>
+                <td>安全认证</td>
+                <td>不含 PTFE, PFOA, PFAS, GenX</td>
+            </tr>
+            <tr>
+                <td>耐温上限</td>
+                <td>> 400°C</td>
+            </tr>
+            <tr>
+                <td>适用灶具</td>
+                <td>燃气灶、电磁炉、电陶炉、烤箱等所有灶具</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="text-align:center; font-style:italic; margin-top: 40px; font-size: 1.2em; color: #555;"><strong>这不仅是一口新锅，更是一种全新的厨具哲学。</strong></p>
+    <p>我们相信，最好的工具应该服务于人，而非让人小心翼翼地服务于它。欢迎您，与我们一同进入这个更健康、更耐用、更自由的烹饪新纪元。</p>
+
+    <!-- 替换为您表面纹理的图片 -->
+    <figure>
+    <img src="钻石熔固表面微观图.jpg" alt="钻石熔固表面微观图">
+    <figcaption>钻石熔固表面微观结构图</figcaption>
+</figure>
+    
+    <div class="contact-section">
+        <h3>联系我们</h3>
+        <p>
+            <strong>主体名称:</strong> 南京簇锋机电科技有限公司<br>
+            <strong>English Name:</strong> Nanjing CuFeng Mechanical & Electrical Technology Co., LTD<br>
+            <strong>技术联络:</strong> <a href="mailto:wangbo@tospike.com">wangbo@tospike.com</a><br>
+            <strong>联系电话:</strong> 153 0519 1423<br>
+            <strong>地址:</strong> 中国江苏省南京市江北新区行知路2号
+        </p>
+    </div>
+
+    <div class="footer">
+        <div>南京簇锋机电科技有限公司</div>
+        <div>内部资料 严禁外泄</div>
+    </div>
+
+</body>
+</html>
