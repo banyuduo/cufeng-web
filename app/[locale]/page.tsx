@@ -26,13 +26,13 @@ export default async function HomePage({
   const t = await getTranslations(validLocale)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation locale={validLocale} />
 
-      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <HeroWaveBg />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="max-w-5xl mx-auto space-y-14 sm:space-y-16">
+          <div className="max-w-5xl xl:max-w-6xl mx-auto space-y-14 sm:space-y-16 lg:space-y-20">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
               <h1 className="page-h1 text-white mb-4 sm:mb-5 opacity-100">
@@ -202,13 +202,13 @@ export default async function HomePage({
       </section>
 
       {/* 平台优势 — 三张卡片（图标置顶、标题加粗、短句项目符号） */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 text-white text-center mb-8 sm:mb-10">
+      <section className="py-12 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="max-w-6xl xl:max-w-7xl mx-auto">
+          <h2 className="page-h2 text-white text-center mb-8 sm:mb-10 lg:mb-12">
             {t("home.hero.platformAdvantageTitle")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
-            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 lg:gap-10">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Atom className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
@@ -230,7 +230,7 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
@@ -252,7 +252,7 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Handshake className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
@@ -279,8 +279,8 @@ export default async function HomePage({
       </section>
 
       {/* 平台定位与价值 */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-12 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto">
           <h2 className="page-h2 mb-6 sm:mb-8 text-white text-center">
             {t("home.platform.title")}
           </h2>
@@ -316,7 +316,7 @@ export default async function HomePage({
       </section>
 
       {/* 底部行动召唤 */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950">
+      <section className="py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h3 mb-4 text-white">
             {t("home.hero.ctaTitle")}
