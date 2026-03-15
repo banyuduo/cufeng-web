@@ -4,13 +4,22 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
 import { useTranslations } from "@/components/translations-provider"
 import { isValidLocale } from "@/lib/i18n"
 
+const PRODUCT_SUBLINKS = [
+  { path: "/products/diamond-copper", key: "common.footer.diamondCopper" },
+  { path: "/products/thermal-pad", key: "common.footer.thermalPad" },
+  { path: "/products/carbon-composite", key: "common.footer.carbonComposite" },
+  { path: "/products/nonstick-cookware", key: "common.footer.nonstickCookware" },
+  { path: "/products/diamond-tools", key: "common.footer.superabrasiveTools" },
+] as const
+
 export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [productsExpanded, setProductsExpanded] = useState(false)
   const pathname = usePathname()
   const t = useTranslations()
 
@@ -26,6 +35,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
+      setProductsExpanded(false)
     }
     return () => {
       document.body.style.overflow = "unset"
@@ -169,13 +179,34 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
               >
                 {t("common.nav.techArchitecture")}
               </Link>
-              <Link
-                href={`${prefix}/products`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.products")}
-              </Link>
+              <div className="border-b border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setProductsExpanded(!productsExpanded)}
+                  className="flex items-center justify-between gap-2 w-full text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
+                >
+                  {t("common.nav.products")}
+                  <ChevronDown
+                    className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
+                      productsExpanded ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {productsExpanded && (
+                  <div className="pl-4 pb-2 flex flex-col gap-0.5">
+                    {PRODUCT_SUBLINKS.map(({ path, key }) => (
+                      <Link
+                        key={path}
+                        href={`${prefix}${path}`}
+                        className="text-white/85 text-sm py-1.5 px-2 hover:bg-white/10 rounded transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t(key)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <Link
                 href={`${prefix}/applications`}
                 className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
