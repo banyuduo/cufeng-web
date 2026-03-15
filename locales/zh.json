@@ -52,7 +52,7 @@
       "card3": "这一独特的界面结构，可产生可调控的内生应力场和异质能级环境，为材料带来超越传统复合材料的导热、力学与电学性能。",
       "achieved": "当前已实现",
       "achievement1": "高导热金刚石–铜复合材料",
-      "achievement1Value": "热导率 ≥ 680 W/m·K",
+      "achievement1Value": "实验室测试热导率 ≥ 680 W/m·K",
       "achievement1Note": "具备进一步提升潜力",
       "achievement2": "可复现的全碳功能结构",
       "achievement2Note": "具备样品制备能力",
@@ -76,7 +76,7 @@
         "layer3Line1": "构建稳定的全碳共价键合网络",
         "layer3Line2": "产生可调控的内生应力场与异质能级环境",
         "layer4Title": "底层技术核心",
-        "layer4Line1": "基于 sp³–sp² 杂化键合逻辑的源头研发",
+        "layer4Line1": "基于 sp³–sp² 杂化键合的界面工程",
         "layer4Line2": "实现原子级界面键合",
         "layer4Line3": "碳原子多价态的可控共存",
         "layer4MeltLabel": "原子级共价桥接"
@@ -84,7 +84,10 @@
     },
     "techEvolution": {
       "title": "技术演化路径",
-      "desc": "基于同一底层平台，技术正在向以下方向演化：先进封装散热材料  固态电池结构骨架  高功率电子器件热管理",
+      "desc": "基于同一底层平台，技术正在向以下方向演化：",
+      "evolution1": "先进封装散热材料",
+      "evolution2": "高功率电子器件热管理",
+      "evolution3": "固态电池结构骨架",
       "viewFullPath": "查看完整技术架构"
     },
     "features": {
