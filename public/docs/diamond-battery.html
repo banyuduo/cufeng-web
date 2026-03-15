@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全固态电池核心解决方案 - 南京簇锋机电科技有限公司</title>
+    <style>
+        :root {
+            /* 科技感配色方案 */
+            --primary-dark: #0f172a;  /* 极深蓝 */
+            --primary-blue: #0ea5e9;  /* 科技亮蓝 */
+            --accent-gold: #f59e0b;   /* 工业金 */
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-title: #1e293b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        /* 沉浸式导航 */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo span {
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: white; }
+
+        /* 封面区域 */
+        .hero {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 通用容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* 章节标题 */
+        .section-header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-title);
+            margin: 0;
+            display: inline-block;
+            border-bottom: 4px solid var(--primary-blue);
+            padding-bottom: 15px;
+            margin-bottom: -17px;
+        }
+
+        /* 痛点分析表格 */
+        .pain-point-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .pain-card {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .pain-card h4 { margin-top: 0; color: var(--text-title); }
+        .pain-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+        /* 基础方案卡片 (产品A) */
+        .basic-solution-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .basic-solution-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .basic-solution-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--primary-blue);
+        }
+
+        .feature-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-box h4 { margin-bottom: 10px; color: var(--text-title); }
+        .feature-box p { font-size: 0.95rem; color: #64748b; margin: 0; }
+
+        /* 进阶方案布局 (产品B) */
+        .advanced-solution-block {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 50px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .tech-list { list-style: none; padding: 0; }
+        .tech-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+        .tech-list li::before {
+            content: "•"; color: var(--primary-blue); font-weight: bold; position: absolute; left: 0;
+        }
+
+        /* 图片框架 */
+        .image-frame {
+            width: 100%;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 10px;
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        /* 应用优势网格 */
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .app-item {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+
+        .app-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: var(--primary-blue);
+        }
+
+        .app-item h4 {
+            margin-top: 0;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .app-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border);
+            padding: 60px 0;
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .advanced-solution-block { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .app-grid { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            南京簇锋机电
+            <span>NANJING TOSPIKE</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#background">背景与挑战</a></li>
+                <li><a href="#materials">基础材料</a></li>
+                <li><a href="#structure">一体化架构</a></li>
+                <li><a href="#applications">应用价值</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <h1>下一代固态电池核心技术白皮书</h1>
+    <p>基于金刚石增强碳骨架与共烧结一体化架构的系统级解决方案</p>
+</div>
+
+<div class="container">
+
+    <!-- 1. 背景与挑战 -->
+    <section id="background">
+        <div class="section-header">
+            <h2>行业背景与技术挑战</h2>
+        </div>
+        <p>全固态电池（ASSBs）被视为突破现有锂离子电池能量密度天花板的关键技术。然而，在从实验室走向规模化应用的过程中，行业面临着**“材料级”**与**“结构级”**的双重瓶颈。</p>
+        
+        <div class="pain-point-grid">
+            <div class="pain-card">
+                <h4>🛑 枝晶穿刺与短路</h4>
+                <p>在充电过程中，锂金属负极表面易形成针状枝晶。现有碳宿主材料模量通常 < 10 GPa，无法物理阻挡枝晶生长，导致穿透电解质引发短路。</p>
+            </div>
+            <div class="pain-card">
+                <h4>🛑 界面接触失效</h4>
+                <p>电极材料在充放电过程中伴随巨大的体积变化（呼吸效应）。传统物理堆叠的固-固界面极易发生剥离，导致界面阻抗（R<sub>ct</sub>）急剧升高。</p>
+            </div>
+            <div class="pain-card">
+                <h4>🛑 制造工艺复杂</h4>
+                <p>正极、电解质、负极通常分步制备后组装，工艺链条长，且难以实现超薄电解质层的规模化制造。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 材料方案 (纯文字展示) -->
+    <section id="materials">
+        <div class="section-header">
+            <h2>基础技术：高模量负极宿主材料</h2>
+        </div>
+        
+        <div class="basic-solution-card">
+            <div class="basic-solution-header">
+                <h3>Product A：金刚石/碳复合负极宿主</h3>
+                <span class="tag">核心材料</span>
+            </div>
+            <p>针对锂金属负极“枝晶穿刺”和“体积膨胀”的痛点，我们开发了基于 <strong>sp³-sp² 共价键合网络</strong> 的三维骨架材料。这构成了我们整个技术体系的基石。</p>
+            
+            <div class="feature-grid-3">
+                <div class="feature-box">
+                    <h4>💎 超高模量 (>100 GPa)</h4>
+                    <p>引入纳米金刚石作为刚性“铆钉”，构建物理层面的“枝晶禁区”，有效避免短路隐患。</p>
+                </div>
+                <div class="feature-box">
+                    <h4>🔋 零应变储锂</h4>
+                    <p>利用内部丰富的连通孔隙容纳金属锂沉积，实现充放电过程中的体积“零膨胀”。</p>
+                </div>
+                <div class="feature-box">
+                    <h4>⚡ 梯度亲锂设计</h4>
+                    <p>通过原位掺杂（B/N/Si），诱导锂离子优先在骨架内部沉积，实现无枝晶的均匀镀锂。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 结构方案 (图文并茂) -->
+    <section id="structure">
+        <div class="section-header">
+            <h2>进阶技术：一体化梯度骨架结构</h2>
+        </div>
+        
+        <div class="advanced-solution-block">
+            <div class="image-frame" style="order:2;">
+                <!-- 请确保将您的SEM图片重命名为 sem_structure.jpg 并放在同一文件夹下 -->
+                <img src="sem_structure.jpg" alt="一体化梯度骨架SEM微观结构图">
+                <div class="image-caption">
+                    图 1：一体化共烧结骨架微观结构 (SEM)<br>
+                    两侧微米大孔 · 中间纳米介孔 · 无物理界面
+                </div>
+            </div>
+            
+            <div class="solution-text" style="order:1;">
+                <span style="color:var(--accent-gold); font-weight:bold; font-size:0.9rem; text-transform:uppercase;">Product B</span>
+                <h3>单块式一体化骨架 (Monolithic Skeleton)</h3>
+                <p>基于产品 A 的材料优势，我们进一步提出了颠覆性的<strong>“分区功能化 + 一体化共烧结”</strong>架构，将正极、电解质、负极基体融合为单一的刚性块体。</p>
+                <ul class="tech-list">
+                    <li><strong>一体化无缝界面：</strong> 正极、电解质、负极骨架通过共烧结形成原子级键合的连续整体，有效消除了物理拼缝，界面阻抗接近液态电池水平。</li>
+                    <li><strong>孔隙梯度设计（如右图）：</strong> 
+                        <br> - 两侧电极区：<strong>微米级大孔</strong>，利于高容量活性物质填充。
+                        <br> - 中间电解质区：<strong>纳米级介孔</strong>，利用<strong>毛细管压力差</strong>实现电解质的自吸附与锁定，物理阻断正负极材料互穿。
+                    </li>
+                    <li><strong>三路绝缘策略：</strong> 采用绝缘包覆或组分梯度，在保持骨架力学连续性的同时实现电子绝缘。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 应用价值 -->
+    <section id="applications">
+        <div class="section-header">
+            <h2>潜在应用优势与价值</h2>
+        </div>
+        
+        <div class="app-grid">
+            <div class="app-item">
+                <h4>📱 消费电子 (3C)</h4>
+                <p class="app-desc">
+                    <strong>消除“鼓包”焦虑：</strong> 利用骨架的“零应变”特性，设备厂商无需为电池膨胀预留物理空间，从而在维持机身厚度不变的前提下，显著增加电池容量。
+                    <br><strong>提升快充体验：</strong> sp² 导电骨架提供了优异的电子传输通道，支持高倍率快充而不引起电池过热。
+                </p>
+            </div>
+            
+            <div class="app-item">
+                <h4>🚁 低空经济 (无人机/eVTOL)</h4>
+                <p class="app-desc">
+                    <strong>高能量密度：</strong> 允许使用锂金属负极，大幅提升重量能量密度（Wh/kg），直接转化为更长的滞空时间和作业半径。
+                    <br><strong>结构安全性：</strong> 一体化刚性骨架本身即是结构件，在发生坠落或冲击时能保持电芯完整，杜绝起火爆炸风险。
+                </p>
+            </div>
+            
+            <div class="app-item">
+                <h4>🚗 新能源汽车 (EV)</h4>
+                <p class="app-desc">
+                    <strong>简化成组工艺：</strong> 单体电芯的高机械强度允许简化 Battery Pack 的外部加压结构，提升系统集成的成组效率（GCTP）。
+                    <br><strong>制造降本：</strong> 支持类似光伏产业的“大锭烧结+线切割”工艺，具备大幅降低固态电池制造成本的潜力。
+                </p>
+            </div>
+            
+            <div class="app-item">
+                <h4>🔋 规模储能</h4>
+                <p class="app-desc">
+                    <strong>长循环寿命：</strong> 刚性骨架限制了电极材料在反复充放电中的机械粉化，理论循环寿命远超传统锂离子电池。
+                    <br><strong>本质安全：</strong> 无易燃液态组分，有效解决储能电站的热失控隐患。
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p><strong>南京簇锋机电科技有限公司</strong></p>
+    <p>地址：江苏省南京市江北新区行知路2号2栋9层909室 | 邮箱：wangbo@tospike.com | 官网：www.tospike.com</p>
+    <p style="margin-top:20px; opacity:0.6;">&copy; 2026 NanJing ToSpike Tech. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

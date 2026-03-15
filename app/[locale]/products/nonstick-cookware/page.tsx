@@ -361,7 +361,7 @@ export default function NonstickCookwarePage() {
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
               asChild
             >
-              <a href="/docs/cufeng-diamond-pan.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={locale === "en" ? "/docs/cufeng-diamond-pan-en.pdf" : "/docs/cufeng-diamond-pan.pdf"} target="_blank" rel="noopener noreferrer">
                 {t("products.nonstickCookware.cta.downloadWhitepaper")}
               </a>
             </Button>

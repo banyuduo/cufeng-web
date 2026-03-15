@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long-Life Diamond Carbon Skeleton Particle Electrode - Nanjing CuFeng</title>
+    <style>
+        :root {
+            --primary-color: #0d2c54;
+            --secondary-color: #1a5c96;
+            --accent-color: #007bff;
+            --highlight-bg: #e3f2fd;
+            --text-color: #333;
+            --border-color: #dee2e6;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        
+        .logo span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+            font-size: 1.6rem;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .comparison-table th {
+            background-color: #f1f3f5;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .comparison-table .our-product {
+            background-color: var(--highlight-bg);
+            border: 2px solid var(--accent-color);
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .comparison-table .our-product::after {
+            content: "Recommended";
+            position: absolute;
+            top: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+        }
+
+        .comparison-table tr:hover td {
+            background-color: #fafafa;
+        }
+        
+        .comparison-table .bad { color: var(--danger-color); }
+        .comparison-table .good { color: var(--success-color); }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .market-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .market-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .market-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .market-tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        ul.feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.feature-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        ul.feature-list li::before {
+            content: "✔";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .highlight-box {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            font-size: 0.95rem;
+            background-color: var(--primary-color);
+            margin-top: 80px;
+        }
+        
+        .footer-link {
+            color: #a0cfff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            h1 { font-size: 1.8rem; }
+            .comparison-table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            Nanjing CuFeng
+            <span>NANJING TOSPIKE</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#tech">Technology</a></li>
+                <li><a href="#benchmark">Benchmark</a></li>
+                <li><a href="#market">Applications</a></li>
+                <li><a href="#cost">Economics</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Long-Life Diamond Carbon Skeleton<br>Particle Electrode Technical Whitepaper</h1>
+    <div class="subtitle">Published: January 2026 | Topic: Next-gen industrial wastewater 3D electrolysis core consumable derived from solid-state battery technology</div>
+
+    <section id="overview">
+        <h2>1. Executive Summary</h2>
+        <p>In high-concentration refractory organic wastewater and precious metal recovery, traditional fillers face "short life, high energy consumption, single function." <strong>Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd.</strong> has developed a novel composite particle electrode <strong>with micron-scale diamond as structural skeleton and highly conductive carbon as matrix</strong>, based on advanced interface engineering principles.</p>
+        <p>The product well integrates diamond's <strong>high mechanical durability</strong> and carbon's <strong>excellent electrochemical activity</strong>. It not only offers a lower life-cycle-cost solution for dyeing and pharmaceutical chemical wastewater, but also demonstrates unique resource recovery value in <strong>gold refining and nuclear industry</strong>.</p>
+    </section>
+
+    <section id="tech">
+        <h2>2. Technical Principles & Core Advantages</h2>
+        <p>The core technology originates from <strong>high-modulus anode host materials for all-solid-state lithium metal batteries</strong>. We apply the same "rigid yet flexible" microstructure design to solve engineering challenges in water treatment.</p>
+
+        <h3>2.1 Biomimetic Rigid Conductive Composite</h3>
+        <ul class="feature-list">
+            <li><strong>Continuous conductive phase (electron channel):</strong> Highly graphitized carbon as matrix tightly wraps and connects diamond aggregate. Special interface modification and densification achieve strong metallurgical bonding between hard aggregate and conductive matrix, ensuring the material does not disintegrate or delaminate under long-term water flow.</li>
+            <li><strong>Ultra-hard aggregate phase (wear core):</strong> Industrial diamond powder is introduced. Diamond's high hardness (Mohs 10) builds a dense rigid network inside the particle, bearing all mechanical collision and friction during fluidization. <strong>Result: Compressive strength &gt; 100 MPa, achieving "zero sludge" operation.</strong></li>
+        </ul>
+
+        <h3>2.2 BDD-Like Advanced Oxidation Mechanism</h3>
+        <p>Diamond phase has a wide electrochemical window. Under electric field, diamond surface efficiently generates <strong>hydroxyl radicals (·OH)</strong> with oxidation potential up to 2.8V. Compared with traditional adsorption-dominated materials, this solution mineralizes refractory organics indiscriminately; COD removal rate is 20–30% higher than traditional materials.</p>
+    </section>
+
+    <section id="benchmark">
+        <h2>3. Core Performance Benchmark</h2>
+        <p>Data below is based on standard 3D electrolysis reactor test results, demonstrating the significant advantages of this solution in engineering applications.</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th width="20%">Dimension</th>
+                    <th width="25%" class="our-product">Diamond Carbon Skeleton (This Solution)</th>
+                    <th width="20%">GAC</th>
+                    <th width="20%">Coated Ceramsite</th>
+                    <th width="15%">Resin Carbon Sphere</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mechanical Strength</strong><br>(Compression/Wear)</td>
+                    <td class="our-product good">&gt; 100 MPa<br>(High, zero pulverization)</td>
+                    <td class="bad">&lt; 10 MPa<br>(Easily muddies)</td>
+                    <td>20–30 MPa<br>(Coating wears)</td>
+                    <td>Medium<br>(Fragile)</td>
+                </tr>
+                <tr>
+                    <td><strong>Service Life</strong></td>
+                    <td class="our-product good">5–8 years</td>
+                    <td class="bad">3–6 months</td>
+                    <td>1–2 years</td>
+                    <td>1–2 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Conduction Mode</strong></td>
+                    <td class="our-product good">Bulk conductive<br>(Wear does not fail)</td>
+                    <td>Bulk conductive</td>
+                    <td class="bad">Surface coating conductive<br>(Wear = insulator)</td>
+                    <td>Bulk conductive</td>
+                </tr>
+                <tr>
+                    <td><strong>Catalytic Mechanism</strong></td>
+                    <td class="our-product good">Advanced oxidation (·OH)<br>Efficient mineralization</td>
+                    <td>Physical adsorption<br>Easily saturated</td>
+                    <td>Metal oxide catalysis</td>
+                    <td>Physical adsorption</td>
+                </tr>
+                <tr>
+                    <td><strong>Hazardous Waste</strong></td>
+                    <td class="our-product good">None</td>
+                    <td class="bad">Large waste carbon sludge<br>(High disposal cost)</td>
+                    <td>Small amount of residue</td>
+                    <td>Small amount</td>
+                </tr>
+                <tr>
+                    <td><strong>Energy Consumption</strong></td>
+                    <td class="our-product good">Low (low cell voltage)</td>
+                    <td>Medium</td>
+                    <td class="bad">High (high resistance)</td>
+                    <td>Medium</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="market">
+        <h2>4. Target Market Application Map</h2>
+        <p>This product is suitable not only for traditional wastewater treatment, but also has unique advantages in resource recovery and specialty fields.</p>
+
+        <div class="market-grid">
+            <div class="market-card" style="border-top: 4px solid #f1c40f;">
+                <h4>🏆 Gold & Precious Metal Smelting</h4>
+                <span class="market-tag">High margin</span> <span class="market-tag">Resource recovery</span>
+                <p><strong>Core pain:</strong> Cyanide highly toxic and hard to degrade; trace gold loss.</p>
+                <p><strong>Value:</strong> 1. ·OH efficiently oxidizes and breaks cyanide. 2. Porous conductive skeleton enables in-situ electrodeposition for gold recovery.</p>
+            </div>
+
+            <div class="market-card" style="border-top: 4px solid #007bff;">
+                <h4>🏭 Plating/PCB Park Wastewater</h4>
+                <span class="market-tag">Heavy metals</span> <span class="market-tag">Complexes</span>
+                <p><strong>Core pain:</strong> Heavy metal complexes hard to break; COD/ammonia nitrogen hard to meet standards.</p>
+                <p><strong>Value:</strong> Strong oxidation instantly breaks complexes; releases metal ions for cathode deposition and recovery (e.g., Cu, Ni); achieves compliant discharge.</p>
+            </div>
+
+            <div class="market-card" style="border-top: 4px solid #007bff;">
+                <h4>🧪 Pharmaceutical/Pesticide Chemical Wastewater</h4>
+                <span class="market-tag">High salt</span> <span class="market-tag">High toxicity</span>
+                <p><strong>Core pain:</strong> High salt inhibits biochemistry; antibiotics/aromatics highly toxic.</p>
+                <p><strong>Value:</strong> Diamond skeleton resists high-salt corrosion; strong oxidation directly opens rings and breaks chains; significantly improves biodegradability.</p>
+            </div>
+
+            <div class="market-card" style="border-top: 4px solid #28a745;">
+                <h4>👕 Dyeing/Paper Wastewater Upgrading</h4>
+                <span class="market-tag">Large volume</span> <span class="market-tag">Cost reduction</span>
+                <p><strong>Core pain:</strong> Activated carbon frequently pulverizes; sludge disposal cost high.</p>
+                <p><strong>Value:</strong> <strong>Direct replacement</strong> of existing activated carbon filler; no replacement for 5 years; annual operating cost reduced by 40%+.</p>
+            </div>
+
+            <div class="market-card" style="border-top: 4px solid #6f42c1;">
+                <h4>☢️ Nuclear Industry Wastewater</h4>
+                <span class="market-tag">High barrier</span> <span class="market-tag">Long life</span>
+                <p><strong>Core pain:</strong> Maintenance difficult; equipment must be highly stable; minimize consumable replacement.</p>
+                <p><strong>Value:</strong> Diamond highly radiation-resistant; long-life, maintenance-free characteristics well match nuclear industry "minimal/unmanned" requirements.</p>
+            </div>
+
+            <div class="market-card" style="border-top: 4px solid #6f42c1;">
+                <h4>🛢️ Oilfield Injection Water/Fracturing Fluid</h4>
+                <span class="market-tag">Oil-resistant</span> <span class="market-tag">Non-compacting</span>
+                <p><strong>Core pain:</strong> Oil and polymer content; filler easily compacts and blocks.</p>
+                <p><strong>Value:</strong> Chemically inert surface, low oil adsorption; strong oxidation directly degrades polymers; prevents formation blockage.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cost">
+        <h2>5. Economics & Cooperation Models</h2>
+        <div class="highlight-box">
+            <p><strong>💰 Cost reduction:</strong> Although unit purchase price is higher than activated carbon, long life (&gt;5 years vs 0.5 years) and no hazardous waste disposal cost reduce life-cycle cost by <strong>50%+</strong>.</p>
+            <p><strong>🤝 Flexible models:</strong> 
+            <br>1. <strong>Direct sales:</strong> For new projects or major replacement.
+            <br>2. <strong>Leasing:</strong> Annual fee for operators; no asset pressure.
+            <br>3. <strong>Revenue share:</strong> For gold recovery projects; share of recovered metal value.</p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--primary-color); color: white; border: none; text-align: center;">
+        <h2 style="color: white; border-bottom: 1px solid rgba(255,255,255,0.3);">Start Cooperation</h2>
+        <p>Diamond carbon skeleton particle electrode — turning industrial wastewater treatment from "cost center" to "value center."</p>
+        <p style="font-size: 1.1rem; margin-top: 20px;">Contact us for samples or on-site pilot scheduling.</p>
+    </section>
+</div>
+
+<footer>
+    <div class="footer-info">
+        <p><strong>Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd.</strong></p>
+        <p>Address: Room 909, Building 2, No. 2 Xingzhi Road, Jiangbei New Area, Nanjing</p>
+        <p>Email: <a href="mailto:wangbo@tospike.com" class="footer-link">wangbo@tospike.com</a></p>
+        <p>Web: <a href="http://www.tospike.com" target="_blank" class="footer-link">www.tospike.com</a></p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Nanjing CuFeng | All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>

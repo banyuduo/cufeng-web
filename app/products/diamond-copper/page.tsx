@@ -34,8 +34,8 @@ export default function DiamondCopperPage() {
               <h1 className="page-h1 mb-6 text-slate-900">金刚石铜复合材料</h1>
               <p className="page-lead text-slate-600 mb-8">
                 基于散热需求的技术转型核心产品。已成功研发出热导率达 680 W/m·K 的样品，
-                并规划了两条产品线：极致性价比的大批量民用方案，以及热导率超 1200 W/m·K
-                的极致性能版本，可代替昂贵的CVD金刚石。
+                并规划了两条产品线：高性价比的大批量民用方案，以及热导率超 1200 W/m·K
+                的极限性能版本，可代替昂贵的CVD金刚石。
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function DiamondCopperPage() {
                     <span className="font-semibold text-slate-900">1000-2000</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
-                    <span className="page-caption font-medium text-slate-900">ToSpike 极致版</span>
+                    <span className="page-caption font-medium text-slate-900">ToSpike 极限性能版</span>
                     <span className="font-bold text-[#73DBFF] text-lg">1200+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
@@ -75,7 +75,7 @@ export default function DiamondCopperPage() {
           <h2 className="page-h2 mb-12 text-slate-900">应用前景</h2>
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-8 rounded-lg border border-slate-200">
-              <h3 className="page-h3 mb-4 text-slate-900">热管理材料新标杆</h3>
+              <h3 className="page-h3 mb-4 text-slate-900">热管理材料新理念</h3>
               <p className="page-body text-slate-600 mb-6">
                 金刚石铜复合材料正在成为高功率电子设备的标配散热解决方案。从AI芯片到新能源汽车，从5G基站到航空航天，应用前景广阔。
               </p>
@@ -90,7 +90,7 @@ export default function DiamondCopperPage() {
             <div className="bg-white p-8 rounded-lg border border-slate-200">
               <h3 className="page-h3 mb-4 text-slate-900">双产品线驱动增长</h3>
               <p className="page-body text-slate-600 mb-6">
-                性价比版本面向大批量民用市场，极致性能版本面向高端工业应用。两条产品线协同发展，覆盖从消费到工业的全市场。
+                性价比版本面向大批量民用市场，极限性能版本面向高端工业应用。两条产品线协同发展，覆盖从消费到工业的全市场。
               </p>
               <Link
                 href="/cooperation"
@@ -180,7 +180,7 @@ export default function DiamondCopperPage() {
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="page-h3 text-slate-900">极致性能方案</h3>
+                <h3 className="page-h3 text-slate-900">极限性能方案</h3>
                 <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">高端市场</div>
               </div>
               <p className="page-body text-slate-600 mb-6">
@@ -191,7 +191,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">热导率</span>
-                    <span className="font-semibold text-[#73DBFF]">最高可达1200+ W/m·K</span>
+                    <span className="font-semibold text-[#73DBFF]">热导率理论极限可达1200+ W/m·K</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "100%" }} />
