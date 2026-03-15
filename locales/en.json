@@ -52,7 +52,7 @@
       "card3": "This unique interface structure generates tunable endogenous stress fields and heterogeneous energy-level environments, endowing the material with thermal, mechanical, and electrical properties that surpass traditional composites.",
       "achieved": "Currently achieved",
       "achievement1": "High thermal conductivity diamond-copper composite",
-      "achievement1Value": "Thermal conductivity ≥ 680 W/m·K",
+      "achievement1Value": "Lab-tested thermal conductivity ≥ 680 W/m·K",
       "achievement1Note": "With further improvement potential",
       "achievement2": "Reproducible all-carbon functional structures",
       "achievement2Note": "Sample preparation capability",
@@ -76,7 +76,7 @@
         "layer3Line1": "Building a stable all-carbon covalent bonding network",
         "layer3Line2": "Generating tunable endogenous stress fields and heterogeneous energy-level environments",
         "layer4Title": "Atomic Logic (Core Moat)",
-        "layer4Line1": "Source-level R&D based on sp³–sp² hybrid bonding logic",
+        "layer4Line1": "Interface engineering based on sp³–sp² hybrid bonding",
         "layer4Line2": "Atomic-level interface bonding",
         "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
         "layer4MeltLabel": "Atomic covalent bridging"
@@ -84,7 +84,10 @@
     },
     "techEvolution": {
       "title": "Technology Evolution Path",
-      "desc": "Based on the same underlying platform, technology is evolving toward: advanced packaging thermal materials  solid-state battery structural skeleton  high-power device thermal management.",
+      "desc": "Based on the same underlying platform, technology is evolving toward:",
+      "evolution1": "Advanced packaging thermal materials",
+      "evolution2": "High-power device thermal management",
+      "evolution3": "Solid-state battery structural skeleton",
       "viewFullPath": "View Full Technology Architecture"
     },
     "features": {

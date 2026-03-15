@@ -96,21 +96,35 @@ export default async function HomePage({
             {/* 技术演化路径 */}
             <div className="rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 overflow-hidden">
               <div className="p-5 sm:p-8">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
-                    <h3 className="page-h3 text-[#7dd3fc] text-center sm:text-left">
-                      {t("home.techEvolution.title")}
-                    </h3>
-                    <Link
-                      href={`/${validLocale}/patents#evolution-path`}
-                      className="inline-flex items-center justify-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors shrink-0"
-                    >
-                      {t("home.techEvolution.viewFullPath")}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+                  <h3 className="page-h3 text-[#7dd3fc] text-center sm:text-left">
+                    {t("home.techEvolution.title")}
+                  </h3>
+                  <Link
+                    href={`/${validLocale}/patents#evolution-path`}
+                    className="inline-flex items-center justify-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors shrink-0"
+                  >
+                    {t("home.techEvolution.viewFullPath")}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-                <p className="text-white/85 leading-relaxed text-sm">
-                  {t("home.techEvolution.desc")}
-                </p>
+                <div className="text-white/85 leading-relaxed text-base sm:text-lg">
+                  <p className="mb-3">{t("home.techEvolution.desc")}</p>
+                  <ul className="space-y-2 pl-0 list-none">
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#7dd3fc]">·</span>
+                      <span>{t("home.techEvolution.evolution1")}</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#7dd3fc]">·</span>
+                      <span>{t("home.techEvolution.evolution2")}</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#7dd3fc]">·</span>
+                      <span>{t("home.techEvolution.evolution3")}</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -127,7 +141,7 @@ export default async function HomePage({
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8 text-base text-white/92">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-16 lg:gap-20 text-base text-white/92">
                     <div className="flex flex-col gap-1 min-w-0">
                       <div className="font-normal">
                         <span className="text-[#7dd3fc]">1. </span>
