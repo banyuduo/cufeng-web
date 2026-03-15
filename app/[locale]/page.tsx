@@ -44,14 +44,14 @@ export default async function HomePage({
             </div>
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
-            <div className="text-center rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 p-6 sm:p-8">
+            <div className="text-center rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 p-5 sm:p-8">
               <p className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto mb-6 leading-relaxed">
                 {t("home.hero.platformFocus")}
               </p>
               <Button
                 size="lg"
                 asChild
-                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0 text-base"
+                className="gap-2 w-full sm:w-auto bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0 text-base"
               >
                 <Link href={`/${validLocale}/applications`}>
                   {t("home.hero.viewTechApplications")}
@@ -95,8 +95,8 @@ export default async function HomePage({
 
             {/* 技术演化路径 */}
             <div className="rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 overflow-hidden">
-              <div className="p-6 sm:p-8">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+              <div className="p-5 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                     <h3 className="page-h3 text-[#7dd3fc] text-center sm:text-left">
                       {t("home.techEvolution.title")}
                     </h3>
@@ -107,7 +107,7 @@ export default async function HomePage({
                       {t("home.techEvolution.viewFullPath")}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
-                  </div>
+                </div>
                 <p className="text-white/85 leading-relaxed text-sm">
                   {t("home.techEvolution.desc")}
                 </p>
@@ -123,11 +123,11 @@ export default async function HomePage({
                 {t("home.results.subtitle")}
               </p>
               <div className="max-w-4xl lg:max-w-5xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
-                <div className="p-6 sm:p-8 border-b border-[#0077b6]/30">
+                <div className="p-5 sm:p-8 border-b border-[#0077b6]/30">
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8 text-base text-white/92">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8 text-base text-white/92">
                     <div className="flex flex-col gap-1 min-w-0">
                       <div className="font-normal">
                         <span className="text-[#7dd3fc]">1. </span>
@@ -152,7 +152,7 @@ export default async function HomePage({
                   </div>
                 </div>
                 <div className="divide-y divide-[#0077b6]/25">
-                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6">
                     <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                       <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
                     </div>
@@ -161,7 +161,7 @@ export default async function HomePage({
                       <p className="text-slate-300 text-sm leading-relaxed">{t("home.results.processDesc")}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6">
                     <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                       <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
                     </div>
@@ -170,7 +170,7 @@ export default async function HomePage({
                       <p className="text-slate-300 text-sm leading-relaxed">{t("home.results.deliverablesDesc")}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-5 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6">
                     <div className="w-10 h-10 rounded-full bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center flex-shrink-0">
                       <CheckCircle2 className="w-5 h-5 text-[#73DBFF]" />
                     </div>
@@ -193,10 +193,10 @@ export default async function HomePage({
           <h2 className="page-h2 text-white text-center mb-8 sm:mb-10">
             {t("home.hero.platformAdvantageTitle")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
-              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
-                <Atom className="w-7 h-7 text-[#73DBFF]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
+                <Atom className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
                 01 {t("home.features.innovation")}
@@ -216,9 +216,9 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
-              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
-                <Shield className="w-7 h-7 text-[#73DBFF]" />
+            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
+                <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
                 02 {t("home.features.patents")}
@@ -238,9 +238,9 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-6 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
-              <div className="w-14 h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-5">
-                <Handshake className="w-7 h-7 text-[#73DBFF]" />
+            <Card className="p-5 sm:p-8 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
+                <Handshake className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
                 03 {t("home.features.industrial")}
@@ -310,13 +310,13 @@ export default async function HomePage({
           <p className="page-caption text-slate-400 mb-8">
             {t("home.hero.ctaSubtitle")}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" asChild className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white border-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+            <Button size="lg" asChild className="gap-2 w-full sm:w-auto min-h-[44px] bg-[#0077b6] hover:bg-[#0096c7] text-white border-0">
               <Link href={`/${validLocale}/patents`}>
                 {t("home.hero.viewWhitepaper")}
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 bg-transparent border-[#00b4d8]/80 text-white hover:bg-white/10 hover:border-[#00b4d8]">
+            <Button size="lg" variant="outline" asChild className="gap-2 w-full sm:w-auto min-h-[44px] bg-transparent border-[#00b4d8]/80 text-white hover:bg-white/10 hover:border-[#00b4d8]">
               <Link href={`/${validLocale}/cooperation#contact`}>
                 {t("home.hero.contactTeam")}
               </Link>

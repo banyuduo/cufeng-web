@@ -189,7 +189,12 @@ export function HeroPlatformDiagram({
               <CircuitBoard className="w-4 h-4 text-[#5f27cd] shrink-0" />
             </div>
             <h4 className="text-[#7dd3fc] font-semibold text-sm mb-1.5">{s.layer2Title}</h4>
-            <p className="page-caption text-white/85">
+            <div className="page-caption text-white/85 hidden lg:block space-y-0.5">
+              <span className="block">{s.layer2Thermal}</span>
+              <span className="block">{s.layer2Mechanical}</span>
+              <span className="block">{s.layer2Electrical}</span>
+            </div>
+            <p className="page-caption text-white/85 lg:hidden">
               {s.layer2Thermal} · {s.layer2Mechanical} · {s.layer2Electrical}
             </p>
           </div>
