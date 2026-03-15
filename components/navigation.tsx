@@ -6,20 +6,19 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
-import { getTranslations } from "@/lib/translations"
+import { useTranslations } from "@/components/translations-provider"
 import { isValidLocale } from "@/lib/i18n"
 
 export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations()
 
   // 从 pathname 解析 locale：/zh/xxx 或 /en/xxx，兼容 trailingSlash
   const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
   const localeFromPath = pathSegments[0]
   const locale: Locale =
     localeProp ?? (isValidLocale(localeFromPath) ? localeFromPath : "zh")
-
-  const t = getTranslations(locale)
   const prefix = `/${locale}`
 
   useEffect(() => {

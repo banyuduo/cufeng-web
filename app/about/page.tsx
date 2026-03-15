@@ -16,8 +16,10 @@ export default async function AboutPage({
 }) {
   const resolved = await (params ?? Promise.resolve({}))
   const validLocale: Locale = resolved.locale && isValidLocale(resolved.locale) ? resolved.locale : defaultLocale
-  const t = getTranslations(validLocale)
-  const tEn = getTranslations("en")
+  const [t, tEn] = await Promise.all([
+    getTranslations(validLocale),
+    getTranslations("en"),
+  ])
   const prefix = `/${validLocale}`
 
   return (

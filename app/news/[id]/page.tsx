@@ -274,7 +274,7 @@ export default async function NewsDetailPage({
     notFound()
   }
 
-  const t = getTranslations(validLocale)
+  const t = await getTranslations(validLocale)
   const NewsIcon = companyNews ? NEWS_ICONS[id] ?? Building : Building
 
   return (
