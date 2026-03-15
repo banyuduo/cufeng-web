@@ -9,7 +9,6 @@ import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
 import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
-import { HomeAtomicLayer } from "@/components/home-atomic-layer"
 import { FooterNav } from "@/components/footer-nav"
 
 const PlatformValueDiagram = dynamic(
@@ -86,27 +85,17 @@ export default async function HomePage({
                     layer4Line2: t("home.hero.diagram.layer4Line2"),
                     layer4Line3: t("home.hero.diagram.layer4Line3"),
                     layer4MeltLabel: t("home.hero.diagram.layer4MeltLabel"),
+                    sp2LayerLabel: t("home.hero.sp2LayerLabel"),
+                    sp3LayerLabel: t("home.hero.sp3LayerLabel"),
+                    atomicTitle: t("home.hero.atomicTitle"),
                   }}
                 />
               </div>
             </div>
 
-            {/* 第三层：原子级界面工程 + 技术演化路径（合并为一模块） */}
+            {/* 技术演化路径 */}
             <div className="rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 overflow-hidden">
               <div className="p-6 sm:p-8">
-                <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
-                  {t("home.hero.atomicTitle")}
-                </h2>
-                <HomeAtomicLayer
-                  strings={{
-                    sp2LayerLabel: t("home.hero.sp2LayerLabel"),
-                    sp3LayerLabel: t("home.hero.sp3LayerLabel"),
-                    meltLabel: t("home.hero.diagram.layer4MeltLabel"),
-                    mechanism1: t("home.hero.atomicMechanism1"),
-                    mechanism2: t("home.hero.atomicMechanism2"),
-                  }}
-                />
-                <div className="mt-8 pt-8 border-t border-[#0077b6]/30">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                     <h3 className="page-h3 text-[#7dd3fc] text-center sm:text-left">
                       {t("home.techEvolution.title")}
@@ -119,10 +108,9 @@ export default async function HomePage({
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                  <p className="text-white/85 leading-relaxed text-sm">
-                    {t("home.techEvolution.desc")}
-                  </p>
-                </div>
+                <p className="text-white/85 leading-relaxed text-sm">
+                  {t("home.techEvolution.desc")}
+                </p>
               </div>
             </div>
 
@@ -134,13 +122,13 @@ export default async function HomePage({
               <p className="text-center text-[#7dd3fc] text-base sm:text-lg mb-6 sm:mb-8">
                 {t("home.results.subtitle")}
               </p>
-              <div className="max-w-4xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
+              <div className="max-w-4xl lg:max-w-5xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
                 <div className="p-6 sm:p-8 border-b border-[#0077b6]/30">
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-base text-white/92">
-                    <span className="flex flex-wrap items-baseline gap-2 shrink-0">
+                    <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:shrink-0 min-w-0">
                       <span className="text-[#7dd3fc] font-semibold">1</span>
                       <span>{t("home.hero.achievement1")}</span>
                       <span className="text-white/50">·</span>
@@ -149,7 +137,7 @@ export default async function HomePage({
                       <span className="text-white/80">{t("home.hero.achievement1Note")}</span>
                     </span>
                     <span className="hidden sm:inline text-white/40">·</span>
-                    <span className="flex flex-wrap items-baseline gap-2 shrink-0">
+                    <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:shrink-0 min-w-0">
                       <span className="text-[#7dd3fc] font-semibold">2</span>
                       <span>{t("home.hero.achievement2")}</span>
                       <span className="text-white/50">·</span>
