@@ -35,7 +35,7 @@ export type PlatformDiagramStrings = {
 export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStrings }) {
   const s = strings
   return (
-    <div className="w-full max-w-4xl mx-auto rounded-2xl border border-[#0077b6]/35 bg-[#001a33]/80 overflow-hidden shadow-xl shadow-[#0077b6]/10">
+    <div className="w-full max-w-full mx-auto rounded-2xl border border-[#0077b6]/35 bg-[#001a33]/80 overflow-hidden shadow-xl shadow-[#0077b6]/10">
       {/* 1. 顶层：应用场景与未来接口 */}
       <div className="border-b border-[#0077b6]/30 bg-[#001a33]/90 px-3 py-4 sm:px-5 sm:py-5">
         <h4 className="text-[#7dd3fc] font-semibold text-sm mb-3 text-center uppercase tracking-wide">
