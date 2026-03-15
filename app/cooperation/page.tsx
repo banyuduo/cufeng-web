@@ -13,7 +13,7 @@ export default async function CooperationPage({
 }) {
   const resolved = await (params ?? Promise.resolve({}))
   const validLocale: Locale = resolved.locale && isValidLocale(resolved.locale) ? resolved.locale : defaultLocale
-  const t = getTranslations(validLocale)
+  const t = await getTranslations(validLocale)
   const prefix = `/${validLocale}`
 
   return (

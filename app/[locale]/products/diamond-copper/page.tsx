@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ArrowLeft, ArrowRight, Layers, TrendingUp, Zap } from "lucide-react"
 import { isValidLocale, type Locale } from "@/lib/i18n"
-import { getTranslations } from "@/lib/translations"
+import { useTranslations } from "@/components/translations-provider"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
@@ -15,7 +15,7 @@ export default function DiamondCopperPage() {
   const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
   const localeFromPath = pathSegments[0]
   const locale = (isValidLocale(localeFromPath) ? localeFromPath : "zh") as Locale
-  const t = getTranslations(locale)
+  const t = useTranslations()
   const prefix = `/${locale}`
 
   return (

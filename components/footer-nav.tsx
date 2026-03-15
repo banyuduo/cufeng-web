@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { ChevronUp, Mail, MapPin } from "lucide-react"
 import { useState, useEffect } from "react"
 import type { Locale } from "@/lib/i18n"
-import { getTranslations } from "@/lib/translations"
+import { useTranslations } from "@/components/translations-provider"
 import { isValidLocale } from "@/lib/i18n"
 
 export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
@@ -17,7 +17,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
   const locale: Locale =
     localeProp ?? (isValidLocale(localeFromPath) ? localeFromPath : "zh")
 
-  const t = getTranslations(locale)
+  const t = useTranslations()
   const prefix = `/${locale}`
 
   useEffect(() => {

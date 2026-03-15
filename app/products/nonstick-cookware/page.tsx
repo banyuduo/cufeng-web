@@ -7,8 +7,8 @@ import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 import { getTranslations } from "@/lib/translations"
 
-export default function NonstickCookwarePage() {
-  const t = getTranslations("zh")
+export default async function NonstickCookwarePage() {
+  const t = await getTranslations("zh")
   return (
     <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation />

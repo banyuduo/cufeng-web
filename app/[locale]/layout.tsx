@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { locales, type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 import { LocaleProvider } from "@/components/locale-provider"
+import { TranslationsProvider } from "@/components/translations-provider"
+import { getTranslationsData } from "@/lib/translations"
 
 const localeMetadata: Record<Locale, { title: string; description: string }> = {
   zh: {
@@ -37,6 +39,13 @@ export default async function LocaleLayout({
 }>) {
   const { locale } = await params
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
+  const translationsData = await getTranslationsData(validLocale)
 
-  return <LocaleProvider locale={validLocale}>{children}</LocaleProvider>
+  return (
+    <LocaleProvider locale={validLocale}>
+      <TranslationsProvider data={translationsData}>
+        {children}
+      </TranslationsProvider>
+    </LocaleProvider>
+  )
 }

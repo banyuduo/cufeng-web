@@ -92,10 +92,10 @@ const companyNewsContent: Record<Locale, Record<string, CompanyNewsItem>> = {
     },
     "2018-founding": {
       date: "2018年3月12日",
-      title: "南京簇锋科技有限公司成立",
+      title: "南京簇锋机电科技有限公司成立",
       category: "公司动态",
       content: [
-        "2018年3月12日，南京簇锋科技有限公司在江苏省正式注册成立。这标志着创始团队正式踏上了超硬材料技术创业的征程。",
+        "2018年3月12日，南京簇锋机电科技有限公司在江苏省正式注册成立。这标志着创始团队正式踏上了超硬材料技术创业的征程。",
         "公司成立之初，定位为超硬磨料工具行业产品需求解决方案提供商，专注于铸件加工、硬脆材料加工及高精密工具的技术研发与定制化服务。",
         "回首七年创业路，从最初的工程工具制造商，到如今构建基于sp²-sp³键合原理的全碳材料平台，簇锋科技始终秉持以技术解决实际问题的初心，朝着成为客户理想的方案解决商这一目标不断前行。",
       ],
@@ -185,10 +185,10 @@ const companyNewsContent: Record<Locale, Record<string, CompanyNewsItem>> = {
     },
     "2018-founding": {
       date: "March 12, 2018",
-      title: "Nanjing CuFeng Technology Co., Ltd. Founded",
+      title: "Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd. Founded",
       category: "Company News",
       content: [
-        "On March 12, 2018, Nanjing CuFeng Technology Co., Ltd. was officially registered in Jiangsu Province. This marked the founding team's formal embarkation on the entrepreneurial journey of superabrasive material technology.",
+        "On March 12, 2018, Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd. was officially registered in Jiangsu Province. This marked the founding team's formal embarkation on the entrepreneurial journey of superabrasive material technology.",
         "At inception, the company was positioned as a solution provider for product needs in the superabrasive tool industry, focusing on technical R&D and customized services for cast part machining, hard and brittle material machining, and high-precision tools.",
         "Looking back at seven years of entrepreneurship, from the initial engineering tool manufacturer to now building an all-carbon material platform based on sp²-sp³ bonding principles, CuFeng Technology has always adhered to the original intention of solving practical problems with technology, continuously advancing toward the goal of becoming the ideal solution provider for customers.",
       ],

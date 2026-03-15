@@ -1,15 +1,21 @@
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { Atom, Shield, Handshake, CheckCircle2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { getTranslations } from "@/lib/translations"
+import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
+
 import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
 import { HomeAtomicLayer } from "@/components/home-atomic-layer"
-import { PlatformValueDiagram } from "@/components/platform-value-diagram"
-import { getTranslations } from "@/lib/translations"
-import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
+import { FooterNav } from "@/components/footer-nav"
+
+const PlatformValueDiagram = dynamic(
+  () => import("@/components/platform-value-diagram").then((mod) => mod.PlatformValueDiagram),
+  { ssr: true }
+)
 
 export default async function HomePage({
   params,
@@ -18,7 +24,7 @@ export default async function HomePage({
 }) {
   const { locale } = await params
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
-  const t = getTranslations(validLocale)
+  const t = await getTranslations(validLocale)
 
   return (
     <div className="min-h-screen bg-background">
@@ -36,6 +42,22 @@ export default async function HomePage({
               <p className="page-lead text-white/90 font-light">
                 {t("home.hero.visionSubtitle")}
               </p>
+            </div>
+
+            {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
+            <div className="text-center rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/40 p-6 sm:p-8">
+              <p className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto mb-6 leading-relaxed">
+                {t("home.hero.platformFocus")}
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0 text-base"
+              >
+                <Link href={`/${validLocale}/applications`}>
+                  {t("home.hero.viewTechApplications")}
+                </Link>
+              </Button>
             </div>
 
             {/* 第二层：技术平台大模块（标题 + 简短说明 + 三卡片图），为主标题愿景服务 */}
@@ -104,27 +126,14 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* 应用方向 + 查看技术应用领域按钮 */}
-            <div className="text-center">
-              <p className="page-lead text-white/85 max-w-4xl mx-auto mb-6">
-                {t("home.hero.platformFocus")}
-              </p>
-              <Button
-                size="lg"
-                asChild
-                className="gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0"
-              >
-                <Link href={`/${validLocale}/applications`}>
-                  {t("home.hero.viewTechApplications")}
-                </Link>
-              </Button>
-            </div>
-
             {/* 阶段性成果（当前已实现 + 工艺/样品/IP 整合为一块） */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
-                {t("home.hero.phasedResultsTitle")}
+              <h2 className="page-h2 text-white text-center mb-2 sm:mb-3">
+                {t("home.results.title")}
               </h2>
+              <p className="text-center text-[#7dd3fc] text-base sm:text-lg mb-6 sm:mb-8">
+                {t("home.results.subtitle")}
+              </p>
               <div className="max-w-4xl mx-auto rounded-2xl border border-[#00b4d8]/40 bg-[#002244]/50 overflow-hidden">
                 <div className="p-6 sm:p-8 border-b border-[#0077b6]/30">
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
@@ -184,44 +193,8 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* 平台优势 — 三张卡片（图标置顶、标题加粗、短句项目符号） */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-6 sm:mb-8 text-white text-center">
-            {t("home.platform.title")}
-          </h2>
-
-          {/* 纵向生态基底图：应用接口 → 平台机制 → 传统材料极限（图表已表达该段含义，不再重复正文） */}
-          <PlatformValueDiagram
-            strings={{
-              layer1Title: t("home.platform.diagram.layer1Title"),
-              layer1Tim: t("home.platform.diagram.layer1Tim"),
-              layer1Substrate: t("home.platform.diagram.layer1Substrate"),
-              layer1Devices: t("home.platform.diagram.layer1Devices"),
-              layer1Hint: t("home.platform.diagram.layer1Hint"),
-              layer2Title: t("home.platform.diagram.layer2Title"),
-              layer2Item1: t("home.platform.diagram.layer2Item1"),
-              layer2Item2: t("home.platform.diagram.layer2Item2"),
-              layer2Item3: t("home.platform.diagram.layer2Item3"),
-              layer2Item4: t("home.platform.diagram.layer2Item4"),
-              layer2Item5: t("home.platform.diagram.layer2Item5"),
-              layer2Item6: t("home.platform.diagram.layer2Item6"),
-              layer2InterfaceLabel: t("home.platform.diagram.layer2InterfaceLabel"),
-              layer2Bonding: t("home.platform.diagram.layer2Bonding"),
-              layer2Stress: t("home.platform.diagram.layer2Stress"),
-              layer2Coexist: t("home.platform.diagram.layer2Coexist"),
-              layer2Thermal: t("home.platform.diagram.layer2Thermal"),
-              layer2Electronic: t("home.platform.diagram.layer2Electronic"),
-              layer3Title: t("home.platform.diagram.layer3Title"),
-              layer3Label: t("home.platform.diagram.layer3Label"),
-              platformAttr: t("home.platform.diagram.platformAttr"),
-              rdConcept: t("home.platform.diagram.rdConcept"),
-            }}
-          />
-        </div>
-      </section>
-
-      {/* 第七层：平台优势 — 三张卡片（图标置顶、标题加粗、短句项目符号） */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 text-white text-center mb-8 sm:mb-10">
             {t("home.hero.platformAdvantageTitle")}
@@ -294,6 +267,43 @@ export default async function HomePage({
               </ul>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* 平台定位与价值 */}
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="page-h2 mb-6 sm:mb-8 text-white text-center">
+            {t("home.platform.title")}
+          </h2>
+
+          {/* 纵向生态基底图：应用接口 → 平台机制 → 传统材料极限 */}
+          <PlatformValueDiagram
+            strings={{
+              layer1Title: t("home.platform.diagram.layer1Title"),
+              layer1Tim: t("home.platform.diagram.layer1Tim"),
+              layer1Substrate: t("home.platform.diagram.layer1Substrate"),
+              layer1Devices: t("home.platform.diagram.layer1Devices"),
+              layer1Hint: t("home.platform.diagram.layer1Hint"),
+              layer2Title: t("home.platform.diagram.layer2Title"),
+              layer2Item1: t("home.platform.diagram.layer2Item1"),
+              layer2Item2: t("home.platform.diagram.layer2Item2"),
+              layer2Item3: t("home.platform.diagram.layer2Item3"),
+              layer2Item4: t("home.platform.diagram.layer2Item4"),
+              layer2Item5: t("home.platform.diagram.layer2Item5"),
+              layer2Item6: t("home.platform.diagram.layer2Item6"),
+              layer2InterfaceLabel: t("home.platform.diagram.layer2InterfaceLabel"),
+              layer2Bonding: t("home.platform.diagram.layer2Bonding"),
+              layer2Stress: t("home.platform.diagram.layer2Stress"),
+              layer2Coexist: t("home.platform.diagram.layer2Coexist"),
+              layer2Thermal: t("home.platform.diagram.layer2Thermal"),
+              layer2Electronic: t("home.platform.diagram.layer2Electronic"),
+              layer3Title: t("home.platform.diagram.layer3Title"),
+              layer3Label: t("home.platform.diagram.layer3Label"),
+              platformAttr: t("home.platform.diagram.platformAttr"),
+              rdConcept: t("home.platform.diagram.rdConcept"),
+            }}
+          />
         </div>
       </section>
 

@@ -15,7 +15,7 @@ export default async function ProductsPage({
 }) {
   const { locale } = await params
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
-  const t = getTranslations(validLocale)
+  const t = await getTranslations(validLocale)
   const prefix = `/${validLocale}`
 
   return (
