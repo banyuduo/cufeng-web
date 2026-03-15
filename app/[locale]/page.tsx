@@ -127,22 +127,28 @@ export default async function HomePage({
                   <h3 className="page-h3 text-[#7dd3fc] mb-4">
                     {t("home.hero.achieved")}
                   </h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-base text-white/92">
-                    <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:shrink-0 min-w-0">
-                      <span className="text-[#7dd3fc] font-semibold">1</span>
-                      <span>{t("home.hero.achievement1")}</span>
-                      <span className="text-white/50">·</span>
-                      <span className="text-[#7dd3fc] font-mono">{t("home.hero.achievement1Value")}</span>
-                      <span className="text-white/50">·</span>
-                      <span className="text-white/80">{t("home.hero.achievement1Note")}</span>
-                    </span>
-                    <span className="hidden sm:inline text-white/40">·</span>
-                    <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:shrink-0 min-w-0">
-                      <span className="text-[#7dd3fc] font-semibold">2</span>
-                      <span>{t("home.hero.achievement2")}</span>
-                      <span className="text-white/50">·</span>
-                      <span className="text-white/80">{t("home.hero.achievement2Note")}</span>
-                    </span>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8 text-base text-white/92">
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <div className="font-normal">
+                        <span className="text-[#7dd3fc]">1. </span>
+                        {t("home.hero.achievement1")}
+                      </div>
+                      <div className="text-[#7dd3fc] font-mono text-lg sm:text-xl">
+                        {t("home.hero.achievement1Value")}
+                        <span className="text-white/80 font-sans font-normal text-base ml-1">
+                          （{t("home.hero.achievement1Note")}）
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <div className="font-normal">
+                        <span className="text-[#7dd3fc]">2. </span>
+                        {t("home.hero.achievement2")}
+                      </div>
+                      <div className="text-white/80 font-normal">
+                        {t("home.hero.achievement2Note")}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="divide-y divide-[#0077b6]/25">
