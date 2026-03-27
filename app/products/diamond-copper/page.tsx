@@ -34,7 +34,7 @@ export default function DiamondCopperPage() {
               <h1 className="page-h1 mb-6 text-slate-900">金刚石铜复合材料</h1>
               <p className="page-lead text-slate-600 mb-8">
                 基于散热需求的技术转型核心产品。已成功研发出热导率达 680 W/m·K 的样品，
-                并规划了两条产品线：高性价比的大批量民用方案，以及热导率超 1200 W/m·K
+                并规划了两条产品线：高性价比的大批量民用方案，以及热导率超 1000 W/m·K
                 的极限性能版本，可代替昂贵的CVD金刚石。
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function DiamondCopperPage() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-medium text-slate-900">ToSpike 极限性能版</span>
-                    <span className="font-bold text-[#73DBFF] text-lg">1200+</span>
+                    <span className="font-bold text-[#73DBFF] text-lg">1000+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">传统金刚石铜 (70%)</span>
@@ -184,14 +184,14 @@ export default function DiamondCopperPage() {
                 <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">高端市场</div>
               </div>
               <p className="page-body text-slate-600 mb-6">
-                活性熔固多级金刚石颗粒复合，热导率 1200+ W/m·K，可代替昂贵的 CVD 方案，面向高端散热需求。
+                活性熔固多级金刚石颗粒复合，热导率 1000+ W/m·K，可代替昂贵的 CVD 方案，面向高端散热需求。
               </p>
 
               <div className="space-y-4 mb-6">
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">热导率</span>
-                    <span className="font-semibold text-[#73DBFF]">热导率理论极限可达1200+ W/m·K</span>
+                    <span className="font-semibold text-[#73DBFF]">热导率理论极限可达1000+ W/m·K</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "100%" }} />
@@ -371,7 +371,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 text-center shadow-lg">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1200+</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1000+</div>
               <div className="page-caption text-slate-700 font-medium mb-1">极致性能版本</div>
               <div className="page-caption text-slate-500">W/m·K</div>
             </Card>
