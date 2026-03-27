@@ -31,7 +31,7 @@ export default async function ProductsPage({
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
-            <Link href={`${prefix}/products/diamond-copper`}>
+            <Link href={`${prefix}/products/diamond-copper`} className="block h-full min-h-0">
               <Card className="p-6 sm:p-10 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center group-hover:bg-[#1E3A8A] transition-colors">
@@ -67,7 +67,7 @@ export default async function ProductsPage({
               </Card>
             </Link>
 
-            <Link href={`${prefix}/products/thermal-pad`}>
+            <Link href={`${prefix}/products/thermal-pad`} className="block h-full min-h-0">
               <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
@@ -103,7 +103,7 @@ export default async function ProductsPage({
               </Card>
             </Link>
 
-            <Link href={`${prefix}/products/carbon-composite`}>
+            <Link href={`${prefix}/products/carbon-composite`} className="block h-full min-h-0">
               <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0F2A5C] to-[#1E3A8A] flex items-center justify-center group-hover:from-[#1E3A8A] group-hover:to-[#73DBFF]/80 transition-colors">
@@ -139,7 +139,7 @@ export default async function ProductsPage({
               </Card>
             </Link>
 
-            <Link href={`${prefix}/products/nonstick-cookware`}>
+            <Link href={`${prefix}/products/nonstick-cookware`} className="block h-full min-h-0">
               <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
@@ -175,7 +175,7 @@ export default async function ProductsPage({
               </Card>
             </Link>
 
-            <Link href={`${prefix}/products/diamond-tools`} className="md:col-span-2">
+            <Link href={`${prefix}/products/diamond-tools`} className="block h-full min-h-0 md:col-span-2">
               <Card className="p-6 sm:p-10 bg-slate-50 border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
