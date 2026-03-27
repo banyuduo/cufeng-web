@@ -1,7 +1,6 @@
 import React from "react"
 import { TrendingUp, Atom, Cpu, BookOpen, Microscope, Zap, FileText, Battery } from "lucide-react"
 import type { Locale } from "./i18n"
-import { industryArticlesDataEn } from "./industry-articles-en"
 
 export interface IndustryArticleSection {
   title: string
@@ -569,15 +568,16 @@ export const industryArticlesData: IndustryArticle[] = [
   },
 ]
 
-export const industryArticlesMap = Object.fromEntries(
-  industryArticlesData.map((a) => [a.id, a])
-)
-
-export function getIndustryArticles(locale: Locale): IndustryArticle[] {
-  return locale === "en" ? industryArticlesDataEn : industryArticlesData
+/** 英文正文体积大，动态 import 避免中文新闻列表页与中文详情页打包/解析整份 en 数据 */
+export async function getIndustryArticles(locale: Locale): Promise<IndustryArticle[]> {
+  if (locale === "en") {
+    const { industryArticlesDataEn } = await import("./industry-articles-en")
+    return industryArticlesDataEn
+  }
+  return industryArticlesData
 }
 
-export function getIndustryArticlesMap(locale: Locale): Record<string, IndustryArticle> {
-  const data = getIndustryArticles(locale)
+export async function getIndustryArticlesMap(locale: Locale): Promise<Record<string, IndustryArticle>> {
+  const data = await getIndustryArticles(locale)
   return Object.fromEntries(data.map((a) => [a.id, a]))
 }

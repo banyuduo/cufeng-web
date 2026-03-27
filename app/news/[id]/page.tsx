@@ -21,6 +21,7 @@ import {
   parseBoldText,
   type IndustryArticle,
 } from "@/lib/industry-articles"
+import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
 import { getTranslations } from "@/lib/translations"
 import { getCompanyNews, getCompanyNewsIds } from "@/lib/company-news"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
@@ -40,9 +41,7 @@ const NEWS_ICONS: Record<string, typeof FileText> = {
 // 生成静态路径参数，用于静态导出（无 locale 的旧路由）
 export async function generateStaticParams() {
   const companyIds = getCompanyNewsIds()
-  const industryMap = getIndustryArticlesMap("zh")
-  const industryIds = Object.keys(industryMap)
-  return [...companyIds, ...industryIds].map((id) => ({ id }))
+  return [...companyIds, ...INDUSTRY_ARTICLE_IDS].map((id) => ({ id }))
 }
 
 function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticle; prefix: string; t: (key: string) => string }) {
@@ -266,7 +265,7 @@ export default async function NewsDetailPage({
   const validLocale = locale && isValidLocale(locale) ? locale : "zh"
   const prefix = locale && isValidLocale(locale) ? `/${validLocale}` : ""
 
-  const industryArticlesMap = getIndustryArticlesMap(validLocale)
+  const industryArticlesMap = await getIndustryArticlesMap(validLocale)
   const companyNews = getCompanyNews(id, validLocale)
   const industryArticle = industryArticlesMap[id]
 

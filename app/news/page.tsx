@@ -2,7 +2,6 @@ import { Calendar, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText, Arro
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
-import { IndustryInfoNav } from "@/components/industry-info-nav"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { getIndustryArticles } from "@/lib/industry-articles"
 import { getTranslations } from "@/lib/translations"
@@ -47,7 +46,7 @@ export default async function NewsPage({
   const t = await getTranslations(validLocale)
   const prefix = `/${validLocale}`
 
-  const industryArticlesData = getIndustryArticles(validLocale)
+  const industryArticlesData = await getIndustryArticles(validLocale)
   const companyNews = COMPANY_NEWS_IDS.map((id) => ({
     id,
     date: t(`news.items.${id}.date`),
@@ -121,7 +120,26 @@ export default async function NewsPage({
                     <p className="page-caption text-white/75 mb-4">
                       {t("news.industryInfoDesc")}
                     </p>
-                    <IndustryInfoNav />
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href="#industry-trends"
+                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                      >
+                        {t("news.industryTrends")}
+                      </a>
+                      <a
+                        href="#basic-theory"
+                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                      >
+                        {t("news.basicTheory")}
+                      </a>
+                      <a
+                        href="#frontier-tech"
+                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                      >
+                        {t("news.frontierTech")}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

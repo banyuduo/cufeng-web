@@ -1071,6 +1071,7 @@
     },
     "contact": {
       "title": "Contact",
+      "contactUs": "Contact us",
       "intro": "For further dialogue, please reach out through the following channels.",
       "introNote": "We generally prefer to engage around specific questions or well-defined discussion topics.",
       "entity": "Entity",
