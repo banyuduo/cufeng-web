@@ -1,8 +1,8 @@
 import NewsDetailPage from "../../../news/[id]/page"
 import { isValidLocale } from "@/lib/i18n"
-import { getIndustryArticlesMap } from "@/lib/industry-articles"
+import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
 
-const industryIds = Object.keys(getIndustryArticlesMap("zh"))
+const industryIds = [...INDUSTRY_ARTICLE_IDS]
 const newsIds = [
   "2025-patents",
   "2025-diamond-copper",
