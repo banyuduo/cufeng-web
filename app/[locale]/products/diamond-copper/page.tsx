@@ -62,7 +62,7 @@ export default function DiamondCopperPage() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-medium text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
-                    <span className="font-bold text-[#73DBFF] text-lg">1200+</span>
+                    <span className="font-bold text-[#73DBFF] text-lg">1000+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.traditionalDiamondCu")}</span>
@@ -380,7 +380,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 text-center shadow-lg">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1200+</div>
+              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1000+</div>
               <div className="page-caption text-slate-700 font-medium mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
               <div className="page-caption text-slate-500">W/m·K</div>
             </Card>
