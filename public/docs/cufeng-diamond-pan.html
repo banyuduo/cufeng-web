@@ -111,20 +111,34 @@
     }
     /* --- Optimized Image Styles --- */
     figure {
-        margin: 50px auto; /* Adds vertical spacing */
+        margin: 40px auto;
         text-align: center;
+        max-width: 100%;
     }
     figure img {
-        max-width: 65%; /* Controls image size, preventing it from being too large */
+        max-width: 85%;
+        width: 100%;
         height: auto;
+        max-height: 480px;
+        object-fit: contain;
         border-radius: 8px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        border: 1px solid #eee; /* Adds a subtle frame */
+        border: 1px solid #eee;
+        display: block;
+        margin: 0 auto;
+    }
+    figure.product-image img {
+        max-width: 75%;
+        max-height: 420px;
+    }
+    figure.microstructure-image img {
+        max-width: 90%;
+        max-height: 500px;
     }
     figcaption {
-        margin-top: 12px;
-        font-size: 0.9em;
-        color: #666;
+        margin-top: 14px;
+        font-size: 0.95em;
+        color: #555;
         font-style: italic;
     }
     .contact-section {
@@ -183,9 +197,8 @@
         <li><strong>“优雅”的长效不粘</strong><br>我们的锅具提供了一种全新的不粘体验。它拥有优异的初始不粘性。即便经过数年使用，当表面的有机硅层自然磨损后，坚固的钻石基底依然存在。此时，它又能像一口优质的铸铁锅一样，通过简单的“开锅(Seasoning)”，让油脂渗入微观孔隙，形成天然的油膜不粘层，继续为您服务。</li>
     </ol>
     
-    <!-- 替换为您产品的图片 -->
-    <figure>
-    <img src="钻石熔固不粘锅产品图.jpg" alt="钻石熔固不粘锅产品图">
+    <figure class="product-image">
+        <img src="diamond-pan.jpg" alt="钻石熔固不粘锅产品图">
     <figcaption>“钻石时代”不粘锅产品图</figcaption>
     </figure>
     <h2>技术规格一览</h2>
@@ -235,11 +248,10 @@
     <p style="text-align:center; font-style:italic; margin-top: 40px; font-size: 1.2em; color: #555;"><strong>这不仅是一口新锅，更是一种全新的厨具哲学。</strong></p>
     <p>我们相信，最好的工具应该服务于人，而非让人小心翼翼地服务于它。欢迎您，与我们一同进入这个更健康、更耐用、更自由的烹饪新纪元。</p>
 
-    <!-- 替换为您表面纹理的图片 -->
-    <figure>
-    <img src="钻石熔固表面微观图.jpg" alt="钻石熔固表面微观图">
-    <figcaption>钻石熔固表面微观结构图</figcaption>
-</figure>
+    <figure class="microstructure-image">
+        <img src="diamond-pan-sem.jpg" alt="钻石熔固表面微观图">
+        <figcaption>钻石熔固表面微观结构图</figcaption>
+    </figure>
     
     <div class="contact-section">
         <h3>联系我们</h3>
