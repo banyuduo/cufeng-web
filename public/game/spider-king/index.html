@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2a1f35">
+    <meta name="color-scheme" content="dark">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <title>蛛王传说 - 骑士战蛛王</title>
+    <!-- 字体仅用系统栈：离线 / 国内网络下不依赖外网，安卓可正常显示中文 -->
+    <style>
+        html {
+            height: 100%;
+            height: -webkit-fill-available;
+            overflow: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+        body { 
+            margin: 0; 
+            background: #1a1a1a; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: stretch;
+            justify-content: flex-start;
+            height: 100%;
+            min-height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            min-height: -webkit-fill-available;
+            max-height: 100vh;
+            max-height: 100dvh;
+            overflow: hidden; 
+            touch-action: manipulation;
+            overscroll-behavior: none;
+            font-family: 'Roboto', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Noto Sans SC', 'Microsoft YaHei', 'SimHei', sans-serif;
+            padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+            box-sizing: border-box;
+        }
+        #gameWrap {
+            flex: 1 1 0;
+            min-height: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 8px;
+            box-sizing: border-box;
+        }
+        #gameCanvas { 
+            display: block;
+            background: linear-gradient(180deg, #2a1f35 0%, #3d2b4a 40%, #2d1f14 100%); 
+            border: min(6px, 1.2vw) solid #5d4037; 
+            touch-action: none; 
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            aspect-ratio: 800 / 600;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        .hint { 
+            flex: 0 0 auto;
+            color: #ddd; 
+            text-align: center; 
+            font-size: clamp(11px, 2.6vw, 14px);
+            line-height: 1.5;
+            padding: 6px 12px 10px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .hint-warn {
+            color: #ffcc80;
+            font-weight: 600;
+            margin: 0 0 8px;
+            font-size: clamp(12px, 2.8vw, 15px);
+        }
+        /* 竖屏小屏：提示横屏，画布仍可用 */
+        .landscape-tip {
+            display: none;
+            position: fixed;
+            left: 0; right: 0; top: 0;
+            z-index: 5;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 13px;
+            color: #fff;
+            background: rgba(40, 20, 50, 0.92);
+            border-bottom: 1px solid rgba(255,235,59,0.35);
+            pointer-events: none;
+        }
+        @media (orientation: portrait) and (max-width: 900px) {
+            .landscape-tip { display: block; }
+            #gameWrap { padding-top: 36px; }
+        }
+        /* 竖屏时在游戏过程中显示：一键尝试横屏 / 全屏（依赖浏览器能力） */
+        #btnLandscape {
+            position: fixed;
+            right: max(10px, env(safe-area-inset-right));
+            bottom: max(72px, calc(env(safe-area-inset-bottom) + 56px));
+            z-index: 40;
+            padding: 11px 16px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,235,59,0.55);
+            background: linear-gradient(160deg, #4a3a5c, #2d1f38);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: inherit;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+            display: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+        }
+        body.game-running.portrait #btnLandscape {
+            display: block;
+        }
+        /* 横屏手机：压缩说明条，让画布尽量大 */
+        @media (orientation: landscape) and (max-height: 520px) {
+            .hint {
+                font-size: 10px;
+                padding: 2px 8px 4px;
+                line-height: 1.35;
+            }
+        }
+        @media (orientation: landscape) and (max-height: 400px) {
+            .hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="landscape-tip" role="status">建议横屏游玩，操作区更顺手</div>
+<div id="gameWrap">
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+</div>
+<button type="button" id="btnLandscape" aria-label="尝试横屏">横屏</button>
+<div class="hint">
+    <p class="hint-warn">若你看到的是满屏代码（DOCTYPE、script 等）而不是游戏画面：说明未用浏览器打开。请先<strong>解压</strong>整包，<strong>长按 index.html → 打开方式 → Chrome</strong>。详见同目录《README-安卓必读.txt》。</p>
+    安卓：解压后用 <strong>Chrome</strong> 打开 <code>index.html</code>（勿删 <code>sprites</code> 文件夹）。左摇杆移动 · 右侧跳/攻 · 底栏换道具 · 标题页可勾选横屏 · 竖屏游戏中可点「横屏」。<br>
+    电脑：A/D 或 ←/→ 移动，W/空格 跳，J/K 攻
+</div>
+
+<script>
+(function () {
+    var wrap = document.getElementById('gameWrap');
+    var cv = document.getElementById('gameCanvas');
+    if (!wrap || !cv) return;
+    /* 支持 aspect-ratio 时由 CSS 控制尺寸；否则用脚本计算，避免旧 WebView 抛错 */
+    var supportsAr = window.CSS && typeof CSS.supports === 'function' && CSS.supports('aspect-ratio', '800 / 600');
+    if (supportsAr) return;
+    function fitCanvasCss() {
+        var maxW = wrap.clientWidth - 12;
+        var maxH = wrap.clientHeight - 12;
+        if (maxW <= 0 || maxH <= 0) return;
+        var w = Math.min(maxW, maxH * 800 / 600);
+        var h = w * 600 / 800;
+        cv.style.width = w + 'px';
+        cv.style.height = h + 'px';
+        cv.style.maxWidth = 'none';
+        cv.style.maxHeight = 'none';
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fitCanvasCss);
+    } else {
+        fitCanvasCss();
+    }
+    window.addEventListener('resize', fitCanvasCss);
+    window.addEventListener('orientationchange', function () { setTimeout(fitCanvasCss, 350); });
+})();
+</script>
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const FONT = "'Roboto','Noto Sans CJK SC','Source Han Sans SC','Noto Sans SC','Microsoft YaHei','SimHei',sans-serif";
+const SPRITE_BASE = './sprites/';
+
+const sprites = {
+    gameRole: null,
+    secondMap: null,
+    charSheet: null,
+    player: null,
+    boss: null,
+    minion: null
+};
+
+/** 0=第一关（洞穴） 1=第二关（深窟地图） */
+let selectedMapIndex = 0;
+let currentMapIndex = 0;
+
+const MAPS = [
+    { key: "cave", name: "洞穴战场", bossLabel: "蛛王", winLine: "蛛王已被击败，王国安全了。" },
+    { key: "depth", name: "深窟迷阵", bossLabel: "水晶恶魔", winLine: "水晶恶魔已击败，洞穴重归平静。" }
+];
+
+let preferLandscapeLock = true;
+try {
+    if (localStorage.getItem("sk_pref_landscape") === "0") preferLandscapeLock = false;
+} catch (e) {}
+
+/**
+ * 第二关从 the second map.jpg 裁切区域（相对整图 0~1）。
+ * boss：中央翼恶魔；minion：地面小骷髅其一。
+ * 若实机裁切有偏差，只需微调 rx/ry/rw/rh。
+ */
+const SECOND_MAP_ATLAS = {
+    boss: { rx: 0.36, ry: 0.155, rw: 0.275, rh: 0.33 },
+    minion: { rx: 0.162, ry: 0.688, rw: 0.056, rh: 0.108 }
+};
+
+function spriteUrl(relativePath) {
+    return relativePath.split('/').map(encodeURIComponent).join('/');
+}
+
+function loadSprites(cb) {
+    const list = [
+        { key: 'gameRole', file: 'game role.png' },
+        { key: 'secondMap', file: 'the second map.jpg' },
+        { key: 'charSheet', file: 'kenney/Tilemap/tilemap-characters_packed.png' },
+        { key: 'player', file: 'player.png' },
+        { key: 'boss', file: 'boss.png' },
+        { key: 'minion', file: 'minion.png' }
+    ];
+    let pending = list.length;
+    function done() { if (--pending === 0) cb(); }
+    list.forEach(({ key, file }) => {
+        const img = new Image();
+        img.onload = () => { sprites[key] = img; done(); };
+        img.onerror = () => { done(); };
+        img.src = SPRITE_BASE + spriteUrl(file);
+    });
+}
+
+/** TITLE | PLAYING | WIN | OVER */
+let gameState = "TITLE";
+
+/** 标题页地图选择框（与画布 800×600 对应） */
+const mapSelectBoxes = [
+    { x: 72, y: 182, w: 300, h: 168 },
+    { x: 428, y: 182, w: 300, h: 168 }
+];
+/** 标题页：是否在进入游戏时尝试横屏锁定 */
+const landscapeToggleRect = { x: 95, y: 124, w: 610, h: 44 };
+
+const uiButtons = {
+    start: { x: 270, y: 398, w: 260, h: 56 },
+    winRetry: { x: 190, y: 380, w: 180, h: 52 },
+    winMenu: { x: 430, y: 380, w: 180, h: 52 },
+    overRetry: { x: 180, y: 360, w: 200, h: 52 },
+    overClose: { x: 420, y: 360, w: 200, h: 52 }
+};
+const input = { left: false, right: false, up: false, attack: false };
+/** 移动端：左摇杆略上移避免贴底；右上「跳」「攻」并排（≥90px 热区）；道具栏单独最底一行 */
+const touchButtons = { 
+    joystick: { x: 105, y: 452, r: 60 }, 
+    jumpBtn: { x: 598, y: 420, w: 90, h: 90 },
+    attackBtn: { x: 692, y: 420, w: 90, h: 90 }
+};
+const INV_BAR = { startX: 224, y: 524, slot: 64, gap: 8 };
+let joyVx = 0, joyActive = false;
+/** 多指：摇杆与按键分离 */
+let joystickTouchId = null;
+let frameCount = 0;
+
+const player = { 
+    x: 120, y: 380, w: 40, h: 60, 
+    vx: 0, vy: 0, speed: 5.8, jump: -16.8, 
+    isGrounded: false, isAttacking: false, attackFrame: 0, walkFrame: 0, faceRight: true,
+    hp: 100, maxHp: 100 
+};
+
+/** 原 100，约减少 1/3，便于不同武器伤害下仍保持合理难度 */
+const BOSS_MAX_HP = 67;
+const boss = { x: 540, y: 260, w: 130, h: 105, hp: BOSS_MAX_HP, maxHp: BOSS_MAX_HP, float: 0, lastHit: 0 };
+const groundY = 465;
+let minions = [];
+let bullets = [];
+
+let currentWeaponIndex = 3;
+
+const inventory = [
+    { name: "重剑", color: "#8d6e63", damage: 1.2, type: "melee" },
+    { name: "枪", color: "#78909c", damage: 1.0, type: "ranged" },
+    { name: "蓝球", color: "#3f51b5", damage: 0.8, type: "ranged" },
+    { name: "烈火刀", color: "#ff5722", damage: 1.5, type: "melee" },
+    { name: "鸡腿", color: "#ffb74d", heal: 18, type: "heal" }
+];
+
+function resetGame() {
+    player.x = 120; player.y = 380; player.w = 40; player.h = 60;
+    player.vx = 0; player.vy = 0;
+    player.hp = player.maxHp;
+    player.isGrounded = false;
+    player.isAttacking = false; player.attackFrame = 0; player.walkFrame = 0; player.faceRight = true;
+    boss.x = 540; boss.y = 260; boss.hp = boss.maxHp; boss.float = 0; boss.lastHit = 0;
+    minions = [];
+    for (let i = 0; i < 4; i++) minions.push({ x: 460 + Math.random() * 120, y: groundY - 28, w: 26, h: 22 });
+    bullets = [];
+    currentWeaponIndex = 3;
+    joyVx = 0; joyActive = false;
+    joystickTouchId = null;
+    input.left = false; input.right = false; input.up = false; input.attack = false;
+}
+
+function tryLockLandscape() {
+    const el = document.getElementById("gameWrap");
+    const req = el && (el.requestFullscreen?.() ?? el.webkitRequestFullscreen?.());
+    Promise.resolve(req)
+        .then(() => {
+            const o = screen.orientation;
+            if (o && typeof o.lock === "function") {
+                return o.lock("landscape").catch(() => o.lock("landscape-primary"));
+            }
+        })
+        .catch(() => {});
+}
+
+function setGameRunningUi(on) {
+    document.body.classList.toggle("game-running", on);
+}
+
+function refreshPortraitClass() {
+    const p = window.matchMedia("(orientation: portrait)").matches;
+    document.body.classList.toggle("portrait", p);
+    document.body.classList.toggle("landscape", !p);
+}
+
+function startGame() {
+    if (gameState === "TITLE") currentMapIndex = selectedMapIndex;
+    resetGame();
+    gameState = "PLAYING";
+    setGameRunningUi(true);
+    refreshPortraitClass();
+    if (preferLandscapeLock) void tryLockLandscape();
+}
+
+function goTitle() {
+    resetGame();
+    selectedMapIndex = currentMapIndex;
+    gameState = "TITLE";
+    setGameRunningUi(false);
+}
+
+function drawImageCover(img, x, y, w, h) {
+    if (!img || !img.naturalWidth) return;
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const scale = Math.max(w / iw, h / ih);
+    const dw = iw * scale, dh = ih * scale;
+    const ox = x + (w - dw) / 2, oy = y + (h - dh) / 2;
+    ctx.drawImage(img, ox, oy, dw, dh);
+}
+
+/** 从第二关概念图裁切绘制；成功返回 true */
+function drawSecondMapAtlasPart(part, dx, dy, dw, dh) {
+    const img = sprites.secondMap;
+    const a = SECOND_MAP_ATLAS[part];
+    if (!img || !img.naturalWidth || !a) return false;
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const sx = a.rx * iw, sy = a.ry * ih, sw = a.rw * iw, sh = a.rh * ih;
+    ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
+    return true;
+}
+
+function closeGame() {
+    window.close();
+    setTimeout(() => {
+        alert('若无法自动关闭，请手动关闭本浏览器标签页。');
+    }, 200);
+}
+
+// 键盘输入
+window.addEventListener('keydown', e => {
+    if (gameState === 'TITLE') {
+        if (e.code === 'ArrowLeft') { e.preventDefault(); selectedMapIndex = 0; return; }
+        if (e.code === 'ArrowRight') { e.preventDefault(); selectedMapIndex = 1; return; }
+        if (e.code === 'Enter' || e.code === 'Space') {
+            e.preventDefault();
+            startGame();
+            return;
+        }
+    }
+    if (gameState === 'WIN' && (e.code === 'Enter' || e.code === 'Space')) {
+        e.preventDefault();
+        startGame();
+        return;
+    }
+    if (gameState === 'OVER') {
+        if (e.code === 'Enter') {
+            e.preventDefault();
+            startGame();
+            return;
+        }
+        if (e.code === 'Escape') {
+            e.preventDefault();
+            closeGame();
+            return;
+        }
+    }
+    if (gameState !== 'PLAYING') return;
+    if (e.code === 'KeyA' || e.code === 'ArrowLeft') { input.left = true; player.faceRight = false; }
+    if (e.code === 'KeyD' || e.code === 'ArrowRight') { input.right = true; player.faceRight = true; }
+    if (e.code === 'KeyW' || e.code === 'ArrowUp' || e.code === 'Space') input.up = true;
+    if (e.code === 'KeyJ' || e.code === 'KeyK') input.attack = true;
+});
+window.addEventListener('keyup', e => {
+    if (gameState !== 'PLAYING') return;
+    if (e.code === 'KeyA' || e.code === 'ArrowLeft') input.left = false;
+    if (e.code === 'KeyD' || e.code === 'ArrowRight') input.right = false;
+    if (e.code === 'KeyW' || e.code === 'ArrowUp' || e.code === 'Space') input.up = false;
+});
+
+canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
+canvas.addEventListener('touchcancel', handleTouchEnd, { passive: false });
+canvas.addEventListener('mousedown', handleClick);
+
+function canvasToGame(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+        mx: (clientX - rect.left) * (canvas.width / rect.width),
+        my: (clientY - rect.top) * (canvas.height / rect.height)
+    };
+}
+
+function hitTest(b, mx, my) {
+    return mx >= b.x && mx <= b.x + b.w && my >= b.y && my <= b.y + b.h;
+}
+
+function setJoystickFromPoint(mx, my) {
+    const jdx = mx - touchButtons.joystick.x;
+    const dead = 10;
+    const eff = Math.abs(jdx) < dead ? 0 : jdx;
+    joyVx = Math.max(-player.speed, Math.min(player.speed, (eff / touchButtons.joystick.r) * player.speed * 1.28));
+    if (jdx > 12) player.faceRight = true;
+    if (jdx < -12) player.faceRight = false;
+}
+
+function handleTouchStart(e) {
+    e.preventDefault();
+    for (const t of e.changedTouches) {
+        const { mx, my } = canvasToGame(t.clientX, t.clientY);
+        if (gameState !== 'PLAYING') {
+            handleInteraction(mx, my);
+            continue;
+        }
+        if (hitTest(touchButtons.jumpBtn, mx, my)) {
+            if (player.isGrounded) player.vy = player.jump;
+            continue;
+        }
+        if (hitTest(touchButtons.attackBtn, mx, my)) {
+            player.isAttacking = true;
+            continue;
+        }
+        const jdx = mx - touchButtons.joystick.x;
+        const jdy = my - touchButtons.joystick.y;
+        if (Math.hypot(jdx, jdy) < touchButtons.joystick.r + 32) {
+            joystickTouchId = t.identifier;
+            joyActive = true;
+            setJoystickFromPoint(mx, my);
+            continue;
+        }
+        const { startX, y, slot, gap } = INV_BAR;
+        if (my >= y && my <= 600) {
+            for (let i = 0; i < 5; i++) {
+                const slotX = startX + i * (slot + gap);
+                if (mx >= slotX && mx <= slotX + slot) {
+                    currentWeaponIndex = i;
+                    break;
+                }
+            }
+            continue;
+        }
+        if (my < 410) player.isAttacking = true;
+    }
+}
+
+function handleClick(e) {
+    const { mx, my } = canvasToGame(e.clientX, e.clientY);
+    handleInteraction(mx, my);
+}
+
+function handleInteraction(mx, my) {
+    if (gameState === 'TITLE') {
+        if (hitTest(landscapeToggleRect, mx, my)) {
+            preferLandscapeLock = !preferLandscapeLock;
+            try {
+                localStorage.setItem("sk_pref_landscape", preferLandscapeLock ? "1" : "0");
+            } catch (e) {}
+            return;
+        }
+        if (hitTest(mapSelectBoxes[0], mx, my)) selectedMapIndex = 0;
+        if (hitTest(mapSelectBoxes[1], mx, my)) selectedMapIndex = 1;
+        if (hitTest(uiButtons.start, mx, my)) startGame();
+        return;
+    }
+    if (gameState === 'WIN') {
+        if (hitTest(uiButtons.winRetry, mx, my)) startGame();
+        if (hitTest(uiButtons.winMenu, mx, my)) goTitle();
+        return;
+    }
+    if (gameState === 'OVER') {
+        if (hitTest(uiButtons.overRetry, mx, my)) startGame();
+        if (hitTest(uiButtons.overClose, mx, my)) closeGame();
+        return;
+    }
+    if (hitTest(touchButtons.jumpBtn, mx, my)) {
+        if (player.isGrounded) player.vy = player.jump;
+        return;
+    }
+    if (hitTest(touchButtons.attackBtn, mx, my)) {
+        player.isAttacking = true;
+        return;
+    }
+    const jdx = mx - touchButtons.joystick.x;
+    const jdy = my - touchButtons.joystick.y;
+    if (Math.hypot(jdx, jdy) < touchButtons.joystick.r + 32) {
+        joyActive = true;
+        setJoystickFromPoint(mx, my);
+        return;
+    }
+    const { startX, y, slot, gap } = INV_BAR;
+    if (my >= y && my <= 600) {
+        for (let i = 0; i < 5; i++) {
+            const slotX = startX + i * (slot + gap);
+            if (mx >= slotX && mx <= slotX + slot) {
+                currentWeaponIndex = i;
+                return;
+            }
+        }
+    }
+    if (my < 410) player.isAttacking = true;
+}
+
+function handleTouchMove(e) {
+    e.preventDefault();
+    if (joystickTouchId === null) return;
+    let t = null;
+    for (let i = 0; i < e.touches.length; i++) {
+        if (e.touches[i].identifier === joystickTouchId) {
+            t = e.touches[i];
+            break;
+        }
+    }
+    if (!t) return;
+    const { mx, my } = canvasToGame(t.clientX, t.clientY);
+    setJoystickFromPoint(mx, my);
+}
+
+function handleTouchEnd(e) {
+    e.preventDefault();
+    for (const t of e.changedTouches) {
+        if (t.identifier === joystickTouchId) {
+            joystickTouchId = null;
+            joyActive = false;
+            joyVx = 0;
+        }
+    }
+}
+
+function spawnMinion() {
+    minions.push({ x: boss.x + (Math.random() - 0.5) * 120, y: groundY - 28, w: 26, h: 22 });
+}
+
+function drawPlayer(px, py) {
+    const isJumping = !player.isGrounded;
+    const weapon = inventory[currentWeaponIndex];
+
+    const drawWeaponOverlay = () => {
+        if (weapon.name !== "鸡腿" && player.isAttacking) {
+            ctx.save();
+            ctx.translate(px + player.w/2 + (player.faceRight ? 25 : -25), py + 28);
+            ctx.scale(player.faceRight ? 1 : -1, 1);
+            ctx.fillStyle = weapon.color;
+            ctx.fillRect(0, -4, 40, 8);
+            ctx.restore();
+        }
+    };
+
+    // Kenney 角色图集（24×24，9 列），贴近「game role」示意图中的小人风格
+    if (sprites.charSheet && sprites.charSheet.complete && sprites.charSheet.naturalWidth > 0) {
+        const TW = 24, TH = 24;
+        let tile = 0;
+        if (!player.isGrounded) tile = 2;
+        else if (Math.abs(player.vx) > 0.5) tile = Math.floor(frameCount / 6) % 2;
+        const sx = (tile % 9) * TW;
+        const sy = Math.floor(tile / 9) * TH;
+        ctx.save();
+        ctx.translate(px + player.w / 2, py + player.h / 2);
+        ctx.scale(player.faceRight ? 1 : -1, 1);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(sprites.charSheet, sx, sy, TW, TH, -player.w / 2, -player.h / 2, player.w, player.h);
+        ctx.restore();
+        drawWeaponOverlay();
+        return;
+    }
+
+    if (sprites.player && sprites.player.complete && sprites.player.naturalWidth > 0) {
+        ctx.save();
+        ctx.translate(px + player.w / 2, py + player.h / 2);
+        ctx.scale(player.faceRight ? 1 : -1, 1);
+        ctx.translate(-player.w / 2, -player.h / 2);
+        ctx.drawImage(sprites.player, 0, 0, player.w, player.h);
+        ctx.restore();
+        drawWeaponOverlay();
+        return;
+    }
+
+    if (isJumping && Math.abs(player.vx) > 1) {
+        ctx.save();
+        ctx.globalAlpha = 0.4;
+        ctx.strokeStyle = "#ffcc80";
+        ctx.lineWidth = 2;
+        const dir = player.faceRight ? -1 : 1;
+        for (let i = 0; i < 5; i++) {
+            const baseX = player.faceRight ? px - 10 - i * 14 : px + player.w + 10 + i * 14;
+            ctx.beginPath();
+            ctx.moveTo(baseX, py + 25 + i * 5);
+            ctx.lineTo(baseX + dir * 10, py + 40 + i * 5);
+            ctx.stroke();
+        }
+        ctx.restore();
+    }
+
+    if (isJumping && player.attackFrame > 0 && weapon.name === "烈火刀") {
+        ctx.save();
+        ctx.globalAlpha = 0.7;
+        const seed = (n) => Math.sin(frameCount * 0.3 + n * 1.7) * 0.5 + 0.5;
+        ctx.fillStyle = "#ffcc00";
+        for (let i = 0; i < 5; i++) {
+            const ax = px + player.w/2 + (seed(i) - 0.5) * 40;
+            const ay = py + 28 + (seed(i+3) - 0.5) * 24;
+            ctx.beginPath(); ctx.arc(ax, ay, 2 + seed(i+5), 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.restore();
+    }
+
+    ctx.save();
+    ctx.translate(px + (player.faceRight ? 0 : player.w), py);
+    if (!player.faceRight) ctx.scale(-1, 1);
+    ctx.translate(player.faceRight ? 0 : -player.w, 0);
+    
+    const legSwing = player.isGrounded && Math.abs(player.vx) > 0.5 ? Math.sin(player.walkFrame) * 7 : 0;
+
+    ctx.strokeStyle = '#37474f'; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(14, 48); ctx.lineTo(12 + legSwing, 58); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(26, 48); ctx.lineTo(28 - legSwing, 58); ctx.stroke();
+
+    // 忍者风身体：灰色紧身衣
+    ctx.fillStyle = '#546e7a';
+    ctx.fillRect(8, 18, 26, 34);
+    ctx.fillStyle = '#455a64';
+    ctx.fillRect(10, 22, 22, 26);
+
+    // 头罩+护目镜
+    ctx.fillStyle = '#37474f';
+    ctx.beginPath(); ctx.arc(21, 16, 12, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#ffeb3b';
+    ctx.fillRect(12, 11, 16, 6);
+
+    ctx.strokeStyle = '#263238'; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(30, 26); ctx.lineTo(44, 32); ctx.stroke();
+
+    if (weapon.name === "鸡腿") {
+        ctx.fillStyle = "#ffb74d";
+        ctx.beginPath(); ctx.ellipse(50, 30, 9, 18, -0.6, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#fff"; ctx.fillRect(54, 18, 4, 14);
+    } else if (weapon.name === "枪") {
+        ctx.fillStyle = "#607d8b";
+        ctx.fillRect(46, 25, 24, 6);
+        ctx.fillStyle = "#263238"; ctx.fillRect(64, 23, 6, 6);
+    } else if (weapon.name === "蓝球") {
+        ctx.fillStyle = "#3f51b5";
+        ctx.shadowColor = "#5c6bc0"; ctx.shadowBlur = 8;
+        ctx.beginPath(); ctx.arc(54, 32, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
+    } else {
+        const swordColor = weapon.color;
+        if (player.isAttacking) {
+            const flameFlicker = Math.sin(frameCount * 0.8) * 0.15 + 0.85;
+            ctx.fillStyle = `hsl(25, 100%, ${50*flameFlicker}%)`;
+            ctx.beginPath();
+            ctx.moveTo(44, 32);
+            ctx.quadraticCurveTo(88, 16, 58, 54);
+            ctx.fill();
+            ctx.fillStyle = "#ffeb3b";
+            ctx.fillRect(48, 28, 42, 10);
+            if (weapon.name === "烈火刀") {
+                ctx.fillStyle = `rgba(255, ${Math.floor(100*flameFlicker)}, 0, 0.9)`;
+                ctx.fillRect(50, 30, 38, 6);
+            }
+        } else {
+            ctx.fillStyle = swordColor;
+            ctx.fillRect(44, 18, 6, 34);
+            if (weapon.name === "烈火刀") {
+                ctx.fillStyle = "#ff9800";
+                ctx.fillRect(44, 20, 6, 30);
+            }
+        }
+    }
+    ctx.restore();
+}
+
+function drawMinion(m) {
+    if (currentMapIndex === 1 && sprites.secondMap && sprites.secondMap.naturalWidth > 0) {
+        ctx.save();
+        ctx.imageSmoothingEnabled = true;
+        if (drawSecondMapAtlasPart("minion", m.x, m.y, m.w, m.h)) {
+            ctx.restore();
+            return;
+        }
+        ctx.restore();
+    }
+    if (sprites.minion && sprites.minion.complete && sprites.minion.naturalWidth > 0) {
+        ctx.drawImage(sprites.minion, m.x, m.y, m.w, m.h);
+        return;
+    }
+    ctx.save();
+    ctx.translate(m.x + 13, m.y + 11);
+    ctx.fillStyle = "#37474f";
+    ctx.beginPath(); ctx.ellipse(0, 0, 13, 11, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#d32f2f";
+    ctx.fillRect(-8, 0, 6, 6); ctx.fillRect(2, 2, 6, 6);
+    ctx.strokeStyle = "#263238"; ctx.lineWidth = 2.5;
+    for (let i = 0; i < 4; i++) {
+        const ang = i * 0.75 - 1.1;
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(ang) * -19, Math.sin(ang) * 13); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(ang + 3) * 19, Math.sin(ang + 3) * 13); ctx.stroke();
+    }
+    ctx.fillStyle = "#f44336";
+    ctx.fillRect(-7, -6, 5, 5); ctx.fillRect(2, -6, 5, 5);
+    ctx.restore();
+}
+
+function drawItemIcon(item, highlighted) {
+    const s = (highlighted ? 1.05 : 1) * 1.22;
+    ctx.save();
+    ctx.scale(s, s);
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+
+    ctx.fillStyle = "rgba(255,255,255,0.16)";
+    ctx.beginPath();
+    ctx.arc(0, 0, 22, 0, Math.PI * 2);
+    ctx.fill();
+
+    switch (item.name) {
+        case "重剑": {
+            ctx.strokeStyle = "#263238";
+            ctx.lineWidth = 2;
+            ctx.fillStyle = "#cfd8dc";
+            ctx.fillRect(-6, -20, 12, 36);
+            ctx.strokeRect(-6, -20, 12, 36);
+            ctx.fillStyle = "#90a4ae";
+            ctx.fillRect(-4, -18, 8, 30);
+            ctx.fillStyle = "#5d4037";
+            ctx.fillRect(-9, 14, 18, 7);
+            ctx.strokeRect(-9, 14, 18, 7);
+            ctx.fillStyle = "#8d6e63";
+            ctx.fillRect(-11, 10, 22, 6);
+            ctx.strokeStyle = "#3e2723";
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(-13, 10);
+            ctx.lineTo(13, 10);
+            ctx.stroke();
+            break;
+        }
+        case "枪": {
+            ctx.fillStyle = "#546e7a";
+            ctx.fillRect(-22, -4, 44, 9);
+            ctx.strokeStyle = "#263238";
+            ctx.lineWidth = 2;
+            ctx.strokeRect(-22, -4, 44, 9);
+            ctx.fillStyle = "#37474f";
+            ctx.fillRect(14, -7, 8, 15);
+            ctx.strokeRect(14, -7, 8, 15);
+            ctx.fillStyle = "#263238";
+            ctx.fillRect(-23, -2, 7, 5);
+            ctx.fillStyle = "#eceff1";
+            ctx.beginPath();
+            ctx.arc(17, -1, 2.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = "#263238";
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            break;
+        }
+        case "蓝球": {
+            const g = ctx.createRadialGradient(-5, -5, 1, 0, 0, 15);
+            g.addColorStop(0, "#9fa8da");
+            g.addColorStop(0.5, item.color);
+            g.addColorStop(1, "#1a237e");
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(0, 0, 15, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = "rgba(255,255,255,0.9)";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.fillStyle = "rgba(255,255,255,0.6)";
+            ctx.beginPath();
+            ctx.arc(-6, -6, 4, 0, Math.PI * 2);
+            ctx.fill();
+            break;
+        }
+        case "烈火刀": {
+            ctx.fillStyle = "#ff5722";
+            ctx.beginPath();
+            ctx.moveTo(-4, -22);
+            ctx.lineTo(4, -22);
+            ctx.lineTo(5, 20);
+            ctx.lineTo(-5, 20);
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = "#bf360c";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.fillStyle = "#ff9800";
+            ctx.fillRect(-7, -26, 14, 7);
+            ctx.strokeRect(-7, -26, 14, 7);
+            ctx.fillStyle = "#ffeb3b";
+            for (let i = 0; i < 3; i++) {
+                ctx.beginPath();
+                ctx.moveTo(-3 + i * 3, -26 - i * 2);
+                ctx.lineTo(0 + i * 3, -22);
+                ctx.lineTo(2 + i * 3, -26 - i * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+            break;
+        }
+        case "鸡腿": {
+            ctx.fillStyle = "#ffcc80";
+            ctx.strokeStyle = "#e65100";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.ellipse(1, 3, 12, 15, 0.35, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = "#fffde7";
+            ctx.fillRect(11, -8, 5, 18);
+            ctx.strokeStyle = "#bdbdbd";
+            ctx.strokeRect(11, -8, 5, 18);
+            ctx.fillStyle = "#eceff1";
+            ctx.fillRect(12, -12, 3, 6);
+            break;
+        }
+        default:
+            ctx.fillStyle = item.color;
+            ctx.fillRect(-14, -14, 28, 28);
+    }
+    ctx.restore();
+}
+
+function drawCrystal(x, y) {
+    ctx.save();
+    ctx.shadowColor = "#81d4fa";
+    ctx.shadowBlur = 20;
+    ctx.fillStyle = "#e1f5fe";
+    ctx.strokeStyle = "#4fc3f7"; ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y); ctx.lineTo(x-14, y-48); ctx.lineTo(x, y-72); ctx.lineTo(x+14, y-48);
+    ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = "rgba(255,255,255,0.6)";
+    ctx.fillRect(x-4, y-35, 8, 25);
+    ctx.shadowBlur = 0;
+    ctx.restore();
+}
+
+function drawGameBackground() {
+    const gy = groundY;
+    if (currentMapIndex === 1 && sprites.secondMap && sprites.secondMap.complete && sprites.secondMap.naturalWidth > 0) {
+        ctx.save();
+        ctx.imageSmoothingEnabled = true;
+        drawImageCover(sprites.secondMap, 0, 0, canvas.width, gy);
+        ctx.restore();
+        ctx.fillStyle = "rgba(18, 14, 28, 0.4)";
+        ctx.fillRect(0, 0, canvas.width, gy);
+    } else {
+        ctx.fillStyle = "#1a1520";
+        ctx.fillRect(0, 0, canvas.width, gy);
+        for (let i = 0; i < 20; i++) {
+            ctx.fillStyle = `rgba(80,60,100,${0.3 + Math.sin(i*0.5 + frameCount*0.02)*0.1})`;
+            ctx.fillRect(i * 45, 0, 50, gy);
+        }
+        drawCrystal(140, 445);
+        drawCrystal(380, 452);
+        drawCrystal(620, 438);
+        drawCrystal(250, 470);
+    }
+    ctx.fillStyle = "#3d3528";
+    ctx.fillRect(0, gy, canvas.width, 200);
+    for (let i = 0; i < 25; i++) {
+        const tx = (i * 37 + frameCount * 0.3) % (canvas.width + 40) - 20;
+        ctx.fillStyle = currentMapIndex === 1 ? "#3a3530" : "#4a4035";
+        ctx.fillRect(tx, gy + 5, 35, 15);
+    }
+}
+
+function drawUI() {
+    ctx.save();
+    ctx.globalAlpha = 0.75;
+    ctx.fillStyle = "rgba(60,60,80,0.5)";
+    ctx.beginPath();
+    ctx.arc(touchButtons.joystick.x, touchButtons.joystick.y, touchButtons.joystick.r + 4, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,255,255,0.9)";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    const knobMax = touchButtons.joystick.r - 22;
+    const kx = Math.max(-knobMax, Math.min(knobMax, joyVx * 2.35));
+    ctx.beginPath(); ctx.arc(touchButtons.joystick.x + kx, touchButtons.joystick.y, 20, 0, Math.PI*2); ctx.fill();
+    ctx.strokeStyle = "#fff"; ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.fillStyle = "rgba(60,80,100,0.65)";
+    ctx.fillRect(touchButtons.jumpBtn.x, touchButtons.jumpBtn.y, touchButtons.jumpBtn.w, touchButtons.jumpBtn.h);
+    ctx.strokeStyle = "#fff"; ctx.lineWidth = 3;
+    ctx.strokeRect(touchButtons.jumpBtn.x, touchButtons.jumpBtn.y, touchButtons.jumpBtn.w, touchButtons.jumpBtn.h);
+    ctx.fillStyle = "#fff";
+    ctx.save();
+    ctx.font = `bold 30px ${FONT}`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("跳", touchButtons.jumpBtn.x + touchButtons.jumpBtn.w / 2, touchButtons.jumpBtn.y + touchButtons.jumpBtn.h / 2);
+    ctx.restore();
+
+    ctx.fillStyle = "rgba(120,50,70,0.7)";
+    ctx.fillRect(touchButtons.attackBtn.x, touchButtons.attackBtn.y, touchButtons.attackBtn.w, touchButtons.attackBtn.h);
+    ctx.strokeStyle = "#fff"; ctx.lineWidth = 3;
+    ctx.strokeRect(touchButtons.attackBtn.x, touchButtons.attackBtn.y, touchButtons.attackBtn.w, touchButtons.attackBtn.h);
+    ctx.fillStyle = "#fff";
+    ctx.save();
+    ctx.font = `bold 30px ${FONT}`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("攻", touchButtons.attackBtn.x + touchButtons.attackBtn.w / 2, touchButtons.attackBtn.y + touchButtons.attackBtn.h / 2);
+    ctx.restore();
+
+    const { startX, y: invY, slot, gap } = INV_BAR;
+    const half = slot / 2;
+    inventory.forEach((item, i) => {
+        const x = startX + i * (slot + gap);
+        const cx = x + half, cy = invY + half;
+        const sel = i === currentWeaponIndex;
+        ctx.fillStyle = "rgba(40,40,52,0.88)";
+        ctx.fillRect(x, invY, slot, slot);
+        ctx.strokeStyle = sel ? "#ffeb3b" : "rgba(255,255,255,0.65)";
+        ctx.lineWidth = sel ? 4 : 2;
+        ctx.strokeRect(x, invY, slot, slot);
+        ctx.save();
+        ctx.translate(cx, cy);
+        drawItemIcon(item, sel);
+        ctx.restore();
+        ctx.font = `bold ${sel ? 13 : 11}px ${FONT}`;
+        ctx.fillStyle = sel ? "#ffeb3b" : "rgba(255,255,255,0.92)";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "alphabetic";
+        ctx.fillText(item.name, x + half, invY + slot + 12);
+        ctx.textAlign = "left";
+    });
+}
+
+function drawTitleScreen() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const g = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    g.addColorStop(0, "#2a1f35");
+    g.addColorStop(0.45, "#3d2b4a");
+    g.addColorStop(1, "#1a1520");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#fff";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const titleFont = Math.min(52, Math.max(28, canvas.width / 15));
+    const subFont = Math.min(18, Math.max(12, canvas.width / 44));
+    const hintFont = Math.min(15, Math.max(11, canvas.width / 52));
+    ctx.font = `bold ${titleFont}px ${FONT}`;
+    ctx.fillText("蛛王传说", canvas.width / 2, 78);
+    ctx.font = `${subFont}px ${FONT}`;
+    ctx.fillStyle = "rgba(255,255,255,0.88)";
+    ctx.fillText("选择地图后点击「开始游戏」", canvas.width / 2, 118);
+
+    const lr = landscapeToggleRect;
+    ctx.fillStyle = "rgba(0,0,0,0.35)";
+    ctx.fillRect(lr.x, lr.y, lr.w, lr.h);
+    ctx.strokeStyle = "rgba(255,255,255,0.45)";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(lr.x, lr.y, lr.w, lr.h);
+    const cx = lr.x + 22;
+    const cy = lr.y + lr.h / 2;
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(cx - 10, cy - 10, 20, 20);
+    if (preferLandscapeLock) {
+        ctx.beginPath();
+        ctx.moveTo(cx - 5, cy);
+        ctx.lineTo(cx - 1, cy + 6);
+        ctx.lineTo(cx + 8, cy - 6);
+        ctx.stroke();
+    }
+    ctx.fillStyle = "#fff";
+    ctx.font = `${Math.min(15, Math.max(12, canvas.width / 52))}px ${FONT}`;
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+    ctx.fillText("进入游戏时尝试横屏锁定（推荐手机）", lr.x + 40, cy);
+
+    ctx.textAlign = "center";
+    for (let i = 0; i < 2; i++) {
+        const box = mapSelectBoxes[i];
+        const sel = selectedMapIndex === i;
+        ctx.save();
+        ctx.beginPath();
+        if (typeof ctx.roundRect === 'function') ctx.roundRect(box.x, box.y, box.w, box.h, 4);
+        else ctx.rect(box.x, box.y, box.w, box.h);
+        ctx.clip();
+        if (i === 0 && sprites.gameRole && sprites.gameRole.complete) {
+            ctx.imageSmoothingEnabled = true;
+            drawImageCover(sprites.gameRole, box.x, box.y, box.w, box.h);
+        } else if (i === 1 && sprites.secondMap && sprites.secondMap.complete) {
+            ctx.imageSmoothingEnabled = true;
+            drawImageCover(sprites.secondMap, box.x, box.y, box.w, box.h);
+        } else {
+            ctx.fillStyle = i === 0 ? "#4a3a55" : "#2a3540";
+            ctx.fillRect(box.x, box.y, box.w, box.h);
+        }
+        ctx.restore();
+        ctx.fillStyle = "rgba(0,0,0,0.45)";
+        ctx.fillRect(box.x, box.y + box.h - 36, box.w, 36);
+        ctx.strokeStyle = sel ? "#ffeb3b" : "rgba(255,255,255,0.6)";
+        ctx.lineWidth = sel ? 5 : 2;
+        ctx.beginPath();
+        if (typeof ctx.roundRect === 'function') ctx.roundRect(box.x, box.y, box.w, box.h, 4);
+        else ctx.rect(box.x, box.y, box.w, box.h);
+        ctx.stroke();
+        ctx.font = `bold ${Math.min(17, Math.max(14, canvas.width / 48))}px ${FONT}`;
+        ctx.fillStyle = sel ? "#ffeb3b" : "#fff";
+        ctx.textBaseline = "middle";
+        ctx.fillText(MAPS[i].name, box.x + box.w / 2, box.y + box.h - 18);
+    }
+
+    ctx.textBaseline = "middle";
+    const b = uiButtons.start;
+    const pulse = 1 + Math.sin(frameCount * 0.08) * 0.04;
+    ctx.save();
+    ctx.translate(b.x + b.w / 2, b.y + b.h / 2);
+    ctx.scale(pulse, pulse);
+    ctx.fillStyle = "rgba(200, 60, 80, 0.95)";
+    ctx.strokeStyle = "#ffeb3b";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    const rx = -b.w / 2, ry = -b.h / 2, rw = b.w, rh = b.h;
+    if (typeof ctx.roundRect === 'function') ctx.roundRect(rx, ry, rw, rh, 12);
+    else ctx.rect(rx, ry, rw, rh);
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+    ctx.font = `bold ${Math.min(26, Math.max(18, canvas.width / 30))}px ${FONT}`;
+    ctx.fillStyle = "#fff";
+    ctx.fillText("开始游戏", canvas.width / 2, b.y + b.h / 2);
+    ctx.font = `${hintFont}px ${FONT}`;
+    ctx.fillStyle = "rgba(255,255,255,0.65)";
+    ctx.fillText("点击地图切换 · ← / → 键 · 空格或回车开始", canvas.width / 2, b.y + b.h + 26);
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
+}
+
+function drawWinOverlay() {
+    ctx.fillStyle = "rgba(0,0,0,0.72)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#ffeb3b";
+    ctx.font = `bold ${Math.min(56, Math.max(32, canvas.width / 14))}px ${FONT}`;
+    ctx.fillText("胜利！", canvas.width / 2, 200);
+    ctx.fillStyle = "#fff";
+    ctx.font = `${Math.min(22, Math.max(14, canvas.width / 36))}px ${FONT}`;
+    ctx.fillText(MAPS[currentMapIndex].winLine, canvas.width / 2, 252);
+    drawMenuButton(uiButtons.winRetry, "再玩一次", "#2e7d32");
+    drawMenuButton(uiButtons.winMenu, "返回主菜单", "#3949ab");
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
+}
+
+function drawOverOverlay() {
+    ctx.fillStyle = "rgba(0,0,0,0.78)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#ef5350";
+    ctx.font = `bold ${Math.min(52, Math.max(30, canvas.width / 15))}px ${FONT}`;
+    ctx.fillText("失败", canvas.width / 2, 195);
+    ctx.fillStyle = "#eee";
+    ctx.font = `${Math.min(20, Math.max(14, canvas.width / 40))}px ${FONT}`;
+    ctx.fillText("骑士倒下了……", canvas.width / 2, 248);
+    drawMenuButton(uiButtons.overRetry, "再来一次", "#2e7d32");
+    drawMenuButton(uiButtons.overClose, "关闭游戏", "#c62828");
+    ctx.textAlign = "left";
+    ctx.textBaseline = "alphabetic";
+}
+
+function drawMenuButton(rect, label, fill) {
+    ctx.save();
+    ctx.fillStyle = fill;
+    ctx.strokeStyle = "rgba(255,255,255,0.85)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    if (typeof ctx.roundRect === 'function') {
+        ctx.roundRect(rect.x, rect.y, rect.w, rect.h, 10);
+    } else {
+        ctx.rect(rect.x, rect.y, rect.w, rect.h);
+    }
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#fff";
+    ctx.font = `bold 20px ${FONT}`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(label, rect.x + rect.w / 2, rect.y + rect.h / 2);
+    ctx.restore();
+}
+
+function update() {
+    if (gameState === "TITLE") {
+        frameCount++;
+        return;
+    }
+    if (gameState !== "PLAYING") return;
+    frameCount++;
+
+    player.vx = input.left ? -player.speed : input.right ? player.speed : joyVx;
+    if (input.up && player.isGrounded) {
+        player.vy = player.jump;
+        player.isGrounded = false;
+    }
+    player.vy += 0.85;
+    player.x += player.vx;
+    player.y += player.vy;
+    if (player.y + player.h > groundY) {
+        player.y = groundY - player.h;
+        player.vy = 0;
+        player.isGrounded = true;
+    }
+    if (player.isGrounded && Math.abs(player.vx) > 0.5) player.walkFrame += 0.25;
+    if (player.x < 20) player.x = 20;
+    if (player.x > 720) player.x = 720;
+
+    if (player.isAttacking || input.attack) {
+        player.isAttacking = true;
+        input.attack = false;
+        player.attackFrame++;
+        if (player.attackFrame > 14) {
+            player.isAttacking = false;
+            player.attackFrame = 0;
+        }
+
+        const weapon = inventory[currentWeaponIndex];
+        if (weapon.type === "heal") {
+            if (player.attackFrame === 6) player.hp = Math.min(player.hp + (weapon.heal || 18), player.maxHp);
+        } else {
+            const atkX = player.faceRight ? player.x + player.w + 48 : player.x - 48;
+            const hitW = 55;
+            if (atkX + hitW > boss.x && atkX - hitW < boss.x + boss.w && Math.abs(player.y - boss.y) < 85) {
+                if (weapon.type === "melee" && player.attackFrame === 6) {
+                    boss.hp -= (weapon.damage || 1);
+                    boss.lastHit = 6;
+                }
+            }
+            for (let i = minions.length - 1; i >= 0; i--) {
+                const m = minions[i];
+                const dx = Math.abs(m.x - (player.x + player.w/2));
+                if (weapon.type === "melee" && dx < 55 && Math.abs(m.y - player.y) < 45 && player.attackFrame === 6) {
+                    minions.splice(i, 1);
+                }
+            }
+            if ((weapon.type === "ranged") && player.attackFrame === 4) {
+                const vx = (weapon.name === "枪" ? 12 : 7) * (player.faceRight ? 1 : -1);
+                bullets.push({
+                    x: player.faceRight ? player.x + player.w + 35 : player.x - 35,
+                    y: player.y + 28,
+                    vx: vx,
+                    color: weapon.color,
+                    damage: weapon.damage
+                });
+            }
+        }
+    }
+
+    for (let i = bullets.length - 1; i >= 0; i--) {
+        const b = bullets[i];
+        b.x += b.vx;
+        if (b.x > boss.x && b.x < boss.x + boss.w && Math.abs(b.y - boss.y - 40) < 40) {
+            boss.hp -= (b.damage || 1) * 1.2;
+            boss.lastHit = 6;
+            bullets.splice(i, 1);
+            continue;
+        }
+        for (let j = minions.length - 1; j >= 0; j--) {
+            const m = minions[j];
+            if (Math.abs(b.x - m.x) < 25 && Math.abs(b.y - m.y) < 25) {
+                minions.splice(j, 1);
+                bullets.splice(i, 1);
+                break;
+            }
+        }
+        if (b.x > 800 || b.x < -20) bullets.splice(i, 1);
+    }
+
+    boss.float += 0.052;
+    boss.x += Math.sin(boss.float) * 1.8;
+    if (boss.lastHit > 0) boss.lastHit--;
+
+    for (let i = minions.length - 1; i >= 0; i--) {
+        const m = minions[i];
+        m.x += Math.sign(player.x - m.x) * 2.1;
+        if (Math.abs(m.x - player.x) < 32 && Math.abs(m.y - player.y) < 40) player.hp -= 0.3;
+    }
+    if (minions.length < 7 && Math.random() < 0.02) spawnMinion();
+    if (Math.abs(player.x - boss.x) < 58 && Math.abs(player.y - boss.y) < 68) player.hp -= 0.15;
+
+    if (player.hp <= 0) gameState = "OVER";
+    if (boss.hp <= 0) gameState = "WIN";
+}
+
+function draw() {
+    if (gameState === "TITLE") {
+        drawTitleScreen();
+        requestAnimationFrame(loop);
+        return;
+    }
+
+    ctx.textBaseline = "alphabetic";
+    ctx.textAlign = "left";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGameBackground();
+
+    minions.forEach(drawMinion);
+
+    const by = boss.y + Math.sin(boss.float) * 8;
+    let bossDrawn = false;
+    if (currentMapIndex === 1 && sprites.secondMap && sprites.secondMap.naturalWidth > 0) {
+        ctx.save();
+        if (boss.lastHit > 0) ctx.filter = "brightness(1.8)";
+        ctx.imageSmoothingEnabled = true;
+        bossDrawn = drawSecondMapAtlasPart("boss", boss.x, by, boss.w, boss.h);
+        ctx.restore();
+    }
+    if (!bossDrawn) {
+    const bossImg = sprites.boss;
+    if (bossImg && bossImg.complete && bossImg.naturalWidth > 0) {
+        ctx.save();
+        if (boss.lastHit > 0) ctx.filter = 'brightness(1.8)';
+        ctx.drawImage(bossImg, boss.x, by, boss.w, boss.h);
+        ctx.restore();
+    } else {
+    ctx.save();
+    ctx.translate(boss.x + 65, boss.y + 52 + Math.sin(boss.float) * 8);
+    if (boss.lastHit > 0) ctx.filter = 'brightness(1.8)';
+    ctx.strokeStyle = "#3e2723"; ctx.lineWidth = 5;
+    for (let i = 0; i < 8; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(i < 4 ? -38 : 105, 18 + (i % 4) * 22);
+        ctx.stroke();
+    }
+    ctx.fillStyle = "#3e3428";
+    ctx.beginPath(); ctx.ellipse(0, 0, 64, 42, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "rgba(200,40,40,0.7)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2;
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a) * 45, Math.sin(a) * 30); ctx.stroke();
+    }
+    for (let r = 12; r < 38; r += 8) {
+        ctx.beginPath();
+        ctx.ellipse(0, 0, r * 0.6, r * 0.45, 0, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    ctx.fillStyle = "#f44336";
+    for (let i = 0; i < 6; i++) ctx.fillRect(-28 + i * 11, -12, 6, 6);
+    ctx.fillStyle = "#ffd54f";
+    ctx.beginPath();
+    ctx.moveTo(-35, -28); ctx.lineTo(-22, -48); ctx.lineTo(-8, -32);
+    ctx.lineTo(8, -48); ctx.lineTo(22, -32); ctx.lineTo(35, -48); ctx.lineTo(28, -25);
+    ctx.fill();
+    ctx.fillStyle = "#d32f2f";
+    ctx.beginPath(); ctx.arc(-20, -42, 3, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(0, -48, 3, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(20, -42, 3, 0, Math.PI*2); ctx.fill();
+    ctx.restore();
+    }
+    }
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#fff"; 
+    ctx.font = `bold 26px ${FONT}`;
+    ctx.fillText(MAPS[currentMapIndex].bossLabel, 400, 38);
+    ctx.textAlign = "left";
+    ctx.fillStyle = "rgba(80,40,60,0.9)";
+    ctx.fillRect(245, 52, 310, 22);
+    ctx.fillStyle = "#e91e8c";
+    ctx.fillRect(248, 55, (boss.hp / boss.maxHp) * 304, 16);
+
+    drawPlayer(player.x, player.y);
+
+    ctx.fillStyle = "#fff"; 
+    ctx.font = `bold 18px ${FONT}`;
+    ctx.fillText("骑士", 28, 38);
+    ctx.fillStyle = "#212121"; ctx.fillRect(28, 48, 168, 18);
+    ctx.fillStyle = player.hp > 30 ? "#4caf50" : "#f44336";
+    ctx.fillRect(31, 51, (player.hp / player.maxHp) * 162, 12);
+
+    bullets.forEach(b => {
+        ctx.fillStyle = b.color;
+        ctx.fillRect(b.x, b.y, 12, 6);
+    });
+
+    if (gameState === "PLAYING") drawUI();
+
+    if (gameState === "WIN") drawWinOverlay();
+    if (gameState === "OVER") drawOverOverlay();
+
+    requestAnimationFrame(loop);
+}
+
+function loop() {
+    update();
+    draw();
+}
+
+function startLoop() {
+    loop();
+}
+
+loadSprites(() => {
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(startLoop).catch(startLoop);
+    } else {
+        startLoop();
+    }
+});
+
+refreshPortraitClass();
+window.addEventListener("resize", refreshPortraitClass);
+window.addEventListener("orientationchange", () => setTimeout(refreshPortraitClass, 200));
+const btnLandscapeEl = document.getElementById("btnLandscape");
+if (btnLandscapeEl) btnLandscapeEl.addEventListener("click", () => void tryLockLandscape());
+
+window.addEventListener("load", () => {
+    if (!("serviceWorker" in navigator)) return;
+    if (location.protocol === "file:") return;
+    navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(() => {});
+});
+</script>
+</body>
+</html>

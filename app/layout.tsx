@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description: "专注金刚石铜复合材料、碳基复合材料等高性能热管理解决方案，从工具制造到材料科学的技术革命",
   generator: "v0.app",
   icons: {
-    icon: [{ url: "/og-image.png", sizes: "any", type: "image/png" }],
-    apple: "/og-image.png",
+    icon: [{ url: "/og-image.png?v=2", sizes: "any", type: "image/png" }],
+    apple: "/og-image.png?v=2",
   },
   openGraph: {
     type: "website",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "ToSpike - 簇锋科技",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=2",
         width: 512,
         height: 512,
         alt: "簇锋科技 ToSpike Logo",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.png"],
+    images: ["/og-image.png?v=2"],
   },
 }
 
