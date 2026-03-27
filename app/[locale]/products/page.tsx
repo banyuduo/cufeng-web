@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { ArrowRight, Zap, Layers, FlaskConical, Sparkles, ChefHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"

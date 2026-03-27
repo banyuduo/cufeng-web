@@ -177,7 +177,7 @@
 /* Enhanced glassmorphism and glow effects for dark tech theme */
 @layer utilities {
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-border/60;
+    @apply bg-card/85 border border-border/60;
   }
 
   .glow-primary {

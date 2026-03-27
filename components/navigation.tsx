@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -57,7 +57,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const navMuted = isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
 
   return (
-    <nav className={`border-b backdrop-blur-sm fixed w-full z-50 ${navBg}`}>
+    <nav className={`border-b fixed w-full z-50 ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href={prefix} className={`text-xl font-bold ${navText}`}>

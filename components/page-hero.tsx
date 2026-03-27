@@ -56,8 +56,18 @@ export function PageHero({
               }}
             />
           </div>
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#0077b6]/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-[#0096c7]/15 rounded-full blur-3xl" />
+          <div
+            className="absolute top-20 left-1/4 w-96 h-96 rounded-full opacity-70 pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(0,119,182,0.22) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full opacity-70 pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(0,150,199,0.2) 0%, transparent 70%)",
+            }}
+          />
         </>
       )}
 

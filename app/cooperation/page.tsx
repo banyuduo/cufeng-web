@@ -86,7 +86,7 @@ export default async function CooperationPage({
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
+            <div className="bg-[#071d2e]/90 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors ">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
               <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.research")}
@@ -94,7 +94,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
+            <div className="bg-[#071d2e]/90 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors ">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
               <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.industry")}
@@ -102,7 +102,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
+            <div className="bg-[#071d2e]/90 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors ">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
               <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.tech")}
@@ -110,7 +110,7 @@ export default async function CooperationPage({
               </p>
             </div>
 
-            <div className="bg-[#002244]/60 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors backdrop-blur-sm">
+            <div className="bg-[#071d2e]/90 p-8 rounded-lg border border-[#0077b6]/30 hover:border-[#00b4d8]/45 transition-colors ">
               <div className="h-1 w-12 bg-[#73DBFF] mb-6"></div>
               <p className="page-caption text-slate-300 font-light">
                 {t("cooperation.audience.investor")}

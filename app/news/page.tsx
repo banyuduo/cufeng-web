@@ -1,5 +1,5 @@
 import { Calendar, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText, ArrowRight, BookOpen, Zap, TrendingUp, Atom, Microscope } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
@@ -82,7 +82,7 @@ export default async function NewsPage({
               {/* 公司动态卡片 */}
               <a
                 href="#company-news"
-                className="group rounded-xl p-8 bg-[#002244]/60 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm transition-all hover:shadow-lg"
+                className="group rounded-xl p-8 bg-[#071d2e]/90 border border-[#0077b6]/30 hover:border-[#00b4d8]/45  transition-all hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="h-14 w-14 rounded-xl bg-[#73DBFF]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#73DBFF]/30 transition-colors">
@@ -103,7 +103,7 @@ export default async function NewsPage({
               </a>
 
               {/* 行业信息卡片 */}
-              <div className="group rounded-xl p-8 bg-[#002244]/60 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm transition-all hover:shadow-lg">
+              <div className="group rounded-xl p-8 bg-[#071d2e]/90 border border-[#0077b6]/30 hover:border-[#00b4d8]/45  transition-all hover:shadow-lg">
                 <div className="flex items-start gap-4">
                   <div className="h-14 w-14 rounded-xl bg-[#73DBFF]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#73DBFF]/30 transition-colors">
                     <TrendingUp className="h-7 w-7 text-[#73DBFF]" />

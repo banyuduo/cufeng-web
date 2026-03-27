@@ -42,7 +42,7 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
           {s.layer1Title}
         </h4>
         <div className="grid grid-cols-3 gap-3 sm:gap-4">
-          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#002244]/60 backdrop-blur-sm p-3 sm:p-4">
+          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#071d2e]/88 p-3 sm:p-4">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
               <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-[#7dd3fc]" />
             </div>
@@ -50,7 +50,7 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
               {s.layer1Tim}
             </span>
           </div>
-          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#002244]/60 backdrop-blur-sm p-3 sm:p-4">
+          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#071d2e]/88 p-3 sm:p-4">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
               <LayoutGrid className="w-4 h-4 sm:w-5 sm:h-5 text-[#7dd3fc]" />
             </div>
@@ -58,7 +58,7 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
               {s.layer1Substrate}
             </span>
           </div>
-          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#002244]/60 backdrop-blur-sm p-3 sm:p-4">
+          <div className="flex flex-col items-center rounded-lg border border-[#0077b6]/30 bg-[#071d2e]/88 p-3 sm:p-4">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#0077b6]/20 border border-[#00b4d8]/30 flex items-center justify-center mb-2">
               <Atom className="w-4 h-4 sm:w-5 sm:h-5 text-[#7dd3fc]" />
             </div>

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { ChevronDown, Home, FileText } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 
 interface ConsumerExpandableCardProps {
   title: string
@@ -64,7 +64,7 @@ export function ConsumerExpandableCard({
   return (
     <Card
       id="consumer"
-      className={`p-6 sm:p-8 lg:p-10 bg-[#002244]/55 backdrop-blur-sm border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
+      className={`p-6 sm:p-8 lg:p-10 bg-[#071d2e]/92 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
         isExploration ? "ring-1 ring-[#73DBFF]/15" : ""
       }`}
     >

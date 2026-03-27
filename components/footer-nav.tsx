@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { ChevronUp, Mail, MapPin } from "lucide-react"
 import { useState, useEffect } from "react"

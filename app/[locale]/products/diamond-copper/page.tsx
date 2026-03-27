@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { ArrowLeft, ArrowRight, Layers, TrendingUp, Zap } from "lucide-react"
 import { isValidLocale, type Locale } from "@/lib/i18n"

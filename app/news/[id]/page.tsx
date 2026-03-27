@@ -11,7 +11,7 @@ import {
   Tag,
   User,
 } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { Button } from "@/components/ui/button"

@@ -34,7 +34,7 @@ export type HeroDiagramStrings = {
 }
 
 const cardBase =
-  "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#002244]/70 backdrop-blur-sm p-3 sm:p-4 text-left min-h-[140px] sm:min-h-[160px]"
+  "flex flex-col flex-1 min-w-0 rounded-xl border border-[#0077b6]/35 bg-[#071d2e]/92 p-3 sm:p-4 text-left min-h-[140px] sm:min-h-[160px]"
 
 export function HeroPlatformDiagram({
   strings,

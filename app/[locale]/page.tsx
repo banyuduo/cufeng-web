@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import dynamic from "next/dynamic"
 import { Atom, Shield, Handshake, CheckCircle2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -208,7 +208,7 @@ export default async function HomePage({
             {t("home.hero.platformAdvantageTitle")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 lg:gap-10">
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Atom className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
@@ -230,7 +230,7 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
@@ -252,7 +252,7 @@ export default async function HomePage({
                 </li>
               </ul>
             </Card>
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#002244]/60 border-[#0077b6]/30 hover:border-[#00b4d8]/45 backdrop-blur-sm text-left">
+            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
                 <Handshake className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
               </div>
