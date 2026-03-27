@@ -172,6 +172,27 @@
     font-size: 16px;
     line-height: 1.7;
   }
+
+  /* 全站可点击元素默认手型指针（含中英文、PC/触屏设备上支持悬停时） */
+  a[href]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+  button:not(:disabled):not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled),
+  input[type="reset"]:not(:disabled) {
+    cursor: pointer;
+  }
+  summary {
+    cursor: pointer;
+  }
+  a[aria-disabled="true"],
+  button:disabled,
+  button[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 /* Enhanced glassmorphism and glow effects for dark tech theme */
