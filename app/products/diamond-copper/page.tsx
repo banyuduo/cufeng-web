@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { ArrowLeft, ArrowRight, Layers, TrendingUp, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"

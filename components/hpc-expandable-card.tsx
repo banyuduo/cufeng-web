@@ -4,7 +4,7 @@ import { useState } from "react"
 import { ChevronDown, Cpu } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 
 interface HpcExpandableCardProps {
   title: string
@@ -56,7 +56,7 @@ export function HpcExpandableCard({
   return (
     <Card
       id="hpc"
-      className="p-6 sm:p-8 lg:p-10 bg-[#002244]/55 backdrop-blur-sm border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20"
+      className="p-6 sm:p-8 lg:p-10 bg-[#071d2e]/92 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20"
     >
       <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-[#0077b6]/30 flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0077b6]/10">

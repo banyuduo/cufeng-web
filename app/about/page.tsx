@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { ArrowRight, Calendar, Building2, Target, Zap, Eye, Rocket, Layers, Sparkles, Shield, TrendingUp, ChefHat, FlaskConical, Battery, Droplet, Award, Handshake, Users, GraduationCap, Briefcase, Wrench } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -39,7 +39,7 @@ export default async function AboutPage({
       {/* 企业概览 */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-[#002244]/55 backdrop-blur-sm border border-[#0077b6]/30 shadow-xl shadow-[#0077b6]/10">
+          <Card className="p-8 md:p-12 bg-[#071d2e]/92 border border-[#0077b6]/30 shadow-xl shadow-[#0077b6]/10">
             <div className="space-y-6 text-slate-200 leading-relaxed">
               <div>
                 <h2 className="page-h2 text-white mb-4 flex items-center gap-3">

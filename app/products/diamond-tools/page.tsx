@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { ArrowLeft, ArrowRight, Check, Settings, Wrench, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -485,7 +485,7 @@ export default function DiamondToolsPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="p-6 bg-slate-800/92 border-slate-700">
               <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-amber-500" />
               </div>
@@ -496,7 +496,7 @@ export default function DiamondToolsPage() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="p-6 bg-slate-800/92 border-slate-700">
               <div className="w-10 h-10 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-[#73DBFF]" />
               </div>
@@ -507,7 +507,7 @@ export default function DiamondToolsPage() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="p-6 bg-slate-800/92 border-slate-700">
               <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-green-500" />
               </div>

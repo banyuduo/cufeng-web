@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/components/app-link"
 import { Cpu, Zap, Car, Sparkles, Home, Battery, Microscope, ShieldCheck, Droplets, Atom } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -62,10 +62,20 @@ export default async function ApplicationsPage({
       {/* 应用蓝图 */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#002244]/55 backdrop-blur-xl rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10 overflow-hidden relative">
-            <div className="absolute inset-0 pointer-events-none opacity-60">
-              <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#0077b6]/12 rounded-full blur-3xl" />
-              <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-[#00b4d8]/10 rounded-full blur-3xl" />
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#061f33]/96 rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10 overflow-hidden relative">
+            <div className="absolute inset-0 pointer-events-none opacity-50" aria-hidden>
+              <div
+                className="absolute -top-24 -left-24 w-80 h-80 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, rgba(0,119,182,0.28) 0%, transparent 68%)",
+                }}
+              />
+              <div
+                className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, rgba(0,180,216,0.22) 0%, transparent 68%)",
+                }}
+              />
             </div>
             <div className="text-center mb-12 px-1">
               <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
@@ -329,7 +339,7 @@ export default async function ApplicationsPage({
                 <Card
                   key={cat.id}
                   id={cat.id}
-                  className={`p-6 sm:p-8 lg:p-10 bg-[#002244]/55 backdrop-blur-sm border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
+                  className={`p-6 sm:p-8 lg:p-10 bg-[#071d2e]/92 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
                     cat.isExploration ? "ring-1 ring-[#73DBFF]/15" : ""
                   }`}
                 >

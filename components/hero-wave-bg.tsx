@@ -38,8 +38,8 @@ export function HeroWaveBg() {
           fill="rgba(0, 180, 216, 0.08)"
         />
       </svg>
-      <div className="absolute top-[15%] right-[10%] w-32 h-32 rounded-full bg-[#2e47c1]/25 blur-sm" />
-      <div className="absolute top-[25%] right-[25%] w-24 h-24 rounded-full bg-[#0077b6]/30 blur-[1px]" />
+      <div className="absolute top-[15%] right-[10%] w-32 h-32 rounded-full bg-[#2e47c1]/22" />
+      <div className="absolute top-[25%] right-[25%] w-24 h-24 rounded-full bg-[#0077b6]/26" />
       <div
         className="absolute top-[10%] right-[35%] w-40 h-28 rounded-full bg-[#1a3099]/20"
         style={{ transform: "rotate(-15deg)" }}
@@ -48,9 +48,15 @@ export function HeroWaveBg() {
         className="absolute bottom-[30%] left-[15%] w-48 h-36 rounded-full bg-[#0096c7]/15"
         style={{ transform: "rotate(10deg)" }}
       />
-      <div className="absolute bottom-[20%] right-[20%] w-28 h-28 rounded-full bg-[#48cae4]/20 blur-sm" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0077b6]/15 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#00b4d8]/12 rounded-full blur-3xl" />
+      <div className="absolute bottom-[20%] right-[20%] w-28 h-28 rounded-full bg-[#48cae4]/18" />
+      <div
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-80"
+        style={{ background: "radial-gradient(circle, rgba(0,119,182,0.2) 0%, transparent 70%)" }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full opacity-80"
+        style={{ background: "radial-gradient(circle, rgba(0,180,216,0.16) 0%, transparent 70%)" }}
+      />
     </div>
   )
 }
