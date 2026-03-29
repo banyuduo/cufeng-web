@@ -14,7 +14,7 @@ export default function DiamondCopperPage() {
       <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
-            href="/products"
+            href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -80,7 +80,7 @@ export default function DiamondCopperPage() {
                 金刚石铜复合材料正在成为高功率电子设备的标配散热解决方案。从AI芯片到新能源汽车，从5G基站到航空航天，应用前景广阔。
               </p>
               <Link
-                href="/applications"
+                href="/zh/applications"
                 className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 查看完整应用领域
@@ -93,7 +93,7 @@ export default function DiamondCopperPage() {
                 性价比版本面向大批量民用市场，极限性能版本面向高端工业应用。两条产品线协同发展，覆盖从消费到工业的全市场。
               </p>
               <Link
-                href="/cooperation"
+                href="/zh/cooperation"
                 className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
               >
                 与我们合作开发

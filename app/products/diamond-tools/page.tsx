@@ -17,7 +17,7 @@ export default function DiamondToolsPage() {
       <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
         <div className="max-w-7xl mx-auto">
           <Link
-            href="/products"
+            href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -521,7 +521,7 @@ export default function DiamondToolsPage() {
 
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white gap-2" asChild>
-              <Link href="/patents">查看 sp³–sp² 技术架构全景</Link>
+              <Link href="/zh/patents">查看 sp³–sp² 技术架构全景</Link>
             </Button>
           </div>
         </div>
@@ -535,7 +535,7 @@ export default function DiamondToolsPage() {
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
-              <Link href="/about#zhang-gong">联系工程师</Link>
+              <Link href="/zh/about#zhang-gong">联系工程师</Link>
             </Button>
             <Button
               size="lg"

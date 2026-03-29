@@ -17,7 +17,7 @@ export default async function NonstickCookwarePage() {
       <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-7xl mx-auto">
           <Link
-            href="/products"
+            href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -345,7 +345,7 @@ export default async function NonstickCookwarePage() {
               className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white"
               asChild
             >
-              <Link href="/cooperation#contact">{t("products.nonstickCookware.cta.contactUs")}</Link>
+              <Link href="/zh/cooperation#contact">{t("products.nonstickCookware.cta.contactUs")}</Link>
             </Button>
             <Button
               size="lg"
