@@ -1,0 +1,6 @@
+# Apache / 阿里云虚拟主机常用：根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
+# 构建后随 public 复制到 out/，部署到站点根目录即可生效。
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^$ /zh/ [R=301,L]
+</IfModule>
