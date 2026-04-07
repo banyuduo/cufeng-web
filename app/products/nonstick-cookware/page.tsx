@@ -353,7 +353,7 @@ export default async function NonstickCookwarePage() {
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
               asChild
             >
-              <a href="/docs/cufeng-diamond-pan.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/docs/cufeng-diamond-pan.html" target="_blank" rel="noopener noreferrer">
                 下载技术白皮书
               </a>
             </Button>

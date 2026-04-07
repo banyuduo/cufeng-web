@@ -518,12 +518,21 @@ export default function CarbonCompositePage() {
             <p className="page-body text-slate-200 mb-6">
               {t("products.carbonComposite.investmentValue.cooperationDesc")}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Button size="lg" className="bg-white text-[#73DBFF] hover:bg-slate-100" asChild>
                 <Link href={`${prefix}/cooperation#contact`}>{t("products.carbonComposite.investmentValue.projectCooperation")}</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
                 <Link href={`${prefix}/about#wang`}>{t("products.carbonComposite.investmentValue.techExchange")}</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
+                <a
+                  href={locale === "en" ? "/docs/diamond-carbon-en.html" : "/docs/diamond-carbon.html"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("products.carbonComposite.investmentValue.downloadWhitepaper")}
+                </a>
               </Button>
             </div>
           </Card>
