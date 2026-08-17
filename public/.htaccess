@@ -7,10 +7,14 @@
   # 根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
   RewriteRule ^$ /zh/ [R=301,L]
 
-  # 无尾斜杠的目录路径补全（与 next.config trailingSlash 一致）
+  # 无尾斜杠的「目录路径」补全（与 next.config trailingSlash 一致）
+  # 注意：必须排除 .css/.js/.png 等静态文件，以及 _next 资源，否则样式与脚本会 404/301 失效
+  RewriteCond %{REQUEST_URI} !^/_next/ [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !/$
-  RewriteRule ^(.+)$ $1/ [R=301,L]
+  RewriteCond %{REQUEST_URI} !\.[^./]+$
+  RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
 </IfModule>
 
 <IfModule mod_mime.c>
