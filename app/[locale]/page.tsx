@@ -1,5 +1,4 @@
 import { Link } from "@/components/app-link"
-import dynamic from "next/dynamic"
 import { Atom, Shield, Handshake, CheckCircle2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -9,12 +8,8 @@ import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
 import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
+import { PlatformValueDiagram } from "@/components/platform-value-diagram"
 import { FooterNav } from "@/components/footer-nav"
-
-const PlatformValueDiagram = dynamic(
-  () => import("@/components/platform-value-diagram").then((mod) => mod.PlatformValueDiagram),
-  { ssr: true }
-)
 
 export default async function HomePage({
   params,
