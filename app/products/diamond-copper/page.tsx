@@ -1,4 +1,4 @@
-import { Link } from "@/components/app-link"
+﻿import { Link } from "@/components/app-link"
 import { ArrowLeft, ArrowRight, Layers, TrendingUp, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -15,7 +15,7 @@ export default function DiamondCopperPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/zh/products"
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             返回产品中心
@@ -42,7 +42,7 @@ export default function DiamondCopperPage() {
             <Card className="p-8 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 shadow-xl">
               <div className="space-y-6">
                 <div className="text-center pb-6 border-b border-slate-200">
-                  <div className="text-5xl font-bold text-[#73DBFF] mb-2">680</div>
+                  <div className="text-5xl font-bold text-[#0077b6] mb-2">680</div>
                   <div className="page-caption text-slate-600">已达成热导率 (W/m·K)</div>
                 </div>
                 <div className="space-y-3">
@@ -52,7 +52,7 @@ export default function DiamondCopperPage() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-medium text-slate-900">ToSpike 极限性能版</span>
-                    <span className="font-bold text-[#73DBFF] text-lg">1000+</span>
+                    <span className="font-bold text-[#0077b6] text-lg">1000+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">传统金刚石铜 (70%)</span>
@@ -81,7 +81,7 @@ export default function DiamondCopperPage() {
               </p>
               <Link
                 href="/zh/applications"
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0077b6] font-semibold"
               >
                 查看完整应用领域
                 <ArrowRight className="w-4 h-4" />
@@ -94,7 +94,7 @@ export default function DiamondCopperPage() {
               </p>
               <Link
                 href="/zh/cooperation"
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0077b6] font-semibold"
               >
                 与我们合作开发
                 <ArrowRight className="w-4 h-4" />
@@ -113,7 +113,7 @@ export default function DiamondCopperPage() {
             {/* Product Line A */}
             <Card className="p-10 bg-slate-50 border-slate-200 hover:shadow-lg transition-all">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <TrendingUp className="w-6 h-6 text-[#73DBFF]" />
+                <TrendingUp className="w-6 h-6 text-[#0077b6]" />
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="page-h3 text-slate-900">性价比方案</h3>
@@ -127,7 +127,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">热导率</span>
-                    <span className="font-semibold text-[#73DBFF]">450–700 W/m·K</span>
+                    <span className="font-semibold text-[#0077b6]">450–700 W/m·K</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "70%" }} />
@@ -137,7 +137,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">成本优势</span>
-                    <span className="font-semibold text-[#73DBFF]">极高</span>
+                    <span className="font-semibold text-[#0077b6]">极高</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "95%" }} />
@@ -147,7 +147,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">批量生产能力</span>
-                    <span className="font-semibold text-[#73DBFF]">优秀</span>
+                    <span className="font-semibold text-[#0077b6]">优秀</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "90%" }} />
@@ -191,7 +191,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">热导率</span>
-                    <span className="font-semibold text-[#73DBFF]">热导率理论极限可达1000+ W/m·K</span>
+                    <span className="font-semibold text-[#0077b6]">热导率理论极限可达1000+ W/m·K</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "100%" }} />
@@ -201,7 +201,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">性能优势</span>
-                    <span className="font-semibold text-[#73DBFF]">接近CVD，更相近的线膨胀系数</span>
+                    <span className="font-semibold text-[#0077b6]">接近CVD，更相近的线膨胀系数</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "98%" }} />
@@ -211,7 +211,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">金刚石含量</span>
-                    <span className="font-semibold text-[#73DBFF]">80-90 vol%</span>
+                    <span className="font-semibold text-[#0077b6]">80-90 vol%</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "85%" }} />
@@ -220,7 +220,7 @@ export default function DiamondCopperPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="page-caption text-slate-700">成本优势</span>
-                    <span className="font-semibold text-[#73DBFF]">最低可达CVD金刚石的十分之一</span>
+                    <span className="font-semibold text-[#0077b6]">最低可达CVD金刚石的十分之一</span>
                   </div>
                   <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div className="h-full bg-[#0F2A5C] rounded-full" style={{ width: "90%" }} />
@@ -365,25 +365,25 @@ export default function DiamondCopperPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">680</div>
+              <div className="text-3xl font-bold text-[#0077b6] mb-2">680</div>
               <div className="page-caption text-slate-600 mb-1">已达成热导率</div>
               <div className="page-caption text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 text-center shadow-lg">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">1000+</div>
+              <div className="text-3xl font-bold text-[#0077b6] mb-2">1000+</div>
               <div className="page-caption text-slate-700 font-medium mb-1">极致性能版本</div>
               <div className="page-caption text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">80-90</div>
+              <div className="text-3xl font-bold text-[#0077b6] mb-2">80-90</div>
               <div className="page-caption text-slate-600 mb-1">金刚石体积分数</div>
               <div className="page-caption text-slate-500">vol%</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#73DBFF] mb-2">优异</div>
+              <div className="text-3xl font-bold text-[#0077b6] mb-2">优异</div>
               <div className="page-caption text-slate-600 mb-1">平面度</div>
               <div className="page-caption text-slate-500">单层排布</div>
             </Card>
@@ -399,7 +399,7 @@ export default function DiamondCopperPage() {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-[#73DBFF] mb-2">发明专利</div>
+              <div className="text-xs font-medium text-[#0077b6] mb-2">发明专利</div>
               <h3 className="page-h3 mb-2 text-slate-900">一种金刚石铜复合材料及其制备方法</h3>
               <p className="page-caption text-slate-600 mb-4">
                 公开了通过多级金刚石颗粒堆积构建骨架，活性熔固液相填充的制备方法。 实现高导热、低成本、可大尺寸制备。
@@ -408,7 +408,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             <Card className="p-6 bg-white border-slate-200">
-              <div className="text-xs font-medium text-[#73DBFF] mb-2">发明专利</div>
+              <div className="text-xs font-medium text-[#0077b6] mb-2">发明专利</div>
               <h3 className="page-h3 mb-2 text-slate-900">一种结构化金刚石热管理基板及其制备方法</h3>
               <p className="page-caption text-slate-600 mb-4">
                 详细描述了大、中、小三级金刚石颗粒配比、镀钛处理、包衣工艺、 限位筛网辅助填充等关键技术。

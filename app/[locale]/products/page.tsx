@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+﻿import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { Link } from "@/components/app-link"
@@ -61,7 +61,7 @@ export default async function ProductsPage({
                     {t("products.diamondCopper.feature3")}
                   </div>
                 </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
                   {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
                 </div>
               </Card>
@@ -71,7 +71,7 @@ export default async function ProductsPage({
               <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
-                    <FlaskConical className="w-7 h-7 text-[#73DBFF]" />
+                    <FlaskConical className="w-7 h-7 text-[#0077b6]" />
                   </div>
                   <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
                     {t("products.badge.gen2Expand")}
@@ -97,7 +97,7 @@ export default async function ProductsPage({
                     {t("products.thermalPad.feature3")}
                   </div>
                 </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
                   {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
                 </div>
               </Card>
@@ -133,7 +133,7 @@ export default async function ProductsPage({
                     {t("products.carbonComposite.feature3")}
                   </div>
                 </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
                   {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
                 </div>
               </Card>
@@ -143,7 +143,7 @@ export default async function ProductsPage({
               <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
-                    <ChefHat className="w-7 h-7 text-[#73DBFF]" />
+                    <ChefHat className="w-7 h-7 text-[#0077b6]" />
                   </div>
                   <div className="px-3 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
                     {t("products.badge.inStock")}
@@ -169,7 +169,7 @@ export default async function ProductsPage({
                     {t("products.nonstickCookware.feature3")}
                   </div>
                 </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
                   {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
                 </div>
               </Card>
@@ -209,7 +209,7 @@ export default async function ProductsPage({
                     {t("products.diamondTools.feature3")}
                   </div>
                 </div>
-                <div className="flex items-center text-[#73DBFF] font-medium group-hover:gap-2 transition-all">
+                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
                   {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
                 </div>
               </Card>
