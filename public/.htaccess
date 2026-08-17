@@ -1,20 +1,23 @@
 # Apache / 阿里云虚拟主机：静态导出站点常用规则
 # 构建后随 public 复制到 out/，部署到站点根目录即可生效。
 
+# 目录默认页（Next 静态导出每个路由为 index.html）
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
   # 根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
   RewriteRule ^$ /zh/ [R=301,L]
 
-  # 无尾斜杠的「目录路径」补全（与 next.config trailingSlash 一致）
-  # 注意：必须排除 .css/.js/.png 等静态文件，以及 _next 资源，否则样式与脚本会 404/301 失效
+  # 内部补全尾斜杠（不用 301，避免阿里云虚拟主机跳转到 /usr/home/... 内部路径）
   RewriteCond %{REQUEST_URI} !^/_next/ [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{REQUEST_URI} !\.[^./]+$
-  RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+  RewriteRule ^(.+[^/])$ $1/ [L]
 </IfModule>
 
 <IfModule mod_mime.c>
