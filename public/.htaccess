@@ -1,6 +1,28 @@
-# Apache / 阿里云虚拟主机常用：根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
+# Apache / 阿里云虚拟主机：静态导出站点常用规则
 # 构建后随 public 复制到 out/，部署到站点根目录即可生效。
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # 根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
   RewriteRule ^$ /zh/ [R=301,L]
+
+  # 无尾斜杠的目录路径补全（与 next.config trailingSlash 一致）
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ $1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/json .json
+</IfModule>
+
+# 静态资源长缓存（文件名含 hash，可安全 immutable）
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|png|jpg|jpeg|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
 </IfModule>

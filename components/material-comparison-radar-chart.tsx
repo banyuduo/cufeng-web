@@ -1,20 +1,3 @@
-"use client"
-
-import { useMemo, useState, useEffect } from "react"
-import {
-  Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend,
-  type ChartOptions,
-} from "chart.js"
-import { Radar } from "react-chartjs-2"
-
-ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
-
 export interface MaterialComparisonRadarChartProps {
   labels: {
     dim1: string
@@ -22,7 +5,6 @@ export interface MaterialComparisonRadarChartProps {
     dim3: string
     dim4: string
     dim5: string
-    /** 移动端两行显示，可选；无则回退到 dim1…dim5 */
     dim1Mobile?: string
     dim2Mobile?: string
     dim3Mobile?: string
@@ -32,152 +14,182 @@ export interface MaterialComparisonRadarChartProps {
     diamondSiC: string
     toSpike: string
   }
-  /** 浅色背景（如白/灰）时用 true，标注与图例使用深色以提升可读性 */
   variant?: "light" | "dark"
 }
 
 const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 
+const DATASETS = [
+  {
+    data: [40, 85, 30, 20, 70],
+    stroke: "rgba(148, 163, 184, 0.9)",
+    fill: "rgba(148, 163, 184, 0.08)",
+    point: "rgba(148, 163, 184, 0.9)",
+    labelKey: "diamondCu" as const,
+  },
+  {
+    data: [60, 80, 60, 30, 90],
+    stroke: "rgba(65, 105, 225, 0.9)",
+    fill: "rgba(65, 105, 225, 0.08)",
+    point: "rgba(65, 105, 225, 0.9)",
+    labelKey: "diamondSiC" as const,
+  },
+  {
+    data: [95, 95, 95, 95, 85],
+    stroke: "rgba(115, 219, 255, 1)",
+    fill: "rgba(115, 219, 255, 0.25)",
+    point: "rgba(115, 219, 255, 1)",
+    labelKey: "toSpike" as const,
+  },
+]
+
+function polarPoint(index: number, value: number, cx: number, cy: number, maxR: number, count: number) {
+  const angle = (Math.PI * 2 * index) / count - Math.PI / 2
+  const r = (value / 100) * maxR
+  return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) }
+}
+
+function polygonPoints(data: number[], cx: number, cy: number, maxR: number, count: number) {
+  return data
+    .map((value, index) => {
+      const point = polarPoint(index, value, cx, cy, maxR, count)
+      return `${point.x},${point.y}`
+    })
+    .join(" ")
+}
+
+function renderLabelLines(text: string, x: number, y: number, anchor: "start" | "middle" | "end", fill: string, size: number) {
+  const lines = text.split("\n")
+  return lines.map((line, lineIndex) => (
+    <tspan
+      key={`${text}-${lineIndex}`}
+      x={x}
+      dy={lineIndex === 0 ? 0 : size * 1.15}
+      textAnchor={anchor}
+      fill={fill}
+      fontSize={size}
+      fontWeight={500}
+    >
+      {line}
+    </tspan>
+  ))
+}
+
 export function MaterialComparisonRadarChart({ labels, variant = "dark" }: MaterialComparisonRadarChartProps) {
   const isLight = variant === "light"
-  const [isMobile, setIsMobile] = useState(false)
-  const [devicePixelRatio, setDevicePixelRatio] = useState(2)
-  useEffect(() => {
-    const mql = window.matchMedia("(max-width: 767px)")
-    const update = () => {
-      setIsMobile(window.innerWidth < 768)
-      const dpr = window.devicePixelRatio ?? 1
-      setDevicePixelRatio(Math.min(Math.round(dpr), 2))
-    }
-    update()
-    mql.addEventListener("change", update)
-    return () => mql.removeEventListener("change", update)
-  }, [])
+  const count = DIMENSIONS.length
+  const cx = 200
+  const cy = 190
+  const maxR = 118
+  const labelR = 152
 
-  const dimensionLabels = useMemo(
-    () =>
-      DIMENSIONS.map((k) => {
-        if (!isMobile) return labels[k]
-        const mobileKey = `${k}Mobile` as keyof typeof labels
-        const mobileVal = labels[mobileKey]
-        return typeof mobileVal === "string" ? mobileVal : labels[k]
-      }),
-    [labels, isMobile]
-  )
+  const gridColor = isLight ? "rgba(148, 163, 184, 0.25)" : "rgba(148, 163, 184, 0.15)"
+  const axisColor = isLight ? "rgba(148, 163, 184, 0.22)" : "rgba(148, 163, 184, 0.12)"
+  const tickColor = isLight ? "rgba(71, 85, 105, 0.7)" : "rgba(148, 163, 184, 0.6)"
+  const labelColor = isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(203, 213, 225, 0.9)"
+  const legendColor = isLight ? "rgba(30, 41, 59, 0.9)" : "rgba(203, 213, 225, 0.95)"
 
-  const data = {
-    labels: dimensionLabels,
-    datasets: [
-      {
-        label: labels.diamondCu,
-        data: [40, 85, 30, 20, 70],
-        borderColor: "rgba(148, 163, 184, 0.9)",
-        backgroundColor: "rgba(148, 163, 184, 0.08)",
-        borderWidth: 1,
-        pointBackgroundColor: "rgba(148, 163, 184, 0.9)",
-        pointBorderColor: "rgba(30, 41, 59, 1)",
-        pointRadius: 2.5,
-        fill: true,
-      },
-      {
-        label: labels.diamondSiC,
-        data: [60, 80, 60, 30, 90],
-        borderColor: "rgba(65, 105, 225, 0.9)",
-        backgroundColor: "rgba(65, 105, 225, 0.08)",
-        borderWidth: 1,
-        pointBackgroundColor: "rgba(65, 105, 225, 0.9)",
-        pointBorderColor: "rgba(30, 41, 59, 1)",
-        pointRadius: 2.5,
-        fill: true,
-      },
-      {
-        label: labels.toSpike,
-        data: [95, 95, 95, 95, 85],
-        borderColor: "rgba(115, 219, 255, 1)",
-        backgroundColor: "rgba(115, 219, 255, 0.25)",
-        borderWidth: 1.5,
-        pointBackgroundColor: "rgba(115, 219, 255, 1)",
-        pointBorderColor: "rgba(30, 41, 59, 1)",
-        pointRadius: 2.5,
-        fill: true,
-      },
-    ],
-  }
+  const gridLevels = [20, 40, 60, 80, 100]
 
-  const options: ChartOptions<"radar"> = useMemo(
-    () => ({
-    responsive: true,
-    maintainAspectRatio: !isMobile,
-    aspectRatio: 1.25,
-    devicePixelRatio,
-    layout: {
-      padding: isMobile ? 2 : 16,
-    },
-    plugins: {
-      legend: {
-        position: "bottom",
-        labels: {
-          color: isLight ? "rgba(30, 41, 59, 0.9)" : "rgba(203, 213, 225, 0.95)",
-          font: { size: isMobile ? 11 : 13, family: "inherit" },
-          padding: isMobile ? 10 : 20,
-          usePointStyle: true,
-        },
-      },
-      tooltip: {
-        backgroundColor: isLight ? "rgba(255, 255, 255, 0.98)" : "rgba(30, 41, 59, 0.95)",
-        titleColor: isLight ? "rgba(15, 23, 42, 0.95)" : "rgba(255, 255, 255, 0.95)",
-        bodyColor: isLight ? "rgba(51, 65, 85, 0.95)" : "rgba(203, 213, 225, 0.95)",
-        borderColor: isLight ? "rgba(148, 163, 184, 0.4)" : "rgba(148, 163, 184, 0.3)",
-        borderWidth: 1,
-        padding: 12,
-        titleFont: { size: 13 },
-        bodyFont: { size: 12 },
-      },
-    },
-    scales: {
-      r: {
-        min: 0,
-        max: 100,
-        ticks: {
-          stepSize: 20,
-          color: isLight ? "rgba(71, 85, 105, 0.7)" : "rgba(148, 163, 184, 0.6)",
-          font: { size: 11 },
-          backdropColor: "transparent",
-        },
-        grid: {
-          color: isLight ? "rgba(148, 163, 184, 0.25)" : "rgba(148, 163, 184, 0.15)",
-          lineWidth: 0.8,
-        },
-        angleLines: {
-          color: isLight ? "rgba(148, 163, 184, 0.22)" : "rgba(148, 163, 184, 0.12)",
-          lineWidth: 0.8,
-        },
-        pointLabels: {
-          color: isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(203, 213, 225, 0.9)",
-          font: { size: isMobile ? 9 : 13, family: "inherit", weight: "500" },
-          callback(label: string) {
-            if (typeof label === "string" && label.includes("\n")) {
-              return label.split("\n")
-            }
-            return label
-          },
-        },
-      },
-    },
-  }),
-  [isLight, isMobile, devicePixelRatio]
-  )
-
-  // 移动端布局与两行标签对中英文均生效（labels 由当前 locale 的 t() 注入）
   return (
-    <div
-      className={
-        isMobile
-          ? "w-full -mx-1 sm:mx-auto h-[min(88vh,98vw)] min-h-[340px] max-h-[none]"
-          : "w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto min-h-[380px] md:min-h-[280px]"
-      }
-    >
-      <Radar data={data} options={options} />
+    <div className="w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto">
+      <svg
+        viewBox="0 0 400 430"
+        role="img"
+        aria-label={labels.toSpike}
+        className="w-full h-auto"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {gridLevels.map((level) => (
+          <polygon
+            key={level}
+            points={polygonPoints(Array(count).fill(level), cx, cy, maxR, count)}
+            fill="none"
+            stroke={gridColor}
+            strokeWidth={0.8}
+          />
+        ))}
+
+        {DIMENSIONS.map((_, index) => {
+          const end = polarPoint(index, 100, cx, cy, maxR, count)
+          return <line key={`axis-${index}`} x1={cx} y1={cy} x2={end.x} y2={end.y} stroke={axisColor} strokeWidth={0.8} />
+        })}
+
+        {gridLevels.map((level) => {
+          const point = polarPoint(0, level, cx, cy, maxR, count)
+          return (
+            <text key={`tick-${level}`} x={point.x + 6} y={point.y + 4} fill={tickColor} fontSize={11}>
+              {level}
+            </text>
+          )
+        })}
+
+        {DATASETS.map((dataset) => (
+          <g key={dataset.labelKey}>
+            <polygon
+              points={polygonPoints(dataset.data, cx, cy, maxR, count)}
+              fill={dataset.fill}
+              stroke={dataset.stroke}
+              strokeWidth={dataset.labelKey === "toSpike" ? 1.5 : 1}
+            />
+            {dataset.data.map((value, index) => {
+              const point = polarPoint(index, value, cx, cy, maxR, count)
+              return (
+                <circle
+                  key={`${dataset.labelKey}-${index}`}
+                  cx={point.x}
+                  cy={point.y}
+                  r={2.5}
+                  fill={dataset.point}
+                  stroke="rgba(30, 41, 59, 1)"
+                  strokeWidth={0.5}
+                />
+              )
+            })}
+          </g>
+        ))}
+
+        {DIMENSIONS.map((dimKey, index) => {
+          const labelPoint = polarPoint(index, 100, cx, cy, labelR, count)
+          const mobileKey = `${dimKey}Mobile` as keyof typeof labels
+          const mobileLabel = labels[mobileKey]
+          const desktopLabel = labels[dimKey]
+          const anchor = index === 0 ? "middle" : index === 1 || index === 2 ? "start" : index === 3 || index === 4 ? "end" : "middle"
+
+          return (
+            <g key={dimKey}>
+              <text x={labelPoint.x} y={labelPoint.y} className="hidden md:inline">
+                {renderLabelLines(desktopLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 13)}
+              </text>
+              <text x={labelPoint.x} y={labelPoint.y} className="md:hidden">
+                {renderLabelLines(
+                  typeof mobileLabel === "string" ? mobileLabel : desktopLabel,
+                  labelPoint.x,
+                  labelPoint.y,
+                  anchor,
+                  labelColor,
+                  9
+                )}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
+
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 px-2 pb-1">
+        {DATASETS.map((dataset) => (
+          <div key={dataset.labelKey} className="inline-flex items-center gap-2">
+            <span
+              className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
+              style={{ backgroundColor: dataset.point }}
+              aria-hidden
+            />
+            <span className="text-[11px] sm:text-[13px]" style={{ color: legendColor }}>
+              {labels[dataset.labelKey]}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
