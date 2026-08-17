@@ -1,8 +1,10 @@
 import fs from "fs"
 import path from "path"
+import { execSync } from "child_process"
 
 const outDir = "out"
 const chunksDir = path.join(outDir, "_next", "static", "chunks")
+const stylesDir = path.join(outDir, "styles")
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -11,18 +13,6 @@ function walk(dir, files = []) {
     else if (entry.name.endsWith(".html")) files.push(full)
   }
   return files
-}
-
-function isInternalRoute(href) {
-  if (!href.startsWith("/") || href.startsWith("//")) return false
-  if (/^\/(_next|docs|images)\//.test(href)) return false
-  if (/\.[a-zA-Z0-9]+([?#]|$)/.test(href)) return false
-  return true
-}
-
-function needsTrailingSlash(href) {
-  const base = href.split("#")[0].split("?")[0]
-  return base !== "/" && !base.endsWith("/")
 }
 
 function countFiles(dir) {
@@ -40,77 +30,96 @@ function countFiles(dir) {
 const outGame = path.join(outDir, "game")
 if (fs.existsSync(outGame)) {
   fs.rmSync(outGame, { recursive: true, force: true })
-  console.log("Removed out/game")
 }
 
-// 2. 复制 .htaccess 为可见文件名，方便 FileZilla 上传后改名
+// 2. htaccess 可见副本
 const htaccess = path.join(outDir, ".htaccess")
-const htaccessBackup = path.join(outDir, "UPLOAD_RENAME_TO_dot_htaccess.txt")
 if (fs.existsSync(htaccess)) {
-  fs.copyFileSync(htaccess, htaccessBackup)
-  console.log("Created UPLOAD_RENAME_TO_dot_htaccess.txt (rename to .htaccess on server)")
+  fs.copyFileSync(htaccess, path.join(outDir, "UPLOAD_RENAME_TO_dot_htaccess.txt"))
 }
 
-// 3. 复制 CSS 到根目录 site.css（_next 未完整上传时样式仍可加载）
+// 3. 样式复制到固定路径（不依赖 _next 哈希文件名）
 const cssFiles = fs.existsSync(chunksDir)
   ? fs.readdirSync(chunksDir).filter((f) => f.endsWith(".css"))
   : []
 
 if (cssFiles.length === 1) {
-  const cssName = cssFiles[0]
-  fs.copyFileSync(path.join(chunksDir, cssName), path.join(outDir, "site.css"))
-  const fallbackLink = '<link rel="stylesheet" href="/site.css" data-fallback="true"/>'
+  const cssSource = path.join(chunksDir, cssFiles[0])
+  fs.mkdirSync(stylesDir, { recursive: true })
+  fs.copyFileSync(cssSource, path.join(stylesDir, "site.css"))
+  fs.copyFileSync(cssSource, path.join(outDir, "site.css"))
+
+  const styleLinks =
+    '<link rel="stylesheet" href="/styles/site.css" data-site-style="true"/>' +
+    '<link rel="stylesheet" href="/site.css" data-site-style="true"/>'
+
   for (const file of walk(outDir)) {
     let html = fs.readFileSync(file, "utf8")
-    if (!html.includes('href="/site.css"')) {
-      html = html.replace("<head>", `<head>${fallbackLink}`)
+    if (!html.includes('data-site-style="true"')) {
+      html = html.replace("<head>", `<head>${styleLinks}`)
       fs.writeFileSync(file, html)
     }
   }
-  console.log(`Copied ${cssName} -> out/site.css (CSS fallback for Aliyun)`)
-} else {
-  console.warn(`Expected 1 CSS chunk, found ${cssFiles.length}`)
+  console.log(`Styles -> out/styles/site.css + out/site.css (from ${cssFiles[0]})`)
 }
 
-// 4. 扫描 HTML 内链
-const issues = []
-for (const file of walk(outDir)) {
-  const html = fs.readFileSync(file, "utf8")
-  for (const match of html.matchAll(/href="(\/[^"]+)"/g)) {
-    const href = match[1]
-    if (isInternalRoute(href) && needsTrailingSlash(href)) {
-      issues.push({ file: path.relative(outDir, file), href })
-    }
-  }
-}
-
-if (issues.length > 0) {
-  console.warn("Warning: internal links missing trailing slash:")
-  for (const item of issues.slice(0, 20)) {
-    console.warn(`  ${item.file}: ${item.href}`)
-  }
-} else {
-  console.log("All internal HTML links have trailing slashes.")
-}
-
-// 5. 生成部署清单
-const nextFileCount = countFiles(path.join(outDir, "_next"))
-const checklist = `# 阿里云 FileZilla 部署清单（每次 npm run build 后执行）
-#
-# 上传位置：htdocs 根目录（与 index.html 同级）
-#
-# 【必须上传，缺一会导致 UI 异常】
-# 1. _next/          整个文件夹（${nextFileCount} 个文件，含 JS/CSS）
-# 2. site.css        根目录样式备用文件
-# 3. zh/  en/        所有页面目录
-# 4. .htaccess       隐藏文件；或用 UPLOAD_RENAME_TO_dot_htaccess.txt 上传后改名
-#
-# 【FileZilla 显示隐藏文件】服务器 → 强制显示隐藏文件
-#
-# 【若 UI 全乱、无样式】说明 _next 或 site.css 未上传成功，请删除服务器旧 _next 后整夹重传
-#
-# 构建时间：${new Date().toISOString()}
-# CSS：${cssFiles[0] ?? "none"}
+// 4. 上传路径自检文件
+const testContent = `上传路径正确！
+如果你能在浏览器打开 https://www.tospike.com/UPLOAD_TEST.txt 看到本文件，说明上传到了网站根目录（htdocs）。
+构建时间：${new Date().toLocaleString("zh-CN")}
 `
-fs.writeFileSync(path.join(outDir, "DEPLOY_CHECKLIST.txt"), checklist, "utf8")
-console.log(`Wrote DEPLOY_CHECKLIST.txt (_next files: ${nextFileCount})`)
+fs.writeFileSync(path.join(outDir, "UPLOAD_TEST.txt"), testContent, "utf8")
+
+// 5. 中文上传说明
+const nextCount = countFiles(path.join(outDir, "_next"))
+const guide = `========================================
+  阿里云上传说明（请仔细阅读）
+========================================
+
+【重要】网站根目录 = htdocs 文件夹
+FileZilla 登录后，右侧应能看到 zh、en 等文件夹。
+所有文件必须上传到这一层，不要传到子文件夹里。
+
+【推荐方式：上传 zip 解压】
+1. 上传项目根目录的 deploy-tospike.zip 到 htdocs
+2. 在阿里云控制台「文件管理」里解压到 htdocs 根目录
+3. 浏览器打开 https://www.tospike.com/UPLOAD_TEST.txt 确认路径
+
+【FileZilla 方式】
+必须上传整个 out 文件夹【里面的内容】到 htdocs：
+  _next/          （${nextCount} 个文件，整夹上传，最重要！）
+  styles/         （含 site.css）
+  site.css
+  zh/  en/
+  UPLOAD_TEST.txt
+  其余文件...
+
+【上传后验证（全部应为 200，不是 404）】
+  https://www.tospike.com/UPLOAD_TEST.txt
+  https://www.tospike.com/styles/site.css
+  https://www.tospike.com/zh/
+
+【常见错误】
+× 只删了 _next 没重新上传  →  UI 全乱
+× 上传到错误目录           →  文件 404
+× 只上传了 zh 没上传 _next →  无样式
+
+构建时间：${new Date().toLocaleString("zh-CN")}
+`
+fs.writeFileSync(path.join(outDir, "上传说明.txt"), guide, "utf8")
+
+// 6. 打包 zip（方便阿里云控制台解压）
+try {
+  const zipPath = path.join("deploy-tospike.zip")
+  if (fs.existsSync(zipPath)) fs.unlinkSync(zipPath)
+  execSync(
+    `powershell -NoProfile -Command "Compress-Archive -Path '${outDir}\\*' -DestinationPath '${zipPath}' -Force"`,
+    { stdio: "inherit" }
+  )
+  const sizeMB = (fs.statSync(zipPath).size / 1024 / 1024).toFixed(2)
+  console.log(`Created deploy-tospike.zip (${sizeMB} MB)`)
+} catch (e) {
+  console.warn("Could not create deploy-tospike.zip:", e.message)
+}
+
+console.log("Done. Upload deploy-tospike.zip OR entire out/ folder to htdocs.")
