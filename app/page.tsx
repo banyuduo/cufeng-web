@@ -5,6 +5,7 @@ export default function RootPage() {
   const to = `/${defaultLocale}/`
   return (
     <>
+      <meta httpEquiv="refresh" content={`0;url=${to}`} />
       <script
         dangerouslySetInnerHTML={{
           __html: `window.location.replace(${JSON.stringify(to)})`,
