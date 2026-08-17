@@ -1,4 +1,4 @@
-import { Link } from "@/components/app-link"
+﻿import { Link } from "@/components/app-link"
 import { ArrowLeft, Shield, Zap, CheckCircle2, Flame, Droplet, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -18,7 +18,7 @@ export default async function NonstickCookwarePage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/zh/products"
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             返回产品中心
@@ -36,25 +36,25 @@ export default async function NonstickCookwarePage() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>真金刚石颗粒活性熔固 - 永不脱落</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>无PFOA/PTFE - 通过食品安全认证</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>耐高温500°C - 适用各类烹饪方式</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>可金属铲具 - 经久耐用不怕刮</span>
                 </div>
@@ -120,7 +120,7 @@ export default async function NonstickCookwarePage() {
 
             <Card className="p-6 bg-white border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-[#73DBFF]" />
+                <Award className="w-8 h-8 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">持久耐用</h3>
               <p className="page-caption text-slate-600">活性熔固，高强度结合，可达10年以上使用寿命。</p>
@@ -139,13 +139,13 @@ export default async function NonstickCookwarePage() {
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
             <Card className="p-8 bg-white border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center mb-6">
-                <Shield className="w-7 h-7 text-[#73DBFF]" />
+                <Shield className="w-7 h-7 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">超长使用寿命</h3>
               <p className="page-body text-slate-600 mb-4">
                 金刚石颗粒通过活性熔固技术永久固着于基材，形成化学键合。较传统涂层寿命提升10倍以上，可承受100,000+次使用循环。金属铲具随意使用，不会损坏涂层。
               </p>
-              <div className="text-2xl font-bold text-[#73DBFF]">10倍+</div>
+              <div className="text-2xl font-bold text-[#0077b6]">10倍+</div>
               <div className="page-caption text-slate-500">耐磨性提升</div>
             </Card>
 

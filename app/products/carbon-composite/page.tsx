@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -27,7 +27,7 @@ export default function CarbonCompositePage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -58,15 +58,15 @@ export default function CarbonCompositePage() {
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.thermalPerf")}</div>
-                  <div className="font-semibold text-[#73DBFF]">{t("products.carbonComposite.hero.thermalPerfValue")}</div>
+                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.thermalPerfValue")}</div>
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.flexibility")}</div>
-                  <div className="font-semibold text-[#73DBFF]">{t("products.carbonComposite.hero.flexibilityValue")}</div>
+                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.flexibilityValue")}</div>
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.applicationProspect")}</div>
-                  <div className="font-semibold text-[#73DBFF]">{t("products.carbonComposite.hero.applicationProspectValue")}</div>
+                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.applicationProspectValue")}</div>
                 </div>
               </div>
             </Card>
@@ -222,7 +222,7 @@ export default function CarbonCompositePage() {
                 <div className="p-4 bg-white rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center">
-                      <Zap className="w-4 h-4 text-[#73DBFF]" />
+                      <Zap className="w-4 h-4 text-[#0077b6]" />
                     </div>
                     <h4 className="font-semibold text-slate-900">{t("products.carbonComposite.coreTech.allCarbonTitle")}</h4>
                   </div>
@@ -234,7 +234,7 @@ export default function CarbonCompositePage() {
                 <div className="p-4 bg-white rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-[#73DBFF]" />
+                      <Sparkles className="w-4 h-4 text-[#0077b6]" />
                     </div>
                     <h4 className="font-semibold text-slate-900">{t("products.carbonComposite.coreTech.chemicalBondingTitle")}</h4>
                   </div>
@@ -246,7 +246,7 @@ export default function CarbonCompositePage() {
                 <div className="p-4 bg-white rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center">
-                      <Activity className="w-4 h-4 text-[#73DBFF]" />
+                      <Activity className="w-4 h-4 text-[#0077b6]" />
                     </div>
                     <h4 className="font-semibold text-slate-900">{t("products.carbonComposite.coreTech.tunableTitle")}</h4>
                   </div>
@@ -258,7 +258,7 @@ export default function CarbonCompositePage() {
                 <div className="p-4 bg-white rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-[#73DBFF]" />
+                      <Sparkles className="w-4 h-4 text-[#0077b6]" />
                     </div>
                     <h4 className="font-semibold text-slate-900">{t("products.carbonComposite.coreTech.multifunctionTitle")}</h4>
                   </div>
@@ -286,7 +286,7 @@ export default function CarbonCompositePage() {
               </p>
               <Link
                 href={`${prefix}/applications#thermal-management`}
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#0F2A5C] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0F2A5C] font-semibold"
               >
                 {t("products.carbonComposite.applicationProspects.viewThermal")}
                 <ArrowRight className="w-4 h-4" />
@@ -300,7 +300,7 @@ export default function CarbonCompositePage() {
               </p>
               <Link
                 href={`${prefix}/applications#energy-environment`}
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#0F2A5C] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0F2A5C] font-semibold"
               >
                 {t("products.carbonComposite.applicationProspects.viewFrontier")}
                 <ArrowRight className="w-4 h-4" />
@@ -399,7 +399,7 @@ export default function CarbonCompositePage() {
             {/* 第一排：两个专利并列 */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent1Title")}
                 </h3>
@@ -410,7 +410,7 @@ export default function CarbonCompositePage() {
               </Card>
 
               <Card className="p-6 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent2Title")}
                 </h3>
@@ -424,7 +424,7 @@ export default function CarbonCompositePage() {
             {/* 第二排：两个专利并列 */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">{t("products.carbonComposite.patents.patent3Title")}</h3>
                 <p className="page-caption text-slate-600 mb-4">
                   {t("products.carbonComposite.patents.patent3Desc")}
@@ -433,7 +433,7 @@ export default function CarbonCompositePage() {
               </Card>
 
               <Card className="p-6 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent4Title")}
                 </h3>
@@ -519,7 +519,7 @@ export default function CarbonCompositePage() {
               {t("products.carbonComposite.investmentValue.cooperationDesc")}
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="bg-white text-[#73DBFF] hover:bg-slate-100" asChild>
+              <Button size="lg" className="bg-white text-[#0077b6] hover:bg-slate-100" asChild>
                 <Link href={`${prefix}/cooperation#contact`}>{t("products.carbonComposite.investmentValue.projectCooperation")}</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>

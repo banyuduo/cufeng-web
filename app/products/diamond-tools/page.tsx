@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Link } from "@/components/app-link"
 import { ArrowLeft, ArrowRight, Check, Settings, Wrench, Sparkles } from "lucide-react"
@@ -18,7 +18,7 @@ export default function DiamondToolsPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/zh/products"
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             返回产品中心
@@ -43,15 +43,15 @@ export default function DiamondToolsPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">10+</div>
+                  <div className="text-2xl font-bold text-[#0077b6] mb-1">10+</div>
                   <div className="page-caption text-slate-600">年熔固技术积累</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">30+</div>
+                  <div className="text-2xl font-bold text-[#0077b6] mb-1">30+</div>
                   <div className="page-caption text-slate-600">项超硬专利基础</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#73DBFF] mb-1">100+</div>
+                  <div className="text-2xl font-bold text-[#0077b6] mb-1">100+</div>
                   <div className="page-caption text-slate-600">种定制化解决方案</div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function DiamondToolsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 bg-slate-50 border-slate-200 hover:shadow-lg transition-all">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                <Wrench className="w-6 h-6 text-[#73DBFF]" />
+                <Wrench className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">界面改性与连接</h3>
               <p className="page-caption text-slate-600">
@@ -137,7 +137,7 @@ export default function DiamondToolsPage() {
 
             <Card className="p-6 bg-white border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-[#73DBFF]" />
+                <Sparkles className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">磨料 (Superabrasive)</h3>
               <p className="page-caption text-slate-600">
@@ -197,25 +197,25 @@ export default function DiamondToolsPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#0077b6] mt-0.5 flex-shrink-0" />
                 <div className="page-caption text-slate-700">
                   <strong>基体与活性熔固合金的适应性</strong>：润湿性、热膨胀匹配
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#0077b6] mt-0.5 flex-shrink-0" />
                 <div className="page-caption text-slate-700">
                   <strong>磨料与活性熔固合金的结合性能</strong>：界面化学键合强度
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#0077b6] mt-0.5 flex-shrink-0" />
                 <div className="page-caption text-slate-700">
                   <strong>加工对象的材料特性</strong>：硬度、脆性、热敏感性
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                <Check className="w-5 h-5 text-[#0077b6] mt-0.5 flex-shrink-0" />
                 <div className="page-caption text-slate-700">
                   <strong>加工条件的影响</strong>：冷却方式、磨削/切削模式
                 </div>
@@ -239,7 +239,7 @@ export default function DiamondToolsPage() {
               <p className="page-caption text-slate-600 mb-4">
                 航空发动机热端部件的核心材料，加工难度极高，对工具的耐磨性与热稳定性要求苛刻。
               </p>
-              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
+              <div className="flex items-center gap-2 text-xs text-[#0077b6]">
                 <Check className="w-4 h-4" />
                 <span>高温稳定性 &gt; 1000°C</span>
               </div>
@@ -250,7 +250,7 @@ export default function DiamondToolsPage() {
               <p className="page-caption text-slate-600 mb-4">
                 航空结构件、新能源汽车车身的主流材料，加工时易产生分层、毛刺，需要精密的切削控制。
               </p>
-              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
+              <div className="flex items-center gap-2 text-xs text-[#0077b6]">
                 <Check className="w-4 h-4" />
                 <span>低崩边率 &lt; 0.1mm</span>
               </div>
@@ -261,7 +261,7 @@ export default function DiamondToolsPage() {
               <p className="page-caption text-slate-600 mb-4">
                 航空航天与医疗器械的关键材料，加工时产生高热量，对工具的散热与强度提出双重挑战。
               </p>
-              <div className="flex items-center gap-2 text-xs text-[#73DBFF]">
+              <div className="flex items-center gap-2 text-xs text-[#0077b6]">
                 <Check className="w-4 h-4" />
                 <span>切削速度 &gt; 80 m/min</span>
               </div>
@@ -279,11 +279,11 @@ export default function DiamondToolsPage() {
                 <h4 className="page-caption font-semibold mb-3 text-slate-900">工艺规范化输出</h4>
                 <ul className="space-y-2 page-caption text-slate-600">
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#0077b6] mt-0.5 flex-shrink-0" />
                     <span>提供完整的切削参数推荐（转速、进给、冷却方式）</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#0077b6] mt-0.5 flex-shrink-0" />
                     <span>针对特定材料的工具选型指南</span>
                   </li>
                 </ul>
@@ -292,11 +292,11 @@ export default function DiamondToolsPage() {
                 <h4 className="page-caption font-semibold mb-3 text-slate-900">全生命周期支持</h4>
                 <ul className="space-y-2 page-caption text-slate-600">
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#0077b6] mt-0.5 flex-shrink-0" />
                     <span>现场技术支持与工艺优化</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="w-4 h-4 text-[#73DBFF] mt-0.5 flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-[#0077b6] mt-0.5 flex-shrink-0" />
                     <span>工具性能追踪与持续改进</span>
                   </li>
                 </ul>
@@ -325,12 +325,12 @@ export default function DiamondToolsPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
               <Card className="p-6 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">熔固温度</div>
-                <div className="text-2xl font-bold text-[#73DBFF] mb-1">780°C - 1050°C</div>
+                <div className="text-2xl font-bold text-[#0077b6] mb-1">780°C - 1050°C</div>
                 <p className="page-caption text-slate-600">基于合金体系精确调控</p>
               </Card>
               <Card className="p-6 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">工艺环境</div>
-                <div className="text-lg font-semibold text-[#73DBFF] mb-1">超高洁净真空负压控制</div>
+                <div className="text-lg font-semibold text-[#0077b6] mb-1">超高洁净真空负压控制</div>
                 <p className="page-caption text-slate-600">有效抑制成分挥发，保障熔固层致密性</p>
               </Card>
             </div>
@@ -342,7 +342,7 @@ export default function DiamondToolsPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="p-6 bg-white border-slate-200 hover:border-[#4169E1]/60 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#73DBFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-6 h-6 text-[#0077b6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -445,7 +445,7 @@ export default function DiamondToolsPage() {
               <p className="page-body text-slate-300 mb-6 text-center">活性熔固工具广泛应用于：</p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="page-h3 mb-3 text-[#73DBFF]">硬脆/黑色金属</h4>
+                  <h4 className="page-h3 mb-3 text-[#0077b6]">硬脆/黑色金属</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• 超硬陶瓷</li>
                     <li>• 高强度钢</li>
@@ -500,7 +500,7 @@ export default function DiamondToolsPage() {
               <div className="w-10 h-10 rounded-lg bg-[#73DBFF]/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-[#73DBFF]" />
               </div>
-              <h3 className="page-h3 mb-3 text-[#73DBFF]">延伸</h3>
+              <h3 className="page-h3 mb-3 text-[#0077b6]">延伸</h3>
               <p className="page-caption text-slate-300">
                 金刚石与铜的结合——通过<strong className="text-white">高强度、低热阻界面</strong>
                 ，打造金刚石铜散热基板，进入热管理领域。

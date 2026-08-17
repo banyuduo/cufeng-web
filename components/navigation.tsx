@@ -58,10 +58,21 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   )
 
   const isHome = pathname === prefix || pathname === `${prefix}/`
-  const isDarkPage = isHome || isActive("/patents") || isActive("/about") || isActive("/news")
-  const navBg = isDarkPage ? "bg-[#001a33]/95 border-[#003366]/50" : "bg-background/95 border-border/60"
-  const navText = isDarkPage ? "text-white" : "text-foreground"
-  const navMuted = isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
+  // 深蓝底页面统一用深色导航；浅色产品页用浅色导航（避免 shadcn 近黑底）
+  const isDarkPage =
+    isHome ||
+    isActive("/patents") ||
+    isActive("/about") ||
+    isActive("/news") ||
+    isActive("/applications") ||
+    isActive("/cooperation")
+  const navBg = isDarkPage
+    ? "bg-[#001a33]/95 border-[#003366]/50"
+    : "bg-white/95 border-slate-200/80"
+  const navText = isDarkPage ? "text-white" : "text-[#0F2A5C]"
+  const navMuted = isDarkPage
+    ? "text-white/80 hover:text-white"
+    : "text-slate-600 hover:text-[#0F2A5C]"
 
   return (
     <nav className={`border-b fixed w-full z-50 ${navBg}`}>
@@ -113,13 +124,13 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
               {t("common.nav.about")}
             </Link>
             <Link href={`${prefix}/cooperation`}>
-              <Button size="sm" className={isDarkPage ? "bg-[#0077b6] hover:bg-[#0096c7] text-white border-0" : "bg-primary text-primary-foreground hover:bg-primary/90"}>
+              <Button size="sm" className={isDarkPage ? "bg-[#0077b6] hover:bg-[#0096c7] text-white border-0" : "bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white border-0"}>
                 {t("common.nav.projectCooperation")}
               </Button>
             </Link>
             <Link
               href={localeSwitchHref}
-              className={`text-xs border rounded px-2 py-1 transition-colors ${isDarkPage ? "text-white/80 hover:text-white border-white/40" : "text-muted-foreground hover:text-foreground border-border"}`}
+              className={`text-xs border rounded px-2 py-1 transition-colors ${isDarkPage ? "text-white/80 hover:text-white border-white/40" : "text-slate-600 hover:text-[#0F2A5C] border-slate-300"}`}
             >
               {otherLocaleName}
             </Link>
@@ -128,12 +139,12 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
           <div className="flex items-center gap-2 md:hidden">
             <Link
               href={localeSwitchHref}
-              className={`text-xs px-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
+              className={`text-xs px-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
             >
               {otherLocaleName}
             </Link>
             <button
-              className={`p-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
+              className={`p-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={t("common.nav.toggleMenu")}
             >

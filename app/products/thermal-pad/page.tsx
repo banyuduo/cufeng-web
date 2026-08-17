@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -27,7 +27,7 @@ export default function ThermalPadPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -37,7 +37,7 @@ export default function ThermalPadPage() {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center">
-                  <FlaskConical className="w-7 h-7 text-[#73DBFF]" />
+                  <FlaskConical className="w-7 h-7 text-[#0077b6]" />
                 </div>
                 <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
                   {t("products.thermalPad.hero.badge")}
@@ -54,23 +54,23 @@ export default function ThermalPadPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="page-caption text-slate-700">{t("products.thermalPad.hero.inPlaneTC")}</span>
-                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.inPlaneTCValue")}</span>
+                  <span className="font-semibold text-[#0077b6]">{t("products.thermalPad.hero.inPlaneTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="page-caption text-slate-700">{t("products.thermalPad.hero.throughTC")}</span>
-                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.throughTCValue")}</span>
+                  <span className="font-semibold text-[#0077b6]">{t("products.thermalPad.hero.throughTCValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="page-caption text-slate-700">{t("products.thermalPad.hero.flexibility")}</span>
-                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.flexibilityValue")}</span>
+                  <span className="font-semibold text-[#0077b6]">{t("products.thermalPad.hero.flexibilityValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="page-caption text-slate-700">{t("products.thermalPad.hero.cte")}</span>
-                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.cteValue")}</span>
+                  <span className="font-semibold text-[#0077b6]">{t("products.thermalPad.hero.cteValue")}</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                   <span className="page-caption text-slate-700">{t("products.thermalPad.hero.thicknessRange")}</span>
-                  <span className="font-semibold text-[#73DBFF]">{t("products.thermalPad.hero.thicknessValue")}</span>
+                  <span className="font-semibold text-[#0077b6]">{t("products.thermalPad.hero.thicknessValue")}</span>
                 </div>
               </div>
             </Card>
@@ -86,7 +86,7 @@ export default function ThermalPadPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Layers className="w-6 h-6 text-[#73DBFF]" />
+                <Layers className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card1Title")}</h3>
               <p className="page-body text-slate-600">
@@ -96,7 +96,7 @@ export default function ThermalPadPage() {
 
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-[#73DBFF]" />
+                <Zap className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card2Title")}</h3>
               <p className="page-body text-slate-600">
@@ -106,7 +106,7 @@ export default function ThermalPadPage() {
 
             <Card className="p-8 bg-slate-50 border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-sky-100 flex items-center justify-center mb-6">
-                <FlaskConical className="w-6 h-6 text-[#73DBFF]" />
+                <FlaskConical className="w-6 h-6 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-4 text-slate-900">{t("products.thermalPad.techAdvantages.card3Title")}</h3>
               <p className="page-body text-slate-600">
@@ -251,7 +251,7 @@ export default function ThermalPadPage() {
               </ul>
               <Link
                 href={`${prefix}/applications`}
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0077b6] font-semibold"
               >
                 {t("products.thermalPad.applicationProspects.exploreApplications")}
                 <ArrowRight className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function ThermalPadPage() {
               </p>
               <Link
                 href={`${prefix}/about#zhang-gong`}
-                className="inline-flex items-center gap-2 text-[#73DBFF] hover:text-[#73DBFF] font-semibold"
+                className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#0077b6] font-semibold"
               >
                 {t("products.thermalPad.applicationProspects.contactEngineer")}
                 <ArrowRight className="w-4 h-4" />
@@ -285,7 +285,7 @@ export default function ThermalPadPage() {
               <p className="page-body text-slate-600 mb-6">
                 {t("products.thermalPad.patents.intro")}
               </p>
-              <div className="text-xs font-medium text-[#73DBFF] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
+              <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("products.thermalPad.patents.patentTitle")}
               </h3>

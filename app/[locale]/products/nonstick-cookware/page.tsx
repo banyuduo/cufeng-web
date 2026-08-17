@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -28,7 +28,7 @@ export default function NonstickCookwarePage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`${prefix}/products`}
-            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#73DBFF] mb-8"
+            className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("products.backToProducts")}
@@ -46,25 +46,25 @@ export default function NonstickCookwarePage() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature1")}</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature2")}</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature3")}</span>
                 </div>
                 <div className="flex items-center gap-3 page-caption text-slate-700">
                   <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#73DBFF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0077b6]" />
                   </div>
                   <span>{t("products.nonstickCookware.hero.feature4")}</span>
                 </div>
@@ -130,7 +130,7 @@ export default function NonstickCookwarePage() {
 
             <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-[#73DBFF]" />
+                <Award className="w-8 h-8 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.durableTitle")}</h3>
               <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.durableDesc")}</p>
@@ -149,13 +149,13 @@ export default function NonstickCookwarePage() {
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
             <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center mb-6">
-                <Shield className="w-7 h-7 text-[#73DBFF]" />
+                <Shield className="w-7 h-7 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-3 text-slate-900">{t("products.nonstickCookware.keyFeatures.lifespanTitle")}</h3>
               <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.lifespanDesc")}
               </p>
-              <div className="text-2xl font-bold text-[#73DBFF]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
+              <div className="text-2xl font-bold text-[#0077b6]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
               <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
             </Card>
 
