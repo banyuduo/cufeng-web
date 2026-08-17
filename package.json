@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build && node scripts/strip-game-from-out.mjs",
+    "build": "next build && node scripts/prepare-aliyun-out.mjs",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",

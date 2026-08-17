@@ -1,23 +1,12 @@
-# Apache / 阿里云虚拟主机：Next.js 静态导出
-# 构建后随 public 复制到 out/，部署到站点根目录即可生效。
+# 阿里云虚拟主机：Next.js 静态导出（尽量简单，避免错误 301 到 /usr/home/...）
+# 上传位置：htdocs 根目录（与 index.html、_next、zh 同级）
+# 注意：文件名必须是 .htaccess（以点开头），FileZilla 需开启「显示隐藏文件」
 
 DirectoryIndex index.html
 
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # 关闭 Apache 默认「目录补斜杠」301。
-  # 阿里云虚拟主机上该 301 会错误跳转到 /usr/home/.../htdocs/... 内部路径。
+# 关闭 Apache 默认目录补斜杠（阿里云上会跳转到服务器内部路径）
+<IfModule mod_dir.c>
   DirectorySlash Off
-
-  # 根路径 → 中文首页
-  RewriteRule ^$ /zh/ [R=301,L]
-
-  # 目录无尾斜杠：仅内部重写，不对外 301（避免浏览器缓存错误跳转）
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteCond %{REQUEST_URI} !/$
-  RewriteRule ^(.+[^/])$ $1/ [L]
 </IfModule>
 
 <IfModule mod_mime.c>

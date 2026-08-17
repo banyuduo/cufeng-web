@@ -8,6 +8,7 @@ import { Menu, ChevronDown } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
 import { useTranslations } from "@/components/translations-provider"
 import { isValidLocale } from "@/lib/i18n"
+import { ensureTrailingSlash } from "@/lib/site-path"
 
 const PRODUCT_SUBLINKS = [
   { path: "/products/diamond-copper", key: "common.footer.diamondCopper" },
@@ -49,6 +50,12 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
 
   const otherLocale: Locale = locale === "zh" ? "en" : "zh"
   const otherLocaleName = locale === "zh" ? "English" : "中文"
+
+  const localeSwitchHref = ensureTrailingSlash(
+    pathname.startsWith(`/${locale}`)
+      ? pathname.replace(`/${locale}`, `/${otherLocale}`)
+      : `/${otherLocale}${pathname === "/" ? "" : pathname}`
+  )
 
   const isHome = pathname === prefix || pathname === `${prefix}/`
   const isDarkPage = isHome || isActive("/patents") || isActive("/about") || isActive("/news")
@@ -111,11 +118,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
               </Button>
             </Link>
             <Link
-              href={
-                pathname.startsWith(`/${locale}`)
-                  ? pathname.replace(`/${locale}`, `/${otherLocale}`)
-                  : `/${otherLocale}${pathname === "/" ? "" : pathname}`
-              }
+              href={localeSwitchHref}
               className={`text-xs border rounded px-2 py-1 transition-colors ${isDarkPage ? "text-white/80 hover:text-white border-white/40" : "text-muted-foreground hover:text-foreground border-border"}`}
             >
               {otherLocaleName}
@@ -124,11 +127,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
 
           <div className="flex items-center gap-2 md:hidden">
             <Link
-              href={
-                pathname.startsWith(`/${locale}`)
-                  ? pathname.replace(`/${locale}`, `/${otherLocale}`)
-                  : `/${otherLocale}${pathname === "/" ? "" : pathname}`
-              }
+              href={localeSwitchHref}
               className={`text-xs px-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"}`}
             >
               {otherLocaleName}
@@ -229,11 +228,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                 {t("common.nav.projectCooperation")}
               </Link>
               <Link
-                href={
-                  pathname.startsWith(`/${locale}`)
-                    ? pathname.replace(`/${locale}`, `/${otherLocale}`)
-                    : `/${otherLocale}${pathname === "/" ? "" : pathname}`
-                }
+                href={localeSwitchHref}
                 className="text-white text-sm font-medium py-2.5 px-2 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
