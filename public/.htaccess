@@ -1,22 +1,22 @@
-# Apache / 阿里云虚拟主机：静态导出站点常用规则
+# Apache / 阿里云虚拟主机：Next.js 静态导出
 # 构建后随 public 复制到 out/，部署到站点根目录即可生效。
 
-# 目录默认页（Next 静态导出每个路由为 index.html）
 DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 根路径 301 到默认中文首页（与 lib/i18n.ts 中 defaultLocale 一致）
+  # 关闭 Apache 默认「目录补斜杠」301。
+  # 阿里云虚拟主机上该 301 会错误跳转到 /usr/home/.../htdocs/... 内部路径。
+  DirectorySlash Off
+
+  # 根路径 → 中文首页
   RewriteRule ^$ /zh/ [R=301,L]
 
-  # 内部补全尾斜杠（不用 301，避免阿里云虚拟主机跳转到 /usr/home/... 内部路径）
-  RewriteCond %{REQUEST_URI} !^/_next/ [NC]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # 目录无尾斜杠：仅内部重写，不对外 301（避免浏览器缓存错误跳转）
+  RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_URI} !/$
-  RewriteCond %{REQUEST_URI} !\.[^./]+$
   RewriteRule ^(.+[^/])$ $1/ [L]
 </IfModule>
 
@@ -27,7 +27,6 @@ DirectoryIndex index.html
   AddType application/json .json
 </IfModule>
 
-# 静态资源长缓存（文件名含 hash，可安全 immutable）
 <IfModule mod_headers.c>
   <FilesMatch "\.(js|css|woff2?|png|jpg|jpeg|gif|webp|svg|ico)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
