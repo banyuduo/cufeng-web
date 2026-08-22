@@ -54,8 +54,8 @@
       "achievement1": "High thermal conductivity diamond-copper composite",
       "achievement1Value": "Lab-tested thermal conductivity ≥ 680 W/m·K",
       "achievement1Note": "With further improvement potential",
-      "achievement2": "Reproducible all-carbon functional structures",
-      "achievement2Note": "Sample preparation capability",
+      "achievement2": "Capable of sample solution design and preparation, with small-batch custom delivery",
+      "achievement2Note": "",
       "platformFocus": "This platform focuses on AI computing, new energy thermal management, advanced interface materials, and high-hardness, high-conductivity applications, delivering breakthrough thermal management solutions for high-power-density electronic devices.",
       "viewTechArchitecture": "View Technology Architecture",
       "viewTechApplications": "View Technology Applications",
@@ -1088,7 +1088,7 @@
     "hero": {
       "title": "Technology Architecture & Evolution Path",
       "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering",
-      "desc": "We have built a complete carbon-based, atomic-level interface engineering platform, closing the loop from theoretical hypothesis to physical validation, and an airtight intellectual property protection network of 10 core patents. Through precise control of the sp³–sp² hybrid bonding network, we have achieved material performance leaps in the following three dimensions:",
+      "desc": "A complete carbon-based, atomic-level interface engineering platform has been built, closing the loop from theoretical hypothesis to physical validation, with an airtight intellectual property protection network of 10 core patents. Through precise control of the sp³–sp² hybrid bonding network, material performance leaps have been achieved in the following three dimensions:",
       "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
     },
     "architecture": {
@@ -1129,7 +1129,7 @@
       "physicsEvolution": "Stress engineering\n(based on all-carbon platform)",
       "computingResource": "Potential physical\ncomputing resource",
       "coreLogicTitle": "Core logic summary",
-      "coreLogicDesc": "Through stress regulation of sp³–sp² bonding structures, we evolved from “heat dissipation tools” into functional substrates with “physical computing potential.” This path not only validates technical feasibility, but also reveals the vast imagination space at the intersection of materials science and computational physics"
+      "coreLogicDesc": "Through research on sp³–sp² bonding structures, evolving from “heat dissipation tools” into functional substrates with “physical computing potential.” The path not only has technical feasibility, but also reveals the vast imagination space at the intersection of materials science and computational physics"
     },
     "evolutionPath": {
       "sectionTitle": "Technology Evolution Path",
@@ -1276,7 +1276,7 @@
     },
     "cta": {
       "title": "Explore technology cooperation opportunities",
-      "subtitle": "We welcome technology licensing, joint R&D, patent transfer, and other cooperation forms",
+      "subtitle": "We welcome technology licensing, joint development, project collaboration, and other cooperation forms",
       "projectCooperation": "Project Cooperation",
       "learnProducts": "Learn about product applications",
       "viewPatentList": "View patent list",

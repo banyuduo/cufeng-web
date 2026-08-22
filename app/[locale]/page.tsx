@@ -154,9 +154,11 @@ export default async function HomePage({
                         <span className="text-[#7dd3fc]">2. </span>
                         {t("home.hero.achievement2")}
                       </div>
-                      <div className="text-white/80 font-normal">
-                        {t("home.hero.achievement2Note")}
-                      </div>
+                      {t("home.hero.achievement2Note") ? (
+                        <div className="text-white/80 font-normal">
+                          {t("home.hero.achievement2Note")}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </div>
