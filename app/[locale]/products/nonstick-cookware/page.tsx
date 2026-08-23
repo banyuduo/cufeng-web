@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -24,8 +24,8 @@ export default function NonstickCookwarePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
+        <div className="max-w-6xl mx-auto">
           <Link
             href={`${prefix}/products`}
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -95,8 +95,8 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* Why Diamond */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.whyDiamond.title")}</h2>
             <p className="page-lead text-slate-600">
@@ -140,8 +140,8 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.keyFeatures.title")}</h2>
             <p className="page-lead text-slate-600">{t("products.nonstickCookware.keyFeatures.subtitle")}</p>
@@ -155,7 +155,7 @@ export default function NonstickCookwarePage() {
               <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.lifespanDesc")}
               </p>
-              <div className="text-2xl font-bold text-[#0077b6]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
+              <div className="page-stat-value text-[#0077b6]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
               <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
             </Card>
 
@@ -167,7 +167,7 @@ export default function NonstickCookwarePage() {
               <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.safetyDesc")}
               </p>
-              <div className="text-2xl font-bold text-green-600">{t("products.nonstickCookware.keyFeatures.safetyValue")}</div>
+              <div className="page-stat-value text-green-600">{t("products.nonstickCookware.keyFeatures.safetyValue")}</div>
               <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
             </Card>
 
@@ -179,14 +179,14 @@ export default function NonstickCookwarePage() {
               <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.thermalDesc")}
               </p>
-              <div className="text-2xl font-bold text-amber-600">{t("products.nonstickCookware.keyFeatures.thermalValue")}</div>
-              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
+              <div className="page-stat-value text-amber-600">{t("products.nonstickCookware.keyFeatures.thermalValue")}</div>
+              <div className="page-stat-unit text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.comparison.title")}</h2>
@@ -254,7 +254,7 @@ export default function NonstickCookwarePage() {
               <div className="p-4 bg-[#E8EEFF]">
                 <div className="font-semibold text-slate-900 mb-2">{t("products.nonstickCookware.comparison.overallScore")}</div>
                 <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
-                  <div className="text-center"><div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div></div>
+                  <div className="text-center"><div className="page-stat-value text-[#0F2A5C]">9.5/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">6.0/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">7.0/10</div></div>
                 </div>
@@ -326,7 +326,7 @@ export default function NonstickCookwarePage() {
                   <tr className="hover:bg-slate-50 bg-[#E8EEFF]">
                     <td className="p-4 text-slate-900 font-semibold">{t("products.nonstickCookware.comparison.overallScore")}</td>
                     <td className="p-4 text-center">
-                      <div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div>
+                      <div className="page-stat-value text-[#0F2A5C]">9.5/10</div>
                     </td>
                     <td className="p-4 text-center">
                       <div className="text-lg font-semibold text-slate-500">6.0/10</div>
@@ -343,7 +343,7 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-20 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.cta.title")}</h2>
           <p className="page-lead text-slate-600 mb-8">{t("products.nonstickCookware.cta.subtitle")}</p>

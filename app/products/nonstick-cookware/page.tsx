@@ -1,4 +1,4 @@
-﻿import { Link } from "@/components/app-link"
+import { Link } from "@/components/app-link"
 import { ArrowLeft, Shield, Zap, CheckCircle2, Flame, Droplet, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -14,8 +14,8 @@ export default async function NonstickCookwarePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-[#F9FAFC]">
+        <div className="max-w-6xl mx-auto">
           <Link
             href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -85,8 +85,8 @@ export default async function NonstickCookwarePage() {
       </section>
 
       {/* Why Diamond */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">为什么选择金刚石？</h2>
             <p className="page-lead text-slate-600">
@@ -130,8 +130,8 @@ export default async function NonstickCookwarePage() {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">核心优势</h2>
             <p className="page-lead text-slate-600">专利技术赋能，重新定义不粘锅性能标准</p>
@@ -145,7 +145,7 @@ export default async function NonstickCookwarePage() {
               <p className="page-body text-slate-600 mb-4">
                 金刚石颗粒通过活性熔固技术永久固着于基材，形成化学键合。较传统涂层寿命提升10倍以上，可承受100,000+次使用循环。金属铲具随意使用，不会损坏涂层。
               </p>
-              <div className="text-2xl font-bold text-[#0077b6]">10倍+</div>
+              <div className="page-stat-value text-[#0077b6]">10倍+</div>
               <div className="page-caption text-slate-500">耐磨性提升</div>
             </Card>
 
@@ -158,7 +158,7 @@ export default async function NonstickCookwarePage() {
                 金刚石材料本身无毒无害，涂层不含PFOA/PTFE等有害物质。可通过GB
                 4806.1-2016食品接触材料安全检测，具备通过FDA认可的能力，可放心使用。
               </p>
-              <div className="text-2xl font-bold text-green-600">0添加</div>
+              <div className="page-stat-value text-green-600">0添加</div>
               <div className="page-caption text-slate-500">有害化学物质</div>
             </Card>
 
@@ -171,14 +171,14 @@ export default async function NonstickCookwarePage() {
                 金刚石的超高导热性能（2000+
                 W/m·K）确保热量均匀快速分布，避免局部过热。烹饪效率提升30%以上，食物受热更均匀，锁住营养与口感。
               </p>
-              <div className="text-2xl font-bold text-amber-600">2000+</div>
-              <div className="page-caption text-slate-500">W/m·K 热导率</div>
+              <div className="page-stat-value text-amber-600">2000+</div>
+              <div className="page-stat-unit text-slate-500">W/m·K 热导率</div>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">性能对比：一目了然的优势</h2>
@@ -246,7 +246,7 @@ export default async function NonstickCookwarePage() {
               <div className="p-4 bg-[#E8EEFF]">
                 <div className="font-semibold text-slate-900 mb-2">综合评分</div>
                 <div className="grid grid-cols-3 gap-1.5 text-xs sm:gap-2 sm:text-sm">
-                  <div className="text-center"><div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div></div>
+                  <div className="text-center"><div className="page-stat-value text-[#0F2A5C]">9.5/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">6.0/10</div></div>
                   <div className="text-center"><div className="text-lg font-semibold text-slate-500">7.0/10</div></div>
                 </div>
@@ -318,7 +318,7 @@ export default async function NonstickCookwarePage() {
                   <tr className="hover:bg-slate-50 bg-[#E8EEFF]">
                     <td className="p-4 text-slate-900 font-semibold">综合评分</td>
                     <td className="p-4 text-center">
-                      <div className="text-2xl font-bold text-[#0F2A5C]">9.5/10</div>
+                      <div className="page-stat-value text-[#0F2A5C]">9.5/10</div>
                     </td>
                     <td className="p-4 text-center">
                       <div className="text-lg font-semibold text-slate-500">6.0/10</div>
@@ -335,7 +335,7 @@ export default async function NonstickCookwarePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">了解更多金刚石不粘锅技术</h2>
           <p className="page-lead text-slate-600 mb-8">我们的工程团队将为您详细介绍技术原理与应用前景</p>

@@ -32,7 +32,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden ${
+      className={`relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden ${
         isDark
           ? ""
           : "bg-[#F9FAFC]"
@@ -71,8 +71,8 @@ export function PageHero({
         </>
       )}
 
-      <div className={`container mx-auto px-4 sm:px-6 lg:px-8 relative z-10`}>
-        <div className={`text-center ${isDark ? "max-w-4xl" : "max-w-7xl"} mx-auto`}>
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
           {badge && (
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
@@ -102,9 +102,9 @@ export function PageHero({
           )}
           {subtitle && (
             <p
-              className={`page-lead break-words ${
-                isDark ? "text-white/85" : "text-slate-600"
-              } ${tagline ? "max-w-3xl mx-auto" : ""}`}
+              className={`page-lead page-measure break-words ${
+                isDark ? "text-white/75" : "text-slate-500"
+              }`}
             >
               {subtitle}
             </p>

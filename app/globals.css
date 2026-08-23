@@ -90,31 +90,114 @@
   --sidebar-ring: hsl(210 100% 58%);
 }
 
-/* Page layout utility classes - 统一标题层级 */
+/* Page layout utility classes - 统一标题层级
+   中文默认：正常字距、略松行高。英文由 [data-locale="en"] / :lang(en) 收紧。 */
 @layer components {
   .page-h1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] sm:leading-[1.06] break-words;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold break-words;
+    letter-spacing: 0;
+    line-height: 1.18;
   }
   .page-h2 {
-    @apply text-2xl sm:text-3xl font-bold tracking-tight leading-tight break-words;
+    @apply text-3xl sm:text-4xl font-bold break-words;
+    letter-spacing: 0;
+    line-height: 1.25;
   }
   .page-h3 {
-    @apply text-lg sm:text-xl font-semibold tracking-tight leading-snug;
+    @apply text-lg sm:text-xl font-semibold break-words;
+    letter-spacing: 0;
+    line-height: 1.35;
   }
   .page-kicker {
-    @apply text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase;
+    @apply text-xs sm:text-sm font-semibold;
+    letter-spacing: 0.04em;
+  }
+  html:lang(en) .page-kicker,
+  [data-locale="en"] .page-kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
   .page-lead {
-    @apply text-base sm:text-lg leading-relaxed;
+    @apply text-lg sm:text-xl font-normal break-words;
+    line-height: 1.75;
   }
   .page-body {
-    @apply text-base leading-relaxed;
+    @apply text-base font-normal;
+    line-height: 1.75;
   }
   .page-caption {
-    @apply text-sm leading-relaxed;
+    @apply text-sm font-normal;
+    line-height: 1.7;
   }
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
+  }
+  .section-block {
+    @apply py-16 sm:py-20 lg:py-24 px-6 lg:px-8;
+  }
+  .page-measure {
+    @apply max-w-3xl mx-auto;
+  }
+  .page-lead.text-center {
+    @apply max-w-3xl mx-auto;
+  }
+  .page-stat-value {
+    @apply text-3xl sm:text-4xl font-bold tabular-nums;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .page-stat-value-lg {
+    @apply text-4xl sm:text-5xl font-bold tabular-nums;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .page-stat-value-sm {
+    @apply text-xl sm:text-2xl font-bold tabular-nums;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  .page-stat-inline {
+    @apply font-semibold tabular-nums;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.02em;
+  }
+  .page-stat-unit {
+    @apply text-sm font-normal;
+    letter-spacing: 0;
+  }
+
+  html:lang(en) .page-h1,
+  [data-locale="en"] .page-h1 {
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+  html:lang(en) .page-h2,
+  [data-locale="en"] .page-h2 {
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  html:lang(en) .page-h3,
+  [data-locale="en"] .page-h3 {
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  html:lang(en) .page-lead,
+  [data-locale="en"] .page-lead {
+    letter-spacing: -0.01em;
+    line-height: 1.65;
+  }
+}
+
+@media (min-width: 640px) {
+  .page-h1 {
+    line-height: 1.15;
+  }
+  html:lang(en) .page-h1,
+  [data-locale="en"] .page-h1 {
+    line-height: 1.05;
   }
 }
 
@@ -161,6 +244,8 @@
   --color-page-dark-card: var(--page-dark-card);
   --color-page-dark-accent: var(--page-dark-accent);
   --color-page-dark-accent-light: var(--page-dark-accent-light);
+  --font-sans: var(--font-inter), var(--font-noto-sc), ui-sans-serif, system-ui,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 @layer base {
@@ -170,7 +255,8 @@
   body {
     @apply bg-background text-foreground;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 
   /* 全站可点击元素默认手型指针（含中英文、PC/触屏设备上支持悬停时） */
@@ -224,4 +310,15 @@
 
 .fade-in-down {
   animation: fadeInDown 0.3s ease-out;
+}
+
+/* Soften common lead/body pairings site-wide (zh/en, light and dark pages). */
+.page-lead.text-slate-600,
+.page-body.text-slate-600,
+.page-caption.text-slate-600 {
+  color: #64748b;
+}
+.page-lead.text-white\/90,
+.page-lead.text-white\/85 {
+  color: rgb(255 255 255 / 0.75);
 }

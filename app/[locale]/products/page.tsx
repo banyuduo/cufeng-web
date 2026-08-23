@@ -1,8 +1,8 @@
-﻿import { Navigation } from "@/components/navigation"
+import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { Link } from "@/components/app-link"
-import { ArrowRight, Zap, Layers, FlaskConical, Sparkles, ChefHat } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { getTranslations } from "@/lib/translations"
@@ -17,6 +17,47 @@ export default async function ProductsPage({
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
   const t = await getTranslations(validLocale)
   const prefix = `/${validLocale}`
+  const viewDetails = t("products.nonstickCookware.viewDetails")
+
+  const catalog = [
+    {
+      href: `${prefix}/products/diamond-copper`,
+      badge: t("products.badge.gen2Core"),
+      badgeClass: "bg-[#0F2A5C] text-white",
+      title: t("products.diamondCopper.title"),
+      desc: t("products.diamondCopper.desc"),
+    },
+    {
+      href: `${prefix}/products/thermal-pad`,
+      badge: t("products.badge.gen2Expand"),
+      badgeClass: "bg-slate-100 text-slate-700",
+      title: t("products.thermalPad.title"),
+      desc: t("products.thermalPad.desc"),
+    },
+    {
+      href: `${prefix}/products/carbon-composite`,
+      badge: t("products.badge.gen3Future"),
+      badgeClass: "bg-slate-100 text-slate-700",
+      title: t("products.carbonComposite.title"),
+      desc: t("products.carbonComposite.desc"),
+    },
+    {
+      href: `${prefix}/products/nonstick-cookware`,
+      badge: t("products.badge.inStock"),
+      badgeClass: "bg-green-100 text-green-700",
+      title: t("products.nonstickCookware.title"),
+      desc: t("products.nonstickCookware.desc"),
+    },
+    {
+      href: `${prefix}/products/diamond-tools`,
+      badge: t("products.badge.traditional"),
+      badgeClass: "bg-slate-200 text-slate-700",
+      title: t("products.diamondTools.title"),
+      subtitle: t("products.diamondTools.subtitle"),
+      desc: t("products.diamondTools.desc"),
+      wide: true,
+    },
+  ] as const
 
   return (
     <div className="min-h-screen bg-[#F9FAFC]">
@@ -28,210 +69,52 @@ export default async function ProductsPage({
         subtitle={t("products.subtitle")}
       />
 
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
-            <Link href={`${prefix}/products/diamond-copper`} className="block h-full min-h-0">
-              <Card className="p-6 sm:p-10 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center group-hover:bg-[#1E3A8A] transition-colors">
-                    <Layers className="w-7 h-7 text-white" />
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+            {catalog.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`block h-full min-h-0 ${"wide" in item && item.wide ? "md:col-span-2" : ""}`}
+              >
+                <Card className="flex h-full flex-col p-6 sm:p-8 bg-white border-slate-200 hover:border-[#4169E1]/50 hover:shadow-lg transition-all group cursor-pointer">
+                  <div className={`mb-4 inline-flex w-fit rounded-full px-3 py-1 text-xs font-medium ${item.badgeClass}`}>
+                    {item.badge}
                   </div>
-                  <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">
-                    {t("products.badge.gen2Core")}
+                  <h2 className="page-h3 mb-2 text-slate-900">
+                    {item.title}
+                  </h2>
+                  {"subtitle" in item && item.subtitle ? (
+                    <p className="page-caption text-slate-500 mb-3">{item.subtitle}</p>
+                  ) : null}
+                  <p className="page-body text-slate-500 mb-6 flex-1">
+                    {item.desc}
+                  </p>
+                  <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
+                    {viewDetails} <ArrowRight className="w-4 h-4" />
                   </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.diamondCopper.title")}
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.diamondCopper.desc")}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.diamondCopper.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.diamondCopper.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.diamondCopper.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
-
-            <Link href={`${prefix}/products/thermal-pad`} className="block h-full min-h-0">
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
-                    <FlaskConical className="w-7 h-7 text-[#0077b6]" />
-                  </div>
-                  <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
-                    {t("products.badge.gen2Expand")}
-                  </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.thermalPad.title")}
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.thermalPad.desc")}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.thermalPad.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.thermalPad.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.thermalPad.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
-
-            <Link href={`${prefix}/products/carbon-composite`} className="block h-full min-h-0">
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0F2A5C] to-[#1E3A8A] flex items-center justify-center group-hover:from-[#1E3A8A] group-hover:to-[#73DBFF]/80 transition-colors">
-                    <Sparkles className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="px-3 py-1 bg-gradient-to-r from-[#023B99] to-[#73DBFF] rounded-full text-xs font-medium text-white">
-                    {t("products.badge.gen3Future")}
-                  </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.carbonComposite.title")}
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.carbonComposite.desc")}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.carbonComposite.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.carbonComposite.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.carbonComposite.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
-
-            <Link href={`${prefix}/products/nonstick-cookware`} className="block h-full min-h-0">
-              <Card className="p-6 sm:p-10 bg-white border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#E8EEFF] flex items-center justify-center group-hover:bg-[#E8EEFF] transition-colors">
-                    <ChefHat className="w-7 h-7 text-[#0077b6]" />
-                  </div>
-                  <div className="px-3 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
-                    {t("products.badge.inStock")}
-                  </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.nonstickCookware.title")}
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.nonstickCookware.desc")}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C]" />
-                    {t("products.nonstickCookware.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
-
-            <Link href={`${prefix}/products/diamond-tools`} className="block h-full min-h-0 md:col-span-2">
-              <Card className="p-6 sm:p-10 bg-slate-50 border-slate-200 hover:shadow-2xl hover:border-[#4169E1]/60 transition-all group cursor-pointer h-full">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <Zap className="w-7 h-7 text-slate-600" />
-                  </div>
-                  <div className="px-3 py-1 bg-slate-200 rounded-full text-xs font-medium text-slate-700">
-                    {t("products.badge.traditional")}
-                  </div>
-                </div>
-                <h2 className="page-h3 mb-3 text-slate-900">
-                  {t("products.diamondTools.title")}
-                  <br />
-                  <span className="page-caption text-slate-600 font-normal">
-                    {t("products.diamondTools.subtitle")}
-                  </span>
-                </h2>
-                <p className="page-caption text-slate-600 mb-6">
-                  {t("products.diamondTools.desc")}
-                </p>
-                <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
-                    {t("products.diamondTools.feature1")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
-                    {t("products.diamondTools.feature2")}
-                  </div>
-                  <div className="flex items-center gap-2 page-caption text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
-                    {t("products.diamondTools.feature3")}
-                  </div>
-                </div>
-                <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
-                  {t("products.nonstickCookware.viewDetails")} <ArrowRight className="w-4 h-4" />
-                </div>
-              </Card>
-            </Link>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-6 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-6 px-6 lg:px-8 bg-[#F9FAFC]">
+        <div className="max-w-6xl mx-auto">
           <p className="page-caption text-slate-500 text-center">
             {t("products.disclaimer")}
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}
           </h2>
-          <p className="page-lead text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
+          <p className="page-lead page-measure text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>
