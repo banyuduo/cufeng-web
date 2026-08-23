@@ -42,10 +42,12 @@ export default async function LocaleLayout({
   const translationsData = await getTranslationsData(validLocale)
 
   return (
-    <LocaleProvider locale={validLocale}>
-      <TranslationsProvider data={translationsData}>
-        {children}
-      </TranslationsProvider>
-    </LocaleProvider>
+    <div data-locale={validLocale} className="contents">
+      <LocaleProvider locale={validLocale}>
+        <TranslationsProvider data={translationsData}>
+          {children}
+        </TranslationsProvider>
+      </LocaleProvider>
+    </div>
   )
 }

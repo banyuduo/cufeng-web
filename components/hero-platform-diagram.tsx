@@ -45,7 +45,7 @@ export function HeroPlatformDiagram({
 }) {
   const s = strings
   return (
-    <div className="w-full max-w-5xl mx-auto rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/60 overflow-hidden shadow-xl shadow-[#0077b6]/10">
+    <div className="w-full rounded-2xl border border-[#0077b6]/40 bg-[#001a33]/60 overflow-hidden shadow-xl shadow-[#0077b6]/10">
       {showLattice && (
       <>
       {/* 地基：微观晶格演变 sp² 蜂窝 → 过渡区(原子级共价桥接) → sp³ 四面体 */}
@@ -149,7 +149,7 @@ export function HeroPlatformDiagram({
             <div className="w-8 h-8 rounded-full bg-[#001a33] border-2 border-[#0077b6]/50 flex items-center justify-center shrink-0 mb-2">
               <Layers className="w-4 h-4 text-[#7dd3fc]" />
             </div>
-            <h4 className="text-[#7dd3fc] font-semibold text-sm mb-2 uppercase tracking-wide opacity-90">
+            <h4 className="text-[#7dd3fc] font-semibold text-sm mb-2 opacity-90">
               {s.layer4Title}
             </h4>
             <p className="page-caption text-white/90 leading-relaxed mb-1.5">{s.layer4Line1}</p>

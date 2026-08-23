@@ -60,8 +60,8 @@ export default async function ApplicationsPage({
       />
 
       {/* 应用蓝图 */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#061f33]/96 rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10 overflow-hidden relative">
             <div className="absolute inset-0 pointer-events-none opacity-50" aria-hidden>
               <div
@@ -104,7 +104,7 @@ export default async function ApplicationsPage({
                 <div className="px-8 py-4 bg-[#002244]/70 rounded-xl border border-[#0077b6]/30 flex items-center gap-3 shadow-2xl shadow-[#0077b6]/10">
                   <ShieldCheck className="w-6 h-6 text-[#73DBFF]" />
                   <div>
-                    <div className="text-xs text-[#73DBFF] font-bold uppercase tracking-[0.2em]">{t("applications.blueprint.foundationLabel")}</div>
+                    <div className="page-kicker text-[#73DBFF]">{t("applications.blueprint.foundationLabel")}</div>
                     <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
                   </div>
                 </div>
@@ -115,8 +115,8 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
               const base = `applications.categories.${cat.key}`
@@ -414,13 +414,13 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-20 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="page-h2 text-slate-900 mb-4 break-words px-1 tracking-[0.05em] sm:tracking-[0.12em]">
+          <h2 className="page-h2 text-slate-900 mb-4 break-words px-1">
             {t("applications.summary.title")}
           </h2>
 
-          <p className="page-lead text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
+          <p className="page-lead page-measure text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
 
           <p className="page-body mb-12 max-w-3xl mx-auto text-slate-700 break-words">
             {t("applications.summary.desc")}

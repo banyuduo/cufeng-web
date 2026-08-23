@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { Link } from "@/components/app-link"
 import { ArrowLeft, ArrowRight, Check, Settings, Wrench, Sparkles } from "lucide-react"
@@ -14,8 +14,8 @@ export default function DiamondToolsPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
+        <div className="max-w-6xl mx-auto">
           <Link
             href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -43,15 +43,15 @@ export default function DiamondToolsPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#0077b6] mb-1">10+</div>
+                  <div className="page-stat-value text-[#0077b6] mb-1">10+</div>
                   <div className="page-caption text-slate-600">年熔固技术积累</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#0077b6] mb-1">30+</div>
+                  <div className="page-stat-value text-[#0077b6] mb-1">30+</div>
                   <div className="page-caption text-slate-600">项超硬专利基础</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-slate-200">
-                  <div className="text-2xl font-bold text-[#0077b6] mb-1">100+</div>
+                  <div className="page-stat-value text-[#0077b6] mb-1">100+</div>
                   <div className="page-caption text-slate-600">种定制化解决方案</div>
                 </div>
               </div>
@@ -71,8 +71,8 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">核心能力</h2>
           <p className="page-lead text-center text-slate-600 mb-12 max-w-2xl mx-auto">
             从界面改性到系统工程，构建 sp³–sp² 平台的底层技术基础
@@ -115,8 +115,8 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Product Design Principles */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">产品设计原理：超硬磨料熔固的三要素架构</h2>
           <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
             活性熔固超硬磨料工具的性能由 <strong>基体 (Substrate)</strong>、<strong>磨料 (Superabrasive)</strong>、
@@ -226,8 +226,8 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Extreme Working Conditions */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">极端工况下的工程支撑</h2>
           <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
             在航空航天、半导体制造、国防工业等领域，难加工材料对工具的可靠性有着严苛要求
@@ -307,8 +307,8 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Active Fusion-Bonding Technology Deep Analysis */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-center text-slate-900">活性熔固技术深度解析</h2>
 
           {/* Core Principle */}
@@ -325,7 +325,7 @@ export default function DiamondToolsPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
               <Card className="p-6 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">熔固温度</div>
-                <div className="text-2xl font-bold text-[#0077b6] mb-1">780°C - 1050°C</div>
+                <div className="page-stat-value-sm text-[#0077b6] mb-1">780°C - 1050°C</div>
                 <p className="page-caption text-slate-600">基于合金体系精确调控</p>
               </Card>
               <Card className="p-6 bg-white border-slate-200">
@@ -475,8 +475,8 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Technology Migration: From Interface Bonding to Full-Carbon Platform - Repositioned as Summary & Transition */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="page-h2 mb-4">技术迁移：从"界面连接"到"全碳平台"</h2>
             <p className="page-lead text-slate-300 max-w-2xl mx-auto">
@@ -527,7 +527,7 @@ export default function DiamondToolsPage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">需要专业的加工解决方案？</h2>
           <p className="page-lead text-slate-600 mb-8">

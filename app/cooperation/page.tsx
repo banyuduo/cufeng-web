@@ -44,7 +44,7 @@ export default async function CooperationPage({
         </div>
       </PageHero>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-12">
           <div>
             <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
@@ -72,7 +72,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
             {t("cooperation.audience.title")}
@@ -125,7 +125,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
             {t("cooperation.nextSteps.title")}
@@ -142,7 +142,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-white border-b border-[#0077b6]/30 pb-6">
             {t("cooperation.resonance.title")}
@@ -161,7 +161,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
+      <section id="contact" className="py-20 px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-12 text-slate-900 border-b border-slate-200 pb-6">
             {t("cooperation.contact.title")}
@@ -177,7 +177,7 @@ export default async function CooperationPage({
                 <MapPin className="h-5 w-5 text-[#73DBFF]" />
               </div>
               <div>
-                <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.entity")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.entity")}</div>
                 <div className="page-lead text-slate-900 font-light">{t("cooperation.contact.entityName")}</div>
                 <div className="text-slate-500 text-xs mt-2 font-light">
                   Nanjing CuFeng Mechanical & Electrical Technology Co., LTD
@@ -190,7 +190,7 @@ export default async function CooperationPage({
                 <Mail className="h-5 w-5 text-[#73DBFF]" />
               </div>
               <div>
-                <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.techContact")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.techContact")}</div>
                 <a
                   href="mailto:wangbo@tospike.com"
                   className="text-slate-900 font-light text-lg hover:text-[#0077b6] transition-colors font-mono"
@@ -205,7 +205,7 @@ export default async function CooperationPage({
                 <Phone className="h-5 w-5 text-[#73DBFF]" />
               </div>
               <div>
-                <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.phone")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.phone")}</div>
                 <a
                   href="tel:15305191423"
                   className="text-slate-900 font-light text-lg hover:text-[#0077b6] transition-colors"
@@ -220,7 +220,7 @@ export default async function CooperationPage({
                 <Globe className="h-5 w-5 text-[#73DBFF]" />
               </div>
               <div>
-                <div className="text-slate-500 text-xs mb-2 uppercase tracking-widest font-light">{t("cooperation.contact.address")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.address")}</div>
                 <div className="text-slate-900 font-light text-lg">{t("cooperation.contact.addressValue")}</div>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#002244]/60 to-transparent">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-gradient-to-b from-[#002244]/60 to-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-lg lg:text-xl text-slate-300 font-light italic leading-relaxed">
             &quot;{t("cooperation.quote")}&quot;

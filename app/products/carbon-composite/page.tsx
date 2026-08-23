@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -23,8 +23,8 @@ export default function CarbonCompositePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50 via-[#F9FAFC] to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-cyan-50 via-[#F9FAFC] to-white">
+        <div className="max-w-6xl mx-auto">
           <Link
             href={`${prefix}/products`}
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -58,15 +58,15 @@ export default function CarbonCompositePage() {
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.thermalPerf")}</div>
-                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.thermalPerfValue")}</div>
+                  <div className="page-stat-inline text-[#0077b6]">{t("products.carbonComposite.hero.thermalPerfValue")}</div>
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.flexibility")}</div>
-                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.flexibilityValue")}</div>
+                  <div className="page-stat-inline text-[#0077b6]">{t("products.carbonComposite.hero.flexibilityValue")}</div>
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.applicationProspect")}</div>
-                  <div className="font-semibold text-[#0077b6]">{t("products.carbonComposite.hero.applicationProspectValue")}</div>
+                  <div className="page-stat-inline text-[#0077b6]">{t("products.carbonComposite.hero.applicationProspectValue")}</div>
                 </div>
               </div>
             </Card>
@@ -75,8 +75,8 @@ export default function CarbonCompositePage() {
       </section>
 
       {/* Core Technology */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.carbonComposite.coreTech.title")}</h2>
           <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
             {t("products.carbonComposite.coreTech.subtitle")}
@@ -273,8 +273,8 @@ export default function CarbonCompositePage() {
       </section>
 
       {/* Application Prospects */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.carbonComposite.applicationProspects.title")}</h2>
           <p className="page-lead text-center text-slate-600 mb-12">{t("products.carbonComposite.applicationProspects.subtitle")}</p>
 
@@ -311,8 +311,8 @@ export default function CarbonCompositePage() {
       </section>
 
       {/* Manufacturing Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.carbonComposite.manufacturing.title")}</h2>
 
           <div className="max-w-4xl mx-auto space-y-6">
@@ -390,8 +390,8 @@ export default function CarbonCompositePage() {
       </section>
 
       {/* Patents */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.carbonComposite.patents.title")}</h2>
           <p className="page-lead text-center text-slate-600 mb-12">{t("products.carbonComposite.patents.subtitle")}</p>
 
@@ -462,7 +462,7 @@ export default function CarbonCompositePage() {
       </section>
 
       {/* Investment Value */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#F9FAFC] to-cyan-50">
+      <section className="py-20 px-6 lg:px-8 bg-gradient-to-br from-[#F9FAFC] to-cyan-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.carbonComposite.investmentValue.title")}</h2>
           <p className="page-lead text-center text-slate-600 mb-12">{t("products.carbonComposite.investmentValue.subtitle")}</p>

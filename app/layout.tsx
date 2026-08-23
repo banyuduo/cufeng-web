@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { HtmlLangSync } from "@/components/html-lang-sync"
 import { AnalyticsEmbed } from "@/components/analytics-embed"
+import { fontVariableClassName } from "@/lib/fonts"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -39,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+    <html lang="zh-CN" className={fontVariableClassName} suppressHydrationWarning>
+      <body className="font-sans antialiased">
         <HtmlLangSync />
         {children}
         <AnalyticsEmbed />

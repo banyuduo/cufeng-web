@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
@@ -23,8 +23,8 @@ export default function DiamondCopperPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
+        <div className="max-w-6xl mx-auto">
           <Link
             href={`${prefix}/products`}
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -52,25 +52,25 @@ export default function DiamondCopperPage() {
             <Card className="p-8 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 shadow-xl">
               <div className="space-y-6">
                 <div className="text-center pb-6 border-b border-slate-200">
-                  <div className="text-5xl font-bold text-[#0077b6] mb-2">680</div>
+                  <div className="page-stat-value-lg text-[#0077b6] mb-2">680</div>
                   <div className="page-caption text-slate-600">{t("products.diamondCopper.hero.achievedLabel")}</div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.cvdDiamond")}</span>
-                    <span className="font-semibold text-slate-900">1000-2000</span>
+                    <span className="page-stat-inline text-slate-900">1000-2000</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-sky-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-medium text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
-                    <span className="font-bold text-[#0077b6] text-lg">1000+</span>
+                    <span className="page-stat-inline text-[#0077b6] text-lg">1000+</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.traditionalDiamondCu")}</span>
-                    <span className="font-semibold text-slate-900">~600</span>
+                    <span className="page-stat-inline text-slate-900">~600</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.pureCopper")}</span>
-                    <span className="font-semibold text-slate-900">~400</span>
+                    <span className="page-stat-inline text-slate-900">~400</span>
                   </div>
                 </div>
               </div>
@@ -80,8 +80,8 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* Application Prospects */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-slate-900">{t("products.diamondCopper.applicationProspects.title")}</h2>
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-8 rounded-lg border border-slate-200">
@@ -115,8 +115,8 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* Product Lines */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.diamondCopper.productLines.title")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -261,8 +261,8 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.diamondCopper.technicalDetails.title")}</h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -368,31 +368,31 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* Performance Parameters */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.diamondCopper.performanceParams.title")}</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#0077b6] mb-2">680</div>
+              <div className="page-stat-value text-[#0077b6] mb-2">680</div>
               <div className="page-caption text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.achievedTC")}</div>
-              <div className="page-caption text-slate-500">W/m·K</div>
+              <div className="page-stat-unit text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/40 text-center shadow-lg">
-              <div className="text-3xl font-bold text-[#0077b6] mb-2">1000+</div>
+              <div className="page-stat-value text-[#0077b6] mb-2">1000+</div>
               <div className="page-caption text-slate-700 font-medium mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
-              <div className="page-caption text-slate-500">W/m·K</div>
+              <div className="page-stat-unit text-slate-500">W/m·K</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#0077b6] mb-2">80-90</div>
+              <div className="page-stat-value text-[#0077b6] mb-2">80-90</div>
               <div className="page-caption text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.diamondVolFraction")}</div>
-              <div className="page-caption text-slate-500">vol%</div>
+              <div className="page-stat-unit text-slate-500">vol%</div>
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
-              <div className="text-3xl font-bold text-[#0077b6] mb-2">{t("products.diamondCopper.performanceParams.flatnessValue")}</div>
+              <div className="page-stat-value text-[#0077b6] mb-2">{t("products.diamondCopper.performanceParams.flatnessValue")}</div>
               <div className="page-caption text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.flatness")}</div>
               <div className="page-caption text-slate-500">{t("products.diamondCopper.performanceParams.flatnessNote")}</div>
             </Card>
@@ -401,8 +401,8 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* Patents */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.diamondCopper.patents.title")}</h2>
           <p className="page-lead text-center text-slate-600 mb-12">{t("products.diamondCopper.patents.subtitle")}</p>
 
@@ -429,7 +429,7 @@ export default function DiamondCopperPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">{t("products.diamondCopper.cta.title")}</h2>
           <p className="page-lead text-slate-600 mb-8">{t("products.diamondCopper.cta.subtitle")}</p>

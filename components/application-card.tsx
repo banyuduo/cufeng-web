@@ -54,7 +54,7 @@ export function ApplicationCard({
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-3 mb-1 flex-wrap">
               <span className={`text-xs font-mono tracking-tighter ${levelClassName ?? "text-slate-500"}`}>{level}</span>
-              <span className={`px-2 py-0.5 rounded page-kicker font-bold tracking-wider ${tagClassName ?? "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]"}`}>{tag}</span>
+              <span className={`px-2 py-0.5 rounded page-kicker font-semibold ${tagClassName ?? "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]"}`}>{tag}</span>
             </div>
             <h3 className="text-lg font-bold text-white break-words">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">

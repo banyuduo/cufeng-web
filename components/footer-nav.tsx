@@ -45,8 +45,8 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
         </button>
       )}
 
-      <footer className="border-t border-[#003366]/50 bg-[#001a33] py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <footer className="border-t border-[#003366]/50 bg-[#001a33] py-12 sm:py-16 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
             <div className="order-1 lg:order-2">
               <div className="font-semibold mb-4 text-white text-left">

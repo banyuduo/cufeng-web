@@ -37,7 +37,7 @@ export default async function AboutPage({
       />
 
       {/* 企业概览 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-20 px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 md:p-12 bg-[#071d2e]/92 border border-[#0077b6]/30 shadow-xl shadow-[#0077b6]/10">
             <div className="space-y-6 text-slate-200 leading-relaxed">
@@ -114,11 +114,11 @@ export default async function AboutPage({
       </section>
 
       {/* 核心团队 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#F9FAFC]">
+      <section className="py-20 px-6 lg:px-8 relative bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.team.title")}</h2>
-            <p className="page-lead text-slate-600">{t("about.team.subtitle")}</p>
+            <p className="page-lead page-measure text-slate-600">{t("about.team.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -274,11 +274,11 @@ export default async function AboutPage({
       </section>
 
       {/* 核心历程 - 时间轴 */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#F9FAFC]">
+      <section className="py-20 px-6 lg:px-8 relative bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.timeline.title")}</h2>
-            <p className="page-lead text-slate-600">{t("about.timeline.subtitle")}</p>
+            <p className="page-lead page-measure text-slate-600">{t("about.timeline.subtitle")}</p>
           </div>
 
           <div className="relative">

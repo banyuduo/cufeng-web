@@ -38,7 +38,7 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
     <div className="w-full max-w-full mx-auto rounded-2xl border border-[#0077b6]/35 bg-[#001a33]/80 overflow-hidden shadow-xl shadow-[#0077b6]/10">
       {/* 1. 顶层：应用场景与未来接口 */}
       <div className="border-b border-[#0077b6]/30 bg-[#001a33]/90 px-3 py-4 sm:px-5 sm:py-5">
-        <h4 className="text-[#7dd3fc] font-semibold text-sm mb-3 text-center uppercase tracking-wide">
+        <h4 className="text-[#7dd3fc] font-semibold text-sm mb-3 text-center">
           {s.layer1Title}
         </h4>
         <div className="grid grid-cols-3 gap-3 sm:gap-4">
@@ -78,7 +78,7 @@ export function PlatformValueDiagram({ strings }: { strings: PlatformDiagramStri
 
       {/* 2. 中层：平台核心机制 — 统一背景、文字并列更紧凑 */}
       <div className="relative border-b border-[#0077b6]/30 bg-[#001a33]/90 px-3 py-3 sm:px-5 sm:py-4 overflow-hidden">
-        <h4 className="text-[#7dd3fc] font-semibold text-sm mb-3 text-center uppercase tracking-wide relative z-10">
+        <h4 className="text-[#7dd3fc] font-semibold text-sm mb-3 text-center relative z-10">
           {s.layer2Title}
         </h4>
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 relative z-10">

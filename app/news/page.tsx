@@ -64,7 +64,7 @@ export default async function NewsPage({
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
             <p className="page-lead text-white/85 text-pretty">
@@ -76,7 +76,7 @@ export default async function NewsPage({
 
       {/* Navigation Cards */}
       <section className="py-12 border-t border-[#0077b6]/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* 公司动态卡片 */}
@@ -153,7 +153,7 @@ export default async function NewsPage({
         id="company-news"
         className="py-16 border-t border-[#0077b6]/30 scroll-mt-20 bg-[#F9FAFC]"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.companyNews")}</h2>
             <p className="page-lead text-slate-600 mb-12">
@@ -199,7 +199,7 @@ export default async function NewsPage({
 
       {/* Industry Information */}
       <section id="industry-info" className="py-16 border-t border-[#0077b6]/30 bg-[#F9FAFC] scroll-mt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.industryInfo")}</h2>
             <p className="page-lead text-slate-600 mb-12">
