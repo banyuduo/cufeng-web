@@ -24,8 +24,8 @@ export default function DiamondToolsPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white pointer-events-none">
+        <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href={`${prefix}/products`}
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"

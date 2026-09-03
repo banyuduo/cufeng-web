@@ -25,8 +25,8 @@ export default async function AboutPage({
   return (
     <div className="min-h-screen relative">
       <DarkPagePatternBg />
-      <div className="relative z-10">
       <Navigation locale={validLocale} />
+      <div className="relative z-10">
 
       <PageHero
         variant="dark"
@@ -371,16 +371,17 @@ export default async function AboutPage({
 
           {/* 查看更多动态链接 */}
           <div className="text-center mt-16">
-            <Link href={`${prefix}/news`}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="gap-2 border-[#0F4C81]/35 text-[#0F2A5C] hover:bg-slate-50 bg-transparent"
-              >
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="gap-2 border-[#0F4C81]/35 text-[#0F2A5C] hover:bg-slate-50 bg-transparent min-h-[44px]"
+            >
+              <Link href={`${prefix}/news`}>
                 {t("about.timeline.moreNews")}
                 <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

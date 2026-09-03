@@ -17,11 +17,12 @@ export default async function HomePage({
   const t = await getTranslations(validLocale)
 
   return (
-    <div className="min-h-screen bg-[#0B1F33] overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B1F33]">
       <Navigation locale={validLocale} />
 
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="overflow-x-hidden">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 pointer-events-none">
+        <div className="max-w-6xl mx-auto pointer-events-auto">
           <div className="space-y-12 sm:space-y-16 lg:space-y-24">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
@@ -177,6 +178,7 @@ export default async function HomePage({
       </section>
 
       <FooterNav locale={validLocale} />
+      </div>
     </div>
   )
 }

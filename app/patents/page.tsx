@@ -24,8 +24,10 @@ export default function PatentsPage() {
   const labelSep = locale === "zh" ? "：" : ": "
 
   return (
-    <div className="min-h-screen bg-[#0B1F33] overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B1F33]">
       <Navigation />
+
+      <div className="overflow-x-hidden">
 
       <PageHero
         variant="dark"
@@ -293,7 +295,7 @@ export default function PatentsPage() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Stage 01 */}
             <Card
-              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer transition-all hover:border-white/25 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
+              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -341,7 +343,7 @@ export default function PatentsPage() {
 
             {/* Stage 02 */}
             <Card
-              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer transition-all hover:border-white/25 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
+              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -413,7 +415,7 @@ export default function PatentsPage() {
 
             {/* Stage 03 */}
             <Card
-              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer transition-all hover:border-white/25 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
+              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -477,7 +479,7 @@ export default function PatentsPage() {
 
             {/* Stage 04 */}
             <Card
-              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer transition-all hover:border-white/25 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
+              className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -927,30 +929,29 @@ export default function PatentsPage() {
           <p className="page-lead text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-white/50 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-            <Link href={`${prefix}/cooperation`}>
-              <Button className="bg-[#0F4C81] hover:bg-[#163A5F] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg">{t("patents.cta.projectCooperation")}</Button>
-            </Link>
-            <a href="#patent-cluster">
-              <Button
-                variant="outline"
-                className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent"
-              >
-                {t("patents.cta.viewPatentList")}
-              </Button>
-            </a>
-            <Link href={`${prefix}/products`}>
-              <Button
-                variant="outline"
-                className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent"
-              >
-                {t("patents.cta.learnProducts")}
-              </Button>
-            </Link>
+            <Button asChild className="bg-[#0F4C81] hover:bg-[#163A5F] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg min-h-[44px]">
+              <Link href={`${prefix}/cooperation`}>{t("patents.cta.projectCooperation")}</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px]"
+            >
+              <a href="#patent-cluster">{t("patents.cta.viewPatentList")}</a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px]"
+            >
+              <Link href={`${prefix}/products`}>{t("patents.cta.learnProducts")}</Link>
+            </Button>
           </div>
         </div>
       </section>
 
       <FooterNav locale={locale} />
+      </div>
     </div>
   )
 }

@@ -36,7 +36,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden ${
+      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden pointer-events-none ${
         isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >
@@ -72,7 +72,7 @@ export function PageHero({
         </>
       )}
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 pointer-events-auto">
         <div className="text-center max-w-4xl mx-auto">
           {badge && (
             <div

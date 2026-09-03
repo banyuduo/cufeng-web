@@ -31,13 +31,11 @@ export function ApplicationCard({
   levelClassName
 }: ApplicationCardProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (href) {
-      e.preventDefault()
-      const element = document.querySelector(href)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }
+    if (!href?.startsWith("#")) return
+    const element = document.querySelector(href)
+    if (!element) return
+    e.preventDefault()
+    element.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
   return (

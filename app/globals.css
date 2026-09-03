@@ -259,6 +259,14 @@
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  a, button {
+    touch-action: manipulation;
+  }
+
   /* 全站可点击元素默认手型指针（含中英文、PC/触屏设备上支持悬停时） */
   a[href]:not([aria-disabled="true"]) {
     cursor: pointer;

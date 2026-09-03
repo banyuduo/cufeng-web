@@ -19,8 +19,8 @@ export default async function CooperationPage({
   return (
     <div className="min-h-screen relative">
       <DarkPagePatternBg />
-      <div className="relative z-10">
       <Navigation locale={validLocale} />
+      <div className="relative z-10">
 
       <PageHero
         variant="dark"
