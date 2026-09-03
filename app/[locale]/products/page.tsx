@@ -115,7 +115,7 @@ export default async function ProductsPage({
             {t("products.cta.title")}
           </h2>
           <p className="page-lead page-measure text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>
                 {t("products.cta.contactTech")}

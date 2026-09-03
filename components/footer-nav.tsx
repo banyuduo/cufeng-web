@@ -49,10 +49,10 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
             <div className="order-1 lg:order-2">
-              <div className="font-semibold mb-4 text-white text-left">
+              <div className="font-semibold mb-4 text-white text-left text-sm lg:text-base">
                 {t("common.footer.products")}
               </div>
-              <ul className="space-y-2 text-sm text-slate-300 text-left">
+              <ul className="space-y-2 text-sm lg:text-base text-slate-300 text-left">
                 <li>
                   <Link href={`${prefix}/products/diamond-copper`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.diamondCopper")}
@@ -81,10 +81,10 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </ul>
             </div>
             <div className="order-2 lg:order-3">
-              <div className="font-semibold mb-4 text-white text-left">
+              <div className="font-semibold mb-4 text-white text-left text-sm lg:text-base">
                 {t("common.footer.techAndExchange")}
               </div>
-              <ul className="space-y-2 text-sm text-slate-300 text-left">
+              <ul className="space-y-2 text-sm lg:text-base text-slate-300 text-left">
                 <li>
                   <Link href={`${prefix}/about`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.about")}
@@ -113,16 +113,16 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </ul>
             </div>
             <div className="order-3 col-span-2 lg:col-span-1 lg:order-1 min-w-0">
-              <div className="font-bold text-lg mb-4 text-white text-left">
+              <div className="font-bold text-lg lg:text-xl mb-4 text-white text-left">
                 {t("common.footer.brand")}
               </div>
-              <p className="text-xs text-slate-400 text-left break-words">{t("common.footer.platformTech")}</p>
+              <p className="text-xs lg:text-sm text-slate-400 text-left break-words">{t("common.footer.platformTech")}</p>
             </div>
             <div className="order-4 col-span-2 lg:col-span-1 lg:order-4">
-              <div className="font-semibold mb-4 text-white text-left">
+              <div className="font-semibold mb-4 text-white text-left text-sm lg:text-base">
                 {t("common.footer.cooperationAndSupport")}
               </div>
-              <ul className="space-y-2 text-sm text-slate-300 text-left">
+              <ul className="space-y-2 text-sm lg:text-base text-slate-300 text-left">
                 <li className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-400" />
                   <span>{t("common.footer.address")}</span>

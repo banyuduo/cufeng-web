@@ -22,10 +22,10 @@ export default async function HomePage({
 
       <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="space-y-14 sm:space-y-16 lg:space-y-20">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-24">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
-              <h1 className="page-h1 text-white mb-4 sm:mb-5 opacity-100">
+              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 opacity-100">
                 {t("home.hero.visionTitle")}
               </h1>
               <p className="page-lead page-measure text-white/75 font-light">
@@ -50,7 +50,7 @@ export default async function HomePage({
               <div className="mt-4">
                 <Link
                   href={`/${validLocale}/applications`}
-                  className="text-white/80 hover:text-white text-sm font-medium underline-offset-4 hover:underline"
+                  className="text-white/80 hover:text-white text-sm lg:text-base font-medium underline-offset-4 hover:underline"
                 >
                   {t("home.hero.viewTechApplications")}
                 </Link>
@@ -59,7 +59,7 @@ export default async function HomePage({
 
             {/* 第二层：技术平台（标题 + 图自带边框） */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-6 sm:mb-8">
+              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-10">
                 {t("home.hero.title")}
               </h2>
               <HeroPlatformDiagram
@@ -103,7 +103,7 @@ export default async function HomePage({
 
             {/* 技术演化路径 */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-6">
+              <h2 className="page-h2 text-white text-center mb-4 sm:mb-6 lg:mb-8">
                 {t("home.techEvolution.title")}
               </h2>
               <div className="text-white/75">
@@ -118,43 +118,45 @@ export default async function HomePage({
 
             {/* 阶段性成果：2 点已实现 + 工艺/样品/IP */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-2 sm:mb-3">
+              <h2 className="page-h2 text-white text-center mb-2 sm:mb-3 lg:mb-4">
                 {t("home.results.title")}
               </h2>
-              <p className="page-lead text-center text-white/70 mb-8 sm:mb-10">
+              <p className="page-lead text-center text-white/70 mb-8 sm:mb-10 lg:mb-12">
                 {t("home.results.subtitle")}
               </p>
-              <div className="border-t border-white/15 pt-8 mb-10 sm:mb-12">
-                <h3 className="page-h3 text-white mb-6">
+              <div className="border-t border-white/15 pt-6 sm:pt-8 lg:pt-10 mb-8 sm:mb-12 lg:mb-14">
+                <h3 className="page-h3 text-white mb-4 sm:mb-5 lg:mb-6">
                   {t("home.hero.achieved")}
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
-                  <div>
-                    <p className="page-h3 text-white mb-3">
-                      <span className="text-white/45">1. </span>
+                <ol className="space-y-4 sm:space-y-5 lg:space-y-8 max-w-3xl lg:max-w-none">
+                  <li>
+                    <p className="page-h3 text-white mb-1.5">
+                      <span className="text-white/45 font-medium">1. </span>
                       {t("home.hero.achievement1")}
                     </p>
-                    <p className="page-stat-value-sm text-white">
+                    <p className="page-body text-white/70">
                       {t("home.hero.achievement1Value")}
                     </p>
-                    <p className="page-stat-unit text-white/70 mt-1">
-                      {t("home.hero.achievement1Note")}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="page-h3 text-white">
-                      <span className="text-white/45">2. </span>
+                    {t("home.hero.achievement1Note") ? (
+                      <p className="page-caption text-white/55 mt-1">
+                        {t("home.hero.achievement1Note")}
+                      </p>
+                    ) : null}
+                  </li>
+                  <li>
+                    <p className="page-h3 text-white mb-1.5">
+                      <span className="text-white/45 font-medium">2. </span>
                       {t("home.hero.achievement2")}
                     </p>
                     {t("home.hero.achievement2Note") ? (
-                      <p className="page-caption text-white/70 mt-2">
+                      <p className="page-caption text-white/55 mt-1">
                         {t("home.hero.achievement2Note")}
                       </p>
                     ) : null}
-                  </div>
-                </div>
+                  </li>
+                </ol>
               </div>
-              <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+              <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
                 <div>
                   <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>

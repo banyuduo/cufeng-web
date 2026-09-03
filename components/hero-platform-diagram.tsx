@@ -126,7 +126,7 @@ function Sp3Tetrahedron({ className }: { className?: string }) {
 }
 
 const panel =
-  "flex flex-col min-w-0 rounded-xl border border-white/12 bg-white/[0.03] p-4 sm:p-5 text-left"
+  "flex flex-col min-w-0 rounded-xl border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6 text-left"
 
 export function HeroPlatformDiagram({
   strings,
@@ -150,25 +150,25 @@ export function HeroPlatformDiagram({
     {
       key: "sp2",
       label: s.sp2LayerLabel,
-      figure: <Sp2Lattice className="w-[4.5rem] h-[3.7rem] sm:w-24 sm:h-[4.9rem] text-white/75" />,
+      figure: <Sp2Lattice className="w-[4.5rem] h-[3.7rem] sm:w-24 sm:h-[4.9rem] lg:w-[7.5rem] lg:h-[6.2rem] text-white/75" />,
     },
     {
       key: "bridge",
       label: s.layer4MeltLabel,
-      figure: <CovalentBridge className="w-[6.5rem] h-[3.7rem] sm:w-[7.5rem] sm:h-[4.9rem] text-white/75" />,
+      figure: <CovalentBridge className="w-[6.5rem] h-[3.7rem] sm:w-[7.5rem] sm:h-[4.9rem] lg:w-40 lg:h-[6.2rem] text-white/75" />,
     },
     {
       key: "sp3",
       label: s.sp3LayerLabel,
-      figure: <Sp3Tetrahedron className="w-[4.5rem] h-[4.1rem] sm:w-24 sm:h-[5.4rem] text-white/75" />,
+      figure: <Sp3Tetrahedron className="w-[4.5rem] h-[4.1rem] sm:w-24 sm:h-[5.4rem] lg:w-[7.5rem] lg:h-[6.8rem] text-white/75" />,
     },
   ]
 
   return (
     <div className="w-full rounded-2xl border border-white/12 bg-white/[0.03] overflow-hidden">
       {hasApplications && (
-        <div className="border-b border-white/10 px-4 py-5 sm:px-6 sm:py-6">
-          <h4 className="text-white font-semibold text-sm mb-4 text-center">
+        <div className="border-b border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
             {s.applicationsTitle}
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -176,7 +176,7 @@ export function HeroPlatformDiagram({
               (label) => (
                 <p
                   key={label}
-                  className="page-caption text-white/80 text-center leading-snug rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3"
+                  className="page-caption lg:text-base text-white/80 text-center leading-snug rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3"
                 >
                   {label}
                 </p>
@@ -191,20 +191,20 @@ export function HeroPlatformDiagram({
         </div>
       )}
 
-      <div className="px-4 py-5 sm:px-6 sm:py-6">
-        <h4 className="text-white font-semibold text-sm mb-4 text-center">
+      <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+        <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
           {s.atomicTitle}
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {layers.map((layer) => (
             <div
               key={layer.key}
-              className="flex flex-col items-center justify-start rounded-xl border border-white/12 bg-white/[0.03] px-3 py-3 sm:py-5 min-h-0 sm:min-h-[9.5rem]"
+              className="flex flex-col items-center justify-start rounded-xl border border-white/12 bg-white/[0.03] px-3 py-3 sm:py-5 lg:py-6 min-h-0 sm:min-h-[9.5rem] lg:min-h-[12rem]"
             >
-              <div className="flex h-[5.5rem] sm:h-24 items-center justify-center">
+              <div className="flex h-[5.5rem] sm:h-24 lg:h-28 items-center justify-center">
                 {layer.figure}
               </div>
-              <p className="mt-3 page-caption text-white font-semibold text-center leading-snug">
+              <p className="mt-3 page-caption lg:text-base text-white font-semibold text-center leading-snug">
                 {layer.label}
               </p>
             </div>
@@ -213,37 +213,37 @@ export function HeroPlatformDiagram({
 
         {hasMechanism && (
           <div className="mt-5 sm:mt-6">
-            <h4 className="text-white font-semibold text-sm mb-3 text-center">
+            <h4 className="text-white font-semibold text-sm lg:text-base mb-3 text-center">
               {s.mechanismTitle}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm font-medium text-white mb-1">
+                <p className="text-sm lg:text-base font-medium text-white mb-1">
                   {s.mechanismItem1}
                 </p>
-                <p className="text-sm text-white/70 leading-snug">{s.mechanismItem2}</p>
+                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem2}</p>
               </div>
               <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm font-medium text-white mb-1">
+                <p className="text-sm lg:text-base font-medium text-white mb-1">
                   {s.mechanismItem3}
                 </p>
-                <p className="text-sm text-white/70 leading-snug">{s.mechanismItem4}</p>
+                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem4}</p>
               </div>
               <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm font-medium text-white mb-1">
+                <p className="text-sm lg:text-base font-medium text-white mb-1">
                   {s.mechanismItem5}
                 </p>
-                <p className="text-sm text-white/70 leading-snug">{s.mechanismItem6}</p>
+                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem6}</p>
               </div>
             </div>
           </div>
         )}
       </div>
 
-      <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6">
+      <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-3 sm:gap-4">
           <div className={panel}>
-            <h4 className="text-white font-semibold text-sm mb-2">
+            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
               {s.layer4Title}
             </h4>
             <p className="page-caption text-white/90 leading-relaxed mb-1.5">
@@ -263,7 +263,7 @@ export function HeroPlatformDiagram({
           </div>
 
           <div className={panel}>
-            <h4 className="text-white font-semibold text-sm mb-2">
+            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
               {s.layer3Title}
             </h4>
             <p className="page-caption text-white/90 leading-relaxed">
@@ -280,7 +280,7 @@ export function HeroPlatformDiagram({
           </div>
 
           <div className={panel}>
-            <h4 className="text-white font-semibold text-sm mb-2">
+            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
               {s.layer2Title}
             </h4>
             <ul className="page-caption text-white/85 space-y-1.5">
@@ -293,8 +293,8 @@ export function HeroPlatformDiagram({
       </div>
 
       {hasLimits && (
-        <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6">
-          <h4 className="text-white font-semibold text-sm mb-2 text-center">
+        <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+          <h4 className="text-white font-semibold text-sm lg:text-base mb-2 text-center">
             {s.limitsTitle}
           </h4>
           <p className="page-caption text-white/70 text-center leading-relaxed">

@@ -56,7 +56,7 @@ export function ApplicationCard({
               <span className={`text-xs font-mono tracking-tighter ${levelClassName ?? "text-slate-500"}`}>{level}</span>
               <span className={`px-2 py-0.5 rounded page-kicker font-semibold ${tagClassName ?? "bg-white/10 border border-white/15 text-white/80"}`}>{tag}</span>
             </div>
-            <h3 className="text-lg font-bold text-white break-words">{title}</h3>
+            <h3 className="text-lg lg:text-xl font-bold text-white break-words">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">
               {items.map((item, i) => (
                 <span key={i} className="page-caption text-slate-300 flex items-center gap-1 text-balance italic break-words">
