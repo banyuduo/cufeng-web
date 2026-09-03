@@ -88,7 +88,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href={`${prefix}/patents`}
-              className={`text-sm transition-colors ${
+              className={`text-sm lg:text-base transition-colors ${
                 isActive("/patents") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -96,7 +96,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/products`}
-              className={`text-sm transition-colors ${
+              className={`text-sm lg:text-base transition-colors ${
                 isActive("/products") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -104,7 +104,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/applications`}
-              className={`text-sm transition-colors ${
+              className={`text-sm lg:text-base transition-colors ${
                 isActive("/applications") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -112,7 +112,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/news`}
-              className={`text-sm transition-colors ${
+              className={`text-sm lg:text-base transition-colors ${
                 isActive("/news") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -120,14 +120,14 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/about`}
-              className={`text-sm transition-colors ${
+              className={`text-sm lg:text-base transition-colors ${
                 isActive("/about") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.about")}
             </Link>
             <Link href={`${prefix}/cooperation`}>
-              <Button size="sm" className={isDarkPage ? "bg-[#0077b6] hover:bg-[#0096c7] text-white border-0" : "bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white border-0"}>
+              <Button size="sm" className="bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0">
                 {t("common.nav.projectCooperation")}
               </Button>
             </Link>

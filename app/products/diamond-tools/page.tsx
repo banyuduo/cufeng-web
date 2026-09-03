@@ -519,7 +519,7 @@ export default function DiamondToolsPage() {
             </Card>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white gap-2" asChild>
               <Link href="/zh/patents">查看 sp³–sp² 技术架构全景</Link>
             </Button>
@@ -533,7 +533,7 @@ export default function DiamondToolsPage() {
           <p className="page-lead text-slate-600 mb-8">
             我们的工程师团队拥有10余年超硬磨料工具研发经验，可为您提供定制化技术咨询
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href="/zh/about#zhang-gong">联系工程师</Link>
             </Button>

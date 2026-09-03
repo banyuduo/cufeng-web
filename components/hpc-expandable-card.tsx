@@ -63,14 +63,14 @@ export function HpcExpandableCard({
           <Cpu className={`w-7 h-7 sm:w-8 sm:h-8 ${accentClassName}`} />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">{title}</h2>
+          <h2 className="page-h2 text-white mb-2">{title}</h2>
           {subtitle && <p className="text-slate-300 font-medium mb-2">{subtitle}</p>}
-          {features && <p className="text-sm text-slate-400 mb-4">{features}</p>}
+          {features && <p className="text-sm lg:text-base text-slate-400 mb-4">{features}</p>}
           <ul className="space-y-2 mb-4">
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-slate-300 min-w-0">
                 <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: accentHex }} />
-                <span className="text-sm sm:text-base break-words">{item}</span>
+                <span className="text-sm lg:text-base break-words">{item}</span>
               </li>
             ))}
           </ul>
@@ -81,15 +81,15 @@ export function HpcExpandableCard({
               <p className="text-slate-300 leading-relaxed break-words">{intro}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-[#002244]/55 border border-white/12 rounded-lg p-4 min-w-0">
-                  <div className={`${accentClassName} font-bold mb-2 text-sm sm:text-base break-words`}>{geoCoupling}</div>
+                  <div className={`${accentClassName} font-bold mb-2 text-sm lg:text-base break-words`}>{geoCoupling}</div>
                   <p className="text-sm text-slate-400 leading-relaxed break-words">{geoCouplingDesc}</p>
                 </div>
                 <div className="bg-[#002244]/55 border border-white/12 rounded-lg p-4 min-w-0">
-                  <div className={`${accentClassName} font-bold mb-2 text-sm sm:text-base break-words`}>{thermalDilution}</div>
+                  <div className={`${accentClassName} font-bold mb-2 text-sm lg:text-base break-words`}>{thermalDilution}</div>
                   <p className="text-sm text-slate-400 leading-relaxed break-words">{thermalDilutionDesc}</p>
                 </div>
                 <div className="bg-[#002244]/55 border border-white/12 rounded-lg p-4 min-w-0">
-                  <div className={`${accentClassName} font-bold mb-2 text-sm sm:text-base break-words`}>{systemSync}</div>
+                  <div className={`${accentClassName} font-bold mb-2 text-sm lg:text-base break-words`}>{systemSync}</div>
                   <p className="text-sm text-slate-400 leading-relaxed break-words">{systemSyncDesc}</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export function HpcExpandableCard({
 
           {materials && (
             <div className="mt-4">
-              <div className="text-sm font-semibold text-white mb-2">{materialsLabel}</div>
+              <div className="text-sm lg:text-base font-semibold text-white mb-2">{materialsLabel}</div>
               <div className="flex flex-wrap gap-2">
                 {materials.split("|").map((m, i) => (
                   <span

@@ -518,7 +518,7 @@ export default function DiamondToolsPage() {
             </Card>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white gap-2" asChild>
               <Link href={`${prefix}/patents`}>{t("products.diamondTools.techMigration.viewArchitecture")}</Link>
             </Button>
@@ -532,7 +532,7 @@ export default function DiamondToolsPage() {
           <p className="page-lead text-slate-600 mb-8">
             {t("products.diamondTools.cta.subtitle")}
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/about#zhang-gong`}>{t("products.diamondTools.cta.contactEngineer")}</Link>
             </Button>

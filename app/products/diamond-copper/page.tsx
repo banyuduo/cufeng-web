@@ -424,7 +424,7 @@ export default function DiamondCopperPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">需要金刚石铜散热解决方案？</h2>
           <p className="page-lead text-slate-600 mb-8">我们的技术团队将根据您的散热需求，提供最优化的产品选型与定制化设计服务</p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button 
               size="lg" 
               className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white"

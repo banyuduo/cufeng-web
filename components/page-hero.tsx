@@ -36,7 +36,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden ${
+      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden ${
         isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >

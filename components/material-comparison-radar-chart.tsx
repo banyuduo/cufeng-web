@@ -96,7 +96,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   const gridLevels = [20, 40, 60, 80, 100]
 
   return (
-    <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[440px] mx-auto">
+    <div className="w-full max-w-[18.5rem] sm:max-w-[22rem] lg:max-w-[36rem] xl:max-w-[42rem] mx-auto">
       <svg
         viewBox="0 0 460 455"
         role="img"
@@ -158,13 +158,19 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
           const labelPoint = polarPoint(index, 100, cx, cy, labelR, count)
           const mobileKey = `${dimKey}Mobile` as keyof typeof labels
           const mobileLabel = labels[mobileKey]
-          const label = typeof mobileLabel === "string" ? mobileLabel : labels[dimKey]
+          const desktopLabel = labels[dimKey]
+          const compactLabel = typeof mobileLabel === "string" ? mobileLabel : desktopLabel
           const anchor = index === 0 ? "middle" : index === 1 || index === 2 ? "start" : index === 3 || index === 4 ? "end" : "middle"
 
           return (
-            <text key={dimKey} x={labelPoint.x} y={labelPoint.y}>
-              {renderLabelLines(label, labelPoint.x, labelPoint.y, anchor, labelColor, 14)}
-            </text>
+            <g key={dimKey}>
+              <text className="lg:hidden" x={labelPoint.x} y={labelPoint.y}>
+                {renderLabelLines(compactLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 13)}
+              </text>
+              <text className="hidden lg:inline" x={labelPoint.x} y={labelPoint.y}>
+                {renderLabelLines(desktopLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 15)}
+              </text>
+            </g>
           )
         })}
       </svg>
@@ -177,7 +183,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
               style={{ backgroundColor: dataset.stroke }}
               aria-hidden
             />
-            <span className="text-[12px] sm:text-[13px]" style={{ color: legendColor }}>
+            <span className="text-[12px] sm:text-[13px] lg:text-sm" style={{ color: legendColor }}>
               {labels[dataset.labelKey]}
             </span>
           </div>

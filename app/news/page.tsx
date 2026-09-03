@@ -63,7 +63,7 @@ export default async function NewsPage({
       <Navigation locale={validLocale} />
 
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
@@ -86,7 +86,7 @@ export default async function NewsPage({
               >
                 <div className="flex items-start gap-4">
                   <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
-                    <Building className="h-7 w-7 text-[#0F4C81]" />
+                    <Building className="h-7 w-7 text-white/80" />
                   </div>
                   <div className="flex-1">
                     <h3 className="page-h3 mb-2 text-white group-hover:text-white transition-colors">
@@ -95,7 +95,7 @@ export default async function NewsPage({
                     <p className="page-caption text-white/75">
                       {t("news.companyNewsDesc")}
                     </p>
-                    <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
+                    <div className="mt-4 flex items-center text-white/80 page-caption font-medium">
                       {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -106,7 +106,7 @@ export default async function NewsPage({
               <div className="group rounded-xl p-5 sm:p-8 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all ">
                 <div className="flex items-start gap-4">
                   <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
-                    <TrendingUp className="h-7 w-7 text-[#0F4C81]" />
+                    <TrendingUp className="h-7 w-7 text-white/80" />
                   </div>
                   <div className="flex-1">
                     <a
@@ -123,19 +123,19 @@ export default async function NewsPage({
                     <div className="flex flex-wrap gap-2">
                       <a
                         href="#industry-trends"
-                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.industryTrends")}
                       </a>
                       <a
                         href="#basic-theory"
-                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.basicTheory")}
                       </a>
                       <a
                         href="#frontier-tech"
-                        className="text-xs px-3 py-1.5 bg-[#0344b3] hover:bg-[#0452cc] rounded-full text-white/90 transition-colors border border-[#4169E1]/40"
+                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.frontierTech")}
                       </a>

@@ -116,7 +116,7 @@ export default async function AboutPage({
       {/* 核心团队 */}
       <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 relative bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.team.title")}</h2>
             <p className="page-lead page-measure text-slate-600">{t("about.team.subtitle")}</p>
           </div>
@@ -276,7 +276,7 @@ export default async function AboutPage({
       {/* 核心历程 - 时间轴 */}
       <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 relative bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.timeline.title")}</h2>
             <p className="page-lead page-measure text-slate-600">{t("about.timeline.subtitle")}</p>
           </div>

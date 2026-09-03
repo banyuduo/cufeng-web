@@ -1,12 +1,24 @@
-# 阿里云虚拟主机：Next.js 静态导出（尽量简单，避免错误 301 到 /usr/home/...）
+# 阿里云虚拟主机：Next.js 静态导出
 # 上传位置：htdocs 根目录（与 index.html、_next、zh 同级）
-# 注意：文件名必须是 .htaccess（以点开头），FileZilla 需开启「显示隐藏文件」
+# 文件名必须是 .htaccess（以点开头），FileZilla 需开启「显示隐藏文件」
 
 DirectoryIndex index.html
 
-# 关闭 Apache 默认目录补斜杠（阿里云上会跳转到服务器内部路径）
+# 关闭 Apache 默认目录补斜杠（阿里云会 301 到 /usr/home/... 导致整站打不开）
 <IfModule mod_dir.c>
   DirectorySlash Off
+</IfModule>
+
+# 无尾斜杠的目录改写为带 / 的 URL（刷新、直接输入地址才不会 403）
+# 必须排除 .css/.js 等真实文件，否则样式会 301 失效
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_URI} !^/_next/ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{REQUEST_URI} !\.[^./]+$
+  RewriteRule ^(.+)$ /$1/ [R=301,L]
 </IfModule>
 
 <IfModule mod_mime.c>

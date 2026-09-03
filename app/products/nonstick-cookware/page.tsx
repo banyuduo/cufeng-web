@@ -339,7 +339,7 @@ export default async function NonstickCookwarePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">了解更多金刚石不粘锅技术</h2>
           <p className="page-lead text-slate-600 mb-8">我们的工程团队将为您详细介绍技术原理与应用前景</p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button 
               size="lg" 
               className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white"
