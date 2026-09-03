@@ -1,14 +1,10 @@
 import { Link } from "@/components/app-link"
-import { Atom, Shield, Handshake, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
-import { HeroWaveBg } from "@/components/hero-wave-bg"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
-import { PlatformValueDiagram } from "@/components/platform-value-diagram"
 import { FooterNav } from "@/components/footer-nav"
 
 export default async function HomePage({
@@ -21,12 +17,11 @@ export default async function HomePage({
   const t = await getTranslations(validLocale)
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B1F33] overflow-x-hidden">
       <Navigation locale={validLocale} />
 
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 overflow-hidden">
-        <HeroWaveBg />
-        <div className="relative z-10 max-w-6xl mx-auto">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <div className="space-y-14 sm:space-y-16 lg:space-y-20">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
@@ -40,18 +35,26 @@ export default async function HomePage({
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
             <div className="text-center">
-              <p className="page-lead page-measure text-white/75 mb-6">
+              <p className="page-body page-measure text-white/70 mb-6">
                 {t("home.hero.platformFocus")}
               </p>
               <Button
                 size="lg"
                 asChild
-                className="gap-2 w-full sm:w-auto bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 min-h-[44px] border-0 text-base"
+                className="gap-2 w-full sm:w-auto bg-[#0F4C81] hover:bg-[#163A5F] text-white min-h-[44px] border-0 text-base"
               >
-                <Link href={`/${validLocale}/applications`}>
-                  {t("home.hero.viewTechApplications")}
+                <Link href={`/${validLocale}/patents`}>
+                  {t("home.hero.viewTechArchitecture")}
                 </Link>
               </Button>
+              <div className="mt-4">
+                <Link
+                  href={`/${validLocale}/applications`}
+                  className="text-white/80 hover:text-white text-sm font-medium underline-offset-4 hover:underline"
+                >
+                  {t("home.hero.viewTechApplications")}
+                </Link>
+              </div>
             </div>
 
             {/* 第二层：技术平台（标题 + 图自带边框） */}
@@ -60,7 +63,6 @@ export default async function HomePage({
                 {t("home.hero.title")}
               </h2>
               <HeroPlatformDiagram
-                showLattice={false}
                 strings={{
                   layer1Title: t("home.hero.diagram.layer1Title"),
                   layer1Text: t("home.hero.diagram.layer1Text"),
@@ -80,24 +82,30 @@ export default async function HomePage({
                   sp2LayerLabel: t("home.hero.sp2LayerLabel"),
                   sp3LayerLabel: t("home.hero.sp3LayerLabel"),
                   atomicTitle: t("home.hero.atomicTitle"),
+                  applicationsTitle: t("home.platform.diagram.layer1Title"),
+                  applicationTim: t("home.platform.diagram.layer1Tim"),
+                  applicationSubstrate: t("home.platform.diagram.layer1Substrate"),
+                  applicationDevices: t("home.platform.diagram.layer1Devices"),
+                  applicationHint: t("home.platform.diagram.layer1Hint"),
+                  limitsTitle: t("home.platform.diagram.layer3Title"),
+                  limitsLabel: t("home.platform.diagram.layer3Label"),
+                  mechanismTitle: t("home.platform.diagram.layer2Title"),
+                  mechanismItem1: t("home.platform.diagram.layer2Item1"),
+                  mechanismItem2: t("home.platform.diagram.layer2Item2"),
+                  mechanismItem3: t("home.platform.diagram.layer2Item3"),
+                  mechanismItem4: t("home.platform.diagram.layer2Item4"),
+                  mechanismItem5: t("home.platform.diagram.layer2Item5"),
+                  mechanismItem6: t("home.platform.diagram.layer2Item6"),
+                  platformAttr: t("home.platform.diagram.platformAttr"),
                 }}
               />
             </div>
 
             {/* 技术演化路径 */}
             <div>
-              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
-                <h2 className="page-h2 text-white text-center sm:text-left">
-                  {t("home.techEvolution.title")}
-                </h2>
-                <Link
-                  href={`/${validLocale}/patents#evolution-path`}
-                  className="inline-flex items-center justify-center gap-2 text-[#7dd3fc] hover:text-[#8EE8FF] text-sm font-medium transition-colors shrink-0"
-                >
-                  {t("home.techEvolution.viewFullPath")}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <h2 className="page-h2 text-white text-center mb-6">
+                {t("home.techEvolution.title")}
+              </h2>
               <div className="text-white/75">
                 <p className="page-lead mb-3">{t("home.techEvolution.desc")}</p>
                 <ul className="page-body list-disc pl-5 space-y-2">
@@ -113,20 +121,20 @@ export default async function HomePage({
               <h2 className="page-h2 text-white text-center mb-2 sm:mb-3">
                 {t("home.results.title")}
               </h2>
-              <p className="text-center text-[#7dd3fc] text-base sm:text-lg mb-8 sm:mb-10">
+              <p className="page-lead text-center text-white/70 mb-8 sm:mb-10">
                 {t("home.results.subtitle")}
               </p>
               <div className="border-t border-white/15 pt-8 mb-10 sm:mb-12">
                 <h3 className="page-h3 text-white mb-6">
                   {t("home.hero.achieved")}
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-8 lg:gap-16">
+                <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
                   <div>
                     <p className="page-h3 text-white mb-3">
-                      <span className="text-[#7dd3fc]">1. </span>
+                      <span className="text-white/45">1. </span>
                       {t("home.hero.achievement1")}
                     </p>
-                    <p className="page-stat-value-sm text-[#7dd3fc]">
+                    <p className="page-stat-value-sm text-white">
                       {t("home.hero.achievement1Value")}
                     </p>
                     <p className="page-stat-unit text-white/70 mt-1">
@@ -135,7 +143,7 @@ export default async function HomePage({
                   </div>
                   <div>
                     <p className="page-h3 text-white">
-                      <span className="text-[#7dd3fc]">2. </span>
+                      <span className="text-white/45">2. </span>
                       {t("home.hero.achievement2")}
                     </p>
                     {t("home.hero.achievement2Note") ? (
@@ -146,7 +154,7 @@ export default async function HomePage({
                   </div>
                 </div>
               </div>
-              <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
                 <div>
                   <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>
@@ -162,144 +170,6 @@ export default async function HomePage({
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* 平台优势 — 三张卡片（图标置顶、标题加粗、短句项目符号） */}
-      <section className="py-16 sm:py-20 lg:py-24 lg:py-24 xl:py-28 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="max-w-6xl xl:max-w-6xl mx-auto">
-          <h2 className="page-h2 text-white text-center mb-8 sm:mb-10 lg:mb-12">
-            {t("home.hero.platformAdvantageTitle")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 lg:gap-10">
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
-                <Atom className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                01 {t("home.features.innovation")}
-              </h3>
-              <ul className="space-y-2 text-sm text-slate-300">
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">核心动作：</strong>{t("home.features.innovationAction")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">核心价值：</strong>{t("home.features.innovationValue")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">物理效应：</strong>{t("home.features.innovationEffect")}</span>
-                </li>
-              </ul>
-            </Card>
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
-                <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                02 {t("home.features.patents")}
-              </h3>
-              <ul className="space-y-2 text-sm text-slate-300">
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">布局逻辑：</strong>{t("home.features.patentsLogic")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">现状：</strong>{t("home.features.patentsStatus")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">价值：</strong>{t("home.features.patentsValue")}</span>
-                </li>
-              </ul>
-            </Card>
-            <Card className="p-5 sm:p-8 xl:p-10 bg-[#071d2e]/90 border-[#0077b6]/30 hover:border-[#00b4d8]/45 text-left">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#73DBFF]/15 border border-[#0077b6]/25 flex items-center justify-center mb-4 sm:mb-5">
-                <Handshake className="w-6 h-6 sm:w-7 sm:h-7 text-[#73DBFF]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                03 {t("home.features.industrial")}
-              </h3>
-              <ul className="space-y-2 text-sm text-slate-300">
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">技术状态：</strong>{t("home.features.industrialStatus")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">合作模式：</strong>{t("home.features.industrialMode")}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#00b4d8] mt-1.5">·</span>
-                  <span><strong className="text-white/90">愿景：</strong>{t("home.features.industrialVision")}</span>
-                </li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* 平台定位与价值 */}
-      <section className="py-16 sm:py-20 lg:py-24 lg:py-24 xl:py-28 px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-6 sm:mb-8 text-white text-center">
-            {t("home.platform.title")}
-          </h2>
-
-          {/* 纵向生态基底图：应用接口 → 平台机制 → 传统材料极限 */}
-          <PlatformValueDiagram
-            strings={{
-              layer1Title: t("home.platform.diagram.layer1Title"),
-              layer1Tim: t("home.platform.diagram.layer1Tim"),
-              layer1Substrate: t("home.platform.diagram.layer1Substrate"),
-              layer1Devices: t("home.platform.diagram.layer1Devices"),
-              layer1Hint: t("home.platform.diagram.layer1Hint"),
-              layer2Title: t("home.platform.diagram.layer2Title"),
-              layer2Item1: t("home.platform.diagram.layer2Item1"),
-              layer2Item2: t("home.platform.diagram.layer2Item2"),
-              layer2Item3: t("home.platform.diagram.layer2Item3"),
-              layer2Item4: t("home.platform.diagram.layer2Item4"),
-              layer2Item5: t("home.platform.diagram.layer2Item5"),
-              layer2Item6: t("home.platform.diagram.layer2Item6"),
-              layer2InterfaceLabel: t("home.platform.diagram.layer2InterfaceLabel"),
-              layer2Bonding: t("home.platform.diagram.layer2Bonding"),
-              layer2Stress: t("home.platform.diagram.layer2Stress"),
-              layer2Coexist: t("home.platform.diagram.layer2Coexist"),
-              layer2Thermal: t("home.platform.diagram.layer2Thermal"),
-              layer2Electronic: t("home.platform.diagram.layer2Electronic"),
-              layer3Title: t("home.platform.diagram.layer3Title"),
-              layer3Label: t("home.platform.diagram.layer3Label"),
-              platformAttr: t("home.platform.diagram.platformAttr"),
-              rdConcept: t("home.platform.diagram.rdConcept"),
-            }}
-          />
-        </div>
-      </section>
-
-      {/* 底部行动召唤 */}
-      <section className="py-16 lg:py-20 xl:py-24 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="page-h3 mb-4 text-white">
-            {t("home.hero.ctaTitle")}
-          </h2>
-          <p className="page-caption text-slate-400 mb-8">
-            {t("home.hero.ctaSubtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
-            <Button size="lg" asChild className="gap-2 w-full sm:w-auto min-h-[44px] bg-[#0077b6] hover:bg-[#0096c7] text-white border-0">
-              <Link href={`/${validLocale}/patents`}>
-                {t("home.hero.viewWhitepaper")}
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 w-full sm:w-auto min-h-[44px] bg-transparent border-[#00b4d8]/80 text-white hover:bg-white/10 hover:border-[#00b4d8]">
-              <Link href={`/${validLocale}/cooperation#contact`}>
-                {t("home.hero.contactTeam")}
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

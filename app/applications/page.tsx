@@ -24,19 +24,19 @@ export default async function ApplicationsPage({
   const prefix = `/${validLocale}`
 
   const ACCENTS = {
-    hpc: { hex: "#73DBFF", text: "text-[#73DBFF]", hoverText: "hover:text-[#8EE8FF]", tag: "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]" },
-    power: { hex: "#60a5fa", text: "text-blue-300", hoverText: "hover:text-blue-200", tag: "bg-blue-400/15 border border-blue-400/25 text-blue-200" },
-    ev: { hex: "#34d399", text: "text-emerald-300", hoverText: "hover:text-emerald-200", tag: "bg-emerald-400/15 border border-emerald-400/25 text-emerald-200" },
-    consumer: { hex: "#fbbf24", text: "text-amber-300", hoverText: "hover:text-amber-200", tag: "bg-amber-400/15 border border-amber-400/25 text-amber-200" },
-    frontier: { hex: "#c084fc", text: "text-purple-300", hoverText: "hover:text-purple-200", tag: "bg-purple-400/15 border border-purple-400/25 text-purple-200" },
+    hpc: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
+    power: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
+    ev: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
+    consumer: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
+    frontier: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
   } as const
 
   const layers = [
-    { accent: ACCENTS.hpc, levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Cpu, href: "#hpc" },
-    { accent: ACCENTS.power, levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Zap, href: "#power-semiconductor" },
-    { accent: ACCENTS.ev, levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Battery, href: "#ev-storage" },
-    { accent: ACCENTS.consumer, levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Home, href: "#consumer" },
-    { accent: ACCENTS.frontier, levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-[#0077b6]/35 bg-[#002244]/50", Icon: Microscope, href: "#frontier" },
+    { accent: ACCENTS.hpc, levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-white/12 bg-white/[0.03]", Icon: Cpu, href: "#hpc" },
+    { accent: ACCENTS.power, levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-white/12 bg-white/[0.03]", Icon: Zap, href: "#power-semiconductor" },
+    { accent: ACCENTS.ev, levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-white/12 bg-white/[0.03]", Icon: Battery, href: "#ev-storage" },
+    { accent: ACCENTS.consumer, levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-white/12 bg-white/[0.03]", Icon: Home, href: "#consumer" },
+    { accent: ACCENTS.frontier, levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-white/12 bg-white/[0.03]", Icon: Microscope, href: "#frontier" },
   ] as const
 
   const categoryConfig = [
@@ -55,6 +55,7 @@ export default async function ApplicationsPage({
 
       <PageHero
         variant="dark"
+        background="solid"
         title={t("applications.title")}
         subtitle={t("applications.subtitle")}
       />
@@ -62,22 +63,8 @@ export default async function ApplicationsPage({
       {/* 应用蓝图 */}
       <section className="py-16 sm:py-20 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#061f33]/96 rounded-3xl border border-[#00b4d8]/30 shadow-2xl shadow-[#0077b6]/10 overflow-hidden relative">
-            <div className="absolute inset-0 pointer-events-none opacity-50" aria-hidden>
-              <div
-                className="absolute -top-24 -left-24 w-80 h-80 rounded-full"
-                style={{
-                  background: "radial-gradient(circle, rgba(0,119,182,0.28) 0%, transparent 68%)",
-                }}
-              />
-              <div
-                className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full"
-                style={{
-                  background: "radial-gradient(circle, rgba(0,180,216,0.22) 0%, transparent 68%)",
-                }}
-              />
-            </div>
-            <div className="text-center mb-12 px-1">
+          <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-white/[0.03] rounded-2xl border border-white/12 overflow-hidden relative">
+            <div className="text-center mb-8 sm:mb-12 px-1">
               <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
               <p className="page-caption sm:text-base text-slate-400 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
@@ -100,11 +87,11 @@ export default async function ApplicationsPage({
 
               {/* 底部基座 */}
               <div className="pt-8 flex flex-col items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#73DBFF]/30 to-transparent mb-8"></div>
-                <div className="px-8 py-4 bg-[#002244]/70 rounded-xl border border-[#0077b6]/30 flex items-center gap-3 shadow-2xl shadow-[#0077b6]/10">
-                  <ShieldCheck className="w-6 h-6 text-[#73DBFF]" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
+                <div className="px-5 sm:px-8 py-3 sm:py-4 bg-white/[0.03] rounded-xl border border-white/12 flex items-center gap-3 ">
+                  <ShieldCheck className="w-6 h-6 text-[#0F4C81]" />
                   <div>
-                    <div className="page-kicker text-[#73DBFF]">{t("applications.blueprint.foundationLabel")}</div>
+                    <div className="page-kicker text-[#0F4C81]">{t("applications.blueprint.foundationLabel")}</div>
                     <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
                   </div>
                 </div>
@@ -339,12 +326,12 @@ export default async function ApplicationsPage({
                 <Card
                   key={cat.id}
                   id={cat.id}
-                  className={`p-6 sm:p-8 lg:p-10 bg-[#071d2e]/92 border border-[#0077b6]/30 hover:border-[#00b4d8]/45 hover:shadow-xl hover:shadow-[#0077b6]/10 transition-all scroll-mt-20 ${
-                    cat.isExploration ? "ring-1 ring-[#73DBFF]/15" : ""
+                  className={`p-4 sm:p-8 lg:p-10 gap-4 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all scroll-mt-20 ${
+                    cat.isExploration ? "" : ""
                   }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-[#0077b6]/30 flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0077b6]/10">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-white/12 flex items-center justify-center flex-shrink-0 ">
                       <cat.Icon className={`w-7 h-7 sm:w-8 sm:h-8 ${cat.accent.text}`} />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -386,7 +373,7 @@ export default async function ApplicationsPage({
                             {materials.split("|").map((m, i) => (
                               <span
                                 key={i}
-                                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full bg-[#002244]/60 text-slate-200"
+                                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full bg-white/[0.04] text-slate-200"
                                 style={{ borderColor: `${cat.accent.hex}55` }}
                               >
                                 {m.trim()}
@@ -399,7 +386,7 @@ export default async function ApplicationsPage({
                         <Button
                           size="lg"
                           variant="outline"
-                          className="min-h-[44px] border-[#00b4d8]/80 text-white hover:bg-white/10 bg-transparent"
+                          className="min-h-[44px] border-white/25 text-white hover:bg-white/10 bg-transparent"
                           asChild
                         >
                           <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
@@ -414,7 +401,7 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 text-slate-900 mb-4 break-words px-1">
             {t("applications.summary.title")}
@@ -430,7 +417,7 @@ export default async function ApplicationsPage({
             <Button
               size="lg"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0077b6] hover:bg-[#0096c7] text-white shadow-lg shadow-[#0077b6]/30 border-0"
+              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0"
             >
               <Link href={`${prefix}/cooperation`}>{t("applications.cta.techDialogue")}</Link>
             </Button>
@@ -438,7 +425,7 @@ export default async function ApplicationsPage({
               size="lg"
               variant="outline"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 border-[#0077b6]/35 text-[#0F2A5C] hover:bg-slate-50 bg-transparent"
+              className="w-full sm:w-auto min-h-[44px] gap-2 border-white/12 text-[#0F2A5C] hover:bg-slate-50 bg-transparent"
             >
               <Link href={`${prefix}/patents`}>{t("applications.cta.viewTechPath")}</Link>
             </Button>

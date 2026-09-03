@@ -57,17 +57,17 @@ export default async function NewsPage({
   }))
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen bg-[#0B1F33] overflow-x-hidden">
       <DarkPagePatternBg />
       <div className="relative z-10">
       <Navigation locale={validLocale} />
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
-            <p className="page-lead text-white/85 text-pretty">
+            <p className="page-lead text-white/75 text-pretty">
               {t("news.subtitle")}
             </p>
           </div>
@@ -75,27 +75,27 @@ export default async function NewsPage({
       </section>
 
       {/* Navigation Cards */}
-      <section className="py-12 border-t border-[#0077b6]/30">
+      <section className="py-12 border-t border-white/12">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* 公司动态卡片 */}
               <a
                 href="#company-news"
-                className="group rounded-xl p-8 bg-[#071d2e]/90 border border-[#0077b6]/30 hover:border-[#00b4d8]/45  transition-all hover:shadow-lg"
+                className="group rounded-xl p-5 sm:p-8 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all "
               >
                 <div className="flex items-start gap-4">
-                  <div className="h-14 w-14 rounded-xl bg-[#73DBFF]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#73DBFF]/30 transition-colors">
-                    <Building className="h-7 w-7 text-[#73DBFF]" />
+                  <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
+                    <Building className="h-7 w-7 text-[#0F4C81]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="page-h3 mb-2 text-white group-hover:text-[#73DBFF] transition-colors">
+                    <h3 className="page-h3 mb-2 text-white group-hover:text-white transition-colors">
                       {t("news.companyNews")}
                     </h3>
                     <p className="page-caption text-white/75">
                       {t("news.companyNewsDesc")}
                     </p>
-                    <div className="mt-4 flex items-center text-[#73DBFF] page-caption font-medium">
+                    <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                       {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -103,17 +103,17 @@ export default async function NewsPage({
               </a>
 
               {/* 行业信息卡片 */}
-              <div className="group rounded-xl p-8 bg-[#071d2e]/90 border border-[#0077b6]/30 hover:border-[#00b4d8]/45  transition-all hover:shadow-lg">
+              <div className="group rounded-xl p-5 sm:p-8 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all ">
                 <div className="flex items-start gap-4">
-                  <div className="h-14 w-14 rounded-xl bg-[#73DBFF]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#73DBFF]/30 transition-colors">
-                    <TrendingUp className="h-7 w-7 text-[#73DBFF]" />
+                  <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
+                    <TrendingUp className="h-7 w-7 text-[#0F4C81]" />
                   </div>
                   <div className="flex-1">
                     <a
                       href="#industry-info"
                       className="block"
                     >
-                      <h3 className="page-h3 mb-2 text-white group-hover:text-[#73DBFF] transition-colors">
+                      <h3 className="page-h3 mb-2 text-white group-hover:text-white transition-colors">
                         {t("news.industryInfo")}
                       </h3>
                     </a>
@@ -151,7 +151,7 @@ export default async function NewsPage({
       {/* Company News */}
       <section
         id="company-news"
-        className="py-16 border-t border-[#0077b6]/30 scroll-mt-20 bg-[#F9FAFC]"
+        className="py-16 border-t border-white/12 scroll-mt-20 bg-[#F9FAFC]"
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -165,11 +165,11 @@ export default async function NewsPage({
                 <Link
                   key={index}
                   href={`${prefix}/news/${news.id}`}
-                  className="block rounded-xl p-6 bg-white border border-slate-200 hover:border-[#0077b6]/50 transition-colors group shadow-sm hover:shadow-md"
+                  className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                      <news.icon className="h-6 w-6 text-[#73DBFF]" />
+                      <news.icon className="h-6 w-6 text-[#0F4C81]" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -185,7 +185,7 @@ export default async function NewsPage({
                         {news.title}
                       </h3>
                       <p className="page-body text-slate-600">{news.summary}</p>
-                      <div className="mt-4 flex items-center text-[#0077b6] page-caption font-medium">
+                      <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                         {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -198,7 +198,7 @@ export default async function NewsPage({
       </section>
 
       {/* Industry Information */}
-      <section id="industry-info" className="py-16 border-t border-[#0077b6]/30 bg-[#F9FAFC] scroll-mt-20">
+      <section id="industry-info" className="py-16 border-t border-white/12 bg-[#F9FAFC] scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.industryInfo")}</h2>
@@ -209,7 +209,7 @@ export default async function NewsPage({
             {/* 行业趋势 */}
             <div id="industry-trends" className="mb-12 scroll-mt-20">
               <div className="flex items-center gap-3 mb-6">
-                <TrendingUp className="h-6 w-6 text-[#73DBFF]" />
+                <TrendingUp className="h-6 w-6 text-[#0F4C81]" />
                 <h3 className="page-h3 text-slate-900">{t("news.industryTrends")}</h3>
               </div>
               <div className="space-y-6">
@@ -219,11 +219,11 @@ export default async function NewsPage({
                     <Link
                       key={article.id}
                       href={`${prefix}/news/${article.id}`}
-                      className="block rounded-xl p-6 bg-white border border-slate-200 hover:border-[#0077b6]/50 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div className="flex items-start gap-4">
                         <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#73DBFF]" />
+                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
                         </div>
                         <div className="flex-1">
                           <h4 className="page-h3 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -232,7 +232,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0077b6] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>
@@ -245,7 +245,7 @@ export default async function NewsPage({
             {/* 基础理论 */}
             <div id="basic-theory" className="mb-12 scroll-mt-20">
               <div className="flex items-center gap-3 mb-6">
-                <BookOpen className="h-6 w-6 text-[#73DBFF]" />
+                <BookOpen className="h-6 w-6 text-[#0F4C81]" />
                 <h3 className="page-h3 text-slate-900">{t("news.basicTheory")}</h3>
               </div>
               <div className="space-y-6">
@@ -255,11 +255,11 @@ export default async function NewsPage({
                     <Link
                       key={article.id}
                       href={`${prefix}/news/${article.id}`}
-                      className="block rounded-xl p-6 bg-white border border-slate-200 hover:border-[#0077b6]/50 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div className="flex items-start gap-4">
                         <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#73DBFF]" />
+                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
                         </div>
                         <div className="flex-1">
                           <h4 className="page-h3 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -268,7 +268,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0077b6] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>
@@ -281,7 +281,7 @@ export default async function NewsPage({
             {/* 前沿技术 */}
             <div id="frontier-tech" className="mb-12 scroll-mt-20">
               <div className="flex items-center gap-3 mb-6">
-                <Zap className="h-6 w-6 text-[#73DBFF]" />
+                <Zap className="h-6 w-6 text-[#0F4C81]" />
                 <h3 className="page-h3 text-slate-900">{t("news.frontierTech")}</h3>
               </div>
               <div className="space-y-6">
@@ -291,11 +291,11 @@ export default async function NewsPage({
                     <Link
                       key={article.id}
                       href={`${prefix}/news/${article.id}`}
-                      className="block rounded-xl p-6 bg-white border border-slate-200 hover:border-[#0077b6]/50 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div className="flex items-start gap-4">
                         <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#73DBFF]" />
+                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
                         </div>
                         <div className="flex-1">
                           <h4 className="page-h3 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -304,7 +304,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0077b6] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>

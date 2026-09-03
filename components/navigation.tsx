@@ -66,7 +66,10 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
     isActive("/news") ||
     isActive("/applications") ||
     isActive("/cooperation")
-  const navBg = isDarkPage
+  const isSolidNavyPage = isDarkPage
+  const navBg = isSolidNavyPage
+    ? "bg-[#0B1F33]/95 border-white/10"
+    : isDarkPage
     ? "bg-[#001a33]/95 border-[#003366]/50"
     : "bg-white/95 border-slate-200/80"
   const navText = isDarkPage ? "text-white" : "text-[#0F2A5C]"
