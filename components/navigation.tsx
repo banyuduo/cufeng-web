@@ -3,6 +3,7 @@
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import { Button } from "@/components/ui/button"
 import { Menu, ChevronDown } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
@@ -21,6 +22,7 @@ const PRODUCT_SUBLINKS = [
 export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productsExpanded, setProductsExpanded] = useState(false)
+  const [menuMounted, setMenuMounted] = useState(false)
   const pathname = usePathname()
   const t = useTranslations()
 
@@ -30,6 +32,14 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const locale: Locale =
     localeProp ?? (isValidLocale(localeFromPath) ? localeFromPath : "zh")
   const prefix = `/${locale}`
+
+  useEffect(() => {
+    setMenuMounted(true)
+  }, [])
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -78,7 +88,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
     : "text-slate-600 hover:text-[#0F2A5C]"
 
   return (
-    <nav className={`border-b fixed w-full z-50 ${navBg}`}>
+    <nav className={`border-b fixed inset-x-0 top-0 z-[100] isolate pointer-events-auto ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href={prefix} className={`text-xl font-bold ${navText}`}>
@@ -142,17 +152,19 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
           <div className="flex items-center gap-2 md:hidden">
             <Link
               href={localeSwitchHref}
-              className={`text-xs px-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
+              className={`inline-flex items-center min-h-[44px] text-xs px-2 touch-manipulation transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
             >
               {otherLocaleName}
             </Link>
             <button
-              className={`p-2 transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              type="button"
+              className={`relative z-[101] p-2 touch-manipulation transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-expanded={mobileMenuOpen}
               aria-label={t("common.nav.toggleMenu")}
             >
               <Menu
-                className={`h-6 w-6 transition-transform duration-300 ${
+                className={`h-6 w-6 pointer-events-none transition-transform duration-300 ${
                   mobileMenuOpen ? "rotate-90" : "rotate-0"
                 }`}
               />
@@ -161,97 +173,100 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 w-full h-full z-[9998]"
-            style={{ backgroundColor: "#000000", opacity: 0.5 }}
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          <div
-            id="mobile-menu-overlay"
-            className="fixed top-16 right-0 w-max min-w-[100px] max-w-[90vw] h-[calc(100vh-4rem)] z-[9999] flex flex-col"
-            style={{
-              backgroundColor: "#000000",
-              opacity: 1,
-              boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.5)",
-            }}
-          >
-            <div className="flex flex-col w-max pt-3 pb-3 fade-in-down px-2" style={{ backgroundColor: "#000000" }}>
-              <Link
-                href={`${prefix}/about`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.about")}
-              </Link>
-              <Link
-                href={`${prefix}/patents`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.techArchitecture")}
-              </Link>
-              <div className="border-b border-white/10">
-                <button
-                  type="button"
-                  onClick={() => setProductsExpanded(!productsExpanded)}
-                  className="flex items-center justify-between gap-2 w-full text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
+      {menuMounted &&
+        mobileMenuOpen &&
+        createPortal(
+          <>
+            <div
+              className="fixed inset-x-0 top-16 bottom-0 z-[9998]"
+              style={{ backgroundColor: "#000000", opacity: 0.5 }}
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <div
+              id="mobile-menu-overlay"
+              className="fixed top-16 right-0 w-max min-w-[100px] max-w-[90vw] h-[calc(100vh-4rem)] z-[9999] flex flex-col"
+              style={{
+                backgroundColor: "#000000",
+                opacity: 1,
+                boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              <div className="flex flex-col w-max pt-3 pb-3 fade-in-down px-2" style={{ backgroundColor: "#000000" }}>
+                <Link
+                  href={`${prefix}/about`}
+                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {t("common.nav.products")}
-                  <ChevronDown
-                    className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                      productsExpanded ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {productsExpanded && (
-                  <div className="pl-4 pb-2 flex flex-col gap-0.5">
-                    {PRODUCT_SUBLINKS.map(({ path, key }) => (
-                      <Link
-                        key={path}
-                        href={`${prefix}${path}`}
-                        className="text-white/85 text-sm py-1.5 px-2 hover:bg-white/10 rounded transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {t(key)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                  {t("common.nav.about")}
+                </Link>
+                <Link
+                  href={`${prefix}/patents`}
+                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("common.nav.techArchitecture")}
+                </Link>
+                <div className="border-b border-white/10">
+                  <button
+                    type="button"
+                    onClick={() => setProductsExpanded(!productsExpanded)}
+                    className="flex items-center justify-between gap-2 w-full text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
+                  >
+                    {t("common.nav.products")}
+                    <ChevronDown
+                      className={`w-4 h-4 shrink-0 pointer-events-none transition-transform duration-200 ${
+                        productsExpanded ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {productsExpanded && (
+                    <div className="pl-4 pb-2 flex flex-col gap-0.5">
+                      {PRODUCT_SUBLINKS.map(({ path, key }) => (
+                        <Link
+                          key={path}
+                          href={`${prefix}${path}`}
+                          className="text-white/85 text-sm py-1.5 px-2 hover:bg-white/10 rounded transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {t(key)}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <Link
+                  href={`${prefix}/applications`}
+                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("common.nav.applications")}
+                </Link>
+                <Link
+                  href={`${prefix}/news`}
+                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("common.nav.techVision")}
+                </Link>
+                <Link
+                  href={`${prefix}/cooperation`}
+                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("common.nav.projectCooperation")}
+                </Link>
+                <Link
+                  href={localeSwitchHref}
+                  className="text-white text-sm font-medium py-2.5 px-2 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {otherLocaleName}
+                </Link>
               </div>
-              <Link
-                href={`${prefix}/applications`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.applications")}
-              </Link>
-              <Link
-                href={`${prefix}/news`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.techVision")}
-              </Link>
-              <Link
-                href={`${prefix}/cooperation`}
-                className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("common.nav.projectCooperation")}
-              </Link>
-              <Link
-                href={localeSwitchHref}
-                className="text-white text-sm font-medium py-2.5 px-2 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {otherLocaleName}
-              </Link>
             </div>
-          </div>
-        </>
-      )}
+          </>,
+          document.body
+        )}
     </nav>
   )
 }

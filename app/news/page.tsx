@@ -57,14 +57,15 @@ export default async function NewsPage({
   }))
 
   return (
-    <div className="min-h-screen bg-[#0B1F33] overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B1F33]">
+      <Navigation locale={validLocale} />
+      <div className="relative overflow-x-hidden">
       <DarkPagePatternBg />
       <div className="relative z-10">
-      <Navigation locale={validLocale} />
 
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-20 overflow-hidden pointer-events-none">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 pointer-events-auto">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
             <p className="page-lead text-white/75 text-pretty">
@@ -319,6 +320,7 @@ export default async function NewsPage({
 
       {/* Footer */}
       <FooterNav locale={validLocale} />
+      </div>
       </div>
     </div>
   )

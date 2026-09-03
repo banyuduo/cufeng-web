@@ -99,7 +99,7 @@ export function HpcExpandableCard({
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className={`flex items-center gap-1.5 ${accentClassName} ${accentHoverClassName} font-medium text-sm mt-2 transition-colors`}
+            className={`flex items-center gap-1.5 min-h-[44px] ${accentClassName} ${accentHoverClassName} font-medium text-sm mt-2 touch-manipulation transition-colors`}
           >
             {expanded ? collapseLabel : expandLabel}
             <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />

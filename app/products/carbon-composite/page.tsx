@@ -23,8 +23,8 @@ export default function CarbonCompositePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-cyan-50 via-[#F9FAFC] to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-cyan-50 via-[#F9FAFC] to-white pointer-events-none">
+        <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href={`${prefix}/products`}
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -518,14 +518,14 @@ export default function CarbonCompositePage() {
             <p className="page-body text-slate-200 mb-6">
               {t("products.carbonComposite.investmentValue.cooperationDesc")}
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="bg-white text-[#0077b6] hover:bg-slate-100" asChild>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+              <Button size="lg" className="w-full sm:w-auto min-h-[44px] bg-white text-[#0077b6] hover:bg-slate-100" asChild>
                 <Link href={`${prefix}/cooperation#contact`}>{t("products.carbonComposite.investmentValue.projectCooperation")}</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[44px] border-white text-white hover:bg-white/10 bg-transparent" asChild>
                 <Link href={`${prefix}/about#wang`}>{t("products.carbonComposite.investmentValue.techExchange")}</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[44px] border-white text-white hover:bg-white/10 bg-transparent" asChild>
                 <a
                   href={locale === "en" ? "/docs/diamond-carbon-en.html" : "/docs/diamond-carbon.html"}
                   target="_blank"

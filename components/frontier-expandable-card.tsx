@@ -69,7 +69,7 @@ function FrontierItemCard({
             <button
               type="button"
               onClick={() => setExpanded(!expanded)}
-              className={`flex items-center gap-1.5 font-medium text-sm transition-colors ${accentClassName} ${accentHoverClassName}`}
+              className={`flex items-center gap-1.5 min-h-[44px] font-medium text-sm touch-manipulation transition-colors ${accentClassName} ${accentHoverClassName}`}
             >
               {expanded ? collapseLabel : expandLabel}
               <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />

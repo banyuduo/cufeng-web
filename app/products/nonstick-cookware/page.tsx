@@ -14,8 +14,8 @@ export default async function NonstickCookwarePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-[#F9FAFC]">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-[#F9FAFC] pointer-events-none">
+        <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"

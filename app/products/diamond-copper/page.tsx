@@ -11,8 +11,8 @@ export default function DiamondCopperPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white pointer-events-none">
+        <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href="/zh/products"
             className="inline-flex items-center gap-2 page-caption text-slate-600 hover:text-[#0077b6] mb-8"
@@ -430,7 +430,7 @@ export default function DiamondCopperPage() {
               className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white"
               asChild
             >
-              <a href="/docs/sample test result.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/docs/sample%20test%20result.pdf" target="_blank" rel="noopener noreferrer">
                 查看样品数据
               </a>
             </Button>
