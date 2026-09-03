@@ -38,14 +38,14 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50 w-12 h-12 rounded-full bg-[#003366] hover:bg-[#004080] text-[#7dd3fc] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-[#0077b6]/40"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50 w-12 h-12 rounded-full bg-[#0F4C81] hover:bg-[#163A5F] text-white transition-colors duration-300 flex items-center justify-center group border-0"
           aria-label={t("common.footer.scrollToTop")}
         >
           <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
         </button>
       )}
 
-      <footer className="border-t border-[#003366]/50 bg-[#001a33] py-12 sm:py-16 px-6 lg:px-8">
+      <footer className="border-t border-white/10 bg-[#0B1F33] py-12 sm:py-16 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
             <div className="order-1 lg:order-2">
@@ -54,27 +54,27 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </div>
               <ul className="space-y-2 text-sm text-slate-300 text-left">
                 <li>
-                  <Link href={`${prefix}/products/diamond-copper`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/products/diamond-copper`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.diamondCopper")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/products/thermal-pad`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/products/thermal-pad`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.thermalPad")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/products/carbon-composite`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/products/carbon-composite`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.carbonComposite")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/products/nonstick-cookware`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/products/nonstick-cookware`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.nonstickCookware")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/products/diamond-tools`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/products/diamond-tools`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.footer.superabrasiveTools")}
                   </Link>
                 </li>
@@ -86,27 +86,27 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </div>
               <ul className="space-y-2 text-sm text-slate-300 text-left">
                 <li>
-                  <Link href={`${prefix}/about`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/about`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.about")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/patents`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/patents`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.techArchitecture")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/applications`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/applications`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.applications")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/news`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/news`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.techVision")}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${prefix}/cooperation`} className="text-slate-300 hover:text-[#7dd3fc] transition-colors">
+                  <Link href={`${prefix}/cooperation`} className="text-slate-300 hover:text-white transition-colors">
                     {t("common.nav.projectCooperation")}
                   </Link>
                 </li>
@@ -134,7 +134,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </ul>
             </div>
           </div>
-          <div className="border-t border-[#0344b3]/50 mt-8 pt-8">
+          <div className="border-t border-white/10 mt-8 pt-8">
             <div className="text-xs text-slate-400 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
                 <span>{t("common.footer.copyright")}</span>
@@ -149,7 +149,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
                     href="https://beian.miit.gov.cn/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-[#7dd3fc] transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors"
                   >
                     {t("common.footer.icp")}
                   </Link>

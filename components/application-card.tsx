@@ -43,18 +43,18 @@ export function ApplicationCard({
   return (
     <a
       href={href || "#"}
-      className={`relative group p-6 rounded-2xl border ${color} transition-all duration-300 hover:translate-x-2 block cursor-pointer`}
+      className={`relative group p-4 sm:p-6 rounded-2xl border ${color} transition-colors duration-300 block cursor-pointer`}
       onClick={handleClick}
     >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-4 min-w-0">
-          <div className={`mt-1 p-2 rounded-lg border flex-shrink-0 ${iconWrapperClassName ?? "bg-[#002244]/60 border-[#0077b6]/30"}`}>
+          <div className={`mt-1 p-2 rounded-lg border flex-shrink-0 ${iconWrapperClassName ?? "bg-white/[0.04] border-white/12"}`}>
             {icon}
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-3 mb-1 flex-wrap">
               <span className={`text-xs font-mono tracking-tighter ${levelClassName ?? "text-slate-500"}`}>{level}</span>
-              <span className={`px-2 py-0.5 rounded page-kicker font-semibold ${tagClassName ?? "bg-[#73DBFF]/15 border border-[#0077b6]/25 text-[#73DBFF]"}`}>{tag}</span>
+              <span className={`px-2 py-0.5 rounded page-kicker font-semibold ${tagClassName ?? "bg-white/10 border border-white/15 text-white/80"}`}>{tag}</span>
             </div>
             <h3 className="text-lg font-bold text-white break-words">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">

@@ -104,7 +104,7 @@ export default function NonstickCookwarePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
+            <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
@@ -112,7 +112,7 @@ export default function NonstickCookwarePage() {
               <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.hardnessDesc")}</p>
             </Card>
 
-            <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
+            <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mx-auto mb-4">
                 <Flame className="w-8 h-8 text-orange-600" />
               </div>
@@ -120,7 +120,7 @@ export default function NonstickCookwarePage() {
               <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.thermalDesc")}</p>
             </Card>
 
-            <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
+            <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <Droplet className="w-8 h-8 text-green-600" />
               </div>
@@ -128,7 +128,7 @@ export default function NonstickCookwarePage() {
               <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.inertDesc")}</p>
             </Card>
 
-            <Card className="p-6 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
+            <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
               <div className="w-16 h-16 rounded-2xl bg-sky-100 flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-[#0077b6]" />
               </div>
@@ -147,7 +147,7 @@ export default function NonstickCookwarePage() {
             <p className="page-lead text-slate-600">{t("products.nonstickCookware.keyFeatures.subtitle")}</p>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
-            <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
+            <Card className="p-5 sm:p-8 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center mb-6">
                 <Shield className="w-7 h-7 text-[#0077b6]" />
               </div>
@@ -159,7 +159,7 @@ export default function NonstickCookwarePage() {
               <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
             </Card>
 
-            <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
+            <Card className="p-5 sm:p-8 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-7 h-7 text-green-600" />
               </div>
@@ -171,7 +171,7 @@ export default function NonstickCookwarePage() {
               <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
             </Card>
 
-            <Card className="p-8 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
+            <Card className="p-5 sm:p-8 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all">
               <div className="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-amber-600" />
               </div>
@@ -343,7 +343,7 @@ export default function NonstickCookwarePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">{t("products.nonstickCookware.cta.title")}</h2>
           <p className="page-lead text-slate-600 mb-8">{t("products.nonstickCookware.cta.subtitle")}</p>

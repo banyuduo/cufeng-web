@@ -78,7 +78,7 @@ export default async function ProductsPage({
                 href={item.href}
                 className={`block h-full min-h-0 ${"wide" in item && item.wide ? "md:col-span-2" : ""}`}
               >
-                <Card className="flex h-full flex-col p-6 sm:p-8 bg-white border-slate-200 hover:border-[#4169E1]/50 hover:shadow-lg transition-all group cursor-pointer">
+                <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#4169E1]/50 hover:shadow-lg transition-all group cursor-pointer">
                   <div className={`mb-4 inline-flex w-fit rounded-full px-3 py-1 text-xs font-medium ${item.badgeClass}`}>
                     {item.badge}
                   </div>
@@ -109,7 +109,7 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-8 bg-slate-50">
+      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}

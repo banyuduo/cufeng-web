@@ -71,7 +71,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
       </section>
 
       {/* 行业文章正文 - 浅底阅读区 */}
-      <section className="py-20 bg-[#F9FAFC]">
+      <section className="py-16 sm:py-20 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* 返回按钮 */}

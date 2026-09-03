@@ -22,23 +22,26 @@ const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 const DATASETS = [
   {
     data: [40, 85, 30, 20, 70],
-    stroke: "rgba(148, 163, 184, 0.9)",
-    fill: "rgba(148, 163, 184, 0.08)",
-    point: "rgba(148, 163, 184, 0.9)",
+    stroke: "rgba(186, 198, 212, 0.95)",
+    fill: "rgba(186, 198, 212, 0.08)",
+    point: "rgba(186, 198, 212, 1)",
+    strokeWidth: 1.8,
     labelKey: "diamondCu" as const,
   },
   {
     data: [60, 80, 60, 30, 90],
-    stroke: "rgba(65, 105, 225, 0.9)",
-    fill: "rgba(65, 105, 225, 0.08)",
-    point: "rgba(65, 105, 225, 0.9)",
+    stroke: "rgba(96, 140, 196, 1)",
+    fill: "rgba(96, 140, 196, 0.14)",
+    point: "rgba(120, 164, 214, 1)",
+    strokeWidth: 2,
     labelKey: "diamondSiC" as const,
   },
   {
     data: [95, 95, 95, 95, 85],
-    stroke: "rgba(115, 219, 255, 1)",
-    fill: "rgba(115, 219, 255, 0.25)",
-    point: "rgba(115, 219, 255, 1)",
+    stroke: "rgba(248, 250, 252, 1)",
+    fill: "rgba(176, 208, 228, 0.28)",
+    point: "rgba(248, 250, 252, 1)",
+    strokeWidth: 2.6,
     labelKey: "toSpike" as const,
   },
 ]
@@ -64,7 +67,7 @@ function renderLabelLines(text: string, x: number, y: number, anchor: "start" | 
     <tspan
       key={`${text}-${lineIndex}`}
       x={x}
-      dy={lineIndex === 0 ? 0 : size * 1.15}
+      dy={lineIndex === 0 ? 0 : size * 1.2}
       textAnchor={anchor}
       fill={fill}
       fontSize={size}
@@ -78,23 +81,24 @@ function renderLabelLines(text: string, x: number, y: number, anchor: "start" | 
 export function MaterialComparisonRadarChart({ labels, variant = "dark" }: MaterialComparisonRadarChartProps) {
   const isLight = variant === "light"
   const count = DIMENSIONS.length
-  const cx = 200
-  const cy = 190
+  const cx = 230
+  const cy = 212
   const maxR = 118
-  const labelR = 152
+  const labelR = 158
 
-  const gridColor = isLight ? "rgba(148, 163, 184, 0.25)" : "rgba(148, 163, 184, 0.15)"
-  const axisColor = isLight ? "rgba(148, 163, 184, 0.22)" : "rgba(148, 163, 184, 0.12)"
-  const tickColor = isLight ? "rgba(71, 85, 105, 0.7)" : "rgba(148, 163, 184, 0.6)"
-  const labelColor = isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(203, 213, 225, 0.9)"
-  const legendColor = isLight ? "rgba(30, 41, 59, 0.9)" : "rgba(203, 213, 225, 0.95)"
+  const gridColor = isLight ? "rgba(100, 116, 139, 0.28)" : "rgba(226, 232, 240, 0.28)"
+  const axisColor = isLight ? "rgba(100, 116, 139, 0.22)" : "rgba(226, 232, 240, 0.2)"
+  const tickColor = isLight ? "rgba(71, 85, 105, 0.75)" : "rgba(226, 232, 240, 0.55)"
+  const labelColor = isLight ? "rgba(30, 41, 59, 0.92)" : "rgba(248, 250, 252, 0.92)"
+  const legendColor = isLight ? "rgba(30, 41, 59, 0.9)" : "rgba(226, 232, 240, 0.88)"
+  const pointStroke = isLight ? "rgba(255, 255, 255, 1)" : "rgba(11, 31, 51, 1)"
 
   const gridLevels = [20, 40, 60, 80, 100]
 
   return (
-    <div className="w-full max-w-[min(100%,calc(100vw-2rem))] sm:max-w-md lg:max-w-lg mx-auto">
+    <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[440px] mx-auto">
       <svg
-        viewBox="0 0 400 430"
+        viewBox="0 0 460 455"
         role="img"
         aria-label={labels.toSpike}
         className="w-full h-auto"
@@ -106,19 +110,19 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
             points={polygonPoints(Array(count).fill(level), cx, cy, maxR, count)}
             fill="none"
             stroke={gridColor}
-            strokeWidth={0.8}
+            strokeWidth={level === 100 ? 1.4 : 1.15}
           />
         ))}
 
         {DIMENSIONS.map((_, index) => {
           const end = polarPoint(index, 100, cx, cy, maxR, count)
-          return <line key={`axis-${index}`} x1={cx} y1={cy} x2={end.x} y2={end.y} stroke={axisColor} strokeWidth={0.8} />
+          return <line key={`axis-${index}`} x1={cx} y1={cy} x2={end.x} y2={end.y} stroke={axisColor} strokeWidth={1.15} />
         })}
 
         {gridLevels.map((level) => {
           const point = polarPoint(0, level, cx, cy, maxR, count)
           return (
-            <text key={`tick-${level}`} x={point.x + 6} y={point.y + 4} fill={tickColor} fontSize={11}>
+            <text key={`tick-${level}`} x={point.x + 7} y={point.y + 4} fill={tickColor} fontSize={11}>
               {level}
             </text>
           )
@@ -130,7 +134,8 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
               points={polygonPoints(dataset.data, cx, cy, maxR, count)}
               fill={dataset.fill}
               stroke={dataset.stroke}
-              strokeWidth={dataset.labelKey === "toSpike" ? 1.5 : 1}
+              strokeWidth={dataset.strokeWidth}
+              strokeLinejoin="round"
             />
             {dataset.data.map((value, index) => {
               const point = polarPoint(index, value, cx, cy, maxR, count)
@@ -139,10 +144,10 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
                   key={`${dataset.labelKey}-${index}`}
                   cx={point.x}
                   cy={point.y}
-                  r={2.5}
+                  r={dataset.labelKey === "toSpike" ? 3.4 : 2.8}
                   fill={dataset.point}
-                  stroke="rgba(30, 41, 59, 1)"
-                  strokeWidth={0.5}
+                  stroke={pointStroke}
+                  strokeWidth={1}
                 />
               )
             })}
@@ -153,38 +158,26 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
           const labelPoint = polarPoint(index, 100, cx, cy, labelR, count)
           const mobileKey = `${dimKey}Mobile` as keyof typeof labels
           const mobileLabel = labels[mobileKey]
-          const desktopLabel = labels[dimKey]
+          const label = typeof mobileLabel === "string" ? mobileLabel : labels[dimKey]
           const anchor = index === 0 ? "middle" : index === 1 || index === 2 ? "start" : index === 3 || index === 4 ? "end" : "middle"
 
           return (
-            <g key={dimKey}>
-              <text x={labelPoint.x} y={labelPoint.y} className="hidden md:inline">
-                {renderLabelLines(desktopLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 13)}
-              </text>
-              <text x={labelPoint.x} y={labelPoint.y} className="md:hidden">
-                {renderLabelLines(
-                  typeof mobileLabel === "string" ? mobileLabel : desktopLabel,
-                  labelPoint.x,
-                  labelPoint.y,
-                  anchor,
-                  labelColor,
-                  9
-                )}
-              </text>
-            </g>
+            <text key={dimKey} x={labelPoint.x} y={labelPoint.y}>
+              {renderLabelLines(label, labelPoint.x, labelPoint.y, anchor, labelColor, 14)}
+            </text>
           )
         })}
       </svg>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 px-2 pb-1">
+      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-2 pt-1 pb-1">
         {DATASETS.map((dataset) => (
           <div key={dataset.labelKey} className="inline-flex items-center gap-2">
             <span
-              className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
-              style={{ backgroundColor: dataset.point }}
+              className="inline-block w-5 h-[3px] rounded-full shrink-0"
+              style={{ backgroundColor: dataset.stroke }}
               aria-hidden
             />
-            <span className="text-[11px] sm:text-[13px]" style={{ color: legendColor }}>
+            <span className="text-[12px] sm:text-[13px]" style={{ color: legendColor }}>
               {labels[dataset.labelKey]}
             </span>
           </div>

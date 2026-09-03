@@ -13,6 +13,8 @@ interface PageHeroProps {
   tagline?: string
   /** 深色 variant 时是否显示网格与光晕装饰 */
   withDecoration?: boolean
+  /** 深色页底：gradient 为旧渐变；solid 为整页海军蓝 */
+  background?: "gradient" | "solid"
   /** 标题字重，cooperation 页使用 light */
   titleWeight?: "bold" | "light"
   children?: ReactNode
@@ -25,26 +27,25 @@ export function PageHero({
   subtitle,
   tagline,
   withDecoration = false,
+  background = "gradient",
   titleWeight = "bold",
   children,
 }: PageHeroProps) {
   const isDark = variant === "dark"
+  const isSolidNavy = isDark && background === "solid"
 
   return (
     <section
       className={`relative pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 overflow-hidden ${
-        isDark
-          ? ""
-          : "bg-[#F9FAFC]"
+        isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
-      style={isDark ? undefined : undefined}
     >
-      {isDark && (
+      {isDark && !isSolidNavy && (
         <>
           <DarkPagePatternBg />
         </>
       )}
-      {isDark && withDecoration && (
+      {isDark && withDecoration && !isSolidNavy && (
         <>
           <div className="absolute inset-0 opacity-10">
             <div
@@ -77,7 +78,7 @@ export function PageHero({
             <div
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
-                  ? "bg-[#002244]/50 text-[#7dd3fc] border-[#0077b6]/40"
+                  ? "bg-white/10 text-white/80 border-white/15"
                   : "bg-[#E8EEFF] text-[#023B99] border-[#4169E1]/30"
               }`}
             >
@@ -94,7 +95,7 @@ export function PageHero({
           {tagline && (
             <p
               className={`page-kicker mb-3 break-words ${
-                isDark ? "text-[#7dd3fc]" : "text-[#0077b6]"
+                isDark ? "text-white/55" : "text-[#0077b6]"
               }`}
             >
               {tagline}
