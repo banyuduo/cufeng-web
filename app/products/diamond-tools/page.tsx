@@ -74,7 +74,7 @@ export default function DiamondToolsPage() {
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">核心能力</h2>
-          <p className="page-lead text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto">
             从界面改性到系统工程，构建 sp³–sp² 平台的底层技术基础
           </p>
 
@@ -118,13 +118,13 @@ export default function DiamondToolsPage() {
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">产品设计原理：超硬磨料熔固的三要素架构</h2>
-          <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto">
             活性熔固超硬磨料工具的性能由 <strong>基体 (Substrate)</strong>、<strong>磨料 (Superabrasive)</strong>、
             <strong>活性熔固合金</strong> 三大核心要素共同决定
           </p>
 
           {/* Three Elements */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-6 bg-white border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
                 <Settings className="w-6 h-6 text-amber-600" />
@@ -157,7 +157,7 @@ export default function DiamondToolsPage() {
           </div>
 
           {/* Technical Diagrams */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-6 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
                 <ResponsivePicture
@@ -229,13 +229,13 @@ export default function DiamondToolsPage() {
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">极端工况下的工程支撑</h2>
-          <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto">
             在航空航天、半导体制造、国防工业等领域，难加工材料对工具的可靠性有着严苛要求
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-6 bg-slate-50 border-slate-200">
-              <h4 className="page-h3 mb-3 text-slate-900">陶瓷基复合材料 (CMC)</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">陶瓷基复合材料 (CMC)</h4>
               <p className="page-caption text-slate-600 mb-4">
                 航空发动机热端部件的核心材料，加工难度极高，对工具的耐磨性与热稳定性要求苛刻。
               </p>
@@ -246,7 +246,7 @@ export default function DiamondToolsPage() {
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200">
-              <h4 className="page-h3 mb-3 text-slate-900">碳纤维复材 (CFRP)</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">碳纤维复材 (CFRP)</h4>
               <p className="page-caption text-slate-600 mb-4">
                 航空结构件、新能源汽车车身的主流材料，加工时易产生分层、毛刺，需要精密的切削控制。
               </p>
@@ -257,7 +257,7 @@ export default function DiamondToolsPage() {
             </Card>
 
             <Card className="p-6 bg-slate-50 border-slate-200">
-              <h4 className="page-h3 mb-3 text-slate-900">钛合金 (Ti-6Al-4V)</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">钛合金 (Ti-6Al-4V)</h4>
               <p className="page-caption text-slate-600 mb-4">
                 航空航天与医疗器械的关键材料，加工时产生高热量，对工具的散热与强度提出双重挑战。
               </p>
@@ -309,11 +309,11 @@ export default function DiamondToolsPage() {
       {/* Active Fusion-Bonding Technology Deep Analysis */}
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-center text-slate-900">活性熔固技术深度解析</h2>
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-center text-slate-900">活性熔固技术深度解析</h2>
 
           {/* Core Principle */}
           <div className="mb-16">
-            <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8 lg:mb-12">
               <h3 className="page-h3 mb-4 text-slate-900">超硬磨料活性熔固原理</h3>
               <p className="page-caption text-slate-500 mb-4">Active Fusion-Bonding Technology</p>
               <p className="page-body text-slate-600">
@@ -322,7 +322,7 @@ export default function DiamondToolsPage() {
             </div>
 
             {/* Technical Parameters */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-12">
               <Card className="p-6 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">熔固温度</div>
                 <div className="page-stat-value-sm text-[#0077b6] mb-1">780°C - 1050°C</div>
@@ -346,7 +346,7 @@ export default function DiamondToolsPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">高强度化学键合</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">高强度化学键合</h4>
                 <p className="page-caption text-slate-600">
                   熔固合金与超硬材料优化匹配，在实现极高连接强度的同时，避免过度熔蚀，完整保留超硬材料的理化性能。
                 </p>
@@ -363,7 +363,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">物理性能保障</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">物理性能保障</h4>
                 <p className="page-caption text-slate-600">
                   真空环境不仅防止氧化，更通过负压精确控制技术，保证了熔固合金成分的稳定性，使工具表面清洁度与一致性优异。
                 </p>
@@ -380,7 +380,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">磨粒高出露</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">磨粒高出露</h4>
                 <p className="page-caption text-slate-600">
                   相比电镀和传统钎焊，活性熔固技术使磨粒露出感更强，切削刃口更多，显著提升材料去除率。
                 </p>
@@ -397,7 +397,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">精密加工适配</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">精密加工适配</h4>
                 <p className="page-caption text-slate-600">
                   熔固合金采用雾化制备与多级筛选，与不同规格磨料精准配对，表面一致性佳，专为精密与超精密加工场景设计。
                 </p>
@@ -445,7 +445,7 @@ export default function DiamondToolsPage() {
               <p className="page-body text-slate-300 mb-6 text-center">活性熔固工具广泛应用于：</p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="page-h3 mb-3 text-[#0077b6]">硬脆/黑色金属</h4>
+                  <h4 className="page-h4 mb-3 text-[#0077b6]">硬脆/黑色金属</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• 超硬陶瓷</li>
                     <li>• 高强度钢</li>
@@ -453,7 +453,7 @@ export default function DiamondToolsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="page-h3 mb-3 text-green-400">新型复合材料</h4>
+                  <h4 className="page-h4 mb-3 text-green-400">新型复合材料</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• CFRP (碳纤维增强复合材料)</li>
                     <li>• 微晶玻璃</li>
@@ -461,7 +461,7 @@ export default function DiamondToolsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="page-h3 mb-3 text-amber-400">高端制造</h4>
+                  <h4 className="page-h4 mb-3 text-amber-400">高端制造</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• 航空航天部件加工</li>
                     <li>• 新能源精密结构件</li>
@@ -477,14 +477,14 @@ export default function DiamondToolsPage() {
       {/* Technology Migration: From Interface Bonding to Full-Carbon Platform - Repositioned as Summary & Transition */}
       <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 mb-4">技术迁移：从"界面连接"到"全碳平台"</h2>
             <p className="page-lead text-slate-300 max-w-2xl mx-auto">
               超硬磨料熔固技术的核心原理，如何演化为 sp³–sp² 全碳复合材料平台
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-6 bg-slate-800/92 border-slate-700">
               <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-amber-500" />

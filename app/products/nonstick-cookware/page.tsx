@@ -85,9 +85,9 @@ export default async function NonstickCookwarePage() {
       </section>
 
       {/* Why Diamond */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">为什么选择金刚石？</h2>
             <p className="page-lead text-slate-600">
               金刚石是自然界最硬的材料，同时具有卓越的导热性和化学稳定性。我们将这些天然优势应用于厨具，重新定义不粘锅的性能标准。
@@ -130,9 +130,9 @@ export default async function NonstickCookwarePage() {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">核心优势</h2>
             <p className="page-lead text-slate-600">专利技术赋能，重新定义不粘锅性能标准</p>
           </div>
@@ -178,9 +178,9 @@ export default async function NonstickCookwarePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 mb-4 text-slate-900">性能对比：一目了然的优势</h2>
             <p className="page-lead text-slate-600">金刚石不粘锅 vs 传统涂层锅具</p>
           </div>

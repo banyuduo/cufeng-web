@@ -21,9 +21,9 @@ export default async function HomePage({
       <Navigation locale={validLocale} />
 
       <div className="overflow-x-hidden">
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 pointer-events-none">
+      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-24 px-6 lg:px-8 pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
-          <div className="space-y-12 sm:space-y-16 lg:space-y-24">
+          <div className="space-y-10 sm:space-y-16 lg:space-y-24">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
               <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 opacity-100">
@@ -108,7 +108,7 @@ export default async function HomePage({
                 {t("home.techEvolution.title")}
               </h2>
               <div className="text-white/75">
-                <p className="page-lead mb-3">{t("home.techEvolution.desc")}</p>
+                <p className="page-body mb-3">{t("home.techEvolution.desc")}</p>
                 <ul className="page-body list-disc pl-5 space-y-2">
                   <li>{t("home.techEvolution.evolution1")}</li>
                   <li>{t("home.techEvolution.evolution2")}</li>
@@ -117,47 +117,39 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* 阶段性成果：2 点已实现 + 工艺/样品/IP */}
+            {/* 阶段性成果：已实现条目 + 工艺/样品/IP */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-2 sm:mb-3 lg:mb-4">
+              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-10">
                 {t("home.results.title")}
               </h2>
-              <p className="page-lead text-center text-white/70 mb-8 sm:mb-10 lg:mb-12">
-                {t("home.results.subtitle")}
-              </p>
-              <div className="border-t border-white/15 pt-6 sm:pt-8 lg:pt-10 mb-8 sm:mb-12 lg:mb-14">
-                <h3 className="page-h3 text-white mb-4 sm:mb-5 lg:mb-6">
-                  {t("home.hero.achieved")}
-                </h3>
-                <ol className="space-y-4 sm:space-y-5 lg:space-y-8 max-w-3xl lg:max-w-none">
-                  <li>
-                    <p className="page-h3 text-white mb-1.5">
-                      <span className="text-white/45 font-medium">1. </span>
-                      {t("home.hero.achievement1")}
+              <ol className="space-y-4 sm:space-y-5 lg:space-y-8 max-w-3xl lg:max-w-none mb-8 sm:mb-12 lg:mb-14">
+                <li>
+                  <p className="page-h3 text-white mb-1.5">
+                    <span className="text-white/45 font-medium">1. </span>
+                    {t("home.hero.achievement1")}
+                  </p>
+                  <p className="page-body text-white/70">
+                    {t("home.hero.achievement1Value")}
+                  </p>
+                  {t("home.hero.achievement1Note") ? (
+                    <p className="page-caption text-white/55 mt-1">
+                      {t("home.hero.achievement1Note")}
                     </p>
-                    <p className="page-body text-white/70">
-                      {t("home.hero.achievement1Value")}
+                  ) : null}
+                </li>
+                <li>
+                  <p className="page-h3 text-white mb-1.5">
+                    <span className="text-white/45 font-medium">2. </span>
+                    {t("home.hero.achievement2")}
+                  </p>
+                  {t("home.hero.achievement2Note") ? (
+                    <p className="page-caption text-white/55 mt-1">
+                      {t("home.hero.achievement2Note")}
                     </p>
-                    {t("home.hero.achievement1Note") ? (
-                      <p className="page-caption text-white/55 mt-1">
-                        {t("home.hero.achievement1Note")}
-                      </p>
-                    ) : null}
-                  </li>
-                  <li>
-                    <p className="page-h3 text-white mb-1.5">
-                      <span className="text-white/45 font-medium">2. </span>
-                      {t("home.hero.achievement2")}
-                    </p>
-                    {t("home.hero.achievement2Note") ? (
-                      <p className="page-caption text-white/55 mt-1">
-                        {t("home.hero.achievement2Note")}
-                      </p>
-                    ) : null}
-                  </li>
-                </ol>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+                  ) : null}
+                </li>
+              </ol>
+              <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 border-t border-white/15 pt-6 sm:pt-8 lg:pt-10">
                 <div>
                   <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>

@@ -1,6 +1,8 @@
 "use client"
 
-import { ArrowRight, ArrowDown } from "lucide-react"
+import { ArrowDown } from "lucide-react"
+import { useLocale } from "@/components/locale-provider"
+import { cn } from "@/lib/utils"
 
 export type HeroDiagramStrings = {
   layer1Title: string
@@ -128,12 +130,49 @@ function Sp3Tetrahedron({ className }: { className?: string }) {
 const panel =
   "flex flex-col min-w-0 rounded-xl border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6 text-left"
 
+function FlowArrow() {
+  return (
+    <div className="flex items-center justify-center py-1 sm:py-1.5 lg:py-2" aria-hidden>
+      <ArrowDown className="w-4 h-4 lg:w-5 lg:h-5 text-white/40" />
+    </div>
+  )
+}
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="page-h4 text-white mb-3 text-center text-balance px-1">
+      {children}
+    </h4>
+  )
+}
+
+function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <div
+      className={cn(
+        "px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-8",
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
 export function HeroPlatformDiagram({
   strings,
 }: {
   strings: HeroDiagramStrings
   showLattice?: boolean
 }) {
+  const locale = useLocale()
+  const isEn = locale === "en"
   const s = strings
   const hasApplications =
     Boolean(s.applicationsTitle) &&
@@ -145,6 +184,13 @@ export function HeroPlatformDiagram({
     Boolean(s.mechanismItem1) &&
     Boolean(s.mechanismItem2)
   const hasLimits = Boolean(s.limitsTitle) && Boolean(s.limitsLabel)
+
+  const chipText = cn(
+    "text-center break-words",
+    isEn
+      ? "text-[11px] leading-snug sm:text-sm lg:text-base tracking-tight"
+      : "text-[11px] leading-tight sm:text-sm lg:text-base"
+  )
 
   const layers = [
     {
@@ -165,37 +211,126 @@ export function HeroPlatformDiagram({
   ]
 
   return (
-    <div className="w-full rounded-2xl border border-white/12 bg-white/[0.03] overflow-hidden">
-      {hasApplications && (
-        <div className="border-b border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-          <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
-            {s.applicationsTitle}
-          </h4>
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
-            {[s.applicationTim, s.applicationSubstrate, s.applicationDevices].map(
-              (label) => (
-                <p
-                  key={label}
-                  className="page-caption lg:text-base text-white/80 text-center leading-tight rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3"
-                >
-                  {label}
-                </p>
-              )
-            )}
-          </div>
-          {s.applicationHint ? (
-            <p className="page-caption text-center text-white/55 mt-3">
-              {s.applicationHint}
+    <div
+      data-diagram-locale={locale}
+      className="w-full rounded-2xl border border-white/12 bg-white/[0.03] overflow-hidden"
+    >
+      {hasLimits && (
+        <Section>
+          <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-3.5 sm:px-5 sm:py-4 lg:px-8 lg:py-5 max-w-3xl mx-auto">
+            <SectionTitle>{s.limitsTitle}</SectionTitle>
+            <p
+              className={cn(
+                "page-caption text-white/70 text-center leading-relaxed",
+                isEn && "text-pretty tracking-tight"
+              )}
+            >
+              {s.limitsLabel}
             </p>
-          ) : null}
-        </div>
+          </div>
+        </Section>
       )}
 
-      <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-        <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
+      {hasLimits ? <FlowArrow /> : null}
+
+      <Section className="border-t border-white/10">
+        <SectionTitle>{s.layer2Title}</SectionTitle>
+        <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 lg:gap-4 mb-5 sm:mb-6 lg:mb-8">
+          {[s.layer2Thermal, s.layer2Mechanical, s.layer2Electrical].map(
+            (label) => (
+              <li
+                key={label}
+                className={cn(
+                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4 text-white/85",
+                  chipText
+                )}
+              >
+                {label}
+              </li>
+            )
+          )}
+        </ul>
+
+        {hasMechanism && (
+          <>
+            <SectionTitle>{s.mechanismTitle}</SectionTitle>
+            <div
+              className={cn(
+                "grid gap-2.5 sm:gap-3 lg:gap-4 mb-5 sm:mb-6 lg:mb-8",
+                isEn ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 sm:grid-cols-3"
+              )}
+            >
+              {[
+                [s.mechanismItem1, s.mechanismItem2],
+                [s.mechanismItem3, s.mechanismItem4],
+                [s.mechanismItem5, s.mechanismItem6],
+              ].map(([title, body]) => (
+                <div
+                  key={title}
+                  className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 sm:px-3.5 sm:py-3.5 lg:px-4 lg:py-4 text-center h-full"
+                >
+                  <p
+                    className={cn(
+                      "font-medium text-white mb-1 text-balance",
+                      isEn
+                        ? "text-sm lg:text-base tracking-tight"
+                        : "text-sm lg:text-base"
+                    )}
+                  >
+                    {title}
+                  </p>
+                  <p
+                    className={cn(
+                      "text-white/70 leading-snug text-pretty",
+                      isEn
+                        ? "text-[13px] sm:text-sm lg:text-base tracking-tight"
+                        : "text-sm lg:text-base"
+                    )}
+                  >
+                    {body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div className={cn(panel, "max-w-3xl mx-auto w-full")}>
+          <h4 className="page-h4 text-white mb-2 text-balance">
+            {s.layer3Title}
+          </h4>
+          <p
+            className={cn(
+              "page-caption text-white/90 leading-relaxed",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer3Line1}
+          </p>
+          <p
+            className={cn(
+              "page-caption text-white/80 leading-relaxed mt-1",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer3Line2}
+          </p>
+        </div>
+      </Section>
+
+      <FlowArrow />
+
+      <Section className="border-t border-white/10">
+        <SectionTitle>{s.layer4Title}</SectionTitle>
+        <p
+          className={cn(
+            "page-caption text-white/55 text-center mb-4 text-balance",
+            isEn && "tracking-tight"
+          )}
+        >
           {s.atomicTitle}
-        </h4>
-        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden">
+        </p>
+        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden mb-4 sm:mb-5">
           <div className="grid grid-cols-3 divide-x divide-white/12">
             {layers.map((layer) => (
               <div
@@ -205,110 +340,99 @@ export function HeroPlatformDiagram({
                 <div className="flex h-[4.75rem] sm:h-24 lg:h-28 w-full items-center justify-center">
                   {layer.figure}
                 </div>
-                <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm lg:text-base text-white font-semibold text-center leading-tight break-words">
+                <p
+                  className={cn(
+                    "mt-1.5 sm:mt-3 text-white font-semibold text-center break-words",
+                    isEn
+                      ? "text-[10px] leading-snug sm:text-sm lg:text-base tracking-tight min-h-[2.4rem] sm:min-h-[2.6rem] lg:min-h-0"
+                      : "text-[11px] leading-tight sm:text-sm lg:text-base"
+                  )}
+                >
                   {layer.label}
                 </p>
               </div>
             ))}
           </div>
         </div>
-
-        {hasMechanism && (
-          <div className="mt-5 sm:mt-6">
-            <h4 className="text-white font-semibold text-sm lg:text-base mb-3 text-center">
-              {s.mechanismTitle}
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm lg:text-base font-medium text-white mb-1">
-                  {s.mechanismItem1}
-                </p>
-                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem2}</p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm lg:text-base font-medium text-white mb-1">
-                  {s.mechanismItem3}
-                </p>
-                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem4}</p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-sm lg:text-base font-medium text-white mb-1">
-                  {s.mechanismItem5}
-                </p>
-                <p className="text-sm lg:text-base text-white/70 leading-snug">{s.mechanismItem6}</p>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-3 sm:gap-4">
-          <div className={panel}>
-            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
-              {s.layer4Title}
-            </h4>
-            <p className="page-caption text-white/90 leading-relaxed mb-1.5">
-              {s.layer4Line1}
-            </p>
-            <p className="page-caption text-white/80 leading-relaxed mb-1.5">
-              {s.layer4Line2}
-            </p>
-            <p className="page-caption text-white/80 leading-relaxed">
-              {s.layer4Line3}
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center py-1 lg:py-0 lg:w-6">
-            <ArrowDown className="w-4 h-4 text-white/35 lg:hidden" aria-hidden />
-            <ArrowRight className="w-5 h-5 text-white/40 hidden lg:block" aria-hidden />
-          </div>
-
-          <div className={panel}>
-            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
-              {s.layer3Title}
-            </h4>
-            <p className="page-caption text-white/90 leading-relaxed">
-              {s.layer3Line1}
-            </p>
-            <p className="page-caption text-white/80 leading-relaxed mt-1">
-              {s.layer3Line2}
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center py-1 lg:py-0 lg:w-6">
-            <ArrowDown className="w-4 h-4 text-white/35 lg:hidden" aria-hidden />
-            <ArrowRight className="w-5 h-5 text-white/40 hidden lg:block" aria-hidden />
-          </div>
-
-          <div className={panel}>
-            <h4 className="text-white font-semibold text-sm lg:text-base mb-2">
-              {s.layer2Title}
-            </h4>
-            <ul className="page-caption text-white/85 space-y-1.5">
-              <li>{s.layer2Thermal}</li>
-              <li>{s.layer2Mechanical}</li>
-              <li>{s.layer2Electrical}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {hasLimits && (
-        <div className="border-t border-white/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-          <h4 className="text-white font-semibold text-sm lg:text-base mb-2 text-center">
-            {s.limitsTitle}
-          </h4>
-          <p className="page-caption text-white/70 text-center leading-relaxed">
-            {s.limitsLabel}
+        <div className={cn(panel, "max-w-3xl mx-auto w-full")}>
+          <p
+            className={cn(
+              "page-caption text-white/90 leading-relaxed mb-1.5",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer4Line1}
           </p>
-          {s.platformAttr ? (
-            <p className="page-caption text-white/80 text-center leading-relaxed mt-3">
-              {s.platformAttr}
-            </p>
-          ) : null}
+          <p
+            className={cn(
+              "page-caption text-white/80 leading-relaxed mb-1.5",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer4Line2}
+          </p>
+          <p
+            className={cn(
+              "page-caption text-white/80 leading-relaxed",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer4Line3}
+          </p>
         </div>
+      </Section>
+
+      {hasApplications && (
+        <>
+          <FlowArrow />
+          <Section className="border-t border-white/10">
+            <SectionTitle>{s.applicationsTitle}</SectionTitle>
+            <div
+              className={cn(
+                "grid gap-1.5 sm:gap-3 lg:gap-4",
+                isEn ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-3"
+              )}
+            >
+              {[s.applicationTim, s.applicationSubstrate, s.applicationDevices].map(
+                (label) => (
+                  <p
+                    key={label}
+                    className={cn(
+                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4",
+                      chipText
+                    )}
+                  >
+                    {label}
+                  </p>
+                )
+              )}
+            </div>
+            {s.applicationHint ? (
+              <p
+                className={cn(
+                  "page-caption text-center text-white/55 mt-3 text-balance",
+                  isEn && "tracking-tight"
+                )}
+              >
+                {s.applicationHint}
+              </p>
+            ) : null}
+          </Section>
+        </>
       )}
+
+      {s.platformAttr ? (
+        <div className="border-t border-white/10 px-4 py-4 sm:px-6 sm:py-5 lg:px-10 lg:py-6">
+          <p
+            className={cn(
+              "page-caption text-white/85 text-center leading-relaxed max-w-2xl mx-auto text-balance",
+              isEn && "tracking-tight text-pretty"
+            )}
+          >
+            {s.platformAttr}
+          </p>
+        </div>
+      ) : null}
     </div>
   )
 }

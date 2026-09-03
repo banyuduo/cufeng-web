@@ -69,7 +69,7 @@ export default async function ProductsPage({
         subtitle={t("products.subtitle")}
       />
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {catalog.map((item) => (
@@ -82,9 +82,9 @@ export default async function ProductsPage({
                   <div className={`mb-4 inline-flex w-fit rounded-full px-3 py-1 text-xs font-medium ${item.badgeClass}`}>
                     {item.badge}
                   </div>
-                  <h2 className="page-h3 mb-2 text-slate-900">
+                  <h3 className="page-h3 mb-2 text-slate-900">
                     {item.title}
-                  </h2>
+                  </h3>
                   {"subtitle" in item && item.subtitle ? (
                     <p className="page-caption text-slate-500 mb-3">{item.subtitle}</p>
                   ) : null}
@@ -109,12 +109,12 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}
           </h2>
-          <p className="page-lead page-measure text-slate-600 mb-8">{t("products.cta.subtitle")}</p>
+          <p className="page-body page-measure text-slate-600 mb-6 sm:mb-8">{t("products.cta.subtitle")}</p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>

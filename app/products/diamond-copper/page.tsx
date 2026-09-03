@@ -72,8 +72,8 @@ export default function DiamondCopperPage() {
       {/* Application Prospects */}
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-slate-900">应用前景</h2>
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-slate-900">应用前景</h2>
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
             <div className="bg-white p-8 rounded-lg border border-slate-200">
               <h3 className="page-h3 mb-4 text-slate-900">热管理材料新理念</h3>
               <p className="page-body text-slate-600 mb-6">
@@ -107,7 +107,7 @@ export default function DiamondCopperPage() {
       {/* Product Lines */}
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-center text-slate-900">双产品线策略</h2>
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-center text-slate-900">双产品线策略</h2>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Product Line A */}
@@ -253,13 +253,13 @@ export default function DiamondCopperPage() {
       {/* Technical Details */}
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-center text-slate-900">技术原理与创新</h2>
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-center text-slate-900">技术原理与创新</h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h3 className="page-h3 mb-6 text-slate-900">核心技术</h3>
               <Card className="p-6 bg-white border-slate-200 mb-6">
-                <h4 className="page-h3 mb-3 text-slate-900">三维结构化金刚石骨架</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">三维结构化金刚石骨架</h4>
                 <p className="page-caption text-slate-600 mb-4">
                   采用多级粒径梯度配比技术，利用特殊表面改性的金刚石颗粒构建自支撑三维连续骨架。通过精密堆积算法优化，金刚石相实现极高比例的体积分数，形成互联互通的高速声子传输通道。
                 </p>
@@ -276,7 +276,7 @@ export default function DiamondCopperPage() {
               </Card>
 
               <Card className="p-6 bg-white border-slate-200">
-                <h4 className="page-h3 mb-3 text-slate-900">ToSpike 活性熔固方案</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">ToSpike 活性熔固方案</h4>
                 <p className="page-caption text-slate-600 mb-4">
                   依托自研的低熔点活性钎料体系，我们突破了传统金刚石复合材料润湿性差的瓶颈。该技术允许合金液相在极佳的流动性下，自发渗透至复杂的骨架深处，构建出近乎完美的传热网络。
                 </p>
@@ -302,7 +302,7 @@ export default function DiamondCopperPage() {
                       1
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2 text-slate-900">骨架构建</h4>
+                      <h4 className="page-h4 mb-2 text-slate-900">骨架构建</h4>
                       <p className="page-caption text-slate-600">
                         将镀钛金刚石颗粒按大、中、小顺序填充至模具，通过振动达到致密堆积，形成三维连续多孔骨架。
                       </p>
@@ -316,7 +316,7 @@ export default function DiamondCopperPage() {
                       2
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2 text-slate-900">熔固合金填充</h4>
+                      <h4 className="page-h4 mb-2 text-slate-900">熔固合金填充</h4>
                       <p className="page-caption text-slate-600">
                         将活性熔固合金粉末振动填充至金刚石骨架的孔隙中，确保合金均匀分布。
                       </p>
@@ -330,7 +330,7 @@ export default function DiamondCopperPage() {
                       3
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2 text-slate-900">压力辅助熔固</h4>
+                      <h4 className="page-h4 mb-2 text-slate-900">压力辅助熔固</h4>
                       <p className="page-caption text-slate-600">
                         在真空热压炉中升温至熔固合金液相线以上，施加压力并保温。
                         活性元素协同作用形成复合碳化物界面，实现金刚石与金属基体的可靠连接。
@@ -345,7 +345,7 @@ export default function DiamondCopperPage() {
                       4
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2 text-slate-900">冷却成型</h4>
+                      <h4 className="page-h4 mb-2 text-slate-900">冷却成型</h4>
                       <p className="page-caption text-slate-600">
                         随炉冷却凝固，形成完全致密的金刚石铜复合材料整体结构。 可进一步通过线切割加工成所需尺寸。
                       </p>
@@ -361,7 +361,7 @@ export default function DiamondCopperPage() {
       {/* Performance Parameters */}
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-center text-slate-900">性能参数</h2>
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-center text-slate-900">性能参数</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 bg-slate-50 border-slate-200 text-center">
@@ -395,7 +395,7 @@ export default function DiamondCopperPage() {
       <section className="py-20 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">相关专利技术</h2>
-          <p className="page-lead text-center text-slate-600 mb-12">完整的知识产权保护体系</p>
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12">完整的知识产权保护体系</p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="p-6 bg-white border-slate-200">
