@@ -150,17 +150,17 @@ export function HeroPlatformDiagram({
     {
       key: "sp2",
       label: s.sp2LayerLabel,
-      figure: <Sp2Lattice className="w-[4.5rem] h-[3.7rem] sm:w-24 sm:h-[4.9rem] lg:w-[7.5rem] lg:h-[6.2rem] text-white/75" />,
+      figure: <Sp2Lattice className="w-[92%] max-w-24 lg:max-w-[7.5rem] h-auto text-white/75" />,
     },
     {
       key: "bridge",
       label: s.layer4MeltLabel,
-      figure: <CovalentBridge className="w-[6.5rem] h-[3.7rem] sm:w-[7.5rem] sm:h-[4.9rem] lg:w-40 lg:h-[6.2rem] text-white/75" />,
+      figure: <CovalentBridge className="w-[94%] max-w-[7.5rem] lg:max-w-40 h-auto text-white/75" />,
     },
     {
       key: "sp3",
       label: s.sp3LayerLabel,
-      figure: <Sp3Tetrahedron className="w-[4.5rem] h-[4.1rem] sm:w-24 sm:h-[5.4rem] lg:w-[7.5rem] lg:h-[6.8rem] text-white/75" />,
+      figure: <Sp3Tetrahedron className="w-[88%] max-w-24 lg:max-w-[7.5rem] h-auto text-white/75" />,
     },
   ]
 
@@ -171,12 +171,12 @@ export function HeroPlatformDiagram({
           <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
             {s.applicationsTitle}
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
             {[s.applicationTim, s.applicationSubstrate, s.applicationDevices].map(
               (label) => (
                 <p
                   key={label}
-                  className="page-caption lg:text-base text-white/80 text-center leading-snug rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3"
+                  className="page-caption lg:text-base text-white/80 text-center leading-tight rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3"
                 >
                   {label}
                 </p>
@@ -195,20 +195,22 @@ export function HeroPlatformDiagram({
         <h4 className="text-white font-semibold text-sm lg:text-base mb-4 text-center">
           {s.atomicTitle}
         </h4>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-          {layers.map((layer) => (
-            <div
-              key={layer.key}
-              className="flex flex-col items-center justify-start rounded-xl border border-white/12 bg-white/[0.03] px-3 py-3 sm:py-5 lg:py-6 min-h-0 sm:min-h-[9.5rem] lg:min-h-[12rem]"
-            >
-              <div className="flex h-[5.5rem] sm:h-24 lg:h-28 items-center justify-center">
-                {layer.figure}
+        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden">
+          <div className="grid grid-cols-3 divide-x divide-white/12">
+            {layers.map((layer) => (
+              <div
+                key={layer.key}
+                className="flex flex-col items-center justify-start px-1 py-2.5 sm:px-3 sm:py-5 lg:px-4 lg:py-6 min-w-0"
+              >
+                <div className="flex h-[4.75rem] sm:h-24 lg:h-28 w-full items-center justify-center">
+                  {layer.figure}
+                </div>
+                <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm lg:text-base text-white font-semibold text-center leading-tight break-words">
+                  {layer.label}
+                </p>
               </div>
-              <p className="mt-3 page-caption lg:text-base text-white font-semibold text-center leading-snug">
-                {layer.label}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {hasMechanism && (
