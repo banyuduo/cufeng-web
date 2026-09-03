@@ -24,7 +24,7 @@ export default function DiamondToolsPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white pointer-events-none">
+      <section className="pt-24 sm:pt-32 pb-10 sm:pb-16 lg:pb-24 px-6 lg:px-8 bg-gradient-to-b from-[#F9FAFC] to-white pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href={`${prefix}/products`}
@@ -34,7 +34,7 @@ export default function DiamondToolsPage() {
             {t("products.backToProducts")}
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center">
@@ -45,7 +45,9 @@ export default function DiamondToolsPage() {
                 </div>
               </div>
               <h1 className="page-h1 mb-6 text-slate-900">{t("products.diamondTools.hero.title")}</h1>
-              <p className="page-caption text-slate-500 mb-4">{t("products.diamondTools.hero.subtitle")}</p>
+              {t("products.diamondTools.hero.subtitle") ? (
+                <p className="page-caption text-slate-500 mb-4">{t("products.diamondTools.hero.subtitle")}</p>
+              ) : null}
               <p className="page-lead text-slate-600 mb-8">
                 {t("products.diamondTools.hero.intro")}
               </p>
@@ -79,10 +81,10 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.diamondTools.coreCapabilities.title")}</h2>
-          <p className="page-lead text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto">
             {t("products.diamondTools.coreCapabilities.subtitle")}
           </p>
 
@@ -121,15 +123,15 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Product Design Principles */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.diamondTools.designPrinciples.title")}</h2>
-          <p className="page-lead text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+          <p className="page-body text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto">
             {t("products.diamondTools.designPrinciples.subtitle")}
           </p>
 
           {/* Three Elements */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
               <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
                 <Settings className="w-6 h-6 text-amber-600" />
@@ -162,7 +164,7 @@ export default function DiamondToolsPage() {
           </div>
 
           {/* Technical Diagrams */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
                 <ResponsivePicture
@@ -229,16 +231,16 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Extreme Working Conditions */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 text-center text-slate-900">{t("products.diamondTools.extremeConditions.title")}</h2>
-          <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+          <p className="text-center text-slate-600 mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto">
             {t("products.diamondTools.extremeConditions.subtitle")}
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-4 sm:p-6 gap-3 bg-slate-50 border-slate-200">
-              <h4 className="font-semibold mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.cmcTitle")}</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.cmcTitle")}</h4>
               <p className="page-caption text-slate-600 mb-4">
                 {t("products.diamondTools.extremeConditions.cmcDesc")}
               </p>
@@ -249,7 +251,7 @@ export default function DiamondToolsPage() {
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-slate-50 border-slate-200">
-              <h4 className="font-semibold mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.cfrpTitle")}</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.cfrpTitle")}</h4>
               <p className="page-caption text-slate-600 mb-4">
                 {t("products.diamondTools.extremeConditions.cfrpDesc")}
               </p>
@@ -260,7 +262,7 @@ export default function DiamondToolsPage() {
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-slate-50 border-slate-200">
-              <h4 className="font-semibold mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.tiTitle")}</h4>
+              <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.extremeConditions.tiTitle")}</h4>
               <p className="page-caption text-slate-600 mb-4">
                 {t("products.diamondTools.extremeConditions.tiDesc")}
               </p>
@@ -309,13 +311,13 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Active Fusion-Bonding Technology Deep Analysis */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-slate-50">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 mb-12 text-center text-slate-900">{t("products.diamondTools.fusionBonding.title")}</h2>
+          <h2 className="page-h2 mb-5 sm:mb-8 lg:mb-12 text-center text-slate-900">{t("products.diamondTools.fusionBonding.title")}</h2>
 
           {/* Core Principle */}
           <div className="mb-16">
-            <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8 lg:mb-12">
               <h3 className="page-h3 mb-4 text-slate-900">{t("products.diamondTools.fusionBonding.principleTitle")}</h3>
               <p className="page-caption text-slate-500 mb-4">{t("products.diamondTools.fusionBonding.principleSubtitle")}</p>
               <p className="page-body text-slate-600">
@@ -324,7 +326,7 @@ export default function DiamondToolsPage() {
             </div>
 
             {/* Technical Parameters */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-12">
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">{t("products.diamondTools.fusionBonding.tempLabel")}</div>
                 <div className="page-stat-value-sm text-[#0077b6] mb-1">{t("products.diamondTools.fusionBonding.tempValue")}</div>
@@ -348,7 +350,7 @@ export default function DiamondToolsPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv1Title")}</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv1Title")}</h4>
                 <p className="page-caption text-slate-600">
                   {t("products.diamondTools.fusionBonding.adv1Desc")}
                 </p>
@@ -365,7 +367,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv2Title")}</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv2Title")}</h4>
                 <p className="page-caption text-slate-600">
                   {t("products.diamondTools.fusionBonding.adv2Desc")}
                 </p>
@@ -382,7 +384,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv3Title")}</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv3Title")}</h4>
                 <p className="page-caption text-slate-600">
                   {t("products.diamondTools.fusionBonding.adv3Desc")}
                 </p>
@@ -399,7 +401,7 @@ export default function DiamondToolsPage() {
                     />
                   </svg>
                 </div>
-                <h4 className="page-h3 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv4Title")}</h4>
+                <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondTools.fusionBonding.adv4Title")}</h4>
                 <p className="page-caption text-slate-600">
                   {t("products.diamondTools.fusionBonding.adv4Desc")}
                 </p>
@@ -447,7 +449,7 @@ export default function DiamondToolsPage() {
               <p className="page-body text-slate-300 mb-6 text-center">{t("products.diamondTools.fusionBonding.applicationsIntro")}</p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="page-h3 mb-3 text-[#0077b6]">{t("products.diamondTools.fusionBonding.hardBrittleTitle")}</h4>
+                  <h4 className="page-h4 mb-3 text-[#0077b6]">{t("products.diamondTools.fusionBonding.hardBrittleTitle")}</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• {t("products.diamondTools.fusionBonding.hardBrittle1")}</li>
                     <li>• {t("products.diamondTools.fusionBonding.hardBrittle2")}</li>
@@ -455,7 +457,7 @@ export default function DiamondToolsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="page-h3 mb-3 text-green-400">{t("products.diamondTools.fusionBonding.compositeTitle")}</h4>
+                  <h4 className="page-h4 mb-3 text-green-400">{t("products.diamondTools.fusionBonding.compositeTitle")}</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• {t("products.diamondTools.fusionBonding.composite1")}</li>
                     <li>• {t("products.diamondTools.fusionBonding.composite2")}</li>
@@ -463,7 +465,7 @@ export default function DiamondToolsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="page-h3 mb-3 text-amber-400">{t("products.diamondTools.fusionBonding.highEndTitle")}</h4>
+                  <h4 className="page-h4 mb-3 text-amber-400">{t("products.diamondTools.fusionBonding.highEndTitle")}</h4>
                   <ul className="page-caption text-slate-300 space-y-2">
                     <li>• {t("products.diamondTools.fusionBonding.highEnd1")}</li>
                     <li>• {t("products.diamondTools.fusionBonding.highEnd2")}</li>
@@ -477,16 +479,16 @@ export default function DiamondToolsPage() {
       </section>
 
       {/* Technology Migration: From Interface Bonding to Full-Carbon Platform - Repositioned as Summary & Transition */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 mb-4">{t("products.diamondTools.techMigration.title")}</h2>
-            <p className="page-lead text-slate-300 max-w-2xl mx-auto">
+            <p className="page-body text-slate-300 max-w-2xl mx-auto">
               {t("products.diamondTools.techMigration.subtitle")}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             <Card className="p-4 sm:p-6 gap-3 bg-slate-800/92 border-slate-700">
               <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4">
                 <div className="w-6 h-6 rounded-full bg-amber-500" />
@@ -526,10 +528,10 @@ export default function DiamondToolsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">{t("products.diamondTools.cta.title")}</h2>
-          <p className="page-lead text-slate-600 mb-8">
+          <p className="page-body text-slate-600 mb-6 sm:mb-8">
             {t("products.diamondTools.cta.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">

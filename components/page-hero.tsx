@@ -34,9 +34,11 @@ export function PageHero({
   const isDark = variant === "dark"
   const isSolidNavy = isDark && background === "solid"
 
+  const showSubtitle = Boolean(subtitle && subtitle.trim() !== title.trim())
+
   return (
     <section
-      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden pointer-events-none ${
+      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-10 sm:pb-16 lg:pb-24 overflow-hidden pointer-events-none ${
         isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >
@@ -101,7 +103,7 @@ export function PageHero({
               {tagline}
             </p>
           )}
-          {subtitle && (
+          {showSubtitle && (
             <p
               className={`page-lead page-measure break-words ${
                 isDark ? "text-white/75" : "text-slate-500"

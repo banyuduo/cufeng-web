@@ -61,12 +61,12 @@ export default async function ApplicationsPage({
       />
 
       {/* 应用蓝图 */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-white/[0.03] rounded-2xl border border-white/12 overflow-hidden relative">
-            <div className="text-center mb-8 sm:mb-12 px-1">
+            <div className="text-center mb-5 sm:mb-8 lg:mb-10 px-1">
               <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
-              <p className="page-lead text-slate-400 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
+              <p className="page-body text-slate-400 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
             </div>
 
             <div className="max-w-4xl mx-auto relative z-10 space-y-4">
@@ -102,7 +102,7 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -401,15 +401,15 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 text-slate-900 mb-4 break-words px-1">
             {t("applications.summary.title")}
           </h2>
 
-          <p className="page-lead page-measure text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
+          <p className="page-body page-measure text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
 
-          <p className="page-body mb-12 max-w-3xl mx-auto text-slate-700 break-words">
+          <p className="page-body mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto text-slate-700 break-words">
             {t("applications.summary.desc")}
           </p>
 

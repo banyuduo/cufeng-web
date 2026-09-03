@@ -29,7 +29,7 @@ export default async function CooperationPage({
         subtitle={t("cooperation.hero.subtitle")}
         titleWeight="light"
       >
-        <div className="space-y-6 page-body text-white/70 mt-8 text-left max-w-3xl mx-auto">
+        <div className="space-y-5 sm:space-y-6 page-body text-white/70 mt-6 sm:mt-8 text-left max-w-3xl mx-auto">
           <p>
             {t("cooperation.hero.p1")}
             <br />
@@ -45,10 +45,10 @@ export default async function CooperationPage({
         </div>
       </PageHero>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto space-y-12">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
           <div>
-            <h2 className="page-h2 font-light mb-8 sm:mb-12 lg:mb-16 text-white border-b border-white/12 pb-4 sm:pb-6">
+            <h2 className="page-h2 font-light mb-6 sm:mb-8 lg:mb-12 text-white border-b border-white/12 pb-4 sm:pb-6">
               {t("cooperation.platform.title")}
             </h2>
             <div className="space-y-8 text-slate-300 leading-relaxed font-light text-base">
@@ -73,9 +73,9 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 font-light mb-8 sm:mb-12 lg:mb-16 text-white border-b border-white/12 pb-4 sm:pb-6">
+          <h2 className="page-h2 font-light mb-6 sm:mb-8 lg:mb-12 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.audience.title")}
           </h2>
           <div className="space-y-8 text-slate-300 leading-relaxed font-light mb-12">
@@ -126,9 +126,9 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 font-light mb-8 sm:mb-12 lg:mb-16 text-white border-b border-white/12 pb-4 sm:pb-6">
+          <h2 className="page-h2 font-light mb-6 sm:mb-8 lg:mb-12 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.nextSteps.title")}
           </h2>
           <div className="space-y-8 page-body text-slate-300 font-light">
@@ -143,9 +143,9 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 font-light mb-8 sm:mb-12 lg:mb-16 text-white border-b border-white/12 pb-4 sm:pb-6">
+          <h2 className="page-h2 font-light mb-6 sm:mb-8 lg:mb-12 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.resonance.title")}
           </h2>
           <div className="space-y-8 page-body text-slate-300 font-light">
@@ -162,9 +162,9 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
+      <section id="contact" className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 font-light mb-8 sm:mb-12 lg:mb-16 text-slate-900 border-b border-slate-200 pb-4 sm:pb-6">
+          <h2 className="page-h2 font-light mb-6 sm:mb-8 lg:mb-12 text-slate-900 border-b border-slate-200 pb-4 sm:pb-6">
             {t("cooperation.contact.title")}
           </h2>
           <div className="space-y-6 text-slate-700 leading-relaxed font-light mb-12">
@@ -229,7 +229,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 bg-gradient-to-b from-[#002244]/60 to-transparent">
+      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-gradient-to-b from-[#002244]/60 to-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-lg lg:text-xl text-slate-300 font-light italic leading-relaxed">
             &quot;{t("cooperation.quote")}&quot;

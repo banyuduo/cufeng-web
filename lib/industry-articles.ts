@@ -27,7 +27,7 @@ export function parseBoldText(text: string): React.ReactNode[] {
     if (part.startsWith("**") && part.endsWith("**")) {
       return React.createElement(
         "strong",
-        { key: i, className: "font-semibold text-sky-200" },
+        { key: i, className: "font-semibold text-slate-900" },
         part.slice(2, -2)
       )
     }

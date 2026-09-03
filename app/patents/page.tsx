@@ -41,12 +41,12 @@ export default function PatentsPage() {
         </div>
       </PageHero>
 
-      <section className="py-16 sm:py-20 lg:py-24 relative">
+      <section className="py-10 sm:py-16 lg:py-24 relative">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
             {t("patents.evolution.sectionSubtitle") ? (
-              <p className="page-lead text-white/70 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
+              <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.evolution.sectionSubtitle")}</p>
             ) : null}
           </div>
 
@@ -131,7 +131,7 @@ export default function PatentsPage() {
             {/* Core Logic Summary */}
             <Card className="p-5 sm:p-8 gap-2 bg-white/[0.03] border border-white/12">
               <h3 className="page-h3 text-white mb-3">{t("patents.evolution.coreLogicTitle")}</h3>
-              <p className="page-lead text-white/70">
+              <p className="page-body text-white/70">
                 {t("patents.evolution.coreLogicDesc")}
               </p>
             </Card>
@@ -139,18 +139,18 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           {/* 技术演进架构图 */}
           <div className="max-w-6xl mx-auto">
             <div className="p-4 sm:p-6 lg:p-10 bg-white/[0.03]  rounded-3xl border border-white/12 ">
-              <h2 className="page-h2 text-white text-center mb-8 md:mb-12">{t("patents.architecture.title")}</h2>
+              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-12">{t("patents.architecture.title")}</h2>
               
               <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative lg:items-stretch">
                 {/* 左侧：演化路径 */}
                 <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col lg:gap-6 lg:flex-1 lg:min-h-0">
                   <div className="text-center mb-4 md:mb-6">
-                    <h4 className="text-base lg:text-lg font-semibold text-white mb-2">{t("patents.architecture.evolutionPath")}</h4>
+                    <h4 className="page-h4 text-white mb-2">{t("patents.architecture.evolutionPath")}</h4>
                     <div className="h-px bg-white/15"></div>
                   </div>
                   
@@ -209,7 +209,7 @@ export default function PatentsPage() {
                           <div className="w-11 h-11 md:w-16 md:h-16 mx-auto mb-3 md:mb-5 rounded-xl bg-[#0F4C81] flex items-center justify-center">
                             <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-white" />
                           </div>
-                          <h4 className="page-h3 text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
+                          <h4 className="page-h4 text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
                           <div className="space-y-2 md:space-y-3">
                             <div className="px-3 py-2 md:px-4 md:py-2 bg-white/[0.03] rounded-lg border border-white/12">
                               <div className="text-white font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
@@ -231,7 +231,7 @@ export default function PatentsPage() {
                 {/* 右侧：应用视窗 - 与左侧对称布局 */}
                 <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col lg:gap-6 lg:flex-1 lg:min-h-0">
                   <div className="text-center mb-4 md:mb-6">
-                    <h4 className="text-base lg:text-lg font-semibold text-white mb-2">{t("patents.architecture.applicationWindow")}</h4>
+                    <h4 className="page-h4 text-white mb-2">{t("patents.architecture.applicationWindow")}</h4>
                     <div className="h-px bg-white/15"></div>
                   </div>
 
@@ -284,11 +284,11 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section id="evolution-path" className="py-16 sm:py-20 lg:py-24 scroll-mt-24">
+      <section id="evolution-path" className="py-10 sm:py-16 lg:py-24 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
-            <p className="page-lead text-white/70 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
+            <p className="page-body text-white/70 max-w-2xl mx-auto">{t("patents.evolutionPath.sectionSubtitle")}</p>
           </div>
 
           {/* Four Stages - Horizontal Cards */}
@@ -507,11 +507,11 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-16">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-3 sm:mb-4">{t("patents.platformCore.sectionTitle")}</h2>
-            <p className="page-lead text-white/70 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
+            <p className="page-body text-white/70 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
           <Card className="p-4 sm:p-6 md:p-10 bg-white/[0.03] border border-white/12">
@@ -523,7 +523,7 @@ export default function PatentsPage() {
 
             {/* Platform Core Principle Explanation */}
             <div className="p-4 sm:p-6 md:p-8 bg-white/[0.03] rounded-xl border border-white/12">
-              <h4 className="text-white font-semibold text-base lg:text-lg mb-4 sm:mb-6">{t("patents.platformCore.principleTitle")}</h4>
+              <h4 className="page-h4 text-white mb-4 sm:mb-6">{t("patents.platformCore.principleTitle")}</h4>
 
               <div className="space-y-3 sm:space-y-4 text-sm lg:text-base leading-relaxed text-white/75">
                 <p>{t("patents.platformCore.principleP1")}</p>
@@ -650,7 +650,7 @@ export default function PatentsPage() {
             </div>
 
             <div className="mt-8 sm:mt-10 pt-8 border-t border-white/10">
-              <h4 className="text-white font-semibold text-base lg:text-lg mb-5 text-center">
+              <h4 className="page-h4 text-white mb-5 text-center">
                 {t("patents.platformCore.radarChartTitle")}
               </h4>
               <MaterialComparisonRadarChart
@@ -676,23 +676,23 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
-            <p className="page-lead text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
+            <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
           </div>
 
           <div className="max-w-6xl mx-auto mb-12">
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.04] border-white/12">
-              <p className="page-lead text-center text-white/80">
+              <p className="page-body text-center text-white/80">
                 {t("patents.platformExtension.intro")}
               </p>
             </Card>
           </div>
 
           {/* Three exploration direction cards */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mb-12">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
             {/* Direction 1: Electronic state reconstruction */}
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <p className="page-body text-white/75 mb-4">
@@ -734,7 +734,7 @@ export default function PatentsPage() {
       </section>
 
       {/* 平台优势：从首页迁入，置于专利证据之前 */}
-      <section id="platform-advantages" className="py-16 sm:py-20 lg:py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
+      <section id="platform-advantages" className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 text-white text-center mb-8 sm:mb-10 lg:mb-12">
             {t("home.hero.platformAdvantageTitle")}
@@ -802,7 +802,7 @@ export default function PatentsPage() {
       </section>
 
       {/* Patent Cluster Value */}
-      <section id="patent-cluster" className="py-16 sm:py-20 lg:py-24 scroll-mt-24">
+      <section id="patent-cluster" className="py-10 sm:py-16 lg:py-24 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <Card className="p-5 sm:p-8 md:p-10 gap-5 bg-white/[0.03] border border-white/12">
             <div className="text-center mb-10">
@@ -816,7 +816,7 @@ export default function PatentsPage() {
             <div className="space-y-4 sm:space-y-8 mb-8 sm:mb-10">
               {/* 一、工程起点与功能延伸 */}
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
-                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-3">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 text-sm font-mono">
                     {t("patents.patentCluster.block1Num")}
                   </span>
@@ -832,7 +832,7 @@ export default function PatentsPage() {
 
               {/* 二、功能材料阶段 */}
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
-                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-3">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 text-sm font-mono">
                     {t("patents.patentCluster.block2Num")}
                   </span>
@@ -852,7 +852,7 @@ export default function PatentsPage() {
 
               {/* 三、全碳体系阶段 */}
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
-                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-3">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 text-sm font-mono">
                     {t("patents.patentCluster.block3Num")}
                   </span>
@@ -876,7 +876,7 @@ export default function PatentsPage() {
 
               {/* 四、平台核心技术 */}
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
-                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-3">
+                <h3 className="page-h3 text-white mb-4 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 text-sm font-mono">
                     {t("patents.patentCluster.block4Num")}
                   </span>
@@ -923,10 +923,10 @@ export default function PatentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
-          <p className="page-lead text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
+          <p className="page-body text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
           <p className="text-white/50 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Button asChild className="bg-[#0F4C81] hover:bg-[#163A5F] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg min-h-[44px]">
