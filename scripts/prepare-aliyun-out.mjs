@@ -53,9 +53,9 @@ if (cssFiles.length === 1) {
   fs.copyFileSync(cssSource, path.join(stylesDir, "site.css"))
   fs.copyFileSync(cssSource, path.join(outDir, "site.css"))
 
+  // 只注入一份稳定路径，避免同一套 CSS 下两遍；out/site.css 仍复制，供手动兜底
   const styleLinks =
-    '<link rel="stylesheet" href="/styles/site.css" data-site-style="true"/>' +
-    '<link rel="stylesheet" href="/site.css" data-site-style="true"/>'
+    '<link rel="stylesheet" href="/styles/site.css" data-site-style="true"/>'
 
   for (const file of walk(outDir)) {
     let html = fs.readFileSync(file, "utf8")

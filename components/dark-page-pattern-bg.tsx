@@ -1,5 +1,3 @@
-"use client"
-
 /** 深色页整页海军蓝底，与首页 / 技术架构页对齐。 */
 export function DarkPagePatternBg() {
   return (

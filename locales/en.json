@@ -815,7 +815,7 @@
   },
   "applications": {
     "title": "Application Domain Matrix",
-    "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, we apply the same core methodology to different physical scenarios, forming a complete technology matrix from industrial thermal management to frontier physics exploration.",
+    "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, the same core methodology is applied to different physical scenarios, forming a technology matrix from industrial thermal management to frontier physics exploration.",
     "blueprint": {
       "title": "Application Blueprint: From Underlying Physics to Full-Scenario Deployment",
       "subtitle": "Cross-domain evolution path based on sp³–sp² hybrid bonding platform",
@@ -1035,25 +1035,19 @@
     "hero": {
       "title": "Technical Dialogue & Strategic Alignment",
       "subtitle": "Technical Dialogue & Strategic Alignment",
-      "p1": "We do not regard this project as a fully defined, mature product ready for replication or scaling.",
-      "p2": "It is closer to a material and physics platform in evolution—",
-      "p3": "originating from engineering practice, but gradually evolving potential space across materials science, functional materials, and fundamental physics exploration.",
-      "p4": "Therefore, the purpose of this page is not to promote specific cooperation models,",
-      "p5": "but to declare a technical state that can be understood and aligned."
+      "p1": "The materials and physics platform presented here—",
+      "p2": "originated in engineering practice and has gradually opened space across materials science, functional materials, and fundamental physics. Diamond–copper composite development is the starting point, and we continue toward the platform vision."
     },
     "platform": {
-      "title": "An evolving platform, not a single-point technology",
-      "content": "What this project builds is not a single material, single device, or single application, but a complete carbon-based material system centered on sp³–sp² chemical bonding and endogenous stress regulation.",
-      "content2": "This system has formed a clear path for material preparation and functional validation at the engineering level,",
-      "content3": "while at a deeper level, it presents the possibility of continued evolution as a platform.",
-      "content4": "We are well aware of the gap from lab to fab; therefore, while pursuing physical limits, we maintain rigorous respect for process reproducibility and industrial boundaries.",
-      "content5": "This means it can be used to solve real engineering problems,",
-      "content6": "or may in the future be incorporated into higher-level systematic research and application frameworks."
+      "title": "An evolving platform",
+      "content": "This project builds an all-carbon materials system around sp³–sp² chemical bonding and endogenous stress regulation.",
+      "content2": "At the engineering level, a clear path for material preparation and functional validation is already in place.",
+      "content3": "At a deeper level, it presents the possibility of continued evolution as a platform.",
+      "content4": "We know the gap from lab to fab. While pursuing physical exploration, we remain respectful of batch-process reproducibility and cost control."
     },
     "audience": {
-      "title": "Who we are open to engaging with",
-      "intro": "At this stage, we focus more on cognitive alignment than on formal cooperation arrangements.",
-      "intro2": "Therefore, we are open to dialogue with the following types of institutions or individuals:",
+      "title": "Partners",
+      "intro": "We look forward to open exchange with the following kinds of institutions and individuals.",
       "research": "Research institutions with long-term interest in material physics, interface structure, and multi-scale evolution",
       "researchBold": "Research institutions",
       "industry": "Industry players seeking next-generation functional materials or foundational material platforms, willing to co-define product boundaries in application scenarios",
@@ -1061,29 +1055,20 @@
       "tech": "Technical teams with cross-disciplinary judgment, capable of understanding \"platform value\" rather than single-point product value",
       "techBold": "Technical teams",
       "investor": "Strategic investors focused on medium-to-long-term technology inflection points, with patience and independent judgment",
-      "investorBold": "Strategic investors",
-      "footnote": "We do not seek broad coverage; we care more that discussions occur from the same technical perspective."
+      "investorBold": "Strategic investors"
     },
     "nextSteps": {
       "title": "On further advancement",
-      "p1": "Under the right cognitive premise, there can be multiple possibilities for advancing this technology system.",
-      "p2": "These possibilities do not presuppose specific forms or predetermined paths,",
-      "p3": "but depend on the match between both parties in technical understanding, development pace, and long-term goals.",
-      "p4": "Before that, any formal definition would be premature."
+      "p1": "Further work on this technology can take several forms, depending on how well both sides match in technical depth, development pace, and long-term aims."
     },
     "resonance": {
-      "title": "A resonance, not mere recruitment",
-      "p1": "We do not expect to complete all judgments through a single web browse.",
-      "p2": "If the physical logic described herein resonates with your intuition about the evolution of future materials,",
-      "p3": "if you likewise believe that breakthroughs in underlying materials are the ultimate key to transcending industry cycles and solving thermal and efficiency bottlenecks,",
-      "p4": "then we may already stand on a similar technical perspective.",
-      "p5": "What we look forward to is this kind of cognitive convergence across time and space."
+      "title": "Resonance",
+      "p1": "If you likewise believe that breakthroughs in underlying materials are the ultimate key to spanning industry cycles and solving thermal and energy-efficiency bottlenecks,",
+      "p2": "then we are likely already standing on a similar technical perspective."
     },
     "contact": {
       "title": "Contact",
       "contactUs": "Contact us",
-      "intro": "For further dialogue, please reach out through the following channels.",
-      "introNote": "We generally prefer to engage around specific questions or well-defined discussion topics.",
       "entity": "Entity",
       "entityName": "Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
       "techContact": "Technical Contact",
@@ -1294,7 +1279,7 @@
   },
   "news": {
     "title": "Tech Vision",
-    "subtitle": "From laboratory hypothesis to industrial validation, witnessing the performance leap of sp³–sp² structures",
+    "subtitle": "From concept design to industrial validation, witnessing the development of diamond composite materials",
     "companyNews": "Company News",
     "companyNewsDesc": "Focusing on future technology breakthroughs, strategic partnerships, and industry layout, documenting the innovation journey from superabrasive tools to carbon-based composites",
     "industryInfo": "Industry Information",

@@ -449,7 +449,7 @@ export default function DiamondCopperPage() {
               className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
               asChild
             >
-              <a href="/docs/2026 cufeng diamond-cu.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/docs/2026%20cufeng%20diamond-cu.pdf" target="_blank" rel="noopener noreferrer">
                 {t("products.diamondCopper.cta.downloadTech")}
               </a>
             </Button>
