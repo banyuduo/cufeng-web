@@ -5,13 +5,14 @@ import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { isValidLocale, type Locale } from "@/lib/i18n"
 import { useTranslations } from "@/components/translations-provider"
-import { Sparkles, ChevronDown, ArrowRight } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { MaterialComparisonRadarChart } from "@/components/material-comparison-radar-chart"
+import { ArchitecturePanoramaDiagram } from "@/components/architecture-panorama-diagram"
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
@@ -21,7 +22,14 @@ export default function PatentsPage() {
   const locale = (isValidLocale(localeFromPath) ? localeFromPath : "zh") as Locale
   const t = useTranslations()
   const prefix = `/${locale}`
-  const labelSep = locale === "zh" ? "：" : ": "
+  const cognitionSteps = [
+    { label: t("patents.evolution.start"), title: t("patents.evolution.diamondTools") },
+    { label: t("patents.evolution.step1"), title: t("patents.evolution.compositeSystem") },
+    { label: t("patents.evolution.step2"), title: t("patents.evolution.allCarbon") },
+    { label: t("patents.evolution.step3"), title: t("patents.evolution.functionalMigration") },
+    { label: t("patents.evolution.step4"), title: t("patents.evolution.physicsEvolution") },
+    { label: t("patents.evolution.end"), title: t("patents.evolution.computingResource") },
+  ]
 
   return (
     <div className="min-h-screen bg-[#0B1F33]">
@@ -50,237 +58,60 @@ export default function PatentsPage() {
             ) : null}
           </div>
 
-          {/* Evolution Path Flow */}
           <div className="max-w-6xl mx-auto">
-            {/* Desktop horizontal flow */}
-            <div className="hidden lg:flex items-stretch justify-between gap-3 mb-12">
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.start")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
-              </Card>
-              <ArrowRight className="w-6 h-6 text-white/35 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step1")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
-              </Card>
-              <ArrowRight className="w-6 h-6 text-white/35 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step2")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
-              </Card>
-              <ArrowRight className="w-6 h-6 text-white/35 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step3")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
-              </Card>
-              <ArrowRight className="w-6 h-6 text-white/35 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step4")}</div>
-                <div className="text-white font-bold text-sm leading-tight whitespace-pre-line break-words">{t("patents.evolution.physicsEvolution")}</div>
-              </Card>
-              <ArrowRight className="w-6 h-6 text-white/35 flex-shrink-0 self-center" />
-              <Card className="flex-1 min-w-0 flex flex-col items-center justify-center p-5 bg-white/[0.03] border border-white/12 ring-1 ring-white/20 text-center min-h-[120px] shrink-0">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.end")}</div>
-                <div className="text-white font-bold text-sm leading-tight whitespace-pre-line break-words">{t("patents.evolution.computingResource")}</div>
-              </Card>
+            <div className="hidden lg:block">
+              <div className="relative flex">
+                <div className="absolute left-[8%] right-[8%] top-1.5 h-px bg-white/15" />
+                {cognitionSteps.map((step) => (
+                  <div key={step.label} className="relative flex-1 min-w-0 px-2 text-center">
+                    <div className="mx-auto mb-4 h-3 w-3 rounded-full bg-white/70 ring-4 ring-[#0B1F33]" />
+                    <p className="page-caption text-white/45 mb-1">{step.label}</p>
+                    <p className="page-body text-white">{step.title}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            {/* Mobile/Tablet vertical flow */}
-            <div className="lg:hidden space-y-2 mb-8">
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.start")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.diamondTools")}</div>
-              </Card>
-              <div className="flex justify-center">
-                <ChevronDown className="w-4 h-4 text-white/35" />
-              </div>
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step1")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.compositeSystem")}</div>
-              </Card>
-              <div className="flex justify-center">
-                <ChevronDown className="w-4 h-4 text-white/35" />
-              </div>
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step2")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.allCarbon")}</div>
-              </Card>
-              <div className="flex justify-center">
-                <ChevronDown className="w-4 h-4 text-white/35" />
-              </div>
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step3")}</div>
-                <div className="text-white font-bold text-sm leading-tight">{t("patents.evolution.functionalMigration")}</div>
-              </Card>
-              <div className="flex justify-center">
-                <ChevronDown className="w-4 h-4 text-white/35" />
-              </div>
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.step4")}</div>
-                <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.physicsEvolution")}</div>
-              </Card>
-              <div className="flex justify-center">
-                <ChevronDown className="w-4 h-4 text-white/35" />
-              </div>
-              <Card className="flex flex-col items-center justify-center p-3.5 gap-1 bg-white/[0.03] border border-white/12 text-center ring-1 ring-white/20">
-                <div className="text-white/45 text-sm font-medium">{t("patents.evolution.end")}</div>
-                <div className="text-white font-bold text-sm leading-tight break-words">{t("patents.evolution.computingResource")}</div>
-              </Card>
+            <div className="lg:hidden border-l border-white/15 pl-5 space-y-5">
+              {cognitionSteps.map((step) => (
+                <div key={step.label} className="relative">
+                  <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-white/70" />
+                  <p className="page-caption text-white/45 mb-0.5">{step.label}</p>
+                  <p className="page-body text-white">{step.title}</p>
+                </div>
+              ))}
             </div>
-
-            {/* Core Logic Summary */}
-            <Card className="p-5 sm:p-8 gap-2 bg-white/[0.03] border border-white/12">
-              <h3 className="page-h3 text-white mb-3">{t("patents.evolution.coreLogicTitle")}</h3>
-              <p className="page-body text-white/70">
-                {t("patents.evolution.coreLogicDesc")}
-              </p>
-            </Card>
           </div>
         </div>
       </section>
 
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          {/* 技术演进架构图 */}
-          <div className="max-w-6xl mx-auto">
-            <div className="p-4 sm:p-6 lg:p-10 bg-white/[0.03]  rounded-3xl border border-white/12 ">
-              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-12">{t("patents.architecture.title")}</h2>
-              
-              <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:relative lg:items-stretch">
-                {/* 左侧：演化路径 */}
-                <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col lg:gap-6 lg:flex-1 lg:min-h-0">
-                  <div className="text-center mb-4 md:mb-6">
-                    <h4 className="page-h4 text-white mb-2">{t("patents.architecture.evolutionPath")}</h4>
-                    <div className="h-px bg-white/15"></div>
-                  </div>
-                  
-                  {/* Stage 01 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0">
-                        <div className="page-caption text-white/45 mb-1">Stage 01</div>
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.stage01Title")}</h5>
-                        <p className="page-caption text-white/70">{t("patents.architecture.stage01Desc")}</p>
-                    </div>
-                  </Card>
-
-                  {/* 移动端连接箭头 */}
-                  <div className="flex justify-center py-0.5 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                  </div>
-
-                  {/* Stage 02 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0">
-                        <div className="page-caption text-white/45 mb-1">Stage 02</div>
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.stage02Title")}</h5>
-                        <p className="page-caption text-white/70">{t("patents.architecture.stage02Desc")}</p>
-                    </div>
-                  </Card>
-
-                  {/* 移动端连接箭头 */}
-                  <div className="flex justify-center py-0.5 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                  </div>
-
-                  {/* Stage 03 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0">
-                        <div className="page-caption text-white/45 mb-1">Stage 03</div>
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.stage03Title")}</h5>
-                        <p className="page-caption text-white/70">{t("patents.architecture.stage03Desc")}</p>
-                    </div>
-                  </Card>
-
-                  {/* 移动端：演化路径到核心内核的连接 */}
-                  <div className="flex justify-center py-1 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                  </div>
-                </div>
-
-                {/* 中间：核心内核 */}
-                <div className="flex items-center justify-center relative lg:my-0 my-4 md:my-8">
-                  {/* 桌面端连接线装饰 */}
-                  <div className="hidden lg:block absolute left-0 top-1/2 w-1/2 h-0.5 bg-white/15 -translate-x-4"></div>
-                  <div className="hidden lg:block absolute right-0 top-1/2 w-1/2 h-0.5 bg-white/15 translate-x-4"></div>
-                  
-                  <div className="relative z-10 w-full h-full flex items-center">
-                    <Card className="w-full p-4 md:p-8 gap-3 bg-white/[0.04] border border-white/20 rounded-2xl">
-                      <div className="text-center">
-                          <div className="w-11 h-11 md:w-16 md:h-16 mx-auto mb-3 md:mb-5 rounded-xl bg-[#0F4C81] flex items-center justify-center">
-                            <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-white" />
-                          </div>
-                          <h4 className="page-h4 text-white mb-3 md:mb-4">{t("patents.architecture.coreKernel")}</h4>
-                          <div className="space-y-2 md:space-y-3">
-                            <div className="px-3 py-2 md:px-4 md:py-2 bg-white/[0.03] rounded-lg border border-white/12">
-                              <div className="text-white font-mono font-semibold text-base">{t("patents.architecture.chemicalBonding")}</div>
-                            </div>
-                            <div className="px-3 py-2 md:px-4 md:py-2 bg-white/[0.03] rounded-lg border border-white/12">
-                              <div className="text-white font-mono font-semibold text-base">{t("patents.architecture.stressRegulation")}</div>
-                            </div>
-                          </div>
-                        </div>
-                    </Card>
-                  </div>
-                </div>
-
-                {/* 移动端：核心内核到应用视窗的连接 */}
-                <div className="flex justify-center py-1 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                </div>
-
-                {/* 右侧：应用视窗 - 与左侧对称布局 */}
-                <div className="space-y-3 md:space-y-6 lg:flex lg:flex-col lg:gap-6 lg:flex-1 lg:min-h-0">
-                  <div className="text-center mb-4 md:mb-6">
-                    <h4 className="page-h4 text-white mb-2">{t("patents.architecture.applicationWindow")}</h4>
-                    <div className="h-px bg-white/15"></div>
-                  </div>
-
-                  {/* 极端工况应用 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0 flex-1">
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.extremeConditions")}</h5>
-                        <div className="space-y-1.5 page-caption text-white/70 text-left">
-                          <div>{t("patents.architecture.extremeItem1")}</div>
-                          <div>{t("patents.architecture.extremeItem2")}</div>
-                          <div>{t("patents.architecture.extremeItem3")}</div>
-                        </div>
-                    </div>
-                  </Card>
-
-                  {/* 移动端连接箭头 */}
-                  <div className="flex justify-center py-0.5 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                  </div>
-
-                  {/* 超导材料研究平台 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0 flex-1">
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.superconductorPlatform")}</h5>
-                        <p className="page-caption text-white/70">
-                          {t("patents.architecture.theoryExploration")}
-                        </p>
-                    </div>
-                  </Card>
-
-                  {/* 移动端连接箭头 */}
-                  <div className="flex justify-center py-0.5 md:hidden" aria-hidden>
-                    <ChevronDown className="w-4 h-4 text-white/30" />
-                  </div>
-
-                  {/* 量子计算潜力 */}
-                  <Card className="p-4 md:p-6 gap-2 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-colors group lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
-                    <div className="min-w-0 flex-1">
-                        <h5 className="page-h3 text-white mb-2">{t("patents.architecture.quantumPotential")}</h5>
-                        <p className="page-caption text-white/70">
-                          {t("patents.architecture.visionPlanning")}
-                        </p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-
-            </div>
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="page-h2 text-white">{t("patents.architecture.title")}</h2>
           </div>
+          <ArchitecturePanoramaDiagram
+            strings={{
+              evolutionPath: t("patents.architecture.evolutionPath"),
+              stage01Title: t("patents.architecture.stage01Title"),
+              stage01Desc: t("patents.architecture.stage01Desc"),
+              stage02Title: t("patents.architecture.stage02Title"),
+              stage02Desc: t("patents.architecture.stage02Desc"),
+              stage03Title: t("patents.architecture.stage03Title"),
+              stage03Desc: t("patents.architecture.stage03Desc"),
+              coreKernel: t("patents.architecture.coreKernel"),
+              chemicalBonding: t("patents.architecture.chemicalBonding"),
+              stressRegulation: t("patents.architecture.stressRegulation"),
+              applicationWindow: t("patents.architecture.applicationWindow"),
+              extremeConditions: t("patents.architecture.extremeConditions"),
+              extremeItem1: t("patents.architecture.extremeItem1"),
+              extremeItem2: t("patents.architecture.extremeItem2"),
+              extremeItem3: t("patents.architecture.extremeItem3"),
+              superconductorPlatform: t("patents.architecture.superconductorPlatform"),
+              theoryExploration: t("patents.architecture.theoryExploration"),
+              quantumPotential: t("patents.architecture.quantumPotential"),
+              visionPlanning: t("patents.architecture.visionPlanning"),
+            }}
+          />
         </div>
       </section>
 
@@ -314,8 +145,8 @@ export default function PatentsPage() {
               {expandedStage === 1 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-2">{t("patents.evolutionPath.funcExtension")}</div>
-                    <p className="text-base text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.funcExtension")}</div>
+                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.funcExtensionDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.nonstickCoating")}</strong>
                       {t("patents.evolutionPath.funcExtensionDescAfter")}
@@ -323,17 +154,17 @@ export default function PatentsPage() {
                   </div>
 
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
+                    <div className="page-caption text-white/80 font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
                     <div className="space-y-2">
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent1Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent1No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent1Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent1No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent2Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent2No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent2Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent2No")}</div>
                       </div>
                     </div>
                   </div>
@@ -362,15 +193,15 @@ export default function PatentsPage() {
               {expandedStage === 2 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
-                    <p className="text-base text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
+                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.techBranchDesc")}
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
-                    <p className="text-base text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
+                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.typicalFormsDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.thermalPadSubstrate")}</strong>
                       {t("patents.evolutionPath.typicalFormsDescAfter")}
@@ -378,33 +209,33 @@ export default function PatentsPage() {
                   </div>
 
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
+                    <div className="page-caption text-white/80 font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
 
                     <div className="mb-3">
-                      <div className="text-base text-white/70 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
+                      <div className="page-caption text-white/70 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                          <div className="text-base text-white/75">{t("patents.evolutionPath.patent3Title")}</div>
-                          <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent3No")}</div>
+                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/75">{t("patents.evolutionPath.patent3Title")}</div>
+                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent3No")}</div>
                         </div>
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                          <div className="text-base text-white/75">{t("patents.evolutionPath.patent4Title")}</div>
-                          <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent4No")}</div>
+                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/75">{t("patents.evolutionPath.patent4Title")}</div>
+                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent4No")}</div>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <div className="text-base text-white/70 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
+                      <div className="page-caption text-white/70 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                          <div className="text-base text-white/75">
+                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/75">
                             {t("patents.evolutionPath.patent5Title")}
                           </div>
-                          <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent5No")}</div>
+                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent5No")}</div>
                         </div>
                       </div>
                     </div>
@@ -434,42 +265,42 @@ export default function PatentsPage() {
               {expandedStage === 3 && (
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
-                    <p className="text-base text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
+                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.formDescText")}
                     </p>
                   </div>
 
                   <div>
-                    <div className="text-white/80 text-base font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
+                    <div className="page-caption text-white/80 font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
 
                     <div className="space-y-2">
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">
                           {t("patents.evolutionPath.patent6Title")}
                         </div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent6No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent6No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent7Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent7No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent7Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent7No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent8Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent8No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent8Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent8No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent9Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent9No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent9Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent9No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="text-base text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
-                        <div className="text-base text-white/75">{t("patents.evolutionPath.patent10Title")}</div>
-                        <div className="font-mono text-base text-white/45 mt-1">{t("patents.evolutionPath.patent10No")}</div>
+                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/75">{t("patents.evolutionPath.patent10Title")}</div>
+                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent10No")}</div>
                       </div>
                     </div>
                   </div>
@@ -497,7 +328,7 @@ export default function PatentsPage() {
 
               {expandedStage === 4 && (
                 <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="text-base text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg italic">
+                  <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg italic">
                     {t("patents.evolutionPath.stage04Explanation")}
                   </p>
                 </div>
@@ -509,170 +340,107 @@ export default function PatentsPage() {
 
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-            <h2 className="page-h2 text-white mb-3 sm:mb-4">{t("patents.platformCore.sectionTitle")}</h2>
+          <div className="text-center mb-8 sm:mb-12 lg:mb-14">
+            <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
             <p className="page-body text-white/70 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <Card className="p-4 sm:p-6 md:p-10 bg-white/[0.03] border border-white/12">
-            <h3 className="page-h3 text-white mb-4 sm:mb-8">{t("patents.platformCore.mainTitle")}</h3>
+          <div className="max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
+            <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.mainTitle")}</h3>
+            <p className="page-body text-white/75 mb-8 sm:mb-10">{t("patents.platformCore.mainDesc")}</p>
 
-            <p className="text-white/75 leading-relaxed mb-4 sm:mb-8 text-sm lg:text-base">
-              {t("patents.platformCore.mainDesc")}
+            <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.principleP1")}</h3>
+            <div className="space-y-2 mb-6 sm:mb-8">
+              <p className="page-body text-white/75">
+                <span className="text-white font-medium">sp³</span>{" "}
+                {t("patents.platformCore.sp3Role")}
+              </p>
+              <p className="page-body text-white/75">
+                <span className="text-white font-medium">sp²</span>{" "}
+                {t("patents.platformCore.sp2Role")}
+              </p>
+            </div>
+            <p className="page-body text-white/75">
+              {t("patents.platformCore.principleP2")}
+              <strong className="text-white">{t("patents.platformCore.stressAnchor")}</strong>
+              {t("patents.platformCore.principleP2b")}
             </p>
+          </div>
 
-            {/* Platform Core Principle Explanation */}
-            <div className="p-4 sm:p-6 md:p-8 bg-white/[0.03] rounded-xl border border-white/12">
-              <h4 className="page-h4 text-white mb-4 sm:mb-6">{t("patents.platformCore.principleTitle")}</h4>
-
-              <div className="space-y-3 sm:space-y-4 text-sm lg:text-base leading-relaxed text-white/75">
-                <p>{t("patents.platformCore.principleP1")}</p>
-
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>
-                    <span className="text-white font-mono font-semibold">sp³</span>{" "}
-                    {t("patents.platformCore.sp3Role")}
-                  </li>
-                  <li>
-                    <span className="text-white font-mono font-semibold">sp²</span>{" "}
-                    {t("patents.platformCore.sp2Role")}
-                  </li>
-                </ul>
-
-                <p>
-                  {t("patents.platformCore.principleP2")}
-                  <strong className="text-white">{t("patents.platformCore.stressAnchor")}</strong>
-                  {t("patents.platformCore.principleP2b")}
-                </p>
-
-                <div className="my-4 sm:my-6 p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
-                  <h5 className="text-white font-semibold text-sm lg:text-base mb-3 sm:mb-5">
-                    {t("patents.platformCore.diagramTitle")}
-                  </h5>
-
-                  {/* 移动端：三域关系简要示意 */}
-                  <div className="flex md:hidden items-center justify-center gap-1 mb-4 py-2 px-3 bg-white/[0.03] rounded-lg border border-white/10">
-                    <span className="text-white font-mono text-xs font-semibold">sp³</span>
-                    <span className="text-white/45">→</span>
-                    <span className="text-white font-mono text-xs font-semibold">sp²</span>
-                    <span className="text-white/45">→</span>
-                    <span className="text-white/75 text-xs">{t("patents.platformCore.domain3Title")}</span>
-                  </div>
-
-                  <div className="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4">
-                    {/* sp³ dominant */}
-                    <div className="p-4 sm:p-5 bg-white/[0.03] rounded-lg border border-white/12">
-                      <div className="text-white font-mono font-semibold mb-2 sm:mb-3 text-sm lg:text-base">
-                        {t("patents.platformCore.domain1Title")}
-                      </div>
-                      <div className="text-white/75 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm lg:text-base">
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain1a")}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain1b")}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* sp² dominant */}
-                    <div className="p-4 sm:p-5 bg-white/[0.03] rounded-lg border border-white/12">
-                      <div className="text-white font-mono font-semibold mb-2 sm:mb-3 text-sm lg:text-base">
-                        {t("patents.platformCore.domain2Title")}
-                      </div>
-                      <div className="text-white/75 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm lg:text-base">
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain2a")}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain2b")}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Mixed state */}
-                    <div className="p-4 sm:p-5 bg-white/[0.03] rounded-lg border border-white/12">
-                      <div className="text-white font-mono font-semibold mb-2 sm:mb-3 text-sm lg:text-base">
-                        {t("patents.platformCore.domain3Title")}
-                      </div>
-                      <div className="text-white/75 space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm lg:text-base">
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain3a")}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-white mt-0.5">→</span>
-                          <span>{t("patents.platformCore.domain3b")}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                    {/* Control parameters */}
-                    <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-white/10">
-                      <p className="text-white/65 mb-2 sm:mb-3 text-sm lg:text-base">{t("patents.platformCore.tuningIntro")}</p>
-                      <ul className="space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm lg:text-base text-white/75">
-                        <li className="flex items-start gap-2">
-                          <span className="text-white font-bold">•</span>
-                          <span>
-                            <strong className="text-white">{t("patents.platformCore.tuning1")}</strong>
-                            {t("patents.platformCore.tuning1Note")}
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-white font-bold">•</span>
-                          <span>
-                            <strong className="text-white">{t("patents.platformCore.tuning2")}</strong>
-                            {t("patents.platformCore.tuning2Note")}
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-white font-bold">•</span>
-                          <span>
-                            <strong className="text-white">{t("patents.platformCore.tuning3")}</strong>
-                          </span>
-                        </li>
-                      </ul>
-                      <p className="text-white/65 mt-2 sm:mt-3 text-sm lg:text-base">{t("patents.platformCore.tuningOutro")}</p>
-                    </div>
-                </div>
-
-                <p className="pt-4 border-t border-white/10 text-white/80">
-                  {t("patents.platformCore.platformConclusion")}
-                  <strong className="text-white">{t("patents.platformCore.platformName")}</strong>
-                  {t("patents.platformCore.platformConclusionEnd")}
-                </p>
+          <div className="mb-6 sm:mb-8">
+            <h3 className="page-h3 text-white text-center mb-6 sm:mb-8">
+              {t("patents.platformCore.diagramTitle")}
+            </h3>
+            <div className="grid md:grid-cols-3 gap-3 sm:gap-5">
+              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
+                <div className="h-px w-8 bg-white/30 mb-4" />
+                <h4 className="page-h4 text-white mb-3">
+                  {t("patents.platformCore.domain1Title")}
+                </h4>
+                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain1a")}</p>
+                <p className="page-caption text-white/50">{t("patents.platformCore.domain1b")}</p>
+              </div>
+              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
+                <div className="h-px w-8 bg-white/30 mb-4" />
+                <h4 className="page-h4 text-white mb-3">
+                  {t("patents.platformCore.domain2Title")}
+                </h4>
+                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain2a")}</p>
+                <p className="page-caption text-white/50">{t("patents.platformCore.domain2b")}</p>
+              </div>
+              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
+                <div className="h-px w-8 bg-white/30 mb-4" />
+                <h4 className="page-h4 text-white mb-3">
+                  {t("patents.platformCore.domain3Title")}
+                </h4>
+                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain3a")}</p>
+                <p className="page-caption text-white/50">{t("patents.platformCore.domain3b")}</p>
               </div>
             </div>
+          </div>
 
-            <div className="mt-8 sm:mt-10 pt-8 border-t border-white/10">
-              <h4 className="page-h4 text-white mb-5 text-center">
-                {t("patents.platformCore.radarChartTitle")}
-              </h4>
-              <MaterialComparisonRadarChart
-                  variant="dark"
-                  labels={{
-                    dim1: t("patents.platformCore.radarDim1"),
-                    dim2: t("patents.platformCore.radarDim2"),
-                    dim3: t("patents.platformCore.radarDim3"),
-                    dim4: t("patents.platformCore.radarDim4"),
-                    dim5: t("patents.platformCore.radarDim5"),
-                    dim1Mobile: t("patents.platformCore.radarDim1Mobile"),
-                    dim2Mobile: t("patents.platformCore.radarDim2Mobile"),
-                    dim3Mobile: t("patents.platformCore.radarDim3Mobile"),
-                    dim4Mobile: t("patents.platformCore.radarDim4Mobile"),
-                    dim5Mobile: t("patents.platformCore.radarDim5Mobile"),
-                    diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
-                    diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
-                    toSpike: t("patents.platformCore.radarLabelToSpike"),
-                  }}
-                />
-            </div>
-          </Card>
+          <p className="page-caption text-white/50 text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            {t("patents.platformCore.tuningIntro")}{" "}
+            {t("patents.platformCore.tuning1")}
+            {t("patents.platformCore.tuning1Note")}
+            <span className="text-white/25"> · </span>
+            {t("patents.platformCore.tuning2")}
+            {t("patents.platformCore.tuning2Note")}
+            <span className="text-white/25"> · </span>
+            {t("patents.platformCore.tuning3")}
+            {" "}
+            {t("patents.platformCore.tuningOutro")}
+          </p>
+
+          <div className="mb-12 sm:mb-14">
+            <h3 className="page-h3 text-white mb-5 text-center">
+              {t("patents.platformCore.radarChartTitle")}
+            </h3>
+            <MaterialComparisonRadarChart
+              variant="dark"
+              labels={{
+                dim1: t("patents.platformCore.radarDim1"),
+                dim2: t("patents.platformCore.radarDim2"),
+                dim3: t("patents.platformCore.radarDim3"),
+                dim4: t("patents.platformCore.radarDim4"),
+                dim5: t("patents.platformCore.radarDim5"),
+                dim1Mobile: t("patents.platformCore.radarDim1Mobile"),
+                dim2Mobile: t("patents.platformCore.radarDim2Mobile"),
+                dim3Mobile: t("patents.platformCore.radarDim3Mobile"),
+                dim4Mobile: t("patents.platformCore.radarDim4Mobile"),
+                dim5Mobile: t("patents.platformCore.radarDim5Mobile"),
+                diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
+                diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
+                toSpike: t("patents.platformCore.radarLabelToSpike"),
+              }}
+            />
+          </div>
+
+          <p className="page-body text-white/70 max-w-3xl mx-auto text-center italic border-t border-white/10 pt-8 sm:pt-10">
+            {t("patents.platformCore.platformConclusion")}
+            <strong className="text-white not-italic font-medium">{t("patents.platformCore.platformName")}</strong>
+            {t("patents.platformCore.platformConclusionEnd")}
+          </p>
         </div>
       </section>
 
@@ -683,13 +451,9 @@ export default function PatentsPage() {
             <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
           </div>
 
-          <div className="max-w-6xl mx-auto mb-12">
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.04] border-white/12">
-              <p className="page-body text-center text-white/80">
-                {t("patents.platformExtension.intro")}
-              </p>
-            </Card>
-          </div>
+          <p className="page-body text-white/75 text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
+            {t("patents.platformExtension.intro")}
+          </p>
 
           {/* Three exploration direction cards */}
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
@@ -698,7 +462,7 @@ export default function PatentsPage() {
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.superconductorP1")}
               </p>
-              <p className="page-body text-white/65 italic">
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
                 {t("patents.platformExtension.superconductorP2")}
               </p>
             </Card>
@@ -708,7 +472,7 @@ export default function PatentsPage() {
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.chaosP1")}
               </p>
-              <p className="page-body text-white/65 italic">
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
                 {t("patents.platformExtension.chaosP2")}
               </p>
             </Card>
@@ -718,84 +482,45 @@ export default function PatentsPage() {
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.quantumP1")}
               </p>
-              <p className="page-body text-white/65 italic">
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
                 {t("patents.platformExtension.quantumP2")}
               </p>
             </Card>
           </div>
 
-          {/* Disclaimer */}
-          <Card className="max-w-3xl mx-auto p-4 sm:p-6 gap-2 bg-transparent border-0">
-            <p className="page-body text-white/75 text-center italic">
-              {t("patents.platformExtension.disclaimer")}
-            </p>
-          </Card>
+          <p className="page-caption text-white/55 text-center italic max-w-3xl mx-auto">
+            {t("patents.platformExtension.disclaimer")}
+          </p>
         </div>
       </section>
 
       {/* 平台优势：从首页迁入，置于专利证据之前 */}
       <section id="platform-advantages" className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 text-white text-center mb-8 sm:mb-10 lg:mb-12">
-            {t("home.hero.platformAdvantageTitle")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="page-h2 text-white">{t("home.hero.platformAdvantageTitle")}</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
+              <h3 className="page-h3 text-white mb-2">
                 01 {t("home.features.innovation")}
               </h3>
-              <ul className="space-y-2 text-sm lg:text-base text-white/75">
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelAction")}{labelSep}</strong>
-                  {t("home.features.innovationAction")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelValue")}{labelSep}</strong>
-                  {t("home.features.innovationValue")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelEffect")}{labelSep}</strong>
-                  {t("home.features.innovationEffect")}
-                </li>
-              </ul>
+              <p className="page-body text-white/75 mb-2">{t("home.features.innovationAction")}</p>
+              <p className="page-caption text-white/50">{t("home.features.innovationEffect")}</p>
             </Card>
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-4">
+            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
+              <h3 className="page-h3 text-white mb-2">
                 02 {t("home.features.patents")}
               </h3>
-              <ul className="space-y-2 text-sm lg:text-base text-white/75">
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelLogic")}{labelSep}</strong>
-                  {t("home.features.patentsLogic")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelStatus")}{labelSep}</strong>
-                  {t("home.features.patentsStatus")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelWorth")}{labelSep}</strong>
-                  {t("home.features.patentsValue")}
-                </li>
-              </ul>
+              <p className="page-body text-white/75 mb-2">{t("home.features.patentsStatus")}</p>
+              <p className="page-caption text-white/50">{t("home.features.patentsValue")}</p>
             </Card>
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-4">
+            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
+              <h3 className="page-h3 text-white mb-2">
                 03 {t("home.features.industrial")}
               </h3>
-              <ul className="space-y-2 text-sm lg:text-base text-white/75">
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelTechStatus")}{labelSep}</strong>
-                  {t("home.features.industrialStatus")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelMode")}{labelSep}</strong>
-                  {t("home.features.industrialMode")}
-                </li>
-                <li>
-                  <strong className="text-white/90">{t("home.features.labelVision")}{labelSep}</strong>
-                  {t("home.features.industrialVision")}
-                </li>
-              </ul>
+              <p className="page-body text-white/75 mb-2">{t("home.features.industrialStatus")}</p>
+              <p className="page-caption text-white/50">{t("home.features.industrialMode")}</p>
             </Card>
           </div>
         </div>
@@ -804,11 +529,9 @@ export default function PatentsPage() {
       {/* Patent Cluster Value */}
       <section id="patent-cluster" className="py-10 sm:py-16 lg:py-24 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <Card className="p-5 sm:p-8 md:p-10 gap-5 bg-white/[0.03] border border-white/12">
-            <div className="text-center mb-10">
+            <div className="text-center mb-6 sm:mb-8 lg:mb-12">
               <h2 className="page-h2 text-white mb-4">{t("patents.patentCluster.title")}</h2>
-              <div className="w-12 h-px bg-white/25 mx-auto mb-6" />
-              <p className="text-white/75 leading-relaxed text-lg max-w-3xl mx-auto">
+              <p className="page-body text-white/70 max-w-3xl mx-auto">
                 {t("patents.patentCluster.intro")}
               </p>
             </div>
@@ -822,7 +545,7 @@ export default function PatentsPage() {
                   </span>
                   {t("patents.patentCluster.block1Title")}
                 </h3>
-                <ul className="space-y-2 text-base text-white/75 ml-11">
+                <ul className="space-y-2 page-body text-white/75 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-white">•</span>
                     <span>{t("patents.patentCluster.block1Item")}</span>
@@ -838,7 +561,7 @@ export default function PatentsPage() {
                   </span>
                   {t("patents.patentCluster.block2Title")}
                 </h3>
-                <ul className="space-y-2 text-base text-white/75 ml-11">
+                <ul className="space-y-2 page-body text-white/75 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-white">•</span>
                     <span>{t("patents.patentCluster.block2Item1")}</span>
@@ -858,7 +581,7 @@ export default function PatentsPage() {
                   </span>
                   {t("patents.patentCluster.block3Title")}
                 </h3>
-                <ul className="space-y-2 text-base text-white/75 ml-11">
+                <ul className="space-y-2 page-body text-white/75 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-white">•</span>
                     <span>{t("patents.patentCluster.block3Item1")}</span>
@@ -882,7 +605,7 @@ export default function PatentsPage() {
                   </span>
                   {t("patents.patentCluster.block4Title")}
                 </h3>
-                <ul className="space-y-2 text-base text-white/75 ml-11">
+                <ul className="space-y-2 page-body text-white/75 ml-11">
                   <li className="flex items-start gap-2">
                     <span className="text-white">•</span>
                     <span>{t("patents.patentCluster.block4Item")}</span>
@@ -907,18 +630,17 @@ export default function PatentsPage() {
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
                 <div className="page-stat-value text-white mb-2">{t("patents.patentCluster.stat1Value")}</div>
-                <div className="text-white/65 text-sm">{t("patents.patentCluster.stat1Label")}</div>
+                <div className="page-caption text-white/65">{t("patents.patentCluster.stat1Label")}</div>
               </div>
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
                 <div className="page-stat-value text-white mb-2">{t("patents.patentCluster.stat2Value")}</div>
-                <div className="text-white/65 text-sm">{t("patents.patentCluster.stat2Label")}</div>
+                <div className="page-caption text-white/65">{t("patents.patentCluster.stat2Label")}</div>
               </div>
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
                 <div className="page-stat-value text-white mb-2">{t("patents.patentCluster.stat3Value")}</div>
-                <div className="text-white/65 text-sm">{t("patents.patentCluster.stat3Label")}</div>
+                <div className="page-caption text-white/65">{t("patents.patentCluster.stat3Label")}</div>
               </div>
             </div>
-          </Card>
         </div>
       </section>
 
@@ -927,7 +649,7 @@ export default function PatentsPage() {
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="page-body text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
-          <p className="text-white/50 mb-6">{t("patents.cta.exploreCooperation")}</p>
+          <p className="page-caption text-white/50 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Button asChild className="bg-[#0F4C81] hover:bg-[#163A5F] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg min-h-[44px]">
               <Link href={`${prefix}/cooperation`}>{t("patents.cta.projectCooperation")}</Link>

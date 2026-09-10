@@ -33,7 +33,7 @@ export default function DiamondCopperPage() {
             {t("products.backToProducts")}
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center">
@@ -44,9 +44,35 @@ export default function DiamondCopperPage() {
                 </div>
               </div>
               <h1 className="page-h1 mb-6 text-slate-900">{t("products.diamondCopper.hero.title")}</h1>
-              <p className="page-lead text-slate-600 mb-8">
+              <p className="page-lead text-slate-600 mb-6">
                 {t("products.diamondCopper.hero.intro")}
               </p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <figure className="min-w-0">
+                  <div className="aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
+                    <img
+                      src="/docs/diamond-copper-sample.jpg"
+                      alt={t("products.diamondCopper.hero.sampleAlt")}
+                      className="w-full h-full object-cover block"
+                    />
+                  </div>
+                  <figcaption className="page-caption text-slate-500 mt-2">
+                    {t("products.diamondCopper.hero.sampleCaption")}
+                  </figcaption>
+                </figure>
+                <figure className="min-w-0">
+                  <div className="aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
+                    <img
+                      src="/docs/diamond-copper-micro.jpg"
+                      alt={t("products.diamondCopper.hero.microAlt")}
+                      className="w-full h-full object-cover block"
+                    />
+                  </div>
+                  <figcaption className="page-caption text-slate-500 mt-2">
+                    {t("products.diamondCopper.hero.microCaption")}
+                  </figcaption>
+                </figure>
+              </div>
             </div>
 
             <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-white border-[#4169E1]/30 shadow-xl">

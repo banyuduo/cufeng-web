@@ -186,10 +186,8 @@ export function HeroPlatformDiagram({
   const hasLimits = Boolean(s.limitsTitle) && Boolean(s.limitsLabel)
 
   const chipText = cn(
-    "text-center break-words",
-    isEn
-      ? "text-[11px] leading-snug sm:text-sm lg:text-base tracking-tight"
-      : "text-[11px] leading-tight sm:text-sm lg:text-base"
+    "page-caption text-center break-words text-white/85",
+    isEn && "tracking-tight"
   )
 
   const layers = [
@@ -271,20 +269,16 @@ export function HeroPlatformDiagram({
                 >
                   <p
                     className={cn(
-                      "font-medium text-white mb-1 text-balance",
-                      isEn
-                        ? "text-sm lg:text-base tracking-tight"
-                        : "text-sm lg:text-base"
+                      "page-body font-medium text-white mb-1 text-balance",
+                      isEn && "tracking-tight"
                     )}
                   >
                     {title}
                   </p>
                   <p
                     className={cn(
-                      "text-white/70 leading-snug text-pretty",
-                      isEn
-                        ? "text-[13px] sm:text-sm lg:text-base tracking-tight"
-                        : "text-sm lg:text-base"
+                      "page-caption text-white/70 text-pretty",
+                      isEn && "tracking-tight"
                     )}
                   >
                     {body}
@@ -342,10 +336,8 @@ export function HeroPlatformDiagram({
                 </div>
                 <p
                   className={cn(
-                    "mt-1.5 sm:mt-3 text-white font-semibold text-center break-words",
-                    isEn
-                      ? "text-[10px] leading-snug sm:text-sm lg:text-base tracking-tight min-h-[2.4rem] sm:min-h-[2.6rem] lg:min-h-0"
-                      : "text-[11px] leading-tight sm:text-sm lg:text-base"
+                    "mt-1.5 sm:mt-3 page-caption text-white font-medium text-center break-words",
+                    isEn && "tracking-tight"
                   )}
                 >
                   {layer.label}
