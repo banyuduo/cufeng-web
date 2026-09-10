@@ -69,7 +69,7 @@ export default async function ProductsPage({
         subtitle={t("products.subtitle")}
       />
 
-      <section className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {catalog.map((item) => (
@@ -109,7 +109,7 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8 bg-slate-50">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}

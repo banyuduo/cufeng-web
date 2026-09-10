@@ -21,9 +21,9 @@ export default async function HomePage({
       <Navigation locale={validLocale} />
 
       <div className="overflow-x-hidden">
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-24 px-6 lg:px-8 pointer-events-none">
+      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-10 sm:pb-12 lg:pb-14 px-6 lg:px-8 pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
-          <div className="space-y-8 sm:space-y-12 lg:space-y-24">
+          <div className="space-y-7 sm:space-y-8 lg:space-y-8">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
               <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 opacity-100">
@@ -36,31 +36,35 @@ export default async function HomePage({
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
             <div className="text-center">
-              <p className="page-body page-measure text-white/70 mb-6">
+              <p className="page-body page-measure text-white/70 mb-5">
                 {t("home.hero.platformFocus")}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+              <div className="flex flex-row flex-wrap items-stretch justify-center gap-2 sm:gap-3">
                 <Button
                   size="lg"
                   asChild
-                  className="gap-2 w-auto bg-[#0F4C81] hover:bg-[#163A5F] text-white min-h-[44px] border-0 text-base"
+                  className="w-auto max-w-[48%] min-w-0 shrink sm:max-w-none min-h-[44px] h-auto py-2.5 px-3 sm:px-6 bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0 text-sm sm:text-base whitespace-normal leading-snug text-center"
                 >
                   <Link href={`/${validLocale}/patents`}>
                     {t("home.hero.viewTechArchitecture")}
                   </Link>
                 </Button>
-                <Link
-                  href={`/${validLocale}/applications`}
-                  className="page-body text-white/80 hover:text-white font-medium underline-offset-4 hover:underline min-h-[44px] inline-flex items-center"
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="w-auto max-w-[48%] min-w-0 shrink sm:max-w-none min-h-[44px] h-auto py-2.5 px-3 sm:px-6 border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white text-sm sm:text-base whitespace-normal leading-snug text-center"
                 >
-                  {t("home.hero.viewTechApplications")}
-                </Link>
+                  <Link href={`/${validLocale}/applications`}>
+                    {t("home.hero.viewTechApplications")}
+                  </Link>
+                </Button>
               </div>
             </div>
 
             {/* 第二层：技术平台（标题 + 图自带边框） */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-10">
+              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-6">
                 {t("home.hero.title")}
               </h2>
               <HeroPlatformDiagram
@@ -103,7 +107,7 @@ export default async function HomePage({
 
             {/* 阶段性成果：已实现条目 + 工艺/样品/IP */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-10">
+              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-6">
                 {t("home.results.title")}
               </h2>
               <ol className="space-y-5 sm:space-y-6 max-w-3xl mx-auto mb-8 sm:mb-10">

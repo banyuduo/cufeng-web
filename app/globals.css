@@ -94,7 +94,7 @@
    中文默认：正常字距、略松行高。英文由 [data-locale="en"] / :lang(en) 收紧。 */
 @layer components {
   .page-h1 {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium break-words;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-medium break-words;
     letter-spacing: 0;
     line-height: 1.22;
   }
@@ -138,7 +138,7 @@
     @apply max-w-6xl mx-auto px-6 lg:px-8;
   }
   .section-block {
-    @apply py-8 sm:py-14 lg:py-24 px-6 lg:px-8;
+    @apply py-8 sm:py-14 lg:py-14 px-6 lg:px-8;
   }
   .page-measure {
     @apply max-w-3xl mx-auto;

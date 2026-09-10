@@ -127,20 +127,17 @@ function Sp3Tetrahedron({ className }: { className?: string }) {
   )
 }
 
-const panel =
-  "flex flex-col min-w-0 rounded-xl border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6 text-left"
-
 function FlowArrow() {
   return (
-    <div className="flex items-center justify-center py-1 sm:py-1.5 lg:py-2" aria-hidden>
-      <ArrowDown className="w-4 h-4 lg:w-5 lg:h-5 text-white/40" />
+    <div className="flex items-center justify-center py-0.5 sm:py-1" aria-hidden>
+      <ArrowDown className="w-4 h-4 text-white/40" />
     </div>
   )
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="page-h4 text-white mb-3 text-center text-balance px-1">
+    <h4 className="page-h4 text-white mb-2 text-center text-balance px-1">
       {children}
     </h4>
   )
@@ -156,7 +153,7 @@ function Section({
   return (
     <div
       className={cn(
-        "px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-8",
+        "px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8 lg:py-5",
         className
       )}
     >
@@ -215,7 +212,7 @@ export function HeroPlatformDiagram({
     >
       {hasLimits && (
         <Section>
-          <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-3.5 sm:px-5 sm:py-4 lg:px-8 lg:py-5 max-w-3xl mx-auto">
+          <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 sm:px-5 sm:py-3 lg:px-6 lg:py-3.5 max-w-3xl mx-auto">
             <SectionTitle>{s.limitsTitle}</SectionTitle>
             <p
               className={cn(
@@ -231,15 +228,16 @@ export function HeroPlatformDiagram({
 
       {hasLimits ? <FlowArrow /> : null}
 
+      <div className="lg:grid lg:grid-cols-2 lg:items-stretch">
       <Section className="border-t border-white/10">
         <SectionTitle>{s.layer2Title}</SectionTitle>
-        <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 lg:gap-4 mb-5 sm:mb-6 lg:mb-8">
+        <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-3 sm:mb-4 lg:mb-5">
           {[s.layer2Thermal, s.layer2Mechanical, s.layer2Electrical].map(
             (label) => (
               <li
                 key={label}
                 className={cn(
-                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4 text-white/85",
+                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 text-white/85 min-w-0",
                   chipText
                 )}
               >
@@ -254,8 +252,8 @@ export function HeroPlatformDiagram({
             <SectionTitle>{s.mechanismTitle}</SectionTitle>
             <div
               className={cn(
-                "grid gap-2.5 sm:gap-3 lg:gap-4 mb-5 sm:mb-6 lg:mb-8",
-                isEn ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 sm:grid-cols-3"
+                "grid gap-2 sm:gap-3 mb-3 sm:mb-4 min-w-0",
+                "grid-cols-1 sm:grid-cols-3 lg:grid-cols-1"
               )}
             >
               {[
@@ -265,11 +263,11 @@ export function HeroPlatformDiagram({
               ].map(([title, body]) => (
                 <div
                   key={title}
-                  className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 sm:px-3.5 sm:py-3.5 lg:px-4 lg:py-4 text-center h-full"
+                  className="rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3.5 sm:py-3 lg:px-4 lg:py-3 text-center h-full min-w-0"
                 >
                   <p
                     className={cn(
-                      "page-body font-medium text-white mb-1 text-balance",
+                      "page-body font-medium text-white mb-1 text-balance break-words",
                       isEn && "tracking-tight"
                     )}
                   >
@@ -289,13 +287,13 @@ export function HeroPlatformDiagram({
           </>
         )}
 
-        <div className={cn(panel, "max-w-3xl mx-auto w-full")}>
-          <h4 className="page-h4 text-white mb-2 text-balance">
+        <div className="max-w-3xl mx-auto w-full text-center">
+          <h4 className="page-h4 text-white mb-1.5 text-balance">
             {s.layer3Title}
           </h4>
           <p
             className={cn(
-              "page-body text-white/80",
+              "page-body text-white/75",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -303,7 +301,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-body text-white/70 mt-1",
+              "page-body text-white/70 mt-0.5",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -312,31 +310,33 @@ export function HeroPlatformDiagram({
         </div>
       </Section>
 
-      <FlowArrow />
+      <div className="lg:hidden">
+        <FlowArrow />
+      </div>
 
-      <Section className="border-t border-white/10">
+      <Section className="border-t border-white/10 lg:border-l">
         <SectionTitle>{s.layer4Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-4 text-balance",
+            "page-caption text-white/55 text-center mb-3 text-balance",
             isEn && "tracking-tight"
           )}
         >
           {s.atomicTitle}
         </p>
-        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden mb-4 sm:mb-5">
+        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden mb-3">
           <div className="grid grid-cols-3 divide-x divide-white/12">
             {layers.map((layer) => (
               <div
                 key={layer.key}
-                className="flex flex-col items-center justify-start px-1 py-2.5 sm:px-3 sm:py-5 lg:px-4 lg:py-6 min-w-0"
+                className="flex flex-col items-center justify-start px-1 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4 min-w-0"
               >
-                <div className="flex h-[4.75rem] sm:h-24 lg:h-28 w-full items-center justify-center">
+                <div className="flex h-16 sm:h-[4.75rem] lg:h-20 w-full items-center justify-center">
                   {layer.figure}
                 </div>
                 <p
                   className={cn(
-                    "mt-1.5 sm:mt-3 page-caption text-white font-medium text-center break-words",
+                    "mt-1 sm:mt-1.5 page-caption text-white font-medium text-center break-words",
                     isEn && "tracking-tight"
                   )}
                 >
@@ -346,10 +346,10 @@ export function HeroPlatformDiagram({
             ))}
           </div>
         </div>
-        <div className={cn(panel, "max-w-3xl mx-auto w-full")}>
+        <div className="max-w-3xl mx-auto w-full text-center">
           <p
             className={cn(
-              "page-body text-white/80 mb-1.5",
+              "page-body text-white/80",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -357,7 +357,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-body text-white/70 mb-1.5",
+              "page-body text-white/70 mt-0.5",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -365,7 +365,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-body text-white/70",
+              "page-body text-white/70 mt-0.5",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -373,6 +373,7 @@ export function HeroPlatformDiagram({
           </p>
         </div>
       </Section>
+      </div>
 
       {hasApplications && (
         <>
@@ -381,7 +382,7 @@ export function HeroPlatformDiagram({
             <SectionTitle>{s.applicationsTitle}</SectionTitle>
             <div
               className={cn(
-                "grid gap-1.5 sm:gap-3 lg:gap-4",
+                "grid gap-1.5 sm:gap-3",
                 isEn ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-3"
               )}
             >
@@ -390,7 +391,7 @@ export function HeroPlatformDiagram({
                   <p
                     key={label}
                     className={cn(
-                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4",
+                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 min-w-0",
                       chipText
                     )}
                   >
@@ -402,7 +403,7 @@ export function HeroPlatformDiagram({
             {s.applicationHint ? (
               <p
                 className={cn(
-                  "page-caption text-center text-white/55 mt-3 text-balance",
+                  "page-caption text-center text-white/55 mt-2 text-balance",
                   isEn && "tracking-tight"
                 )}
               >

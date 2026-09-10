@@ -37,7 +37,7 @@ export default async function CooperationPage({
         </div>
       </PageHero>
 
-      <section className="py-8 sm:py-14 lg:py-20 px-6 lg:px-8">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.platform.title")}
@@ -56,7 +56,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-20 px-6 lg:px-8">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.audience.title")}
@@ -101,7 +101,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-20 px-6 lg:px-8">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
           <div>
             <h2 className="page-h2 font-light mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
@@ -124,7 +124,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-8 sm:py-14 lg:py-20 px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
+      <section id="contact" className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 scroll-mt-24 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 font-light mb-6 sm:mb-8 text-slate-900 border-b border-slate-200 pb-4 sm:pb-6">
             {t("cooperation.contact.title")}

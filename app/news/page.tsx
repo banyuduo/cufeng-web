@@ -51,7 +51,7 @@ export default async function NewsPage({
       <ScrollToHash />
 
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-20 overflow-hidden pointer-events-none">
+      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-8 sm:pb-10 lg:pb-12 overflow-hidden pointer-events-none">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 pointer-events-auto">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
@@ -129,7 +129,7 @@ export default async function NewsPage({
       {/* Company News */}
       <section
         id="company-news"
-        className="py-8 sm:py-14 lg:py-24 border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
+        className="py-8 sm:py-14 lg:py-14 border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -171,7 +171,7 @@ export default async function NewsPage({
       </section>
 
       {/* Industry Information */}
-      <section id="industry-info" className="py-8 sm:py-14 lg:py-24 border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
+      <section id="industry-info" className="py-8 sm:py-14 lg:py-14 border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.industryInfo")}</h2>

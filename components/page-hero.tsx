@@ -38,7 +38,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-10 sm:pb-16 lg:pb-24 overflow-hidden pointer-events-none ${
+      className={`relative pt-24 sm:pt-28 lg:pt-28 pb-8 sm:pb-10 lg:pb-12 overflow-hidden pointer-events-none ${
         isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >
