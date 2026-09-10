@@ -109,7 +109,7 @@ export default function NonstickCookwarePage() {
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.hardnessTitle")}</h3>
-              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.hardnessDesc")}</p>
+              <p className="page-body text-slate-600">{t("products.nonstickCookware.whyDiamond.hardnessDesc")}</p>
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
@@ -117,7 +117,7 @@ export default function NonstickCookwarePage() {
                 <Flame className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.thermalTitle")}</h3>
-              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.thermalDesc")}</p>
+              <p className="page-body text-slate-600">{t("products.nonstickCookware.whyDiamond.thermalDesc")}</p>
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
@@ -125,7 +125,7 @@ export default function NonstickCookwarePage() {
                 <Droplet className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.inertTitle")}</h3>
-              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.inertDesc")}</p>
+              <p className="page-body text-slate-600">{t("products.nonstickCookware.whyDiamond.inertDesc")}</p>
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-[#F9FAFC] border-slate-200 hover:shadow-lg transition-all text-center">
@@ -133,7 +133,7 @@ export default function NonstickCookwarePage() {
                 <Award className="w-8 h-8 text-[#0077b6]" />
               </div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.nonstickCookware.whyDiamond.durableTitle")}</h3>
-              <p className="page-caption text-slate-600">{t("products.nonstickCookware.whyDiamond.durableDesc")}</p>
+              <p className="page-body text-slate-600">{t("products.nonstickCookware.whyDiamond.durableDesc")}</p>
             </Card>
           </div>
         </div>

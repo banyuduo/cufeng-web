@@ -45,11 +45,13 @@ export default function PatentsPage() {
       >
         <div className="page-measure mt-5 space-y-3 text-center">
           <p className="page-body text-white/70">{t("patents.hero.desc")}</p>
-          <p className="page-caption text-white/55">{t("patents.hero.dimensions")}</p>
+          {t("patents.hero.dimensions") ? (
+            <p className="page-caption text-white/55">{t("patents.hero.dimensions")}</p>
+          ) : null}
         </div>
       </PageHero>
 
-      <section className="py-10 sm:py-16 lg:py-24 relative">
+      <section className="py-8 sm:py-14 lg:py-24 relative">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
@@ -84,7 +86,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-24">
+      <section className="py-8 sm:py-14 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white">{t("patents.architecture.title")}</h2>
@@ -115,7 +117,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section id="evolution-path" className="py-10 sm:py-16 lg:py-24 scroll-mt-24">
+      <section id="evolution-path" className="py-8 sm:py-14 lg:py-24 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
@@ -138,7 +140,7 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 1 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="page-caption text-white/70">
+              <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage01Desc")}
               </p>
 
@@ -146,7 +148,7 @@ export default function PatentsPage() {
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
                     <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.funcExtension")}</div>
-                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.funcExtensionDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.nonstickCoating")}</strong>
                       {t("patents.evolutionPath.funcExtensionDescAfter")}
@@ -186,7 +188,7 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 2 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="page-caption text-white/70">
+              <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage02Desc")}
               </p>
 
@@ -194,14 +196,14 @@ export default function PatentsPage() {
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
                     <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.techBranch")}</div>
-                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.techBranchDesc")}
                     </p>
                   </div>
 
                   <div>
                     <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.typicalForms")}</div>
-                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.typicalFormsDescBefore")}
                       <strong className="text-white">{t("patents.evolutionPath.thermalPadSubstrate")}</strong>
                       {t("patents.evolutionPath.typicalFormsDescAfter")}
@@ -258,7 +260,7 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="page-caption text-white/70">
+              <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage03Desc")}
               </p>
 
@@ -266,7 +268,7 @@ export default function PatentsPage() {
                 <div className="mt-6 space-y-4 pt-6 border-t border-white/10">
                   <div>
                     <div className="page-caption text-white/80 font-medium mb-2">{t("patents.evolutionPath.formDesc")}</div>
-                    <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg">
+                    <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg">
                       {t("patents.evolutionPath.formDescText")}
                     </p>
                   </div>
@@ -322,13 +324,13 @@ export default function PatentsPage() {
                   className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 4 ? "rotate-180" : ""}`}
                 />
               </div>
-              <p className="page-caption text-white/70">
+              <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage04Desc")}
               </p>
 
               {expandedStage === 4 && (
                 <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="page-caption text-white/75 leading-relaxed bg-white/[0.03] p-4 rounded-lg italic">
+                  <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg italic">
                     {t("patents.evolutionPath.stage04Explanation")}
                   </p>
                 </div>
@@ -338,7 +340,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-24">
+      <section className="py-8 sm:py-14 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-14">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
@@ -399,7 +401,7 @@ export default function PatentsPage() {
             </div>
           </div>
 
-          <p className="page-caption text-white/50 text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <p className="page-body text-white/55 text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             {t("patents.platformCore.tuningIntro")}{" "}
             {t("patents.platformCore.tuning1")}
             {t("patents.platformCore.tuning1Note")}
@@ -444,7 +446,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-24">
+      <section className="py-8 sm:py-14 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
@@ -495,7 +497,7 @@ export default function PatentsPage() {
       </section>
 
       {/* 平台优势：从首页迁入，置于专利证据之前 */}
-      <section id="platform-advantages" className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
+      <section id="platform-advantages" className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-white">{t("home.hero.platformAdvantageTitle")}</h2>
@@ -527,7 +529,7 @@ export default function PatentsPage() {
       </section>
 
       {/* Patent Cluster Value */}
-      <section id="patent-cluster" className="py-10 sm:py-16 lg:py-24 scroll-mt-24">
+      <section id="patent-cluster" className="py-8 sm:py-14 lg:py-24 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-6 sm:mb-8 lg:mb-12">
               <h2 className="page-h2 text-white mb-4">{t("patents.patentCluster.title")}</h2>
@@ -645,7 +647,7 @@ export default function PatentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 sm:py-16 lg:py-24">
+      <section className="py-8 sm:py-14 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="page-body text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>

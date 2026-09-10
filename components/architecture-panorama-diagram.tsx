@@ -49,7 +49,7 @@ function StageCard({
     <div className="p-3 lg:p-6 rounded-xl border border-white/12 bg-white/[0.03] lg:flex-1">
       {kicker ? <p className="page-caption text-white/45 mb-1">{kicker}</p> : null}
       <h4 className="page-h3 text-white mb-2">{title}</h4>
-      <div className="page-caption text-white/70">{children}</div>
+      <div className="page-body text-white/70">{children}</div>
     </div>
   )
 }

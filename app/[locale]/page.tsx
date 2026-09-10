@@ -23,7 +23,7 @@ export default async function HomePage({
       <div className="overflow-x-hidden">
       <section className="relative pt-24 sm:pt-32 lg:pt-36 xl:pt-40 pb-12 sm:pb-16 lg:pb-24 px-6 lg:px-8 pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
-          <div className="space-y-10 sm:space-y-16 lg:space-y-24">
+          <div className="space-y-8 sm:space-y-12 lg:space-y-24">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
               <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 opacity-100">

@@ -1,11 +1,10 @@
 import { Link } from "@/components/app-link"
-import { Cpu, Zap, Car, Sparkles, Home, Battery, Microscope, ShieldCheck, Droplets, Atom } from "lucide-react"
+import { Battery, Droplets, Atom, Microscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
-import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { ApplicationCard } from "@/components/application-card"
 import { HpcExpandableCard } from "@/components/hpc-expandable-card"
 import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
@@ -32,24 +31,23 @@ export default async function ApplicationsPage({
   } as const
 
   const layers = [
-    { accent: ACCENTS.hpc, levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-white/12 bg-white/[0.03]", Icon: Cpu, href: "#hpc" },
-    { accent: ACCENTS.power, levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-white/12 bg-white/[0.03]", Icon: Zap, href: "#power-semiconductor" },
-    { accent: ACCENTS.ev, levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-white/12 bg-white/[0.03]", Icon: Battery, href: "#ev-storage" },
-    { accent: ACCENTS.consumer, levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-white/12 bg-white/[0.03]", Icon: Home, href: "#consumer" },
-    { accent: ACCENTS.frontier, levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-white/12 bg-white/[0.03]", Icon: Microscope, href: "#frontier" },
+    { accent: ACCENTS.hpc, levelKey: "layer1Level", titleKey: "layer1Title", itemsKey: "layer1Items", descKey: "layer1Desc", tagKey: "layer1Tag", color: "border-white/12 bg-white/[0.03]", href: "#hpc" },
+    { accent: ACCENTS.power, levelKey: "layer2Level", titleKey: "layer2Title", itemsKey: "layer2Items", descKey: "layer2Desc", tagKey: "layer2Tag", color: "border-white/12 bg-white/[0.03]", href: "#power-semiconductor" },
+    { accent: ACCENTS.ev, levelKey: "layer3Level", titleKey: "layer3Title", itemsKey: "layer3Items", descKey: "layer3Desc", tagKey: "layer3Tag", color: "border-white/12 bg-white/[0.03]", href: "#ev-storage" },
+    { accent: ACCENTS.consumer, levelKey: "layer4Level", titleKey: "layer4Title", itemsKey: "layer4Items", descKey: "layer4Desc", tagKey: "layer4Tag", color: "border-white/12 bg-white/[0.03]", href: "#consumer" },
+    { accent: ACCENTS.frontier, levelKey: "layer5Level", titleKey: "layer5Title", itemsKey: "layer5Items", descKey: "layer5Desc", tagKey: "layer5Tag", color: "border-white/12 bg-white/[0.03]", href: "#frontier" },
   ] as const
 
   const categoryConfig = [
-    { id: "hpc", key: "hpc", Icon: Cpu, accent: ACCENTS.hpc },
-    { id: "power-semiconductor", key: "powerSemiconductor", Icon: Zap, accent: ACCENTS.power },
-    { id: "ev-storage", key: "evStorage", Icon: Car, accent: ACCENTS.ev },
-    { id: "consumer", key: "consumer", Icon: Home, accent: ACCENTS.consumer },
-    { id: "frontier", key: "frontier", Icon: Sparkles, accent: ACCENTS.frontier, isExploration: true },
+    { id: "hpc", key: "hpc", accent: ACCENTS.hpc },
+    { id: "power-semiconductor", key: "powerSemiconductor", accent: ACCENTS.power },
+    { id: "ev-storage", key: "evStorage", accent: ACCENTS.ev },
+    { id: "consumer", key: "consumer", accent: ACCENTS.consumer },
+    { id: "frontier", key: "frontier", accent: ACCENTS.frontier, isExploration: true },
   ] as const
 
   return (
-    <div className="min-h-screen relative">
-      <DarkPagePatternBg />
+    <div className="min-h-screen relative bg-[#0B1F33]">
       <Navigation locale={validLocale} />
       <div className="relative z-10">
 
@@ -61,12 +59,14 @@ export default async function ApplicationsPage({
       />
 
       {/* 应用蓝图 */}
-      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
+      <section className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="w-full py-8 sm:py-12 px-4 sm:px-6 bg-white/[0.03] rounded-2xl border border-white/12 overflow-hidden relative">
             <div className="text-center mb-5 sm:mb-8 lg:mb-10 px-1">
               <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
-              <p className="page-body text-slate-400 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
+              {t("applications.blueprint.subtitle") ? (
+                <p className="page-body text-white/55 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
+              ) : null}
             </div>
 
             <div className="max-w-4xl mx-auto relative z-10 space-y-4">
@@ -78,7 +78,6 @@ export default async function ApplicationsPage({
                   items={t(`applications.blueprint.${layer.itemsKey}`).split("|")}
                   description={t(`applications.blueprint.${layer.descKey}`)}
                   color={layer.color}
-                  icon={<layer.Icon className={`w-5 h-5 ${layer.accent.text}`} />}
                   tag={t(`applications.blueprint.${layer.tagKey}`)}
                   href={layer.href}
                   tagClassName={layer.accent.tag}
@@ -88,12 +87,9 @@ export default async function ApplicationsPage({
               {/* 底部基座 */}
               <div className="pt-8 flex flex-col items-center">
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
-                <div className="px-5 sm:px-8 py-3 sm:py-4 bg-white/[0.03] rounded-xl border border-white/12 flex items-center gap-3 ">
-                  <ShieldCheck className="w-6 h-6 text-white/80" />
-                  <div>
-                    <div className="page-kicker text-white/55">{t("applications.blueprint.foundationLabel")}</div>
-                    <div className="text-white font-black tracking-tight">{t("applications.blueprint.foundation")}</div>
-                  </div>
+                <div className="px-5 sm:px-8 py-3 sm:py-4 bg-white/[0.03] rounded-xl border border-white/12 text-center">
+                  <div className="page-kicker text-white/55">{t("applications.blueprint.foundationLabel")}</div>
+                  <div className="page-h4 text-white">{t("applications.blueprint.foundation")}</div>
                 </div>
               </div>
             </div>
@@ -102,7 +98,7 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8">
+      <section className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -205,14 +201,14 @@ export default async function ApplicationsPage({
                         whitepaperHref: validLocale === "en" ? "/docs/diamond-battery-en.html" : "/docs/diamond-battery.html",
                         deepTechHref: `${prefix}/news/solid-state-battery`,
                         expandContent: (
-                          <div className="space-y-4 text-sm lg:text-base">
+                          <div className="space-y-4 page-body">
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.solidStatePhysics`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateTech`)}</div>
-                              <ul className="space-y-1 text-slate-300">
+                              <ul className="space-y-1 page-body text-white/70">
                                 <li>• {t(`${energy}.solidStateAdv1`)}</li>
                                 <li>• {t(`${energy}.solidStateAdv2`)}</li>
                                 <li>• {t(`${energy}.solidStateAdv3`)}</li>
@@ -220,7 +216,7 @@ export default async function ApplicationsPage({
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateValue`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.solidStateValueDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${energy}.solidStateValueDesc`)}</p>
                             </div>
                           </div>
                         ),
@@ -235,14 +231,14 @@ export default async function ApplicationsPage({
                         whitepaperHref: validLocale === "en" ? "/docs/diamond-water-en.html" : "/docs/diamond-water.html",
                         deepTechHref: `${prefix}/news/3d-covalent-composite-electrode`,
                         expandContent: (
-                          <div className="space-y-4 text-sm lg:text-base">
+                          <div className="space-y-4 page-body">
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.waterPhysics`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.waterTech`)}</div>
-                              <ul className="space-y-1 text-slate-300">
+                              <ul className="space-y-1 page-body text-white/70">
                                 <li>• {t(`${energy}.waterAdv1`)}</li>
                                 <li>• {t(`${energy}.waterAdv2`)}</li>
                                 <li>• {t(`${energy}.waterAdv3`)}</li>
@@ -250,7 +246,7 @@ export default async function ApplicationsPage({
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${energy}.waterValue`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${energy}.waterValueDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${energy}.waterValueDesc`)}</p>
                             </div>
                           </div>
                         ),
@@ -266,14 +262,14 @@ export default async function ApplicationsPage({
                         hasDeepTech: true,
                         deepTechHref: `${prefix}/news/superconducting-materials`,
                         expandContent: (
-                          <div className="space-y-4 text-sm lg:text-base">
+                          <div className="space-y-4 page-body">
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${frontier}.superconductorPhysics`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${frontier}.researchPoints`)}</div>
-                              <ul className="space-y-1 text-slate-300">
+                              <ul className="space-y-1 page-body text-white/70">
                                 <li>• {t(`${frontier}.superconductorRes1`)}</li>
                                 <li>• {t(`${frontier}.superconductorRes2`)}</li>
                                 <li>• {t(`${frontier}.superconductorRes3`)}</li>
@@ -281,7 +277,7 @@ export default async function ApplicationsPage({
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.superconductorVision`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${frontier}.superconductorVision`)}</p>
                             </div>
                           </div>
                         ),
@@ -295,13 +291,13 @@ export default async function ApplicationsPage({
                         hasDeepTech: true,
                         deepTechHref: `${prefix}/news/quantum-chaos-computing`,
                         expandContent: (
-                          <div className="space-y-4 text-sm lg:text-base">
+                          <div className="space-y-4 page-body">
                             <div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${frontier}.quantumResearch`)}</div>
-                              <ul className="space-y-1 text-slate-300">
+                              <ul className="space-y-1 page-body text-white/70">
                                 <li>• {t(`${frontier}.quantumRes1`)}</li>
                                 <li>• {t(`${frontier}.quantumRes2`)}</li>
                                 <li>• {t(`${frontier}.quantumRes3`)}</li>
@@ -309,7 +305,7 @@ export default async function ApplicationsPage({
                             </div>
                             <div>
                               <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="text-slate-300 leading-relaxed break-words">{t(`${frontier}.quantumVision`)}</p>
+                              <p className="page-body text-white/70 break-words">{t(`${frontier}.quantumVision`)}</p>
                             </div>
                           </div>
                         ),
@@ -330,11 +326,7 @@ export default async function ApplicationsPage({
                     cat.isExploration ? "" : ""
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-white/12 flex items-center justify-center flex-shrink-0 ">
-                      <cat.Icon className={`w-7 h-7 sm:w-8 sm:h-8 ${cat.accent.text}`} />
-                    </div>
-                    <div className="flex-1 min-w-0">
+                  <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-3">
                         <h2 className="page-h2 text-white">
                           {title}
@@ -346,10 +338,10 @@ export default async function ApplicationsPage({
                         )}
                       </div>
                       {subtitle && (
-                        <p className="text-slate-300 font-medium mb-2">{subtitle}</p>
+                        <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p>
                       )}
                       {features && (
-                        <p className="text-sm lg:text-base text-slate-400 mb-4">{features}</p>
+                        <p className="page-caption text-white/55 mb-4">{features}</p>
                       )}
                       <div className="space-y-4 mb-4">
                         {items.map((item, i) => (
@@ -357,9 +349,9 @@ export default async function ApplicationsPage({
                             <div className="flex items-start gap-2">
                               <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: cat.accent.hex }} />
                               <div className="min-w-0">
-                                <div className="font-medium text-slate-200 text-sm lg:text-base break-words">{item}</div>
+                                <div className="page-body font-medium text-white break-words">{item}</div>
                                 {itemsDesc[i] && (
-                                  <p className="text-slate-400 text-sm lg:text-base mt-1 leading-relaxed break-words">{itemsDesc[i]}</p>
+                                  <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
                                 )}
                               </div>
                             </div>
@@ -368,12 +360,12 @@ export default async function ApplicationsPage({
                       </div>
                       {materials && (
                         <div className="mt-4">
-                          <div className="text-sm lg:text-base font-semibold text-white mb-2">{t("applications.thermal.materialsLabel")}</div>
+                          <div className="page-body font-semibold text-white mb-2">{t("applications.thermal.materialsLabel")}</div>
                           <div className="flex flex-wrap gap-2">
                             {materials.split("|").map((m, i) => (
                               <span
                                 key={i}
-                                className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border break-words max-w-full bg-white/[0.04] text-slate-200"
+                                className="inline-flex items-center px-3 py-1.5 rounded-lg page-caption font-medium border break-words max-w-full bg-white/[0.04] text-white/80"
                                 style={{ borderColor: `${cat.accent.hex}55` }}
                               >
                                 {m.trim()}
@@ -392,7 +384,6 @@ export default async function ApplicationsPage({
                           <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
                         </Button>
                       </div>
-                    </div>
                   </div>
                 </Card>
               )
@@ -401,7 +392,7 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-8 sm:py-14 lg:py-24 px-6 lg:px-8 bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 text-slate-900 mb-4 break-words px-1">
             {t("applications.summary.title")}

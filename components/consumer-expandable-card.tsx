@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, Home, FileText } from "lucide-react"
+import { ChevronDown, FileText } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/components/app-link"
@@ -68,18 +68,14 @@ export function ConsumerExpandableCard({
         isExploration ? "" : ""
       }`}
     >
-      <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#002244] to-[#003366] border border-white/12 flex items-center justify-center flex-shrink-0 ">
-          <Home className={`w-7 h-7 sm:w-8 sm:h-8 ${accentClassName}`} />
-        </div>
-        <div className="flex-1 min-w-0">
+      <div className="min-w-0">
           <h2 className="page-h2 text-white mb-4">{title}</h2>
           <div className="space-y-4 mb-4">
             {items.map((item, i) => (
               <div key={i} className="border-l-2 border-white/12 pl-4 min-w-0">
-                <div className="font-medium text-slate-200 text-sm lg:text-base break-words">{item}</div>
+                <div className="page-body font-medium text-white break-words">{item}</div>
                 {itemsDesc[i] && (
-                  <p className="text-slate-400 text-sm lg:text-base mt-1 leading-relaxed break-words">{itemsDesc[i]}</p>
+                  <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
                 )}
               </div>
             ))}
@@ -97,22 +93,22 @@ export function ConsumerExpandableCard({
             </button>
             {expanded && (
               <div className="mt-4 pt-4 border-t border-white/12 space-y-4">
-                <p className="text-slate-300 leading-relaxed text-sm lg:text-base">{coilIntro}</p>
+                <p className="page-body text-white/70">{coilIntro}</p>
                 <div className="bg-[#002244]/55 rounded-lg p-4 border border-white/12">
-                  <div className="font-semibold text-white mb-2 text-sm lg:text-base">{coilCoreSolution}</div>
-                  <p className="text-slate-400 text-sm lg:text-base leading-relaxed break-words">{coilSolution}</p>
+                  <div className="page-body font-semibold text-white mb-2">{coilCoreSolution}</div>
+                  <p className="page-body text-white/70 break-words">{coilSolution}</p>
                 </div>
                 <div className="bg-[#002244]/35 rounded-lg p-4 border border-white/12">
-                  <div className="font-semibold text-white mb-2 text-sm lg:text-base">{coilTechAdvantage}</div>
-                  <ul className="space-y-1 text-sm lg:text-base text-slate-400">
+                  <div className="page-body font-semibold text-white mb-2">{coilTechAdvantage}</div>
+                  <ul className="space-y-1 page-body text-white/70">
                     <li className="break-words">• {coilAdv1}</li>
                     <li className="break-words">• {coilAdv2}</li>
                     <li className="break-words">• {coilAdv3}</li>
                   </ul>
                 </div>
                 <div className="bg-[#002244]/35 rounded-lg p-4 border border-white/12">
-                  <div className="font-semibold text-white mb-2 text-sm lg:text-base">{coilPhysicsMech}</div>
-                  <p className="text-slate-400 text-sm lg:text-base leading-relaxed break-words">{coilMech}</p>
+                  <div className="page-body font-semibold text-white mb-2">{coilPhysicsMech}</div>
+                  <p className="page-body text-white/70 break-words">{coilMech}</p>
                 </div>
                 <a
                   href={whitepaperHref}
@@ -129,12 +125,12 @@ export function ConsumerExpandableCard({
 
           {materials && (
             <div className="mt-4">
-              <div className="text-sm lg:text-base font-semibold text-white mb-2">{materialsLabel}</div>
+              <div className="page-body font-semibold text-white mb-2">{materialsLabel}</div>
               <div className="flex flex-wrap gap-2">
                 {materials.split("|").map((m, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-slate-200 text-xs sm:text-sm font-medium border border-white/12 break-words max-w-full"
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-white/80 page-caption font-medium border border-white/12 break-words max-w-full"
                   >
                     {m.trim()}
                   </span>
@@ -153,7 +149,6 @@ export function ConsumerExpandableCard({
               <Link href={productsHref}>{viewMaterialsLabel}</Link>
             </Button>
           </div>
-        </div>
       </div>
     </Card>
   )

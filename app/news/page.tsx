@@ -1,7 +1,6 @@
-import { Calendar, Building, Users, MapPin, Wrench, ChefHat, Cpu, FileText, ArrowRight, BookOpen, Zap, TrendingUp, Atom, Microscope } from "lucide-react"
+import { Calendar, ArrowRight } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
-import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { InPageAnchor, ScrollToHash } from "@/components/in-page-anchor"
 import { getIndustryArticles } from "@/lib/industry-articles"
 import { getTranslations } from "@/lib/translations"
@@ -25,18 +24,6 @@ const COMPANY_NEWS_IDS = [
   "2018-founding",
 ] as const
 
-const NEWS_ICONS = {
-  "2025-patents": FileText,
-  "2025-diamond-copper": Cpu,
-  "2024-nonstick": ChefHat,
-  "2023-brazing-tools": Wrench,
-  "2023-relocation": MapPin,
-  "2022-team": Users,
-  "2018-research-center": Building,
-  "2018-website": Building,
-  "2018-founding": Building,
-} as const
-
 export default async function NewsPage({
   params,
 }: {
@@ -54,14 +41,12 @@ export default async function NewsPage({
     title: t(`news.items.${id}.title`),
     summary: t(`news.items.${id}.summary`),
     category: t(`news.items.${id}.category`),
-    icon: NEWS_ICONS[id],
   }))
 
   return (
     <div className="min-h-screen bg-[#0B1F33]">
       <Navigation locale={validLocale} />
       <div className="relative overflow-x-clip">
-      <DarkPagePatternBg />
       <div className="relative z-10">
       <ScrollToHash />
 
@@ -87,31 +72,22 @@ export default async function NewsPage({
                 targetId="company-news"
                 className="group rounded-xl p-5 sm:p-8 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all "
               >
-                <div className="flex items-start gap-4">
-                  <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
-                    <Building className="h-7 w-7 text-white/80" />
-                  </div>
-                  <div className="flex-1">
+                <div>
                     <h3 className="page-h3 mb-2 text-white group-hover:text-white transition-colors">
                       {t("news.companyNews")}
                     </h3>
-                    <p className="page-caption text-white/75">
+                    <p className="page-body text-white/70">
                       {t("news.companyNewsDesc")}
                     </p>
                     <div className="mt-4 flex items-center text-white/80 page-caption font-medium">
                       {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
-                  </div>
                 </div>
               </InPageAnchor>
 
               {/* 行业信息卡片 */}
               <div className="group rounded-xl p-5 sm:p-8 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all ">
-                <div className="flex items-start gap-4">
-                  <div className="h-11 w-11 sm:h-14 sm:w-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0  transition-colors">
-                    <TrendingUp className="h-7 w-7 text-white/80" />
-                  </div>
-                  <div className="flex-1">
+                <div>
                     <InPageAnchor
                       targetId="industry-info"
                       className="block"
@@ -120,7 +96,7 @@ export default async function NewsPage({
                         {t("news.industryInfo")}
                       </h3>
                     </InPageAnchor>
-                    <p className="page-caption text-white/75 mb-4">
+                    <p className="page-body text-white/70 mb-4">
                       {t("news.industryInfoDesc")}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -143,7 +119,6 @@ export default async function NewsPage({
                         {t("news.frontierTech")}
                       </InPageAnchor>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -154,7 +129,7 @@ export default async function NewsPage({
       {/* Company News */}
       <section
         id="company-news"
-        className="py-10 sm:py-16 lg:py-24 border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
+        className="py-8 sm:py-14 lg:py-24 border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -170,11 +145,7 @@ export default async function NewsPage({
                   href={ensureTrailingSlash(`${prefix}/news/${news.id}`)}
                   className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                      <news.icon className="h-6 w-6 text-[#0F4C81]" />
-                    </div>
-                    <div className="flex-1">
+                  <div>
                       <div className="flex items-center gap-3 mb-2">
                         <span className="page-caption text-slate-500 flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
@@ -191,7 +162,6 @@ export default async function NewsPage({
                       <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                         {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
-                    </div>
                   </div>
                 </a>
               ))}
@@ -201,7 +171,7 @@ export default async function NewsPage({
       </section>
 
       {/* Industry Information */}
-      <section id="industry-info" className="py-10 sm:py-16 lg:py-24 border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
+      <section id="industry-info" className="py-8 sm:py-14 lg:py-24 border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.industryInfo")}</h2>
@@ -211,10 +181,7 @@ export default async function NewsPage({
 
             {/* 行业趋势 */}
             <div id="industry-trends" className="mb-8 sm:mb-10 lg:mb-12 scroll-mt-24">
-              <div className="flex items-center gap-3 mb-6">
-                <TrendingUp className="h-6 w-6 text-[#0F4C81]" />
-                <h3 className="page-h3 text-slate-900">{t("news.industryTrends")}</h3>
-              </div>
+              <h3 className="page-h3 text-slate-900 mb-6">{t("news.industryTrends")}</h3>
               <div className="space-y-6">
                 {industryArticlesData
                   .filter((a) => a.sectionId === "industry-trends")
@@ -224,11 +191,7 @@ export default async function NewsPage({
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
                       className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
-                        </div>
-                        <div className="flex-1">
+                      <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
                             {article.title}
                           </h4>
@@ -238,7 +201,6 @@ export default async function NewsPage({
                           <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
-                        </div>
                       </div>
                     </a>
                   ))}
@@ -247,10 +209,7 @@ export default async function NewsPage({
 
             {/* 基础理论 */}
             <div id="basic-theory" className="mb-8 sm:mb-10 lg:mb-12 scroll-mt-24">
-              <div className="flex items-center gap-3 mb-6">
-                <BookOpen className="h-6 w-6 text-[#0F4C81]" />
-                <h3 className="page-h3 text-slate-900">{t("news.basicTheory")}</h3>
-              </div>
+              <h3 className="page-h3 text-slate-900 mb-6">{t("news.basicTheory")}</h3>
               <div className="space-y-6">
                 {industryArticlesData
                   .filter((a) => a.sectionId === "basic-theory")
@@ -260,11 +219,7 @@ export default async function NewsPage({
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
                       className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
-                        </div>
-                        <div className="flex-1">
+                      <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
                             {article.title}
                           </h4>
@@ -274,7 +229,6 @@ export default async function NewsPage({
                           <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
-                        </div>
                       </div>
                     </a>
                   ))}
@@ -283,10 +237,7 @@ export default async function NewsPage({
 
             {/* 前沿技术 */}
             <div id="frontier-tech" className="mb-8 sm:mb-10 lg:mb-12 scroll-mt-24">
-              <div className="flex items-center gap-3 mb-6">
-                <Zap className="h-6 w-6 text-[#0F4C81]" />
-                <h3 className="page-h3 text-slate-900">{t("news.frontierTech")}</h3>
-              </div>
+              <h3 className="page-h3 text-slate-900 mb-6">{t("news.frontierTech")}</h3>
               <div className="space-y-6">
                 {industryArticlesData
                   .filter((a) => a.sectionId === "frontier-tech")
@@ -296,11 +247,7 @@ export default async function NewsPage({
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
                       className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="h-12 w-12 rounded-xl bg-[#E8EEFF] flex items-center justify-center flex-shrink-0">
-                          <article.icon className="h-6 w-6 text-[#0F4C81]" />
-                        </div>
-                        <div className="flex-1">
+                      <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
                             {article.title}
                           </h4>
@@ -310,7 +257,6 @@ export default async function NewsPage({
                           <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
-                        </div>
                       </div>
                     </a>
                   ))}

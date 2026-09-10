@@ -296,34 +296,34 @@ export default function DiamondCopperPage() {
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.diamondCopper.technicalDetails.coreTech")}</h3>
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 mb-6">
                 <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondCopper.technicalDetails.skeletonTitle")}</h4>
-                <p className="page-caption text-slate-600 mb-4">
+                <p className="page-body text-slate-600 mb-4">
                   {t("products.diamondCopper.technicalDetails.skeletonDesc")}
                 </p>
                 <div className="space-y-3">
                   <div className="p-3 bg-slate-50 rounded-lg">
                     <div className="page-caption font-semibold text-slate-700 mb-1">{t("products.diamondCopper.technicalDetails.gradingLogic")}</div>
-                    <div className="page-caption text-slate-600">{t("products.diamondCopper.technicalDetails.gradingLogicDesc")}</div>
+                    <div className="page-body text-slate-600">{t("products.diamondCopper.technicalDetails.gradingLogicDesc")}</div>
                   </div>
                   <div className="p-3 bg-slate-50 rounded-lg">
                     <div className="page-caption font-semibold text-slate-700 mb-1">{t("products.diamondCopper.technicalDetails.interfaceModification")}</div>
-                    <div className="page-caption text-slate-600">{t("products.diamondCopper.technicalDetails.interfaceModificationDesc")}</div>
+                    <div className="page-body text-slate-600">{t("products.diamondCopper.technicalDetails.interfaceModificationDesc")}</div>
                   </div>
                 </div>
               </Card>
 
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                 <h4 className="page-h4 mb-3 text-slate-900">{t("products.diamondCopper.technicalDetails.tospikeTitle")}</h4>
-                <p className="page-caption text-slate-600 mb-4">
+                <p className="page-body text-slate-600 mb-4">
                   {t("products.diamondCopper.technicalDetails.tospikeDesc")}
                 </p>
                 <div className="space-y-3">
                   <div className="p-3 bg-slate-50 rounded-lg">
                     <div className="page-caption font-semibold text-slate-700 mb-1">{t("products.diamondCopper.technicalDetails.techAdvantage")}</div>
-                    <div className="page-caption text-slate-600">{t("products.diamondCopper.technicalDetails.techAdvantageDesc")}</div>
+                    <div className="page-body text-slate-600">{t("products.diamondCopper.technicalDetails.techAdvantageDesc")}</div>
                   </div>
                   <div className="p-3 bg-slate-50 rounded-lg">
                     <div className="page-caption font-semibold text-slate-700 mb-1">{t("products.diamondCopper.technicalDetails.interfaceStrength")}</div>
-                    <div className="page-caption text-slate-600">{t("products.diamondCopper.technicalDetails.interfaceStrengthDesc")}</div>
+                    <div className="page-body text-slate-600">{t("products.diamondCopper.technicalDetails.interfaceStrengthDesc")}</div>
                   </div>
                 </div>
               </Card>
@@ -339,7 +339,7 @@ export default function DiamondCopperPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.diamondCopper.technicalDetails.step1Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.diamondCopper.technicalDetails.step1Desc")}
                       </p>
                     </div>
@@ -353,7 +353,7 @@ export default function DiamondCopperPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.diamondCopper.technicalDetails.step2Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.diamondCopper.technicalDetails.step2Desc")}
                       </p>
                     </div>
@@ -367,7 +367,7 @@ export default function DiamondCopperPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.diamondCopper.technicalDetails.step3Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.diamondCopper.technicalDetails.step3Desc")}
                       </p>
                     </div>
@@ -381,7 +381,7 @@ export default function DiamondCopperPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.diamondCopper.technicalDetails.step4Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.diamondCopper.technicalDetails.step4Desc")}
                       </p>
                     </div>
@@ -436,7 +436,7 @@ export default function DiamondCopperPage() {
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
               <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.diamondCopper.patents.patent1Title")}</h3>
-              <p className="page-caption text-slate-600 mb-4">
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.diamondCopper.patents.patent1Desc")}
               </p>
               <div className="text-xs text-slate-500">{t("products.diamondCopper.patents.patent1No")}</div>
@@ -445,7 +445,7 @@ export default function DiamondCopperPage() {
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
               <div className="text-xs font-medium text-[#0077b6] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.diamondCopper.patents.patent2Title")}</h3>
-              <p className="page-caption text-slate-600 mb-4">
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.diamondCopper.patents.patent2Desc")}
               </p>
               <div className="text-xs text-slate-500">{t("products.diamondCopper.patents.patent2No")}</div>

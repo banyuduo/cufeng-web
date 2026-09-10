@@ -152,7 +152,7 @@
   "products": {
     "backToProducts": "Back to Products",
     "title": "Product Matrix",
-    "subtitle": "From consumer-grade diamond nonstick coating to cutting-edge all-carbon composites, each technology represents a breakthrough in CuFeng Technology",
+    "subtitle": "From superabrasive tools to carbon-based thermal management materials.",
     "badge": {
       "inStock": "Samples Ready · Mature Solution",
       "gen2Core": "Strategic Core",
@@ -735,10 +735,10 @@
       "badge": "About Us",
       "title": "About Us",
       "tagline": "New technology, new peak",
-      "subtitle": "Originating from superabrasive tools, we have pivoted to high-performance thermal management materials. From superhard tool designers to carbon-based composite innovators, we are committed to being our customers' ideal solution provider."
+      "subtitle": "Originating from superabrasive tools, we have pivoted to high-performance thermal management materials. From superhard tool designers to carbon-based composite innovators, we are committed to being our customers' ideal solution partner."
     },
     "overview": {
-      "title": "CuFeng / ToSpike: Defining the physical boundaries of carbon-based interfaces",
+      "title": "CuFeng / ToSpike",
       "companyName": "Nanjing CuFeng Mechanical & Electrical Technology Co., LTD",
       "location": "Located in Jiangbei New Area, Nanjing",
       "companyProfile": "Company Profile",
@@ -747,10 +747,10 @@
       "rdCapability": "R&D & Engineering Capability",
       "rdDesc": "The company has over a decade of technical accumulation in vacuum interface metallurgy, active fusion bonding, and engineering applications. Through microscopic control of the active fusion bonding process, we have overcome processing bottlenecks for cast metals, carbon fiber composites (CFRP), and hard brittle materials in extreme manufacturing, providing vertical integration solutions from custom tools to frontier functional materials.",
       "evolution": "From Industrial Practice to Physics Exploration",
-      "evolution1": "We adhere to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is achieving strategic elevation from \"precision machining tools\" to \"high-performance functional material platform.\"",
-      "evolution2": "Through endogenous stress regulation based on sp³–sp² chemical bonding, we have achieved a material breakthrough with thermal conductivity ≥ 680 W/m·K, and continue to explore the infinite possibilities of carbon-based structures in superconductivity, unconventional transport, and quantum physics frontiers.",
+      "evolution1": "We adhere to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is shifting from \"precision machining tools\" to a \"high-performance functional material platform.\"",
+      "evolution2": "Through endogenous stress regulation based on sp³–sp² chemical bonding, we have achieved a material breakthrough with thermal conductivity ≥ 680 W/m·K, and continue to explore possible applications of carbon-based structures in superconductivity, unconventional transport, and quantum physics.",
       "vision": "Corporate Vision",
-      "visionDesc": "Committed to being our customers' ideal solution provider, delivering breakthrough material solutions for high-power-density thermal management, new energy, and solid-state batteries through sustained technological innovation.",
+      "visionDesc": "Committed to being our customers' ideal solution partner, delivering breakthrough material solutions for high-power-density thermal management, new energy, and solid-state batteries through sustained technological innovation.",
       "coreIdea": "Core Philosophy",
       "coreIdeaDesc": "New technology, new peak. Driven by technological innovation, we continuously break through materials science boundaries from superabrasive tools to carbon-based composite platforms, partnering with customers to climb new industry peaks."
     },
@@ -811,11 +811,11 @@
     }
   },
   "applications": {
-    "title": "Application Domain Matrix",
-    "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, the same core methodology is applied to different physical scenarios, forming a technology matrix from industrial thermal management to frontier physics exploration.",
+    "title": "Applications",
+    "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, the same core methodology is applied across domains from thermal management to frontier physics exploration.",
     "blueprint": {
-      "title": "Application Blueprint: From Underlying Physics to Full-Scenario Deployment",
-      "subtitle": "Cross-domain evolution path based on sp³–sp² hybrid bonding platform",
+      "title": "Application Blueprint",
+      "subtitle": "",
       "foundation": "sp³–sp² carbon-based hybrid bonding platform",
       "foundationLabel": "Foundation",
       "layer1Level": "L1: Core business (Current)",
@@ -1018,7 +1018,7 @@
     },
     "summary": {
       "title": "Systematic Output of Underlying Logic",
-      "tagline": "One starting point, multi-dimensional collapse, infinite engineering boundaries",
+      "tagline": "One starting point, infinite engineering boundaries",
       "desc": "Every application domain here is not isolated product development, but a \"collapse\" result of the core proposition of controlled sp³–sp² interface energy levels at different physical scales. From limit-case thermal management for 1000W+ instantaneous thermal shock to physical performance breakthroughs across interface thermal resistance, we consistently use the same underlying bonding logic to resolve performance bottlenecks across industries."
     },
     "cta": {
@@ -1079,8 +1079,8 @@
     "hero": {
       "title": "Technology Architecture & Evolution Path",
       "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering",
-      "desc": "A complete carbon-based, atomic-level interface engineering platform has been built, closing the loop from theoretical hypothesis to physical validation, with an airtight intellectual property protection network of 10 core patents. Through precise control of the sp³–sp² hybrid bonding network, material performance leaps have been achieved in the following three dimensions:",
-      "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
+      "desc": "A carbon-based atomic-level interface engineering platform. High-thermal-conductivity products prepared and validated. 10 core patents covering interface engineering, high-performance thermal management, and extreme-condition response.",
+      "dimensions": ""
     },
     "architecture": {
       "title": "Platform Architecture Overview",
@@ -1105,8 +1105,8 @@
       "visionPlanning": "Long-term planning stage"
     },
     "evolution": {
-      "sectionTitle": "Cross-Domain Cohesive Knowledge Chain: From Material Properties to Computing Core",
-      "sectionSubtitle": "An evolution path from engineering tools to physical computing potential",
+      "sectionTitle": "An evolution path from engineering tools to physical computing potential",
+      "sectionSubtitle": "",
       "start": "Start",
       "step1": "Step 1",
       "step2": "Step 2",
