@@ -53,10 +53,11 @@
       "achieved": "Currently achieved",
       "achievement1": "High thermal conductivity diamond-copper composite",
       "achievement1Value": "Lab-tested thermal conductivity ≥ 680 W/m·K",
-      "achievement1Note": "With further improvement potential",
-      "achievement2": "Capable of sample solution design and preparation, with small-batch custom delivery",
+      "achievement1Note": "",
+      "achievement2": "Capable of sample solution design and preparation",
+      "achievement2Value": "Small-batch custom delivery",
       "achievement2Note": "",
-      "platformFocus": "This platform focuses on AI computing, new energy thermal management, advanced interface materials, and high-hardness, high-conductivity applications, delivering breakthrough thermal management solutions for high-power-density electronic devices.",
+      "platformFocus": "Breakthrough thermal management solutions for high-power-density electronic devices.",
       "viewTechArchitecture": "View Technology Architecture",
       "viewTechApplications": "View Technology Applications",
       "projectCooperation": "Project Cooperation",
@@ -81,14 +82,6 @@
         "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
         "layer4MeltLabel": "Atomic covalent bridging"
       }
-    },
-    "techEvolution": {
-      "title": "Technology Evolution Path",
-      "desc": "Based on the same underlying platform, technology is evolving toward:",
-      "evolution1": "Advanced packaging thermal materials",
-      "evolution2": "High-power device thermal management",
-      "evolution3": "Solid-state battery structural skeleton",
-      "viewFullPath": "View Full Technology Architecture"
     },
     "features": {
       "innovation": "Source-Level Innovation",
@@ -260,7 +253,11 @@
         "cvdDiamond": "CVD diamond",
         "tospikePremium": "ToSpike Limit-Performance",
         "traditionalDiamondCu": "Traditional diamond-copper (70%)",
-        "pureCopper": "Pure copper"
+        "pureCopper": "Pure copper",
+        "sampleAlt": "Ni/Au-plated diamond-copper composite sample",
+        "sampleCaption": "Ni/Au-plated diamond-copper composite sample",
+        "microAlt": "Surface micrograph of the same Ni/Au-plated sample, 100x",
+        "microCaption": "Surface micrograph of the same Ni/Au-plated sample (100×)"
       },
       "applicationProspects": {
         "title": "Application Prospects",
@@ -1086,7 +1083,7 @@
       "dimensions": "· Interface Engineering | · High-Performance Thermal Management | · Extreme Condition Response"
     },
     "architecture": {
-      "title": "Technology Deepening Path & Platform Architecture Overview",
+      "title": "Platform Architecture Overview",
       "evolutionPath": "Evolution Path",
       "stage01Title": "Precision Active Fusion-Bonded Diamond Tools",
       "stage01Desc": "Establishing interface connection and structural stability engineering capability under extreme conditions",
@@ -1180,13 +1177,13 @@
       "mainTitle": "sp³–sp² Chemical Bonding and Endogenous Stress Structure",
       "mainDesc": "The chemical bonding structure is the core kernel naturally evolved in the all-carbon composite stage. Through synergistic action of endogenous stress and chemical bonding, this structure forms a material platform with long-term stability and scalability, providing foundation for subsequent functional materials and physical exploration.",
       "principleTitle": "Platform Core Principle",
-      "principleP1": "In the all-carbon composite system, carbon atoms can exist in different bonding modes:",
+      "principleP1": "Carbon bonding modes:",
       "sp3Role": "bonding primarily provides 3D rigid structure (similar to diamond)",
       "sp2Role": "bonding primarily provides 2D conductive/thermal plane (similar to graphite/graphene)",
       "principleP2": "Through high-temperature and high-pressure processes, atomic-level chemical bonding is achieved at the interface, generating a stable endogenous stress field and forming a unique",
       "stressAnchor": "stress anchoring",
       "principleP2b": " structure.",
-      "diagramTitle": "Principle: different parameter combinations generate different macroscopic functional domains",
+      "diagramTitle": "Different parameter combinations generate different macroscopic functional domains",
       "domain1Title": "sp³ dominant, relatively low sp² content",
       "domain1a": "Strong structural rigidity, high thermal stability",
       "domain1b": "Suitable for high-strength, wear-resistant, stable-condition materials",
@@ -1203,9 +1200,9 @@
       "tuning2Note": "(temperature, pressure, holding time)",
       "tuning3": "Particle size distribution",
       "tuningOutro": "to achieve target multi-scale structural states.",
-      "platformConclusion": "We call it the ",
-      "platformName": "all-carbon composite material platform",
-      "platformConclusionEnd": " not only because the \"multi-state carbon network\" with endogenous stress and chemical interconnection offers engineering functional-material advantages, but also because it opens exploration of a high-dimensional, complex property space.",
+      "platformConclusion": "",
+      "platformName": "The all-carbon composite material platform",
+      "platformConclusionEnd": " not only carries an endogenous-stress, chemically interconnected \"multi-state carbon network\" with engineering functional-material advantages, but also provides the possibility of exploring a complex property space.",
       "radarChartTitle": "Material System Comparison",
       "radarDim1": "Phonon Transmission",
       "radarDim1Mobile": "Phonon\nTransmission",
@@ -1224,8 +1221,8 @@
     "platformExtension": {
       "sectionBadge": "Platform Extension",
       "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp³–sp² Structure",
-      "sectionSubtitle": "Based on the stress engineering platform, exploring evolution potential of all-carbon sp³–sp² structure in extreme physics and future computing",
-      "intro": "In the demetallized all-carbon composite stage, we have built a class of continuous carbon network structures centered on sp³–sp² chemical bonding and endogenous stress fields. This structure has demonstrated excellent thermal conductivity, mechanical properties, and long-term stability at the engineering level, while at a higher level naturally opening a series of physical windows not yet fully explored.",
+      "sectionSubtitle": "Exploring the evolution potential of the all-carbon sp³–sp² structure in extreme physics and future computing",
+      "intro": "In the all-carbon composite stage, a continuous carbon network centered on sp³–sp² chemical bonding and endogenous stress fields has been built. At the engineering level, the structure has shown excellent thermal conductivity, mechanical properties, and long-term stability; at a higher level, it has also opened a series of physical windows not yet fully explored.",
       "superconductorTitle": "Electronic State Reconstruction and Unconventional Superconducting Potential Under High Internal Stress Regulation",
       "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing structural basis for unconventional superconductivity or related collective phenomena.",
       "superconductorP2": "In existing material systems, carbon-based structures simultaneously possessing strong endogenous stress, continuous sp³–sp² bonding, and engineerable tuning windows remain rare, making this platform unique in fundamental structure exploration for unconventional superconducting materials.",

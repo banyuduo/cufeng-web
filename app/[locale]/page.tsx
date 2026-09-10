@@ -39,19 +39,19 @@ export default async function HomePage({
               <p className="page-body page-measure text-white/70 mb-6">
                 {t("home.hero.platformFocus")}
               </p>
-              <Button
-                size="lg"
-                asChild
-                className="gap-2 w-full sm:w-auto bg-[#0F4C81] hover:bg-[#163A5F] text-white min-h-[44px] border-0 text-base"
-              >
-                <Link href={`/${validLocale}/patents`}>
-                  {t("home.hero.viewTechArchitecture")}
-                </Link>
-              </Button>
-              <div className="mt-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+                <Button
+                  size="lg"
+                  asChild
+                  className="gap-2 w-auto bg-[#0F4C81] hover:bg-[#163A5F] text-white min-h-[44px] border-0 text-base"
+                >
+                  <Link href={`/${validLocale}/patents`}>
+                    {t("home.hero.viewTechArchitecture")}
+                  </Link>
+                </Button>
                 <Link
                   href={`/${validLocale}/applications`}
-                  className="text-white/80 hover:text-white text-sm lg:text-base font-medium underline-offset-4 hover:underline"
+                  className="page-body text-white/80 hover:text-white font-medium underline-offset-4 hover:underline min-h-[44px] inline-flex items-center"
                 >
                   {t("home.hero.viewTechApplications")}
                 </Link>
@@ -97,24 +97,8 @@ export default async function HomePage({
                   mechanismItem4: t("home.platform.diagram.layer2Item4"),
                   mechanismItem5: t("home.platform.diagram.layer2Item5"),
                   mechanismItem6: t("home.platform.diagram.layer2Item6"),
-                  platformAttr: t("home.platform.diagram.platformAttr"),
                 }}
               />
-            </div>
-
-            {/* 技术演化路径 */}
-            <div>
-              <h2 className="page-h2 text-white text-center mb-4 sm:mb-6 lg:mb-8">
-                {t("home.techEvolution.title")}
-              </h2>
-              <div className="text-white/75">
-                <p className="page-body mb-3">{t("home.techEvolution.desc")}</p>
-                <ul className="page-body list-disc pl-5 space-y-2">
-                  <li>{t("home.techEvolution.evolution1")}</li>
-                  <li>{t("home.techEvolution.evolution2")}</li>
-                  <li>{t("home.techEvolution.evolution3")}</li>
-                </ul>
-              </div>
             </div>
 
             {/* 阶段性成果：已实现条目 + 工艺/样品/IP */}
@@ -122,7 +106,7 @@ export default async function HomePage({
               <h2 className="page-h2 text-white text-center mb-5 sm:mb-8 lg:mb-10">
                 {t("home.results.title")}
               </h2>
-              <ol className="space-y-4 sm:space-y-5 lg:space-y-8 max-w-3xl lg:max-w-none mb-8 sm:mb-12 lg:mb-14">
+              <ol className="space-y-5 sm:space-y-6 max-w-3xl mx-auto mb-8 sm:mb-10">
                 <li>
                   <p className="page-h3 text-white mb-1.5">
                     <span className="text-white/45 font-medium">1. </span>
@@ -131,25 +115,18 @@ export default async function HomePage({
                   <p className="page-body text-white/70">
                     {t("home.hero.achievement1Value")}
                   </p>
-                  {t("home.hero.achievement1Note") ? (
-                    <p className="page-caption text-white/55 mt-1">
-                      {t("home.hero.achievement1Note")}
-                    </p>
-                  ) : null}
                 </li>
                 <li>
                   <p className="page-h3 text-white mb-1.5">
                     <span className="text-white/45 font-medium">2. </span>
                     {t("home.hero.achievement2")}
                   </p>
-                  {t("home.hero.achievement2Note") ? (
-                    <p className="page-caption text-white/55 mt-1">
-                      {t("home.hero.achievement2Note")}
-                    </p>
-                  ) : null}
+                  <p className="page-body text-white/70">
+                    {t("home.hero.achievement2Value")}
+                  </p>
                 </li>
               </ol>
-              <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 border-t border-white/15 pt-6 sm:pt-8 lg:pt-10">
+              <div className="grid md:grid-cols-3 gap-5 md:gap-6 border-t border-white/15 pt-6 sm:pt-8">
                 <div>
                   <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>
