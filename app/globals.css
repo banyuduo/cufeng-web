@@ -94,22 +94,22 @@
    中文默认：正常字距、略松行高。英文由 [data-locale="en"] / :lang(en) 收紧。 */
 @layer components {
   .page-h1 {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold break-words;
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium break-words;
     letter-spacing: 0;
-    line-height: 1.18;
+    line-height: 1.22;
   }
   .page-h2 {
     @apply text-2xl md:text-3xl lg:text-4xl font-bold break-words;
     letter-spacing: 0;
-    line-height: 1.28;
+    line-height: 1.32;
   }
   .page-h3 {
-    @apply text-base md:text-lg lg:text-xl font-semibold break-words;
+    @apply text-lg md:text-lg lg:text-xl font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.4;
   }
   .page-h4 {
-    @apply text-sm md:text-base lg:text-lg font-semibold break-words;
+    @apply text-base md:text-base lg:text-lg font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.4;
   }
@@ -124,21 +124,21 @@
   }
   .page-lead {
     @apply text-base md:text-lg lg:text-xl font-normal break-words;
-    line-height: 1.75;
+    line-height: 1.65;
   }
   .page-body {
     @apply text-sm md:text-base font-normal;
-    line-height: 1.75;
+    line-height: 1.7;
   }
   .page-caption {
-    @apply text-sm lg:text-base font-normal;
-    line-height: 1.7;
+    @apply text-xs md:text-sm font-normal;
+    line-height: 1.6;
   }
   .section-container {
     @apply max-w-6xl mx-auto px-6 lg:px-8;
   }
   .section-block {
-    @apply py-10 sm:py-16 lg:py-24 px-6 lg:px-8;
+    @apply py-8 sm:py-14 lg:py-24 px-6 lg:px-8;
   }
   .page-measure {
     @apply max-w-3xl mx-auto;
@@ -213,6 +213,18 @@
   html:lang(en) .page-h1,
   [data-locale="en"] .page-h1 {
     line-height: 1.05;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-lead {
+    line-height: 1.75;
+  }
+  .page-body {
+    line-height: 1.75;
+  }
+  .page-caption {
+    line-height: 1.65;
   }
 }
 
@@ -344,4 +356,15 @@
 .page-lead.text-white\/90,
 .page-lead.text-white\/85 {
   color: rgb(255 255 255 / 0.75);
+}
+/* 深色页：slate 正文并入同一套白字透明度，避免与首页 white/70 分叉 */
+.page-lead.text-slate-300,
+.page-body.text-slate-300,
+.page-caption.text-slate-300 {
+  color: rgb(255 255 255 / 0.7);
+}
+.page-lead.text-slate-400,
+.page-body.text-slate-400,
+.page-caption.text-slate-400 {
+  color: rgb(255 255 255 / 0.55);
 }

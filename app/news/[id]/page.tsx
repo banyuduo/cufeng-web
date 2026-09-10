@@ -1,16 +1,4 @@
-import {
-  Calendar,
-  ArrowLeft,
-  Building,
-  Users,
-  MapPin,
-  Wrench,
-  ChefHat,
-  Cpu,
-  FileText,
-  Tag,
-  User,
-} from "lucide-react"
+import { Calendar, ArrowLeft, Tag, User } from "lucide-react"
 import { Link } from "@/components/app-link"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
@@ -24,20 +12,7 @@ import {
 import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
 import { getTranslations } from "@/lib/translations"
 import { getCompanyNews, getCompanyNewsIds } from "@/lib/company-news"
-import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 import { ensureTrailingSlash } from "@/lib/site-path"
-
-const NEWS_ICONS: Record<string, typeof FileText> = {
-  "2025-patents": FileText,
-  "2025-diamond-copper": Cpu,
-  "2024-nonstick": ChefHat,
-  "2023-brazing-tools": Wrench,
-  "2023-relocation": MapPin,
-  "2022-team": Users,
-  "2018-research-center": Building,
-  "2018-website": Building,
-  "2018-founding": Building,
-}
 
 // 生成静态路径参数，用于静态导出（无 locale 的旧路由）
 export async function generateStaticParams() {
@@ -46,8 +21,6 @@ export async function generateStaticParams() {
 }
 
 function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticle; prefix: string; t: (key: string) => string }) {
-  const IconComponent = article.icon
-
   return (
     <>
       {/* 面包屑 */}
@@ -89,11 +62,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
 
             {/* 文章头部 */}
             <header className="mb-16">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <IconComponent className="h-7 w-7 text-primary" />
-                </div>
-                <div className="flex-1">
+              <div className="mb-6">
                   <span className="page-caption px-3 py-1.5 bg-slate-100 rounded-full text-slate-700 font-medium tracking-wide">
                     {article.category}
                   </span>
@@ -123,7 +92,6 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
                       ))}
                     </div>
                   )}
-                </div>
               </div>
               <h1 className="page-h1 text-slate-900 tracking-tight leading-[1.15]">
                 {article.title}
@@ -170,12 +138,10 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
 
 function CompanyNewsDetail({
   news,
-  IconComponent,
   prefix,
   t,
 }: {
   news: { date: string; title: string; category: string; content: string[] }
-  IconComponent: React.ComponentType<{ className?: string }>
   prefix: string
   t: (key: string) => string
 }) {
@@ -210,11 +176,7 @@ function CompanyNewsDetail({
 
             {/* Article Header */}
             <header className="mb-6 sm:mb-8 lg:mb-12">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <IconComponent className="h-6 w-6 text-primary" />
-                </div>
-                <div>
+              <div className="mb-4">
                   <span className="text-xs px-2 py-1 bg-secondary rounded-full text-secondary-foreground">
                     {news.category}
                   </span>
@@ -222,7 +184,6 @@ function CompanyNewsDetail({
                     <Calendar className="h-4 w-4" />
                     {news.date}
                   </div>
-                </div>
               </div>
               <h1 className="page-h1 text-slate-900 text-balance">{news.title}</h1>
             </header>
@@ -282,18 +243,16 @@ export default async function NewsDetailPage({
   }
 
   const t = await getTranslations(validLocale)
-  const NewsIcon = companyNews ? NEWS_ICONS[id] ?? Building : Building
 
   return (
-    <div className="min-h-screen relative">
-      <DarkPagePatternBg />
+    <div className="min-h-screen relative bg-[#F9FAFC]">
       <Navigation locale={validLocale} />
       <div className="relative z-10">
 
       {industryArticle ? (
         <IndustryArticleDetail article={industryArticle} prefix={prefix} t={t} />
       ) : companyNews ? (
-        <CompanyNewsDetail news={companyNews} IconComponent={NewsIcon} prefix={prefix} t={t} />
+        <CompanyNewsDetail news={companyNews} prefix={prefix} t={t} />
       ) : null}
 
       <FooterNav locale={validLocale} />

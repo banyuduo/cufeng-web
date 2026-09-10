@@ -219,7 +219,7 @@ export function HeroPlatformDiagram({
             <SectionTitle>{s.limitsTitle}</SectionTitle>
             <p
               className={cn(
-                "page-caption text-white/70 text-center leading-relaxed",
+                "page-body text-white/70 text-center",
                 isEn && "text-pretty tracking-tight"
               )}
             >
@@ -295,7 +295,7 @@ export function HeroPlatformDiagram({
           </h4>
           <p
             className={cn(
-              "page-caption text-white/90 leading-relaxed",
+              "page-body text-white/80",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -303,7 +303,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-caption text-white/80 leading-relaxed mt-1",
+              "page-body text-white/70 mt-1",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -349,7 +349,7 @@ export function HeroPlatformDiagram({
         <div className={cn(panel, "max-w-3xl mx-auto w-full")}>
           <p
             className={cn(
-              "page-caption text-white/90 leading-relaxed mb-1.5",
+              "page-body text-white/80 mb-1.5",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -357,7 +357,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-caption text-white/80 leading-relaxed mb-1.5",
+              "page-body text-white/70 mb-1.5",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -365,7 +365,7 @@ export function HeroPlatformDiagram({
           </p>
           <p
             className={cn(
-              "page-caption text-white/80 leading-relaxed",
+              "page-body text-white/70",
               isEn && "text-pretty tracking-tight"
             )}
           >
@@ -417,7 +417,7 @@ export function HeroPlatformDiagram({
         <div className="border-t border-white/10 px-4 py-4 sm:px-6 sm:py-5 lg:px-10 lg:py-6">
           <p
             className={cn(
-              "page-caption text-white/85 text-center leading-relaxed max-w-2xl mx-auto text-balance",
+              "page-body text-white/70 text-center max-w-2xl mx-auto text-balance",
               isEn && "tracking-tight text-pretty"
             )}
           >

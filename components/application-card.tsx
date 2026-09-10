@@ -9,7 +9,7 @@ interface ApplicationCardProps {
   items: string[]
   description: string
   color: string
-  icon: ReactNode
+  icon?: ReactNode
   tag: string
   href?: string
   iconWrapperClassName?: string
@@ -46,9 +46,11 @@ export function ApplicationCard({
     >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-4 min-w-0">
-          <div className={`mt-1 p-2 rounded-lg border flex-shrink-0 ${iconWrapperClassName ?? "bg-white/[0.04] border-white/12"}`}>
-            {icon}
-          </div>
+          {icon ? (
+            <div className={`mt-1 p-2 rounded-lg border flex-shrink-0 ${iconWrapperClassName ?? "bg-white/[0.04] border-white/12"}`}>
+              {icon}
+            </div>
+          ) : null}
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-3 mb-1 flex-wrap">
               <span className={`text-xs font-mono tracking-tighter ${levelClassName ?? "text-slate-500"}`}>{level}</span>
@@ -57,7 +59,7 @@ export function ApplicationCard({
             <h3 className="page-h3 text-white">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">
               {items.map((item, i) => (
-                <span key={i} className="page-caption text-slate-300 flex items-center gap-1 text-balance italic break-words">
+                <span key={i} className="page-caption text-white/70 flex items-center gap-1 text-balance italic break-words">
                   <ArrowUpRight className="w-3 h-3 text-slate-500 flex-shrink-0" /> {item}
                 </span>
               ))}
@@ -65,7 +67,7 @@ export function ApplicationCard({
           </div>
         </div>
         <div className="md:max-w-[280px] min-w-0">
-          <p className="page-caption text-slate-400 md:text-right italic break-words">
+          <p className="page-caption text-white/55 md:text-right italic break-words">
             {description}
           </p>
         </div>

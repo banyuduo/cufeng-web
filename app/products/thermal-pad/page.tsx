@@ -127,7 +127,7 @@ export default function ThermalPadPage() {
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.technicalDetails.designTitle")}</h3>
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 mb-6">
                 <h4 className="page-h4 mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.skeletonTitle")}</h4>
-                <p className="page-caption text-slate-600 mb-4">
+                <p className="page-body text-slate-600 mb-4">
                   {t("products.thermalPad.technicalDetails.skeletonDesc")}
                 </p>
                 <ul className="space-y-2 page-caption text-slate-600">
@@ -144,7 +144,7 @@ export default function ThermalPadPage() {
 
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                 <h4 className="page-h4 mb-3 text-slate-900">{t("products.thermalPad.technicalDetails.enhancementTitle")}</h4>
-                <p className="page-caption text-slate-600 mb-4">
+                <p className="page-body text-slate-600 mb-4">
                   {t("products.thermalPad.technicalDetails.enhancementDesc")}
                 </p>
                 <div className="grid grid-cols-2 gap-3">
@@ -170,7 +170,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step1Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.thermalPad.technicalDetails.step1Desc")}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step2Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.thermalPad.technicalDetails.step2Desc")}
                       </p>
                     </div>
@@ -198,7 +198,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step3Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.thermalPad.technicalDetails.step3Desc")}
                       </p>
                     </div>
@@ -212,7 +212,7 @@ export default function ThermalPadPage() {
                     </div>
                     <div>
                       <h4 className="page-h4 mb-2 text-slate-900">{t("products.thermalPad.technicalDetails.step4Title")}</h4>
-                      <p className="page-caption text-slate-600">
+                      <p className="page-body text-slate-600">
                         {t("products.thermalPad.technicalDetails.step4Desc")}
                       </p>
                     </div>
@@ -289,7 +289,7 @@ export default function ThermalPadPage() {
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("products.thermalPad.patents.patentTitle")}
               </h3>
-              <p className="page-caption text-slate-600 mb-4">
+              <p className="page-body text-slate-600 mb-4">
                 {t("products.thermalPad.patents.patentDesc")}
               </p>
               <div className="pt-4 border-t border-slate-200">
