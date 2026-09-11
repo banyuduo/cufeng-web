@@ -130,7 +130,7 @@ function Sp3Tetrahedron({ className }: { className?: string }) {
 
 function FlowArrow() {
   return (
-    <div className="flex items-center justify-center py-0.5 sm:py-1" aria-hidden>
+    <div className="flex items-center justify-center py-0.5 lg:py-0" aria-hidden>
       <ArrowDown className="w-4 h-4 text-white/40" />
     </div>
   )
@@ -138,7 +138,7 @@ function FlowArrow() {
 
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
-    <h4 className="page-h4 text-white mb-2 text-center text-balance px-1 lg:min-h-[2.8em] lg:flex lg:items-end lg:justify-center">
+    <h4 className="page-h4 text-white mb-1.5 text-center text-balance px-1">
       {children}
     </h4>
   )
@@ -154,11 +154,41 @@ function Section({
   return (
     <div
       className={cn(
-        "px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8 lg:py-5",
+        "px-4 py-3 sm:px-6 sm:py-3.5 lg:px-6 lg:py-2",
         className
       )}
     >
       {children}
+    </div>
+  )
+}
+
+function BottomNote({
+  title,
+  lines,
+  isEn,
+}: {
+  title?: string
+  lines: string[]
+  isEn: boolean
+}) {
+  return (
+    <div className="mt-auto pt-3 border-t border-white/10 text-center">
+      {title ? (
+        <h4 className="page-h4 text-white mb-1 text-balance">{title}</h4>
+      ) : null}
+      {lines.map((line, index) => (
+        <p
+          key={line}
+          className={cn(
+            "page-body text-white/75",
+            index > 0 && "mt-0.5 text-white/70",
+            isEn && "text-pretty tracking-tight"
+          )}
+        >
+          {line}
+        </p>
+      ))}
     </div>
   )
 }
@@ -192,17 +222,17 @@ export function HeroPlatformDiagram({
     {
       key: "sp2",
       label: s.sp2LayerLabel,
-      figure: <Sp2Lattice className="w-[92%] max-w-24 lg:max-w-[7.5rem] h-auto text-white/75" />,
+      figure: <Sp2Lattice className="w-[92%] max-w-24 lg:max-w-[6.5rem] h-auto text-white/75" />,
     },
     {
       key: "bridge",
       label: s.layer4MeltLabel,
-      figure: <CovalentBridge className="w-[94%] max-w-[7.5rem] lg:max-w-40 h-auto text-white/75" />,
+      figure: <CovalentBridge className="w-[94%] max-w-[7.5rem] lg:max-w-36 h-auto text-white/75" />,
     },
     {
       key: "sp3",
       label: s.sp3LayerLabel,
-      figure: <Sp3Tetrahedron className="w-[88%] max-w-24 lg:max-w-[7.5rem] h-auto text-white/75" />,
+      figure: <Sp3Tetrahedron className="w-[88%] max-w-24 lg:max-w-[6.5rem] h-auto text-white/75" />,
     },
   ]
 
@@ -213,8 +243,10 @@ export function HeroPlatformDiagram({
     >
       {hasLimits && (
         <Section>
-          <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 sm:px-5 sm:py-3 lg:px-6 lg:py-3.5 max-w-3xl mx-auto">
-            <SectionTitle>{s.limitsTitle}</SectionTitle>
+          <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2 sm:px-5 sm:py-2.5 lg:px-5 lg:py-2 max-w-4xl mx-auto lg:flex lg:items-baseline lg:justify-center lg:gap-3">
+            <h4 className="page-h4 text-white mb-1 lg:mb-0 text-center text-balance shrink-0">
+              {s.limitsTitle}
+            </h4>
             <p
               className={cn(
                 "page-body text-white/70 text-center",
@@ -230,23 +262,23 @@ export function HeroPlatformDiagram({
       {hasLimits ? <FlowArrow /> : null}
 
       <div className="lg:grid lg:grid-cols-2 lg:items-stretch">
-      <Section className="border-t border-white/10 h-full">
+      <Section className="border-t border-white/10 h-full flex flex-col">
         <SectionTitle>{s.layer2Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-3 text-balance lg:min-h-[1.6em] lg:flex lg:items-end lg:justify-center",
-            isEn && "tracking-tight lg:min-h-[2.6em]"
+            "page-caption text-white/55 text-center mb-2.5 text-balance",
+            isEn && "tracking-tight"
           )}
         >
           {s.layer2Text}
         </p>
-        <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-3 sm:mb-4 lg:mb-5">
+        <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-3">
           {[s.layer2Thermal, s.layer2Mechanical, s.layer2Electrical].map(
             (label) => (
               <li
                 key={label}
                 className={cn(
-                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 text-white/85 min-w-0 min-h-[2.75rem] h-full flex items-center justify-center",
+                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2 lg:px-3 lg:py-2 text-white/85 min-w-0 min-h-[2.5rem] flex items-center justify-center",
                   chipText
                 )}
               >
@@ -267,11 +299,11 @@ export function HeroPlatformDiagram({
               ].map(([title, body]) => (
                 <div
                   key={title}
-                  className="rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3.5 sm:py-3 lg:px-4 lg:py-3 text-center h-full min-w-0"
+                  className="rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-2.5 text-center h-full min-w-0"
                 >
                   <p
                     className={cn(
-                      "page-body font-medium text-white mb-1 text-balance break-words lg:min-h-[2.6em] lg:flex lg:items-end lg:justify-center",
+                      "page-body font-medium text-white mb-0.5 text-balance break-words",
                       isEn && "tracking-tight"
                     )}
                   >
@@ -290,35 +322,41 @@ export function HeroPlatformDiagram({
             </div>
           </>
         )}
+
+        <BottomNote
+          title={s.layer3Title}
+          lines={[s.layer3Line1, s.layer3Line2]}
+          isEn={isEn}
+        />
       </Section>
 
       <div className="lg:hidden">
         <FlowArrow />
       </div>
 
-      <Section className="border-t border-white/10 lg:border-l h-full">
+      <Section className="border-t border-white/10 lg:border-l h-full flex flex-col">
         <SectionTitle>{s.layer4Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-3 text-balance lg:min-h-[1.6em] lg:flex lg:items-end lg:justify-center",
-            isEn && "tracking-tight lg:min-h-[2.6em]"
+            "page-caption text-white/55 text-center mb-2.5 text-balance",
+            isEn && "tracking-tight"
           )}
         >
           {s.atomicTitle}
         </p>
-        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden mb-3">
+        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden">
           <div className="grid grid-cols-3 divide-x divide-white/12">
             {layers.map((layer) => (
               <div
                 key={layer.key}
-                className="flex flex-col items-center justify-start px-1 py-2 sm:px-3 sm:py-3 lg:px-4 lg:py-4 min-w-0"
+                className="flex flex-col items-center justify-start px-1 py-2 sm:px-3 sm:py-2.5 lg:px-3 lg:py-3 min-w-0"
               >
-                <div className="flex h-16 sm:h-[4.75rem] lg:h-20 w-full items-center justify-center">
+                <div className="flex h-14 sm:h-16 lg:h-[4.25rem] w-full items-center justify-center">
                   {layer.figure}
                 </div>
                 <p
                   className={cn(
-                    "mt-1 sm:mt-1.5 page-caption text-white font-medium text-center break-words min-h-[2.6em] flex items-start justify-center",
+                    "mt-1 page-caption text-white font-medium text-center break-words min-h-[2.4em] flex items-start justify-center",
                     isEn && "tracking-tight"
                   )}
                 >
@@ -328,53 +366,11 @@ export function HeroPlatformDiagram({
             ))}
           </div>
         </div>
-        <div className="max-w-3xl mx-auto w-full text-center">
-          <p
-            className={cn(
-              "page-body text-white/80",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer4Line1}
-          </p>
-          <p
-            className={cn(
-              "page-body text-white/70 mt-0.5",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer4Line2}
-          </p>
-          <p
-            className={cn(
-              "page-body text-white/70 mt-0.5",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer4Line3}
-          </p>
-        </div>
-        <div className="max-w-3xl mx-auto w-full text-center mt-4 pt-3 border-t border-white/10">
-          <h4 className="page-h4 text-white mb-1.5 text-balance">
-            {s.layer3Title}
-          </h4>
-          <p
-            className={cn(
-              "page-body text-white/75",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer3Line1}
-          </p>
-          <p
-            className={cn(
-              "page-body text-white/70 mt-0.5",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer3Line2}
-          </p>
-        </div>
+
+        <BottomNote
+          lines={[s.layer4Line1, s.layer4Line2, s.layer4Line3]}
+          isEn={isEn}
+        />
       </Section>
       </div>
 
@@ -394,7 +390,7 @@ export function HeroPlatformDiagram({
                   <p
                     key={label}
                     className={cn(
-                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 min-w-0 min-h-[2.75rem] h-full flex items-center justify-center",
+                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2 lg:px-3 lg:py-2 min-w-0 min-h-[2.5rem] h-full flex items-center justify-center",
                       chipText
                     )}
                   >
@@ -406,7 +402,7 @@ export function HeroPlatformDiagram({
             {s.applicationHint ? (
               <p
                 className={cn(
-                  "page-caption text-center text-white/55 mt-2 text-balance",
+                  "page-caption text-center text-white/55 mt-1.5 text-balance",
                   isEn && "tracking-tight"
                 )}
               >
