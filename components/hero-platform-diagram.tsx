@@ -6,6 +6,7 @@ import { useLocale } from "@/components/locale-provider"
 import { cn } from "@/lib/utils"
 
 export type HeroDiagramStrings = {
+  diagramTitle?: string
   layer1Title: string
   layer1Text: string
   layer2Title: string
@@ -28,7 +29,6 @@ export type HeroDiagramStrings = {
   applicationTim?: string
   applicationSubstrate?: string
   applicationDevices?: string
-  applicationHint?: string
   limitsTitle?: string
   limitsLabel?: string
   mechanismTitle?: string
@@ -241,6 +241,14 @@ export function HeroPlatformDiagram({
       data-diagram-locale={locale}
       className="w-full rounded-2xl border border-white/16 bg-white/[0.03] overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
     >
+      {s.diagramTitle ? (
+        <div className="border-b border-white/10 px-4 py-3 sm:px-6 sm:py-3.5 lg:px-6 lg:py-2.5">
+          <h2 className="page-h3 text-white text-center text-balance">
+            {s.diagramTitle}
+          </h2>
+        </div>
+      ) : null}
+
       {hasLimits && (
         <Section>
           <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2 sm:px-5 sm:py-2.5 lg:px-5 lg:py-2 max-w-4xl mx-auto lg:flex lg:items-baseline lg:justify-center lg:gap-3">
@@ -399,16 +407,6 @@ export function HeroPlatformDiagram({
                 )
               )}
             </div>
-            {s.applicationHint ? (
-              <p
-                className={cn(
-                  "page-caption text-center text-white/55 mt-1.5 text-balance",
-                  isEn && "tracking-tight"
-                )}
-              >
-                {s.applicationHint}
-              </p>
-            ) : null}
           </Section>
         </>
       )}
