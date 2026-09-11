@@ -428,7 +428,7 @@ export default function PatentsPage() {
             {t("patents.platformCore.tuningOutro")}
           </p>
 
-          <div className="mb-12 sm:mb-14">
+          <div>
             <h3 className="page-h3 text-white mb-5 text-center">
               {t("patents.platformCore.radarChartTitle")}
             </h3>
@@ -451,54 +451,6 @@ export default function PatentsPage() {
               }}
             />
           </div>
-
-          <p className="page-body text-white/70 max-w-3xl mx-auto text-center italic border-t border-white/10 pt-8 sm:pt-10">
-            {t("patents.platformCore.platformConclusion")}
-            <strong className="text-white not-italic font-medium">{t("patents.platformCore.platformName")}</strong>
-            {t("patents.platformCore.platformConclusionEnd")}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-14 lg:py-14">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
-            <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
-            <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
-          </div>
-
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
-                {t("patents.platformExtension.superconductorP1")}
-              </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
-                {t("patents.platformExtension.superconductorP2")}
-              </p>
-            </Card>
-
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
-                {t("patents.platformExtension.chaosP1")}
-              </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
-                {t("patents.platformExtension.chaosP2")}
-              </p>
-            </Card>
-
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
-                {t("patents.platformExtension.quantumP1")}
-              </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
-                {t("patents.platformExtension.quantumP2")}
-              </p>
-            </Card>
-          </div>
-
-          <p className="page-caption text-white/55 text-center italic max-w-3xl mx-auto">
-            {t("patents.platformExtension.disclaimer")}
-          </p>
         </div>
       </section>
 
@@ -662,6 +614,53 @@ export default function PatentsPage() {
             </div>
             </>
             ) : null}
+        </div>
+      </section>
+
+      <section className="py-8 sm:py-14 lg:py-14">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <p className="page-body text-white/70 max-w-3xl mx-auto text-center italic mb-6 sm:mb-8">
+            {t("patents.platformCore.platformConclusion")}
+            <strong className="text-white not-italic font-medium">{t("patents.platformCore.platformName")}</strong>
+            {t("patents.platformCore.platformConclusionEnd")}
+          </p>
+          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
+            <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
+            <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
+          </div>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
+            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
+              <p className="page-body text-white/75 mb-4">
+                {t("patents.platformExtension.superconductorP1")}
+              </p>
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
+                {t("patents.platformExtension.superconductorP2")}
+              </p>
+            </Card>
+
+            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
+              <p className="page-body text-white/75 mb-4">
+                {t("patents.platformExtension.chaosP1")}
+              </p>
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
+                {t("patents.platformExtension.chaosP2")}
+              </p>
+            </Card>
+
+            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
+              <p className="page-body text-white/75 mb-4">
+                {t("patents.platformExtension.quantumP1")}
+              </p>
+              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
+                {t("patents.platformExtension.quantumP2")}
+              </p>
+            </Card>
+          </div>
+
+          <p className="page-caption text-white/55 text-center italic max-w-3xl mx-auto">
+            {t("patents.platformExtension.disclaimer")}
+          </p>
         </div>
       </section>
 
