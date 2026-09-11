@@ -47,9 +47,9 @@ export default async function ApplicationsPage({
   ] as const
 
   return (
-    <div className="page-stage min-h-screen relative">
+    <div className="page-stage min-h-screen">
       <Navigation locale={validLocale} />
-      <div className="relative z-10">
+      <div>
 
       <PageHero
         variant="dark"

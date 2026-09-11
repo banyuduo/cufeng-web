@@ -46,8 +46,8 @@ export default async function NewsPage({
   return (
     <div className="page-stage min-h-screen">
       <Navigation locale={validLocale} />
-      <div className="relative overflow-x-clip">
-      <div className="relative z-10">
+      <div className="overflow-x-clip">
+      <div>
       <ScrollToHash />
 
       {/* Hero Section */}

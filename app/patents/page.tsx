@@ -344,7 +344,7 @@ export default function PatentsPage() {
 
               {expandedStage === 4 && (
                 <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg italic">
+                  <p className="page-body text-white/70 bg-white/[0.03] p-4 rounded-lg max-w-3xl">
                     {t("patents.evolutionPath.stage04Explanation")}
                   </p>
                 </div>
@@ -467,13 +467,7 @@ export default function PatentsPage() {
             <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
           </div>
 
-          <p className="page-body text-white/75 text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
-            {t("patents.platformExtension.intro")}
-          </p>
-
-          {/* Three exploration direction cards */}
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
-            {/* Direction 1: Electronic state reconstruction */}
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.superconductorP1")}
@@ -483,7 +477,6 @@ export default function PatentsPage() {
               </p>
             </Card>
 
-            {/* Direction 2: Chaotic dynamics */}
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.chaosP1")}
@@ -493,7 +486,6 @@ export default function PatentsPage() {
               </p>
             </Card>
 
-            {/* Direction 3: Physical computing */}
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <p className="page-body text-white/75 mb-4">
                 {t("patents.platformExtension.quantumP1")}

@@ -22,26 +22,26 @@ const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 const DATASETS = [
   {
     data: [40, 85, 30, 20, 70],
-    stroke: "rgba(186, 198, 212, 0.95)",
-    fill: "rgba(186, 198, 212, 0.08)",
-    point: "rgba(186, 198, 212, 1)",
-    strokeWidth: 1.8,
+    stroke: "rgba(232, 179, 74, 0.98)",
+    fill: "rgba(232, 179, 74, 0.16)",
+    point: "rgba(232, 179, 74, 1)",
+    strokeWidth: 2,
     labelKey: "diamondCu" as const,
   },
   {
     data: [60, 80, 60, 30, 90],
-    stroke: "rgba(96, 140, 196, 1)",
-    fill: "rgba(96, 140, 196, 0.14)",
-    point: "rgba(120, 164, 214, 1)",
-    strokeWidth: 2,
+    stroke: "rgba(56, 189, 248, 0.98)",
+    fill: "rgba(56, 189, 248, 0.14)",
+    point: "rgba(125, 211, 252, 1)",
+    strokeWidth: 2.1,
     labelKey: "diamondSiC" as const,
   },
   {
     data: [95, 95, 95, 95, 85],
     stroke: "rgba(248, 250, 252, 1)",
-    fill: "rgba(176, 208, 228, 0.28)",
+    fill: "rgba(42, 127, 196, 0.42)",
     point: "rgba(248, 250, 252, 1)",
-    strokeWidth: 2.6,
+    strokeWidth: 2.7,
     labelKey: "toSpike" as const,
   },
 ]
@@ -81,10 +81,10 @@ function renderLabelLines(text: string, x: number, y: number, anchor: "start" | 
 export function MaterialComparisonRadarChart({ labels, variant = "dark" }: MaterialComparisonRadarChartProps) {
   const isLight = variant === "light"
   const count = DIMENSIONS.length
-  const cx = 230
-  const cy = 212
+  const cx = 270
+  const cy = 228
   const maxR = 118
-  const labelR = 158
+  const labelR = 162
 
   const gridColor = isLight ? "rgba(100, 116, 139, 0.28)" : "rgba(226, 232, 240, 0.28)"
   const axisColor = isLight ? "rgba(100, 116, 139, 0.22)" : "rgba(226, 232, 240, 0.2)"
@@ -98,10 +98,11 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   return (
     <div className="w-full max-w-[18.5rem] sm:max-w-[22rem] lg:max-w-[36rem] xl:max-w-[42rem] mx-auto">
       <svg
-        viewBox="0 0 460 455"
+        viewBox="0 0 540 500"
         role="img"
         aria-label={labels.toSpike}
-        className="w-full h-auto"
+        className="w-full h-auto overflow-visible"
+        overflow="visible"
         preserveAspectRatio="xMidYMid meet"
       >
         {gridLevels.map((level) => (
@@ -158,7 +159,8 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
           const labelPoint = polarPoint(index, 100, cx, cy, labelR, count)
           const mobileKey = `${dimKey}Mobile` as keyof typeof labels
           const mobileLabel = labels[mobileKey]
-          const desktopLabel = labels[dimKey]
+          const desktopLabel =
+            dimKey === "dim5" && typeof mobileLabel === "string" ? mobileLabel : labels[dimKey]
           const compactLabel = typeof mobileLabel === "string" ? mobileLabel : desktopLabel
           const anchor = index === 0 ? "middle" : index === 1 || index === 2 ? "start" : index === 3 || index === 4 ? "end" : "middle"
 
