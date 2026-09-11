@@ -44,7 +44,7 @@ export default async function NewsPage({
   }))
 
   return (
-    <div className="min-h-screen bg-[#0B1F33]">
+    <div className="page-stage min-h-screen">
       <Navigation locale={validLocale} />
       <div className="relative overflow-x-clip">
       <div className="relative z-10">
@@ -55,7 +55,7 @@ export default async function NewsPage({
         <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 pointer-events-auto">
           <div className="max-w-3xl">
             <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
-            <p className="page-lead text-white/75 text-pretty">
+            <p className="page-lead text-white/70 text-pretty">
               {t("news.subtitle")}
             </p>
           </div>
@@ -102,19 +102,19 @@ export default async function NewsPage({
                     <div className="flex flex-wrap gap-2">
                       <InPageAnchor
                         targetId="industry-trends"
-                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.industryTrends")}
                       </InPageAnchor>
                       <InPageAnchor
                         targetId="basic-theory"
-                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.basicTheory")}
                       </InPageAnchor>
                       <InPageAnchor
                         targetId="frontier-tech"
-                        className="text-xs px-3 py-1.5 bg-[#0F4C81] hover:bg-[#163A5F] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
                       >
                         {t("news.frontierTech")}
                       </InPageAnchor>
@@ -143,7 +143,7 @@ export default async function NewsPage({
                 <a
                   key={index}
                   href={ensureTrailingSlash(`${prefix}/news/${news.id}`)}
-                  className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
+                  className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#2A7FC4]/40 transition-colors group shadow-sm hover:shadow-md"
                 >
                   <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -159,7 +159,7 @@ export default async function NewsPage({
                         {news.title}
                       </h3>
                       <p className="page-body text-slate-600">{news.summary}</p>
-                      <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
+                      <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
                         {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                   </div>
@@ -189,7 +189,7 @@ export default async function NewsPage({
                     <a
                       key={article.id}
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
-                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#2A7FC4]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -198,7 +198,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>
@@ -217,7 +217,7 @@ export default async function NewsPage({
                     <a
                       key={article.id}
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
-                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#2A7FC4]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -226,7 +226,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>
@@ -245,7 +245,7 @@ export default async function NewsPage({
                     <a
                       key={article.id}
                       href={ensureTrailingSlash(`${prefix}/news/${article.id}`)}
-                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#0F4C81]/40 transition-colors group shadow-sm hover:shadow-md"
+                      className="block rounded-xl p-4 sm:p-6 bg-white border border-slate-200 hover:border-[#2A7FC4]/40 transition-colors group shadow-sm hover:shadow-md"
                     >
                       <div>
                           <h4 className="page-h4 mb-2 text-slate-900 group-hover:text-[#0F2A5C] transition-colors">
@@ -254,7 +254,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#0F4C81] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>

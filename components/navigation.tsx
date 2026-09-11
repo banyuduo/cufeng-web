@@ -87,34 +87,67 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
     ? "text-white/80 hover:text-white"
     : "text-slate-600 hover:text-[#0F2A5C]"
 
+  const desktopNavClass =
+    locale === "en"
+      ? "hidden xl:flex items-center gap-4 2xl:gap-8"
+      : "hidden lg:flex items-center gap-4 xl:gap-8"
+  const mobileToggleClass =
+    locale === "en" ? "flex items-center gap-2 xl:hidden" : "flex items-center gap-2 lg:hidden"
+
   return (
     <nav className={`border-b fixed inset-x-0 top-0 z-[100] isolate pointer-events-auto ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href={prefix} className={`text-xl font-bold ${navText}`}>
+          <Link href={prefix} className={`text-xl font-bold whitespace-nowrap shrink-0 ${navText}`}>
             {t("common.nav.brand")}
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className={desktopNavClass}>
             <Link
               href={`${prefix}/patents`}
-              className={`text-sm lg:text-base transition-colors ${
+              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
                 isActive("/patents") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.techArchitecture")}
             </Link>
-            <Link
-              href={`${prefix}/products`}
-              className={`text-sm lg:text-base transition-colors ${
-                isActive("/products") ? `${navText} font-semibold` : navMuted
-              }`}
-            >
-              {t("common.nav.products")}
-            </Link>
+            <div className="relative group">
+              <Link
+                href={`${prefix}/products`}
+                className={`inline-flex items-center gap-1 whitespace-nowrap text-sm lg:text-base transition-colors ${
+                  isActive("/products") ? `${navText} font-semibold` : navMuted
+                }`}
+              >
+                {t("common.nav.products")}
+                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+              </Link>
+              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 top-full z-[110] w-max -translate-x-1/2 pt-2">
+                <div
+                  className={`min-w-[11.5rem] rounded-lg border py-1.5 shadow-lg ${
+                    isDarkPage
+                      ? "bg-[#0B1F33] border-white/12"
+                      : "bg-white border-slate-200"
+                  }`}
+                >
+                  {PRODUCT_SUBLINKS.map(({ path, key }) => (
+                    <Link
+                      key={path}
+                      href={`${prefix}${path}`}
+                      className={`block px-3.5 py-2 text-sm whitespace-nowrap transition-colors ${
+                        isDarkPage
+                          ? "text-white/80 hover:bg-white/10 hover:text-white"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-[#0F2A5C]"
+                      }`}
+                    >
+                      {t(key)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <Link
               href={`${prefix}/applications`}
-              className={`text-sm lg:text-base transition-colors ${
+              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
                 isActive("/applications") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -122,7 +155,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/news`}
-              className={`text-sm lg:text-base transition-colors ${
+              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
                 isActive("/news") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -130,14 +163,14 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/about`}
-              className={`text-sm lg:text-base transition-colors ${
+              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
                 isActive("/about") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.about")}
             </Link>
             <Link href={`${prefix}/cooperation`}>
-              <Button size="sm" className="bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0">
+              <Button size="sm" className="page-btn-primary bg-[#2A7FC4] hover:bg-[#1B5F96] text-white border-0">
                 {t("common.nav.projectCooperation")}
               </Button>
             </Link>
@@ -149,7 +182,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className={mobileToggleClass}>
             <Link
               href={localeSwitchHref}
               className={`inline-flex items-center min-h-[44px] text-xs px-2 touch-manipulation transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
@@ -207,18 +240,28 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   {t("common.nav.techArchitecture")}
                 </Link>
                 <div className="border-b border-white/10">
-                  <button
-                    type="button"
-                    onClick={() => setProductsExpanded(!productsExpanded)}
-                    className="flex items-center justify-between gap-2 w-full text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
-                  >
-                    {t("common.nav.products")}
-                    <ChevronDown
-                      className={`w-4 h-4 shrink-0 pointer-events-none transition-transform duration-200 ${
-                        productsExpanded ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                  <div className="flex items-stretch">
+                    <Link
+                      href={`${prefix}/products`}
+                      className="flex-1 min-w-0 text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {t("common.nav.products")}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setProductsExpanded(!productsExpanded)}
+                      className="shrink-0 px-2 text-white hover:bg-white/10 active:bg-white/15 transition-colors"
+                      aria-expanded={productsExpanded}
+                      aria-label={t("common.nav.products")}
+                    >
+                      <ChevronDown
+                        className={`w-4 h-4 pointer-events-none transition-transform duration-200 ${
+                          productsExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
                   {productsExpanded && (
                     <div className="pl-4 pb-2 flex flex-col gap-0.5">
                       {PRODUCT_SUBLINKS.map(({ path, key }) => (

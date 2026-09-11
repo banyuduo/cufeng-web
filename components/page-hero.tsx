@@ -13,8 +13,8 @@ interface PageHeroProps {
   tagline?: string
   /** 深色 variant 时是否显示网格与光晕装饰 */
   withDecoration?: boolean
-  /** 深色页底：gradient 为旧渐变；solid 为整页海军蓝 */
-  background?: "gradient" | "solid"
+  /** 深色页底：gradient 为旧渐变；solid 为整页海军蓝；stage 透出父级舞台光 */
+  background?: "gradient" | "solid" | "stage"
   /** 标题字重，cooperation 页使用 light */
   titleWeight?: "bold" | "light"
   children?: ReactNode
@@ -28,26 +28,27 @@ export function PageHero({
   tagline,
   withDecoration = false,
   background = "gradient",
-  titleWeight = "bold",
+  titleWeight = "light",
   children,
 }: PageHeroProps) {
   const isDark = variant === "dark"
   const isSolidNavy = isDark && background === "solid"
+  const isStage = isDark && background === "stage"
 
   const showSubtitle = Boolean(subtitle && subtitle.trim() !== title.trim())
 
   return (
     <section
       className={`relative pt-24 sm:pt-28 lg:pt-28 pb-8 sm:pb-10 lg:pb-12 overflow-hidden pointer-events-none ${
-        isSolidNavy ? "bg-[#0B1F33]" : isDark ? "" : "bg-[#F9FAFC]"
+        isSolidNavy ? "bg-[#0B1F33]" : isStage ? "" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >
-      {isDark && !isSolidNavy && (
+      {isDark && !isSolidNavy && !isStage && (
         <>
           <DarkPagePatternBg />
         </>
       )}
-      {isDark && withDecoration && !isSolidNavy && (
+      {isDark && withDecoration && !isSolidNavy && !isStage && (
         <>
           <div className="absolute inset-0 opacity-10">
             <div

@@ -121,14 +121,6 @@ export default async function ProductsPage({
                 {t("products.cta.contactTech")}
               </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 bg-transparent"
-              asChild
-            >
-              <Link href={`${prefix}/products`}>{t("products.cta.browseProducts")}</Link>
-            </Button>
           </div>
         </div>
       </section>

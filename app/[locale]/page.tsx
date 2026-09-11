@@ -17,7 +17,7 @@ export default async function HomePage({
   const t = await getTranslations(validLocale)
 
   return (
-    <div className="min-h-screen bg-[#0B1F33]">
+    <div className="page-stage min-h-screen">
       <Navigation locale={validLocale} />
 
       <div className="overflow-x-hidden">
@@ -26,24 +26,24 @@ export default async function HomePage({
           <div className="space-y-7 sm:space-y-8 lg:space-y-8">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
-              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 opacity-100">
+              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 font-light opacity-100">
                 {t("home.hero.visionTitle")}
               </h1>
-              <p className="page-lead page-measure text-white/75 font-light">
+              <p className="page-lead page-measure text-white/70 font-light">
                 {t("home.hero.visionSubtitle")}
               </p>
             </div>
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
             <div className="text-center">
-              <p className="page-body page-measure text-white/70 mb-5">
+              <p className="page-body page-measure text-white/65 mb-5">
                 {t("home.hero.platformFocus")}
               </p>
-              <div className="flex flex-row flex-wrap items-stretch justify-center gap-2 sm:gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
                 <Button
                   size="lg"
                   asChild
-                  className="w-auto max-w-[48%] min-w-0 shrink sm:max-w-none min-h-[44px] h-auto py-2.5 px-3 sm:px-6 bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0 text-sm sm:text-base whitespace-normal leading-snug text-center"
+                  className="page-btn-primary w-full sm:w-auto max-w-xs sm:max-w-none mx-auto sm:mx-0 min-h-[44px] h-auto py-2.5 px-3 sm:px-6 bg-[#2A7FC4] hover:bg-[#1B5F96] text-white border-0 text-sm sm:text-base whitespace-normal leading-snug text-center"
                 >
                   <Link href={`/${validLocale}/patents`}>
                     {t("home.hero.viewTechArchitecture")}
@@ -53,7 +53,7 @@ export default async function HomePage({
                   size="lg"
                   variant="outline"
                   asChild
-                  className="w-auto max-w-[48%] min-w-0 shrink sm:max-w-none min-h-[44px] h-auto py-2.5 px-3 sm:px-6 border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white text-sm sm:text-base whitespace-normal leading-snug text-center"
+                  className="w-full sm:w-auto max-w-xs sm:max-w-none mx-auto sm:mx-0 min-h-[44px] h-auto py-2.5 px-3 sm:px-6 border-white/35 bg-white/[0.03] text-white hover:bg-white/10 hover:text-white text-sm sm:text-base whitespace-normal leading-snug text-center"
                 >
                   <Link href={`/${validLocale}/applications`}>
                     {t("home.hero.viewTechApplications")}
@@ -113,33 +113,33 @@ export default async function HomePage({
               <ol className="space-y-5 sm:space-y-6 max-w-3xl mx-auto mb-8 sm:mb-10">
                 <li>
                   <p className="page-h3 text-white mb-1.5">
-                    <span className="text-white/45 font-medium">1. </span>
+                    <span className="text-white/40 font-medium">1. </span>
                     {t("home.hero.achievement1")}
                   </p>
-                  <p className="page-body text-white/70">
+                  <p className="page-body text-white/80">
                     {t("home.hero.achievement1Value")}
                   </p>
                 </li>
                 <li>
                   <p className="page-h3 text-white mb-1.5">
-                    <span className="text-white/45 font-medium">2. </span>
+                    <span className="text-white/40 font-medium">2. </span>
                     {t("home.hero.achievement2")}
                   </p>
-                  <p className="page-body text-white/70">
+                  <p className="page-body text-white/80">
                     {t("home.hero.achievement2Value")}
                   </p>
                 </li>
               </ol>
-              <div className="grid md:grid-cols-3 gap-5 md:gap-6 border-t border-white/15 pt-6 sm:pt-8">
-                <div>
+              <div className="grid md:grid-cols-3 gap-4 md:gap-5">
+                <div className="page-surface rounded-xl px-5 py-4">
                   <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>
                 </div>
-                <div>
+                <div className="page-surface rounded-xl px-5 py-4">
                   <h3 className="page-h3 text-white mb-2">{t("home.results.deliverables")}</h3>
                   <p className="page-body text-white/70">{t("home.results.deliverablesDesc")}</p>
                 </div>
-                <div>
+                <div className="page-surface rounded-xl px-5 py-4">
                   <h3 className="page-h3 text-white mb-2">{t("home.results.ip")}</h3>
                   <p className="page-body text-white/70">{t("home.results.ipDesc")}</p>
                 </div>

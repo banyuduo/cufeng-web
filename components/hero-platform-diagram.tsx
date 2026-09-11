@@ -208,7 +208,7 @@ export function HeroPlatformDiagram({
   return (
     <div
       data-diagram-locale={locale}
-      className="w-full rounded-2xl border border-white/12 bg-white/[0.03] overflow-hidden"
+      className="w-full rounded-2xl border border-white/16 bg-white/[0.03] overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
     >
       {hasLimits && (
         <Section>
@@ -229,7 +229,7 @@ export function HeroPlatformDiagram({
       {hasLimits ? <FlowArrow /> : null}
 
       <div className="lg:grid lg:grid-cols-2 lg:items-stretch">
-      <Section className="border-t border-white/10">
+      <Section className="border-t border-white/10 h-full">
         <SectionTitle>{s.layer2Title}</SectionTitle>
         <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-3 sm:mb-4 lg:mb-5">
           {[s.layer2Thermal, s.layer2Mechanical, s.layer2Electrical].map(
@@ -252,7 +252,7 @@ export function HeroPlatformDiagram({
             <SectionTitle>{s.mechanismTitle}</SectionTitle>
             <div
               className={cn(
-                "grid gap-2 sm:gap-3 mb-3 sm:mb-4 min-w-0",
+                "grid gap-2 sm:gap-3 min-w-0",
                 "grid-cols-1 sm:grid-cols-3 lg:grid-cols-1"
               )}
             >
@@ -286,35 +286,13 @@ export function HeroPlatformDiagram({
             </div>
           </>
         )}
-
-        <div className="max-w-3xl mx-auto w-full text-center">
-          <h4 className="page-h4 text-white mb-1.5 text-balance">
-            {s.layer3Title}
-          </h4>
-          <p
-            className={cn(
-              "page-body text-white/75",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer3Line1}
-          </p>
-          <p
-            className={cn(
-              "page-body text-white/70 mt-0.5",
-              isEn && "text-pretty tracking-tight"
-            )}
-          >
-            {s.layer3Line2}
-          </p>
-        </div>
       </Section>
 
       <div className="lg:hidden">
         <FlowArrow />
       </div>
 
-      <Section className="border-t border-white/10 lg:border-l">
+      <Section className="border-t border-white/10 lg:border-l h-full">
         <SectionTitle>{s.layer4Title}</SectionTitle>
         <p
           className={cn(
@@ -370,6 +348,27 @@ export function HeroPlatformDiagram({
             )}
           >
             {s.layer4Line3}
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto w-full text-center mt-4 pt-3 border-t border-white/10">
+          <h4 className="page-h4 text-white mb-1.5 text-balance">
+            {s.layer3Title}
+          </h4>
+          <p
+            className={cn(
+              "page-body text-white/75",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer3Line1}
+          </p>
+          <p
+            className={cn(
+              "page-body text-white/70 mt-0.5",
+              isEn && "text-pretty tracking-tight"
+            )}
+          >
+            {s.layer3Line2}
           </p>
         </div>
       </Section>

@@ -171,7 +171,7 @@ function CompanyNewsDetail({
             {/* Back Button */}
             <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-8 page-caption font-medium">
               <ArrowLeft className="h-4 w-4" />
-              {t("news.articleDetail.backToNewsList")}
+              {t("news.articleDetail.backToNews")}
             </Link>
 
             {/* Article Header */}
