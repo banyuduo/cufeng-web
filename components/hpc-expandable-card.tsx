@@ -63,7 +63,7 @@ export function HpcExpandableCard({
           {subtitle && <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p>}
           {features && <p className="page-caption text-white/55 mb-4">{features}</p>}
           <ul className="space-y-2 mb-4">
-            {items.map((item, i) => (
+            {(items ?? []).map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-white/70 min-w-0">
                 <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: accentHex }} />
                 <span className="page-body break-words">{item}</span>

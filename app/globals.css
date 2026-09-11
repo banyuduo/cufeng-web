@@ -102,21 +102,25 @@
     @apply text-3xl sm:text-4xl lg:text-5xl font-light break-words;
     letter-spacing: 0;
     line-height: 1.22;
+    text-wrap: balance;
   }
   .page-h2 {
     @apply text-2xl md:text-3xl lg:text-4xl font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.32;
+    text-wrap: balance;
   }
   .page-h3 {
     @apply text-lg md:text-lg lg:text-xl font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.4;
+    text-wrap: balance;
   }
   .page-h4 {
     @apply text-base md:text-base lg:text-lg font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.4;
+    text-wrap: balance;
   }
   .page-kicker {
     @apply text-xs sm:text-sm font-semibold;
@@ -130,14 +134,17 @@
   .page-lead {
     @apply text-base md:text-lg lg:text-xl font-normal break-words;
     line-height: 1.65;
+    text-wrap: pretty;
   }
   .page-body {
     @apply text-sm md:text-base font-normal;
     line-height: 1.7;
+    text-wrap: pretty;
   }
   .page-caption {
     @apply text-xs md:text-sm font-normal;
     line-height: 1.6;
+    text-wrap: pretty;
   }
   .section-container {
     @apply max-w-6xl mx-auto px-6 lg:px-8;
@@ -208,6 +215,19 @@
   [data-locale="en"] .page-caption {
     letter-spacing: -0.01em;
     line-height: 1.6;
+  }
+
+  @media (min-width: 1024px) {
+    .pc-card-title {
+      min-height: calc(1.4em * 2);
+    }
+    html:lang(en) .pc-card-title,
+    [data-locale="en"] .pc-card-title {
+      min-height: calc(1.4em * 4);
+    }
+    .pc-step-title {
+      min-height: 2.6em;
+    }
   }
 }
 

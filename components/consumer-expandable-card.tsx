@@ -71,7 +71,7 @@ export function ConsumerExpandableCard({
       <div className="min-w-0">
           <h2 className="page-h2 text-white mb-4">{title}</h2>
           <div className="space-y-4 mb-4">
-            {items.map((item, i) => (
+            {(items ?? []).map((item, i) => (
               <div key={i} className="border-l-2 border-white/12 pl-4 min-w-0">
                 <div className="page-body font-medium text-white break-words">{item}</div>
                 {itemsDesc[i] && (

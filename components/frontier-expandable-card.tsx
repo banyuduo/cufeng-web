@@ -7,16 +7,21 @@ import { Link } from "@/components/app-link"
 
 type FrontierItemKey = "solidState" | "water" | "superconductor" | "quantum"
 
+type FrontierSection = {
+  heading?: string
+  body?: string
+  bullets?: string[]
+}
+
 interface FrontierItemConfig {
   key: FrontierItemKey
   title: string
   shortDesc: string
-  icon: React.ReactNode
   hasWhitepaper: boolean
   hasDeepTech: boolean
   whitepaperHref?: string
   deepTechHref?: string
-  expandContent: React.ReactNode
+  sections: FrontierSection[]
 }
 
 interface FrontierExpandableCardProps {
@@ -47,12 +52,8 @@ function FrontierItemCard({
   viewDeepLabel: string
   expandLabel: string
   collapseLabel: string
-  variant?: "mediumTerm" | "longTerm"
 }) {
   const [expanded, setExpanded] = useState(false)
-  const accentHex = "#E2E8F0"
-  const accentClassName = "text-white/80"
-  const accentHoverClassName = "hover:text-white"
 
   return (
     <Card
@@ -64,7 +65,7 @@ function FrontierItemCard({
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
-          className={`flex items-center gap-1.5 min-h-[44px] font-medium text-sm touch-manipulation transition-colors ${accentClassName} ${accentHoverClassName}`}
+          className="flex items-center gap-1.5 min-h-[44px] font-medium text-sm touch-manipulation transition-colors text-white/80 hover:text-white"
         >
           {expanded ? collapseLabel : expandLabel}
           <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -72,7 +73,25 @@ function FrontierItemCard({
 
         {expanded && (
           <div className="mt-4 pt-4 border-t border-white/12 space-y-4">
-            {item.expandContent}
+            <div className="space-y-4 page-body">
+              {item.sections.map((section, index) => (
+                <div key={`${item.key}-${index}`}>
+                  {section.heading ? (
+                    <div className="font-semibold text-white mb-1">{section.heading}</div>
+                  ) : null}
+                  {section.body ? (
+                    <p className="page-body text-white/70 break-words">{section.body}</p>
+                  ) : null}
+                  {section.bullets && section.bullets.length > 0 ? (
+                    <ul className="space-y-1 page-body text-white/70">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>• {bullet}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              ))}
+            </div>
             {(item.hasWhitepaper || item.hasDeepTech) && (
               <div className="flex flex-wrap gap-3 pt-2">
                 {item.hasWhitepaper && item.whitepaperHref && (
@@ -89,7 +108,7 @@ function FrontierItemCard({
                 {item.hasDeepTech && item.deepTechHref && (
                   <Link
                     href={item.deepTechHref}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-transparent text-white hover:bg-white/10 font-medium text-sm border border-white/25 transition-colors`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-transparent text-white hover:bg-white/10 font-medium text-sm border border-white/25 transition-colors"
                   >
                     <FileText className="w-4 h-4" />
                     {viewDeepLabel}
@@ -134,7 +153,6 @@ export function FrontierExpandableCard({
         <p className="page-body text-white/55 break-words">{sectionSubtitle}</p>
       </div>
 
-      {/* 中期潜力方向 */}
       <div className="mb-6">
         <h3 className="page-h3 text-white mb-1">{mediumTermLabel}</h3>
         <p className="page-caption text-white/55 mb-4">{mediumTermSubtitle}</p>
@@ -143,7 +161,6 @@ export function FrontierExpandableCard({
             <FrontierItemCard
               key={item.key}
               item={item}
-              variant="mediumTerm"
               viewWhitepaperLabel={viewWhitepaperLabel}
               viewDeepLabel={viewDeepLabel}
               expandLabel={expandLabel}
@@ -153,7 +170,6 @@ export function FrontierExpandableCard({
         </div>
       </div>
 
-      {/* 远期物理窗口 */}
       <div>
         <h3 className="page-h3 text-white mb-1">{longTermLabel}</h3>
         <p className="page-caption text-white/55 mb-4">{longTermSubtitle}</p>
@@ -162,7 +178,6 @@ export function FrontierExpandableCard({
             <FrontierItemCard
               key={item.key}
               item={item}
-              variant="longTerm"
               viewWhitepaperLabel={viewWhitepaperLabel}
               viewDeepLabel={viewDeepLabel}
               expandLabel={expandLabel}

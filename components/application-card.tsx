@@ -31,8 +31,13 @@ export function ApplicationCard({
   levelClassName
 }: ApplicationCardProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!href?.startsWith("#")) return
-    const element = document.querySelector(href)
+    if (!href || href === "#" || !href.startsWith("#")) return
+    let element: Element | null = null
+    try {
+      element = document.querySelector(href)
+    } catch {
+      return
+    }
     if (!element) return
     e.preventDefault()
     element.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -58,7 +63,7 @@ export function ApplicationCard({
             </div>
             <h3 className="page-h3 text-white">{title}</h3>
             <div className="flex flex-wrap gap-2 mt-2">
-              {items.map((item, i) => (
+              {(items ?? []).map((item, i) => (
                 <span key={i} className="page-caption text-white/70 flex items-center gap-1 text-balance italic break-words">
                   <ArrowUpRight className="w-3 h-3 text-slate-500 flex-shrink-0" /> {item}
                 </span>
