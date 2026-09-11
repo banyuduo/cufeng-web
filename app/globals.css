@@ -53,6 +53,11 @@
   --page-dark-accent-light: #7dd3fc;
   --page-dark-gradient: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%);
   --page-dark-hero-gradient: linear-gradient(180deg, #001a33 0%, #002244 15%, #003366 50%, #004080 85%, #005090 100%);
+
+  /* 愿景页舞台：仍落在 #0B1F33 家族，只加上下明暗与一档更亮的主按钮 */
+  --page-stage-base: #0B1F33;
+  --page-stage-accent: #2A7FC4;
+  --page-stage-accent-hover: #1B5F96;
 }
 
 .dark {
@@ -94,12 +99,12 @@
    中文默认：正常字距、略松行高。英文由 [data-locale="en"] / :lang(en) 收紧。 */
 @layer components {
   .page-h1 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-medium break-words;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-light break-words;
     letter-spacing: 0;
     line-height: 1.22;
   }
   .page-h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold break-words;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold break-words;
     letter-spacing: 0;
     line-height: 1.32;
   }
@@ -313,6 +318,34 @@
   button:disabled,
   button[aria-disabled="true"] {
     cursor: not-allowed;
+  }
+}
+
+/* 首页 / 技术架构：深蓝舞台，而不是一块匀底 */
+@layer utilities {
+  .page-stage {
+    background-color: var(--page-stage-base);
+    background-image:
+      radial-gradient(ellipse 88% 46% at 50% -8%, rgba(48, 118, 176, 0.24) 0%, transparent 58%),
+      linear-gradient(180deg, #06131d 0%, #0B1F33 36%, #0A1D30 100%);
+  }
+
+  .page-stage [class*="bg-white/[0.03]"],
+  .page-stage [class*="bg-white/[0.04]"] {
+    background-color: rgba(255, 255, 255, 0.055);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .page-surface {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .page-btn-primary {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 10px 28px -14px rgba(42, 127, 196, 0.55);
   }
 }
 

@@ -22,13 +22,13 @@ export default async function AboutPage({
   const prefix = `/${validLocale}`
 
   return (
-    <div className="min-h-screen relative bg-[#0B1F33]">
+    <div className="page-stage min-h-screen relative">
       <Navigation locale={validLocale} />
       <div className="relative z-10">
 
       <PageHero
         variant="dark"
-        background="solid"
+        background="stage"
         title={t("about.hero.title")}
         tagline={t("about.hero.tagline")}
         subtitle={t("about.hero.subtitle")}
@@ -166,7 +166,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full mb-2">
                   {t("about.team.he.title")}
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full mb-2">
                   {t("about.team.zhang.title")}
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default async function AboutPage({
               {/* 2025 - 专利集群 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0F2A5C] text-white font-bold text-lg  relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2A7FC4] text-white font-semibold text-lg relative z-10">
                     2025
                   </div>
                 </div>
@@ -278,7 +278,7 @@ export default async function AboutPage({
               {/* 2025 - 热管理材料突破 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cyan-600 text-white font-bold text-lg shadow-lg shadow-cyan-600/30 relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1B5F96] text-white font-semibold text-lg relative z-10">
                     2025
                   </div>
                 </div>
@@ -295,7 +295,7 @@ export default async function AboutPage({
               {/* 2023 - 战略迁址 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-600 text-white font-bold text-lg shadow-lg shadow-purple-600/30 relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0F4C81] text-white font-semibold text-lg relative z-10">
                     2023
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export default async function AboutPage({
               {/* 2018 - 公司启航 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-600 text-white font-bold text-lg shadow-lg shadow-slate-600/30 relative z-10">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#163A5F] text-white font-semibold text-lg relative z-10">
                     2018
                   </div>
                 </div>
@@ -334,7 +334,7 @@ export default async function AboutPage({
               asChild
               size="lg"
               variant="outline"
-              className="gap-2 border-[#0F4C81]/35 text-[#0F2A5C] hover:bg-slate-50 bg-transparent min-h-[44px]"
+              className="gap-2 border-[#2A7FC4]/40 text-[#0F2A5C] hover:bg-slate-50 bg-transparent min-h-[44px]"
             >
               <Link href={`${prefix}/news`}>
                 {t("about.timeline.moreNews")}

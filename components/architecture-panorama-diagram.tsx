@@ -65,7 +65,7 @@ function Kernel({
 }) {
   return (
     <div className="w-full p-4 lg:p-8 rounded-2xl border border-white/20 bg-white/[0.04] text-center">
-      <div className="w-11 h-11 lg:w-16 lg:h-16 mx-auto mb-3 lg:mb-5 rounded-xl bg-[#0F4C81] flex items-center justify-center">
+      <div className="w-11 h-11 lg:w-16 lg:h-16 mx-auto mb-3 lg:mb-5 rounded-xl bg-[#2A7FC4] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
         <Sparkles className="w-5 h-5 lg:w-8 lg:h-8 text-white" />
       </div>
       <h3 className="page-h4 text-white mb-3 lg:mb-4">{title}</h3>

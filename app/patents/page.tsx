@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { isValidLocale, type Locale } from "@/lib/i18n"
@@ -16,12 +16,25 @@ import { ArchitecturePanoramaDiagram } from "@/components/architecture-panorama-
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
+  const [clusterOpen, setClusterOpen] = useState(false)
   const pathname = usePathname()
   const pathSegments = pathname.replace(/^\/+|\/+$/g, "").split("/")
   const localeFromPath = pathSegments[0]
   const locale = (isValidLocale(localeFromPath) ? localeFromPath : "zh") as Locale
   const t = useTranslations()
   const prefix = `/${locale}`
+
+  useEffect(() => {
+    const openIfHash = () => {
+      if (window.location.hash === "#patent-cluster") {
+        setClusterOpen(true)
+      }
+    }
+    openIfHash()
+    window.addEventListener("hashchange", openIfHash)
+    return () => window.removeEventListener("hashchange", openIfHash)
+  }, [])
+
   const cognitionSteps = [
     { label: t("patents.evolution.start"), title: t("patents.evolution.diamondTools") },
     { label: t("patents.evolution.step1"), title: t("patents.evolution.compositeSystem") },
@@ -32,19 +45,20 @@ export default function PatentsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#0B1F33]">
+    <div className="page-stage min-h-screen">
       <Navigation />
 
       <div className="overflow-x-hidden">
 
       <PageHero
         variant="dark"
-        background="solid"
+        background="stage"
+        titleWeight="light"
         title={t("patents.hero.title")}
         subtitle={t("patents.hero.subtitle")}
       >
         <div className="page-measure mt-5 space-y-3 text-center">
-          <p className="page-body text-white/70">{t("patents.hero.desc")}</p>
+          <p className="page-lead text-white/70">{t("patents.hero.desc")}</p>
           {t("patents.hero.dimensions") ? (
             <p className="page-caption text-white/55">{t("patents.hero.dimensions")}</p>
           ) : null}
@@ -66,7 +80,7 @@ export default function PatentsPage() {
                 <div className="absolute left-[8%] right-[8%] top-1.5 h-px bg-white/15" />
                 {cognitionSteps.map((step) => (
                   <div key={step.label} className="relative flex-1 min-w-0 px-2 text-center">
-                    <div className="mx-auto mb-4 h-3 w-3 rounded-full bg-white/70 ring-4 ring-[#0B1F33]" />
+                    <div className="mx-auto mb-4 h-2.5 w-2.5 rounded-full bg-[#5BA3D4] ring-4 ring-[#0B1F33]" />
                     <p className="page-caption text-white/45 mb-1">{step.label}</p>
                     <p className="page-caption text-white whitespace-pre-line leading-snug">{step.title}</p>
                   </div>
@@ -76,7 +90,7 @@ export default function PatentsPage() {
             <div className="lg:hidden border-l border-white/15 pl-5 space-y-5">
               {cognitionSteps.map((step) => (
                 <div key={step.label} className="relative">
-                  <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-white/70" />
+                  <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-[#5BA3D4]" />
                   <p className="page-caption text-white/45 mb-0.5">{step.label}</p>
                   <p className="page-body text-white whitespace-pre-line leading-snug">{step.title}</p>
                 </div>
@@ -536,8 +550,19 @@ export default function PatentsPage() {
               <p className="page-body text-white/70 max-w-3xl mx-auto">
                 {t("patents.patentCluster.intro")}
               </p>
+              <button
+                type="button"
+                onClick={() => setClusterOpen((open) => !open)}
+                className="mt-5 inline-flex items-center gap-2 page-caption text-white/70 hover:text-white min-h-[44px] px-3"
+                aria-expanded={clusterOpen}
+              >
+                {clusterOpen ? t("patents.patentCluster.collapseList") : t("patents.patentCluster.expandList")}
+                <ChevronDown className={`w-4 h-4 transition-transform ${clusterOpen ? "rotate-180" : ""}`} />
+              </button>
             </div>
 
+            {clusterOpen ? (
+            <>
             <div className="space-y-4 sm:space-y-8 mb-8 sm:mb-10">
               {/* 一、工程起点与功能延伸 */}
               <div className="p-4 sm:p-6 bg-white/[0.03] rounded-xl border border-white/12">
@@ -643,6 +668,8 @@ export default function PatentsPage() {
                 <div className="page-caption text-white/65">{t("patents.patentCluster.stat3Label")}</div>
               </div>
             </div>
+            </>
+            ) : null}
         </div>
       </section>
 
@@ -651,22 +678,14 @@ export default function PatentsPage() {
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="page-body text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>
-          <p className="page-caption text-white/50 mb-6">{t("patents.cta.exploreCooperation")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-            <Button asChild className="bg-[#0F4C81] hover:bg-[#163A5F] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg min-h-[44px]">
+            <Button asChild className="page-btn-primary bg-[#2A7FC4] hover:bg-[#1B5F96] text-white px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg min-h-[44px] h-auto whitespace-normal leading-snug">
               <Link href={`${prefix}/cooperation`}>{t("patents.cta.projectCooperation")}</Link>
             </Button>
             <Button
               asChild
               variant="outline"
-              className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px]"
-            >
-              <a href="#patent-cluster">{t("patents.cta.viewPatentList")}</a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="border-white/25 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px]"
+              className="border-white/35 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px] h-auto whitespace-normal leading-snug"
             >
               <Link href={`${prefix}/products`}>{t("patents.cta.learnProducts")}</Link>
             </Button>

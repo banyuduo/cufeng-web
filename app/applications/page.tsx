@@ -47,13 +47,13 @@ export default async function ApplicationsPage({
   ] as const
 
   return (
-    <div className="min-h-screen relative bg-[#0B1F33]">
+    <div className="page-stage min-h-screen relative">
       <Navigation locale={validLocale} />
       <div className="relative z-10">
 
       <PageHero
         variant="dark"
-        background="solid"
+        background="stage"
         title={t("applications.title")}
         subtitle={t("applications.subtitle")}
       />
@@ -392,15 +392,13 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="page-h2 text-slate-900 mb-4 break-words px-1">
+          <h2 className="page-h2 text-white mb-4 break-words px-1">
             {t("applications.summary.title")}
           </h2>
 
-          <p className="page-body page-measure text-slate-600 mb-8 font-light break-words">{t("applications.summary.tagline")}</p>
-
-          <p className="page-body mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto text-slate-700 break-words">
+          <p className="page-body mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto text-white/75 break-words">
             {t("applications.summary.desc")}
           </p>
 
@@ -408,7 +406,7 @@ export default async function ApplicationsPage({
             <Button
               size="lg"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 bg-[#0F4C81] hover:bg-[#163A5F] text-white border-0"
+              className="page-btn-primary w-full sm:w-auto min-h-[44px] gap-2 bg-[#2A7FC4] hover:bg-[#1B5F96] text-white border-0"
             >
               <Link href={`${prefix}/cooperation`}>{t("applications.cta.techDialogue")}</Link>
             </Button>
@@ -416,7 +414,7 @@ export default async function ApplicationsPage({
               size="lg"
               variant="outline"
               asChild
-              className="w-full sm:w-auto min-h-[44px] gap-2 border-white/12 text-[#0F2A5C] hover:bg-slate-50 bg-transparent"
+              className="w-full sm:w-auto min-h-[44px] gap-2 border-white/35 text-white hover:bg-white/10 bg-transparent"
             >
               <Link href={`${prefix}/patents`}>{t("applications.cta.viewTechPath")}</Link>
             </Button>
