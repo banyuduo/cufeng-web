@@ -1,5 +1,6 @@
 "use client"
 
+import type { ReactNode } from "react"
 import { ArrowDown } from "lucide-react"
 import { useLocale } from "@/components/locale-provider"
 import { cn } from "@/lib/utils"
@@ -135,9 +136,9 @@ function FlowArrow() {
   )
 }
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({ children }: { children: ReactNode }) {
   return (
-    <h4 className="page-h4 text-white mb-2 text-center text-balance px-1">
+    <h4 className="page-h4 text-white mb-2 text-center text-balance px-1 lg:min-h-[2.8em] lg:flex lg:items-end lg:justify-center">
       {children}
     </h4>
   )
@@ -147,7 +148,7 @@ function Section({
   children,
   className,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
 }) {
   return (
@@ -231,13 +232,21 @@ export function HeroPlatformDiagram({
       <div className="lg:grid lg:grid-cols-2 lg:items-stretch">
       <Section className="border-t border-white/10 h-full">
         <SectionTitle>{s.layer2Title}</SectionTitle>
+        <p
+          className={cn(
+            "page-caption text-white/55 text-center mb-3 text-balance lg:min-h-[1.6em] lg:flex lg:items-end lg:justify-center",
+            isEn && "tracking-tight lg:min-h-[2.6em]"
+          )}
+        >
+          {s.layer2Text}
+        </p>
         <ul className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-3 sm:mb-4 lg:mb-5">
           {[s.layer2Thermal, s.layer2Mechanical, s.layer2Electrical].map(
             (label) => (
               <li
                 key={label}
                 className={cn(
-                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 text-white/85 min-w-0",
+                  "rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 text-white/85 min-w-0 min-h-[2.75rem] h-full flex items-center justify-center",
                   chipText
                 )}
               >
@@ -250,12 +259,7 @@ export function HeroPlatformDiagram({
         {hasMechanism && (
           <>
             <SectionTitle>{s.mechanismTitle}</SectionTitle>
-            <div
-              className={cn(
-                "grid gap-2 sm:gap-3 min-w-0",
-                "grid-cols-1 sm:grid-cols-3 lg:grid-cols-1"
-              )}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 min-w-0">
               {[
                 [s.mechanismItem1, s.mechanismItem2],
                 [s.mechanismItem3, s.mechanismItem4],
@@ -267,7 +271,7 @@ export function HeroPlatformDiagram({
                 >
                   <p
                     className={cn(
-                      "page-body font-medium text-white mb-1 text-balance break-words",
+                      "page-body font-medium text-white mb-1 text-balance break-words lg:min-h-[2.6em] lg:flex lg:items-end lg:justify-center",
                       isEn && "tracking-tight"
                     )}
                   >
@@ -296,8 +300,8 @@ export function HeroPlatformDiagram({
         <SectionTitle>{s.layer4Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-3 text-balance",
-            isEn && "tracking-tight"
+            "page-caption text-white/55 text-center mb-3 text-balance lg:min-h-[1.6em] lg:flex lg:items-end lg:justify-center",
+            isEn && "tracking-tight lg:min-h-[2.6em]"
           )}
         >
           {s.atomicTitle}
@@ -314,7 +318,7 @@ export function HeroPlatformDiagram({
                 </div>
                 <p
                   className={cn(
-                    "mt-1 sm:mt-1.5 page-caption text-white font-medium text-center break-words",
+                    "mt-1 sm:mt-1.5 page-caption text-white font-medium text-center break-words min-h-[2.6em] flex items-start justify-center",
                     isEn && "tracking-tight"
                   )}
                 >
@@ -390,7 +394,7 @@ export function HeroPlatformDiagram({
                   <p
                     key={label}
                     className={cn(
-                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 min-w-0",
+                      "text-white/80 rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-1.5 sm:px-3 sm:py-2.5 lg:px-4 lg:py-2.5 min-w-0 min-h-[2.75rem] h-full flex items-center justify-center",
                       chipText
                     )}
                   >

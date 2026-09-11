@@ -47,13 +47,15 @@ const cssFiles = fs.existsSync(chunksDir)
   ? fs.readdirSync(chunksDir).filter((f) => f.endsWith(".css"))
   : []
 
-if (cssFiles.length === 1) {
-  const cssSource = path.join(chunksDir, cssFiles[0])
+if (cssFiles.length >= 1) {
+  cssFiles.sort()
+  const combined = cssFiles
+    .map((f) => fs.readFileSync(path.join(chunksDir, f), "utf8"))
+    .join("\n")
   fs.mkdirSync(stylesDir, { recursive: true })
-  fs.copyFileSync(cssSource, path.join(stylesDir, "site.css"))
-  fs.copyFileSync(cssSource, path.join(outDir, "site.css"))
+  fs.writeFileSync(path.join(stylesDir, "site.css"), combined)
+  fs.writeFileSync(path.join(outDir, "site.css"), combined)
 
-  // 只注入一份稳定路径，避免同一套 CSS 下两遍；out/site.css 仍复制，供手动兜底
   const styleLinks =
     '<link rel="stylesheet" href="/styles/site.css" data-site-style="true"/>'
 
@@ -64,7 +66,9 @@ if (cssFiles.length === 1) {
       fs.writeFileSync(file, html)
     }
   }
-  console.log(`Styles -> out/styles/site.css + out/site.css (from ${cssFiles[0]})`)
+  console.log(`Styles -> out/styles/site.css + out/site.css (merged ${cssFiles.length} chunks)`)
+} else {
+  console.warn("WARNING: no CSS chunks found under out/_next/static/chunks")
 }
 
 // 4. 上传路径自检文件
@@ -89,27 +93,38 @@ FileZilla 默认隐藏点文件。请开启「显示隐藏文件」，把 out/.h
 若看不到，上传 UPLOAD_RENAME_TO_dot_htaccess.txt 后在控制台改名为 .htaccess。
 缺少此文件时，刷新 /zh、/zh/about 等无尾斜杠地址会 403。
 
+【传输方式】
+必须用二进制（Binary）上传，不要用 ASCII。否则 JS/字体可能损坏，页面会报 Application error。
+
 【FileZilla 方式】
 必须上传整个 out 文件夹【里面的内容】到 htdocs：
   .htaccess       （隐藏文件，必传！）
-  _next/          （${nextCount} 个文件，整夹上传，最重要！）
+  _next/          （${nextCount} 个文件，整夹覆盖，最重要！）
   styles/         （含 site.css）
   site.css
   zh/  en/
   UPLOAD_TEST.txt
-  其余文件...
+  其余文件（含各页目录里的 .txt 和 __next.$d$locale，不要跳过）
+
+【覆盖规则】
+每次改版：先传完整 _next/ 和 zh/、en/，再覆盖 HTML。
+不要只传几个 HTML、也不要新旧 _next 混在一起。
+哈希文件名一变，旧 JS 还在、新 HTML 去找新 JS，就会出现「Application error」。
 
 【上传后验证（全部应为 200，不是 404 / 403）】
   https://www.tospike.com/UPLOAD_TEST.txt
   https://www.tospike.com/styles/site.css
   https://www.tospike.com/zh/
   https://www.tospike.com/zh   （无斜杠，应 301 到 /zh/）
+  https://www.tospike.com/zh/applications/
+用无痕窗口打开，避免旧 JS/CSS 缓存。
 
 【常见错误】
 × 没传 .htaccess               → 刷新目录页 403
-× 只删了 _next 没重新上传  →  UI 全乱
+× 只删了 _next 没重新上传  →  UI 全乱 / Application error
 × 上传到错误目录           →  文件 404
 × 只上传了 zh 没上传 _next →  无样式
+× ASCII 模式上传            → JS 损坏，客户端报错
 
 构建时间：${new Date().toLocaleString("zh-CN")}
 `

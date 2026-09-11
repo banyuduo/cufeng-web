@@ -1,5 +1,4 @@
 import { Link } from "@/components/app-link"
-import { Battery, Droplets, Atom, Microscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -11,6 +10,11 @@ import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
 import { FrontierExpandableCard } from "@/components/frontier-expandable-card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
+
+function pipeItems(value: string, missingKey?: string): string[] {
+  if (!value || value === missingKey) return []
+  return value.split("|").map((item) => item.trim()).filter(Boolean)
+}
 
 export default async function ApplicationsPage({
   params,
@@ -75,7 +79,7 @@ export default async function ApplicationsPage({
                   key={index}
                   level={t(`applications.blueprint.${layer.levelKey}`)}
                   title={t(`applications.blueprint.${layer.titleKey}`)}
-                  items={t(`applications.blueprint.${layer.itemsKey}`).split("|")}
+                  items={pipeItems(t(`applications.blueprint.${layer.itemsKey}`))}
                   description={t(`applications.blueprint.${layer.descKey}`)}
                   color={layer.color}
                   tag={t(`applications.blueprint.${layer.tagKey}`)}
@@ -103,8 +107,7 @@ export default async function ApplicationsPage({
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
               const base = `applications.categories.${cat.key}`
-              const itemsStr = t(`${base}.items`)
-              const items = itemsStr ? itemsStr.split("|").filter(Boolean) : []
+              const items = pipeItems(t(`${base}.items`), `${base}.items`)
               const materials = t(`${base}.materials`) !== `${base}.materials` ? t(`${base}.materials`) : undefined
               const badge = t(`${base}.badge`) !== `${base}.badge` ? t(`${base}.badge`) : undefined
               const subtitle = t(`${base}.subtitle`) !== `${base}.subtitle` ? t(`${base}.subtitle`) : undefined
@@ -140,8 +143,7 @@ export default async function ApplicationsPage({
               }
 
               if (cat.key === "consumer") {
-                const itemsDescStr = t(`${base}.itemsDesc`)
-                const itemsDesc = itemsDescStr && itemsDescStr !== `${base}.itemsDesc` ? itemsDescStr.split("|") : []
+                const itemsDesc = pipeItems(t(`${base}.itemsDesc`), `${base}.itemsDesc`)
                 return (
                   <ConsumerExpandableCard
                     key={cat.id}
@@ -175,7 +177,7 @@ export default async function ApplicationsPage({
               if (cat.key === "frontier") {
                 const energy = "applications.energy"
                 const frontier = "applications.frontier"
-                const itemsDesc = t(`${base}.itemsDesc`).split("|")
+                const itemsDesc = pipeItems(t(`${base}.itemsDesc`), `${base}.itemsDesc`)
                 return (
                   <FrontierExpandableCard
                     key={cat.id}
@@ -195,61 +197,55 @@ export default async function ApplicationsPage({
                         key: "solidState",
                         title: t(`${energy}.solidStateTitle`),
                         shortDesc: itemsDesc[0] ?? "",
-                        icon: <Battery className="w-5 h-5" />,
                         hasWhitepaper: true,
                         hasDeepTech: true,
                         whitepaperHref: validLocale === "en" ? "/docs/diamond-battery-en.html" : "/docs/diamond-battery.html",
                         deepTechHref: `${prefix}/news/solid-state-battery`,
-                        expandContent: (
-                          <div className="space-y-4 page-body">
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStatePhysics`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${energy}.solidStatePhysicsDesc`)}</p>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateTech`)}</div>
-                              <ul className="space-y-1 page-body text-white/70">
-                                <li>• {t(`${energy}.solidStateAdv1`)}</li>
-                                <li>• {t(`${energy}.solidStateAdv2`)}</li>
-                                <li>• {t(`${energy}.solidStateAdv3`)}</li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.solidStateValue`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${energy}.solidStateValueDesc`)}</p>
-                            </div>
-                          </div>
-                        ),
+                        sections: [
+                          {
+                            heading: t(`${energy}.solidStatePhysics`),
+                            body: t(`${energy}.solidStatePhysicsDesc`),
+                          },
+                          {
+                            heading: t(`${energy}.solidStateTech`),
+                            bullets: [
+                              t(`${energy}.solidStateAdv1`),
+                              t(`${energy}.solidStateAdv2`),
+                              t(`${energy}.solidStateAdv3`),
+                            ],
+                          },
+                          {
+                            heading: t(`${energy}.solidStateValue`),
+                            body: t(`${energy}.solidStateValueDesc`),
+                          },
+                        ],
                       },
                       {
                         key: "water",
                         title: t(`${energy}.waterTitle`),
                         shortDesc: itemsDesc[1] ?? "",
-                        icon: <Droplets className="w-5 h-5" />,
                         hasWhitepaper: true,
                         hasDeepTech: true,
                         whitepaperHref: validLocale === "en" ? "/docs/diamond-water-en.html" : "/docs/diamond-water.html",
                         deepTechHref: `${prefix}/news/3d-covalent-composite-electrode`,
-                        expandContent: (
-                          <div className="space-y-4 page-body">
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterPhysics`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${energy}.waterPhysicsDesc`)}</p>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterTech`)}</div>
-                              <ul className="space-y-1 page-body text-white/70">
-                                <li>• {t(`${energy}.waterAdv1`)}</li>
-                                <li>• {t(`${energy}.waterAdv2`)}</li>
-                                <li>• {t(`${energy}.waterAdv3`)}</li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${energy}.waterValue`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${energy}.waterValueDesc`)}</p>
-                            </div>
-                          </div>
-                        ),
+                        sections: [
+                          {
+                            heading: t(`${energy}.waterPhysics`),
+                            body: t(`${energy}.waterPhysicsDesc`),
+                          },
+                          {
+                            heading: t(`${energy}.waterTech`),
+                            bullets: [
+                              t(`${energy}.waterAdv1`),
+                              t(`${energy}.waterAdv2`),
+                              t(`${energy}.waterAdv3`),
+                            ],
+                          },
+                          {
+                            heading: t(`${energy}.waterValue`),
+                            body: t(`${energy}.waterValueDesc`),
+                          },
+                        ],
                       },
                     ]}
                     longTermItems={[
@@ -257,66 +253,59 @@ export default async function ApplicationsPage({
                         key: "superconductor",
                         title: t(`${frontier}.superconductorTitle`),
                         shortDesc: itemsDesc[2] ?? "",
-                        icon: <Atom className="w-5 h-5" />,
                         hasWhitepaper: false,
                         hasDeepTech: true,
                         deepTechHref: `${prefix}/news/superconducting-materials`,
-                        expandContent: (
-                          <div className="space-y-4 page-body">
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${frontier}.superconductorPhysics`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${frontier}.superconductorPhysicsDesc`)}</p>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${frontier}.researchPoints`)}</div>
-                              <ul className="space-y-1 page-body text-white/70">
-                                <li>• {t(`${frontier}.superconductorRes1`)}</li>
-                                <li>• {t(`${frontier}.superconductorRes2`)}</li>
-                                <li>• {t(`${frontier}.superconductorRes3`)}</li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${frontier}.superconductorVision`)}</p>
-                            </div>
-                          </div>
-                        ),
+                        sections: [
+                          {
+                            heading: t(`${frontier}.superconductorPhysics`),
+                            body: t(`${frontier}.superconductorPhysicsDesc`),
+                          },
+                          {
+                            heading: t(`${frontier}.researchPoints`),
+                            bullets: [
+                              t(`${frontier}.superconductorRes1`),
+                              t(`${frontier}.superconductorRes2`),
+                              t(`${frontier}.superconductorRes3`),
+                            ],
+                          },
+                          {
+                            heading: t(`${frontier}.vision`),
+                            body: t(`${frontier}.superconductorVision`),
+                          },
+                        ],
                       },
                       {
                         key: "quantum",
                         title: t(`${frontier}.quantumTitle`),
                         shortDesc: itemsDesc[3] ?? "",
-                        icon: <Microscope className="w-5 h-5" />,
                         hasWhitepaper: false,
                         hasDeepTech: true,
                         deepTechHref: `${prefix}/news/quantum-chaos-computing`,
-                        expandContent: (
-                          <div className="space-y-4 page-body">
-                            <div>
-                              <p className="page-body text-white/70 break-words">{t(`${frontier}.quantumPhysicsDesc`)}</p>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${frontier}.quantumResearch`)}</div>
-                              <ul className="space-y-1 page-body text-white/70">
-                                <li>• {t(`${frontier}.quantumRes1`)}</li>
-                                <li>• {t(`${frontier}.quantumRes2`)}</li>
-                                <li>• {t(`${frontier}.quantumRes3`)}</li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div className="font-semibold text-white mb-1">{t(`${frontier}.vision`)}</div>
-                              <p className="page-body text-white/70 break-words">{t(`${frontier}.quantumVision`)}</p>
-                            </div>
-                          </div>
-                        ),
+                        sections: [
+                          {
+                            body: t(`${frontier}.quantumPhysicsDesc`),
+                          },
+                          {
+                            heading: t(`${frontier}.quantumResearch`),
+                            bullets: [
+                              t(`${frontier}.quantumRes1`),
+                              t(`${frontier}.quantumRes2`),
+                              t(`${frontier}.quantumRes3`),
+                            ],
+                          },
+                          {
+                            heading: t(`${frontier}.vision`),
+                            body: t(`${frontier}.quantumVision`),
+                          },
+                        ],
                       },
                     ]}
                   />
                 )
               }
 
-              const itemsDescStr = t(`${base}.itemsDesc`)
-              const itemsDesc = itemsDescStr && itemsDescStr !== `${base}.itemsDesc` ? itemsDescStr.split("|") : []
+              const itemsDesc = pipeItems(t(`${base}.itemsDesc`), `${base}.itemsDesc`)
 
               return (
                 <Card
@@ -362,7 +351,7 @@ export default async function ApplicationsPage({
                         <div className="mt-4">
                           <div className="page-body font-semibold text-white mb-2">{t("applications.thermal.materialsLabel")}</div>
                           <div className="flex flex-wrap gap-2">
-                            {materials.split("|").map((m, i) => (
+                            {pipeItems(materials).map((m, i) => (
                               <span
                                 key={i}
                                 className="inline-flex items-center px-3 py-1.5 rounded-lg page-caption font-medium border break-words max-w-full bg-white/[0.04] text-white/80"

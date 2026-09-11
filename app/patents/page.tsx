@@ -13,6 +13,39 @@ import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
 import { MaterialComparisonRadarChart } from "@/components/material-comparison-radar-chart"
 import { ArchitecturePanoramaDiagram } from "@/components/architecture-panorama-diagram"
+import { cn } from "@/lib/utils"
+
+function StagePathHeader({
+  kicker,
+  title,
+  open,
+  locale,
+}: {
+  kicker: string
+  title: string
+  open: boolean
+  locale: Locale
+}) {
+  return (
+    <div className="flex items-start gap-3">
+      <div className="flex-1 min-w-0">
+        <div className="page-caption text-white/45">{kicker}</div>
+        <div
+          className={cn(
+            "page-h3 text-white",
+            !open && "pc-card-title",
+            !open && (locale === "en" ? "lg:min-h-[5.6em]" : "lg:min-h-[2.8em]")
+          )}
+        >
+          {title}
+        </div>
+      </div>
+      <ChevronDown
+        className={`w-5 h-5 mt-1 text-white/40 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+      />
+    </div>
+  )
+}
 
 export default function PatentsPage() {
   const [expandedStage, setExpandedStage] = useState<number | null>(null)
@@ -57,8 +90,8 @@ export default function PatentsPage() {
         title={t("patents.hero.title")}
         subtitle={t("patents.hero.subtitle")}
       >
-        <div className="page-measure mt-5 space-y-3 text-center">
-          <p className="page-lead text-white/70">{t("patents.hero.desc")}</p>
+        <div className="mt-5 space-y-3 text-center">
+          <p className="page-body text-white/70 max-w-4xl mx-auto">{t("patents.hero.desc")}</p>
           {t("patents.hero.dimensions") ? (
             <p className="page-caption text-white/55">{t("patents.hero.dimensions")}</p>
           ) : null}
@@ -82,7 +115,7 @@ export default function PatentsPage() {
                   <div key={step.label} className="relative flex-1 min-w-0 px-2 text-center">
                     <div className="mx-auto mb-4 h-2.5 w-2.5 rounded-full bg-[#5BA3D4] ring-4 ring-[#0B1F33]" />
                     <p className="page-caption text-white/45 mb-1">{step.label}</p>
-                    <p className="page-caption text-white whitespace-pre-line leading-snug">{step.title}</p>
+                    <p className="page-caption text-white whitespace-pre-line leading-snug pc-step-title lg:min-h-[2.6em]">{step.title}</p>
                   </div>
                 ))}
               </div>
@@ -145,15 +178,12 @@ export default function PatentsPage() {
               className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 1 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 min-w-0">
-                  <div className="page-caption text-white/45">Stage 01</div>
-                  <div className="page-h3 text-white">{t("patents.evolutionPath.stage01Title")}</div>
-                </div>
-                <ChevronDown
-                  className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 1 ? "rotate-180" : ""}`}
-                />
-              </div>
+              <StagePathHeader
+                kicker="Stage 01"
+                title={t("patents.evolutionPath.stage01Title")}
+                open={expandedStage === 1}
+                locale={locale}
+              />
               <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage01Desc")}
               </p>
@@ -193,15 +223,12 @@ export default function PatentsPage() {
               className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 2 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 min-w-0">
-                  <div className="page-caption text-white/45">Stage 02</div>
-                  <div className="page-h3 text-white">{t("patents.evolutionPath.stage02Title")}</div>
-                </div>
-                <ChevronDown
-                  className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 2 ? "rotate-180" : ""}`}
-                />
-              </div>
+              <StagePathHeader
+                kicker="Stage 02"
+                title={t("patents.evolutionPath.stage02Title")}
+                open={expandedStage === 2}
+                locale={locale}
+              />
               <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage02Desc")}
               </p>
@@ -265,15 +292,12 @@ export default function PatentsPage() {
               className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 3 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 min-w-0">
-                  <div className="page-caption text-white/45">Stage 03</div>
-                  <div className="page-h3 text-white">{t("patents.evolutionPath.stage03Title")}</div>
-                </div>
-                <ChevronDown
-                  className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 3 ? "rotate-180" : ""}`}
-                />
-              </div>
+              <StagePathHeader
+                kicker="Stage 03"
+                title={t("patents.evolutionPath.stage03Title")}
+                open={expandedStage === 3}
+                locale={locale}
+              />
               <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage03Desc")}
               </p>
@@ -329,15 +353,12 @@ export default function PatentsPage() {
               className={`p-4 sm:p-6 gap-3 bg-white/[0.03] border border-white/12 cursor-pointer touch-manipulation transition-all hover:border-white/25 ${expandedStage === 4 ? "md:col-span-2 lg:col-span-4 border-white/25" : ""}`}
               onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 min-w-0">
-                  <div className="page-caption text-white/45">Stage 04</div>
-                  <div className="page-h3 text-white">{t("patents.evolutionPath.stage04Title")}</div>
-                </div>
-                <ChevronDown
-                  className={`w-5 h-5 text-white/40 transition-transform ${expandedStage === 4 ? "rotate-180" : ""}`}
-                />
-              </div>
+              <StagePathHeader
+                kicker="Stage 04"
+                title={t("patents.evolutionPath.stage04Title")}
+                open={expandedStage === 4}
+                locale={locale}
+              />
               <p className="page-body text-white/70">
                 {t("patents.evolutionPath.stage04Desc")}
               </p>
@@ -390,7 +411,7 @@ export default function PatentsPage() {
             <div className="grid md:grid-cols-3 gap-3 sm:gap-5">
               <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
                 <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3">
+                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
                   {t("patents.platformCore.domain1Title")}
                 </h4>
                 <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain1a")}</p>
@@ -398,7 +419,7 @@ export default function PatentsPage() {
               </div>
               <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
                 <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3">
+                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
                   {t("patents.platformCore.domain2Title")}
                 </h4>
                 <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain2a")}</p>
@@ -406,7 +427,7 @@ export default function PatentsPage() {
               </div>
               <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
                 <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3">
+                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
                   {t("patents.platformCore.domain3Title")}
                 </h4>
                 <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain3a")}</p>
@@ -462,21 +483,21 @@ export default function PatentsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2">
+              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
                 01 {t("home.features.innovation")}
               </h3>
               <p className="page-body text-white/75 mb-2">{t("home.features.innovationAction")}</p>
               <p className="page-caption text-white/50">{t("home.features.innovationEffect")}</p>
             </Card>
             <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2">
+              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
                 02 {t("home.features.patents")}
               </h3>
               <p className="page-body text-white/75 mb-2">{t("home.features.patentsStatus")}</p>
               <p className="page-caption text-white/50">{t("home.features.patentsValue")}</p>
             </Card>
             <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2">
+              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
                 03 {t("home.features.industrial")}
               </h3>
               <p className="page-body text-white/75 mb-2">{t("home.features.industrialStatus")}</p>

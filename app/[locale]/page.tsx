@@ -132,15 +132,15 @@ export default async function HomePage({
               </ol>
               <div className="grid md:grid-cols-3 gap-4 md:gap-5">
                 <div className="page-surface rounded-xl px-5 py-4">
-                  <h3 className="page-h3 text-white mb-2">{t("home.results.process")}</h3>
+                  <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">{t("home.results.process")}</h3>
                   <p className="page-body text-white/70">{t("home.results.processDesc")}</p>
                 </div>
                 <div className="page-surface rounded-xl px-5 py-4">
-                  <h3 className="page-h3 text-white mb-2">{t("home.results.deliverables")}</h3>
+                  <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">{t("home.results.deliverables")}</h3>
                   <p className="page-body text-white/70">{t("home.results.deliverablesDesc")}</p>
                 </div>
                 <div className="page-surface rounded-xl px-5 py-4">
-                  <h3 className="page-h3 text-white mb-2">{t("home.results.ip")}</h3>
+                  <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">{t("home.results.ip")}</h3>
                   <p className="page-body text-white/70">{t("home.results.ipDesc")}</p>
                 </div>
               </div>
