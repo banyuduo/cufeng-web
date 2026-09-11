@@ -1032,7 +1032,7 @@
       "patent10No": "Application No.: 202610187717.4",
       "stage04Title": "Stress Engineering Based on All-Carbon Platform",
       "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
-      "stage04Explanation": "The \"Long-term Physical Potential\" section below expands on specific exploration directions derived from this (superconductivity, chaotic dynamics, quantum reservoir computing, etc.). We are collaborating with academia to advance related research."
+      "stage04Explanation": "In the all-carbon composite stage, a continuous carbon network centered on sp³–sp² chemical bonding and endogenous stress fields has been built. At the engineering level, the structure has shown excellent thermal conductivity, mechanical properties, and long-term stability; at a higher level, it has also opened a series of physical windows not yet fully explored."
     },
     "platformCore": {
       "sectionTitle": "Platform Core",
@@ -1083,7 +1083,6 @@
     "platformExtension": {
       "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp³–sp² Structure",
       "sectionSubtitle": "Exploring the evolution potential of the all-carbon sp³–sp² structure in extreme physics and future computing",
-      "intro": "In the all-carbon composite stage, a continuous carbon network centered on sp³–sp² chemical bonding and endogenous stress fields has been built. At the engineering level, the structure has shown excellent thermal conductivity, mechanical properties, and long-term stability; at a higher level, it has also opened a series of physical windows not yet fully explored.",
       "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing structural basis for unconventional superconductivity or related collective phenomena.",
       "superconductorP2": "In existing material systems, carbon-based structures simultaneously possessing strong endogenous stress, continuous sp³–sp² bonding, and engineerable tuning windows remain rare, making this platform unique in fundamental structure exploration for unconventional superconducting materials.",
       "chaosP1": "Interconnected networks form highly coupled, disordered but controllable structural units at mesoscopic scale, providing physical carrier for complex dynamics and reservoir computing-like behavior.",

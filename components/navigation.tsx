@@ -95,7 +95,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
     locale === "en" ? "flex items-center gap-2 xl:hidden" : "flex items-center gap-2 lg:hidden"
 
   return (
-    <nav className={`border-b fixed inset-x-0 top-0 z-[100] isolate pointer-events-auto ${navBg}`}>
+    <nav className={`border-b fixed inset-x-0 top-0 z-[300] isolate pointer-events-auto ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href={prefix} className={`text-xl font-bold whitespace-nowrap shrink-0 ${navText}`}>
@@ -191,7 +191,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <button
               type="button"
-              className={`relative z-[101] p-2 touch-manipulation transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
+              className={`relative z-[301] p-2 touch-manipulation pointer-events-auto transition-colors ${isDarkPage ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-[#0F2A5C]"}`}
               onClick={() => setMobileMenuOpen((open) => !open)}
               aria-expanded={mobileMenuOpen}
               aria-label={t("common.nav.toggleMenu")}
@@ -209,20 +209,19 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
       {menuMounted &&
         mobileMenuOpen &&
         createPortal(
-          <>
-            <div
-              className="fixed inset-x-0 top-16 bottom-0 z-[9998]"
-              style={{ backgroundColor: "#000000", opacity: 0.5 }}
-              onClick={() => setMobileMenuOpen(false)}
-            />
+          <div
+            className="fixed inset-x-0 top-16 bottom-0 z-[400] pointer-events-auto"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <div className="absolute inset-0 bg-black/50" />
             <div
               id="mobile-menu-overlay"
-              className="fixed top-16 right-0 w-max min-w-[100px] max-w-[90vw] h-[calc(100vh-4rem)] z-[9999] flex flex-col"
+              className="absolute top-16 right-0 w-max min-w-[100px] max-w-[90vw] max-h-[calc(100vh-4rem)] overflow-y-auto flex flex-col pointer-events-auto"
               style={{
                 backgroundColor: "#000000",
-                opacity: 1,
                 boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.5)",
               }}
+              onClick={(event) => event.stopPropagation()}
             >
               <div className="flex flex-col w-max pt-3 pb-3 fade-in-down px-2" style={{ backgroundColor: "#000000" }}>
                 <Link
@@ -307,7 +306,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                 </Link>
               </div>
             </div>
-          </>,
+          </div>,
           document.body
         )}
     </nav>

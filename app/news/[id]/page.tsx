@@ -245,9 +245,9 @@ export default async function NewsDetailPage({
   const t = await getTranslations(validLocale)
 
   return (
-    <div className="min-h-screen relative bg-[#F9FAFC]">
+    <div className="min-h-screen bg-[#F9FAFC]">
       <Navigation locale={validLocale} />
-      <div className="relative z-10">
+      <div>
 
       {industryArticle ? (
         <IndustryArticleDetail article={industryArticle} prefix={prefix} t={t} />

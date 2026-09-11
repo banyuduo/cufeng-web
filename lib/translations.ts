@@ -4,7 +4,7 @@ import { getNested } from "./get-nested"
 
 export { getNested }
 
-const cacheMap: Partial<Record<Locale, Record<string, unknown>>> = {} // locale JSON cache; bump 2026-09-11 d1 d3 cta
+const cacheMap: Partial<Record<Locale, Record<string, unknown>>> = {} // locale JSON cache; bump 2026-09-11 restore extension
 
 /** 按需加载当前语言的翻译数据（可序列化，供 client 使用） */
 export const getTranslationsData = cache(async (locale: Locale): Promise<Record<string, unknown>> => {
