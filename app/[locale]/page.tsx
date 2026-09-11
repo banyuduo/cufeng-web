@@ -62,13 +62,11 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* 第二层：技术平台（标题 + 图自带边框） */}
+            {/* 第二层：技术平台（图名放在图框上端，避免与上方副标题重复） */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-4">
-                {t("home.hero.title")}
-              </h2>
               <HeroPlatformDiagram
                 strings={{
+                  diagramTitle: t("home.hero.title"),
                   layer1Title: t("home.hero.diagram.layer1Title"),
                   layer1Text: t("home.hero.diagram.layer1Text"),
                   layer2Title: t("home.hero.diagram.layer2Title"),
@@ -91,7 +89,6 @@ export default async function HomePage({
                   applicationTim: t("home.platform.diagram.layer1Tim"),
                   applicationSubstrate: t("home.platform.diagram.layer1Substrate"),
                   applicationDevices: t("home.platform.diagram.layer1Devices"),
-                  applicationHint: t("home.platform.diagram.layer1Hint"),
                   limitsTitle: t("home.platform.diagram.layer3Title"),
                   limitsLabel: t("home.platform.diagram.layer3Label"),
                   mechanismTitle: t("home.platform.diagram.layer2Title"),
