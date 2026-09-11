@@ -21,12 +21,12 @@ export default async function HomePage({
       <Navigation locale={validLocale} />
 
       <div className="overflow-x-hidden">
-      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-10 sm:pb-12 lg:pb-14 px-6 lg:px-8 pointer-events-none">
+      <section className="relative pt-24 sm:pt-28 lg:pt-24 pb-10 sm:pb-12 lg:pb-10 px-6 lg:px-8 pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
-          <div className="space-y-7 sm:space-y-8 lg:space-y-8">
+          <div className="space-y-7 sm:space-y-8 lg:space-y-6">
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
-              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-6 font-light opacity-100">
+              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-3 font-light opacity-100">
                 {t("home.hero.visionTitle")}
               </h1>
               <p className="page-lead page-measure text-white/70 font-light">
@@ -36,7 +36,7 @@ export default async function HomePage({
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
             <div className="text-center">
-              <p className="page-body page-measure text-white/65 mb-5">
+              <p className="page-body page-measure text-white/65 mb-5 lg:mb-3">
                 {t("home.hero.platformFocus")}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
@@ -64,7 +64,7 @@ export default async function HomePage({
 
             {/* 第二层：技术平台（标题 + 图自带边框） */}
             <div>
-              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-6">
+              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-4">
                 {t("home.hero.title")}
               </h2>
               <HeroPlatformDiagram
