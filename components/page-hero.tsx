@@ -1,6 +1,7 @@
 "use client"
 
 import { type ReactNode } from "react"
+import { ChemText } from "@/components/chem-text"
 import { DarkPagePatternBg } from "@/components/dark-page-pattern-bg"
 
 type PageHeroVariant = "dark" | "light"
@@ -55,7 +56,7 @@ export function PageHero({
               className="absolute inset-0"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(0, 119, 182, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 119, 182, 0.25) 1px, transparent 1px)",
+                  "linear-gradient(rgba(42, 127, 196, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(42, 127, 196, 0.08) 1px, transparent 1px)",
                 backgroundSize: "60px 60px",
               }}
             />
@@ -63,13 +64,13 @@ export function PageHero({
           <div
             className="absolute top-20 left-1/4 w-96 h-96 rounded-full opacity-70 pointer-events-none"
             style={{
-              background: "radial-gradient(circle, rgba(0,119,182,0.22) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(42,127,196,0.10) 0%, transparent 70%)",
             }}
           />
           <div
             className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full opacity-70 pointer-events-none"
             style={{
-              background: "radial-gradient(circle, rgba(0,150,199,0.2) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(11,31,51,0.16) 0%, transparent 70%)",
             }}
           />
         </>
@@ -82,7 +83,7 @@ export function PageHero({
               className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
                 isDark
                   ? "bg-white/10 text-white/80 border-white/15"
-                  : "bg-[#E8EEFF] text-[#023B99] border-[#4169E1]/30"
+                  : "bg-slate-100 text-slate-700 border-slate-200"
               }`}
             >
               {badge}
@@ -93,15 +94,15 @@ export function PageHero({
               isDark ? "text-white" : "text-slate-900"
             } ${titleWeight === "light" ? "font-light" : ""}`}
           >
-            {title}
+            <ChemText text={title} />
           </h1>
           {tagline && (
             <p
               className={`page-kicker mb-3 break-words ${
-                isDark ? "text-white/55" : "text-[#0077b6]"
+                isDark ? "text-white/55" : "text-[#2A7FC4]"
               }`}
             >
-              {tagline}
+              <ChemText text={tagline} />
             </p>
           )}
           {showSubtitle && (
@@ -110,7 +111,7 @@ export function PageHero({
                 isDark ? "text-white/75" : "text-slate-500"
               }`}
             >
-              {subtitle}
+              <ChemText text={subtitle} />
             </p>
           )}
           {children}

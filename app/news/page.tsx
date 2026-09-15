@@ -129,7 +129,7 @@ export default async function NewsPage({
       {/* Company News */}
       <section
         id="company-news"
-        className="py-8 sm:py-14 lg:py-14 border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
+        className="section-y border-t border-white/12 scroll-mt-24 bg-[#F9FAFC]"
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -171,7 +171,7 @@ export default async function NewsPage({
       </section>
 
       {/* Industry Information */}
-      <section id="industry-info" className="py-8 sm:py-14 lg:py-14 border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
+      <section id="industry-info" className="section-y border-t border-white/12 bg-[#F9FAFC] scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="page-h2 mb-4 text-slate-900">{t("news.industryInfo")}</h2>

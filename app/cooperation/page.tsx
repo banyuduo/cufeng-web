@@ -33,7 +33,7 @@ export default async function CooperationPage({
         </div>
       </PageHero>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.platform.title")}
@@ -52,7 +52,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.audience.title")}
@@ -97,7 +97,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
           <div>
             <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
@@ -120,7 +120,7 @@ export default async function CooperationPage({
         </div>
       </section>
 
-      <section id="contact" className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 scroll-mt-24">
+      <section id="contact" className="section-block scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="page-h2 mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.contact.title")}
@@ -128,7 +128,7 @@ export default async function CooperationPage({
 
           <div className="bg-white rounded-2xl p-5 sm:p-8 md:p-10 space-y-6 sm:space-y-8 border border-white/20 shadow-[0_20px_50px_-28px_rgba(0,0,0,0.55)]">
             <div className="flex items-start gap-4 sm:gap-6">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8EEFF] flex items-center justify-center flex-shrink-0 border border-slate-200">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8E8EA] flex items-center justify-center flex-shrink-0 border border-slate-200">
                 <MapPin className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
@@ -141,7 +141,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="flex items-start gap-4 sm:gap-6">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8EEFF] flex items-center justify-center flex-shrink-0 border border-slate-200">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8E8EA] flex items-center justify-center flex-shrink-0 border border-slate-200">
                 <Mail className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
@@ -156,7 +156,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="flex items-start gap-4 sm:gap-6">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8EEFF] flex items-center justify-center flex-shrink-0 border border-slate-200">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8E8EA] flex items-center justify-center flex-shrink-0 border border-slate-200">
                 <Phone className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
@@ -171,7 +171,7 @@ export default async function CooperationPage({
             </div>
 
             <div className="flex items-start gap-4 sm:gap-6">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8EEFF] flex items-center justify-center flex-shrink-0 border border-slate-200">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8E8EA] flex items-center justify-center flex-shrink-0 border border-slate-200">
                 <Globe className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>

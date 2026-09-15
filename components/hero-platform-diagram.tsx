@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react"
 import { ArrowDown } from "lucide-react"
+import { ChemText } from "@/components/chem-text"
 import { useLocale } from "@/components/locale-provider"
 import { cn } from "@/lib/utils"
 
@@ -139,7 +140,7 @@ function FlowArrow() {
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <h4 className="page-h4 text-white mb-1.5 text-center text-balance px-1">
-      {children}
+      {typeof children === "string" ? <ChemText text={children} /> : children}
     </h4>
   )
 }
@@ -244,7 +245,7 @@ export function HeroPlatformDiagram({
       {s.diagramTitle ? (
         <div className="border-b border-white/10 px-4 py-3 sm:px-6 sm:py-3.5 lg:px-6 lg:py-2.5">
           <h2 className="page-h3 text-white text-center text-balance">
-            {s.diagramTitle}
+            <ChemText text={s.diagramTitle} />
           </h2>
         </div>
       ) : null}
@@ -299,7 +300,12 @@ export function HeroPlatformDiagram({
         {hasMechanism && (
           <>
             <SectionTitle>{s.mechanismTitle}</SectionTitle>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 min-w-0">
+            <div
+              className={cn(
+                "grid gap-2 sm:gap-3 min-w-0",
+                isEn ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-3"
+              )}
+            >
               {[
                 [s.mechanismItem1, s.mechanismItem2],
                 [s.mechanismItem3, s.mechanismItem4],

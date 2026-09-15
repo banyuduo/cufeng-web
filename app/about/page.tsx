@@ -35,7 +35,7 @@ export default async function AboutPage({
       />
 
       {/* 企业概览 */}
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 relative">
+      <section className="section-block relative">
         <div className="max-w-4xl mx-auto">
           <Card className="p-5 sm:p-8 md:p-12 gap-4 bg-white/[0.03] border border-white/12 ">
             <div className="space-y-6 page-body text-white/75">
@@ -107,7 +107,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心团队 */}
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 relative bg-[#F9FAFC]">
+      <section className="section-block relative bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.team.title")}</h2>
@@ -245,7 +245,7 @@ export default async function AboutPage({
       </section>
 
       {/* 核心历程 - 时间轴 */}
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 relative bg-[#F9FAFC]">
+      <section className="section-block relative bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.timeline.title")}</h2>
