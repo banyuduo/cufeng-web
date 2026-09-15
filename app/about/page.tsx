@@ -75,9 +75,6 @@ export default async function AboutPage({
                 <p className="mb-4">
                   {t("about.overview.evolution1")}
                 </p>
-                <p className="mb-4">
-                  {t("about.overview.evolution2")}
-                </p>
               </div>
 
               {/* 企业愿景与核心理念 */}

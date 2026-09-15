@@ -7,11 +7,11 @@ import { getTranslationsData } from "@/lib/translations"
 
 const localeMetadata: Record<Locale, { title: string; description: string }> = {
   zh: {
-    title: "ToSpike - 先进热管理材料技术",
+    title: "ToSpike - 金刚石铜高导热复合材料",
     description: "专注金刚石铜复合材料、碳基复合材料等高性能热管理解决方案，从工具制造到材料科学的技术革命",
   },
   en: {
-    title: "ToSpike - Advanced Thermal Management Materials",
+    title: "ToSpike - High-Thermal-Conductivity Diamond-Copper Composite",
     description: "Advanced thermal management solutions for diamond-copper composites, carbon-based composites, and beyond. From tool manufacturing to materials science.",
   },
 }
