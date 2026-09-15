@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
+import { PageHero } from "@/components/page-hero"
 import { InPageAnchor, ScrollToHash } from "@/components/in-page-anchor"
 import { getIndustryArticles } from "@/lib/industry-articles"
 import { getTranslations } from "@/lib/translations"
@@ -50,17 +51,12 @@ export default async function NewsPage({
       <div>
       <ScrollToHash />
 
-      {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-8 sm:pb-10 lg:pb-12 overflow-hidden pointer-events-none">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 pointer-events-auto">
-          <div className="max-w-3xl">
-            <h1 className="page-h1 mb-6 text-balance text-white">{t("news.title")}</h1>
-            <p className="page-lead text-white/70 text-pretty">
-              {t("news.subtitle")}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        variant="dark"
+        background="stage"
+        title={t("news.title")}
+        subtitle={t("news.subtitle")}
+      />
 
       {/* Navigation Cards */}
       <section className="py-12 border-t border-white/12">

@@ -21,7 +21,7 @@ function StagePathHeader({
   open,
   locale,
 }: {
-  kicker: string
+  kicker?: string
   title: string
   open: boolean
   locale: Locale
@@ -29,7 +29,7 @@ function StagePathHeader({
   return (
     <div className="flex items-start gap-3">
       <div className="flex-1 min-w-0">
-        <div className="page-caption text-white/45">{kicker}</div>
+        {kicker ? <div className="page-caption text-white/45">{kicker}</div> : null}
         <div
           className={cn(
             "page-h3 text-white",
@@ -89,14 +89,7 @@ export default function PatentsPage() {
         titleWeight="light"
         title={t("patents.hero.title")}
         subtitle={t("patents.hero.subtitle")}
-      >
-        <div className="mt-5 space-y-3 text-center">
-          <p className="page-body text-white/70 max-w-4xl mx-auto">{t("patents.hero.desc")}</p>
-          {t("patents.hero.dimensions") ? (
-            <p className="page-caption text-white/55">{t("patents.hero.dimensions")}</p>
-          ) : null}
-        </div>
-      </PageHero>
+      />
 
       <section className="section-y relative">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -152,15 +145,46 @@ export default function PatentsPage() {
               stressRegulation: t("patents.architecture.stressRegulation"),
               applicationWindow: t("patents.architecture.applicationWindow"),
               extremeConditions: t("patents.architecture.extremeConditions"),
+              extremeTagline: t("patents.architecture.extremeTagline"),
               extremeItem1: t("patents.architecture.extremeItem1"),
               extremeItem2: t("patents.architecture.extremeItem2"),
               extremeItem3: t("patents.architecture.extremeItem3"),
-              superconductorPlatform: t("patents.architecture.superconductorPlatform"),
-              theoryExploration: t("patents.architecture.theoryExploration"),
-              quantumPotential: t("patents.architecture.quantumPotential"),
-              visionPlanning: t("patents.architecture.visionPlanning"),
+              structuralTitle: t("patents.architecture.structuralTitle"),
+              structuralItem1: t("patents.architecture.structuralItem1"),
+              structuralItem2: t("patents.architecture.structuralItem2"),
+              physicsTitle: t("patents.architecture.physicsTitle"),
+              physicsItem1: t("patents.architecture.physicsItem1"),
+              physicsItem2: t("patents.architecture.physicsItem2"),
+              physicsNote: t("patents.architecture.physicsNote"),
             }}
           />
+
+          <div className="mt-10 sm:mt-14">
+            <h3 className="page-h3 text-white mb-2 text-center">
+              {t("patents.platformCore.radarChartTitle")}
+            </h3>
+            <p className="page-body text-white/70 text-center max-w-3xl mx-auto mb-5">
+              {t("patents.platformCore.radarChartSubtitle")}
+            </p>
+            <MaterialComparisonRadarChart
+              variant="dark"
+              labels={{
+                dim1: t("patents.platformCore.radarDim1"),
+                dim2: t("patents.platformCore.radarDim2"),
+                dim3: t("patents.platformCore.radarDim3"),
+                dim4: t("patents.platformCore.radarDim4"),
+                dim5: t("patents.platformCore.radarDim5"),
+                dim1Mobile: t("patents.platformCore.radarDim1Mobile"),
+                dim2Mobile: t("patents.platformCore.radarDim2Mobile"),
+                dim3Mobile: t("patents.platformCore.radarDim3Mobile"),
+                dim4Mobile: t("patents.platformCore.radarDim4Mobile"),
+                dim5Mobile: t("patents.platformCore.radarDim5Mobile"),
+                diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
+                diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
+                toSpike: t("patents.platformCore.radarLabelToSpike"),
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -179,7 +203,6 @@ export default function PatentsPage() {
               onClick={() => setExpandedStage(expandedStage === 1 ? null : 1)}
             >
               <StagePathHeader
-                kicker="Stage 01"
                 title={t("patents.evolutionPath.stage01Title")}
                 open={expandedStage === 1}
                 locale={locale}
@@ -224,7 +247,6 @@ export default function PatentsPage() {
               onClick={() => setExpandedStage(expandedStage === 2 ? null : 2)}
             >
               <StagePathHeader
-                kicker="Stage 02"
                 title={t("patents.evolutionPath.stage02Title")}
                 open={expandedStage === 2}
                 locale={locale}
@@ -293,7 +315,6 @@ export default function PatentsPage() {
               onClick={() => setExpandedStage(expandedStage === 3 ? null : 3)}
             >
               <StagePathHeader
-                kicker="Stage 03"
                 title={t("patents.evolutionPath.stage03Title")}
                 open={expandedStage === 3}
                 locale={locale}
@@ -354,7 +375,6 @@ export default function PatentsPage() {
               onClick={() => setExpandedStage(expandedStage === 4 ? null : 4)}
             >
               <StagePathHeader
-                kicker="Stage 04"
                 title={t("patents.evolutionPath.stage04Title")}
                 open={expandedStage === 4}
                 locale={locale}
@@ -377,100 +397,88 @@ export default function PatentsPage() {
 
       <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-14">
+          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
             <p className="page-body text-white/70 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
-            <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.mainTitle")}</h3>
-            <p className="page-body text-white/75 mb-8 sm:mb-10">{t("patents.platformCore.mainDesc")}</p>
+          <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-4 sm:p-6 space-y-4 sm:space-y-5">
+              <div className="rounded-xl border border-white/12 bg-white/[0.03] p-5 sm:p-8">
+                <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.mainTitle")}</h3>
+                <p className="page-body text-white/75 mb-8 sm:mb-10">{t("patents.platformCore.mainDesc")}</p>
 
-            <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.principleP1")}</h3>
-            <div className="space-y-2 mb-6 sm:mb-8">
-              <p className="page-body text-white/75">
-                <span className="page-chem text-white font-medium">sp³</span>{" "}
-                {t("patents.platformCore.sp3Role")}
-              </p>
-              <p className="page-body text-white/75">
-                <span className="page-chem text-white font-medium">sp²</span>{" "}
-                {t("patents.platformCore.sp2Role")}
-              </p>
-            </div>
-            <p className="page-body text-white/75">
-              {t("patents.platformCore.principleP2")}
-              <strong className="text-white">{t("patents.platformCore.stressAnchor")}</strong>
-              {t("patents.platformCore.principleP2b")}
-            </p>
-          </div>
-
-          <div className="mb-6 sm:mb-8">
-            <h3 className="page-h3 text-white text-center mb-6 sm:mb-8">
-              {t("patents.platformCore.diagramTitle")}
-            </h3>
-            <div className="grid md:grid-cols-3 gap-3 sm:gap-5">
-              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
-                <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
-                  {t("patents.platformCore.domain1Title")}
-                </h4>
-                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain1a")}</p>
-                <p className="page-caption text-white/50">{t("patents.platformCore.domain1b")}</p>
+                <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.principleP1")}</h3>
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-8">
+                  <p className="page-body text-white/75 md:pr-8 md:border-r md:border-white/12">
+                    <span className="page-chem text-white font-medium">sp³</span>{" "}
+                    {t("patents.platformCore.sp3Role")}
+                  </p>
+                  <p className="page-body text-white/75">
+                    <span className="page-chem text-white font-medium">sp²</span>{" "}
+                    {t("patents.platformCore.sp2Role")}
+                  </p>
+                </div>
+                <p className="page-body text-white/75">
+                  {t("patents.platformCore.principleP2")}
+                  <strong className="text-white">{t("patents.platformCore.stressAnchor")}</strong>
+                  {t("patents.platformCore.principleP2b")}
+                </p>
               </div>
-              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
-                <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
-                  {t("patents.platformCore.domain2Title")}
-                </h4>
-                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain2a")}</p>
-                <p className="page-caption text-white/50">{t("patents.platformCore.domain2b")}</p>
-              </div>
-              <div className="p-5 sm:p-6 bg-white/[0.03] rounded-lg border border-white/12">
-                <div className="h-px w-8 bg-white/30 mb-4" />
-                <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
-                  {t("patents.platformCore.domain3Title")}
-                </h4>
-                <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain3a")}</p>
-                <p className="page-caption text-white/50">{t("patents.platformCore.domain3b")}</p>
-              </div>
-            </div>
-          </div>
 
-          <p className="page-body text-white/55 text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            {t("patents.platformCore.tuningIntro")}{" "}
-            {t("patents.platformCore.tuning1")}
-            {t("patents.platformCore.tuning1Note")}
-            <span className="text-white/25"> · </span>
-            {t("patents.platformCore.tuning2")}
-            {t("patents.platformCore.tuning2Note")}
-            <span className="text-white/25"> · </span>
-            {t("patents.platformCore.tuning3")}
-            {" "}
-            {t("patents.platformCore.tuningOutro")}
-          </p>
+              <div className="rounded-xl border border-white/12 bg-white/[0.03] p-5 sm:p-8">
+                <h3 className="page-h3 text-white mb-6 sm:mb-8">
+                  {t("patents.platformCore.diagramTitle")}
+                </h3>
+                <div className="grid md:grid-cols-3 gap-3 sm:gap-5">
+                  <div className="p-5 sm:p-6 rounded-lg border border-white/12 bg-white/[0.03]">
+                    <div className="h-px w-8 bg-white/30 mb-4" />
+                    <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
+                      {t("patents.platformCore.domain1Title")}
+                    </h4>
+                    <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain1a")}</p>
+                    <p className="page-caption text-white/50">{t("patents.platformCore.domain1b")}</p>
+                  </div>
+                  <div className="p-5 sm:p-6 rounded-lg border border-white/12 bg-white/[0.03]">
+                    <div className="h-px w-8 bg-white/30 mb-4" />
+                    <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
+                      {t("patents.platformCore.domain2Title")}
+                    </h4>
+                    <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain2a")}</p>
+                    <p className="page-caption text-white/50">{t("patents.platformCore.domain2b")}</p>
+                  </div>
+                  <div className="p-5 sm:p-6 rounded-lg border border-white/12 bg-white/[0.03]">
+                    <div className="h-px w-8 bg-white/30 mb-4" />
+                    <h4 className="page-h4 text-white mb-3 md:min-h-[2.8em]">
+                      {t("patents.platformCore.domain3Title")}
+                    </h4>
+                    <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain3a")}</p>
+                    <p className="page-caption text-white/50">{t("patents.platformCore.domain3b")}</p>
+                  </div>
+                </div>
+              </div>
 
-          <div>
-            <h3 className="page-h3 text-white mb-5 text-center">
-              {t("patents.platformCore.radarChartTitle")}
-            </h3>
-            <MaterialComparisonRadarChart
-              variant="dark"
-              labels={{
-                dim1: t("patents.platformCore.radarDim1"),
-                dim2: t("patents.platformCore.radarDim2"),
-                dim3: t("patents.platformCore.radarDim3"),
-                dim4: t("patents.platformCore.radarDim4"),
-                dim5: t("patents.platformCore.radarDim5"),
-                dim1Mobile: t("patents.platformCore.radarDim1Mobile"),
-                dim2Mobile: t("patents.platformCore.radarDim2Mobile"),
-                dim3Mobile: t("patents.platformCore.radarDim3Mobile"),
-                dim4Mobile: t("patents.platformCore.radarDim4Mobile"),
-                dim5Mobile: t("patents.platformCore.radarDim5Mobile"),
-                diamondCu: t("patents.platformCore.radarLabelDiamondCu"),
-                diamondSiC: t("patents.platformCore.radarLabelDiamondSiC"),
-                toSpike: t("patents.platformCore.radarLabelToSpike"),
-              }}
-            />
+              <div className="rounded-xl border border-white/12 bg-white/[0.03] px-5 py-5 sm:px-8 sm:py-6">
+                <p className="page-body text-white/75">
+                  {t("patents.platformCore.tuningIntro")}
+                </p>
+                <p className="page-body text-white/75 mt-2">
+                  <span className="inline-block max-w-full">
+                    {t("patents.platformCore.tuning1")}
+                    {t("patents.platformCore.tuning1Note")}
+                  </span>
+                  <span className="text-white/35"> · </span>
+                  <span className="inline-block max-w-full">
+                    {t("patents.platformCore.tuning2")}
+                    {t("patents.platformCore.tuning2Note")}
+                  </span>
+                  <span className="text-white/35"> · </span>
+                  <span className="inline-block max-w-full">
+                    {t("patents.platformCore.tuning3")}
+                  </span>
+                  {" "}
+                  {t("patents.platformCore.tuningOutro")}
+                </p>
+              </div>
           </div>
         </div>
       </section>
@@ -608,19 +616,30 @@ export default function PatentsPage() {
 
       <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <p className="page-body text-white/70 max-w-3xl mx-auto text-center italic mb-6 sm:mb-8">
-            {t("patents.platformCore.platformConclusion")}
-            <strong className="text-white not-italic font-medium">{t("patents.platformCore.platformName")}</strong>
-            {t("patents.platformCore.platformConclusionEnd")}
-          </p>
-          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
+          <div className="text-center mb-6 sm:mb-8">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformExtension.sectionTitle")}</h2>
-            <p className="page-body text-white/70 max-w-3xl mx-auto">{t("patents.platformExtension.sectionSubtitle")}</p>
+            <p className="page-body text-white/70 max-w-3xl mx-auto">
+              {t("patents.platformExtension.sectionSubtitle")}
+            </p>
           </div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-12">
+          <div className="rounded-xl border border-white/12 bg-white/[0.03] p-5 sm:p-8 mb-4 sm:mb-6">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-0">
+              <p className="page-body text-white/75 md:pr-8 lg:pr-10">
+                <strong className="text-white font-medium">{t("patents.platformCore.platformName")}</strong>
+                {t("patents.platformCore.platformConclusionEnd")}
+              </p>
+              <p className="page-body text-white/65 pt-5 border-t border-white/12 md:border-t-0 md:pt-0 md:pl-8 lg:pl-10 md:border-l">
+                {t("patents.platformExtension.disclaimer")}
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-4 sm:gap-6">
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
+              <h3 className="page-h4 text-white">{t("patents.platformExtension.card1Title")}</h3>
+              <p className="page-caption text-white/55">{t("patents.platformExtension.card1Subtitle")}</p>
+              <p className="page-body text-white/75 mt-4">
                 {t("patents.platformExtension.superconductorP1")}
               </p>
               <p className="page-caption text-white/50 border-l border-white/15 pl-3">
@@ -629,27 +648,16 @@ export default function PatentsPage() {
             </Card>
 
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
-                {t("patents.platformExtension.chaosP1")}
+              <h3 className="page-h4 text-white">{t("patents.platformExtension.card2Title")}</h3>
+              <p className="page-caption text-white/55">{t("patents.platformExtension.card2Subtitle")}</p>
+              <p className="page-body text-white/75 mt-4">
+                {t("patents.platformExtension.card2P1")}
               </p>
               <p className="page-caption text-white/50 border-l border-white/15 pl-3">
-                {t("patents.platformExtension.chaosP2")}
-              </p>
-            </Card>
-
-            <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
-              <p className="page-body text-white/75 mb-4">
-                {t("patents.platformExtension.quantumP1")}
-              </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
-                {t("patents.platformExtension.quantumP2")}
+                {t("patents.platformExtension.card2P2")}
               </p>
             </Card>
           </div>
-
-          <p className="page-caption text-white/55 text-center italic max-w-3xl mx-auto">
-            {t("patents.platformExtension.disclaimer")}
-          </p>
         </div>
       </section>
 

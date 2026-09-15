@@ -19,13 +19,17 @@ export type ArchitecturePanoramaStrings = {
   stressRegulation: string
   applicationWindow: string
   extremeConditions: string
+  extremeTagline: string
   extremeItem1: string
   extremeItem2: string
   extremeItem3: string
-  superconductorPlatform: string
-  theoryExploration: string
-  quantumPotential: string
-  visionPlanning: string
+  structuralTitle: string
+  structuralItem1: string
+  structuralItem2: string
+  physicsTitle: string
+  physicsItem1: string
+  physicsItem2: string
+  physicsNote: string
 }
 
 function ColumnHead({ children }: { children: string }) {
@@ -49,7 +53,7 @@ function StageCard({
   connect?: "left" | "right"
 }) {
   return (
-    <div className="relative h-full min-h-0 rounded-xl border border-white/12 bg-white/[0.03] text-left p-3 lg:p-6 flex flex-col">
+    <div className="relative h-full min-h-0 rounded-xl border border-white/12 bg-white/[0.03] text-left p-3 lg:px-6 lg:py-4 flex flex-col">
       {connect === "right" ? (
         <span className="hidden lg:block absolute top-1/2 right-0 z-[1] h-px w-2.5 translate-x-full -translate-y-1/2 bg-white/35" />
       ) : null}
@@ -135,11 +139,11 @@ function KernelHub({
   }
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl border border-white/25 bg-white/[0.04] p-8 text-center">
-      <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl bg-[#2A7FC4] shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
+    <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl border border-white/25 bg-white/[0.04] px-6 py-5 text-center">
+      <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl bg-[#2A7FC4] shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
         <Sparkles className="h-8 w-8 text-white" />
       </div>
-      <h3 className="page-h4 mb-4 text-white">{title}</h3>
+      <h3 className="page-h4 mb-3 text-white">{title}</h3>
       <div className="w-full">
         <KernelPills bonding={bonding} stress={stress} />
       </div>
@@ -147,16 +151,12 @@ function KernelHub({
   )
 }
 
-/** 每张卡片一条水平导线，直接接到等高的内核边框 */
-function ForkRail() {
+/** 与该行卡片中线对齐的水平导线 */
+function CardRail() {
   return (
-    <div className="relative grid h-full min-h-[28rem] grid-rows-3 gap-6" aria-hidden>
-      {[0, 1, 2].map((i) => (
-        <div key={i} className="relative">
-          <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/35" />
-          <div className="absolute left-1/2 top-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50" />
-        </div>
-      ))}
+    <div className="relative h-full min-h-[2.5rem]" aria-hidden>
+      <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/35" />
+      <div className="absolute left-1/2 top-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50" />
     </div>
   )
 }
@@ -171,14 +171,50 @@ function FlowJoin() {
   )
 }
 
+function WindowBody({
+  tagline,
+  items,
+  note,
+  compact = false,
+}: {
+  tagline?: string
+  items: string[]
+  note?: string
+  compact?: boolean
+}) {
+  if (compact) {
+    return (
+      <div className="space-y-1">
+        {tagline ? <p className="page-caption text-white/50">{tagline}</p> : null}
+        <p className="page-caption leading-snug text-white/65">{items.join(" · ")}</p>
+        {note ? <p className="page-caption text-white/45">{note}</p> : null}
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      {tagline ? <p className="page-caption text-white/50 mb-2">{tagline}</p> : null}
+      <ul className="space-y-1.5">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      {note ? (
+        <p className="page-caption text-white/45 mt-3 pt-2.5 border-t border-white/10">{note}</p>
+      ) : null}
+    </div>
+  )
+}
+
 function SplitRow({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div
-      className="grid items-center gap-x-3 rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5"
+      className="grid items-start gap-x-3 rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5"
       style={{ gridTemplateColumns: mobileWindowCols }}
     >
       <h4 className="page-h3 min-w-0 text-white">{title}</h4>
-      <div className="page-caption min-w-0 leading-snug text-white/65">{children}</div>
+      <div className="min-w-0">{children}</div>
     </div>
   )
 }
@@ -191,34 +227,16 @@ export function ArchitecturePanoramaDiagram({
   const locale = useLocale()
   const isEn = locale === "en"
 
-  const stages = (connect?: "left" | "right") => (
+  const stages = (
     <>
-      <StageCard connect={connect} kicker="Stage 01" title={s.stage01Title}>
+      <StageCard title={s.stage01Title}>
         {s.stage01Desc}
       </StageCard>
-      <StageCard connect={connect} kicker="Stage 02" title={s.stage02Title}>
+      <StageCard title={s.stage02Title}>
         {s.stage02Desc}
       </StageCard>
-      <StageCard connect={connect} kicker="Stage 03" title={s.stage03Title}>
+      <StageCard title={s.stage03Title}>
         {s.stage03Desc}
-      </StageCard>
-    </>
-  )
-
-  const windows = (connect?: "left" | "right") => (
-    <>
-      <StageCard connect={connect} title={s.extremeConditions}>
-        <ul className="space-y-1.5">
-          <li>{s.extremeItem1}</li>
-          <li>{s.extremeItem2}</li>
-          <li>{s.extremeItem3}</li>
-        </ul>
-      </StageCard>
-      <StageCard connect={connect} title={s.superconductorPlatform}>
-        {s.theoryExploration}
-      </StageCard>
-      <StageCard connect={connect} title={s.quantumPotential}>
-        {s.visionPlanning}
       </StageCard>
     </>
   )
@@ -233,42 +251,110 @@ export function ArchitecturePanoramaDiagram({
     <div
       data-diagram-locale={locale}
       className={cn(
-        "w-full rounded-3xl border border-white/12 bg-white/[0.03] p-4 sm:p-6 lg:p-10",
+        "w-full rounded-3xl border border-white/12 bg-white/[0.03] p-4 sm:p-6 lg:p-6",
         isEn && "tracking-tight"
       )}
     >
       <div
-        className="hidden lg:grid lg:items-stretch lg:gap-y-6"
+        className="hidden lg:grid lg:gap-y-4"
         style={{ gridTemplateColumns: "1.05fr 40px 0.92fr 40px 1.05fr" }}
       >
-        <ColumnHead>{s.evolutionPath}</ColumnHead>
-        <div />
-        <div />
-        <div />
-        <ColumnHead>{s.applicationWindow}</ColumnHead>
+        <div className="col-start-1 row-start-1">
+          <ColumnHead>{s.evolutionPath}</ColumnHead>
+        </div>
+        <div className="col-start-5 row-start-1">
+          <ColumnHead>{s.applicationWindow}</ColumnHead>
+        </div>
 
-        <div className="grid min-h-[28rem] min-w-0 grid-rows-3 gap-6">{stages("right")}</div>
-        <ForkRail />
-        <div className="flex min-h-[28rem] min-w-0 items-stretch">
+        <div className="col-start-1 row-start-2 min-w-0">
+          <StageCard connect="right" title={s.stage01Title}>
+            {s.stage01Desc}
+          </StageCard>
+        </div>
+        <div className="col-start-2 row-start-2">
+          <CardRail />
+        </div>
+        <div className="col-start-3 row-start-2 row-span-3 flex min-w-0 items-stretch">
           <KernelHub {...kernelProps} />
         </div>
-        <ForkRail />
-        <div className="grid min-h-[28rem] min-w-0 grid-rows-3 gap-6">{windows("left")}</div>
+        <div className="col-start-4 row-start-2">
+          <CardRail />
+        </div>
+        <div className="col-start-5 row-start-2 min-w-0">
+          <StageCard connect="left" title={s.extremeConditions}>
+            <WindowBody
+              tagline={s.extremeTagline}
+              items={[s.extremeItem1, s.extremeItem2, s.extremeItem3]}
+            />
+          </StageCard>
+        </div>
+
+        <div className="col-start-1 row-start-3 min-w-0">
+          <StageCard connect="right" title={s.stage02Title}>
+            {s.stage02Desc}
+          </StageCard>
+        </div>
+        <div className="col-start-2 row-start-3">
+          <CardRail />
+        </div>
+        <div className="col-start-4 row-start-3">
+          <CardRail />
+        </div>
+        <div className="col-start-5 row-start-3 min-w-0">
+          <StageCard connect="left" title={s.structuralTitle}>
+            <WindowBody items={[s.structuralItem1, s.structuralItem2]} />
+          </StageCard>
+        </div>
+
+        <div className="col-start-1 row-start-4 min-w-0">
+          <StageCard connect="right" title={s.stage03Title}>
+            {s.stage03Desc}
+          </StageCard>
+        </div>
+        <div className="col-start-2 row-start-4">
+          <CardRail />
+        </div>
+        <div className="col-start-4 row-start-4">
+          <CardRail />
+        </div>
+        <div className="col-start-5 row-start-4 min-w-0">
+          <StageCard connect="left" title={s.physicsTitle}>
+            <WindowBody
+              items={[s.physicsItem1, s.physicsItem2]}
+              note={s.physicsNote}
+            />
+          </StageCard>
+        </div>
       </div>
 
       <div className="space-y-2 lg:hidden">
         <ColumnHead>{s.evolutionPath}</ColumnHead>
-        <div className="space-y-2">{stages()}</div>
+        <div className="space-y-2">{stages}</div>
         <FlowJoin />
         <KernelHub compact {...kernelProps} />
         <FlowJoin />
         <ColumnHead>{s.applicationWindow}</ColumnHead>
         <div className="space-y-2">
           <SplitRow title={s.extremeConditions}>
-            {[s.extremeItem1, s.extremeItem2, s.extremeItem3].join(" · ")}
+            <WindowBody
+              compact
+              tagline={s.extremeTagline}
+              items={[s.extremeItem1, s.extremeItem2, s.extremeItem3]}
+            />
           </SplitRow>
-          <SplitRow title={s.superconductorPlatform}>{s.theoryExploration}</SplitRow>
-          <SplitRow title={s.quantumPotential}>{s.visionPlanning}</SplitRow>
+          <SplitRow title={s.structuralTitle}>
+            <WindowBody
+              compact
+              items={[s.structuralItem1, s.structuralItem2]}
+            />
+          </SplitRow>
+          <SplitRow title={s.physicsTitle}>
+            <WindowBody
+              compact
+              items={[s.physicsItem1, s.physicsItem2]}
+              note={s.physicsNote}
+            />
+          </SplitRow>
         </div>
       </div>
     </div>

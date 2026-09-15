@@ -22,12 +22,12 @@ export default async function HomePage({
       <Navigation locale={validLocale} />
 
       <div className="overflow-x-hidden">
-      <section className="relative pt-24 sm:pt-28 lg:pt-24 pb-10 sm:pb-12 lg:pb-10 px-6 lg:px-8 pointer-events-none">
+      <section className="relative pt-24 sm:pt-28 lg:pt-28 pb-10 sm:pb-12 lg:pb-12 px-6 lg:px-8 pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
-          <div className="space-y-7 sm:space-y-8 lg:space-y-6">
+          <div>
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
-              <h1 className="page-h1 text-white mb-4 sm:mb-5 lg:mb-3 font-light opacity-100">
+              <h1 className="page-h1 text-white mb-4 font-light opacity-100">
                 {t("home.hero.visionTitle")}
               </h1>
               <p className="page-lead page-measure text-white/70 font-light">
@@ -36,10 +36,7 @@ export default async function HomePage({
             </div>
 
             {/* 应用方向 + 查看技术应用领域按钮（先介绍应用方向与愿景） */}
-            <div className="text-center">
-              <p className="page-body page-measure text-white/65 mb-5 lg:mb-3">
-                {t("home.hero.platformFocus")}
-              </p>
+            <div className="text-center mt-6 sm:mt-8">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
                 <Button
                   size="lg"
@@ -64,7 +61,7 @@ export default async function HomePage({
             </div>
 
             {/* 第二层：技术平台（图名放在图框上端，避免与上方副标题重复） */}
-            <div>
+            <div className="mt-12 sm:mt-14 lg:mt-16">
               <HeroPlatformDiagram
                 strings={{
                   diagramTitle: t("home.hero.title"),
@@ -103,11 +100,15 @@ export default async function HomePage({
               />
             </div>
 
-            {/* 阶段性成果：已实现条目 + 工艺/样品/IP */}
-            <div>
-              <h2 className="page-h2 text-white text-center mb-4 sm:mb-5 lg:mb-6">
-                {t("home.results.title")}
-              </h2>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
+            <h2 className="page-h2 text-white">{t("home.results.title")}</h2>
+          </div>
               <ol className="space-y-5 sm:space-y-6 max-w-3xl mx-auto mb-8 sm:mb-10">
                 <li>
                   <p className="page-h3 text-white mb-1.5">
@@ -142,9 +143,6 @@ export default async function HomePage({
                   <p className="page-body text-white/70">{t("home.results.ipDesc")}</p>
                 </div>
               </div>
-            </div>
-
-          </div>
         </div>
       </section>
 

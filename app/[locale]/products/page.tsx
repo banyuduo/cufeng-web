@@ -111,10 +111,9 @@ export default async function ProductsPage({
 
       <section className="section-block bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="page-h2 mb-4 text-slate-900">
+          <p className="page-body page-measure text-slate-600 mb-6 sm:mb-8">
             {t("products.cta.title")}
-          </h2>
-          <p className="page-body page-measure text-slate-600 mb-6 sm:mb-8">{t("products.cta.subtitle")}</p>
+          </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="gap-2 bg-[#2A7FC4] hover:bg-[#1B5F96] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>

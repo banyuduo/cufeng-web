@@ -23,21 +23,10 @@ export default async function CooperationPage({
         variant="dark"
         background="stage"
         title={t("cooperation.hero.title")}
-      >
-        <div className="page-lead text-white/70 mt-6 sm:mt-8 text-left max-w-3xl mx-auto">
-          <p>
-            {t("cooperation.hero.p1")}
-            <br />
-            {t("cooperation.hero.p2")}
-          </p>
-        </div>
-      </PageHero>
+      />
 
       <section className="section-block">
         <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
-            {t("cooperation.platform.title")}
-          </h2>
           <div className="space-y-6 page-body text-white/70 font-light">
             <p>{t("cooperation.platform.content")}</p>
             <p>
@@ -108,12 +97,9 @@ export default async function CooperationPage({
             </p>
           </div>
           <div>
-            <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
-              {t("cooperation.resonance.title")}
-            </h2>
             <p className="page-body text-white/70 font-light">
               {t("cooperation.resonance.p1")}
-              <br />
+              {" "}
               {t("cooperation.resonance.p2")}
             </p>
           </div>
