@@ -114,7 +114,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
               </ul>
             </div>
             <div className="order-3 col-span-2 lg:col-span-1 lg:order-1 min-w-0">
-              <div className="font-bold text-lg lg:text-xl mb-4 text-white text-left">
+              <div className="page-h4 mb-4 text-white text-left">
                 {t("common.footer.brand")}
               </div>
               <p className="page-caption text-white/55 text-left break-words">{t("common.footer.platformTech")}</p>

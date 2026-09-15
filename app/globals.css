@@ -4,60 +4,74 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Deep dark tech theme - enhanced for stronger sci-fi feel */
+  /* Black / White / Graphite / Metallic Gray + one accent (#2A7FC4) */
+  --ink: #0B1F33;
+  --paper: #F9FAFC;
+  --graphite: #5C6570;
+  --metal: #8B929A;
+  --accent: #2A7FC4;
+  --accent-hover: #1B5F96;
+
   --background: hsl(222 30% 6%);
   --foreground: hsl(210 20% 96%);
   --card: hsl(222 28% 10%);
   --card-foreground: hsl(210 20% 96%);
   --popover: hsl(222 28% 10%);
   --popover-foreground: hsl(210 20% 96%);
-  --primary: hsl(210 100% 58%);
-  --primary-foreground: hsl(222 30% 6%);
-  --secondary: hsl(222 24% 14%);
-  --secondary-foreground: hsl(210 20% 96%);
-  --muted: hsl(222 20% 18%);
-  --muted-foreground: hsl(215 12% 65%);
-  --accent: hsl(195 90% 55%);
-  --accent-foreground: hsl(222 30% 6%);
-  --destructive: hsl(0 75% 58%);
+  --primary: #2A7FC4;
+  --primary-foreground: #ffffff;
+  --secondary: hsl(222 16% 16%);
+  --secondary-foreground: hsl(210 12% 94%);
+  --muted: hsl(222 12% 18%);
+  --muted-foreground: hsl(215 8% 62%);
+  --accent-foreground: #ffffff;
+  --destructive: hsl(0 62% 46%);
   --destructive-foreground: hsl(210 20% 96%);
-  --border: hsl(222 24% 20%);
-  --input: hsl(222 24% 20%);
-  --ring: hsl(210 100% 58%);
-  --chart-1: hsl(210 100% 58%);
-  --chart-2: hsl(195 90% 55%);
-  --chart-3: hsl(180 80% 50%);
-  --chart-4: hsl(165 70% 52%);
-  --chart-5: hsl(150 60% 52%);
-  --radius: 14px;
+  --border: hsl(222 12% 22%);
+  --input: hsl(222 12% 22%);
+  --ring: #2A7FC4;
+  --chart-1: #2A7FC4;
+  --chart-2: #8B929A;
+  --chart-3: #5C6570;
+  --chart-4: #0B1F33;
+  --chart-5: #C5C9CE;
+  --radius: 12px;
   --sidebar: hsl(222 28% 10%);
   --sidebar-foreground: hsl(210 20% 96%);
-  --sidebar-primary: hsl(210 100% 58%);
-  --sidebar-primary-foreground: hsl(222 30% 6%);
-  --sidebar-accent: hsl(222 24% 14%);
-  --sidebar-accent-foreground: hsl(210 20% 96%);
-  --sidebar-border: hsl(222 24% 20%);
-  --sidebar-ring: hsl(210 100% 58%);
+  --sidebar-primary: #2A7FC4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: hsl(222 16% 16%);
+  --sidebar-accent-foreground: hsl(210 12% 94%);
+  --sidebar-border: hsl(222 12% 22%);
+  --sidebar-ring: #2A7FC4;
 
-  /* Page layout tokens - 页面布局规范 */
-  --page-bg-dark: hsl(222 47% 11%); /* slate-900 */
-  --page-bg-light: #F9FAFC; /* PPT 详情页浅灰背景 */
-  --hero-gradient-dark: linear-gradient(to bottom, hsl(222 47% 11%), hsl(222 47% 14%), hsl(222 47% 11%));
-  --hero-gradient-light: linear-gradient(to bottom, hsl(204 100% 98%), hsl(0 0% 100%));
+  --page-bg-dark: #0B1F33;
+  --page-bg-light: #F9FAFC;
+  --hero-gradient-dark: linear-gradient(to bottom, #06131d, #0B1F33, #0A1D30);
+  --hero-gradient-light: linear-gradient(to bottom, #F4F5F6, #ffffff);
 
-  /* 首页深蓝配色 - PPT 之前的海军蓝版本 */
-  --page-dark-base: #003366;
-  --page-dark-card: #002244;
-  --page-dark-card-hover: #004080;
-  --page-dark-accent: #0077b6;
-  --page-dark-accent-light: #7dd3fc;
-  --page-dark-gradient: linear-gradient(135deg, #001a33 0%, #002244 30%, #003366 60%, #004080 100%);
-  --page-dark-hero-gradient: linear-gradient(180deg, #001a33 0%, #002244 15%, #003366 50%, #004080 85%, #005090 100%);
+  --page-dark-base: #0B1F33;
+  --page-dark-card: #0A1D30;
+  --page-dark-card-hover: #163A5F;
+  --page-dark-accent: #2A7FC4;
+  --page-dark-accent-light: #8B929A;
+  --page-dark-gradient: linear-gradient(180deg, #06131d 0%, #0B1F33 100%);
+  --page-dark-hero-gradient: linear-gradient(180deg, #06131d 0%, #0B1F33 100%);
 
-  /* 愿景页舞台：仍落在 #0B1F33 家族，只加上下明暗与一档更亮的主按钮 */
   --page-stage-base: #0B1F33;
   --page-stage-accent: #2A7FC4;
   --page-stage-accent-hover: #1B5F96;
+
+  --space-gutter: 1.5rem;
+  --space-gutter-lg: 2rem;
+  --space-section-y: 2rem;
+  --space-section-y-md: 3.5rem;
+  --space-heading: 1rem;
+  --space-heading-md: 1.5rem;
+  --space-stack: 0.75rem;
+  --space-card: 0.75rem;
+  --space-grid: 1rem;
+  --space-grid-md: 1.5rem;
 }
 
 .dark {
@@ -67,32 +81,32 @@
   --card-foreground: hsl(210 20% 96%);
   --popover: hsl(222 28% 10%);
   --popover-foreground: hsl(210 20% 96%);
-  --primary: hsl(210 100% 58%);
-  --primary-foreground: hsl(222 30% 6%);
-  --secondary: hsl(222 24% 14%);
-  --secondary-foreground: hsl(210 20% 96%);
-  --muted: hsl(222 20% 18%);
-  --muted-foreground: hsl(215 12% 65%);
-  --accent: hsl(195 90% 55%);
-  --accent-foreground: hsl(222 30% 6%);
-  --destructive: hsl(0 75% 58%);
+  --primary: #2A7FC4;
+  --primary-foreground: #ffffff;
+  --secondary: hsl(222 16% 16%);
+  --secondary-foreground: hsl(210 12% 94%);
+  --muted: hsl(222 12% 18%);
+  --muted-foreground: hsl(215 8% 62%);
+  --accent: #2A7FC4;
+  --accent-foreground: #ffffff;
+  --destructive: hsl(0 62% 46%);
   --destructive-foreground: hsl(210 20% 96%);
-  --border: hsl(222 24% 20%);
-  --input: hsl(222 24% 20%);
-  --ring: hsl(210 100% 58%);
-  --chart-1: hsl(210 100% 58%);
-  --chart-2: hsl(195 90% 55%);
-  --chart-3: hsl(180 80% 50%);
-  --chart-4: hsl(165 70% 52%);
-  --chart-5: hsl(150 60% 52%);
+  --border: hsl(222 12% 22%);
+  --input: hsl(222 12% 22%);
+  --ring: #2A7FC4;
+  --chart-1: #2A7FC4;
+  --chart-2: #8B929A;
+  --chart-3: #5C6570;
+  --chart-4: #0B1F33;
+  --chart-5: #C5C9CE;
   --sidebar: hsl(222 28% 10%);
   --sidebar-foreground: hsl(210 20% 96%);
-  --sidebar-primary: hsl(210 100% 58%);
-  --sidebar-primary-foreground: hsl(222 30% 6%);
-  --sidebar-accent: hsl(222 24% 14%);
-  --sidebar-accent-foreground: hsl(210 20% 96%);
-  --sidebar-border: hsl(222 24% 20%);
-  --sidebar-ring: hsl(210 100% 58%);
+  --sidebar-primary: #2A7FC4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: hsl(222 16% 16%);
+  --sidebar-accent-foreground: hsl(210 12% 94%);
+  --sidebar-border: hsl(222 12% 22%);
+  --sidebar-ring: #2A7FC4;
 }
 
 /* Page layout utility classes - 统一标题层级
@@ -146,12 +160,6 @@
     line-height: 1.6;
     text-wrap: pretty;
   }
-  .section-container {
-    @apply max-w-6xl mx-auto px-6 lg:px-8;
-  }
-  .section-block {
-    @apply py-8 sm:py-14 lg:py-14 px-6 lg:px-8;
-  }
   .page-measure {
     @apply max-w-3xl mx-auto;
   }
@@ -184,6 +192,49 @@
   .page-stat-unit {
     @apply text-sm font-normal;
     letter-spacing: 0;
+    font-family: var(--font-inter), ui-sans-serif, sans-serif;
+  }
+
+  .page-chem,
+  .page-stat-value,
+  .page-stat-value-lg,
+  .page-stat-value-sm,
+  .page-stat-inline {
+    font-family: var(--font-inter), ui-sans-serif, sans-serif;
+    font-synthesis: none;
+  }
+
+  .page-chem {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "kern" 1;
+    letter-spacing: 0.01em;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto;
+  }
+  .section-block {
+    @apply py-8 sm:py-14 px-6 lg:px-8;
+  }
+  .section-y {
+    @apply py-8 sm:py-14;
+  }
+  .page-hero-block {
+    @apply pt-24 sm:pt-28 pb-8 sm:pb-12 px-6 lg:px-8;
+  }
+  .page-heading {
+    @apply mb-4 sm:mb-6;
+  }
+  .page-stack {
+    @apply flex flex-col gap-3 sm:gap-4;
+  }
+  .page-grid {
+    @apply grid gap-4 sm:gap-6;
+  }
+  .page-nav {
+    @apply text-sm font-medium;
+    letter-spacing: 0;
+    line-height: 1.4;
   }
 
   html:lang(en) .page-h1,
@@ -228,6 +279,21 @@
     .pc-step-title {
       min-height: 2.6em;
     }
+  }
+}
+
+@media (max-width: 390px) {
+  .page-h1 {
+    font-size: 1.7rem;
+    line-height: 1.28;
+  }
+  .page-h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+  .section-block,
+  .page-hero-block {
+    padding-inline: 1.25rem;
   }
 }
 
@@ -306,12 +372,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter), var(--font-noto-sc), ui-sans-serif, system-ui,
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     font-size: 16px;
     line-height: 1.75;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings: "kern" 1, "liga" 1, "lnum" 1;
+    font-variant-numeric: lining-nums;
   }
 
   html {
+    overflow-x: clip;
     scroll-padding-top: 4.5rem;
   }
 
@@ -346,7 +416,7 @@
   .page-stage {
     background-color: var(--page-stage-base);
     background-image:
-      radial-gradient(ellipse 88% 46% at 50% -8%, rgba(48, 118, 176, 0.24) 0%, transparent 58%),
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(42, 127, 196, 0.12) 0%, transparent 56%),
       linear-gradient(180deg, #06131d 0%, #0B1F33 36%, #0A1D30 100%);
   }
 
@@ -375,12 +445,9 @@
     @apply bg-card/85 border border-border/60;
   }
 
-  .glow-primary {
-    box-shadow: 0 0 30px -8px hsl(var(--primary) / 0.4), 0 0 60px -15px hsl(var(--primary) / 0.2);
-  }
-
+  .glow-primary,
   .glow-accent {
-    box-shadow: 0 0 30px -8px hsl(var(--accent) / 0.4), 0 0 60px -15px hsl(var(--accent) / 0.2);
+    box-shadow: none;
   }
 }
 

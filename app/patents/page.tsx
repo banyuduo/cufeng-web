@@ -98,7 +98,7 @@ export default function PatentsPage() {
         </div>
       </PageHero>
 
-      <section className="py-8 sm:py-14 lg:py-14 relative">
+      <section className="section-y relative">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolution.sectionTitle")}</h2>
@@ -113,7 +113,7 @@ export default function PatentsPage() {
                 <div className="absolute left-[8%] right-[8%] top-1.5 h-px bg-white/15" />
                 {cognitionSteps.map((step) => (
                   <div key={step.label} className="relative flex-1 min-w-0 px-2 text-center">
-                    <div className="mx-auto mb-4 h-2.5 w-2.5 rounded-full bg-[#5BA3D4] ring-4 ring-[#0B1F33]" />
+                    <div className="mx-auto mb-4 h-2.5 w-2.5 rounded-full bg-[#2A7FC4] ring-4 ring-[#0B1F33]" />
                     <p className="page-caption text-white/45 mb-1">{step.label}</p>
                     <p className="page-caption text-white whitespace-pre-line leading-snug pc-step-title lg:min-h-[2.6em]">{step.title}</p>
                   </div>
@@ -123,7 +123,7 @@ export default function PatentsPage() {
             <div className="lg:hidden border-l border-white/15 pl-5 space-y-5">
               {cognitionSteps.map((step) => (
                 <div key={step.label} className="relative">
-                  <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-[#5BA3D4]" />
+                  <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-[#2A7FC4]" />
                   <p className="page-caption text-white/45 mb-0.5">{step.label}</p>
                   <p className="page-body text-white whitespace-pre-line leading-snug">{step.title}</p>
                 </div>
@@ -133,7 +133,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14">
+      <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="page-h2 text-white">{t("patents.architecture.title")}</h2>
@@ -164,7 +164,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section id="evolution-path" className="py-8 sm:py-14 lg:py-14 scroll-mt-24">
+      <section id="evolution-path" className="section-y scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="page-h2 text-white mb-4">{t("patents.evolutionPath.sectionTitle")}</h2>
@@ -375,7 +375,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14">
+      <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-14">
             <h2 className="page-h2 text-white mb-4">{t("patents.platformCore.sectionTitle")}</h2>
@@ -389,11 +389,11 @@ export default function PatentsPage() {
             <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.principleP1")}</h3>
             <div className="space-y-2 mb-6 sm:mb-8">
               <p className="page-body text-white/75">
-                <span className="text-white font-medium">sp³</span>{" "}
+                <span className="page-chem text-white font-medium">sp³</span>{" "}
                 {t("patents.platformCore.sp3Role")}
               </p>
               <p className="page-body text-white/75">
-                <span className="text-white font-medium">sp²</span>{" "}
+                <span className="page-chem text-white font-medium">sp²</span>{" "}
                 {t("patents.platformCore.sp2Role")}
               </p>
             </div>
@@ -475,40 +475,8 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      {/* 平台优势：从首页迁入，置于专利证据之前 */}
-      <section id="platform-advantages" className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
-            <h2 className="page-h2 text-white">{t("home.hero.platformAdvantageTitle")}</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
-                01 {t("home.features.innovation")}
-              </h3>
-              <p className="page-body text-white/75 mb-2">{t("home.features.innovationAction")}</p>
-              <p className="page-caption text-white/50">{t("home.features.innovationEffect")}</p>
-            </Card>
-            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
-                02 {t("home.features.patents")}
-              </h3>
-              <p className="page-body text-white/75 mb-2">{t("home.features.patentsStatus")}</p>
-              <p className="page-caption text-white/50">{t("home.features.patentsValue")}</p>
-            </Card>
-            <Card className="p-4 sm:p-6 gap-2 bg-white/[0.03] border-white/12 text-left">
-              <h3 className="page-h3 text-white mb-2 md:min-h-[2.8em]">
-                03 {t("home.features.industrial")}
-              </h3>
-              <p className="page-body text-white/75 mb-2">{t("home.features.industrialStatus")}</p>
-              <p className="page-caption text-white/50">{t("home.features.industrialMode")}</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Patent Cluster Value */}
-      <section id="patent-cluster" className="py-8 sm:py-14 lg:py-14 scroll-mt-24">
+      <section id="patent-cluster" className="section-y scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-5 sm:mb-6 lg:mb-8">
               <h2 className="page-h2 text-white mb-4">{t("patents.patentCluster.title")}</h2>
@@ -638,7 +606,7 @@ export default function PatentsPage() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14">
+      <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <p className="page-body text-white/70 max-w-3xl mx-auto text-center italic mb-6 sm:mb-8">
             {t("patents.platformCore.platformConclusion")}
@@ -686,7 +654,7 @@ export default function PatentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 sm:py-14 lg:py-14">
+      <section className="section-y">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="page-h2 text-white mb-4">{t("patents.cta.title")}</h2>
           <p className="page-body text-white/70 max-w-2xl mx-auto mb-8">{t("patents.cta.subtitle")}</p>

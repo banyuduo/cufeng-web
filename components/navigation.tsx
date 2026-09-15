@@ -80,7 +80,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   const navBg = isSolidNavyPage
     ? "bg-[#0B1F33]/95 border-white/10"
     : isDarkPage
-    ? "bg-[#001a33]/95 border-[#003366]/50"
+    ? "bg-[#0B1F33]/95 border-white/10"
     : "bg-white/95 border-slate-200/80"
   const navText = isDarkPage ? "text-white" : "text-[#0F2A5C]"
   const navMuted = isDarkPage
@@ -98,14 +98,14 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
     <nav className={`border-b fixed inset-x-0 top-0 z-[300] isolate pointer-events-auto ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href={prefix} className={`text-xl font-bold whitespace-nowrap shrink-0 ${navText}`}>
+          <Link href={prefix} className={`page-h4 whitespace-nowrap shrink-0 ${navText}`}>
             {t("common.nav.brand")}
           </Link>
 
           <div className={desktopNavClass}>
             <Link
               href={`${prefix}/patents`}
-              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
+              className={`page-nav whitespace-nowrap transition-colors ${
                 isActive("/patents") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -114,7 +114,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <div className="relative group">
               <Link
                 href={`${prefix}/products`}
-                className={`inline-flex items-center gap-1 whitespace-nowrap text-sm lg:text-base transition-colors ${
+                className={`page-nav inline-flex items-center gap-1 whitespace-nowrap transition-colors ${
                   isActive("/products") ? `${navText} font-semibold` : navMuted
                 }`}
               >
@@ -133,7 +133,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                     <Link
                       key={path}
                       href={`${prefix}${path}`}
-                      className={`block px-3.5 py-2 text-sm whitespace-nowrap transition-colors ${
+                      className={`page-nav block px-3.5 py-2 whitespace-nowrap transition-colors ${
                         isDarkPage
                           ? "text-white/80 hover:bg-white/10 hover:text-white"
                           : "text-slate-600 hover:bg-slate-50 hover:text-[#0F2A5C]"
@@ -147,7 +147,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </div>
             <Link
               href={`${prefix}/applications`}
-              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
+              className={`page-nav whitespace-nowrap transition-colors ${
                 isActive("/applications") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -155,7 +155,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/news`}
-              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
+              className={`page-nav whitespace-nowrap transition-colors ${
                 isActive("/news") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -163,7 +163,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             </Link>
             <Link
               href={`${prefix}/about`}
-              className={`whitespace-nowrap text-sm lg:text-base transition-colors ${
+              className={`page-nav whitespace-nowrap transition-colors ${
                 isActive("/about") ? `${navText} font-semibold` : navMuted
               }`}
             >
@@ -216,24 +216,20 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <div className="absolute inset-0 bg-black/50" />
             <div
               id="mobile-menu-overlay"
-              className="absolute top-16 right-0 w-max min-w-[100px] max-w-[90vw] max-h-[calc(100vh-4rem)] overflow-y-auto flex flex-col pointer-events-auto"
-              style={{
-                backgroundColor: "#000000",
-                boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.5)",
-              }}
+              className="absolute top-16 right-0 w-[min(18rem,90vw)] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden flex flex-col pointer-events-auto bg-[#0B1F33] shadow-[-8px_0_24px_rgba(0,0,0,0.35)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex flex-col w-max pt-3 pb-3 fade-in-down px-2" style={{ backgroundColor: "#000000" }}>
+              <div className="flex flex-col w-full pt-2 pb-4 fade-in-down px-3">
                 <Link
                   href={`${prefix}/about`}
-                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.about")}
                 </Link>
                 <Link
                   href={`${prefix}/patents`}
-                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.techArchitecture")}
@@ -242,7 +238,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   <div className="flex items-stretch">
                     <Link
                       href={`${prefix}/products`}
-                      className="flex-1 min-w-0 text-white text-sm font-medium py-2.5 px-2 hover:bg-white/10 active:bg-white/15 transition-colors text-left"
+                      className="page-nav flex-1 min-w-0 text-white min-h-11 flex items-center px-2 hover:bg-white/10 active:bg-white/15 transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {t("common.nav.products")}
@@ -250,7 +246,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                     <button
                       type="button"
                       onClick={() => setProductsExpanded(!productsExpanded)}
-                      className="shrink-0 px-2 text-white hover:bg-white/10 active:bg-white/15 transition-colors"
+                      className="shrink-0 min-h-11 px-3 text-white hover:bg-white/10 active:bg-white/15 transition-colors"
                       aria-expanded={productsExpanded}
                       aria-label={t("common.nav.products")}
                     >
@@ -262,12 +258,12 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                     </button>
                   </div>
                   {productsExpanded && (
-                    <div className="pl-4 pb-2 flex flex-col gap-0.5">
+                    <div className="pl-3 pb-2 flex flex-col">
                       {PRODUCT_SUBLINKS.map(({ path, key }) => (
                         <Link
                           key={path}
                           href={`${prefix}${path}`}
-                          className="text-white/85 text-sm py-1.5 px-2 hover:bg-white/10 rounded transition-colors"
+                          className="page-caption text-white/80 min-h-10 flex items-center px-2 hover:bg-white/10 rounded transition-colors"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {t(key)}
@@ -278,28 +274,28 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                 </div>
                 <Link
                   href={`${prefix}/applications`}
-                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.applications")}
                 </Link>
                 <Link
                   href={`${prefix}/news`}
-                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.techVision")}
                 </Link>
                 <Link
                   href={`${prefix}/cooperation`}
-                  className="text-white text-sm font-medium py-2.5 px-2 border-b border-white/10 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.projectCooperation")}
                 </Link>
                 <Link
                   href={localeSwitchHref}
-                  className="text-white text-sm font-medium py-2.5 px-2 w-max whitespace-nowrap text-center hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {otherLocaleName}

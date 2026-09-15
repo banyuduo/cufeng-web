@@ -63,7 +63,7 @@ export default async function ApplicationsPage({
       />
 
       {/* 应用蓝图 */}
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-6xl mx-auto">
           <div className="w-full py-6 sm:py-8 lg:py-8 px-4 sm:px-6 bg-white/[0.03] rounded-2xl border border-white/12 overflow-hidden relative">
             <div className="text-center mb-5 sm:mb-6 lg:mb-6 px-1">
@@ -102,7 +102,7 @@ export default async function ApplicationsPage({
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -381,7 +381,7 @@ export default async function ApplicationsPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8">
+      <section className="section-block">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 text-white mb-4 break-words px-1">
             {t("applications.summary.title")}

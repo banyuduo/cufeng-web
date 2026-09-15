@@ -26,17 +26,17 @@ const DIMENSIONS = ["dim1", "dim2", "dim3", "dim4", "dim5"] as const
 const DATASETS = [
   {
     data: [40, 85, 30, 20, 70],
-    stroke: "rgba(232, 179, 74, 0.98)",
-    fill: "rgba(232, 179, 74, 0.16)",
-    point: "rgba(232, 179, 74, 1)",
+    stroke: "rgba(168, 162, 148, 0.95)",
+    fill: "rgba(168, 162, 148, 0.14)",
+    point: "rgba(168, 162, 148, 1)",
     strokeWidth: 2,
     labelKey: "diamondCu" as const,
   },
   {
     data: [60, 80, 60, 30, 90],
-    stroke: "rgba(56, 189, 248, 0.98)",
-    fill: "rgba(56, 189, 248, 0.14)",
-    point: "rgba(125, 211, 252, 1)",
+    stroke: "rgba(139, 146, 154, 0.95)",
+    fill: "rgba(139, 146, 154, 0.14)",
+    point: "rgba(139, 146, 154, 1)",
     strokeWidth: 2.1,
     labelKey: "diamondSiC" as const,
   },
@@ -204,7 +204,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
                 style={{ backgroundColor: dataset.stroke }}
                 aria-hidden
               />
-              <span className="text-[12px] sm:text-[13px] lg:text-sm text-left">
+              <span className="page-caption text-left">
                 {labels[dataset.labelKey]}
               </span>
             </button>

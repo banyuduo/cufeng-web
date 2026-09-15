@@ -69,7 +69,7 @@ export default async function ProductsPage({
         subtitle={t("products.subtitle")}
       />
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 bg-[#F9FAFC]">
+      <section className="section-block bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {catalog.map((item) => (
@@ -78,7 +78,7 @@ export default async function ProductsPage({
                 href={item.href}
                 className={`block h-full min-h-0 ${"wide" in item && item.wide ? "md:col-span-2" : ""}`}
               >
-                <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#4169E1]/50 hover:shadow-lg transition-all group cursor-pointer">
+                <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/50 hover:shadow-lg transition-all group cursor-pointer">
                   <div className={`mb-4 inline-flex w-fit rounded-full px-3 py-1 text-xs font-medium ${item.badgeClass}`}>
                     {item.badge}
                   </div>
@@ -91,7 +91,7 @@ export default async function ProductsPage({
                   <p className="page-body text-slate-500 mb-6 flex-1">
                     {item.desc}
                   </p>
-                  <div className="flex items-center text-[#0077b6] font-medium group-hover:gap-2 transition-all">
+                  <div className="flex items-center text-[#2A7FC4] font-medium group-hover:gap-2 transition-all">
                     {viewDetails} <ArrowRight className="w-4 h-4" />
                   </div>
                 </Card>
@@ -109,14 +109,14 @@ export default async function ProductsPage({
         </div>
       </section>
 
-      <section className="py-8 sm:py-14 lg:py-14 px-6 lg:px-8 bg-slate-50">
+      <section className="section-block bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="page-h2 mb-4 text-slate-900">
             {t("products.cta.title")}
           </h2>
           <p className="page-body page-measure text-slate-600 mb-6 sm:mb-8">{t("products.cta.subtitle")}</p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
-            <Button size="lg" className="gap-2 bg-[#0F2A5C] hover:bg-[#1E3A8A] text-white" asChild>
+            <Button size="lg" className="gap-2 bg-[#2A7FC4] hover:bg-[#1B5F96] text-white" asChild>
               <Link href={`${prefix}/cooperation#contact`}>
                 {t("products.cta.contactTech")}
               </Link>

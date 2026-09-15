@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
+import { ChemText } from "@/components/chem-text"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
 import { FooterNav } from "@/components/footer-nav"
 
@@ -30,7 +31,7 @@ export default async function HomePage({
                 {t("home.hero.visionTitle")}
               </h1>
               <p className="page-lead page-measure text-white/70 font-light">
-                {t("home.hero.visionSubtitle")}
+                <ChemText text={t("home.hero.visionSubtitle")} />
               </p>
             </div>
 

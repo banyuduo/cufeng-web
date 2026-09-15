@@ -48,13 +48,13 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
       </section>
 
       {/* 行业文章正文 - 浅底阅读区 */}
-      <section className="py-10 sm:py-16 lg:py-24 bg-[#F9FAFC]">
+      <section className="section-y bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* 返回按钮 */}
             <a
               href={`${ensureTrailingSlash(`${prefix}/news`)}#industry-info`}
-              className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-10 page-caption font-medium"
+              className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-10 page-caption font-medium"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToList")}
@@ -165,11 +165,11 @@ function CompanyNewsDetail({
       </section>
 
       {/* Article Content - 浅底阅读区 */}
-      <section className="py-10 sm:py-16 lg:py-24 bg-[#F9FAFC]">
+      <section className="section-y bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* Back Button */}
-            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#0077b6] hover:underline mb-8 page-caption font-medium">
+            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-8 page-caption font-medium">
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToNews")}
             </Link>
@@ -210,7 +210,7 @@ function CompanyNewsDetail({
                     {t("news.articleDetail.backToNews")}
                   </Link>
                 </Button>
-                <Button asChild className="bg-[#002244] hover:bg-[#003366] border border-[#0077b6]/30 text-white">
+                <Button asChild className="bg-[#0B1F33] hover:bg-[#163A5F] border border-[#2A7FC4]/30 text-white">
                   <Link href={`${prefix}/cooperation#contact`}>
                     {t("cooperation.contact.contactUs")}
                   </Link>
