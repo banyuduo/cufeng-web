@@ -321,7 +321,7 @@ export function HeroPlatformDiagram({
                       isEn && "tracking-tight"
                     )}
                   >
-                    {title}
+                    {title ? <ChemText text={title} /> : title}
                   </p>
                   <p
                     className={cn(
@@ -329,7 +329,7 @@ export function HeroPlatformDiagram({
                       isEn && "tracking-tight"
                     )}
                   >
-                    {body}
+                    {body ? <ChemText text={body} /> : body}
                   </p>
                 </div>
               ))}

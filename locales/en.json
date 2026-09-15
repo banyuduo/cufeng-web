@@ -23,7 +23,7 @@
       "copyright": "Copyright © 2018 - 2026 Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd.",
       "policeFiling": "Public security filing",
       "icp": "苏ICP备18019265号-1",
-      "nonstickCookware": "Diamond nonstick cookware",
+      "nonstickCookware": "Diamond nonstick coating",
       "diamondCopper": "Diamond-copper composite",
       "thermalPad": "Thermal interface material (TIM)",
       "carbonComposite": "All-carbon composite",
@@ -34,7 +34,7 @@
     "hero": {
       "visionTitle": "Solving thermal management limits in the AI and new energy era",
       "visionSubtitle": "A material platform based on sp³–sp² carbon-based interface engineering",
-      "title": "sp³–sp² Carbon-Based Interface Engineering Platform",
+      "title": "sp³–sp² Carbon-Based Interface Engineering Material Platform Mechanism",
       "atomicTitle": "Atomic-level interface engineering",
       "sp2LayerLabel": "sp² structure layer",
       "sp3LayerLabel": "sp³ structure layer",
@@ -50,13 +50,13 @@
         "layer1Title": "Market Vision & Solution (The Mission)",
         "layer1Text": "Thermal management materials for high-power-density electronics",
         "layer2Title": "Performance relative to conventional composites",
-        "layer2Text": "Combined gains in thermal, mechanical, and electrical performance",
+        "layer2Text": "Coordinated tuning of thermal, mechanical, and electrical performance",
         "layer2Thermal": "Thermal",
         "layer2Mechanical": "Mechanical",
         "layer2Electrical": "Electrical",
         "layer3Title": "Physical Mechanism Bridge",
-        "layer3Line1": "Building a stable all-carbon covalent bonding network",
-        "layer3Line2": "Generating tunable endogenous stress fields and heterogeneous energy-level environments",
+        "layer3Line1": "Forming a stable all-carbon covalent bonding network",
+        "layer3Line2": "Providing the structural basis for endogenous stress fields and heterogeneous energy-level environments",
         "layer4Title": "Underlying technical core",
         "layer4Line1": "Interface engineering based on sp³–sp² hybrid bonding",
         "layer4Line2": "Atomic-level interface bonding",
@@ -78,24 +78,24 @@
     "platform": {
       "diagram": {
         "layer1Title": "Applications & future interfaces",
-        "layer1Tim": "Thermal interfaces",
-        "layer1Substrate": "Heat-spreader substrates",
-        "layer1Devices": "Exploratory devices",
+        "layer1Tim": "New thermal interfaces",
+        "layer1Substrate": "High-performance heat-spreader substrates",
+        "layer1Devices": "Physical-property and information-function exploration",
         "layer2Title": "Core platform mechanisms",
-        "layer2Item1": "Carbon interface engineering",
+        "layer2Item1": "Carbon-based interface engineering",
         "layer2Item2": "sp² / sp³ hybrid bonding",
         "layer2Item3": "Stress engineering",
-        "layer2Item4": "Tunable electronic environment",
-        "layer2Item5": "Multi-valency carbon atoms",
-        "layer2Item6": "Atomic coexistence structure",
+        "layer2Item4": "Tunable endogenous stress field",
+        "layer2Item5": "Multivalent carbon structures",
+        "layer2Item6": "Atomic-scale coexistence of different bonding states",
         "layer3Title": "Physical limits of traditional materials",
         "layer3Label": "High power density, CTE mismatch, reliability bottleneck"
       }
     },
     "results": {
       "title": "Phased Results",
-      "process": "Process & Performance Closure",
-      "processDesc": "Completed lab-level closed-loop validation from physical hypothesis → process scheme design → sample trial; preliminary sample preparation and performance testing are underway.",
+      "process": "Process & Performance Validation",
+      "processDesc": "Completed lab-level validation from conceptual hypothesis → process R&D → sample trial; preliminary sample preparation and performance testing are underway.",
       "deliverables": "Deliverable Samples",
       "deliverablesDesc": "Stable diamond-copper composite samples; some have completed engineering-level validation of key thermal metrics and entered further optimization.",
       "ip": "Independent Intellectual Property",
@@ -107,26 +107,26 @@
     "title": "Technical Achievements",
     "subtitle": "From superabrasive tools to carbon-based thermal management materials",
     "badge": {
-      "inStock": "Samples Ready",
+      "inStock": "Functional coating application",
       "gen2Core": "Strategic Core",
       "gen2Expand": "In development",
       "gen3Future": "Next Gen · Future Platform",
-      "traditional": "Professional Segment · Custom Service"
+      "traditional": "Custom material processing applications"
     },
     "nonstickCookware": {
-      "title": "Diamond coating nonstick cookware",
+      "title": "Diamond nonstick coating",
       "desc": "Patented diamond particle bonding for wear resistance and nonstick performance. Mass production ready.",
       "viewDetails": "View Details",
       "hero": {
         "badge": "Samples Ready",
-        "title": "Diamond coating nonstick cookware",
+        "title": "Diamond nonstick coating",
         "intro": "Based on patented active fusion-bonding technology, diamond particles achieve atomic-level bonding with the metal substrate. Applying this process to nonstick cookware validates the reliability of interface fixation strength under extreme operating conditions.",
         "feature1": "Real diamond particle active fusion bonding, securely attached",
         "feature2": "PFOA/PTFE-free—food safety certified",
         "feature3": "Heat resistant to 500°C—suitable for all cooking methods",
         "feature4": "Metal spatula safe, wear- and scratch-resistant",
-        "imgAlt": "Diamond coating nonstick cookware",
-        "imgAltSem": "Diamond coating nonstick cookware SEM image"
+        "imgAlt": "Diamond nonstick coating",
+        "imgAltSem": "Diamond nonstick coating SEM image"
       },
       "whyDiamond": {
         "title": "Why choose diamond?",
@@ -160,7 +160,7 @@
         "title": "Performance comparison",
         "subtitle": "Compared with Teflon coating and ceramic coating",
         "metric": "Performance metric",
-        "diamondPan": "Diamond coating nonstick",
+        "diamondPan": "Diamond nonstick coating",
         "teflon": "Teflon coating",
         "ceramic": "Ceramic coating",
         "lifespan": "Service life",
@@ -553,7 +553,7 @@
         "card2Title": "Extreme condition adaptation",
         "card2Desc": "Providing customized cutting/grinding solutions for \"difficult-to-machine materials\" such as aerospace superalloys, carbon fiber composites (CFRP), and ceramic matrix composites (CMC), ensuring process stability and efficient machining.",
         "card3Title": "Technology downward compatibility",
-        "card3Desc": "Translating industrial-grade precision control into underlying process specifications supporting sp³–sp² consumer products (e.g., diamond coating cookware) and industrial thermal management (diamond-copper), enabling continuous technology evolution."
+        "card3Desc": "Translating industrial-grade precision control into underlying process specifications supporting sp³–sp² consumer products (e.g., diamond nonstick coating) and industrial thermal management (diamond-copper), enabling continuous technology evolution."
       },
       "designPrinciples": {
         "title": "Product design principles: Three-element architecture of superabrasive fusion bonding",
@@ -662,15 +662,15 @@
     },
     "disclaimer": "Note: All data above are typical laboratory values or theoretical design values. Due to application conditions and specification differences, actual performance parameters are subject to formal contracts or product manuals.",
     "cta": {
-      "title": "Need customized thermal management solutions?",
-      "subtitle": "The technical team will provide product selection and technical support based on specific requirements",
+      "title": "The materials and physics platform presented here originated in engineering practice and has gradually opened space across materials science, functional materials, and fundamental physics. Diamond-copper composite is the project starting point, and development of the materials platform continues.",
+      "subtitle": "",
       "contactTech": "Contact Technical Team"
     }
   },
   "about": {
     "hero": {
       "title": "About Us",
-      "tagline": "New technology, new peak",
+      "tagline": "",
       "subtitle": "Originating from superabrasive tools, pivoted to high-performance thermal management materials. From superhard tool designers to carbon-based composite innovators."
     },
     "overview": {
@@ -683,7 +683,7 @@
       "rdCapability": "R&D & Engineering Capability",
       "rdDesc": "The company has over a decade of technical accumulation in vacuum interface metallurgy, active fusion bonding, and engineering applications. Through microscopic control of the active fusion bonding process, processing bottlenecks for cast metals, carbon fiber composites (CFRP), and hard brittle materials in extreme manufacturing have been overcome, providing vertical integration solutions from custom tools to frontier functional materials.",
       "evolution": "From Industrial Practice to Physics Exploration",
-      "evolution1": "Adhering to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is shifting from \"precision machining tools\" to a \"high-performance functional material platform,\" and continues to explore possible applications of carbon-based structures in superconductivity, unconventional transport, and quantum physics.",
+      "evolution1": "Adhering to the \"new technology, new peak\" evolution path. By migrating superabrasive tool design principles to high-performance thermal management, CuFeng is shifting from \"precision machining tools\" to a \"high-performance functional material platform,\" and further exploring the possible boundaries of carbon-based structures in complex physical properties, interfacial behavior, and endogenous material dynamics.",
       "vision": "Corporate Vision",
       "visionDesc": "Through continuous technological innovation, providing breakthrough material solutions for frontier fields such as high-power-density thermal management, new energy, and solid-state batteries.",
       "coreIdea": "Core Philosophy",
@@ -768,7 +768,7 @@
       "layer3Tag": "Potential applications",
       "layer4Level": "L4: Consumer market (Scale)",
       "layer4Title": "Consumer Electronics & Smart Home",
-      "layer4Items": "Wireless charging coil|Diamond coating nonstick cookware|Foldable|VR/AR",
+      "layer4Items": "Wireless charging coil|Diamond nonstick coating|Foldable|VR/AR",
       "layer4Desc": "Interface engineering combined with cost-optimized processes, applied in mature consumer markets.",
       "layer4Tag": "Platform expansion",
       "layer5Level": "L5: New Energy & Frontier (Exploration)",
@@ -801,7 +801,7 @@
       },
       "consumer": {
         "title": "Consumer Electronics & Smart Home",
-        "items": "High-power wireless charging high-thermal-conductivity coils (11kW+)|Diamond coating nonstick cookware|Foldable phone ultra-thin thermal management|VR/AR device lightweight thermal management",
+        "items": "High-power wireless charging high-thermal-conductivity coils (11kW+)|Diamond nonstick coating|Foldable phone ultra-thin thermal management|VR/AR device lightweight thermal management",
         "itemsDesc": "Diamond-copper composite conductor builds radial heat channels on copper wire surface, addressing ACR surge and thermal bottlenecks from skin effect for 11kW+ wireless charging.|sp³–sp² chemical bonding firmly anchors diamond particles on cookware surface for thermal, wear, and nonstick performance, with a longer service life than common polymer coatings.|Ultra-thin flexible TIM conforms to foldable hinge and hot chip areas for efficient heat spreading in limited space, ensuring fold reliability.|Lightweight thermal solutions replace metal heat sinks, enabling reliable cooling for key chips under VR/AR headset weight constraints.",
         "materials": "Diamond-copper composite|Diamond coating/bonding material|Flexible high-thermal-conductivity composite",
         "expandLabel": "View wireless charging coil solution details",
@@ -888,19 +888,19 @@
     },
     "cta": {
       "viewMaterials": "View available materials and solutions",
-      "techDialogue": "Discuss cooperation",
+      "techDialogue": "Project Cooperation",
       "viewTechPath": "View full technology evolution path"
     }
   },
   "cooperation": {
     "hero": {
-      "title": "Technical Dialogue & Strategic Alignment",
-      "p1": "The materials and physics platform presented here—",
-      "p2": "originated in engineering practice and has gradually opened space across materials science, functional materials, and fundamental physics. Diamond-copper composite is the project starting point, and development of the materials platform continues."
+      "title": "Technical Exchange and Cooperation",
+      "p1": "",
+      "p2": ""
     },
     "platform": {
-      "title": "All-carbon materials platform",
-      "content": "This project builds an all-carbon materials system around sp³–sp² chemical bonding and endogenous stress regulation.",
+      "title": "",
+      "content": "An all-carbon materials system unfolding around sp³–sp² chemical bonding and endogenous stress regulation.",
       "content2": "At the engineering level, a clear path for material preparation and functional validation is already in place.",
       "content3": "At a deeper level, it presents the possibility of continued evolution as a platform.",
       "content4": "We know the gap from lab to fab. While pursuing physical exploration, we remain respectful of batch-process reproducibility and cost control."
@@ -918,13 +918,13 @@
       "investorBold": "Strategic investors"
     },
     "nextSteps": {
-      "title": "On further advancement",
+      "title": "Further ways to proceed",
       "p1": "Further work on this technology can take several forms, depending on how well both sides match in technical depth, development pace, and long-term aims."
     },
     "resonance": {
       "title": "Resonance",
       "p1": "If you likewise believe that breakthroughs in underlying materials are a key condition for spanning industry cycles and solving thermal and energy-efficiency bottlenecks,",
-      "p2": "then we are likely already standing on a similar technical perspective."
+      "p2": "Then we are likely already standing on a similar technical perspective."
     },
     "contact": {
       "title": "Contact",
@@ -940,14 +940,14 @@
   },
   "patents": {
     "hero": {
-      "title": "Technology Architecture & Evolution Path",
+      "title": "Technology Architecture",
       "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering",
-      "desc": "High-thermal-conductivity products have been prepared and validated. 10 core patents cover interface engineering, high-performance thermal management, and extreme-condition response.",
+      "desc": "",
       "dimensions": ""
     },
     "architecture": {
       "title": "Platform Architecture Overview",
-      "evolutionPath": "Evolution Path",
+      "evolutionPath": "Underlying Structural Materials",
       "stage01Title": "Precision Active Fusion-Bonded Diamond Tools",
       "stage01Desc": "Establishing interface connection and structural stability engineering capability under extreme conditions",
       "stage02Title": "Diamond-Copper Composite Heat Dissipation Substrate",
@@ -959,13 +959,17 @@
       "stressRegulation": "Endogenous Stress Regulation",
       "applicationWindow": "Application Window",
       "extremeConditions": "Extreme Condition Applications",
+      "extremeTagline": "High thermal conductivity × High wear resistance × High stability",
       "extremeItem1": "Aerospace thermal management",
       "extremeItem2": "High-power coils",
       "extremeItem3": "Fusion reactor thermal components",
-      "superconductorPlatform": "Superconducting Material Research Platform",
-      "theoryExploration": "Theoretical exploration stage",
-      "quantumPotential": "Quantum Computing Potential",
-      "visionPlanning": "Long-term planning stage"
+      "structuralTitle": "Structural and Functional Materials",
+      "structuralItem1": "Anode materials for solid-state batteries",
+      "structuralItem2": "Particle electrodes for water treatment",
+      "physicsTitle": "Physical Properties and Information Exploration",
+      "physicsItem1": "Correlated electronic states and collective phenomena",
+      "physicsItem2": "Material endogenous dynamics and information processing",
+      "physicsNote": "A long-horizon physical exploration direction, still at the theoretical and basic-research stage."
     },
     "evolution": {
       "sectionTitle": "An evolution path from engineering tools to physical computing potential",
@@ -984,8 +988,8 @@
       "computingResource": "Potential physical\ncomputing resource"
     },
     "evolutionPath": {
-      "sectionTitle": "Technology Evolution Path",
-      "sectionSubtitle": "Systematic evolution from engineering tools to all-carbon material systems",
+      "sectionTitle": "Technology Advancement Levels",
+      "sectionSubtitle": "From engineering tools to the all-carbon material system, technical capability advances level by level",
       "stage01Title": "Active Fusion-Bonded Diamond Tools",
       "stage01Desc": "Centered on active fusion-bonded diamond tools, we have established engineering capability for diamond interface, high-temperature bonding, and structural stability under extreme conditions.",
       "funcExtension": "Functional Extension",
@@ -1029,7 +1033,7 @@
       "patent10Title": "An sp²–sp³ interconnected all-carbon composite with chemically bonded endogenous stress and its preparation method and application",
       "patent10No": "Application No.: 202610187717.4",
       "stage04Title": "Stress Engineering Based on All-Carbon Platform",
-      "stage04Desc": "Based on the all-carbon composite platform, stress engineering extends from material function to the physical system level, constituting the endpoint of the evolution path and providing an experimental substrate for higher-order property exploration.",
+      "stage04Desc": "Based on the all-carbon composite platform, stress engineering further extends from material function to the physical system level, providing an experimental substrate for higher-order property exploration.",
       "stage04Explanation": "In the all-carbon composite stage, a continuous carbon network centered on sp³–sp² chemical bonding and endogenous stress fields has been built. At the engineering level, the structure has shown excellent thermal conductivity, mechanical properties, and long-term stability; at a higher level, it has also opened a series of physical windows not yet fully explored."
     },
     "platformCore": {
@@ -1051,9 +1055,9 @@
       "domain2a": "Significant improvement in thermal/electrical conductivity",
       "domain2b": "Suitable for heat dissipation, electronic interface coupling, transport-related functions",
       "domain3Title": "Intermediate sp²/sp³ mixed ratio",
-      "domain3a": "Maximum endogenous stress",
-      "domain3b": "Exhibits complex interface energy states and nonlinear response behavior",
-      "tuningIntro": "These parameters are typically regulated synergistically through:",
+      "domain3a": "Enhanced stress–interface coupling",
+      "domain3b": "Opening the possibility of complex local structures and nonlinear response",
+      "tuningIntro": "The parameters involved are typically regulated synergistically through:",
       "tuning1": "Raw material selection",
       "tuning1Note": "(nanodiamond, graphite, carbon nanotubes, etc.)",
       "tuning2": "Hot pressing/sintering process",
@@ -1062,8 +1066,9 @@
       "tuningOutro": "to achieve target multi-scale structural states.",
       "platformConclusion": "",
       "platformName": "The all-carbon composite material platform",
-      "platformConclusionEnd": " not only carries an endogenous-stress, chemically interconnected \"multi-state carbon network\" with engineering functional-material advantages, but also provides the possibility of exploring a complex property space.",
-      "radarChartTitle": "Material System Comparison",
+      "platformConclusionEnd": " has not only formed a “multi-state carbon network” characterized by endogenous stress and chemical interconnection, with application potential as an engineering functional material, but also provided a new structural basis for exploring a more complex property space.",
+      "radarChartTitle": "Material Performance Space",
+      "radarChartSubtitle": "From metal-matrix composite systems toward all-carbon systems, the performance envelope of materials is opening out again",
       "radarDim1": "Phonon Transmission",
       "radarDim1Mobile": "Phonon\nTransmission",
       "radarDim2": "TC Potential",
@@ -1081,13 +1086,15 @@
     "platformExtension": {
       "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp³–sp² Structure",
       "sectionSubtitle": "Exploring the evolution potential of the all-carbon sp³–sp² structure in extreme physics and future computing",
-      "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing structural basis for unconventional superconductivity or related collective phenomena.",
-      "superconductorP2": "In existing material systems, carbon-based structures simultaneously possessing strong endogenous stress, continuous sp³–sp² bonding, and engineerable tuning windows remain rare, making this platform unique in fundamental structure exploration for unconventional superconducting materials.",
-      "chaosP1": "Interconnected networks form highly coupled, disordered but controllable structural units at mesoscopic scale, providing physical carrier for complex dynamics and reservoir computing-like behavior.",
-      "chaosP2": "Based on nonlinear response of material endogenous dynamics, this network can achieve efficient temporal information encoding. Through precise regulation of chaotic states, the aim is to build a physical computing paradigm without traditional transistor logic, breaking through the compute-energy-efficiency bottleneck from the ground up.",
-      "quantumP1": "Compared to condensed matter physics directions such as superconductivity, this direction is more exploratory. CuFeng is exploring a platform-based \"quantum reservoir computing\" model, but it is not a current primary technical target.",
-      "quantumP2": "This platform is not directly aimed at current quantum computing architectures, but provides material-level foundation for exploring novel, non-von Neumann, physics-driven computing paradigms.",
-      "disclaimer": "It must be emphasized that the above directions remain in the physical exploration stage and have not yet entered engineering or productization. Yet it is precisely this undeveloped physical ceiling that gives the platform potential value distinct from traditional functional materials at the long-term strategic level."
+      "card1Title": "Correlated electronic states and collective phenomena",
+      "card1Subtitle": "Starting from material structure to explore new physical possibilities",
+      "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing a structural basis for strongly correlated states, local coherence, and other collective phenomena.",
+      "superconductorP2": "The present stage focuses on exploring the relations among material structure, electronic states, and physical mechanisms, without presupposing particular physical outcomes or their critical parameters.",
+      "card2Title": "Material endogenous dynamics and information processing",
+      "card2Subtitle": "Exploring whether the material itself can become an information carrier",
+      "card2P1": "Based on highly coupled mesoscopic structures formed by the sp²–sp³ all-carbon network, this direction explores new physical paths for information processing that draw on many-body dynamics, phase correlation, and nonlinear response.",
+      "card2P2": "It is a long-horizon exploration, not aimed at existing computing architectures, but at whether complex internal material dynamics can form usable state evolution, information encoding, and characteristic responses.",
+      "disclaimer": "From material structure to physical function, the platform’s open boundary does not presuppose an endpoint; it lies in exploring new physical properties and information-processing modes that endogenous material dynamics may produce."
     },
     "patentCluster": {
       "title": "Patent Cluster",
@@ -1149,7 +1156,7 @@
     "items": {
       "2025-patents": { "date": "2025", "title": "Core patent layout completed", "summary": "Systematically transformed years of accumulated technical solutions, completed 9 core patent filings covering the path from diamond tools to all-carbon composites.", "category": "Technology breakthrough" },
       "2025-diamond-copper": { "date": "2025", "title": "Diamond-copper composite successfully developed", "summary": "Successfully developed diamond-copper composite products with thermal conductivity exceeding 680 W/m·K, marking the company's formal entry into high-performance thermal management materials.", "category": "Product development" },
-      "2024-nonstick": { "date": "2024", "title": "Diamond coating nonstick cookware developed", "summary": "Based on diamond particle wear-resistant coating technology, successfully developed new nonstick cookware with initial samples, achieving the leap from industrial to consumer markets.", "category": "Product development" },
+      "2024-nonstick": { "date": "2024", "title": "Diamond nonstick coating developed", "summary": "Based on diamond particle wear-resistant coating technology, successfully developed new nonstick cookware with initial samples, achieving the leap from industrial to consumer markets.", "category": "Product development" },
       "2023-brazing-tools": { "date": "2023", "title": "Active fusion-bonded superabrasive tool series developed", "summary": "Breakthrough on high-strength dental burs and active fusion-bonded CBN tools; successfully developed high-strength diamond tools and CBN wheels with 3x+ lifespan over electroplated tools.", "category": "Product development" },
       "2023-relocation": { "date": "Early 2023", "title": "Company relocates to Nanjing", "summary": "Relocated from Zhenjiang to Jiangbei New Area, Nanjing, gaining superior R&D platform and industrial environment for subsequent technology breakthroughs and business expansion.", "category": "Company news" },
       "2022-team": { "date": "2022", "title": "Core team formation completed", "summary": "Formed three-person core team covering technical R&D, engineering implementation, and business development; began systematic layout in superabrasive tools and diamond functional materials.", "category": "Team building" },
