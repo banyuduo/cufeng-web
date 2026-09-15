@@ -1,5 +1,6 @@
 "use client"
 
+import type { ReactNode } from "react"
 import { Link } from "@/components/app-link"
 import { usePathname } from "next/navigation"
 import { ChevronUp, Mail, MapPin } from "lucide-react"
@@ -7,6 +8,99 @@ import { useState, useEffect } from "react"
 import type { Locale } from "@/lib/i18n"
 import { useTranslations } from "@/components/translations-provider"
 import { isValidLocale } from "@/lib/i18n"
+
+const PRODUCT_LINKS = [
+  { path: "/products/diamond-copper", key: "common.footer.diamondCopper" },
+  { path: "/products/thermal-pad", key: "common.footer.thermalPad" },
+  { path: "/products/carbon-composite", key: "common.footer.carbonComposite" },
+  { path: "/products/nonstick-cookware", key: "common.footer.nonstickCookware" },
+  { path: "/products/diamond-tools", key: "common.footer.superabrasiveTools" },
+] as const
+
+const EXCHANGE_LINKS = [
+  { path: "/about", key: "common.nav.about" },
+  { path: "/patents", key: "common.nav.techArchitecture" },
+  { path: "/applications", key: "common.nav.applications" },
+  { path: "/news", key: "common.nav.techVision" },
+  { path: "/cooperation", key: "common.nav.projectCooperation" },
+] as const
+
+function FooterLinkList({
+  prefix,
+  items,
+  t,
+}: {
+  prefix: string
+  items: readonly { path: string; key: string }[]
+  t: (key: string) => string
+}) {
+  return (
+    <ul className="space-y-2 page-body text-white/70 text-left">
+      {items.map((item) => (
+        <li key={item.path}>
+          <Link
+            href={`${prefix}${item.path}`}
+            className="text-white/70 hover:text-white transition-colors"
+          >
+            {t(item.key)}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function FooterFold({ title, children }: { title: string; children: ReactNode }) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <details
+      className="border-b border-white/10"
+      onToggle={(event) => {
+        setOpen((event.currentTarget as HTMLDetailsElement).open)
+      }}
+    >
+      <summary className="flex items-center justify-between gap-3 min-h-[44px] py-3 page-body font-semibold text-white cursor-pointer select-none touch-manipulation list-none [&::-webkit-details-marker]:hidden">
+        <span>{title}</span>
+        <span className="w-5 text-right text-white/55" aria-hidden>
+          {open ? "−" : "＋"}
+        </span>
+      </summary>
+      <div className="pb-4">{children}</div>
+    </details>
+  )
+}
+
+function BrandBlock({ t }: { t: (key: string) => string }) {
+  return (
+    <div className="min-w-0">
+      <div className="page-h4 mb-4 text-white text-left">{t("common.footer.brand")}</div>
+      <p className="page-caption text-white/55 text-left break-words">
+        {t("common.footer.platformTech")}
+      </p>
+    </div>
+  )
+}
+
+function ContactBlock({ t }: { t: (key: string) => string }) {
+  return (
+    <div>
+      <div className="page-body font-semibold mb-4 text-white text-left">
+        {t("common.footer.cooperationAndSupport")}
+      </div>
+      <ul className="space-y-2 page-body text-white/70 text-left">
+        <li className="flex items-start gap-2">
+          <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
+          <span>{t("common.footer.address")}</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
+          <span>{t("common.footer.email")}</span>
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -48,92 +142,34 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
 
       <footer className="border-t border-white/10 bg-[#0B1F33] py-12 sm:py-16 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-10 md:gap-8 lg:gap-12">
-            <div className="order-1 lg:order-2">
+          <div className="lg:hidden space-y-8">
+            <BrandBlock t={t} />
+            <div className="border-t border-white/10">
+              <FooterFold title={t("common.footer.products")}>
+                <FooterLinkList prefix={prefix} items={PRODUCT_LINKS} t={t} />
+              </FooterFold>
+              <FooterFold title={t("common.footer.techAndExchange")}>
+                <FooterLinkList prefix={prefix} items={EXCHANGE_LINKS} t={t} />
+              </FooterFold>
+            </div>
+            <ContactBlock t={t} />
+          </div>
+
+          <div className="hidden lg:grid lg:grid-cols-4 lg:gap-12">
+            <BrandBlock t={t} />
+            <div>
               <div className="page-body font-semibold mb-4 text-white text-left">
                 {t("common.footer.products")}
               </div>
-              <ul className="space-y-2 page-body text-white/70 text-left">
-                <li>
-                  <Link href={`${prefix}/products/diamond-copper`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.footer.diamondCopper")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/products/thermal-pad`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.footer.thermalPad")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/products/carbon-composite`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.footer.carbonComposite")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/products/nonstick-cookware`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.footer.nonstickCookware")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/products/diamond-tools`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.footer.superabrasiveTools")}
-                  </Link>
-                </li>
-              </ul>
+              <FooterLinkList prefix={prefix} items={PRODUCT_LINKS} t={t} />
             </div>
-            <div className="order-2 lg:order-3">
+            <div>
               <div className="page-body font-semibold mb-4 text-white text-left">
                 {t("common.footer.techAndExchange")}
               </div>
-              <ul className="space-y-2 page-body text-white/70 text-left">
-                <li>
-                  <Link href={`${prefix}/about`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.nav.about")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/patents`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.nav.techArchitecture")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/applications`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.nav.applications")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/news`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.nav.techVision")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`${prefix}/cooperation`} className="text-white/70 hover:text-white transition-colors">
-                    {t("common.nav.projectCooperation")}
-                  </Link>
-                </li>
-              </ul>
+              <FooterLinkList prefix={prefix} items={EXCHANGE_LINKS} t={t} />
             </div>
-            <div className="order-3 col-span-2 lg:col-span-1 lg:order-1 min-w-0">
-              <div className="page-h4 mb-4 text-white text-left">
-                {t("common.footer.brand")}
-              </div>
-              <p className="page-caption text-white/55 text-left break-words">{t("common.footer.platformTech")}</p>
-            </div>
-            <div className="order-4 col-span-2 lg:col-span-1 lg:order-4">
-              <div className="page-body font-semibold mb-4 text-white text-left">
-                {t("common.footer.cooperationAndSupport")}
-              </div>
-              <ul className="space-y-2 page-body text-white/70 text-left">
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
-                  <span>{t("common.footer.address")}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
-                  <span>{t("common.footer.email")}</span>
-                </li>
-              </ul>
-            </div>
+            <ContactBlock t={t} />
           </div>
           <div className="border-t border-white/10 mt-8 pt-8">
             <div className="page-caption text-white/45 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
