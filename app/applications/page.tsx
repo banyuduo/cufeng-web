@@ -1,6 +1,5 @@
 import { Link } from "@/components/app-link"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
@@ -8,6 +7,7 @@ import { ApplicationCard } from "@/components/application-card"
 import { HpcExpandableCard } from "@/components/hpc-expandable-card"
 import { ConsumerExpandableCard } from "@/components/consumer-expandable-card"
 import { FrontierExpandableCard } from "@/components/frontier-expandable-card"
+import { ApplicationsCategoryCard } from "@/components/applications-category-card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 
@@ -62,7 +62,7 @@ export default async function ApplicationsPage({
         subtitle={t("applications.subtitle")}
       />
 
-      <section className="section-block">
+      <section className="section-block pb-6 sm:pb-8 lg:pb-10">
         <div className="max-w-6xl mx-auto space-y-4">
           {layers.map((layer, index) => (
             <ApplicationCard
@@ -75,13 +75,15 @@ export default async function ApplicationsPage({
               tag={t(`applications.blueprint.${layer.tagKey}`)}
               href={layer.href}
               tagClassName={layer.accent.tag}
+              expandLabel={t("applications.categories.frontier.expandLabel")}
+              collapseLabel={t("applications.categories.frontier.collapseLabel")}
             />
           ))}
         </div>
       </section>
 
       {/* 五大应用分类卡片 */}
-      <section className="section-block">
+      <section className="section-block pt-10 sm:pt-16 lg:pt-20">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6 sm:space-y-8">
             {categoryConfig.map((cat) => {
@@ -287,73 +289,21 @@ export default async function ApplicationsPage({
               const itemsDesc = pipeItems(t(`${base}.itemsDesc`), `${base}.itemsDesc`)
 
               return (
-                <Card
+                <ApplicationsCategoryCard
                   key={cat.id}
                   id={cat.id}
-                  className={`p-4 sm:p-8 lg:p-10 gap-4 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all scroll-mt-20 ${
-                    cat.isExploration ? "" : ""
-                  }`}
-                >
-                  <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <h2 className="page-h2 text-white">
-                          {title}
-                        </h2>
-                        {badge && (
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${cat.accent.tag}`}>
-                            {badge}
-                          </span>
-                        )}
-                      </div>
-                      {subtitle && (
-                        <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p>
-                      )}
-                      {features && (
-                        <p className="page-caption text-white/55 mb-4">{features}</p>
-                      )}
-                      <div className="space-y-4 mb-4">
-                        {items.map((item, i) => (
-                          <div key={i} className="border-l-2 pl-4" style={{ borderColor: `${cat.accent.hex}55` }}>
-                            <div className="flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: cat.accent.hex }} />
-                              <div className="min-w-0">
-                                <div className="page-body font-medium text-white break-words">{item}</div>
-                                {itemsDesc[i] && (
-                                  <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      {materials && (
-                        <div className="mt-4">
-                          <div className="page-body font-semibold text-white mb-2">{t("applications.thermal.materialsLabel")}</div>
-                          <div className="flex flex-wrap gap-2">
-                            {pipeItems(materials).map((m, i) => (
-                              <span
-                                key={i}
-                                className="inline-flex items-center px-3 py-1.5 rounded-lg page-caption font-medium border break-words max-w-full bg-white/[0.04] text-white/80"
-                                style={{ borderColor: `${cat.accent.hex}55` }}
-                              >
-                                {m.trim()}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      <div className="mt-6">
-                        <Button
-                          size="lg"
-                          variant="outline"
-                          className="min-h-[44px] border-white/25 text-white hover:bg-white/10 bg-transparent"
-                          asChild
-                        >
-                          <Link href={`${prefix}/products`}>{t("applications.cta.viewMaterials")}</Link>
-                        </Button>
-                      </div>
-                  </div>
-                </Card>
+                  title={title}
+                  badge={badge}
+                  items={items}
+                  itemsDesc={itemsDesc}
+                  materials={materials}
+                  materialsLabel={t("applications.thermal.materialsLabel")}
+                  viewMaterialsLabel={t("applications.cta.viewMaterials")}
+                  productsHref={`${prefix}/products`}
+                  expandLabel={t("applications.categories.hpc.expandLabel")}
+                  collapseLabel={t("applications.categories.hpc.collapseLabel")}
+                  accentHex={cat.accent.hex}
+                />
               )
             })}
           </div>

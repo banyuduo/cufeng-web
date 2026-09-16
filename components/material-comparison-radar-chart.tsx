@@ -104,7 +104,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
   const gridLevels = [20, 40, 60, 80, 100]
 
   return (
-    <div className="w-full max-w-[18.5rem] sm:max-w-[22rem] lg:max-w-[36rem] xl:max-w-[42rem] mx-auto">
+    <div className="w-full max-w-[22.2rem] sm:max-w-[26.4rem] lg:max-w-[36rem] xl:max-w-[42rem] mx-auto">
       <svg
         viewBox="0 0 540 408"
         role="img"
@@ -175,7 +175,7 @@ export function MaterialComparisonRadarChart({ labels, variant = "dark" }: Mater
           return (
             <g key={dimKey}>
               <text className="lg:hidden" x={labelPoint.x} y={labelPoint.y}>
-                {renderLabelLines(compactLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 13)}
+                {renderLabelLines(compactLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 16)}
               </text>
               <text className="hidden lg:inline" x={labelPoint.x} y={labelPoint.y}>
                 {renderLabelLines(desktopLabel, labelPoint.x, labelPoint.y, anchor, labelColor, 15)}

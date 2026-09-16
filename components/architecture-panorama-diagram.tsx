@@ -85,8 +85,9 @@ function KernelPills({
   return (
     <div
       className={cn(
-        "border-l border-white/35 text-left",
-        compact ? "pl-3 space-y-1" : "pl-4 space-y-1.5"
+        compact
+          ? "border-l border-white/35 text-left pl-3 space-y-1"
+          : "border-t border-white/35 text-center pt-4 space-y-1.5"
       )}
     >
       <p className={cn("text-white font-medium", compact ? "page-caption" : "page-body")}>

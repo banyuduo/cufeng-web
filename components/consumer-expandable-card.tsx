@@ -69,8 +69,8 @@ export function ConsumerExpandableCard({
       }`}
     >
       <div className="min-w-0">
-          <h2 className="page-h2 text-white mb-4">{title}</h2>
-          <div className="space-y-4 mb-4">
+          <h2 className="page-h2 text-white mb-2 lg:mb-4">{title}</h2>
+          <div className="hidden lg:block space-y-4 mb-4">
             {(items ?? []).map((item, i) => (
               <div key={i} className="border-l-2 border-white/12 pl-4 min-w-0">
                 <div className="page-body font-medium text-white break-words">{item}</div>
@@ -81,8 +81,7 @@ export function ConsumerExpandableCard({
             ))}
           </div>
 
-          {/* 无线充电线圈可展开详情 */}
-          <div className="mt-4">
+          <div className="mt-2 lg:mt-4">
             <button
               type="button"
               onClick={() => setExpanded(!expanded)}
@@ -93,6 +92,16 @@ export function ConsumerExpandableCard({
             </button>
             {expanded && (
               <div className="mt-4 pt-4 border-t border-white/12 space-y-4">
+                <div className="lg:hidden space-y-4">
+                  {(items ?? []).map((item, i) => (
+                    <div key={`m-${i}`} className="border-l-2 border-white/12 pl-4 min-w-0">
+                      <div className="page-body font-medium text-white break-words">{item}</div>
+                      {itemsDesc[i] && (
+                        <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
                 <p className="page-body text-white/70">{coilIntro}</p>
                 <div className="bg-[#002244]/55 rounded-lg p-4 border border-white/12">
                   <div className="page-body font-semibold text-white mb-2">{coilCoreSolution}</div>

@@ -216,20 +216,20 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
             <div className="absolute inset-0 bg-black/50" />
             <div
               id="mobile-menu-overlay"
-              className="absolute top-16 right-0 w-[min(18rem,90vw)] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden flex flex-col pointer-events-auto bg-[#0B1F33] shadow-[-8px_0_24px_rgba(0,0,0,0.35)]"
+              className="absolute top-0 right-0 w-max min-w-[100px] max-w-[90vw] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden flex flex-col pointer-events-auto bg-[#0B1F33] shadow-[-8px_0_24px_rgba(0,0,0,0.35)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex flex-col w-full pt-2 pb-4 fade-in-down px-3">
+              <div className="flex flex-col w-max pt-2 pb-4 fade-in-down px-3">
                 <Link
                   href={`${prefix}/about`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.about")}
                 </Link>
                 <Link
                   href={`${prefix}/patents`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.techArchitecture")}
@@ -238,7 +238,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   <div className="flex items-stretch">
                     <Link
                       href={`${prefix}/products`}
-                      className="page-nav flex-1 min-w-0 text-white min-h-11 flex items-center px-2 hover:bg-white/10 active:bg-white/15 transition-colors"
+                      className="page-nav flex-1 min-w-0 text-white min-h-11 flex items-center px-2 whitespace-nowrap hover:bg-white/10 active:bg-white/15 transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {t("common.nav.products")}
@@ -263,7 +263,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                         <Link
                           key={path}
                           href={`${prefix}${path}`}
-                          className="page-caption text-white/80 min-h-10 flex items-center px-2 hover:bg-white/10 rounded transition-colors"
+                          className="page-caption text-white/80 min-h-10 flex items-center px-2 whitespace-nowrap hover:bg-white/10 rounded transition-colors"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {t(key)}
@@ -274,21 +274,21 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                 </div>
                 <Link
                   href={`${prefix}/applications`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.applications")}
                 </Link>
                 <Link
                   href={`${prefix}/news`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.techVision")}
                 </Link>
                 <Link
                   href={`${prefix}/cooperation`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 hover:bg-white/10 active:bg-white/15 transition-colors"
+                  className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("common.nav.projectCooperation")}
