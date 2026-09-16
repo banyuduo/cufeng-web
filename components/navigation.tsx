@@ -288,17 +288,10 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                 </Link>
                 <Link
                   href={`${prefix}/cooperation`}
-                  className="page-nav text-white min-h-11 flex items-center px-2 border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t("common.nav.projectCooperation")}
-                </Link>
-                <Link
-                  href={localeSwitchHref}
                   className="page-nav text-white min-h-11 flex items-center px-2 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {otherLocaleName}
+                  {t("common.nav.projectCooperation")}
                 </Link>
               </div>
             </div>

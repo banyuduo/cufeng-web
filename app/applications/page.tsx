@@ -62,42 +62,21 @@ export default async function ApplicationsPage({
         subtitle={t("applications.subtitle")}
       />
 
-      {/* 应用蓝图 */}
       <section className="section-block">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full py-6 sm:py-8 lg:py-8 px-4 sm:px-6 bg-white/[0.03] rounded-2xl border border-white/12 overflow-hidden relative">
-            <div className="text-center mb-5 sm:mb-6 lg:mb-6 px-1">
-              <h2 className="page-h2 text-white mb-4 break-words">{t("applications.blueprint.title")}</h2>
-              {t("applications.blueprint.subtitle") ? (
-                <p className="page-body text-white/55 max-w-2xl mx-auto break-words">{t("applications.blueprint.subtitle")}</p>
-              ) : null}
-            </div>
-
-            <div className="max-w-4xl mx-auto relative z-10 space-y-4">
-              {layers.map((layer, index) => (
-                <ApplicationCard
-                  key={index}
-                  level={t(`applications.blueprint.${layer.levelKey}`)}
-                  title={t(`applications.blueprint.${layer.titleKey}`)}
-                  items={pipeItems(t(`applications.blueprint.${layer.itemsKey}`))}
-                  description={t(`applications.blueprint.${layer.descKey}`)}
-                  color={layer.color}
-                  tag={t(`applications.blueprint.${layer.tagKey}`)}
-                  href={layer.href}
-                  tagClassName={layer.accent.tag}
-                />
-              ))}
-
-              {/* 底部基座 */}
-              <div className="pt-8 flex flex-col items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
-                <div className="px-5 sm:px-8 py-3 sm:py-4 bg-white/[0.03] rounded-xl border border-white/12 text-center">
-                  <div className="page-kicker text-white/55">{t("applications.blueprint.foundationLabel")}</div>
-                  <div className="page-h4 text-white">{t("applications.blueprint.foundation")}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto space-y-4">
+          {layers.map((layer, index) => (
+            <ApplicationCard
+              key={index}
+              level={t(`applications.blueprint.${layer.levelKey}`)}
+              title={t(`applications.blueprint.${layer.titleKey}`)}
+              items={pipeItems(t(`applications.blueprint.${layer.itemsKey}`))}
+              description={t(`applications.blueprint.${layer.descKey}`)}
+              color={layer.color}
+              tag={t(`applications.blueprint.${layer.tagKey}`)}
+              href={layer.href}
+              tagClassName={layer.accent.tag}
+            />
+          ))}
         </div>
       </section>
 

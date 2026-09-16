@@ -130,11 +130,11 @@ function KernelHub({
   }
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl border border-white/25 bg-white/[0.04] px-6 py-5 text-center">
-      <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl bg-[#2A7FC4] shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
+    <div className="flex w-full flex-col items-center rounded-2xl border border-white/25 bg-white/[0.04] px-8 py-8 text-center">
+      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-[#2A7FC4] shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
         <Sparkles className="h-8 w-8 text-white" />
       </div>
-      <h3 className="page-h4 mb-3 text-white">{title}</h3>
+      <h3 className="page-h4 mb-4 text-white">{title}</h3>
       <div className="w-fit mx-auto">
         <KernelPills bonding={bonding} stress={stress} />
       </div>
@@ -265,7 +265,9 @@ export function ArchitecturePanoramaDiagram({
         <div className="col-start-2 row-start-2">
           <CardRail />
         </div>
-        <div className="col-start-3 row-start-2 row-span-3 flex min-w-0 items-stretch">
+        <div className="col-start-3 row-start-2 row-span-3 relative flex min-w-0 items-center">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-px bg-white/35" aria-hidden />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-px bg-white/35" aria-hidden />
           <KernelHub {...kernelProps} />
         </div>
         <div className="col-start-4 row-start-2">

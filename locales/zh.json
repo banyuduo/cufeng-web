@@ -733,10 +733,6 @@
     "title": "应用领域",
     "subtitle": "基于 sp³–sp² 碳杂化键合平台技术，将同一核心方法论应用于从热管理到前沿物理探索的多个领域",
     "blueprint": {
-      "title": "应用蓝图",
-      "subtitle": "",
-      "foundation": "sp³–sp² 碳基杂化键合平台",
-      "foundationLabel": "Foundation",
       "layer1Level": "L1: 核心业务 (Current)",
       "layer1Title": "高性能计算与数据中心",
       "layer1Items": "AI芯片热管理|几何耦合|极速热稀释|系统级协同",
