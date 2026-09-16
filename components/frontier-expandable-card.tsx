@@ -61,7 +61,7 @@ function FrontierItemCard({
     >
       <div className="p-5 sm:p-6">
         <h3 className="page-h3 text-white mb-1">{item.title}</h3>
-        <p className="page-body text-white/55 mb-3">{item.shortDesc}</p>
+        <p className="page-body text-white/65 mb-3">{item.shortDesc}</p>
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
@@ -144,7 +144,7 @@ export function FrontierExpandableCard({
     <>
       <div className="mb-6">
         <h3 className="page-h3 text-white mb-1">{mediumTermLabel}</h3>
-        <p className="page-caption text-white/55 mb-4">{mediumTermSubtitle}</p>
+        <p className="page-caption text-white/65 mb-4">{mediumTermSubtitle}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {mediumTermItems.map((item) => (
             <FrontierItemCard
@@ -161,7 +161,7 @@ export function FrontierExpandableCard({
 
       <div>
         <h3 className="page-h3 text-white mb-1">{longTermLabel}</h3>
-        <p className="page-caption text-white/55 mb-4">{longTermSubtitle}</p>
+        <p className="page-caption text-white/65 mb-4">{longTermSubtitle}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {longTermItems.map((item) => (
             <FrontierItemCard
@@ -190,7 +190,7 @@ export function FrontierExpandableCard({
             {sectionBadge}
           </span>
         </div>
-        <p className="page-body text-white/55 break-words">{sectionSubtitle}</p>
+        <p className="page-body text-white/65 break-words">{sectionSubtitle}</p>
       </div>
 
       <div className="hidden lg:block">{renderDomainBlocks("pc")}</div>

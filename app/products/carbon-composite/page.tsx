@@ -23,7 +23,7 @@ export default function CarbonCompositePage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="page-hero-block bg-gradient-to-b from-slate-50 via-[#F9FAFC] to-white pointer-events-none">
+      <section className="page-hero-block bg-gradient-to-b from-[#F9FAFC] to-white pointer-events-none">
         <div className="max-w-6xl mx-auto pointer-events-auto">
           <Link
             href={`${prefix}/products`}
@@ -36,10 +36,10 @@ export default function CarbonCompositePage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0B1F33] to-[#163A5F] flex items-center justify-center">
+                <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center">
                   <Sparkles className="w-7 h-7 text-white" />
                 </div>
-                <div className="px-3 py-1 bg-gradient-to-r from-[#0B1F33] to-[#163A5F] rounded-full text-xs font-medium text-white">
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">
                   {t("products.carbonComposite.hero.badge")}
                 </div>
               </div>
@@ -49,10 +49,10 @@ export default function CarbonCompositePage() {
               </p>
             </div>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-white to-slate-50 border-[#94A3B8]/40 shadow-2xl">
+            <Card className="p-5 sm:p-8 gap-3 bg-white border-slate-200">
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.carbonComposite.hero.coreFeaturesTitle")}</h3>
               <div className="space-y-4">
-                <div className="p-4 bg-white/80 rounded-lg border-2 border-[#94A3B8]/30">
+                <div className="p-4 bg-white/80 rounded-lg border border-slate-200">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.coreTech")}</div>
                   <div className="font-bold text-slate-900">{t("products.carbonComposite.hero.coreTechValue")}</div>
                 </div>
@@ -446,7 +446,7 @@ export default function CarbonCompositePage() {
 
             {/* 第三排：核心专利单独一行 */}
             <div className="grid md:grid-cols-1 gap-6">
-              <Card className="p-4 sm:p-6 gap-3 bg-white border-2 border-purple-300 shadow-lg">
+              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                 <div className="page-caption font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.corePatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent5Title")}
@@ -513,7 +513,7 @@ export default function CarbonCompositePage() {
             </Card>
           </div>
 
-          <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A] text-white mt-8">
+          <Card className="p-5 sm:p-8 gap-3 bg-[#0F2A5C] text-white mt-8">
             <h3 className="page-h3 mb-4">{t("products.carbonComposite.investmentValue.cooperationTitle")}</h3>
             <p className="page-body text-slate-200 mb-6">
               {t("products.carbonComposite.investmentValue.cooperationDesc")}

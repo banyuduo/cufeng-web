@@ -46,7 +46,7 @@ export default async function AboutPage({
                 <p className="page-body text-white/70 mb-2">
                   {t("about.overview.companyName")}
                 </p>
-                <p className="page-caption text-white/55">{t("about.overview.location")}</p>
+                <p className="page-caption text-white/65">{t("about.overview.location")}</p>
               </div>
 
               <div className="pt-4 border-t border-white/12">

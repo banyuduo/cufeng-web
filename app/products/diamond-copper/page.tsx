@@ -82,7 +82,7 @@ export default function DiamondCopperPage() {
               </div>
             </div>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-white border-[#94A3B8]/30 shadow-xl">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-white border-[#94A3B8]/30 shadow-lg">
               <div className="space-y-6">
                 <div className="text-center pb-6 border-b border-slate-200">
                   <div className="page-stat-value-lg text-[#2A7FC4] mb-2">680</div>
@@ -218,7 +218,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             {/* Product Line B */}
-            <Card className="p-5 sm:p-8 md:p-10 gap-4 bg-gradient-to-br from-[#F9FAFC] to-white border-[#94A3B8]/40 shadow-xl">
+            <Card className="p-5 sm:p-8 md:p-10 gap-4 bg-gradient-to-br from-[#F9FAFC] to-white border-[#94A3B8]/40 shadow-lg">
               <div className="w-12 h-12 rounded-lg bg-[#0F2A5C] flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-white" />
               </div>

@@ -63,7 +63,7 @@ export function HpcExpandableCard({
           {subtitle ? <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p> : null}
 
           {features ? (
-            <p className="hidden lg:block page-caption text-white/55 mb-4">{features}</p>
+            <p className="hidden lg:block page-caption text-white/65 mb-4">{features}</p>
           ) : null}
           <ul className="hidden lg:block space-y-2 mb-4">
             {(items ?? []).map((item, i) => (
@@ -84,7 +84,7 @@ export function HpcExpandableCard({
                   </li>
                 ))}
               </ul>
-              {features ? <p className="lg:hidden page-caption text-white/55">{features}</p> : null}
+              {features ? <p className="lg:hidden page-caption text-white/65">{features}</p> : null}
               <p className="page-body text-white/70 break-words">{intro}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-[#002244]/55 border border-white/12 rounded-lg p-4 min-w-0">

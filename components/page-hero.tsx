@@ -99,7 +99,7 @@ export function PageHero({
           {tagline && (
             <p
               className={`page-kicker mb-3 break-words ${
-                isDark ? "text-white/55" : "text-[#2A7FC4]"
+                isDark ? "text-white/65" : "text-[#2A7FC4]"
               }`}
             >
               <ChemText text={tagline} />

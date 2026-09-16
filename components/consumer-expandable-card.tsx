@@ -75,7 +75,7 @@ export function ConsumerExpandableCard({
               <div key={i} className="border-l-2 border-white/12 pl-4 min-w-0">
                 <div className="page-body font-medium text-white break-words">{item}</div>
                 {itemsDesc[i] && (
-                  <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
+                  <p className="page-caption text-white/65 mt-1 break-words">{itemsDesc[i]}</p>
                 )}
               </div>
             ))}
@@ -97,7 +97,7 @@ export function ConsumerExpandableCard({
                     <div key={`m-${i}`} className="border-l-2 border-white/12 pl-4 min-w-0">
                       <div className="page-body font-medium text-white break-words">{item}</div>
                       {itemsDesc[i] && (
-                        <p className="page-caption text-white/55 mt-1 break-words">{itemsDesc[i]}</p>
+                        <p className="page-caption text-white/65 mt-1 break-words">{itemsDesc[i]}</p>
                       )}
                     </div>
                   ))}

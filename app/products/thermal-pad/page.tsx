@@ -49,7 +49,7 @@ export default function ThermalPadPage() {
               </p>
             </div>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-white border-slate-200 shadow-xl">
+            <Card className="p-5 sm:p-8 gap-3 bg-white border-slate-200 shadow-lg">
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.hero.corePerfTitle")}</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
