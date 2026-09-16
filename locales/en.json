@@ -733,10 +733,6 @@
     "title": "Applications",
     "subtitle": "Based on sp³–sp² carbon hybrid bonding platform technology, the same core methodology is applied across domains from thermal management to frontier physics exploration",
     "blueprint": {
-      "title": "Application Blueprint",
-      "subtitle": "",
-      "foundation": "sp³–sp² carbon-based hybrid bonding platform",
-      "foundationLabel": "Foundation",
       "layer1Level": "L1: Core business (Current)",
       "layer1Title": "High-Performance Computing & Data Centers",
       "layer1Items": "AI chip thermal management|Geometric coupling|Rapid thermal dilution|System-level synergy",
