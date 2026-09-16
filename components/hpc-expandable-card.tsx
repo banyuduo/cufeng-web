@@ -60,9 +60,12 @@ export function HpcExpandableCard({
     >
       <div className="min-w-0">
           <h2 className="page-h2 text-white mb-2">{title}</h2>
-          {subtitle && <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p>}
-          {features && <p className="page-caption text-white/55 mb-4">{features}</p>}
-          <ul className="space-y-2 mb-4">
+          {subtitle ? <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p> : null}
+
+          {features ? (
+            <p className="hidden lg:block page-caption text-white/55 mb-4">{features}</p>
+          ) : null}
+          <ul className="hidden lg:block space-y-2 mb-4">
             {(items ?? []).map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-white/70 min-w-0">
                 <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: accentHex }} />
@@ -71,9 +74,17 @@ export function HpcExpandableCard({
             ))}
           </ul>
 
-          {/* 可展开的完整方案介绍 */}
           {expanded && (
-            <div className="mt-6 pt-6 border-t border-white/12 space-y-6">
+            <div className="mt-4 lg:mt-6 pt-4 lg:pt-6 border-t border-white/12 space-y-6">
+              <ul className="lg:hidden space-y-2">
+                {(items ?? []).map((item, i) => (
+                  <li key={`m-${i}`} className="flex items-start gap-2 text-white/70 min-w-0">
+                    <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 opacity-80" style={{ backgroundColor: accentHex }} />
+                    <span className="page-body break-words">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {features ? <p className="lg:hidden page-caption text-white/55">{features}</p> : null}
               <p className="page-body text-white/70 break-words">{intro}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-[#002244]/55 border border-white/12 rounded-lg p-4 min-w-0">

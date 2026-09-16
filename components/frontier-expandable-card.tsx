@@ -138,28 +138,17 @@ export function FrontierExpandableCard({
   expandLabel,
   collapseLabel,
 }: FrontierExpandableCardProps) {
-  return (
-    <Card
-      id="frontier"
-      className="p-4 sm:p-8 lg:p-10 gap-4 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all scroll-mt-20"
-    >
-      <div className="mb-8 min-w-0">
-        <div className="flex flex-wrap items-center gap-2 mb-2">
-          <h2 className="page-h2 text-white">{sectionTitle}</h2>
-          <span className="px-3 py-1 bg-white/10 text-white/80 border border-white/15 rounded-full text-xs font-medium">
-            {sectionBadge}
-          </span>
-        </div>
-        <p className="page-body text-white/55 break-words">{sectionSubtitle}</p>
-      </div>
+  const [domainsOpen, setDomainsOpen] = useState(false)
 
+  const renderDomainBlocks = (keyPrefix: string) => (
+    <>
       <div className="mb-6">
         <h3 className="page-h3 text-white mb-1">{mediumTermLabel}</h3>
         <p className="page-caption text-white/55 mb-4">{mediumTermSubtitle}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {mediumTermItems.map((item) => (
             <FrontierItemCard
-              key={item.key}
+              key={`${keyPrefix}-${item.key}`}
               item={item}
               viewWhitepaperLabel={viewWhitepaperLabel}
               viewDeepLabel={viewDeepLabel}
@@ -176,7 +165,7 @@ export function FrontierExpandableCard({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {longTermItems.map((item) => (
             <FrontierItemCard
-              key={item.key}
+              key={`${keyPrefix}-${item.key}`}
               item={item}
               viewWhitepaperLabel={viewWhitepaperLabel}
               viewDeepLabel={viewDeepLabel}
@@ -185,6 +174,36 @@ export function FrontierExpandableCard({
             />
           ))}
         </div>
+      </div>
+    </>
+  )
+
+  return (
+    <Card
+      id="frontier"
+      className="p-4 sm:p-8 lg:p-10 gap-4 bg-white/[0.03] border border-white/12 hover:border-white/25  transition-all scroll-mt-20"
+    >
+      <div className="mb-4 lg:mb-8 min-w-0">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <h2 className="page-h2 text-white">{sectionTitle}</h2>
+          <span className="px-3 py-1 bg-white/10 text-white/80 border border-white/15 rounded-full page-caption font-medium">
+            {sectionBadge}
+          </span>
+        </div>
+        <p className="page-body text-white/55 break-words">{sectionSubtitle}</p>
+      </div>
+
+      <div className="hidden lg:block">{renderDomainBlocks("pc")}</div>
+      <div className="lg:hidden">
+        <button
+          type="button"
+          onClick={() => setDomainsOpen((open) => !open)}
+          className="flex items-center gap-1.5 min-h-[44px] font-medium page-caption touch-manipulation transition-colors text-white/80 hover:text-white"
+        >
+          {domainsOpen ? collapseLabel : expandLabel}
+          <ChevronDown className={`w-4 h-4 transition-transform ${domainsOpen ? "rotate-180" : ""}`} />
+        </button>
+        {domainsOpen ? <div className="mt-4">{renderDomainBlocks("mobile")}</div> : null}
       </div>
     </Card>
   )

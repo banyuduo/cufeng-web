@@ -402,13 +402,15 @@ export default function PatentsPage() {
             <p className="page-body text-white/70 max-w-2xl mx-auto">{t("patents.platformCore.sectionSubtitle")}</p>
           </div>
 
-          <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-4 sm:p-6 space-y-4 sm:space-y-5">
+          <div className="space-y-5 sm:space-y-8">
               <div className="rounded-xl border border-white/12 bg-white/[0.03] p-5 sm:p-8">
                 <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.mainTitle")}</h3>
-                <p className="page-body text-white/75 mb-8 sm:mb-10">{t("patents.platformCore.mainDesc")}</p>
+                <p className="page-body text-white/75 mb-8 sm:mb-10 max-w-3xl">
+                  {t("patents.platformCore.mainDesc")}
+                </p>
 
                 <h3 className="page-h3 text-white mb-3 sm:mb-4">{t("patents.platformCore.principleP1")}</h3>
-                <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-8">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-8 max-w-3xl">
                   <p className="page-body text-white/75 md:pr-8 md:border-r md:border-white/12">
                     <span className="page-chem text-white font-medium">sp³</span>{" "}
                     {t("patents.platformCore.sp3Role")}
@@ -418,7 +420,7 @@ export default function PatentsPage() {
                     {t("patents.platformCore.sp2Role")}
                   </p>
                 </div>
-                <p className="page-body text-white/75">
+                <p className="page-body text-white/75 max-w-3xl">
                   {t("patents.platformCore.principleP2")}
                   <strong className="text-white">{t("patents.platformCore.stressAnchor")}</strong>
                   {t("patents.platformCore.principleP2b")}
@@ -426,7 +428,7 @@ export default function PatentsPage() {
               </div>
 
               <div className="rounded-xl border border-white/12 bg-white/[0.03] p-5 sm:p-8">
-                <h3 className="page-h3 text-white mb-6 sm:mb-8">
+                <h3 className="page-h3 text-white mb-4 sm:mb-6 lg:mb-8">
                   {t("patents.platformCore.diagramTitle")}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-3 sm:gap-5">
@@ -458,24 +460,21 @@ export default function PatentsPage() {
               </div>
 
               <div className="rounded-xl border border-white/12 bg-white/[0.03] px-5 py-5 sm:px-8 sm:py-6">
-                <p className="page-body text-white/75">
+                <p className="page-body text-white/75 max-w-3xl">
                   {t("patents.platformCore.tuningIntro")}
                 </p>
-                <p className="page-body text-white/75 mt-2">
-                  <span className="inline-block max-w-full">
+                <ul className="mt-3 lg:mt-4 grid gap-2 lg:gap-3 lg:grid-cols-3 max-w-5xl page-body text-white/75">
+                  <li>
                     {t("patents.platformCore.tuning1")}
                     {t("patents.platformCore.tuning1Note")}
-                  </span>
-                  <span className="text-white/35"> · </span>
-                  <span className="inline-block max-w-full">
+                  </li>
+                  <li>
                     {t("patents.platformCore.tuning2")}
                     {t("patents.platformCore.tuning2Note")}
-                  </span>
-                  <span className="text-white/35"> · </span>
-                  <span className="inline-block max-w-full">
-                    {t("patents.platformCore.tuning3")}
-                  </span>
-                  {" "}
+                  </li>
+                  <li>{t("patents.platformCore.tuning3")}</li>
+                </ul>
+                <p className="page-body text-white/75 mt-3 max-w-3xl">
                   {t("patents.platformCore.tuningOutro")}
                 </p>
               </div>
