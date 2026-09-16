@@ -1,0 +1,12 @@
+---
+description: Keep the shared page type scale; do not change font sizes when adjusting layout.
+alwaysApply: true
+---
+
+# Type scale
+
+Card titles, body, captions, and section headings use `page-h2` / `page-h3` / `page-h4` / `page-body` / `page-caption` from `app/globals.css`.
+
+When changing layout, spacing, or structure: keep those classes. Do not introduce ad-hoc `text-sm`, `text-[13px]`, or similar to squeeze a diagram.
+
+If a layout cannot work without changing type size, ask before changing it.

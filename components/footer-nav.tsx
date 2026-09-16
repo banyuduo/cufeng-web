@@ -180,6 +180,9 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
                   <img
                     src="/images/police-filing-badge.png"
                     alt={t("common.footer.policeFiling")}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="w-3.5 h-3.5 object-contain grayscale group-hover:grayscale-0 transition-all opacity-80"
                   />
                   <Link

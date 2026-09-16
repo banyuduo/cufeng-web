@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_SC } from "next/font/google"
 /** Latin, digits, superscripts (sp² / sp³): Inter only. */
 export const inter = Inter({
   subsets: ["latin", "latin-ext"],
+  style: ["normal"],
   variable: "--font-inter",
   display: "swap",
   preload: true,
@@ -12,6 +13,7 @@ export const inter = Inter({
 export const notoSansSC = Noto_Sans_SC({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal"],
   variable: "--font-noto-sc",
   display: "swap",
   preload: true,

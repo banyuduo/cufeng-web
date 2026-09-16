@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
+import { localeSeo } from "@/lib/seo"
 
 import { ChemText } from "@/components/chem-text"
 import { HeroPlatformDiagram } from "@/components/hero-platform-diagram"
 import { FooterNav } from "@/components/footer-nav"
+
+export const generateMetadata = localeSeo("/")
 
 export default async function HomePage({
   params,
@@ -65,8 +68,6 @@ export default async function HomePage({
               <HeroPlatformDiagram
                 strings={{
                   diagramTitle: t("home.hero.title"),
-                  layer1Title: t("home.hero.diagram.layer1Title"),
-                  layer1Text: t("home.hero.diagram.layer1Text"),
                   layer2Title: t("home.hero.diagram.layer2Title"),
                   layer2Text: t("home.hero.diagram.layer2Text"),
                   layer2Thermal: t("home.hero.diagram.layer2Thermal"),
@@ -117,6 +118,9 @@ export default async function HomePage({
                   </p>
                   <p className="page-body text-white/80">
                     {t("home.hero.achievement1Value")}
+                  </p>
+                  <p className="page-caption text-white/55 mt-1">
+                    {t("home.hero.achievement1Method")}
                   </p>
                 </li>
                 <li>

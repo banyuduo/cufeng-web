@@ -8,7 +8,7 @@ console.log("zh/ status:", live.status, "last-modified:", live.lastModified)
 const css = [...live.html.matchAll(/href="([^"]+\.css[^"]*)"/g)].map((m) => m[1])
 console.log("css refs:", css)
 
-for (const file of ["/site.css", ...css.map((c) => (c.startsWith("/") ? c : `/${c}`))]) {
+for (const file of ["/styles/site.css", ...css.map((c) => (c.startsWith("/") ? c : `/${c}`))]) {
   const res = await fetch(`https://www.tospike.com${file}`, { method: "HEAD" })
   console.log(file, res.status)
 }

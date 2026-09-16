@@ -1,5 +1,8 @@
 import { TranslationsProvider } from "@/components/translations-provider"
 import { getTranslationsData } from "@/lib/translations"
+import { duplicateRouteMetadata } from "@/lib/seo"
+
+export const metadata = duplicateRouteMetadata("/products/")
 
 export default async function ProductsLayout({
   children,

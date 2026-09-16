@@ -116,6 +116,9 @@
         text-align: center;
         max-width: 100%;
     }
+    figure picture {
+        display: contents;
+    }
     figure img {
         max-width: 85%;
         width: 100%;
@@ -199,7 +202,10 @@
     </ol>
     
     <figure class="product-image">
-        <img src="diamond-pan.jpg" alt="Diamond Fusion Nonstick Pan">
+        <picture>
+            <source type="image/webp" srcset="diamond-pan.webp">
+            <img src="diamond-pan.jpg" alt="Diamond Fusion Nonstick Pan">
+        </picture>
         <figcaption>"Diamond Age" Nonstick Pan</figcaption>
     </figure>
     <h2>Technical Specifications</h2>
@@ -250,7 +256,10 @@
     <p>We believe the best tools should serve people, not the other way around. Welcome to a new era of healthier, more durable, and freer cooking.</p>
 
     <figure class="microstructure-image">
-        <img src="diamond-pan-sem.jpg" alt="Diamond Fusion Surface Microstructure">
+        <picture>
+            <source type="image/webp" srcset="diamond-pan-sem.webp">
+            <img src="diamond-pan-sem.jpg" alt="Diamond Fusion Surface Microstructure">
+        </picture>
         <figcaption>Diamond Fusion Surface Microstructure</figcaption>
     </figure>
     

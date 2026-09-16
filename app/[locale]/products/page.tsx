@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { getTranslations } from "@/lib/translations"
 import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
+import { localeSeo } from "@/lib/seo"
+
+export const generateMetadata = localeSeo("/products/")
 
 export default async function ProductsPage({
   params,

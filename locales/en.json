@@ -34,46 +34,32 @@
     "hero": {
       "visionTitle": "Solving thermal management limits in the AI and new energy era",
       "visionSubtitle": "A material platform based on sp³–sp² carbon-based interface engineering",
-      "title": "sp³–sp² Carbon-Based Interface Engineering Material Platform Mechanism",
+      "title": "sp³–sp² Carbon-Based Interface Engineering Platform",
       "atomicTitle": "Atomic-level interface engineering",
       "sp2LayerLabel": "sp² structure layer",
       "sp3LayerLabel": "sp³ structure layer",
-      "platformAdvantageTitle": "Platform Advantages",
       "achievement1": "High thermal conductivity diamond-copper composite",
       "achievement1Value": "Lab-tested thermal conductivity ≥ 680 W/m·K",
+      "achievement1Method": "Room temperature | Laser flash analysis (LFA) | ASTM E1461",
       "achievement2": "Capable of sample solution design and preparation",
       "achievement2Value": "Small-batch custom delivery",
-      "platformFocus": "Thermal management materials for high-power-density electronic devices",
       "viewTechArchitecture": "View Technology Architecture",
       "viewTechApplications": "View Technology Applications",
       "diagram": {
-        "layer1Title": "Market Vision & Solution (The Mission)",
-        "layer1Text": "Thermal management materials for high-power-density electronics",
-        "layer2Title": "Performance relative to conventional composites",
+        "layer2Title": "Performance space relative to conventional composites",
         "layer2Text": "Coordinated tuning of thermal, mechanical, and electrical performance",
         "layer2Thermal": "Thermal",
-        "layer2Mechanical": "Mechanical",
+        "layer2Mechanical": "Mechanical properties",
         "layer2Electrical": "Electrical",
         "layer3Title": "Physical Mechanism Bridge",
         "layer3Line1": "Forming a stable all-carbon covalent bonding network",
         "layer3Line2": "Providing the structural basis for endogenous stress fields and heterogeneous energy-level environments",
-        "layer4Title": "Underlying technical core",
+        "layer4Title": "Underlying technology",
         "layer4Line1": "Interface engineering based on sp³–sp² hybrid bonding",
         "layer4Line2": "Atomic-level interface bonding",
         "layer4Line3": "Controllable coexistence of carbon atom multi-valency",
         "layer4MeltLabel": "Atomic covalent bridging"
       }
-    },
-    "features": {
-      "innovation": "Source-Level Innovation",
-      "innovationAction": "Reject traditional physical blending; adopt atomic-level covalent bonding",
-      "innovationEffect": "Enable precise control of internal stress fields and energy-level environments, delivering a material platform for AI and new energy thermal management",
-      "patents": "Patent Portfolio",
-      "patentsStatus": "Multiple core patents deployed; full IP closed-loop in place",
-      "patentsValue": "Solid technical boundaries and intellectual property support for product iteration and application expansion",
-      "industrial": "Industrialization Leap",
-      "industrialStatus": "From lab hypothesis to process closure; samples have completed engineering-level thermal validation",
-      "industrialMode": "Strategic licensing and joint development open"
     },
     "platform": {
       "diagram": {
@@ -81,7 +67,7 @@
         "layer1Tim": "New thermal interfaces",
         "layer1Substrate": "High-performance heat-spreader substrates",
         "layer1Devices": "Physical-property and information-function exploration",
-        "layer2Title": "Core platform mechanisms",
+        "layer2Title": "Core mechanisms",
         "layer2Item1": "Carbon-based interface engineering",
         "layer2Item2": "sp² / sp³ hybrid bonding",
         "layer2Item3": "Stress engineering",
@@ -179,8 +165,7 @@
         "thermalTeflon": "Limited heat resistance",
         "thermalCeramic": "Limited heat resistance",
         "dishwasherSafe": "Dishwasher safe",
-        "dishwasherTeflon": "✗ (accelerates aging)",
-        "overallScore": "Overall score"
+        "dishwasherTeflon": "✗ (accelerates aging)"
       },
       "cta": {
         "title": "Learn more about diamond nonstick coating technology",
@@ -195,10 +180,11 @@
       "hero": {
         "badge": "Strategic Core",
         "title": "Diamond-Copper Composite",
-        "intro": "Core product of our thermal management technology pivot. We have successfully developed samples with thermal conductivity of 680 W/m·K and planned two product lines: a high cost-performance civilian solution and a limit-performance version exceeding 1000 W/m·K thermal conductivity, which can replace expensive CVD diamond.",
+        "intro": "Core product of our thermal management technology pivot. We have successfully developed samples with thermal conductivity of 680 W/m·K and planned two product lines: a high cost-performance civilian solution and a limit-performance version with a target thermal conductivity exceeding 1000 W/m·K, which can partially replace expensive CVD diamond.",
         "achievedLabel": "Achieved thermal conductivity (W/m·K)",
         "cvdDiamond": "CVD diamond",
         "tospikePremium": "ToSpike Limit-Performance",
+        "premiumTcValue": "Target 1000+",
         "traditionalDiamondCu": "Traditional diamond-copper (70%)",
         "pureCopper": "Pure copper",
         "sampleAlt": "Ni/Au-plated diamond-copper composite sample",
@@ -235,7 +221,7 @@
         "lineB": {
           "title": "Limit-performance solution",
           "badge": "High-end market",
-          "desc": "Active fusion-bonded multi-grade diamond particle composite, 1000+ W/m·K thermal conductivity, can replace expensive CVD solutions for high-end thermal management needs.",
+          "desc": "Active fusion-bonded multi-grade diamond particle composite, design thermal conductivity of 1000+ W/m·K, can partially replace expensive CVD solutions for high-end thermal management needs.",
           "thermalConductivity": "Thermal conductivity",
           "thermalConductivityValue": "Theoretical limit up to 1000+ W/m·K",
           "performanceAdvantage": "Performance advantage",
@@ -273,7 +259,7 @@
         "step3Title": "Pressure-assisted fusion",
         "step3Desc": "Heat in a vacuum hot-press furnace above the alloy liquidus, apply pressure and hold. Active elements synergistically form composite carbide interfaces, achieving reliable bonding between diamond and metal matrix.",
         "step4Title": "Cooling and forming",
-        "step4Desc": "Cool with the furnace to solidify, forming a fully dense diamond-copper composite structure. Can be further wire-cut to required dimensions."
+        "step4Desc": "Cool with the furnace to solidify, forming a highly dense diamond-copper composite structure. Can be further wire-cut to required dimensions."
       },
       "performanceParams": {
         "title": "Performance Parameters",
@@ -759,7 +745,7 @@
       "layer2Level": "L2: Industrial electronics (Expanding)",
       "layer2Title": "Power Semiconductors & Industrial Electronics",
       "layer2Items": "IGBT modules|Laser thermal management|5G base stations|Phased array radar",
-      "layer2Desc": "New carbon-based high-thermal-conductivity materials and TIM solutions that ideally meet stringent thermal management requirements across diverse application domains.",
+      "layer2Desc": "New carbon-based high-thermal-conductivity materials and TIM solutions that meet high-performance and reliability requirements of thermal solutions across diverse application domains.",
       "layer2Tag": "Mainstream applications",
       "layer3Level": "L3: Industry upgrade (Growth)",
       "layer3Title": "New Energy Vehicle Thermal Management",
@@ -894,12 +880,9 @@
   },
   "cooperation": {
     "hero": {
-      "title": "Technical Exchange and Cooperation",
-      "p1": "",
-      "p2": ""
+      "title": "Technical Exchange and Cooperation"
     },
     "platform": {
-      "title": "",
       "content": "An all-carbon materials system unfolding around sp³–sp² chemical bonding and endogenous stress regulation.",
       "content2": "At the engineering level, a clear path for material preparation and functional validation is already in place.",
       "content3": "At a deeper level, it presents the possibility of continued evolution as a platform.",
@@ -922,7 +905,6 @@
       "p1": "Further work on this technology can take several forms, depending on how well both sides match in technical depth, development pace, and long-term aims."
     },
     "resonance": {
-      "title": "Resonance",
       "p1": "If you likewise believe that breakthroughs in underlying materials are a key condition for spanning industry cycles and solving thermal and energy-efficiency bottlenecks,",
       "p2": "Then we are likely already standing on a similar technical perspective."
     },
@@ -941,9 +923,7 @@
   "patents": {
     "hero": {
       "title": "Technology Architecture",
-      "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering",
-      "desc": "",
-      "dimensions": ""
+      "subtitle": "Underlying materials science platform based on sp³–sp² interface engineering"
     },
     "architecture": {
       "title": "Platform Architecture Overview",
@@ -972,7 +952,7 @@
       "physicsNote": "A long-horizon physical exploration direction, still at the theoretical and basic-research stage."
     },
     "evolution": {
-      "sectionTitle": "An evolution path from engineering tools to physical computing potential",
+      "sectionTitle": "Technology evolution from engineering practice to a materials platform",
       "sectionSubtitle": "",
       "start": "Origin",
       "step1": "Step 1",
@@ -985,7 +965,7 @@
       "allCarbon": "All-carbon composite",
       "functionalMigration": "Functional material migration",
       "physicsEvolution": "Stress engineering\n(based on all-carbon platform)",
-      "computingResource": "Potential physical\ncomputing resource"
+      "computingResource": "Open boundary"
     },
     "evolutionPath": {
       "sectionTitle": "Technology Advancement Levels",
@@ -1064,7 +1044,6 @@
       "tuning2Note": "(temperature, pressure, holding time)",
       "tuning3": "Particle size distribution",
       "tuningOutro": "to achieve target multi-scale structural states.",
-      "platformConclusion": "",
       "platformName": "The all-carbon composite material platform",
       "platformConclusionEnd": " has not only formed a “multi-state carbon network” characterized by endogenous stress and chemical interconnection, with application potential as an engineering functional material, but also provided a new structural basis for exploring a more complex property space.",
       "radarChartTitle": "Material Performance Space",
@@ -1085,7 +1064,7 @@
     },
     "platformExtension": {
       "sectionTitle": "Long-term Physical Potential: Emergent Behavior of sp³–sp² Structure",
-      "sectionSubtitle": "Exploring the evolution potential of the all-carbon sp³–sp² structure in extreme physics and future computing",
+      "sectionSubtitle": "Exploring the evolution potential of the all-carbon sp³–sp² structure in complex physical properties and endogenous material dynamics",
       "card1Title": "Correlated electronic states and collective phenomena",
       "card1Subtitle": "Starting from material structure to explore new physical possibilities",
       "superconductorP1": "Under strong endogenous stress and non-uniform bonding environments, localized electronic structure may undergo reorganization, providing a structural basis for strongly correlated states, local coherence, and other collective phenomena.",

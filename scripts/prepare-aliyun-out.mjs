@@ -54,7 +54,6 @@ if (cssFiles.length >= 1) {
     .join("\n")
   fs.mkdirSync(stylesDir, { recursive: true })
   fs.writeFileSync(path.join(stylesDir, "site.css"), combined)
-  fs.writeFileSync(path.join(outDir, "site.css"), combined)
 
   const styleLinks =
     '<link rel="stylesheet" href="/styles/site.css" data-site-style="true"/>'
@@ -66,7 +65,7 @@ if (cssFiles.length >= 1) {
       fs.writeFileSync(file, html)
     }
   }
-  console.log(`Styles -> out/styles/site.css + out/site.css (merged ${cssFiles.length} chunks)`)
+  console.log(`Styles -> out/styles/site.css (merged ${cssFiles.length} chunks)`)
 } else {
   console.warn("WARNING: no CSS chunks found under out/_next/static/chunks")
 }
@@ -77,6 +76,30 @@ const testContent = `上传路径正确！
 构建时间：${new Date().toLocaleString("zh-CN")}
 `
 fs.writeFileSync(path.join(outDir, "UPLOAD_TEST.txt"), testContent, "utf8")
+
+function flattenMetadataFile(name) {
+  const target = path.join(outDir, name)
+  if (!fs.existsSync(target) || !fs.statSync(target).isDirectory()) return
+  const innerNames = ["index.xml", "index.txt", "index.html"]
+  for (const innerName of innerNames) {
+    const inner = path.join(target, innerName)
+    if (!fs.existsSync(inner)) continue
+    const content = fs.readFileSync(inner)
+    fs.rmSync(target, { recursive: true, force: true })
+    fs.writeFileSync(target, content)
+    console.log(`Flattened ${name}/ to ${name}`)
+    return
+  }
+}
+flattenMetadataFile("sitemap.xml")
+flattenMetadataFile("robots.txt")
+
+if (!fs.existsSync(path.join(outDir, "robots.txt"))) {
+  console.warn("WARNING: out/robots.txt missing")
+}
+if (!fs.existsSync(path.join(outDir, "sitemap.xml"))) {
+  console.warn("WARNING: out/sitemap.xml missing")
+}
 
 // 5. 中文上传说明
 const nextCount = countFiles(path.join(outDir, "_next"))
@@ -101,7 +124,8 @@ FileZilla 默认隐藏点文件。请开启「显示隐藏文件」，把 out/.h
   .htaccess       （隐藏文件，必传！）
   _next/          （${nextCount} 个文件，整夹覆盖，最重要！）
   styles/         （含 site.css）
-  site.css
+  sitemap.xml     （搜索引擎站点地图）
+  robots.txt
   zh/  en/
   UPLOAD_TEST.txt
   其余文件（含各页目录里的 .txt 和 __next.$d$locale，不要跳过）

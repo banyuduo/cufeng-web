@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { ResponsivePicture } from "@/components/responsive-picture"
 
 export default function DiamondCopperPage() {
   const pathname = usePathname()
@@ -49,11 +50,14 @@ export default function DiamondCopperPage() {
               </p>
               <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 sm:gap-4">
                 <figure className="min-w-0">
-                  <div className="aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
-                    <img
+                  <div className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
+                    <ResponsivePicture
                       src="/docs/diamond-copper-sample.jpg"
                       alt={t("products.diamondCopper.hero.sampleAlt")}
-                      className="w-full h-full object-cover block"
+                      fill
+                      objectFit="cover"
+                      fullResolution
+                      priority
                     />
                   </div>
                   <figcaption className="page-caption text-slate-500 mt-2">
@@ -61,11 +65,14 @@ export default function DiamondCopperPage() {
                   </figcaption>
                 </figure>
                 <figure className="min-w-0">
-                  <div className="aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
-                    <img
+                  <div className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
+                    <ResponsivePicture
                       src="/docs/diamond-copper-micro.jpg"
                       alt={t("products.diamondCopper.hero.microAlt")}
-                      className="w-full h-full object-cover block"
+                      fill
+                      objectFit="cover"
+                      fullResolution
+                      priority
                     />
                   </div>
                   <figcaption className="page-caption text-slate-500 mt-2">
@@ -88,7 +95,7 @@ export default function DiamondCopperPage() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-slate-100 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-medium text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
-                    <span className="page-stat-inline text-[#2A7FC4] text-lg">1000+</span>
+                    <span className="page-stat-inline text-[#2A7FC4]">{t("products.diamondCopper.hero.premiumTcValue")}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.traditionalDiamondCu")}</span>

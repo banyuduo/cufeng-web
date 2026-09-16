@@ -210,6 +210,10 @@
             text-align: center;
         }
 
+        .image-frame picture {
+            display: contents;
+        }
+
         .image-frame img {
             max-width: 100%;
             width: 100%;
@@ -364,7 +368,10 @@
         
         <div class="advanced-solution-block">
             <div class="image-frame" style="order:2;">
-                <img src="diamond-battery.jpg" alt="Monolithic Skeleton SEM Microstructure">
+                <picture>
+                    <source type="image/webp" srcset="diamond-battery.webp">
+                    <img src="diamond-battery.jpg" alt="Monolithic Skeleton SEM Microstructure">
+                </picture>
                 <div class="image-caption">
                     Fig 1: Monolithic co-sintered skeleton microstructure (SEM)<br>
                     Micron pores on both sides · Nano mesopores in center · No physical interface
