@@ -8,8 +8,6 @@ import { cn } from "@/lib/utils"
 
 export type HeroDiagramStrings = {
   diagramTitle?: string
-  layer1Title: string
-  layer1Text: string
   layer2Title: string
   layer2Text: string
   layer2Thermal: string
@@ -95,7 +93,7 @@ function CovalentBridge({ className }: { className?: string }) {
         x2="72"
         y2="36"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="3"
         strokeLinecap="round"
       />
       <circle cx="32" cy="36" r="4.2" fill="#0B1F33" stroke="currentColor" strokeWidth="1.6" />
@@ -131,8 +129,9 @@ function Sp3Tetrahedron({ className }: { className?: string }) {
 
 function FlowArrow() {
   return (
-    <div className="flex items-center justify-center py-0.5 lg:py-0" aria-hidden>
-      <ArrowDown className="w-4 h-4 text-white/40" />
+    <div className="flex flex-col items-center justify-center py-1" aria-hidden>
+      <span className="h-2.5 w-px bg-white/50" />
+      <ArrowDown className="w-5 h-5 text-white/70 -mt-0.5" strokeWidth={2.35} />
     </div>
   )
 }
@@ -168,13 +167,15 @@ function BottomNote({
   title,
   lines,
   isEn,
+  className,
 }: {
   title?: string
   lines: string[]
   isEn: boolean
+  className?: string
 }) {
   return (
-    <div className="mt-auto pt-3 border-t border-white/10 text-center">
+    <div className={cn("mt-auto pt-3 border-t border-white/10 text-center", className)}>
       {title ? (
         <h4 className="page-h4 text-white mb-1 text-balance">{title}</h4>
       ) : null}
@@ -223,17 +224,17 @@ export function HeroPlatformDiagram({
     {
       key: "sp2",
       label: s.sp2LayerLabel,
-      figure: <Sp2Lattice className="w-[92%] max-w-24 lg:max-w-[6.5rem] h-auto text-white/75" />,
+      figure: <Sp2Lattice className="w-[96%] max-w-[6.6rem] lg:max-w-[7.15rem] h-auto text-white/90" />,
     },
     {
       key: "bridge",
       label: s.layer4MeltLabel,
-      figure: <CovalentBridge className="w-[94%] max-w-[7.5rem] lg:max-w-36 h-auto text-white/75" />,
+      figure: <CovalentBridge className="w-[98%] max-w-[8.2rem] lg:max-w-[9.9rem] h-auto text-white/90" />,
     },
     {
       key: "sp3",
       label: s.sp3LayerLabel,
-      figure: <Sp3Tetrahedron className="w-[88%] max-w-24 lg:max-w-[6.5rem] h-auto text-white/75" />,
+      figure: <Sp3Tetrahedron className="w-[94%] max-w-[6.6rem] lg:max-w-[7.15rem] h-auto text-white/90" />,
     },
   ]
 
@@ -313,11 +314,11 @@ export function HeroPlatformDiagram({
               ].map(([title, body]) => (
                 <div
                   key={title}
-                  className="rounded-lg border border-white/10 bg-white/[0.03] px-1.5 py-2 sm:px-3 sm:py-2.5 text-center h-full min-w-0"
+                  className="rounded-lg border border-white/22 bg-white/[0.07] px-1.5 py-2 sm:px-3 sm:py-2.5 text-center h-full min-w-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
                 >
                   <p
                     className={cn(
-                      "page-body font-medium text-white mb-0.5 text-balance break-words",
+                      "page-body font-semibold text-white mb-0.5 text-balance break-words",
                       isEn && "tracking-tight"
                     )}
                   >
@@ -337,11 +338,15 @@ export function HeroPlatformDiagram({
           </>
         )}
 
-        <BottomNote
-          title={s.layer3Title}
-          lines={[s.layer3Line1, s.layer3Line2]}
-          isEn={isEn}
-        />
+        <div className="mt-auto">
+          <FlowArrow />
+          <BottomNote
+            title={s.layer3Title}
+            lines={[s.layer3Line1, s.layer3Line2]}
+            isEn={isEn}
+            className="mt-0 pt-1 border-t-0"
+          />
+        </div>
       </Section>
 
       <div className="lg:hidden">
@@ -358,19 +363,25 @@ export function HeroPlatformDiagram({
         >
           {s.atomicTitle}
         </p>
-        <div className="rounded-xl border border-white/12 bg-white/[0.03] overflow-hidden">
-          <div className="grid grid-cols-3 divide-x divide-white/12">
+        <div className="relative rounded-xl border border-white/22 bg-white/[0.06] overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-[8%] right-[8%] top-2 sm:top-2.5 lg:top-3 h-[3.8rem] sm:h-[4.3rem] lg:h-[4.6rem] flex items-center"
+          >
+            <span className="block h-px w-full bg-white/30" />
+          </div>
+          <div className="relative grid grid-cols-3">
             {layers.map((layer) => (
               <div
                 key={layer.key}
                 className="flex flex-col items-center justify-start px-1 py-2 sm:px-3 sm:py-2.5 lg:px-3 lg:py-3 min-w-0"
               >
-                <div className="flex h-14 sm:h-16 lg:h-[4.25rem] w-full items-center justify-center">
+                <div className="flex h-[3.8rem] sm:h-[4.3rem] lg:h-[4.6rem] w-full items-center justify-center">
                   {layer.figure}
                 </div>
                 <p
                   className={cn(
-                    "mt-1 page-caption text-white font-medium text-center break-words min-h-[2.4em] flex items-start justify-center",
+                    "mt-1 page-caption text-white font-semibold text-center break-words min-h-[2.4em] flex items-start justify-center",
                     isEn && "tracking-tight"
                   )}
                 >

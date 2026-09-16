@@ -87,6 +87,8 @@ export default function NonstickCookwarePage() {
                   fill
                   objectFit="cover"
                   priority
+                  skipWebp
+                  fullResolution
                 />
               </div>
             </div>

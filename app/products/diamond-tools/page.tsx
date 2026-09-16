@@ -171,8 +171,8 @@ export default function DiamondToolsPage() {
                   src="/images/diamond-brazed.png"
                   alt={t("products.diamondTools.designPrinciples.diagram1Alt")}
                   fill
-                  format="png"
                   objectFit="contain"
+                  fullResolution
                   className="p-4"
                 />
               </div>
@@ -185,8 +185,8 @@ export default function DiamondToolsPage() {
                   src="/images/brazing tech.png"
                   alt={t("products.diamondTools.designPrinciples.diagram2Alt")}
                   fill
-                  format="png"
                   objectFit="contain"
+                  fullResolution
                   className="p-4"
                 />
               </div>

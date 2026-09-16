@@ -34,46 +34,32 @@
     "hero": {
       "visionTitle": "解决 AI 与新能源时代的热管理极限",
       "visionSubtitle": "基于 sp³–sp² 碳基界面工程的材料平台",
-      "title": "sp³–sp² 碳基界面工程材料平台机制",
+      "title": "sp³–sp² 碳基界面工程平台",
       "atomicTitle": "原子级界面工程",
       "sp2LayerLabel": "sp² 结构层",
       "sp3LayerLabel": "sp³ 结构层",
-      "platformAdvantageTitle": "平台优势",
       "achievement1": "高导热金刚石–铜复合材料",
       "achievement1Value": "实验室测试热导率 ≥ 680 W/m·K",
+      "achievement1Method": "室温｜激光闪射法（LFA）｜ASTM E1461",
       "achievement2": "具备样品方案设计与制备能力",
       "achievement2Value": "可小批量定制出货",
-      "platformFocus": "为高功率密度电子器件提供热管理材料方案",
       "viewTechArchitecture": "查看技术架构",
       "viewTechApplications": "查看技术应用领域",
       "diagram": {
-        "layer1Title": "市场愿景与解决方案",
-        "layer1Text": "面向高功率密度电子器件的热管理材料",
-        "layer2Title": "相对传统复合材料的性能提升",
+        "layer2Title": "相对传统复合材料的性能空间",
         "layer2Text": "导热、力学与电学性能的协同调控",
-"layer2Thermal": "导热性能",
-      "layer2Mechanical": "力学强度",
+        "layer2Thermal": "导热性能",
+        "layer2Mechanical": "力学性能",
       "layer2Electrical": "电学特性",
         "layer3Title": "物理效应桥梁",
         "layer3Line1": "形成稳定的全碳共价键合网络",
         "layer3Line2": "内生应力场与异质能级环境的形成提供结构基础",
-        "layer4Title": "底层技术核心",
+        "layer4Title": "底层技术",
         "layer4Line1": "基于 sp³–sp² 杂化键合的界面工程",
         "layer4Line2": "实现原子级界面键合",
         "layer4Line3": "碳原子多价态的可控共存",
         "layer4MeltLabel": "原子级共价桥接"
       }
-    },
-    "features": {
-      "innovation": "源头级创新",
-      "innovationAction": "摒弃传统物理配比，采用原子级共价键合技术",
-      "innovationEffect": "实现内应力场与能级环境的精准调控，为 AI 与新能源热管理提供底层材料平台",
-      "patents": "专利布局",
-      "patentsStatus": "多项核心专利申请，形成完整知识产权闭环",
-      "patentsValue": "确立坚实技术边界，为后续产品迭代与应用拓展提供知识产权支撑",
-      "industrial": "产业化跃迁",
-      "industrialStatus": "从实验室假设到工艺闭环的跨越，样品已完成工程级热性能验证",
-      "industrialMode": "开放战略授权、领域联合开发"
     },
     "platform": {
       "diagram": {
@@ -81,14 +67,14 @@
         "layer1Tim": "新型热界面",
         "layer1Substrate": "高性能散热基板",
         "layer1Devices": "物性与信息功能探索",
-        "layer2Title": "平台核心机制",
+        "layer2Title": "核心机制",
         "layer2Item1": "碳基界面工程",
         "layer2Item2": "sp² / sp³ 杂化键合",
         "layer2Item3": "应力工程",
         "layer2Item4": "可调控的内生应力场",
         "layer2Item5": "多价态碳结构",
         "layer2Item6": "不同键合状态的原子级共存",
-        "layer3Title": "传统材料物理极限",
+        "layer3Title": "传统材料的物理极限",
         "layer3Label": "高功率密度、热膨胀失配、可靠性瓶颈"
       }
     },
@@ -179,8 +165,7 @@
         "thermalTeflon": "耐温有限",
         "thermalCeramic": "耐温有限",
         "dishwasherSafe": "洗碗机安全",
-        "dishwasherTeflon": "✗（会加速老化）",
-        "overallScore": "综合评分"
+        "dishwasherTeflon": "✗（会加速老化）"
       },
       "cta": {
         "title": "了解更多钻石不粘涂层技术",
@@ -195,10 +180,11 @@
       "hero": {
         "badge": "战略核心",
         "title": "金刚石铜复合材料",
-        "intro": "基于散热需求的技术转型核心产品。已成功研发出热导率达 680 W/m·K 的样品，并规划了两条产品线：高性价比的大批量民用方案，以及热导率超 1000 W/m·K 的极限性能版本，可代替昂贵的CVD金刚石。",
+        "intro": "基于散热需求的技术转型核心产品。已成功研发出热导率达 680 W/m·K 的样品，并规划了两条产品线：高性价比的大批量民用方案，以及目标热导率超 1000 W/m·K 的极限性能版本，可部分代替昂贵的CVD金刚石。",
         "achievedLabel": "已达成热导率 (W/m·K)",
         "cvdDiamond": "CVD金刚石",
         "tospikePremium": "ToSpike 极限性能版",
+        "premiumTcValue": "目标1000+",
         "traditionalDiamondCu": "传统金刚石铜 (70%)",
         "pureCopper": "纯铜",
         "sampleAlt": "镀镍金后的金刚石铜复合材料样品",
@@ -235,7 +221,7 @@
         "lineB": {
           "title": "极限性能方案",
           "badge": "高端市场",
-          "desc": "活性熔固多级金刚石颗粒复合，热导率 1000+ W/m·K，可代替昂贵的 CVD 方案，面向高端散热需求。",
+          "desc": "活性熔固多级金刚石颗粒复合，设计热导率 1000+ W/m·K，可部分代替昂贵的 CVD 方案，面向高端散热需求。",
           "thermalConductivity": "热导率",
           "thermalConductivityValue": "热导率理论极限可达1000+ W/m·K",
           "performanceAdvantage": "性能优势",
@@ -273,7 +259,7 @@
         "step3Title": "压力辅助熔固",
         "step3Desc": "在真空热压炉中升温至熔固合金液相线以上，施加压力并保温。活性元素协同作用形成复合碳化物界面，实现金刚石与金属基体的可靠连接。",
         "step4Title": "冷却成型",
-        "step4Desc": "随炉冷却凝固，形成完全致密的金刚石铜复合材料整体结构。可进一步通过线切割加工成所需尺寸。"
+        "step4Desc": "随炉冷却凝固，形成高致密的金刚石铜复合材料结构。可进一步通过线切割加工成所需尺寸。"
       },
       "performanceParams": {
         "title": "性能参数",
@@ -759,7 +745,7 @@
       "layer2Level": "L2: 工业电子 (Expanding)",
       "layer2Title": "功率半导体与工业电子",
       "layer2Items": "IGBT模块|激光器热管理|5G基站|相控阵雷达",
-      "layer2Desc": "全新碳基高导热材料及 TIM 方案，理想匹配多领域散热方案的高性能与可靠性要求。",
+      "layer2Desc": "全新碳基高导热材料及 TIM 方案，匹配多领域散热方案的高性能与可靠性要求。",
       "layer2Tag": "主流应用",
       "layer3Level": "L3: 产业升级 (Growth)",
       "layer3Title": "新能源汽车热管理",
@@ -894,12 +880,9 @@
   },
   "cooperation": {
     "hero": {
-      "title": "技术交流与合作",
-      "p1": "",
-      "p2": ""
+      "title": "技术交流与合作"
     },
     "platform": {
-      "title": "",
       "content": "围绕 sp³–sp² 化学键合与内生应力调控展开的全碳材料体系。",
       "content2": "在工程层面已形成明确的材料制备与功能验证路径，",
       "content3": "更深层次上，则呈现出作为平台继续演化的可能性。",
@@ -922,7 +905,6 @@
       "p1": "围绕本技术体系的后续推进，存在多种可能性，这取决于双方在技术理解深度、发展节奏与长期目标上的匹配程度。"
     },
     "resonance": {
-      "title": "共鸣",
       "p1": "如果您同样认为底层材料的突破才是跨越行业周期、解决散热与能效瓶颈的关键条件，",
       "p2": "那我们很可能已站在相近的技术视角上。"
     },
@@ -941,12 +923,10 @@
   "patents": {
     "hero": {
       "title": "技术架构",
-      "subtitle": "基于 sp³–sp² 界面工程的底层材料科学平台",
-      "desc": "",
-      "dimensions": ""
+      "subtitle": "基于 sp³–sp² 界面工程的底层材料科学平台"
     },
     "evolution": {
-      "sectionTitle": "从工程工具到物理计算潜力的演化路径",
+      "sectionTitle": "从工程实践到材料平台的技术演进",
       "sectionSubtitle": "",
       "start": "源起",
       "step1": "第一步",
@@ -959,7 +939,7 @@
       "allCarbon": "全碳复合材料",
       "functionalMigration": "功能性材料迁移",
       "physicsEvolution": "基于全碳平台的\n应力工程",
-      "computingResource": "潜在物理\n计算资源"
+      "computingResource": "开放边界"
     },
     "architecture": {
       "title": "平台架构全景图",
@@ -1064,7 +1044,6 @@
       "tuning2Note": "（温度、压力、保温时间）",
       "tuning3": "颗粒尺寸分布",
       "tuningOutro": "以达到目标的多尺度结构状态。",
-      "platformConclusion": "",
       "platformName": "全碳复合材料平台",
       "platformConclusionEnd": "，不仅形成了具有内生应力与化学相互连接特征的“多状态碳网络”，具备工程功能材料的应用潜力，也为探索更复杂的物性空间提供了新的结构基础。",
       "radarChartTitle": "材料性能空间",
@@ -1085,7 +1064,7 @@
     },
     "platformExtension": {
       "sectionTitle": "远期物理潜力：sp³–sp² 结构的涌现行为",
-      "sectionSubtitle": "探索全碳 sp³–sp² 结构在极端物理与未来计算领域的演化潜力",
+      "sectionSubtitle": "探索全碳 sp³–sp² 结构在复杂物性与材料内生动力学方面的演化潜力",
       "card1Title": "关联电子态与集体现象",
       "card1Subtitle": "从材料结构出发，探索新的物性可能",
       "superconductorP1": "在强内生应力与非均匀键合环境下，局域电子结构可能发生重整，为强关联态、局域相干及其他集体现象提供结构基础。",

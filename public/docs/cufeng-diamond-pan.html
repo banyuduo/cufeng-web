@@ -115,6 +115,9 @@
         text-align: center;
         max-width: 100%;
     }
+    figure picture {
+        display: contents;
+    }
     figure img {
         max-width: 85%;
         width: 100%;
@@ -198,7 +201,10 @@
     </ol>
     
     <figure class="product-image">
-        <img src="diamond-pan.jpg" alt="钻石熔固不粘锅产品图">
+        <picture>
+            <source type="image/webp" srcset="diamond-pan.webp">
+            <img src="diamond-pan.jpg" alt="钻石熔固不粘锅产品图">
+        </picture>
     <figcaption>“钻石时代”不粘锅产品图</figcaption>
     </figure>
     <h2>技术规格一览</h2>
@@ -249,7 +255,10 @@
     <p>我们相信，最好的工具应该服务于人，而非让人小心翼翼地服务于它。欢迎您，与我们一同进入这个更健康、更耐用、更自由的烹饪新纪元。</p>
 
     <figure class="microstructure-image">
-        <img src="diamond-pan-sem.jpg" alt="钻石熔固表面微观图">
+        <picture>
+            <source type="image/webp" srcset="diamond-pan-sem.webp">
+            <img src="diamond-pan-sem.jpg" alt="钻石熔固表面微观图">
+        </picture>
         <figcaption>钻石熔固表面微观结构图</figcaption>
     </figure>
     

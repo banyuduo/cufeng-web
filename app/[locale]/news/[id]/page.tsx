@@ -1,6 +1,8 @@
 import NewsDetailPage from "../../../news/[id]/page"
-import { isValidLocale } from "@/lib/i18n"
+import { isValidLocale, defaultLocale } from "@/lib/i18n"
 import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
+import { seoMetadata } from "@/lib/seo"
+import type { Metadata } from "next"
 
 const industryIds = [...INDUSTRY_ARTICLE_IDS]
 const newsIds = [
@@ -19,6 +21,23 @@ const newsIds = [
 export async function generateStaticParams() {
   const locales = (["zh", "en"] as const).filter(isValidLocale)
   return locales.flatMap((locale) => newsIds.map((id) => ({ locale, id })))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>
+}): Promise<Metadata> {
+  const { locale, id } = await params
+  const loc = isValidLocale(locale) ? locale : defaultLocale
+  return seoMetadata({
+    locale: loc,
+    path: `/news/${id}/`,
+    title:
+      loc === "en"
+        ? `Tech Vision | ToSpike`
+        : `技术视界 | 簇锋科技 ToSpike`,
+  })
 }
 
 export default async function LocaleNewsDetailPage({

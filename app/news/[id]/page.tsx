@@ -13,11 +13,22 @@ import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
 import { getTranslations } from "@/lib/translations"
 import { getCompanyNews, getCompanyNewsIds } from "@/lib/company-news"
 import { ensureTrailingSlash } from "@/lib/site-path"
+import { duplicateRouteMetadata } from "@/lib/seo"
+import type { Metadata } from "next"
 
 // 生成静态路径参数，用于静态导出（无 locale 的旧路由）
 export async function generateStaticParams() {
   const companyIds = getCompanyNewsIds()
   return [...companyIds, ...INDUSTRY_ARTICLE_IDS].map((id) => ({ id }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
+  const { id } = await params
+  return duplicateRouteMetadata(`/news/${id}/`)
 }
 
 function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticle; prefix: string; t: (key: string) => string }) {

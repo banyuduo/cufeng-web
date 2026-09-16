@@ -1,6 +1,9 @@
 import { TranslationsProvider } from "@/components/translations-provider"
 import { getTranslationsData } from "@/lib/translations"
 import { defaultLocale } from "@/lib/i18n"
+import { duplicateRouteMetadata } from "@/lib/seo"
+
+export const metadata = duplicateRouteMetadata("/applications/")
 
 export default async function ApplicationsLayout({
   children,

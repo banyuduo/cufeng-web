@@ -1,6 +1,15 @@
+import type { Metadata } from "next"
 import { defaultLocale } from "@/lib/i18n"
+import { localizedUrl } from "@/lib/seo"
 
-/** 静态导出下 next/navigation 的 redirect() 会生成带 __next_error__ 的 HTML，依赖 RSC  Hydration 才跳转，易卡顿；行内脚本可立即跳转。 */
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+  alternates: {
+    canonical: localizedUrl(defaultLocale, "/"),
+  },
+}
+
+/** 静态导出下 next/navigation 的 redirect() 会生成带 __next_error__ 的 HTML，依赖 RSC Hydration 才跳转，易卡顿；行内脚本可立即跳转。 */
 export default function RootPage() {
   const to = `/${defaultLocale}/`
   return (

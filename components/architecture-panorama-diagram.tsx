@@ -83,27 +83,18 @@ function KernelPills({
   compact?: boolean
 }) {
   return (
-    <div className={compact ? "space-y-1.5" : "space-y-2 lg:space-y-3"}>
-      <div
-        className={cn(
-          "rounded-lg border border-white/12 bg-white/[0.03]",
-          compact ? "px-2 py-1.5" : "px-3 py-2 lg:px-4"
-        )}
-      >
-        <p className={cn("text-white font-medium", compact ? "page-caption leading-snug" : "page-body")}>
-          <ChemText text={bonding} />
-        </p>
-      </div>
-      <div
-        className={cn(
-          "rounded-lg border border-white/12 bg-white/[0.03]",
-          compact ? "px-2 py-1.5" : "px-3 py-2 lg:px-4"
-        )}
-      >
-        <p className={cn("text-white font-medium", compact ? "page-caption leading-snug" : "page-body")}>
-          {stress}
-        </p>
-      </div>
+    <div
+      className={cn(
+        "border-l border-white/35 text-left",
+        compact ? "pl-3 space-y-1" : "pl-4 space-y-1.5"
+      )}
+    >
+      <p className={cn("text-white font-medium", compact ? "page-caption" : "page-body")}>
+        <ChemText text={bonding} />
+      </p>
+      <p className={cn("text-white font-medium", compact ? "page-caption" : "page-body")}>
+        {stress}
+      </p>
     </div>
   )
 }
@@ -144,7 +135,7 @@ function KernelHub({
         <Sparkles className="h-8 w-8 text-white" />
       </div>
       <h3 className="page-h4 mb-3 text-white">{title}</h3>
-      <div className="w-full">
+      <div className="w-fit mx-auto">
         <KernelPills bonding={bonding} stress={stress} />
       </div>
     </div>
