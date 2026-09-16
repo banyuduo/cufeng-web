@@ -75,7 +75,7 @@ function BrandBlock({ t }: { t: (key: string) => string }) {
   return (
     <div className="min-w-0">
       <div className="page-h4 mb-4 text-white text-left">{t("common.footer.brand")}</div>
-      <p className="page-caption text-white/55 text-left break-words">
+      <p className="page-caption text-white/65 text-left break-words">
         {t("common.footer.platformTech")}
       </p>
     </div>
@@ -90,11 +90,11 @@ function ContactBlock({ t }: { t: (key: string) => string }) {
       </div>
       <ul className="space-y-2 page-body text-white/70 text-left">
         <li className="flex items-start gap-2">
-          <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
+          <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/65" />
           <span>{t("common.footer.address")}</span>
         </li>
         <li className="flex items-start gap-2">
-          <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/45" />
+          <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-white/65" />
           <span>{t("common.footer.email")}</span>
         </li>
       </ul>
@@ -133,14 +133,14 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] w-12 h-12 rounded-full bg-[#2A7FC4] hover:bg-[#1B5F96] text-white transition-colors duration-300 flex items-center justify-center group border-0 touch-manipulation"
+          className="fixed bottom-20 right-4 sm:bottom-8 sm:right-8 z-[90] w-12 h-12 rounded-full bg-[#2A7FC4] hover:bg-[#1B5F96] text-white transition-colors duration-300 flex items-center justify-center group border-0 touch-manipulation focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           aria-label={t("common.footer.scrollToTop")}
         >
           <ChevronUp className="w-6 h-6 pointer-events-none group-hover:-translate-y-1 transition-transform" />
         </button>
       )}
 
-      <footer className="border-t border-white/10 bg-[#0B1F33] py-12 sm:py-16 px-6 lg:px-8">
+      <footer className="border-t border-white/10 bg-[#0B1F33] pt-12 pb-24 sm:py-16 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="lg:hidden space-y-8">
             <BrandBlock t={t} />
@@ -172,7 +172,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
             <ContactBlock t={t} />
           </div>
           <div className="border-t border-white/10 mt-8 pt-8">
-            <div className="page-caption text-white/45 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4">
+            <div className="page-caption text-white/65 flex flex-col md:flex-row items-start md:items-center justify-center gap-3 md:gap-8 px-4 pr-16 sm:pr-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 text-left sm:text-center">
                 <span>{t("common.footer.copyright")}</span>
                 <span className="hidden sm:inline text-white/30">|</span>
@@ -189,7 +189,7 @@ export function FooterNav({ locale: localeProp }: { locale?: Locale }) {
                     href="https://beian.miit.gov.cn/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/45 hover:text-white transition-colors"
+                    className="text-white/65 hover:text-white transition-colors"
                   >
                     {t("common.footer.icp")}
                   </Link>

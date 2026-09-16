@@ -276,7 +276,7 @@ export function HeroPlatformDiagram({
         <SectionTitle>{s.layer2Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-2.5 text-balance",
+            "page-caption text-white/65 text-center mb-2.5 text-balance",
             isEn && "tracking-tight"
           )}
         >
@@ -357,7 +357,7 @@ export function HeroPlatformDiagram({
         <SectionTitle>{s.layer4Title}</SectionTitle>
         <p
           className={cn(
-            "page-caption text-white/55 text-center mb-2.5 text-balance",
+            "page-caption text-white/65 text-center mb-2.5 text-balance",
             isEn && "tracking-tight"
           )}
         >

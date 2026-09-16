@@ -113,19 +113,19 @@ export default async function HomePage({
               <ol className="space-y-5 sm:space-y-6 max-w-3xl mx-auto mb-8 sm:mb-10">
                 <li>
                   <p className="page-h3 text-white mb-1.5">
-                    <span className="text-white/40 font-medium">1. </span>
+                    <span className="text-white/65 font-medium">1. </span>
                     {t("home.hero.achievement1")}
                   </p>
                   <p className="page-body text-white/80">
                     {t("home.hero.achievement1Value")}
                   </p>
-                  <p className="page-caption text-white/55 mt-1">
+                  <p className="page-caption text-white/65 mt-1">
                     {t("home.hero.achievement1Method")}
                   </p>
                 </li>
                 <li>
                   <p className="page-h3 text-white mb-1.5">
-                    <span className="text-white/40 font-medium">2. </span>
+                    <span className="text-white/65 font-medium">2. </span>
                     {t("home.hero.achievement2")}
                   </p>
                   <p className="page-body text-white/80">

@@ -29,7 +29,7 @@ function StagePathHeader({
   return (
     <div className="flex items-start gap-3">
       <div className="flex-1 min-w-0">
-        {kicker ? <div className="page-caption text-white/45">{kicker}</div> : null}
+        {kicker ? <div className="page-caption text-white/65">{kicker}</div> : null}
         <div
           className={cn(
             "page-h3 text-white",
@@ -41,7 +41,7 @@ function StagePathHeader({
         </div>
       </div>
       <ChevronDown
-        className={`w-5 h-5 mt-1 text-white/40 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+        className={`w-5 h-5 mt-1 text-white/65 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
       />
     </div>
   )
@@ -107,7 +107,7 @@ export default function PatentsPage() {
                 {cognitionSteps.map((step) => (
                   <div key={step.label} className="relative flex-1 min-w-0 px-2 text-center">
                     <div className="mx-auto mb-4 h-2.5 w-2.5 rounded-full bg-[#2A7FC4] ring-4 ring-[#0B1F33]" />
-                    <p className="page-caption text-white/45 mb-1">{step.label}</p>
+                    <p className="page-caption text-white/65 mb-1">{step.label}</p>
                     <p className="page-caption text-white whitespace-pre-line leading-snug pc-step-title lg:min-h-[2.6em]">{step.title}</p>
                   </div>
                 ))}
@@ -117,7 +117,7 @@ export default function PatentsPage() {
               {cognitionSteps.map((step) => (
                 <div key={step.label} className="relative">
                   <div className="absolute -left-[1.41rem] top-1.5 h-2.5 w-2.5 rounded-full bg-[#2A7FC4]" />
-                  <p className="page-caption text-white/45 mb-0.5">{step.label}</p>
+                  <p className="page-caption text-white/65 mb-0.5">{step.label}</p>
                   <p className="page-body text-white whitespace-pre-line leading-snug">{step.title}</p>
                 </div>
               ))}
@@ -226,14 +226,14 @@ export default function PatentsPage() {
                     <div className="page-caption text-white/80 font-medium mb-3">{t("patents.evolutionPath.patentSupport")}</div>
                     <div className="space-y-2">
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent1Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent1No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent1No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent2Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent2No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent2No")}</div>
                       </div>
                     </div>
                   </div>
@@ -280,14 +280,14 @@ export default function PatentsPage() {
                       <div className="page-caption text-white/70 font-medium mb-2">{t("patents.evolutionPath.diamondCopperGroup")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="page-caption text-white/75">{t("patents.evolutionPath.patent3Title")}</div>
-                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent3No")}</div>
+                          <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent3No")}</div>
                         </div>
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="page-caption text-white/75">{t("patents.evolutionPath.patent4Title")}</div>
-                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent4No")}</div>
+                          <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent4No")}</div>
                         </div>
                       </div>
                     </div>
@@ -296,11 +296,11 @@ export default function PatentsPage() {
                       <div className="page-caption text-white/70 font-medium mb-2">{t("patents.evolutionPath.flexibleThermal")}</div>
                       <div className="space-y-2">
                         <div className="p-3 bg-white/[0.03] rounded-lg">
-                          <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                          <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                           <div className="page-caption text-white/75">
                             {t("patents.evolutionPath.patent5Title")}
                           </div>
-                          <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent5No")}</div>
+                          <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent5No")}</div>
                         </div>
                       </div>
                     </div>
@@ -337,31 +337,31 @@ export default function PatentsPage() {
 
                     <div className="space-y-2">
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">
                           {t("patents.evolutionPath.patent6Title")}
                         </div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent6No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent6No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent7Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent7No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent7No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent8Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent8No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent8No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent9Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent9No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent9No")}</div>
                       </div>
                       <div className="p-3 bg-white/[0.03] rounded-lg">
-                        <div className="page-caption text-white/45 mb-1">{t("patents.evolutionPath.patentType")}</div>
+                        <div className="page-caption text-white/65 mb-1">{t("patents.evolutionPath.patentType")}</div>
                         <div className="page-caption text-white/75">{t("patents.evolutionPath.patent10Title")}</div>
-                        <div className="page-caption font-mono text-xs text-white/45 mt-1">{t("patents.evolutionPath.patent10No")}</div>
+                        <div className="page-caption font-mono text-xs text-white/65 mt-1">{t("patents.evolutionPath.patent10No")}</div>
                       </div>
                     </div>
                   </div>
@@ -438,7 +438,7 @@ export default function PatentsPage() {
                       {t("patents.platformCore.domain1Title")}
                     </h4>
                     <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain1a")}</p>
-                    <p className="page-caption text-white/50">{t("patents.platformCore.domain1b")}</p>
+                    <p className="page-caption text-white/65">{t("patents.platformCore.domain1b")}</p>
                   </div>
                   <div className="p-5 sm:p-6 rounded-lg border border-white/12 bg-white/[0.03]">
                     <div className="h-px w-8 bg-white/30 mb-4" />
@@ -446,7 +446,7 @@ export default function PatentsPage() {
                       {t("patents.platformCore.domain2Title")}
                     </h4>
                     <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain2a")}</p>
-                    <p className="page-caption text-white/50">{t("patents.platformCore.domain2b")}</p>
+                    <p className="page-caption text-white/65">{t("patents.platformCore.domain2b")}</p>
                   </div>
                   <div className="p-5 sm:p-6 rounded-lg border border-white/12 bg-white/[0.03]">
                     <div className="h-px w-8 bg-white/30 mb-4" />
@@ -454,7 +454,7 @@ export default function PatentsPage() {
                       {t("patents.platformCore.domain3Title")}
                     </h4>
                     <p className="page-body text-white/70 mb-2">{t("patents.platformCore.domain3a")}</p>
-                    <p className="page-caption text-white/50">{t("patents.platformCore.domain3b")}</p>
+                    <p className="page-caption text-white/65">{t("patents.platformCore.domain3b")}</p>
                   </div>
                 </div>
               </div>
@@ -637,22 +637,22 @@ export default function PatentsPage() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-4 sm:gap-6">
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <h3 className="page-h4 text-white">{t("patents.platformExtension.card1Title")}</h3>
-              <p className="page-caption text-white/55">{t("patents.platformExtension.card1Subtitle")}</p>
+              <p className="page-caption text-white/65">{t("patents.platformExtension.card1Subtitle")}</p>
               <p className="page-body text-white/75 mt-4">
                 {t("patents.platformExtension.superconductorP1")}
               </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
+              <p className="page-caption text-white/65 border-l border-white/15 pl-3">
                 {t("patents.platformExtension.superconductorP2")}
               </p>
             </Card>
 
             <Card className="p-5 sm:p-8 gap-3 bg-white/[0.03] border border-white/12 hover:border-white/25 transition-all">
               <h3 className="page-h4 text-white">{t("patents.platformExtension.card2Title")}</h3>
-              <p className="page-caption text-white/55">{t("patents.platformExtension.card2Subtitle")}</p>
+              <p className="page-caption text-white/65">{t("patents.platformExtension.card2Subtitle")}</p>
               <p className="page-body text-white/75 mt-4">
                 {t("patents.platformExtension.card2P1")}
               </p>
-              <p className="page-caption text-white/50 border-l border-white/15 pl-3">
+              <p className="page-caption text-white/65 border-l border-white/15 pl-3">
                 {t("patents.platformExtension.card2P2")}
               </p>
             </Card>

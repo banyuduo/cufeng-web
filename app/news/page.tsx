@@ -98,19 +98,19 @@ export default async function NewsPage({
                     <div className="flex flex-wrap gap-2">
                       <InPageAnchor
                         targetId="industry-trends"
-                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="page-caption px-3 py-1.5 rounded-full text-white/80 hover:text-white bg-white/[0.06] hover:bg-white/10 transition-colors border border-white/15"
                       >
                         {t("news.industryTrends")}
                       </InPageAnchor>
                       <InPageAnchor
                         targetId="basic-theory"
-                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="page-caption px-3 py-1.5 rounded-full text-white/80 hover:text-white bg-white/[0.06] hover:bg-white/10 transition-colors border border-white/15"
                       >
                         {t("news.basicTheory")}
                       </InPageAnchor>
                       <InPageAnchor
                         targetId="frontier-tech"
-                        className="text-xs px-3 py-1.5 bg-[#2A7FC4] hover:bg-[#1B5F96] rounded-full text-white/90 transition-colors border border-white/15"
+                        className="page-caption px-3 py-1.5 rounded-full text-white/80 hover:text-white bg-white/[0.06] hover:bg-white/10 transition-colors border border-white/15"
                       >
                         {t("news.frontierTech")}
                       </InPageAnchor>

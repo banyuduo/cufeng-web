@@ -78,7 +78,7 @@ export function ApplicationCard({
             }}
           >
             <h3 className="page-h3 text-white mb-2">{title}</h3>
-            <p className="page-caption text-white/55 break-words">{description}</p>
+            <p className="page-caption text-white/65 break-words">{description}</p>
           </a>
           {outlineItems.length > 0 ? (
             <button
@@ -124,7 +124,7 @@ export function ApplicationCard({
           </div>
         </div>
         <div className="max-w-[280px] min-w-0">
-          <p className="page-caption text-white/55 text-right italic break-words">
+          <p className="page-caption text-white/65 text-right italic break-words">
             {description}
           </p>
         </div>

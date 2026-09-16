@@ -61,17 +61,13 @@ function StageCard({
         <span className="hidden lg:block absolute top-1/2 left-0 z-[1] h-px w-2.5 -translate-x-full -translate-y-1/2 bg-white/35" />
       ) : null}
       <div>
-        {kicker ? <p className="page-caption text-white/45 mb-1">{kicker}</p> : null}
+        {kicker ? <p className="page-caption text-white/65 mb-1">{kicker}</p> : null}
         <h4 className="page-h3 text-white mb-2">{title}</h4>
       </div>
       <div className="page-body text-white/70 min-w-0">{children}</div>
     </div>
   )
 }
-
-/** 手机端不用 Tailwind 任意 grid-cols：逗号会被吃掉，列定义写在 style 里 */
-const mobileWindowCols = "minmax(0,1.2fr) minmax(0,0.8fr)"
-const mobileKernelCols = "minmax(0,1fr) minmax(9rem, max-content)"
 
 function KernelPills({
   bonding,
@@ -86,7 +82,7 @@ function KernelPills({
     <div
       className={cn(
         compact
-          ? "border-l border-white/35 text-left pl-3 space-y-1"
+          ? "border-t border-white/35 text-left pt-2 space-y-1"
           : "border-t border-white/35 text-center pt-4 space-y-1.5"
       )}
     >
@@ -113,17 +109,14 @@ function KernelHub({
 }) {
   if (compact) {
     return (
-      <div
-        className="grid w-full items-center gap-x-4 rounded-2xl border border-white/25 bg-white/[0.04] px-3 py-2.5"
-        style={{ gridTemplateColumns: mobileKernelCols }}
-      >
+      <div className="w-full rounded-2xl border border-white/25 bg-white/[0.04] px-3 py-2.5">
         <div className="flex min-w-0 items-center gap-3">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#2A7FC4] shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
             <Sparkles className="h-7 w-7 text-white" />
           </div>
           <h3 className="page-h3 min-w-0 text-white">{title}</h3>
         </div>
-        <div className="min-w-0">
+        <div className="mt-2.5 min-w-0">
           <KernelPills compact bonding={bonding} stress={stress} />
         </div>
       </div>
@@ -177,23 +170,23 @@ function WindowBody({
   if (compact) {
     return (
       <div className="space-y-1">
-        {tagline ? <p className="page-caption text-white/50">{tagline}</p> : null}
+        {tagline ? <p className="page-caption text-white/65">{tagline}</p> : null}
         <p className="page-caption leading-snug text-white/65">{items.join(" · ")}</p>
-        {note ? <p className="page-caption text-white/45">{note}</p> : null}
+        {note ? <p className="page-caption text-white/65">{note}</p> : null}
       </div>
     )
   }
 
   return (
     <div>
-      {tagline ? <p className="page-caption text-white/50 mb-2">{tagline}</p> : null}
+      {tagline ? <p className="page-caption text-white/65 mb-2">{tagline}</p> : null}
       <ul className="space-y-1.5">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
       {note ? (
-        <p className="page-caption text-white/45 mt-3 pt-2.5 border-t border-white/10">{note}</p>
+        <p className="page-caption text-white/65 mt-3 pt-2.5 border-t border-white/10">{note}</p>
       ) : null}
     </div>
   )
@@ -201,12 +194,9 @@ function WindowBody({
 
 function SplitRow({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div
-      className="grid items-start gap-x-3 rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5"
-      style={{ gridTemplateColumns: mobileWindowCols }}
-    >
+    <div className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5">
       <h4 className="page-h3 min-w-0 text-white">{title}</h4>
-      <div className="min-w-0">{children}</div>
+      <div className="mt-1.5 min-w-0">{children}</div>
     </div>
   )
 }

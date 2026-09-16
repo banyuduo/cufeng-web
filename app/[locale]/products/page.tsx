@@ -47,7 +47,7 @@ export default async function ProductsPage({
     {
       href: `${prefix}/products/nonstick-cookware`,
       badge: t("products.badge.inStock"),
-      badgeClass: "bg-green-100 text-green-700",
+      badgeClass: "bg-slate-100 text-slate-700",
       title: t("products.nonstickCookware.title"),
       desc: t("products.nonstickCookware.desc"),
     },
