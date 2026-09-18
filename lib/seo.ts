@@ -25,7 +25,7 @@ const HOME_TITLE: Record<Locale, string> = {
 }
 
 export const LOCALE_DESCRIPTION: Record<Locale, string> = {
-  zh: "专注金刚石铜复合材料、碳基复合材料等高性能热管理解决方案，从工具制造到材料科学的技术革命",
+  zh: "金刚石铜复合材料 · 碳基复合材料 · 高性能热管理解决方案 | 簇锋科技 ToSpike",
   en: "Advanced thermal management solutions for diamond-copper composites, carbon-based composites, and beyond. From tool manufacturing to materials science.",
 }
 
