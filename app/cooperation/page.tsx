@@ -113,15 +113,6 @@ export default async function CooperationPage({
           </h2>
 
           <div className="bg-white rounded-2xl p-5 sm:p-8 md:p-10 space-y-6 sm:space-y-8 border border-white/20 shadow-[0_20px_50px_-28px_rgba(0,0,0,0.55)]">
-            <div className="pb-4 border-b border-slate-100">
-              <img
-                src="/logo.png"
-                alt="簇锋科技 ToSpike"
-                width={180}
-                height={45}
-                className="h-9 sm:h-11 w-auto"
-              />
-            </div>
             <div className="flex items-start gap-4 sm:gap-6">
               <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-[#E8E8EA] flex items-center justify-center flex-shrink-0 border border-slate-200">
                 <MapPin className="h-5 w-5 text-[#2A7FC4]" />
