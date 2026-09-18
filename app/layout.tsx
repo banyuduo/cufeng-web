@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { HtmlLangSync } from "@/components/html-lang-sync"
-import { AnalyticsEmbed } from "@/components/analytics-embed"
 import { JsonLd } from "@/components/json-ld"
 import { fontVariableClassName } from "@/lib/fonts"
 import "./globals.css"
@@ -44,8 +43,16 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <HtmlLangSync />
         <JsonLd />
+        <svg className="hidden" aria-hidden="true">
+          <defs>
+            <filter id="logo-white-remove" colorInterpolationFilters="sRGB">
+              <feComponentTransfer>
+                <feFuncA type="table" tableValues="1 1 1 1 1 1 1 1 1 0" />
+              </feComponentTransfer>
+            </filter>
+          </defs>
+        </svg>
         {children}
-        <AnalyticsEmbed />
       </body>
     </html>
   )
