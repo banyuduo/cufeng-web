@@ -40,7 +40,7 @@ export default function DiamondToolsPage() {
                 <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center">
                   <Settings className="w-7 h-7 text-[#2A7FC4]" />
                 </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
+                <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-normal text-slate-700">
                   {t("products.diamondTools.hero.badge")}
                 </div>
               </div>

@@ -39,7 +39,7 @@ export default function ThermalPadPage() {
                 <div className="w-14 h-14 rounded-xl bg-[#E8E8EA] flex items-center justify-center">
                   <FlaskConical className="w-7 h-7 text-[#2A7FC4]" />
                 </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-700">
+                <div className="px-3 py-1 bg-slate-100 rounded-full text-xs font-normal text-slate-700">
                   {t("products.thermalPad.hero.badge")}
                 </div>
               </div>
@@ -285,7 +285,7 @@ export default function ThermalPadPage() {
               <p className="page-body text-slate-600 mb-6">
                 {t("products.thermalPad.patents.intro")}
               </p>
-              <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
+              <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.thermalPad.patents.corePatent")}</div>
               <h3 className="page-h3 mb-3 text-slate-900">
                 {t("products.thermalPad.patents.patentTitle")}
               </h3>

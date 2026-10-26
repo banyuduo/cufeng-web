@@ -1,4 +1,4 @@
-﻿import { MapPin, Mail, Phone, Globe } from "lucide-react"
+import { MapPin, Mail, Phone, Globe } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
@@ -55,7 +55,7 @@ export default async function CooperationPage({
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
               <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.research")}
-                <strong className="text-white font-medium"> {t("cooperation.audience.researchBold")}</strong>
+                <strong className="text-white font-normal"> {t("cooperation.audience.researchBold")}</strong>
               </p>
             </div>
 
@@ -63,7 +63,7 @@ export default async function CooperationPage({
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
               <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.industry")}
-                <strong className="text-white font-medium"> {t("cooperation.audience.industryBold")}</strong>
+                <strong className="text-white font-normal"> {t("cooperation.audience.industryBold")}</strong>
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default async function CooperationPage({
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
               <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.tech")}
-                <strong className="text-white font-medium"> {t("cooperation.audience.techBold")}</strong>
+                <strong className="text-white font-normal"> {t("cooperation.audience.techBold")}</strong>
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export default async function CooperationPage({
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
               <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.investor")}
-                <strong className="text-white font-medium"> {t("cooperation.audience.investorBold")}</strong>
+                <strong className="text-white font-normal"> {t("cooperation.audience.investorBold")}</strong>
               </p>
             </div>
           </div>

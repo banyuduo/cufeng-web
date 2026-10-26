@@ -65,7 +65,7 @@ function FrontierItemCard({
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-1.5 min-h-[44px] font-medium text-sm touch-manipulation transition-colors text-white/80 hover:text-white"
+          className="flex items-center gap-1.5 min-h-[44px] font-normal text-sm touch-manipulation transition-colors text-white/80 hover:text-white"
         >
           {expanded ? collapseLabel : expandLabel}
           <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -99,7 +99,7 @@ function FrontierItemCard({
                     href={item.whitepaperHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm border transition-colors bg-white/[0.04] text-white hover:bg-white/10 border-white/25"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-normal text-sm border transition-colors bg-white/[0.04] text-white hover:bg-white/10 border-white/25"
                   >
                     <FileText className="w-4 h-4" />
                     {viewWhitepaperLabel}
@@ -108,7 +108,7 @@ function FrontierItemCard({
                 {item.hasDeepTech && item.deepTechHref && (
                   <Link
                     href={item.deepTechHref}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-transparent text-white hover:bg-white/10 font-medium text-sm border border-white/25 transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-transparent text-white hover:bg-white/10 font-normal text-sm border border-white/25 transition-colors"
                   >
                     <FileText className="w-4 h-4" />
                     {viewDeepLabel}
@@ -186,7 +186,7 @@ export function FrontierExpandableCard({
       <div className="mb-4 lg:mb-8 min-w-0">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <h2 className="page-h2 text-white">{sectionTitle}</h2>
-          <span className="px-3 py-1 bg-white/10 text-white/80 border border-white/15 rounded-full page-caption font-medium">
+          <span className="px-3 py-1 bg-white/10 text-white/80 border border-white/15 rounded-full page-caption font-normal">
             {sectionBadge}
           </span>
         </div>
@@ -198,7 +198,7 @@ export function FrontierExpandableCard({
         <button
           type="button"
           onClick={() => setDomainsOpen((open) => !open)}
-          className="flex items-center gap-1.5 min-h-[44px] font-medium page-caption touch-manipulation transition-colors text-white/80 hover:text-white"
+          className="flex items-center gap-1.5 min-h-[44px] font-normal page-caption touch-manipulation transition-colors text-white/80 hover:text-white"
         >
           {domainsOpen ? collapseLabel : expandLabel}
           <ChevronDown className={`w-4 h-4 transition-transform ${domainsOpen ? "rotate-180" : ""}`} />

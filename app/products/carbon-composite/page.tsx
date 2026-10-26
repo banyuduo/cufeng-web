@@ -39,7 +39,7 @@ export default function CarbonCompositePage() {
                 <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center">
                   <Sparkles className="w-7 h-7 text-white" />
                 </div>
-                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-normal text-white">
                   {t("products.carbonComposite.hero.badge")}
                 </div>
               </div>
@@ -99,8 +99,8 @@ export default function CarbonCompositePage() {
                     <span className="text-slate-700 text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}SiC`)}</span>
                   </div>
                   <div className="flex justify-between gap-2 bg-[#E8E8EA]/50 rounded px-2 py-1.5">
-                    <span className="text-[#0F2A5C] font-medium shrink-0">{t("products.carbonComposite.comparisonTable.colToSpike")}</span>
-                    <span className="text-[#0F2A5C] font-medium text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}ToSpike`)}</span>
+                    <span className="text-[#0F2A5C] font-normal shrink-0">{t("products.carbonComposite.comparisonTable.colToSpike")}</span>
+                    <span className="text-[#0F2A5C] font-normal text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}ToSpike`)}</span>
                   </div>
                   <div className="flex justify-between gap-2 pt-1">
                     <span className="text-slate-500 shrink-0">{t("products.carbonComposite.comparisonTable.colValue")}</span>
@@ -127,59 +127,59 @@ export default function CarbonCompositePage() {
               </thead>
               <tbody className="text-sm">
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row1Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row1Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row1Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row1SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row1ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row1ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row1Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row2Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row2Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row2Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row2SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row2ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row2ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row2Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row3Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row3Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row3Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row3SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row3ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row3ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row3Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row4Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row4Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row4Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row4SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row4ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row4ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row4Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row5Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row5Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row5Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row5SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row5ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row5ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row5Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row6Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row6Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row6Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row6SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row6ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row6ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row6Value")}</td>
                 </tr>
                 <tr className="border-b border-slate-100 hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row7Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row7Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row7Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row7SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row7ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row7ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row7Value")}</td>
                 </tr>
                 <tr className="hover:bg-slate-50/50">
-                  <td className="px-4 py-3 font-medium text-slate-700">{t("products.carbonComposite.comparisonTable.row8Dim")}</td>
+                  <td className="px-4 py-3 font-normal text-slate-700">{t("products.carbonComposite.comparisonTable.row8Dim")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row8Cu")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row8SiC")}</td>
-                  <td className="px-4 py-3 font-medium text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row8ToSpike")}</td>
+                  <td className="px-4 py-3 font-normal text-[#0F2A5C] bg-[#E8E8EA]/50">{t("products.carbonComposite.comparisonTable.row8ToSpike")}</td>
                   <td className="px-4 py-3 text-slate-600">{t("products.carbonComposite.comparisonTable.row8Value")}</td>
                 </tr>
               </tbody>
@@ -399,7 +399,7 @@ export default function CarbonCompositePage() {
             {/* 第一排：两个专利并列 */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent1Title")}
                 </h3>
@@ -410,7 +410,7 @@ export default function CarbonCompositePage() {
               </Card>
 
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent2Title")}
                 </h3>
@@ -424,7 +424,7 @@ export default function CarbonCompositePage() {
             {/* 第二排：两个专利并列 */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">{t("products.carbonComposite.patents.patent3Title")}</h3>
                 <p className="page-body text-slate-600 mb-4">
                   {t("products.carbonComposite.patents.patent3Desc")}
@@ -433,7 +433,7 @@ export default function CarbonCompositePage() {
               </Card>
 
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-                <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
+                <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.inventionPatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent4Title")}
                 </h3>
@@ -447,7 +447,7 @@ export default function CarbonCompositePage() {
             {/* 第三排：核心专利单独一行 */}
             <div className="grid md:grid-cols-1 gap-6">
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-                <div className="page-caption font-medium text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.corePatent")}</div>
+                <div className="page-caption font-normal text-[#2A7FC4] mb-2">{t("products.carbonComposite.patents.corePatent")}</div>
                 <h3 className="page-h3 mb-2 text-slate-900">
                   {t("products.carbonComposite.patents.patent5Title")}
                 </h3>

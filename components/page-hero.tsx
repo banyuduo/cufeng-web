@@ -80,7 +80,7 @@ export function PageHero({
         <div className="text-center max-w-4xl mx-auto">
           {badge && (
             <div
-              className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
+              className={`inline-block px-4 py-2 rounded-full text-sm font-normal mb-6 border ${
                 isDark
                   ? "bg-white/10 text-white/80 border-white/15"
                   : "bg-slate-100 text-slate-700 border-slate-200"

@@ -73,7 +73,7 @@ export function ConsumerExpandableCard({
           <div className="hidden lg:block space-y-4 mb-4">
             {(items ?? []).map((item, i) => (
               <div key={i} className="border-l-2 border-white/12 pl-4 min-w-0">
-                <div className="page-body font-medium text-white break-words">{item}</div>
+                <div className="page-body font-normal text-white break-words">{item}</div>
                 {itemsDesc[i] && (
                   <p className="page-caption text-white/65 mt-1 break-words">{itemsDesc[i]}</p>
                 )}
@@ -85,7 +85,7 @@ export function ConsumerExpandableCard({
             <button
               type="button"
               onClick={() => setExpanded(!expanded)}
-              className={`flex items-center gap-1.5 min-h-[44px] ${accentClassName} ${accentHoverClassName} font-medium text-sm touch-manipulation transition-colors`}
+              className={`flex items-center gap-1.5 min-h-[44px] ${accentClassName} ${accentHoverClassName} font-normal text-sm touch-manipulation transition-colors`}
             >
               {expanded ? collapseLabel : expandLabel}
               <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -95,7 +95,7 @@ export function ConsumerExpandableCard({
                 <div className="lg:hidden space-y-4">
                   {(items ?? []).map((item, i) => (
                     <div key={`m-${i}`} className="border-l-2 border-white/12 pl-4 min-w-0">
-                      <div className="page-body font-medium text-white break-words">{item}</div>
+                      <div className="page-body font-normal text-white break-words">{item}</div>
                       {itemsDesc[i] && (
                         <p className="page-caption text-white/65 mt-1 break-words">{itemsDesc[i]}</p>
                       )}
@@ -123,7 +123,7 @@ export function ConsumerExpandableCard({
                   href={whitepaperHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 ${accentClassName} ${accentHoverClassName} font-medium text-sm`}
+                  className={`inline-flex items-center gap-2 ${accentClassName} ${accentHoverClassName} font-normal text-sm`}
                 >
                   <FileText className="w-4 h-4" />
                   {viewWhitepaper}
@@ -139,7 +139,7 @@ export function ConsumerExpandableCard({
                 {materials.split("|").map((m, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-white/80 page-caption font-medium border border-white/12 break-words max-w-full"
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-white/80 page-caption font-normal border border-white/12 break-words max-w-full"
                   >
                     {m.trim()}
                   </span>

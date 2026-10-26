@@ -232,7 +232,7 @@
     @apply grid gap-4 sm:gap-6;
   }
   .page-nav {
-    @apply text-sm font-medium;
+    @apply text-sm font-normal;
     letter-spacing: 0;
     line-height: 1.4;
   }

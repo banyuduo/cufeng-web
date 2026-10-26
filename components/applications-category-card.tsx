@@ -45,7 +45,7 @@ export function ApplicationsCategoryCard({
               style={{ backgroundColor: accentHex }}
             />
             <div className="min-w-0">
-              <div className="page-body font-medium text-white break-words">{item}</div>
+              <div className="page-body font-normal text-white break-words">{item}</div>
               {itemsDesc[i] ? (
                 <p className="page-caption text-white/65 mt-1 break-words">{itemsDesc[i]}</p>
               ) : null}
@@ -65,7 +65,7 @@ export function ApplicationsCategoryCard({
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <h2 className="page-h2 text-white">{title}</h2>
           {badge ? (
-            <span className="px-3 py-1 rounded-full page-caption font-medium bg-white/10 border border-white/15 text-white/80">
+            <span className="px-3 py-1 rounded-full page-caption font-normal bg-white/10 border border-white/15 text-white/80">
               {badge}
             </span>
           ) : null}
@@ -77,7 +77,7 @@ export function ApplicationsCategoryCard({
           <button
             type="button"
             onClick={() => setExpanded((open) => !open)}
-            className="flex items-center gap-1.5 min-h-[44px] text-white/80 hover:text-white font-medium page-caption touch-manipulation transition-colors"
+            className="flex items-center gap-1.5 min-h-[44px] text-white/80 hover:text-white font-normal page-caption touch-manipulation transition-colors"
           >
             {expanded ? collapseLabel : expandLabel}
             <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -92,7 +92,7 @@ export function ApplicationsCategoryCard({
               {materials.split("|").map((material) => (
                 <span
                   key={material}
-                  className="inline-flex items-center px-3 py-1.5 rounded-lg page-caption font-medium border break-words max-w-full bg-white/[0.04] text-white/80"
+                  className="inline-flex items-center px-3 py-1.5 rounded-lg page-caption font-normal border break-words max-w-full bg-white/[0.04] text-white/80"
                   style={{ borderColor: `${accentHex}55` }}
                 >
                   {material.trim()}

@@ -65,7 +65,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
             {/* 返回按钮 */}
             <a
               href={`${ensureTrailingSlash(`${prefix}/news`)}#industry-info`}
-              className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-10 page-caption font-medium"
+              className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-10 page-caption font-normal"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToList")}
@@ -74,7 +74,7 @@ function IndustryArticleDetail({ article, prefix, t }: { article: IndustryArticl
             {/* 文章头部 */}
             <header className="mb-16">
               <div className="mb-6">
-                  <span className="page-caption px-3 py-1.5 bg-slate-100 rounded-full text-slate-700 font-medium tracking-wide">
+                  <span className="page-caption px-3 py-1.5 bg-slate-100 rounded-full text-slate-700 font-normal tracking-wide">
                     {article.category}
                   </span>
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 page-caption text-slate-500 tracking-wide">
@@ -180,7 +180,7 @@ function CompanyNewsDetail({
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
             {/* Back Button */}
-            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-8 page-caption font-medium">
+            <Link href={`${prefix}/news`} className="inline-flex items-center gap-2 text-[#2A7FC4] hover:underline mb-8 page-caption font-normal">
               <ArrowLeft className="h-4 w-4" />
               {t("news.articleDetail.backToNews")}
             </Link>

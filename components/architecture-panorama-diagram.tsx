@@ -86,10 +86,10 @@ function KernelPills({
           : "border-t border-white/35 text-center pt-4 space-y-1.5"
       )}
     >
-      <p className={cn("text-white font-medium", compact ? "page-caption" : "page-body")}>
+      <p className={cn("text-white font-normal", compact ? "page-caption" : "page-body")}>
         <ChemText text={bonding} />
       </p>
-      <p className={cn("text-white font-medium", compact ? "page-caption" : "page-body")}>
+      <p className={cn("text-white font-normal", compact ? "page-caption" : "page-body")}>
         {stress}
       </p>
     </div>

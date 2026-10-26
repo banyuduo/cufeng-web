@@ -35,7 +35,7 @@ export default function NonstickCookwarePage() {
           </Link>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full page-caption font-medium text-slate-700 mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full page-caption font-normal text-slate-700 mb-4">
                 <CheckCircle2 className="w-4 h-4 text-[#2A7FC4]" />
                 {t("products.nonstickCookware.hero.badge")}
               </div>

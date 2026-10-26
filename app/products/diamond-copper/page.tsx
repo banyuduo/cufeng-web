@@ -40,7 +40,7 @@ export default function DiamondCopperPage() {
                 <div className="w-14 h-14 rounded-xl bg-[#0F2A5C] flex items-center justify-center">
                   <Layers className="w-7 h-7 text-white" />
                 </div>
-                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-normal text-white">
                   {t("products.diamondCopper.hero.badge")}
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function DiamondCopperPage() {
                     <span className="page-stat-inline text-slate-900">1000-2000</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-slate-100 rounded-lg border-2 border-[#0F2A5C]">
-                    <span className="page-caption font-medium text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
+                    <span className="page-caption font-normal text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
                     <span className="page-stat-inline text-[#2A7FC4]">{t("products.diamondCopper.hero.premiumTcValue")}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
@@ -224,7 +224,7 @@ export default function DiamondCopperPage() {
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="page-h3 text-slate-900">{t("products.diamondCopper.productLines.lineB.title")}</h3>
-                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-medium text-white">{t("products.diamondCopper.productLines.lineB.badge")}</div>
+                <div className="px-3 py-1 bg-[#0F2A5C] rounded-full text-xs font-normal text-white">{t("products.diamondCopper.productLines.lineB.badge")}</div>
               </div>
               <p className="page-body text-slate-600 mb-6">
                 {t("products.diamondCopper.productLines.lineB.desc")}
@@ -414,7 +414,7 @@ export default function DiamondCopperPage() {
 
             <Card className="p-4 sm:p-6 gap-3 bg-gradient-to-br from-[#F9FAFC] to-white border-[#94A3B8]/40 text-center shadow-lg">
               <div className="page-stat-value text-[#2A7FC4] mb-2">1000+</div>
-              <div className="page-caption text-slate-700 font-medium mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
+              <div className="page-caption text-slate-700 font-normal mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
               <div className="page-stat-unit text-slate-500">W/m·K</div>
             </Card>
 
@@ -441,7 +441,7 @@ export default function DiamondCopperPage() {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-              <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
+              <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.diamondCopper.patents.patent1Title")}</h3>
               <p className="page-body text-slate-600 mb-4">
                 {t("products.diamondCopper.patents.patent1Desc")}
@@ -450,7 +450,7 @@ export default function DiamondCopperPage() {
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
-              <div className="text-xs font-medium text-[#2A7FC4] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
+              <div className="text-xs font-normal text-[#2A7FC4] mb-2">{t("products.diamondCopper.patents.inventionPatent")}</div>
               <h3 className="page-h3 mb-2 text-slate-900">{t("products.diamondCopper.patents.patent2Title")}</h3>
               <p className="page-body text-slate-600 mb-4">
                 {t("products.diamondCopper.patents.patent2Desc")}

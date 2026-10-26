@@ -12,7 +12,7 @@ export const inter = Inter({
 /** CJK only in the stack after Inter, so Latin never picks Noto metrics. */
 export const notoSansSC = Noto_Sans_SC({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
   style: ["normal"],
   variable: "--font-noto-sc",
   display: "swap",

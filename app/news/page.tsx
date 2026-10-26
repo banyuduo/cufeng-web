@@ -75,7 +75,7 @@ export default async function NewsPage({
                     <p className="page-body text-white/70">
                       {t("news.companyNewsDesc")}
                     </p>
-                    <div className="mt-4 flex items-center text-white/80 page-caption font-medium">
+                    <div className="mt-4 flex items-center text-white/80 page-caption font-normal">
                       {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                 </div>
@@ -155,7 +155,7 @@ export default async function NewsPage({
                         {news.title}
                       </h3>
                       <p className="page-body text-slate-600">{news.summary}</p>
-                      <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
+                      <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-normal">
                         {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                   </div>
@@ -194,7 +194,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-normal">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>
@@ -222,7 +222,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-normal">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>
@@ -250,7 +250,7 @@ export default async function NewsPage({
                           <p className="page-body text-slate-600 line-clamp-2">
                             {getArticlePreview(article.sections[0]?.content ?? "")}
                           </p>
-                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-medium">
+                          <div className="mt-4 flex items-center text-[#2A7FC4] page-caption font-normal">
                             {t("news.viewDetails")} <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </div>
                       </div>

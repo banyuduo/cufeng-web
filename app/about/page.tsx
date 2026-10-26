@@ -121,7 +121,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/10 text-[#0F2A5C] text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/10 text-[#0F2A5C] text-xs font-normal rounded-full mb-2">
                   {t("about.team.wang.title")}
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-normal rounded-full mb-2">
                   {t("about.team.he.title")}
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-normal rounded-full mb-2">
                   {t("about.team.zhang.title")}
                 </div>
               </div>

@@ -60,7 +60,7 @@ export function HpcExpandableCard({
     >
       <div className="min-w-0">
           <h2 className="page-h2 text-white mb-2">{title}</h2>
-          {subtitle ? <p className="page-body text-white/70 font-medium mb-2">{subtitle}</p> : null}
+          {subtitle ? <p className="page-body text-white/70 font-normal mb-2">{subtitle}</p> : null}
 
           {features ? (
             <p className="hidden lg:block page-caption text-white/65 mb-4">{features}</p>
@@ -106,7 +106,7 @@ export function HpcExpandableCard({
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className={`flex items-center gap-1.5 min-h-[44px] ${accentClassName} ${accentHoverClassName} font-medium text-sm mt-2 touch-manipulation transition-colors`}
+            className={`flex items-center gap-1.5 min-h-[44px] ${accentClassName} ${accentHoverClassName} font-normal text-sm mt-2 touch-manipulation transition-colors`}
           >
             {expanded ? collapseLabel : expandLabel}
             <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
@@ -119,7 +119,7 @@ export function HpcExpandableCard({
                 {materials.split("|").map((m, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-white/80 page-caption font-medium border border-white/12 break-words max-w-full"
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] text-white/80 page-caption font-normal border border-white/12 break-words max-w-full"
                   >
                     {m.trim()}
                   </span>
