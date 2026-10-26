@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build && node scripts/prepare-aliyun-out.mjs",
+    "deploy": "node scripts/deploy.mjs",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",

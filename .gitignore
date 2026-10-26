@@ -19,6 +19,9 @@ yarn-error.log*
 # env files
 .env*
 
+# 部署凭据（本地保存，勿提交）
+.deploy-secrets.json
+
 # vercel
 .vercel
 
