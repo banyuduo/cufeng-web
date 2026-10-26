@@ -30,10 +30,10 @@ export default async function HomePage({
           <div>
             {/* 第一层：愿景（最顶部） */}
             <div className="text-center">
-              <h1 className="page-h1 text-white mb-4 font-light opacity-100">
+              <h1 className="page-h1 text-white mb-4 font-normal opacity-100">
                 {t("home.hero.visionTitle")}
               </h1>
-              <p className="page-lead page-measure text-white/70 font-light">
+              <p className="page-lead page-measure text-white/70 font-normal">
                 <ChemText text={t("home.hero.visionSubtitle")} />
               </p>
             </div>

@@ -92,7 +92,7 @@ export function PageHero({
           <h1
             className={`page-h1 mb-4 ${
               isDark ? "text-white" : "text-slate-900"
-            } ${titleWeight === "light" ? "font-light" : ""}`}
+            } ${titleWeight === "light" ? "font-normal" : ""}`}
           >
             <ChemText text={title} />
           </h1>

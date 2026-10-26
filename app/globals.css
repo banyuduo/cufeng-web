@@ -113,7 +113,7 @@
    中文默认：正常字距、略松行高。英文由 [data-locale="en"] / :lang(en) 收紧。 */
 @layer components {
   .page-h1 {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-light break-words;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-normal break-words;
     letter-spacing: 0;
     line-height: 1.22;
     text-wrap: balance;
@@ -167,19 +167,19 @@
     @apply max-w-3xl mx-auto;
   }
   .page-stat-value {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tabular-nums;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-semibold tabular-nums;
     font-variant-numeric: tabular-nums lining-nums;
     letter-spacing: -0.03em;
     line-height: 1.1;
   }
   .page-stat-value-lg {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tabular-nums;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold tabular-nums;
     font-variant-numeric: tabular-nums lining-nums;
     letter-spacing: -0.03em;
     line-height: 1.05;
   }
   .page-stat-value-sm {
-    @apply text-xl sm:text-2xl lg:text-3xl font-bold tabular-nums;
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold tabular-nums;
     font-variant-numeric: tabular-nums lining-nums;
     letter-spacing: -0.025em;
     line-height: 1.15;

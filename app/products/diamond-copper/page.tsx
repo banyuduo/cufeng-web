@@ -341,7 +341,7 @@ export default function DiamondCopperPage() {
               <div className="space-y-4">
                 <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-sm">
                       1
                     </div>
                     <div>
@@ -355,7 +355,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-sm">
                       2
                     </div>
                     <div>
@@ -369,7 +369,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-sm">
                       3
                     </div>
                     <div>
@@ -383,7 +383,7 @@ export default function DiamondCopperPage() {
 
                 <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-sm">
                       4
                     </div>
                     <div>

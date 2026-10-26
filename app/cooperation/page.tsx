@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Globe } from "lucide-react"
+﻿import { MapPin, Mail, Phone, Globe } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FooterNav } from "@/components/footer-nav"
 import { PageHero } from "@/components/page-hero"
@@ -27,7 +27,7 @@ export default async function CooperationPage({
 
       <section className="section-block">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-6 page-body text-white/70 font-light">
+          <div className="space-y-6 page-body text-white/70 font-normal">
             <p>{t("cooperation.platform.content")}</p>
             <p>
               {t("cooperation.platform.content2")}
@@ -46,14 +46,14 @@ export default async function CooperationPage({
           <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.audience.title")}
           </h2>
-          <p className="page-body text-white/70 font-light mb-6 sm:mb-8">
+          <p className="page-body text-white/70 font-normal mb-6 sm:mb-8">
             {t("cooperation.audience.intro")}
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-white/[0.03] p-5 sm:p-7 rounded-lg border border-white/12 hover:border-white/25 transition-colors ">
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
-              <p className="page-body text-white/70 font-light">
+              <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.research")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.researchBold")}</strong>
               </p>
@@ -61,7 +61,7 @@ export default async function CooperationPage({
 
             <div className="bg-white/[0.03] p-5 sm:p-7 rounded-lg border border-white/12 hover:border-white/25 transition-colors ">
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
-              <p className="page-body text-white/70 font-light">
+              <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.industry")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.industryBold")}</strong>
               </p>
@@ -69,7 +69,7 @@ export default async function CooperationPage({
 
             <div className="bg-white/[0.03] p-5 sm:p-7 rounded-lg border border-white/12 hover:border-white/25 transition-colors ">
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
-              <p className="page-body text-white/70 font-light">
+              <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.tech")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.techBold")}</strong>
               </p>
@@ -77,7 +77,7 @@ export default async function CooperationPage({
 
             <div className="bg-white/[0.03] p-5 sm:p-7 rounded-lg border border-white/12 hover:border-white/25 transition-colors ">
               <div className="h-px w-10 bg-white/25 mb-3 sm:mb-5"></div>
-              <p className="page-body text-white/70 font-light">
+              <p className="page-body text-white/70 font-normal">
                 {t("cooperation.audience.investor")}
                 <strong className="text-white font-medium"> {t("cooperation.audience.investorBold")}</strong>
               </p>
@@ -92,12 +92,12 @@ export default async function CooperationPage({
             <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
               {t("cooperation.nextSteps.title")}
             </h2>
-            <p className="page-body text-white/70 font-light">
+            <p className="page-body text-white/70 font-normal">
               {t("cooperation.nextSteps.p1")}
             </p>
           </div>
           <div>
-            <p className="page-body text-white/70 font-light">
+            <p className="page-body text-white/70 font-normal">
               {t("cooperation.resonance.p1")}
               {" "}
               {t("cooperation.resonance.p2")}
@@ -118,9 +118,9 @@ export default async function CooperationPage({
                 <MapPin className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
-                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.entity")}</div>
-                <div className="page-body text-slate-900 font-light">{t("cooperation.contact.entityName")}</div>
-                <div className="page-caption text-slate-500 mt-2 font-light">
+                <div className="page-kicker text-slate-500 mb-2 font-normal">{t("cooperation.contact.entity")}</div>
+                <div className="page-body text-slate-900 font-normal">{t("cooperation.contact.entityName")}</div>
+                <div className="page-caption text-slate-500 mt-2 font-normal">
                   Nanjing CuFeng Mechanical & Electrical Technology Co., Ltd.
                 </div>
               </div>
@@ -131,10 +131,10 @@ export default async function CooperationPage({
                 <Mail className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
-                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.techContact")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-normal">{t("cooperation.contact.techContact")}</div>
                 <a
                   href="mailto:wangbo@tospike.com"
-                  className="page-body text-slate-900 font-light hover:text-[#2A7FC4] transition-colors"
+                  className="page-body text-slate-900 font-normal hover:text-[#2A7FC4] transition-colors"
                 >
                   wangbo@tospike.com
                 </a>
@@ -146,10 +146,10 @@ export default async function CooperationPage({
                 <Phone className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
-                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.phone")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-normal">{t("cooperation.contact.phone")}</div>
                 <a
                   href="tel:15305191423"
-                  className="page-body text-slate-900 font-light hover:text-[#2A7FC4] transition-colors"
+                  className="page-body text-slate-900 font-normal hover:text-[#2A7FC4] transition-colors"
                 >
                   153 0519 1423
                 </a>
@@ -161,8 +161,8 @@ export default async function CooperationPage({
                 <Globe className="h-5 w-5 text-[#2A7FC4]" />
               </div>
               <div>
-                <div className="page-kicker text-slate-500 mb-2 font-light">{t("cooperation.contact.address")}</div>
-                <div className="page-body text-slate-900 font-light">{t("cooperation.contact.addressValue")}</div>
+                <div className="page-kicker text-slate-500 mb-2 font-normal">{t("cooperation.contact.address")}</div>
+                <div className="page-body text-slate-900 font-normal">{t("cooperation.contact.addressValue")}</div>
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default async function CooperationPage({
 
       <section className="py-10 sm:py-14 lg:py-16 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <blockquote className="page-body text-white/70 font-light italic">
+          <blockquote className="page-body text-white/70 font-normal italic">
             &quot;{t("cooperation.quote")}&quot;
           </blockquote>
         </div>

@@ -54,7 +54,7 @@ export default function CarbonCompositePage() {
               <div className="space-y-4">
                 <div className="p-4 bg-white/80 rounded-lg border border-slate-200">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.coreTech")}</div>
-                  <div className="font-bold text-slate-900">{t("products.carbonComposite.hero.coreTechValue")}</div>
+                  <div className="font-semibold text-slate-900">{t("products.carbonComposite.hero.coreTechValue")}</div>
                 </div>
                 <div className="p-4 bg-white/80 rounded-lg">
                   <div className="page-caption text-slate-600 mb-1">{t("products.carbonComposite.hero.thermalPerf")}</div>
@@ -318,7 +318,7 @@ export default function CarbonCompositePage() {
           <div className="max-w-4xl mx-auto space-y-6">
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
                   1
                 </div>
                 <div>
@@ -332,7 +332,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
                   2
                 </div>
                 <div>
@@ -360,7 +360,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
                   3
                 </div>
                 <div>
@@ -374,7 +374,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
                   4
                 </div>
                 <div>
