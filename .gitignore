@@ -53,3 +53,6 @@ coverage/
 # 娱乐游戏项目（与官网分离，不上传 GitHub、不参与 out 构建）
 /public/game/
 /game/
+# ����/������־
+build_*.log
+deploy_*.log
