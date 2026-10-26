@@ -105,7 +105,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="section-y">
+      <section className="section-y lg:py-16 xl:py-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="page-h2 text-white">{t("home.results.title")}</h2>

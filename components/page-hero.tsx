@@ -40,7 +40,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative pt-24 sm:pt-28 lg:pt-28 pb-8 sm:pb-10 lg:pb-12 overflow-hidden pointer-events-none ${
+      className={`relative pt-24 sm:pt-28 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 overflow-hidden pointer-events-none ${
         isSolidNavy ? "bg-[#0B1F33]" : isStage ? "" : isDark ? "" : "bg-[#F9FAFC]"
       }`}
     >
@@ -90,7 +90,7 @@ export function PageHero({
             </div>
           )}
           <h1
-            className={`page-h1 mb-4 ${
+            className={`page-h1 lg:text-6xl xl:text-7xl mb-4 ${
               isDark ? "text-white" : "text-slate-900"
             } ${titleWeight === "light" ? "font-normal" : ""}`}
           >
