@@ -60,14 +60,26 @@ if (cssFiles.length >= 1) {
 
   for (const file of walk(outDir)) {
     let html = fs.readFileSync(file, "utf8")
+    // 移除原有 chunk CSS link：合并版 site.css 已包含完全相同内容，保留会导致每页重复下载 ~550KB
+    html = html.replace(/<link[^>]*href="\/_next\/static\/chunks\/[^"]*\.css"[^>]*\/?>/g, "")
     if (!html.includes('data-site-style="true"')) {
       html = html.replace("<head>", `<head>${styleLinks}`)
-      fs.writeFileSync(file, html)
     }
+    fs.writeFileSync(file, html)
   }
   console.log(`Styles -> out/styles/site.css (merged ${cssFiles.length} chunks)`)
 } else {
   console.warn("WARNING: no CSS chunks found under out/_next/static/chunks")
+}
+
+// 3.5 根跳转页瘦身：只保留跳转所需的最小内容，避免下载全套 JS/CSS（约 1.7MB）
+const rootHtmlPath = path.join(outDir, "index.html")
+if (fs.existsSync(rootHtmlPath)) {
+  let html = fs.readFileSync(rootHtmlPath, "utf8")
+  html = html.replace(/<link[^>]*\/?>/g, "")            // 移除全部 link（CSS/字体/icon）
+  html = html.replace(/<script[\s\S]*?<\/script>/g, "") // 移除全部 script（含 RSC payload）
+  fs.writeFileSync(rootHtmlPath, html)
+  console.log(`Root redirect page slimmed: ${Math.round(fs.statSync(rootHtmlPath).size / 1024)}KB`)
 }
 
 // 4. 上传路径自检文件
