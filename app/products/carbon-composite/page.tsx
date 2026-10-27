@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
+import { FigureCaption } from "@/components/figure-caption"
 import { isValidLocale, type Locale } from "@/lib/i18n"
 import { useTranslations } from "@/components/translations-provider"
 
@@ -71,6 +72,25 @@ export default function CarbonCompositePage() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Microstructure */}
+      <section className="section-block bg-white pt-0">
+        <div className="max-w-4xl mx-auto">
+          <figure className="mb-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/docs/carbon-composite-micro.webp"
+              srcSet="/docs/carbon-composite-micro-400w.webp 400w, /docs/carbon-composite-micro-800w.webp 800w"
+              sizes="(min-width: 640px) 896px, 100vw"
+              alt={t("products.carbonComposite.hero.microAlt")}
+              className="w-full rounded-xl border border-slate-200 bg-white object-cover"
+            />
+            <FigureCaption>
+              {t("products.carbonComposite.hero.microCaption")}
+            </FigureCaption>
+          </figure>
         </div>
       </section>
 

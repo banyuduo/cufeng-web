@@ -32,6 +32,11 @@ const JOBS = [
   { src: "images/sem-pan.jpg", quality: 85, widths: [400, 800], asJpeg: true },
   { src: "images/diamond-brazed.png", lossless: true },
   { src: "images/brazing tech.png", lossless: true },
+  { src: "docs/diamond-copper-render.png", quality: 85, widths: [400, 800], keepFull: true },
+  { src: "docs/thermal-pad-thumb.png", quality: 85, widths: [400, 800], keepFull: true },
+  { src: "docs/thermal-pad-principle.png", quality: 85, widths: [400, 800], keepFull: true },
+  { src: "docs/carbon-composite-thumb.png", quality: 85, widths: [400, 800], keepFull: true },
+  { src: "docs/carbon-composite-micro.png", quality: 85, widths: [400, 800], keepFull: true },
 ]
 
 const REMOVE_IF_UNUSED = [

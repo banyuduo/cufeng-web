@@ -102,6 +102,7 @@
     "nonstickCookware": {
       "title": "钻石不粘涂层",
       "desc": "专利金刚石颗粒固着技术，用于耐磨与不粘。已具备量产能力。",
+      "imageAlt": "钻石不粘涂层锅具",
       "viewDetails": "查看详情",
       "hero": {
         "badge": "即时出样",
@@ -177,6 +178,7 @@
     "diamondCopper": {
       "title": "金刚石铜复合材料",
       "desc": "已达成 680 W/m·K 热导率；极限性能版本目标 1000+ W/m·K。双产品线：性价比民用与高端应用。",
+      "imageAlt": "金刚石铜复合材料 3D 渲染图",
       "hero": {
         "badge": "战略核心",
         "title": "金刚石铜复合材料",
@@ -291,6 +293,7 @@
     "thermalPad": {
       "title": "柔性导热垫片",
       "desc": "基于铜网/铜纤维的柔性导热方案。活性熔固金刚石颗粒，形成三维骨架导热相，面向高导热与柔性的结构设计。",
+      "imageAlt": "柔性导热垫片 3D 渲染图",
       "hero": {
         "badge": "开发中",
         "title": "柔性导热垫片",
@@ -305,7 +308,9 @@
         "cte": "热膨胀系数",
         "cteValue": "与铜接近",
         "thicknessRange": "厚度范围",
-        "thicknessValue": "0.5–3 mm"
+        "thicknessValue": "0.5–3 mm",
+        "principleAlt": "热管理原理示意图：金刚石铜高导热块体与柔性导热垫片用于芯片散热",
+        "principleCaption": "热管理原理：金刚石铜快速横向导热，柔性导热垫片贴合芯片与散热器界面，降低接触热阻"
       },
       "techAdvantages": {
         "title": "技术优势",
@@ -370,6 +375,7 @@
     "carbonComposite": {
       "title": "全碳复合材料",
       "desc": "sp²–sp³三维结构技术平台。可拓展至固态电池负极、超导材料等前沿领域，是5–10年核心技术储备。",
+      "imageAlt": "碳基复合材料 3D 渲染图",
       "comparisonTable": {
         "colDimension": "维度",
         "colDiamondCu": "金刚石-铜 (Cu-based)",
@@ -430,7 +436,9 @@
         "flexibility": "柔性潜力",
         "flexibilityValue": "碳纤维基可弯曲",
         "applicationProspect": "应用前景",
-        "applicationProspectValue": "5–10年技术储备"
+        "applicationProspectValue": "5–10年技术储备",
+        "microAlt": "碳基复合材料微观结构示意图：三维碳网络与原子级化学键合",
+        "microCaption": "碳基复合材料微观结构：sp²–sp³ 原子级化学键合构建三维全碳网络"
       },
       "coreTech": {
         "title": "sp²–sp³ 核心技术原理",
@@ -520,6 +528,7 @@
     "diamondTools": {
       "title": "超磨熔固工具解决方案",
       "subtitle": "",
+      "imageAlt": "金刚石工具",
       "desc": "以界面化学冶金为基础，通过活性熔固实现金刚石/CBN 与异质金属基体的化学键合，按“基体–磨料–熔固合金”三要素匹配，为航空航天、半导体及新型复合材料提供定制加工方案。",
       "hero": {
         "badge": "工程起点",

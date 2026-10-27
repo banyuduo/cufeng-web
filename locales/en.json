@@ -102,6 +102,7 @@
     "nonstickCookware": {
       "title": "Diamond nonstick coating",
       "desc": "Patented diamond particle bonding for wear resistance and nonstick performance. Mass production ready.",
+      "imageAlt": "Diamond nonstick cookware pan",
       "viewDetails": "View Details",
       "hero": {
         "badge": "Samples Ready",
@@ -177,6 +178,7 @@
     "diamondCopper": {
       "title": "Diamond-copper composite",
       "desc": "Achieved 680 W/m·K thermal conductivity; limit-performance version targets 1000+ W/m·K. Dual lines: cost-effective civilian and high-end use.",
+      "imageAlt": "Diamond-copper composite 3D render",
       "hero": {
         "badge": "Strategic Core",
         "title": "Diamond-Copper Composite",
@@ -291,6 +293,7 @@
     "thermalPad": {
       "title": "Thermal interface material (TIM)",
       "desc": "Flexible thermal solution based on copper mesh/copper fiber. Active fusion bonding of diamond particles forms a 3D skeleton conductive phase; a structural design aimed at high thermal conductivity and flexibility.",
+      "imageAlt": "Flexible thermal pad 3D render",
       "hero": {
         "badge": "In development",
         "title": "Flexible thermal pad",
@@ -305,7 +308,9 @@
         "cte": "Coefficient of thermal expansion",
         "cteValue": "Close to copper",
         "thicknessRange": "Thickness range",
-        "thicknessValue": "0.5–3 mm"
+        "thicknessValue": "0.5–3 mm",
+        "principleAlt": "Thermal management principle: diamond-copper block conducts heat with flexible thermal pad on a chip",
+        "principleCaption": "Thermal management principle: diamond-copper spreads heat laterally, flexible pad conforms to the chip–heatsink interface and lowers contact resistance"
       },
       "techAdvantages": {
         "title": "Technical advantages",
@@ -370,6 +375,7 @@
     "carbonComposite": {
       "title": "All-carbon composite",
       "desc": "sp³–sp² 3D structure technology platform. Extensible to solid-state battery anodes, superconducting materials, and other frontier fields; 5–10 year core technology reserve.",
+      "imageAlt": "Carbon-based composite 3D render",
       "comparisonTable": {
         "colDimension": "Dimension",
         "colDiamondCu": "Diamond-Cu (Cu-based)",
@@ -430,7 +436,9 @@
         "flexibility": "Flexibility potential",
         "flexibilityValue": "Carbon fiber base bendable",
         "applicationProspect": "Application prospect",
-        "applicationProspectValue": "5–10 year technology reserve"
+        "applicationProspectValue": "5–10 year technology reserve",
+        "microAlt": "Carbon-based composite microstructure: 3D carbon network with atomic-level chemical bonding",
+        "microCaption": "Carbon-based composite microstructure: sp²–sp³ atomic-level covalent bonding builds a 3D all-carbon network"
       },
       "coreTech": {
         "title": "sp²–sp³ core technology principle",
@@ -520,6 +528,7 @@
     "diamondTools": {
       "title": "Superabrasive fusion-bonded tools solutions",
       "subtitle": "(Superabrasive Fusion-Bonded Solutions)",
+      "imageAlt": "Diamond tools",
       "desc": "Rooted in interfacial chemical metallurgy, active fusion bonding joins diamond/CBN to metal substrates; substrate–superabrasive–alloy matching delivers custom machining for aerospace, semiconductor, and advanced composites.",
       "hero": {
         "badge": "Engineering foundation",
