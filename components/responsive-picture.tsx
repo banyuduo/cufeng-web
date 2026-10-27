@@ -20,6 +20,14 @@ interface ResponsivePictureProps {
   fullResolution?: boolean
   /** 原图已是更小格式时跳过 WebP（例如 SEM JPEG 小于 WebP） */
   skipWebp?: boolean
+  /** 响应式候选档位（完整 srcset 字符串，传入后输出 srcset 属性） */
+  srcSet?: string
+  /** 响应式尺寸提示（sizes 属性，配合 srcSet 使用） */
+  sizes?: string
+  /** 固有宽度（px，用于防 CLS） */
+  width?: number
+  /** 固有高度（px，用于防 CLS） */
+  height?: number
 }
 
 function webpSibling(src: string, suffix = "") {
@@ -39,6 +47,10 @@ export function ResponsivePicture({
   priority = false,
   fullResolution = false,
   skipWebp = false,
+  srcSet,
+  sizes,
+  width,
+  height,
 }: ResponsivePictureProps) {
   const fallbackSrc = src.startsWith("/") ? src : `/${src}`
   const webpDesktop = webpSibling(fallbackSrc)
@@ -58,10 +70,14 @@ export function ResponsivePicture({
       loading={priority ? "eager" : "lazy"}
       decoding="async"
       fetchPriority={priority ? "high" : undefined}
+      srcSet={srcSet}
+      sizes={srcSet ? sizes : undefined}
+      width={srcSet ? width : undefined}
+      height={srcSet ? height : undefined}
     />
   )
 
-  if (skipWebp || fullResolution) {
+  if (srcSet || skipWebp || fullResolution) {
     return fill ? <span className="absolute inset-0 block">{img}</span> : img
   }
 

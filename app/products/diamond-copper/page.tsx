@@ -58,6 +58,10 @@ export default function DiamondCopperPage() {
                       objectFit="cover"
                       fullResolution
                       priority
+                      srcSet="/docs/diamond-copper-sample.webp 230w"
+                      sizes="(min-width: 400px) 50vw, 100vw"
+                      width={230}
+                      height={230}
                     />
                   </div>
                   <figcaption className="page-caption text-slate-500 mt-2">
@@ -73,6 +77,10 @@ export default function DiamondCopperPage() {
                       objectFit="cover"
                       fullResolution
                       priority
+                      srcSet="/docs/diamond-copper-micro-400w.webp 400w, /docs/diamond-copper-micro.webp 676w"
+                      sizes="(min-width: 400px) 50vw, 100vw"
+                      width={676}
+                      height={676}
                     />
                   </div>
                   <figcaption className="page-caption text-slate-500 mt-2">

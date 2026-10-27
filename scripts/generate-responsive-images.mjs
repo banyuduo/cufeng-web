@@ -18,17 +18,18 @@ const __dirname = dirname(__filename)
 const PUBLIC_DIR = join(__dirname, "../public")
 const MOBILE_WIDTH = 400
 
-/** @typedef {{ src: string, quality?: number, lossless?: boolean, mobile?: boolean }} ImageJob */
+/** @typedef {{ src: string, quality?: number, lossless?: boolean, mobile?: boolean, widths?: number[], asJpeg?: boolean, keepFull?: boolean }} ImageJob */
 
 /** @type {ImageJob[]} */
 const JOBS = [
-  { src: "docs/diamond-copper-sample.jpg", quality: 90 },
-  { src: "docs/diamond-copper-micro.jpg", quality: 90 },
+  { src: "docs/diamond-copper-sample.jpg", quality: 80, keepFull: true },
+  { src: "docs/diamond-copper-micro.jpg", quality: 80, widths: [400], keepFull: true },
   { src: "docs/diamond-battery.jpg", quality: 90 },
   { src: "docs/diamond-pan.jpg", quality: 90 },
   { src: "docs/diamond-pan-sem.jpg", quality: 90 },
-  { src: "images/diamond.jpg", quality: 85, mobile: true },
+  { src: "images/diamond.jpg", quality: 85, mobile: true, widths: [400, 800] },
   { src: "images/diamond pan.jpg", quality: 85, mobile: true },
+  { src: "images/sem-pan.jpg", quality: 85, widths: [400, 800], asJpeg: true },
   { src: "images/diamond-brazed.png", lossless: true },
   { src: "images/brazing tech.png", lossless: true },
 ]
@@ -57,7 +58,9 @@ async function encodeWebp(inputPath, outputPath, job, width = null) {
   if (width) {
     pipeline = pipeline.resize(width, null, { withoutEnlargement: true })
   }
-  if (job.lossless) {
+  if (job.asJpeg) {
+    pipeline = pipeline.jpeg({ quality: job.quality ?? 85, mozjpeg: true })
+  } else if (job.lossless) {
     pipeline = pipeline.webp({ lossless: true, effort: 6 })
   } else {
     pipeline = pipeline.webp({
@@ -68,6 +71,11 @@ async function encodeWebp(inputPath, outputPath, job, width = null) {
   }
   await mkdir(dirname(outputPath), { recursive: true })
   await pipeline.toFile(outputPath)
+}
+
+function variantName(src, width, asJpeg = false) {
+  const base = webpName(src, `-${width}w`)
+  return asJpeg ? base.replace(/\.webp$/, ".jpg") : base
 }
 
 async function main() {
@@ -86,22 +94,27 @@ async function main() {
     const fullPath = join(PUBLIC_DIR, fullRel)
     console.log(`处理: ${job.src}  (${kb(origBytes)})`)
 
-    await encodeWebp(inputPath, fullPath, job)
-    const webpBytes = (await stat(fullPath)).size
-    if (webpBytes >= origBytes) {
-      await unlink(fullPath)
-      console.log(`  ✗ ${fullRel} ${kb(webpBytes)} ≥ 原图，已删除`)
-    } else {
-      const save = (((origBytes - webpBytes) / origBytes) * 100).toFixed(1)
-      console.log(`  ✓ ${fullRel} ${kb(webpBytes)}  节省 ${save}%`)
+    if (!job.asJpeg) {
+      await encodeWebp(inputPath, fullPath, job)
+      const webpBytes = (await stat(fullPath)).size
+      if (!job.keepFull && webpBytes >= origBytes) {
+        await unlink(fullPath)
+        console.log(`  ✗ ${fullRel} ${kb(webpBytes)} ≥ 原图，已删除`)
+      } else {
+        const save = webpBytes >= origBytes
+          ? "保留（略大于原图）"
+          : `节省 ${(((origBytes - webpBytes) / origBytes) * 100).toFixed(1)}%`
+        console.log(`  ✓ ${fullRel} ${kb(webpBytes)}  ${save}`)
+      }
     }
 
-    if (job.mobile) {
-      const mobileRel = webpName(job.src, "-400w")
-      const mobilePath = join(PUBLIC_DIR, mobileRel)
-      await encodeWebp(inputPath, mobilePath, job, MOBILE_WIDTH)
-      const mobileBytes = (await stat(mobilePath)).size
-      console.log(`  ✓ ${mobileRel} ${kb(mobileBytes)}`)
+    const widths = job.widths ?? (job.mobile ? [MOBILE_WIDTH] : [])
+    for (const width of widths) {
+      const rel = variantName(job.src, width, job.asJpeg)
+      const path = join(PUBLIC_DIR, rel)
+      await encodeWebp(inputPath, path, job, width)
+      const bytes = (await stat(path)).size
+      console.log(`  ✓ ${rel} ${kb(bytes)}`)
     }
     console.log("")
   }

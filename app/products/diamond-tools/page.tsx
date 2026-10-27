@@ -74,6 +74,10 @@ export default function DiamondToolsPage() {
                 fill
                 objectFit="cover"
                 priority
+                srcSet="/images/diamond-400w.webp 400w, /images/diamond-800w.webp 800w, /images/diamond.webp 1280w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                width={1280}
+                height={960}
               />
             </div>
           </div>

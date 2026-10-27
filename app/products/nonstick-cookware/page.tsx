@@ -78,6 +78,10 @@ export default function NonstickCookwarePage() {
                   fill
                   objectFit="cover"
                   priority
+                  srcSet="/images/diamond-pan-400w.webp 400w, /images/diamond-pan.webp 765w"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  width={765}
+                  height={1024}
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
@@ -89,6 +93,10 @@ export default function NonstickCookwarePage() {
                   priority
                   skipWebp
                   fullResolution
+                  srcSet="/images/sem-pan-400w.jpg 400w, /images/sem-pan-800w.jpg 800w, /images/sem-pan.jpg 1279w"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  width={1279}
+                  height={1706}
                 />
               </div>
             </div>

@@ -87,6 +87,19 @@ if (removedMeta > 0 || removedPublic > 0) {
   console.log(`Cleanup -> removed ${removedMeta} metadata files (${(removedMetaBytes / 1048576).toFixed(2)}MB) + ${removedPublic} placeholder/icon files`)
 }
 
+// 0.5 移除 404/ 与 _not-found/ 冗余目录（保留 out/404.html 根文件）
+// Next 静态导出会同时产出 out/404.html、out/404/ 与 out/_not-found/（内容重复），
+// 阿里云 Nginx/.htaccess 对 404 状态直接返回 404.html，目录无功能作用，整体删除。
+const REDUNDANT_DIRS = ["404", "_not-found"]
+for (const rel of REDUNDANT_DIRS) {
+  const dir = path.join(outDir, rel)
+  if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
+    const bytes = dirSize(dir)
+    fs.rmSync(dir, { recursive: true, force: true })
+    console.log(`Cleanup -> removed redundant dir out/${rel}/ (${(bytes / 1024).toFixed(1)}KB)`)
+  }
+}
+
 // 1. 移除 game
 const outGame = path.join(outDir, "game")
 if (fs.existsSync(outGame)) {
