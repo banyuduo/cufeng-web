@@ -88,6 +88,7 @@ export default function ThermalPadPage() {
               src="/docs/thermal-pad-principle.webp"
               srcSet="/docs/thermal-pad-principle-400w.webp 400w, /docs/thermal-pad-principle-800w.webp 800w"
               sizes="(min-width: 640px) 896px, 100vw"
+              loading="lazy" decoding="async"
               alt={t("products.thermalPad.hero.principleAlt")}
               className="w-full rounded-xl border border-slate-200 bg-white object-cover"
             />

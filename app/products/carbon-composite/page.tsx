@@ -84,6 +84,7 @@ export default function CarbonCompositePage() {
               src="/docs/carbon-composite-micro.webp"
               srcSet="/docs/carbon-composite-micro-400w.webp 400w, /docs/carbon-composite-micro-800w.webp 800w"
               sizes="(min-width: 640px) 896px, 100vw"
+              loading="lazy" decoding="async"
               alt={t("products.carbonComposite.hero.microAlt")}
               className="w-full rounded-xl border border-slate-200 bg-white object-cover"
             />
@@ -333,17 +334,17 @@ export default function CarbonCompositePage() {
       {/* Manufacturing Process */}
       <section className="section-block bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h2 page-heading text-center text-slate-900">{t("products.carbonComposite.manufacturing.title")}</h2>
+          <h2 className="page-h3 page-heading text-center text-slate-500">{t("products.carbonComposite.manufacturing.title")}</h2>
 
           <div className="max-w-4xl mx-auto space-y-6">
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   1
                 </div>
                 <div>
-                  <h3 className="page-h3 mb-3 text-slate-900">{t("products.carbonComposite.manufacturing.step1Title")}</h3>
-                  <p className="page-body text-slate-600 mb-4">
+                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step1Title")}</h3>
+                  <p className="text-sm text-slate-500 mb-4">
                     {t("products.carbonComposite.manufacturing.step1Desc")}
                   </p>
                 </div>
@@ -352,25 +353,25 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   2
                 </div>
                 <div>
-                  <h3 className="page-h3 mb-3 text-slate-900">{t("products.carbonComposite.manufacturing.step2Title")}</h3>
-                  <p className="page-body text-slate-600 mb-4">
+                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step2Title")}</h3>
+                  <p className="text-sm text-slate-500 mb-4">
                     {t("products.carbonComposite.manufacturing.step2Desc")}
                   </p>
-                  <ul className="space-y-2 page-caption text-slate-600">
+                  <ul className="space-y-2 page-caption text-slate-500">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
                       {t("products.carbonComposite.manufacturing.step2Item1")}
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
                       {t("products.carbonComposite.manufacturing.step2Item2")}
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#0F2A5C] mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
                       {t("products.carbonComposite.manufacturing.step2Item3")}
                     </li>
                   </ul>
@@ -380,12 +381,12 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   3
                 </div>
                 <div>
-                  <h3 className="page-h3 mb-3 text-slate-900">{t("products.carbonComposite.manufacturing.step3Title")}</h3>
-                  <p className="page-body text-slate-600 mb-4">
+                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step3Title")}</h3>
+                  <p className="text-sm text-slate-500 mb-4">
                     {t("products.carbonComposite.manufacturing.step3Desc")}
                   </p>
                 </div>
@@ -394,12 +395,12 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-full bg-[#0F2A5C] text-white flex items-center justify-center flex-shrink-0 font-semibold text-lg">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   4
                 </div>
                 <div>
-                  <h3 className="page-h3 mb-3 text-slate-900">{t("products.carbonComposite.manufacturing.step4Title")}</h3>
-                  <p className="page-body text-slate-600">
+                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step4Title")}</h3>
+                  <p className="text-sm text-slate-500">
                     {t("products.carbonComposite.manufacturing.step4Desc")}
                   </p>
                 </div>

@@ -36,7 +36,7 @@ export default async function AboutPage({
 
       {/* 企业概览 */}
       <section className="section-block relative">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Card className="p-5 sm:p-8 md:p-12 gap-4 bg-white/[0.03] border border-white/12 ">
             <div className="space-y-6 page-body text-white/75">
               <div>

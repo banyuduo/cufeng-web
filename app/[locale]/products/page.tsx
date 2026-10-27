@@ -113,6 +113,7 @@ export default async function ProductsPage({
                       src={item.image.src}
                       srcSet={item.image.srcSet}
                       sizes="(min-width: 768px) 50vw, 100vw"
+                      loading="lazy" decoding="async"
                       alt={item.image.alt}
                       className={`w-full object-cover ${"featured" in item && item.featured ? "h-[300px] sm:h-[420px]" : "h-[240px] sm:h-[300px]"}`}
                     />
