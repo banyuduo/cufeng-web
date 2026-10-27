@@ -9,7 +9,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tospike.com"),
   title: "ToSpike - 金刚石铜高导热复合材料",
-  description: "专注金刚石铜复合材料、碳基复合材料等高性能热管理解决方案，从工具制造到材料科学的技术革命",
+  description: "专注金刚石铜、碳基复合材料等高性能热管理方案——从工具制造到材料科学的持续演进",
   icons: {
     icon: [{ url: "/og-image.png?v=2", sizes: "any", type: "image/png" }],
     apple: "/og-image.png?v=2",

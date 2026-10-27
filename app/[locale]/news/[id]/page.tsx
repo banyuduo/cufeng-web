@@ -2,6 +2,7 @@ import NewsDetailPage from "../../../news/[id]/page"
 import { isValidLocale, defaultLocale } from "@/lib/i18n"
 import { INDUSTRY_ARTICLE_IDS } from "@/lib/industry-article-ids"
 import { seoMetadata } from "@/lib/seo"
+import { getTranslations } from "@/lib/translations"
 import type { Metadata } from "next"
 
 const industryIds = [...INDUSTRY_ARTICLE_IDS]
@@ -30,13 +31,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, id } = await params
   const loc = isValidLocale(locale) ? locale : defaultLocale
+  const t = await getTranslations(loc)
   return seoMetadata({
     locale: loc,
     path: `/news/${id}/`,
-    title:
-      loc === "en"
-        ? `Tech Vision | ToSpike`
-        : `技术视界 | 簇锋科技 ToSpike`,
+    title: t("news.metaTitle"),
   })
 }
 
