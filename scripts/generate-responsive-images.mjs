@@ -75,7 +75,12 @@ async function encodeWebp(inputPath, outputPath, job, width = null) {
 
 function variantName(src, width, asJpeg = false) {
   const base = webpName(src, `-${width}w`)
-  return asJpeg ? base.replace(/\.webp$/, ".jpg") : base
+  const out = asJpeg ? base.replace(/\.webp$/, ".jpg") : base
+  // 防御：任何情况下禁止产出双后缀变体（如 *.webp.webp / *.webp.jpg）
+  if (/\.(webp|jpe?g)\.(webp|jpe?g)$/i.test(out)) {
+    throw new Error(`Invalid variant name "${out}" (double suffix); check src "${src}"`)
+  }
+  return out
 }
 
 async function main() {
