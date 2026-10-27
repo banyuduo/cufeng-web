@@ -25,6 +25,68 @@ function countFiles(dir) {
   return count
 }
 
+// 0. 清理构建元数据与占位/图标残留
+//    - 递归删除 out/ 下全部 __next.*.txt 与 index.txt（Next 静态导出 RSC/调试元数据，浏览器与 JS 零引用）
+//    - 删除未引用的 placeholder/icon 残留文件
+//    - docs/ 目录一律保留不动（跳过）
+const CLEANUP_PUBLIC_FILES = [
+  "placeholder-logo.png", "placeholder-logo.svg", "placeholder-user.jpg",
+  "placeholder.jpg", "placeholder.svg",
+  "icon-dark-32x32.png", "icon-light-32x32.png", "icon.svg",
+]
+
+function isMetadataFile(name) {
+  return (name.startsWith("__next.") && name.endsWith(".txt")) || name === "index.txt"
+}
+
+function dirSize(dir) {
+  let size = 0
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) size += dirSize(full)
+    else size += fs.statSync(full).size
+  }
+  return size
+}
+
+let removedMeta = 0
+let removedMetaBytes = 0
+function cleanMetadata(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name === "docs") continue // docs 目录一律不动
+      if (entry.name.startsWith("__next.")) {
+        // RSC 元数据目录（如 __next.news / __next.$d$locale），HTML/JS 零引用，整体删除
+        removedMetaBytes += dirSize(full)
+        fs.rmSync(full, { recursive: true, force: true })
+        removedMeta++
+        continue
+      }
+      cleanMetadata(full)
+      continue
+    }
+    if (isMetadataFile(entry.name)) {
+      removedMetaBytes += fs.statSync(full).size
+      fs.rmSync(full, { force: true })
+      removedMeta++
+    }
+  }
+}
+cleanMetadata(outDir)
+
+let removedPublic = 0
+for (const name of CLEANUP_PUBLIC_FILES) {
+  const full = path.join(outDir, name)
+  if (fs.existsSync(full)) {
+    fs.rmSync(full, { force: true })
+    removedPublic++
+  }
+}
+if (removedMeta > 0 || removedPublic > 0) {
+  console.log(`Cleanup -> removed ${removedMeta} metadata files (${(removedMetaBytes / 1048576).toFixed(2)}MB) + ${removedPublic} placeholder/icon files`)
+}
+
 // 1. 移除 game
 const outGame = path.join(outDir, "game")
 if (fs.existsSync(outGame)) {
@@ -140,7 +202,7 @@ FileZilla 默认隐藏点文件。请开启「显示隐藏文件」，把 out/.h
   robots.txt
   zh/  en/
   UPLOAD_TEST.txt
-  其余文件（含各页目录里的 .txt 和 __next.$d$locale，不要跳过）
+  其余文件（构建元数据 __next.*.txt / index.txt 与占位图已由脚本自动清理，无需上传）
 
 【覆盖规则】
 每次改版：先传完整 _next/ 和 zh/、en/，再覆盖 HTML。
