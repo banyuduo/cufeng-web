@@ -107,12 +107,29 @@ if (fs.existsSync(outGame)) {
 }
 
 // 2. 始终从 public 覆盖 .htaccess，并提供可见副本（FileZilla 默认不显示点文件）
+//    .htaccess 需含 patents -> architecture 301 规则，保证旧收录地址不 404
 const publicHtaccess = path.join("public", ".htaccess")
 const htaccess = path.join(outDir, ".htaccess")
+
+function ensurePatents301(htaccessContent) {
+  const marker = "# 301: patents -> architecture"
+  if (htaccessContent.includes(marker)) return htaccessContent
+  const rules = `  # ${marker}（2026-10 路由迁移，保证旧收录地址不 404）
+  RewriteRule ^patents/?$ /architecture/ [R=301,L]
+  RewriteRule ^zh/patents/?$ /zh/architecture/ [R=301,L]
+  RewriteRule ^en/patents/?$ /en/architecture/ [R=301,L]
+`
+  return htaccessContent.replace(
+    "<IfModule mod_rewrite.c>\n  RewriteEngine On\n",
+    "<IfModule mod_rewrite.c>\n  RewriteEngine On\n\n" + rules,
+  )
+}
+
 if (fs.existsSync(publicHtaccess)) {
-  fs.copyFileSync(publicHtaccess, htaccess)
-  fs.copyFileSync(publicHtaccess, path.join(outDir, "UPLOAD_RENAME_TO_dot_htaccess.txt"))
-  console.log("Copied public/.htaccess -> out/.htaccess")
+  const content = ensurePatents301(fs.readFileSync(publicHtaccess, "utf8"))
+  fs.writeFileSync(htaccess, content)
+  fs.writeFileSync(path.join(outDir, "UPLOAD_RENAME_TO_dot_htaccess.txt"), content)
+  console.log("Copied public/.htaccess -> out/.htaccess (patents 301 ensured)")
 } else {
   console.warn("WARNING: public/.htaccess missing — Aliyun directory URLs will 403 without trailing slash")
 }

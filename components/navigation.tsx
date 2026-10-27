@@ -71,7 +71,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
   // 深蓝底页面统一用深色导航；浅色产品页用浅色导航（避免 shadcn 近黑底）
   const isDarkPage =
     isHome ||
-    isActive("/patents") ||
+    isActive("/architecture") ||
     isActive("/about") ||
     isActive("/news") ||
     isActive("/applications") ||
@@ -104,9 +104,9 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
 
           <div className={desktopNavClass}>
             <Link
-              href={`${prefix}/patents`}
+              href={`${prefix}/architecture`}
               className={`page-nav whitespace-nowrap transition-colors ${
-                isActive("/patents") ? `${navText} font-semibold` : navMuted
+                isActive("/architecture") ? `${navText} font-semibold` : navMuted
               }`}
             >
               {t("common.nav.techArchitecture")}
@@ -228,7 +228,7 @@ export function Navigation({ locale: localeProp }: { locale?: Locale }) {
                   {t("common.nav.about")}
                 </Link>
                 <Link
-                  href={`${prefix}/patents`}
+                  href={`${prefix}/architecture`}
                   className="page-nav text-white min-h-11 flex items-center px-2 whitespace-nowrap border-b border-white/10 hover:bg-white/10 active:bg-white/15 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >

@@ -19,7 +19,7 @@ const PRODUCT_LINKS = [
 
 const EXCHANGE_LINKS = [
   { path: "/about", key: "common.nav.about" },
-  { path: "/patents", key: "common.nav.techArchitecture" },
+  { path: "/architecture", key: "common.nav.techArchitecture" },
   { path: "/applications", key: "common.nav.applications" },
   { path: "/news", key: "common.nav.techVision" },
   { path: "/cooperation", key: "common.nav.projectCooperation" },

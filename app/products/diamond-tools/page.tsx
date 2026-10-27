@@ -529,7 +529,7 @@ export default function DiamondToolsPage() {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="bg-[#2A7FC4] hover:bg-[#1B5F96] text-white gap-2" asChild>
-              <Link href={`${prefix}/patents`}>{t("products.diamondTools.techMigration.viewArchitecture")}</Link>
+              <Link href={`${prefix}/architecture`}>{t("products.diamondTools.techMigration.viewArchitecture")}</Link>
             </Button>
           </div>
         </div>

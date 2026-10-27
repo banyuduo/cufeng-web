@@ -11,10 +11,10 @@ import "../globals.css"
 
 export const metadata: Metadata = {
   ...ROOT_METADATA,
-  ...duplicateRouteMetadata("/patents/"),
+  ...duplicateRouteMetadata("/architecture/"),
 }
 
-export default async function PatentsLayout({
+export default async function ArchitectureLayout({
   children,
 }: {
   children: React.ReactNode

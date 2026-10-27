@@ -14,6 +14,11 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # 301: patents -> architecture（2026-10 路由迁移，保证旧收录地址不 404）
+  RewriteRule ^patents/?$ /architecture/ [R=301,L]
+  RewriteRule ^zh/patents/?$ /zh/architecture/ [R=301,L]
+  RewriteRule ^en/patents/?$ /en/architecture/ [R=301,L]
+
   RewriteCond %{REQUEST_URI} !^/_next/ [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !/$

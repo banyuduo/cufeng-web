@@ -334,7 +334,7 @@ export default async function ApplicationsPage({
               asChild
               className="w-full sm:w-auto min-h-[44px] gap-2 border-white/35 text-white hover:bg-white/10 bg-transparent"
             >
-              <Link href={`${prefix}/patents`}>{t("applications.cta.viewTechPath")}</Link>
+              <Link href={`${prefix}/architecture`}>{t("applications.cta.viewTechPath")}</Link>
             </Button>
           </div>
         </div>

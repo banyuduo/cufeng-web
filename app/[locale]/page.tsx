@@ -46,7 +46,7 @@ export default async function HomePage({
                   asChild
                   className="page-btn-primary w-full sm:w-auto max-w-xs sm:max-w-none mx-auto sm:mx-0 min-h-[44px] h-auto py-2.5 px-3 sm:px-6 bg-[#2A7FC4] hover:bg-[#1B5F96] text-white border-0 text-sm sm:text-base whitespace-normal leading-snug text-center"
                 >
-                  <Link href={`/${validLocale}/patents`}>
+                  <Link href={`/${validLocale}/architecture`}>
                     {t("home.hero.viewTechArchitecture")}
                   </Link>
                 </Button>

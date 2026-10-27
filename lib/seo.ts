@@ -31,7 +31,7 @@ export const LOCALE_DESCRIPTION: Record<Locale, string> = {
 
 const SECTION_TITLE: Record<string, Record<Locale, string>> = {
   "/": HOME_TITLE,
-  "/patents/": {
+  "/architecture/": {
     zh: "技术架构 | 簇锋科技 ToSpike",
     en: "Technology Architecture | ToSpike",
   },
@@ -157,7 +157,7 @@ export const ROOT_METADATA: Metadata = {
 }
 
 /**
- * Unprefixed duplicate routes (/patents/ etc.): keep noindex + canonical=zh,
+ * Unprefixed duplicate routes (/architecture/ etc.): keep noindex + canonical=zh,
  * and give each route a proper title + hreflang alternate so crawlers never
  * see the homepage title on section pages.
  */
@@ -187,7 +187,7 @@ export function duplicateRouteMetadata(path: string): Metadata {
 
 export const SITE_PATHS = [
   "/",
-  "/patents/",
+  "/architecture/",
   "/products/",
   "/products/diamond-copper/",
   "/products/thermal-pad/",
