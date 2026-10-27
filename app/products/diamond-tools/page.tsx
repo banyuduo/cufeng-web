@@ -8,6 +8,7 @@ import { useTranslations } from "@/components/translations-provider"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ResponsivePicture } from "@/components/responsive-picture"
+import { FigureCaption } from "@/components/figure-caption"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 
@@ -180,7 +181,7 @@ export default function DiamondToolsPage() {
                   className="p-4"
                 />
               </div>
-              <p className="page-caption text-slate-600 text-center">{t("products.diamondTools.designPrinciples.diagram1Alt")}</p>
+              <FigureCaption>{t("products.diamondTools.designPrinciples.diagram1Alt")}</FigureCaption>
             </Card>
 
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
@@ -194,7 +195,7 @@ export default function DiamondToolsPage() {
                   className="p-4"
                 />
               </div>
-              <p className="page-caption text-slate-600 text-center">{t("products.diamondTools.designPrinciples.diagram2Alt")}</p>
+              <FigureCaption>{t("products.diamondTools.designPrinciples.diagram2Alt")}</FigureCaption>
             </Card>
           </div>
 

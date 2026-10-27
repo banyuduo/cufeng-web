@@ -86,7 +86,6 @@ export default function PatentsPage() {
       <PageHero
         variant="dark"
         background="stage"
-        titleWeight="light"
         title={t("patents.hero.title")}
         subtitle={t("patents.hero.subtitle")}
       />

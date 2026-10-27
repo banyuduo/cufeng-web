@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card"
 import { FooterNav } from "@/components/footer-nav"
 import { Navigation } from "@/components/navigation"
 import { ResponsivePicture } from "@/components/responsive-picture"
+import { FigureCaption } from "@/components/figure-caption"
 
 export default function DiamondCopperPage() {
   const pathname = usePathname()
@@ -64,9 +65,9 @@ export default function DiamondCopperPage() {
                       height={230}
                     />
                   </div>
-                  <figcaption className="page-caption text-slate-500 mt-2">
+                  <FigureCaption>
                     {t("products.diamondCopper.hero.sampleCaption")}
-                  </figcaption>
+                  </FigureCaption>
                 </figure>
                 <figure className="min-w-0">
                   <div className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 bg-black">
@@ -83,9 +84,9 @@ export default function DiamondCopperPage() {
                       height={676}
                     />
                   </div>
-                  <figcaption className="page-caption text-slate-500 mt-2">
+                  <FigureCaption>
                     {t("products.diamondCopper.hero.microCaption")}
-                  </figcaption>
+                  </FigureCaption>
                 </figure>
               </div>
             </div>
@@ -97,19 +98,19 @@ export default function DiamondCopperPage() {
                   <div className="page-caption text-slate-600">{t("products.diamondCopper.hero.achievedLabel")}</div>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.cvdDiamond")}</span>
                     <span className="page-stat-inline text-slate-900">1000-2000</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-slate-100 rounded-lg border-2 border-[#0F2A5C]">
+                  <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="page-caption font-normal text-slate-900">{t("products.diamondCopper.hero.tospikePremium")}</span>
                     <span className="page-stat-inline text-[#2A7FC4]">{t("products.diamondCopper.hero.premiumTcValue")}</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.traditionalDiamondCu")}</span>
                     <span className="page-stat-inline text-slate-900">~600</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                     <span className="page-caption text-slate-700">{t("products.diamondCopper.hero.pureCopper")}</span>
                     <span className="page-stat-inline text-slate-900">~400</span>
                   </div>

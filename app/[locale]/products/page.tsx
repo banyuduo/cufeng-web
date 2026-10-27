@@ -58,7 +58,6 @@ export default async function ProductsPage({
       title: t("products.diamondTools.title"),
       subtitle: t("products.diamondTools.subtitle"),
       desc: t("products.diamondTools.desc"),
-      wide: true,
     },
   ] as const
 
@@ -74,12 +73,12 @@ export default async function ProductsPage({
 
       <section className="section-block bg-[#F9FAFC]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
             {catalog.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block h-full min-h-0 ${"wide" in item && item.wide ? "md:col-span-2" : ""}`}
+                className={`block h-full min-h-0`}
               >
                 <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/50 hover:shadow-lg transition-all group cursor-pointer">
                   <div className={`mb-4 inline-flex w-fit rounded-full px-3 py-1 text-xs font-normal ${item.badgeClass}`}>

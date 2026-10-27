@@ -89,20 +89,20 @@ export default function CarbonCompositePage() {
                 <div className="font-semibold text-slate-800 mb-3 pb-2 border-b border-slate-100">
                   {t(`products.carbonComposite.comparisonTable.row${i}Dim`)}
                 </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between gap-2">
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between gap-2 p-4 bg-slate-50 rounded-lg">
                     <span className="text-slate-500 shrink-0">{t("products.carbonComposite.comparisonTable.colDiamondCu")}</span>
                     <span className="text-slate-700 text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}Cu`)}</span>
                   </div>
-                  <div className="flex justify-between gap-2">
+                  <div className="flex justify-between gap-2 p-4 bg-slate-50 rounded-lg">
                     <span className="text-slate-500 shrink-0">{t("products.carbonComposite.comparisonTable.colDiamondSiC")}</span>
                     <span className="text-slate-700 text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}SiC`)}</span>
                   </div>
-                  <div className="flex justify-between gap-2 bg-[#E8E8EA]/50 rounded px-2 py-1.5">
+                  <div className="flex justify-between gap-2 p-4 bg-slate-50 rounded-lg border-2 border-[#0F2A5C]">
                     <span className="text-[#0F2A5C] font-normal shrink-0">{t("products.carbonComposite.comparisonTable.colToSpike")}</span>
                     <span className="text-[#0F2A5C] font-normal text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}ToSpike`)}</span>
                   </div>
-                  <div className="flex justify-between gap-2 pt-1">
+                  <div className="flex justify-between gap-2 p-4 bg-slate-50 rounded-lg">
                     <span className="text-slate-500 shrink-0">{t("products.carbonComposite.comparisonTable.colValue")}</span>
                     <span className="text-slate-600 text-right break-words">{t(`products.carbonComposite.comparisonTable.row${i}Value`)}</span>
                   </div>

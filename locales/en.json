@@ -687,7 +687,8 @@
         "credentialsDesc": "Deep industrialization experience; 30+ granted invention and utility model patents.",
         "capability": "Core Capabilities",
         "capabilityDesc1": "Expert in providing customized system solutions for extreme conditions including titanium alloys, nickel-based superalloys, silicon carbide, and carbon fiber composites (CFRP), through deep matching of sp³–sp² interface parameters.",
-        "capabilityDesc2": "Expert in cost- and volume-oriented product development and strategic planning, driving universal application through process improvement or paradigm innovation."
+        "capabilityDesc2": "Expert in cost- and volume-oriented product development and strategic planning, driving universal application through process improvement or paradigm innovation.",
+        "tags": "Precision Machining|Interface Engineering|Patent Portfolio"
       },
       "he": {
         "name": "He Jun",
@@ -698,21 +699,17 @@
         "capability": "Core Expertise",
         "capabilityDesc1": "Expert in integrated structure–thermal coupling design for complex electronic equipment; full-chain capability from system design to engineering implementation.",
         "capabilityDesc2": "Deep understanding of thermal design for high-power-density electronic equipment; provides reliable technical paths and innovative solutions.",
-        "capabilityDesc3": "Rich engineering practice and problem-closure experience; adept at balancing performance, reliability, and process feasibility under constraints."
+        "capabilityDesc3": "Rich engineering practice and problem-closure experience; adept at balancing performance, reliability, and process feasibility under constraints.",
+        "tags": "Structural Design|Thermal Management|Engineering Implementation"
       },
       "zhang": {
         "name": "Engineer Zhang",
         "title": "Head of Application Engineering & Field Support",
         "background": "Professional Background",
-        "backgroundDesc": "Senior diamond tool application expert with deep experience in superabrasives and cutting mechanisms — solving complex industrial grinding challenges and driving innovative application of high-end EV assembly tools.",
+        "backgroundDesc": "A seasoned diamond tool application specialist with years of expertise in superhard abrasives and material removal mechanisms, dedicated to solving complex industrial grinding challenges.",
         "capability": "Core Capabilities",
-        "solution": "Precision Solutions:",
-        "solutionDesc": "Deep dive into on-site pain points; full-chain support from tool selection to process parameter optimization.",
-        "response": "Agile On-Site Response:",
-        "responseDesc": "Connect field technical support with production-line application.",
-        "ev": "Areas of Expertise:",
-        "evAssembly": "Assembly Line Tool Development:",
-        "evAssemblyDesc": "For three-electric systems (battery, motor, controller) and chassis assembly; provide high-precision, high-durability dedicated tool solutions."
+        "capabilityDesc1": "Delivers end-to-end support from tool selection to process parameter optimization at the production line; provides high-precision, high-durability tooling solutions for new-energy powertrain (battery, motor, e-drive) and chassis assembly.",
+        "tags": "Tool Selection|Field Support|EV Assembly"
       }
     },
     "timeline": {

@@ -16,8 +16,8 @@ interface PageHeroProps {
   withDecoration?: boolean
   /** 深色页底：gradient 为旧渐变；solid 为整页海军蓝；stage 透出父级舞台光 */
   background?: "gradient" | "solid" | "stage"
-  /** 标题字重，cooperation 页使用 light */
-  titleWeight?: "bold" | "light"
+  /** 标题字重：normal(400) 默认；light(300) 仅特殊页面显式使用 */
+  titleWeight?: "normal" | "light" | "bold"
   children?: ReactNode
 }
 
@@ -29,7 +29,7 @@ export function PageHero({
   tagline,
   withDecoration = false,
   background = "gradient",
-  titleWeight = "light",
+  titleWeight = "normal",
   children,
 }: PageHeroProps) {
   const isDark = variant === "dark"
@@ -92,7 +92,13 @@ export function PageHero({
           <h1
             className={`page-h1 lg:text-6xl xl:text-7xl mb-4 ${
               isDark ? "text-white" : "text-slate-900"
-            } ${titleWeight === "light" ? "font-normal" : ""}`}
+            } ${
+              titleWeight === "light"
+                ? "font-light"
+                : titleWeight === "bold"
+                  ? "font-bold"
+                  : "font-normal"
+            }`}
           >
             <ChemText text={title} />
           </h1>

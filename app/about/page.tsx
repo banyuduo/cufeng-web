@@ -125,9 +125,9 @@ export default async function AboutPage({
                   {t("about.team.wang.title")}
                 </div>
               </div>
-              <div className="space-y-3 page-body text-slate-600">
+              <div className="space-y-4 page-body text-slate-600">
                 <div>
-                  <div className="mb-1">
+                  <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.wang.background")}</span>
                   </div>
                   <p className="leading-relaxed">
@@ -135,7 +135,7 @@ export default async function AboutPage({
                   </p>
                 </div>
                 <div>
-                  <div className="mb-1">
+                  <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.wang.credentials")}</span>
                   </div>
                   <p className="leading-relaxed">
@@ -143,7 +143,7 @@ export default async function AboutPage({
                   </p>
                 </div>
                 <div>
-                  <div className="mb-1">
+                  <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.wang.capability")}</span>
                   </div>
                   <div className="space-y-2 leading-relaxed">
@@ -151,6 +151,18 @@ export default async function AboutPage({
                     <p>{t("about.team.wang.capabilityDesc2")}</p>
                   </div>
                 </div>
+              </div>
+              <div className="mt-auto pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                {t("about.team.wang.tags")
+                  .split("|")
+                  .map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block px-2.5 py-1 rounded-full bg-[#0F2A5C]/5 text-[#0F2A5C]/90 text-xs font-normal"
+                    >
+                      {tag}
+                    </span>
+                  ))}
               </div>
             </Card>
 
@@ -163,7 +175,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-normal rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/10 text-[#0F2A5C] text-xs font-normal rounded-full mb-2">
                   {t("about.team.he.title")}
                 </div>
               </div>
@@ -188,6 +200,18 @@ export default async function AboutPage({
                   </div>
                 </div>
               </div>
+              <div className="mt-auto pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                {t("about.team.he.tags")
+                  .split("|")
+                  .map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block px-2.5 py-1 rounded-full bg-[#0F2A5C]/5 text-[#0F2A5C]/90 text-xs font-normal"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+              </div>
             </Card>
 
             {/* 张工 */}
@@ -199,7 +223,7 @@ export default async function AboutPage({
                 </p>
               </div>
               <div className="mb-3">
-                <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-normal rounded-full mb-2">
+                <div className="inline-block px-3 py-1 bg-[#0F2A5C]/10 text-[#0F2A5C] text-xs font-normal rounded-full mb-2">
                   {t("about.team.zhang.title")}
                 </div>
               </div>
@@ -216,25 +240,22 @@ export default async function AboutPage({
                   <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.zhang.capability")}</span>
                   </div>
-                  <div className="space-y-3 leading-relaxed">
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">{t("about.team.zhang.solution")}</p>
-                      <p>{t("about.team.zhang.solutionDesc")}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">{t("about.team.zhang.response")}</p>
-                      <p>{t("about.team.zhang.responseDesc")}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">{t("about.team.zhang.ev")}</p>
-                      <div className="space-y-2 mt-2">
-                        <p>
-                          <span className="font-semibold">{t("about.team.zhang.evAssembly")}</span> {t("about.team.zhang.evAssemblyDesc")}
-                        </p>
-                      </div>
-                    </div>
+                  <div className="space-y-2 leading-relaxed">
+                    <p>{t("about.team.zhang.capabilityDesc1")}</p>
                   </div>
                 </div>
+              </div>
+              <div className="mt-auto pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                {t("about.team.zhang.tags")
+                  .split("|")
+                  .map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block px-2.5 py-1 rounded-full bg-[#0F2A5C]/5 text-[#0F2A5C]/90 text-xs font-normal"
+                    >
+                      {tag}
+                    </span>
+                  ))}
               </div>
             </Card>
           </div>
