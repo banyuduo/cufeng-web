@@ -4,7 +4,11 @@ import { locales, type Locale, isValidLocale, defaultLocale } from "@/lib/i18n"
 import { LocaleProvider } from "@/components/locale-provider"
 import { TranslationsProvider } from "@/components/translations-provider"
 import { getTranslationsData } from "@/lib/translations"
-import { LOCALE_DESCRIPTION } from "@/lib/seo"
+import { AnalyticsEmbed } from "@/components/analytics-embed"
+import { JsonLd } from "@/components/json-ld"
+import { fontVariableClassName } from "@/lib/fonts"
+import { LOCALE_DESCRIPTION, ROOT_METADATA } from "@/lib/seo"
+import "../globals.css"
 
 const localeMetadata: Record<Locale, { title: string; description: string }> = {
   zh: {
@@ -24,7 +28,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
-  return localeMetadata[validLocale]
+  return {
+    ...ROOT_METADATA,
+    ...localeMetadata[validLocale],
+  }
 }
 
 export async function generateStaticParams() {
@@ -41,14 +48,21 @@ export default async function LocaleLayout({
   const { locale } = await params
   const validLocale: Locale = isValidLocale(locale) ? locale : defaultLocale
   const translationsData = await getTranslationsData(validLocale)
+  const lang = validLocale === "en" ? "en" : "zh-CN"
 
   return (
-    <div data-locale={validLocale} className="contents">
-      <LocaleProvider locale={validLocale}>
-        <TranslationsProvider data={translationsData}>
-          {children}
-        </TranslationsProvider>
-      </LocaleProvider>
-    </div>
+    <html lang={lang} className={fontVariableClassName} suppressHydrationWarning>
+      <body className="font-sans antialiased">
+        <JsonLd />
+        <div data-locale={validLocale} className="contents">
+          <LocaleProvider locale={validLocale}>
+            <TranslationsProvider data={translationsData}>
+              {children}
+            </TranslationsProvider>
+          </LocaleProvider>
+        </div>
+        <AnalyticsEmbed />
+      </body>
+    </html>
   )
 }

@@ -127,11 +127,56 @@ export function localeSeo(path: string) {
   }
 }
 
-/** Unprefixed duplicate routes (/patents/ etc.): point to zh and stay out of the index. */
+/** Shared site-wide metadata reused by every root layout (single source of truth). */
+export const ROOT_METADATA: Metadata = {
+  metadataBase: new URL(SITE_ORIGIN),
+  title: HOME_TITLE.zh,
+  description: "专注金刚石铜、碳基复合材料等高性能热管理方案——从工具制造到材料科学的持续演进",
+  icons: {
+    icon: [{ url: "/og-image.png?v=2", sizes: "any", type: "image/png" }],
+    apple: "/og-image.png?v=2",
+  },
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    url: SITE_ORIGIN,
+    siteName: "ToSpike - 簇锋科技",
+    images: [
+      {
+        url: "/og-image.png?v=2",
+        width: 512,
+        height: 512,
+        alt: "簇锋科技 ToSpike Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png?v=2"],
+  },
+}
+
+/**
+ * Unprefixed duplicate routes (/patents/ etc.): keep noindex + canonical=zh,
+ * and give each route a proper title + hreflang alternate so crawlers never
+ * see the homepage title on section pages.
+ */
 export function duplicateRouteMetadata(path: string): Metadata {
+  const p = withTrailingSlash(path)
+  const zh = localizedUrl("zh", p)
+  const en = localizedUrl("en", p)
+  const sectionTitle =
+    SECTION_TITLE[p]?.zh ??
+    (p.startsWith("/news/") ? SECTION_TITLE["/news/"].zh : HOME_TITLE.zh)
   return {
+    title: sectionTitle,
     alternates: {
-      canonical: localizedUrl("zh", path),
+      canonical: zh,
+      languages: {
+        "zh-CN": zh,
+        en,
+        "x-default": zh,
+      },
     },
     robots: {
       index: false,

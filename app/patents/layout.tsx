@@ -1,9 +1,18 @@
+import type React from "react"
+import type { Metadata } from "next"
 import { TranslationsProvider } from "@/components/translations-provider"
 import { getTranslationsData } from "@/lib/translations"
 import { defaultLocale } from "@/lib/i18n"
-import { duplicateRouteMetadata } from "@/lib/seo"
+import { AnalyticsEmbed } from "@/components/analytics-embed"
+import { JsonLd } from "@/components/json-ld"
+import { fontVariableClassName } from "@/lib/fonts"
+import { duplicateRouteMetadata, ROOT_METADATA } from "@/lib/seo"
+import "../globals.css"
 
-export const metadata = duplicateRouteMetadata("/patents/")
+export const metadata: Metadata = {
+  ...ROOT_METADATA,
+  ...duplicateRouteMetadata("/patents/"),
+}
 
 export default async function PatentsLayout({
   children,
@@ -11,5 +20,13 @@ export default async function PatentsLayout({
   children: React.ReactNode
 }) {
   const data = await getTranslationsData(defaultLocale)
-  return <TranslationsProvider data={data}>{children}</TranslationsProvider>
+  return (
+    <html lang="zh-CN" className={fontVariableClassName} suppressHydrationWarning>
+      <body className="font-sans antialiased">
+        <JsonLd />
+        <TranslationsProvider data={data}>{children}</TranslationsProvider>
+        <AnalyticsEmbed />
+      </body>
+    </html>
+  )
 }

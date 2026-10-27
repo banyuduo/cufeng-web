@@ -1,8 +1,7 @@
-import type { Metadata } from "next"
 import { defaultLocale } from "@/lib/i18n"
 import { localizedUrl } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = {
   robots: { index: false, follow: true },
   alternates: {
     canonical: localizedUrl(defaultLocale, "/"),
