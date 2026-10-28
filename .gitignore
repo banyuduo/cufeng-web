@@ -19,7 +19,7 @@ yarn-error.log*
 # env files
 .env*
 
-# 部署凭据（本地保存，勿提交）
+# 部署密钥（本地保存，勿提交）
 .deploy-secrets.json
 
 # vercel
@@ -50,9 +50,13 @@ coverage/
 # 路演/融资相关文档（不上传）
 /PPT files/
 
-# 娱乐游戏项目（与官网分离，不上传 GitHub、不参与 out 构建）
+# 娱乐游戏页项目（与官网分离，不上传 GitHub、不参与 out 构建）
 /public/game/
 /game/
-# ����/������־
+
+# 构建/部署日志
 build_*.log
 deploy_*.log
+
+# 本地临时验证工作区（一次性截图/浏览器 profile，禁止提交）
+.tmp-verify/
