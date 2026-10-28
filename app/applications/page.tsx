@@ -27,11 +27,11 @@ export default async function ApplicationsPage({
   const prefix = `/${validLocale}`
 
   const ACCENTS = {
-    hpc: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
-    power: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
-    ev: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
-    consumer: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
-    frontier: { hex: "#E2E8F0", text: "text-white", hoverText: "hover:text-white", tag: "bg-white/10 border border-white/15 text-white/80" },
+    hpc: { hex: "#7DD3FC", text: "text-sky-300", hoverText: "hover:text-sky-200", tag: "bg-sky-400/10 border border-sky-300/30 text-sky-200", level: "text-sky-300" },
+    power: { hex: "#93C5FD", text: "text-blue-300", hoverText: "hover:text-blue-200", tag: "bg-blue-400/10 border border-blue-300/30 text-blue-200", level: "text-blue-300" },
+    ev: { hex: "#86EFAC", text: "text-green-300", hoverText: "hover:text-green-200", tag: "bg-green-400/10 border border-green-300/30 text-green-200", level: "text-green-300" },
+    consumer: { hex: "#FCD34D", text: "text-amber-300", hoverText: "hover:text-amber-200", tag: "bg-amber-400/10 border border-amber-300/30 text-amber-200", level: "text-amber-300" },
+    frontier: { hex: "#C4B5FD", text: "text-violet-300", hoverText: "hover:text-violet-200", tag: "bg-violet-400/10 border border-violet-300/30 text-violet-200", level: "text-violet-300" },
   } as const
 
   const layers = [
@@ -75,6 +75,7 @@ export default async function ApplicationsPage({
               tag={t(`applications.blueprint.${layer.tagKey}`)}
               href={layer.href}
               tagClassName={layer.accent.tag}
+              levelClassName={layer.accent.level}
               expandLabel={t("applications.categories.frontier.expandLabel")}
               collapseLabel={t("applications.categories.frontier.collapseLabel")}
             />
