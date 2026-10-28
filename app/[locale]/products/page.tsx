@@ -75,7 +75,7 @@ export default async function ProductsPage({
     {
       href: `${prefix}/products/diamond-tools`,
       badge: t("products.badge.traditional"),
-      badgeClass: "bg-slate-200 text-slate-700",
+      badgeClass: "bg-slate-100 text-slate-700",
       title: t("products.diamondTools.title"),
       subtitle: t("products.diamondTools.subtitle"),
       desc: t("products.diamondTools.desc"),
@@ -106,7 +106,7 @@ export default async function ProductsPage({
                 href={item.href}
                 className={`block h-full min-h-0 ${"featured" in item && item.featured ? "md:col-span-2" : ""}`}
               >
-                <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/50 hover:shadow-lg transition-all group cursor-pointer">
+                <Card className="flex h-full flex-col p-4 sm:p-8 gap-3 bg-white border-slate-200 hover:border-[#2A7FC4]/40 hover:shadow-lg transition-all group cursor-pointer">
                   <div className="relative -mx-4 sm:-mx-8 -mt-4 sm:-mt-8 mb-4 overflow-hidden rounded-t-xl bg-slate-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img

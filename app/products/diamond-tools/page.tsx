@@ -351,7 +351,7 @@ export default function DiamondToolsPage() {
           <div className="mb-16">
             <h3 className="page-h3 mb-8 text-center text-slate-900">{t("products.diamondTools.fusionBonding.advantagesTitle")}</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/60 transition-colors">
+              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#2A7FC4]/40 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-[#2A7FC4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -363,7 +363,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/60 transition-colors">
+              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#2A7FC4]/40 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-[#2A7FC4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
@@ -380,7 +380,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/60 transition-colors">
+              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#2A7FC4]/40 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-[#2A7FC4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
@@ -397,7 +397,7 @@ export default function DiamondToolsPage() {
                 </p>
               </Card>
 
-              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#94A3B8]/60 transition-colors">
+              <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200 hover:border-[#2A7FC4]/40 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-[#2A7FC4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path

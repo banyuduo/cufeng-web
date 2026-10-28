@@ -671,7 +671,7 @@ export default function PatentsPage() {
             <Button
               asChild
               variant="outline"
-              className="border-white/35 text-white/80 hover:bg-white/10 px-5 py-3 text-base sm:px-8 sm:py-6 sm:text-lg bg-transparent min-h-[44px] h-auto whitespace-normal leading-snug"
+              className="border-white/35 text-white/80 hover:bg-white/10 px-5 py-3 text-base bg-transparent min-h-[44px] h-auto whitespace-normal leading-snug"
             >
               <Link href={`${prefix}/products`}>{t("patents.cta.learnProducts")}</Link>
             </Button>
