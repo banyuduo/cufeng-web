@@ -423,7 +423,7 @@ export default function DiamondCopperPage() {
 
             <Card className="p-4 sm:p-6 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 text-center shadow-lg">
               <div className="page-stat-value text-[#2A7FC4] mb-2">1000+</div>
-              <div className="page-caption text-slate-700 font-normal mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
+              <div className="page-caption text-slate-600 mb-1">{t("products.diamondCopper.performanceParams.premiumVersion")}</div>
               <div className="page-stat-unit text-slate-500">W/m·K</div>
             </Card>
 

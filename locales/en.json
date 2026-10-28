@@ -141,7 +141,8 @@
         "thermalTitle": "Thermal conductivity",
         "thermalDesc": "Bulk diamond thermal conductivity is about 2000+ W/m·K, which helps heat spread faster and more evenly.",
         "thermalValue": "2000+",
-        "thermalNote": "W/m·K (bulk diamond)"
+        "thermalUnit": "W/m·K",
+        "thermalNote": "Bulk diamond"
       },
       "comparison": {
         "title": "Performance comparison",

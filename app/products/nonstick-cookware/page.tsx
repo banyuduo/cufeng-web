@@ -166,7 +166,7 @@ export default function NonstickCookwarePage() {
                 {t("products.nonstickCookware.keyFeatures.lifespanDesc")}
               </p>
               <div className="page-stat-value text-[#2A7FC4]">{t("products.nonstickCookware.keyFeatures.lifespanValue")}</div>
-              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
+              <div className="page-caption text-sm md:text-base text-slate-500">{t("products.nonstickCookware.keyFeatures.lifespanNote")}</div>
             </Card>
 
             <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
@@ -177,8 +177,8 @@ export default function NonstickCookwarePage() {
               <p className="page-body text-slate-600 mb-4">
                 {t("products.nonstickCookware.keyFeatures.safetyDesc")}
               </p>
-              <div className="page-stat-value-sm text-[#2A7FC4] break-words">{t("products.nonstickCookware.keyFeatures.safetyValue")}</div>
-              <div className="page-caption text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
+              <div className="page-stat-value text-[#2A7FC4] break-words">{t("products.nonstickCookware.keyFeatures.safetyValue")}</div>
+              <div className="page-caption text-sm md:text-base text-slate-500">{t("products.nonstickCookware.keyFeatures.safetyNote")}</div>
             </Card>
 
             <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
@@ -190,7 +190,8 @@ export default function NonstickCookwarePage() {
                 {t("products.nonstickCookware.keyFeatures.thermalDesc")}
               </p>
               <div className="page-stat-value text-[#2A7FC4]">{t("products.nonstickCookware.keyFeatures.thermalValue")}</div>
-              <div className="page-stat-unit text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
+              <div className="page-stat-value-sm text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalUnit")}</div>
+              <div className="page-caption text-sm md:text-base text-slate-500">{t("products.nonstickCookware.keyFeatures.thermalNote")}</div>
             </Card>
           </div>
         </div>

@@ -141,7 +141,8 @@
         "thermalTitle": "导热性能",
         "thermalDesc": "金刚石本体热导率约 2000+ W/m·K，有利于热量较快、较均匀分布。",
         "thermalValue": "2000+",
-        "thermalNote": "W/m·K（金刚石本体）"
+        "thermalUnit": "W/m·K",
+        "thermalNote": "金刚石本体"
       },
       "comparison": {
         "title": "性能对比",
