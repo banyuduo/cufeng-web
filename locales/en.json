@@ -703,12 +703,12 @@
         "name": "He Jun",
         "title": "Head of Engineering Design & Structure",
         "background": "Professional Background",
-        "backgroundDesc1": "Master of Mechanical Engineering, Senior Engineer; 17+ years in defense electronics R&D in structure and thermal design.",
-        "backgroundDesc2": "Former researcher at defense electronics institutes; led structural R&D for high-complexity equipment.",
-        "capability": "Core Expertise",
-        "capabilityDesc1": "Expert in structure–thermal coupling design for complex electronics, concept to implementation.",
-        "capabilityDesc2": "Deep expertise in thermal design for high-power-density electronics, offering reliable, innovative paths.",
-        "capabilityDesc3": "Proven in engineering practice and problem closure, balancing performance, reliability, manufacturability.",
+        "backgroundDesc": "Master of Mechanical Engineering, Senior Engineer; 17+ years in defense electronics R&D in structure and thermal design; former researcher at defense electronics institutes, leading structural R&D for high-complexity equipment.",
+        "credentials": "Technical Credentials",
+        "credentialsDesc": "Long track record in defense electronics R&D; led structural design and engineering delivery for multiple flagship programs.",
+        "capability": "Core Capabilities",
+        "capabilityDesc1": "Expert in structure–thermal coupling design for complex electronics, from concept to engineering implementation; deep expertise in thermal design for high-power-density electronics, offering reliable, innovative paths.",
+        "capabilityDesc2": "Proven in engineering practice and problem closure, balancing performance, reliability, manufacturability.",
         "tags": "Structural Design|Thermal Management|Engineering Implementation"
       },
       "zhang": {
