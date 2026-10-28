@@ -187,7 +187,7 @@ export default function DiamondToolsPage() {
             <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
               <div className="relative aspect-[4/3] mb-4 bg-slate-50 rounded-lg overflow-hidden">
                 <ResponsivePicture
-                  src="/images/brazing tech.png"
+                  src="/images/brazing-tech.png"
                   alt={t("products.diamondTools.designPrinciples.diagram2Alt")}
                   fill
                   objectFit="contain"
@@ -200,7 +200,7 @@ export default function DiamondToolsPage() {
           </div>
 
           {/* Design Logic */}
-          <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-slate-50 to-[#F9FAFC] border-[#94A3B8]/30">
+          <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
             <h3 className="page-h3 mb-4 text-slate-900">{t("products.diamondTools.designPrinciples.designLogicTitle")}</h3>
             <p className="page-body text-slate-700 mb-6">
               {t("products.diamondTools.designPrinciples.designLogicDesc")}
@@ -278,7 +278,7 @@ export default function DiamondToolsPage() {
             </Card>
           </div>
 
-          <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30">
+          <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
             <h3 className="page-h3 mb-4 text-slate-900">{t("products.diamondTools.extremeConditions.valueTitle")}</h3>
             <p className="page-body text-slate-700 mb-6">
               {t("products.diamondTools.extremeConditions.valueDesc")}

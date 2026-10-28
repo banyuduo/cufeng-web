@@ -237,7 +237,7 @@ export default function CarbonCompositePage() {
               </div>
             </Card>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.carbonComposite.coreTech.advantagesTitle")}</h3>
               <div className="space-y-4">
                 <div className="p-4 bg-white rounded-lg">

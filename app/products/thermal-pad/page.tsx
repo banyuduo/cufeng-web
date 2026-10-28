@@ -50,7 +50,7 @@ export default function ThermalPadPage() {
               </p>
             </div>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-white border-slate-200 shadow-lg">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
               <h3 className="page-h3 mb-6 text-slate-900">{t("products.thermalPad.hero.corePerfTitle")}</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
@@ -105,7 +105,7 @@ export default function ThermalPadPage() {
           <h2 className="page-h2 page-heading text-center text-slate-900">{t("products.thermalPad.techAdvantages.title")}</h2>
 
           <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
-            <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
               <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6 text-[#2A7FC4]" />
               </div>
@@ -115,7 +115,7 @@ export default function ThermalPadPage() {
               </p>
             </Card>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
               <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-[#2A7FC4]" />
               </div>
@@ -125,7 +125,7 @@ export default function ThermalPadPage() {
               </p>
             </Card>
 
-            <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
+            <Card className="p-5 sm:p-8 gap-3 bg-gradient-to-br from-[#F9FAFC] to-slate-50 border-[#94A3B8]/30 shadow-lg">
               <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-6">
                 <FlaskConical className="w-6 h-6 text-[#2A7FC4]" />
               </div>

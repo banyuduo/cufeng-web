@@ -67,7 +67,7 @@ export default async function ProductsPage({
       title: t("products.nonstickCookware.title"),
       desc: t("products.nonstickCookware.desc"),
       image: {
-        src: "/images/diamond pan.jpg",
+        src: "/images/diamond-pan.jpg",
         srcSet: "/images/diamond-pan-400w.webp 400w, /images/diamond-pan.webp 765w",
         alt: t("products.nonstickCookware.imageAlt"),
       },
