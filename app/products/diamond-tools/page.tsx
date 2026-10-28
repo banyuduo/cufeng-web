@@ -341,7 +341,7 @@ export default function DiamondToolsPage() {
               </Card>
               <Card className="p-4 sm:p-6 gap-3 bg-white border-slate-200">
                 <div className="page-caption text-slate-500 mb-2">{t("products.diamondTools.fusionBonding.envLabel")}</div>
-                <div className="text-lg font-semibold text-[#2A7FC4] mb-1">{t("products.diamondTools.fusionBonding.envValue")}</div>
+                <div className="page-stat-value-sm text-[#2A7FC4] mb-1">{t("products.diamondTools.fusionBonding.envValue")}</div>
                 <p className="page-body text-slate-600">{t("products.diamondTools.fusionBonding.envNote")}</p>
               </Card>
             </div>

@@ -339,7 +339,7 @@ export default function CarbonCompositePage() {
           <div className="max-w-4xl mx-auto space-y-6">
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   1
                 </div>
                 <div>
@@ -353,7 +353,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   2
                 </div>
                 <div>
@@ -381,7 +381,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   3
                 </div>
                 <div>
@@ -395,7 +395,7 @@ export default function CarbonCompositePage() {
 
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
               <div className="flex items-start gap-4 sm:gap-6">
-                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center flex-shrink-0 font-normal text-sm">
+                <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center flex-shrink-0 font-normal text-sm">
                   4
                 </div>
                 <div>
