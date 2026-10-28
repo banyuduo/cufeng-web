@@ -184,10 +184,17 @@ export default async function AboutPage({
                   <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.he.background")}</span>
                   </div>
-                  <div className="space-y-2 leading-relaxed">
-                    <p>{t("about.team.he.backgroundDesc1")}</p>
-                    <p>{t("about.team.he.backgroundDesc2")}</p>
+                  <p className="leading-relaxed">
+                    {t("about.team.he.backgroundDesc")}
+                  </p>
+                </div>
+                <div>
+                  <div className="mb-2">
+                    <span className="font-semibold text-slate-900">{t("about.team.he.credentials")}</span>
                   </div>
+                  <p className="leading-relaxed">
+                    {t("about.team.he.credentialsDesc")}
+                  </p>
                 </div>
                 <div>
                   <div className="mb-2">
@@ -196,7 +203,6 @@ export default async function AboutPage({
                   <div className="space-y-2 leading-relaxed">
                     <p>{t("about.team.he.capabilityDesc1")}</p>
                     <p>{t("about.team.he.capabilityDesc2")}</p>
-                    <p>{t("about.team.he.capabilityDesc3")}</p>
                   </div>
                 </div>
               </div>
@@ -238,10 +244,19 @@ export default async function AboutPage({
                 </div>
                 <div>
                   <div className="mb-2">
+                    <span className="font-semibold text-slate-900">{t("about.team.zhang.credentials")}</span>
+                  </div>
+                  <p className="leading-relaxed">
+                    {t("about.team.zhang.credentialsDesc")}
+                  </p>
+                </div>
+                <div>
+                  <div className="mb-2">
                     <span className="font-semibold text-slate-900">{t("about.team.zhang.capability")}</span>
                   </div>
                   <div className="space-y-2 leading-relaxed">
                     <p>{t("about.team.zhang.capabilityDesc1")}</p>
+                    <p>{t("about.team.zhang.capabilityDesc2")}</p>
                   </div>
                 </div>
               </div>

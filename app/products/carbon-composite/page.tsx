@@ -334,7 +334,7 @@ export default function CarbonCompositePage() {
       {/* Manufacturing Process */}
       <section className="section-block bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="page-h3 page-heading text-center text-slate-500">{t("products.carbonComposite.manufacturing.title")}</h2>
+          <h2 className="page-h3 page-heading text-center text-slate-500 mb-10 sm:mb-12">{t("products.carbonComposite.manufacturing.title")}</h2>
 
           <div className="max-w-4xl mx-auto space-y-6">
             <Card className="p-5 sm:p-8 gap-3 bg-slate-50 border-slate-200">
@@ -343,8 +343,8 @@ export default function CarbonCompositePage() {
                   1
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step1Title")}</h3>
-                  <p className="text-sm text-slate-500 mb-4">
+                  <h3 className="text-base font-medium leading-relaxed text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step1Title")}</h3>
+                  <p className="text-sm leading-relaxed text-slate-500">
                     {t("products.carbonComposite.manufacturing.step1Desc")}
                   </p>
                 </div>
@@ -357,8 +357,8 @@ export default function CarbonCompositePage() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step2Title")}</h3>
-                  <p className="text-sm text-slate-500 mb-4">
+                  <h3 className="text-base font-medium leading-relaxed text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step2Title")}</h3>
+                  <p className="text-sm leading-relaxed text-slate-500 mb-4">
                     {t("products.carbonComposite.manufacturing.step2Desc")}
                   </p>
                   <ul className="space-y-2 page-caption text-slate-500">
@@ -385,8 +385,8 @@ export default function CarbonCompositePage() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step3Title")}</h3>
-                  <p className="text-sm text-slate-500 mb-4">
+                  <h3 className="text-base font-medium leading-relaxed text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step3Title")}</h3>
+                  <p className="text-sm leading-relaxed text-slate-500">
                     {t("products.carbonComposite.manufacturing.step3Desc")}
                   </p>
                 </div>
@@ -399,8 +399,8 @@ export default function CarbonCompositePage() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step4Title")}</h3>
-                  <p className="text-sm text-slate-500">
+                  <h3 className="text-base font-medium leading-relaxed text-slate-700 mb-3">{t("products.carbonComposite.manufacturing.step4Title")}</h3>
+                  <p className="text-sm leading-relaxed text-slate-500">
                     {t("products.carbonComposite.manufacturing.step4Desc")}
                   </p>
                 </div>
