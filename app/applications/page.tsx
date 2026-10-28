@@ -62,7 +62,7 @@ export default async function ApplicationsPage({
         subtitle={t("applications.subtitle")}
       />
 
-      <section className="section-block pb-6 sm:pb-8 lg:pb-10">
+      <section className="section-block">
         <div className="max-w-6xl mx-auto space-y-4">
           {layers.map((layer, index) => (
             <ApplicationCard

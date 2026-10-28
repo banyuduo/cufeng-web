@@ -26,8 +26,8 @@ export default async function CooperationPage({
       />
 
       <section className="section-block">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-6 page-body text-white/70 font-normal">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-6 page-body text-white/70 font-normal">
             <p>{t("cooperation.platform.content")}</p>
             <p>
               {t("cooperation.platform.content2")}
@@ -42,11 +42,11 @@ export default async function CooperationPage({
       </section>
 
       <section className="section-block">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.audience.title")}
           </h2>
-          <p className="page-body text-white/70 font-normal mb-6 sm:mb-8">
+          <p className="page-body text-white/70 font-normal max-w-4xl mb-6 sm:mb-8">
             {t("cooperation.audience.intro")}
           </p>
 
@@ -87,7 +87,8 @@ export default async function CooperationPage({
       </section>
 
       <section className="section-block">
-        <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12">
           <div>
             <h2 className="page-h2 mb-4 sm:mb-5 text-white border-b border-white/12 pb-4 sm:pb-6">
               {t("cooperation.nextSteps.title")}
@@ -103,12 +104,14 @@ export default async function CooperationPage({
               {t("cooperation.resonance.p2")}
             </p>
           </div>
+          </div>
         </div>
       </section>
 
       <section id="contact" className="section-block scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="page-h2 mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="page-h2 mb-6 sm:mb-8 text-white border-b border-white/12 pb-4 sm:pb-6">
             {t("cooperation.contact.title")}
           </h2>
 
@@ -165,6 +168,7 @@ export default async function CooperationPage({
                 <div className="page-body text-slate-900 font-normal">{t("cooperation.contact.addressValue")}</div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

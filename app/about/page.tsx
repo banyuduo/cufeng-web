@@ -280,7 +280,7 @@ export default async function AboutPage({
       {/* 核心历程 - 时间轴 */}
       <section className="section-block relative bg-[#F9FAFC]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10">
             <h2 className="page-h2 text-slate-900 mb-4">{t("about.timeline.title")}</h2>
             <p className="page-body page-measure text-slate-600">{t("about.timeline.subtitle")}</p>
           </div>
@@ -290,7 +290,7 @@ export default async function AboutPage({
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 transform md:-translate-x-1/2"></div>
 
             {/* 时间轴项目 */}
-            <div className="space-y-12">
+            <div className="space-y-10 sm:space-y-12">
               {/* 2025 - 专利集群 */}
               <div className="relative flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0 w-16 md:w-24 text-right md:text-center">

@@ -59,7 +59,7 @@ export default async function NewsPage({
       />
 
       {/* Navigation Cards */}
-      <section className="py-12 border-t border-white/12">
+      <section className="py-8 sm:py-14 border-t border-white/12">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
